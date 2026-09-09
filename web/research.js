@@ -23,6 +23,7 @@ export async function loadResearch() {
       const common = chosen.length === 3 ? chosen[0].validation.map(p => p.step).filter(step => step > 0 && chosen.every(r => r.validation.some(p => p.step === step))) : [];
       $('comparison-step').replaceChildren(...common.map(step => new Option(step.toLocaleString(), String(step))));
       $('comparison-step').value = String(common.at(-1));
+      $('comparison-step').disabled = !common.length;
       const chart = $('validation-chart'); chart.replaceChildren();
       chart.append(svgElement('title', {}, 'Validation loss against matched training updates; lower is better.'));
       const x = step => 64 + step / 6000 * 670, y = value => 266 - (value - 1.5) / 2.1 * 230;
@@ -38,10 +39,12 @@ export async function loadResearch() {
       table();
     }
     function table() {
-      const step = Number($('comparison-step').value), seed = Number($('comparison-seed').value);
-      $('comparison-rows').replaceChildren(...runs.filter(x => x.seed === seed).map(run => {
-        const row = document.createElement('tr'), point = run.validation.find(x => x.step === step);
-        for (const [i, value] of [names[run.variant], run.parameters.toLocaleString(), point?.bits_per_byte.toFixed(3) ?? 'Pending', point?.token_perplexity.toFixed(1) ?? 'Pending'].entries()) {
+      const step = $('comparison-step').value ? Number($('comparison-step').value) : null, seed = Number($('comparison-seed').value);
+      $('comparison-rows').replaceChildren(...Object.keys(names).map(variant => {
+        const run = runs.find(x => x.seed === seed && x.variant === variant);
+        const row = document.createElement('tr'), point = run?.validation.find(x => x.step === step);
+        const parameters = run?.parameters ?? runs.find(x => x.variant === variant)?.parameters;
+        for (const [i, value] of [names[variant], parameters?.toLocaleString() ?? 'Pending', point?.bits_per_byte.toFixed(3) ?? 'Pending', point?.token_perplexity.toFixed(1) ?? 'Pending'].entries()) {
           const cell = document.createElement(i ? 'td' : 'th'); cell.textContent = value; row.append(cell);
         }
         return row;
