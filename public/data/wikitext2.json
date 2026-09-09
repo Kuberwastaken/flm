@@ -1,0 +1,81 @@
+{
+  "name": "WikiText-2 raw v1",
+  "dataset": "Salesforce/wikitext",
+  "config": "wikitext-2-raw-v1",
+  "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "source": "https://huggingface.co/datasets/Salesforce/wikitext",
+  "paper": "https://arxiv.org/abs/1609.07843",
+  "source_files": {
+    "train": {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "bytes": 6357543,
+      "sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7"
+    },
+    "validation": {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "bytes": 657209,
+      "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c"
+    },
+    "test": {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "bytes": 732610,
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91"
+    }
+  },
+  "statistics": {
+    "train": {
+      "rows": 36718,
+      "articles": 600,
+      "words": 2051910,
+      "utf8_bytes": 10914845,
+      "characters": 10892990,
+      "sha256": "39b819156035020a7e30741bd76c947b93b16d446f061a1251f643e37e25f84c",
+      "concatenated_source_sha256": "fc1dd2874bf42e945db9bd38e856ae18010f5c088e7446c706c5ba2f39310ee3"
+    },
+    "validation": {
+      "rows": 3760,
+      "articles": 60,
+      "words": 213886,
+      "utf8_bytes": 1144248,
+      "characters": 1142150,
+      "sha256": "c9413c075be5c28190f08731f3284e3bdb7bc55e4ae7114ba9c5e04dc6bc7fc7",
+      "concatenated_source_sha256": "8ef749789ca0693435d20b3f81d5638c19edcebc5a68586dcf09bdf47ef9542f"
+    },
+    "test": {
+      "rows": 4358,
+      "articles": 60,
+      "words": 241211,
+      "utf8_bytes": 1287656,
+      "characters": 1285622,
+      "sha256": "6ad5d9381edeffbd811d2d678a51b23f4276afdc27dbcd55046be97eedd0a98f",
+      "concatenated_source_sha256": "bbf94c53a05abe9ee670d3b6343608095822c85e26de37c70b24fc571964574a"
+    }
+  },
+  "overlap_audit": {
+    "train/validation": {
+      "article_title_overlap": 0,
+      "exact_article_overlap": 0
+    },
+    "train/test": {
+      "article_title_overlap": 0,
+      "exact_article_overlap": 0
+    },
+    "validation/test": {
+      "article_title_overlap": 0,
+      "exact_article_overlap": 0
+    }
+  },
+  "normalization": "None. Concatenate original row strings, preserve case, punctuation, Unicode, markup and whitespace; group at main article headings isolated by empty source rows.",
+  "partition": "Official train/validation/test. Article grouping changes reset boundaries only, not text or split membership.",
+  "license_metadata": [
+    "CC-BY-SA-3.0",
+    "GFDL"
+  ],
+  "license_note": "Publisher metadata lists CC BY-SA 3.0/GFDL, while card prose links CC BY-SA 4.0. Preserve the discrepancy. Raw and normalized corpus text are not redistributed by this repository.",
+  "limitations": [
+    "Written encyclopedic English, not conversational instruction data",
+    "Raw means no unknown-word replacement; this release still contains WikiText markup and tokenization artifacts",
+    "Title and exact-article checks do not exhaustively exclude quoted passages or near duplicates",
+    "Our byte/subword likelihoods and article-reset protocol are not interchangeable with published word-level WikiText perplexity"
+  ]
+}

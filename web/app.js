@@ -3,6 +3,9 @@ import { BrainView, FlyView } from './views.js';
 import { STORAGE_KEY, ADAPTER_KEY, validateConversations, contextFor, download } from './storage.js';
 
 const $ = id => document.getElementById(id);
+const selectedModel = new URLSearchParams(location.search).get('model') === 'ami' ? 'ami' : 'wikitext';
+const isLexical = selectedModel === 'wikitext';
+const adapterKey = () => `${ADAPTER_KEY}-${config.weights_sha256}`;
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
 let ready = false, busy = false, operation = '', sequence = 0, activeId = 0;
 let config, brain, fly, anatomy, lastState, selected = 0, disabled = new Set(), lastPrompt = '';
@@ -38,7 +41,7 @@ function makeMessage(message) {
   const article = document.createElement('article'); article.className = `message ${message.role}`;
   const header = document.createElement('div'); header.className = 'message-header';
   const title = document.createElement('strong'); title.textContent = message.role === 'user' ? 'You' :
-    `FLM${message.checkpointStep ? ` · checkpoint ${message.checkpointStep.toLocaleString()}` : ' · earlier session'}`;
+    `FLM${message.dataset ? ` · ${message.dataset}` : ''}${message.checkpointStep ? ` · checkpoint ${message.checkpointStep.toLocaleString()}` : ' · earlier session'}`;
   const copy = document.createElement('button'); copy.textContent = 'Copy'; copy.type = 'button'; copy.setAttribute('aria-label', `Copy ${message.role === 'user' ? 'your' : 'FLM'} message`);
   copy.onclick = async () => { try { await navigator.clipboard.writeText(message.text); copy.textContent = 'Copied'; setTimeout(() => copy.textContent = 'Copy', 1600); } catch { notice('Clipboard unavailable. Select the message text to copy it.'); } };
   header.append(title, copy); const body = document.createElement('div'); body.className = 'message-text'; body.textContent = message.text;
@@ -48,14 +51,16 @@ function renderConversation() {
   const conversation = current(); if (!conversation) return;
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
   $('prompt-label').textContent = conversation.mode === 'dialogue' ? 'Your turn' : 'Text to continue';
-  $('capability').textContent = conversation.mode === 'dialogue'
+  $('capability').textContent = isLexical
+    ? 'Trained from scratch on WikiText-2. It completes written passages; it is not an instruction-following assistant. Each token contains one or more UTF-8 bytes.'
+    : conversation.mode === 'dialogue'
     ? 'Trained on meeting transcripts. It continues dialogue; it has not been trained to follow instructions or give reliable answers.'
     : 'A next-byte predictor trained on meeting transcripts. Continue a passage and inspect the probabilities as it writes.';
   if (conversation.messages.length) conversation.messages.forEach(makeMessage);
   else {
     const empty = document.createElement('div'); empty.className = 'empty';
-    const p = document.createElement('p'); p.textContent = 'Start with the kind of language it has seen: people making plans, discussing ideas and taking turns.'; empty.append(p);
-    for (const text of ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:']) {
+    const p = document.createElement('p'); p.textContent = isLexical ? 'Start a passage about history, nature or everyday life. Watch the next-token distribution and the recurrent state as it continues.' : 'Start with the kind of language it has seen: people making plans, discussing ideas and taking turns.'; empty.append(p);
+    for (const text of (isLexical ? ['The history of science', 'In the summer, the village', 'The small animal moved through'] : ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:'])) {
       const button = document.createElement('button'); button.textContent = text; button.onclick = () => { $('prompt').value = text; $('prompt').focus(); }; empty.append(button);
     }
     $('messages').append(empty);
@@ -64,14 +69,28 @@ function renderConversation() {
 function newConversation(mode = $('mode').value || 'dialogue') {
   if (busy) return;
   if (conversations.length >= 100) { notice('The local archive holds 100 conversations. Export or delete some before starting another.'); return; }
-  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, messages: [] };
+  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, modelPackage: selectedModel, messages: [] };
   conversations.unshift(item); currentId = item.id; $('prompt').value = ''; lastPrompt = ''; store(); renderConversation();
 }
 try {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) conversations = validateConversations(JSON.parse(saved));
 } catch { storageBlocked = true; notice('Saved conversations could not be read. Existing storage is preserved; this session will not overwrite it. Export new conversations to keep them.'); }
-if (conversations.length) { currentId = conversations[0].id; renderConversation(); } else newConversation('dialogue');
+const requestedConversation = new URLSearchParams(location.search).get('conversation');
+const matchingConversation = conversations.find(x => x.id === requestedConversation && (x.modelPackage || 'ami') === selectedModel)
+  || conversations.find(x => (x.modelPackage || 'ami') === selectedModel);
+if (matchingConversation) { currentId = matchingConversation.id; renderConversation(); }
+else if (conversations.length < 100) newConversation(isLexical ? 'completion' : 'dialogue');
+else { currentId = conversations[0].id; renderConversation(); }
+$('model').value = selectedModel;
+$('mode').querySelector('[value="dialogue"]').disabled = isLexical;
+$('prompt').placeholder = isLexical ? 'The history of science' : 'What should we make together?';
+function switchModel(value, conversationId = null) {
+  const url = new URL(location.href); url.searchParams.set('model', value);
+  if (conversationId) url.searchParams.set('conversation', conversationId); else url.searchParams.delete('conversation');
+  location.assign(url.href);
+}
+$('model').onchange = () => switchModel($('model').value);
 
 function showPage() {
   const page = ['chat', 'learn', 'research'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'chat';
@@ -85,7 +104,11 @@ function showPage() {
 }
 window.addEventListener('hashchange', showPage); showPage();
 $('new-chat').onclick = () => newConversation();
-$('conversation').onchange = () => { currentId = $('conversation').value; lastPrompt = ''; renderConversation(); };
+$('conversation').onchange = () => {
+  const target = conversations.find(x => x.id === $('conversation').value);
+  if ((target.modelPackage || 'ami') !== selectedModel) { switchModel(target.modelPackage || 'ami', target.id); return; }
+  currentId = target.id; lastPrompt = ''; renderConversation();
+};
 $('mode').onchange = () => {
   const mode = $('mode').value;
   if (current().messages.length) newConversation(mode);
@@ -123,13 +146,13 @@ $('composer').onsubmit = event => {
   const prompt = contextFor(conversation);
   if (new TextEncoder().encode(prompt).length > 16000) { conversation.messages.pop(); notice('This context exceeds 16,000 UTF-8 bytes. Start a new conversation or shorten your turn.'); return; }
   const temperature = Number($('temperature').value), topK = Number($('top-k').value), limit = Number($('limit').value), seed = Number($('seed').value);
-  if (!(temperature >= 0.05 && temperature <= 2 && Number.isInteger(topK) && topK >= 1 && topK <= 258 && Number.isInteger(limit) && limit >= 1 && limit <= 1600 && Number.isInteger(seed) && seed >= 0 && seed <= 4294967295)) {
-    conversation.messages.pop(); notice('Check the generation settings: temperature 0.05–2, top-k 1–258, maximum bytes 1–1,600 and a nonnegative 32-bit integer seed.'); return;
+  if (!(temperature >= 0.05 && temperature <= 2 && Number.isInteger(topK) && topK >= 1 && topK <= config.vocabulary && Number.isInteger(limit) && limit >= 1 && limit <= 1600 && Number.isInteger(seed) && seed >= 0 && seed <= 4294967295)) {
+    conversation.messages.pop(); notice(`Check the generation settings: temperature 0.05–2, top-k 1–${config.vocabulary}, maximum tokens 1–1,600 and a nonnegative 32-bit integer seed.`); return;
   }
   if (conversation.title === 'New conversation') conversation.title = text.replace(/\s+/g, ' ').slice(0, 55);
   renderConversation(); pendingMessage = { role: 'model', text: '', checkpointStep: config.checkpoint_step,
-    modelHash: config.weights_sha256, createdAt: new Date().toISOString(), settings: {
-      seed, temperature, topK, limit, adaptation: $('adapter-enabled').checked,
+    modelHash: config.weights_sha256, dataset: config.dataset || 'AMI', createdAt: new Date().toISOString(), settings: {
+      seed, temperature, topK, limit, limitUnit: 'tokens', adaptation: $('adapter-enabled').checked,
       recurrence: $('recurrence').checked, disabled: [...disabled] } }; conversation.messages.push(pendingMessage);
   pendingElement = makeMessage(pendingMessage); pendingElement.classList.add('pending');
   $('prompt').value = ''; trace = []; lastPrompt = prompt; store();
@@ -157,7 +180,7 @@ function updateState(state) {
   lastState = state; brain?.update(state, $('state-mode').value); fly?.pose(state, $('body-response').checked); neuronInfo();
   $('probabilities').replaceChildren(...state.top.map(item => {
     const li = document.createElement('li'), code = document.createElement('code'), score = document.createElement('span');
-    code.textContent = byteName(item.token); score.textContent = `${(100 * item.probability).toFixed(1)}%`; li.append(code, score); return li;
+    code.textContent = item.label ?? byteName(item.token); code.title = `Token ${item.token}`; score.textContent = `${(100 * item.probability).toFixed(1)}%`; li.append(code, score); return li;
   }));
   trace.push(state.meanActivity); if (trace.length > 80) trace.shift();
   $('activity-path').setAttribute('d', trace.map((v, i) => `${i ? 'L' : 'M'}${i * 260 / Math.max(1, trace.length - 1)} ${75 - v * 74}`).join(' '));
@@ -190,12 +213,12 @@ $('learning-form').onsubmit = event => {
 $('save-learning').onclick = () => run('export', { destination: 'storage' });
 $('export-learning').onclick = () => run('export', { destination: 'file' });
 $('restore-learning').onclick = () => {
-  try { const text = localStorage.getItem(ADAPTER_KEY); if (!text) throw new Error('No learning is saved in this browser.'); run('import', { adapter: JSON.parse(text) }); }
+  try { const text = localStorage.getItem(adapterKey()) || localStorage.getItem(ADAPTER_KEY); if (!text) throw new Error('No learning is saved for this checkpoint.'); run('import', { adapter: JSON.parse(text) }); }
   catch (error) { notice(error.message); }
 };
-$('import-learning').onchange = () => importFile($('import-learning'), 3000000, text => run('import', { adapter: JSON.parse(text) }));
+$('import-learning').onchange = () => importFile($('import-learning'), 12000000, text => run('import', { adapter: JSON.parse(text) }));
 $('clear-learning').onclick = () => {
-  run('clear'); try { localStorage.removeItem(ADAPTER_KEY); } catch { notice('Session learning cleared; saved browser storage could not be accessed.'); }
+  run('clear'); try { localStorage.removeItem(adapterKey()); localStorage.removeItem(ADAPTER_KEY); } catch { notice('Session learning cleared; saved browser storage could not be accessed.'); }
   $('learning-result').hidden = true; $('learning-status').textContent = 'Baseline restored.';
 };
 
@@ -217,23 +240,25 @@ worker.onmessage = ({ data }) => {
   if (data.id !== activeId) return;
   if (data.type === 'loading') $('model-status').textContent = data.message;
   if (data.type === 'ready') {
-    ready = true; config = data.config; $('model-status').textContent = 'FLM compact · local';
+    ready = true; config = data.config; $('model-status').textContent = `FLM · ${config.dataset || 'AMI'} · local`;
+    $('top-k').max = config.vocabulary;
+    $('checkpoint-link').href = `/${config.package_path}/model.json`;
     $('generation-stats').textContent = `Checkpoint ${config.checkpoint_step.toLocaleString()} · ready`;
     $('release-detail').textContent = `${config.trained_parameters.toLocaleString()} trained parameters · ${config.neurons.toLocaleString()} neurons · ${config.retained_edges.toLocaleString()} edges · checkpoint ${config.checkpoint_step.toLocaleString()} · ${(config.weights_bytes / 1000000).toFixed(2)} MB browser weights. The full anatomical graph is not the compact model.`;
     loadViews();
   }
-  if (data.type === 'priming') $('generation-stats').textContent = `Reading context: ${data.done.toLocaleString()} / ${data.total.toLocaleString()} bytes`;
+  if (data.type === 'priming') $('generation-stats').textContent = `Reading context: ${data.done.toLocaleString()} / ${data.total.toLocaleString()} tokens`;
   if (data.type === 'state') updateState(data);
   if (data.type === 'generation') {
     if (pendingMessage) {
       pendingMessage.text = data.text; pendingElement.querySelector('.message-text').textContent = data.text;
       const view = $('messages'); if (view.scrollHeight - view.scrollTop - view.clientHeight < 140) view.scrollTop = view.scrollHeight;
     }
-    $('generation-stats').textContent = `${data.bytes} bytes · ${(data.bytes / Math.max(.001, data.seconds)).toFixed(1)} bytes/s${$('observe').checked ? ' including playback delay' : ''}`; updateState(data);
+    $('generation-stats').textContent = `${data.tokens} tokens · ${data.bytes} bytes · ${(data.tokens / Math.max(.001, data.seconds)).toFixed(1)} tokens/s${$('observe').checked ? ' including playback delay' : ''}`; updateState(data);
   }
   if (data.type === 'learning' || data.type === 'learned') {
     $('learning-progress').value = data.done / data.total;
-    $('learning-status').textContent = `${data.done.toLocaleString()} / ${data.total.toLocaleString()} byte updates`;
+    $('learning-status').textContent = `${data.done.toLocaleString()} / ${data.total.toLocaleString()} token updates`;
     updateState(data);
     if (data.type === 'learned') {
       const result = $('learning-result'); result.hidden = false;
@@ -244,7 +269,7 @@ worker.onmessage = ({ data }) => {
   }
   if (data.type === 'adapter') {
     if (data.destination === 'file') download('flm-local-learning.json', JSON.stringify(data.adapter));
-    else try { localStorage.setItem(ADAPTER_KEY, JSON.stringify(data.adapter)); notice('Learning saved in this browser. Use Load saved after reopening.'); }
+    else try { localStorage.setItem(adapterKey(), JSON.stringify(data.adapter)); notice('Learning saved for this checkpoint. Use Load saved after reopening.'); }
     catch { notice('Browser storage is full or unavailable. Export learning to a file instead.'); }
   }
   if (data.type === 'notice') notice(data.message);
@@ -262,4 +287,4 @@ worker.onmessage = ({ data }) => {
   }
 };
 worker.onerror = event => { ready = false; setBusy(false); $('model-status').textContent = 'Worker unavailable'; notice(`The model worker stopped: ${event.message || 'unknown error'}. Reload to restart.`); };
-setBusy(false); run('load');
+setBusy(false); run('load', {model: selectedModel});

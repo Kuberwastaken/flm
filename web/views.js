@@ -58,7 +58,7 @@ export class BrainView extends View {
     });
   }
   async load(config) {
-    const buffer = await get('models/flm-compact/anatomy.json', true);
+    const buffer = await get(`${config.package_path || 'models/flm-compact'}/anatomy.json`, true);
     const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buffer)), x => x.toString(16).padStart(2, '0')).join('');
     if (digest !== config.anatomy_sha256) throw new Error('Anatomy checksum mismatch. Reload to fetch a consistent release.');
     this.anatomy = JSON.parse(new TextDecoder().decode(buffer));

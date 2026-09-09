@@ -1,7 +1,7 @@
 import { mkdir, copyFile, readdir, readFile, writeFile } from 'node:fs/promises';
 await mkdir('public/licenses', { recursive: true });
 await mkdir('public/data', { recursive: true });
-for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
+for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
   await copyFile(source, target);
 const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name));
 for (const name of files) await copyFile(`licenses/${name}`, `public/licenses/${name}`);

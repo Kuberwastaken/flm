@@ -7,7 +7,8 @@ export function validateConversations(value) {
   const ids = new Set();
   for (const item of value) {
     if (typeof item?.id !== 'string' || ids.has(item.id) || typeof item.title !== 'string' || item.title.length > 120 ||
-        !['dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200)
+        !['dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200 ||
+        (item.modelPackage !== undefined && !['ami', 'wikitext'].includes(item.modelPackage)))
       throw new Error('Invalid conversation file.');
     ids.add(item.id);
     for (const message of item.messages) {
