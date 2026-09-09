@@ -1,4 +1,20 @@
 /** Framework-free inference and a separate, resettable local readout adapter. */
+function packFloats(values) {
+  const bytes = new Uint8Array(values.length * 4), view = new DataView(bytes.buffer);
+  for (let i = 0; i < values.length; i++) view.setFloat32(i * 4, values[i], true);
+  let text = '';
+  for (let i = 0; i < bytes.length; i += 16384) text += String.fromCharCode(...bytes.subarray(i, i + 16384));
+  return btoa(text);
+}
+function unpackFloats(text, length) {
+  if (typeof text !== 'string' || text.length !== Math.ceil(length * 4 / 3) * 4 || !/^[A-Za-z0-9+/]*={0,2}$/.test(text))
+    throw new Error('Invalid packed learning data.');
+  const decoded = atob(text);
+  if (decoded.length !== length * 4) throw new Error('Invalid packed learning dimensions.');
+  const bytes = Uint8Array.from(decoded, c => c.charCodeAt(0)), view = new DataView(bytes.buffer);
+  return Float32Array.from({length}, (_, i) => view.getFloat32(i * 4, true));
+}
+
 export class FLM {
   constructor(config, binary) {
     if (!['flm-browser-v1', 'flm-browser-v2'].includes(config.format) || binary.byteLength !== config.weights_bytes)
@@ -116,18 +132,26 @@ export class FLM {
   clearLearning() { this.adapter.fill(0); this.adapterBias.fill(0); }
 
   exportLearning() {
-    return { format: 'flm-adapter-v1', modelHash: this.config.weights_sha256,
-      weights: Array.from(this.adapter), bias: Array.from(this.adapterBias) };
+    return { format: 'flm-adapter-v2', dtype: 'float32-le', modelHash: this.config.weights_sha256,
+      weights: packFloats(this.adapter), bias: packFloats(this.adapterBias) };
   }
 
   importLearning(value) {
-    if (value?.format !== 'flm-adapter-v1' || value.modelHash !== this.config.weights_sha256 ||
-        !Array.isArray(value.weights) || value.weights.length !== this.adapter.length ||
-        !Array.isArray(value.bias) || value.bias.length !== this.adapterBias.length ||
-        !value.weights.every(x => Number.isFinite(x) && Math.abs(x) <= 2) ||
-        !value.bias.every(x => Number.isFinite(x) && Math.abs(x) <= 100))
+    if (!['flm-adapter-v1', 'flm-adapter-v2'].includes(value?.format) || value.modelHash !== this.config.weights_sha256)
       throw new Error('This learning file is invalid or belongs to another model.');
-    this.adapter.set(value.weights); this.adapterBias.set(value.bias);
+    let weights, bias;
+    if (value.format === 'flm-adapter-v2') {
+      if (value.dtype !== 'float32-le') throw new Error('Unknown learning number format.');
+      weights = unpackFloats(value.weights, this.adapter.length); bias = unpackFloats(value.bias, this.adapterBias.length);
+    } else {
+      if (!Array.isArray(value.weights) || !Array.isArray(value.bias)) throw new Error('Invalid learning arrays.');
+      weights = value.weights; bias = value.bias;
+    }
+    if (weights.length !== this.adapter.length || bias.length !== this.adapterBias.length ||
+        !weights.every(x => Number.isFinite(x) && Math.abs(x) <= 2) ||
+        !bias.every(x => Number.isFinite(x) && Math.abs(x) <= 100))
+      throw new Error('This learning file is invalid or belongs to another model.');
+    this.adapter.set(weights); this.adapterBias.set(bias);
   }
 }
 

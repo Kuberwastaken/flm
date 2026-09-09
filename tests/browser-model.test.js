@@ -49,10 +49,15 @@ test('local learning improves the next-token loss on a repeated observed feature
 test('adapter roundtrip works and incompatible/nonfinite adapters are rejected', () => {
   const a = model(), b = model(); a.step(97); a.learn(98);
   b.importLearning(a.exportLearning()); assert.deepEqual(b.adapter, a.adapter);
-  const bad = a.exportLearning(); bad.weights[0] = NaN;
+  const packed = a.exportLearning(); assert.ok(JSON.stringify(packed).length < 2200000);
+  const bad = {format:'flm-adapter-v1', modelHash:config.weights_sha256, weights:Array.from(a.adapter), bias:Array.from(a.adapterBias)};
+  b.importLearning(bad); assert.deepEqual(b.adapter, a.adapter);
+  bad.weights[0] = NaN;
   assert.throws(() => b.importLearning(bad));
   const wrong = a.exportLearning(); wrong.modelHash = 'different';
   assert.throws(() => b.importLearning(wrong));
+  const truncated = a.exportLearning(); truncated.weights = truncated.weights.slice(4);
+  assert.throws(() => b.importLearning(truncated));
 });
 test('silenced neurons remain zero in both timescales', () => {
   const m = model(); m.disabled[3] = 1;
