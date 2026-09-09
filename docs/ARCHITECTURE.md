@@ -1,6 +1,6 @@
 # FLM 0.1 architecture specification
 
-This specification precedes training. Changes and results are versioned separately.
+The initial specification preceded training. This document now records the implemented 0.1 core; results and comparison protocols are versioned separately.
 
 ## Representation
 
@@ -13,14 +13,18 @@ The initial published experiment uses a compact induced central-brain subgraph, 
 For each byte embedding `e_t`, compute:
 
 ```
-drive = input(e_t) + recurrent_gain * W @ h + bias
+drive = input_linear(e_t) + recurrent_gain * W @ h
 h_new = (1 - alpha) * h + alpha * tanh(drive)
 slow_new = (1 - beta) * slow + beta * h_new
 features = concatenate(pool(h_new), pool(slow_new))
-logits = readout(features)
+logits = readout(layer_norm(features))
 ```
 
 `W` is sparse and follows only observed directed edges. Its initial magnitude is log(1+contacts), normalized by absolute incoming sum. Trainable positive edge gains preserve source sign. `alpha` and `beta` are bounded per-neuron parameters; beta has a slower range. Model state has no access to future tokens. All topology variants use the same equations and interface sizes.
+
+`input_linear` includes one bias. Layer normalization uses epsilon 1e-5. Edge gains are `exp(clamp(theta, -3, 3))`, followed by renormalization of the absolute incoming row sum. The recurrent scalar is `0.05 + 2.95 sigmoid(g)`. Fast update rates are `0.05 + 0.90 sigmoid(a)`; slow rates are `0.002 + 0.098 sigmoid(b)`. These are discrete byte-update parameters, not milliseconds or measured membrane constants.
+
+At 1,024 neurons the Python backend uses a dense matrix representation of the sparse topology because this was faster on the available CPU. The browser uses destination-major CSR. Neither implementation is an event-driven spiking simulator. Sparse topology alone does not establish lower energy consumption.
 
 The anatomical subgraph and balanced type-ordered pooling form the prior. Input and readout are learned artificial interfaces. No direct embedding-to-logit bypass, external language model, or canned answer generator appears in the primary path.
 
@@ -28,7 +32,7 @@ The anatomical subgraph and balanced type-ordered pooling form the prior. Input 
 
 Persistent weights learn through teacher-forced next-byte cross-entropy and truncated backpropagation. Chunks do not cross transcript-document boundaries; state is reset or explicitly continued only within the same document. Training must support resumable optimizer/RNG state and capped runs.
 
-Browser personalization initially updates a separate low-rank/readout correction using actual recurrent features and the next byte observed in user-provided text. It never changes the bundled checkpoint. Corrections are saved only with user action and can be reset/exported. This is supervised local adaptation, not a claim to implement biological synaptic learning. Evaluate before/after loss on separate adaptation and probe text.
+Browser personalization updates a separate full readout correction (258 by 256 coefficients plus bias) using actual normalized recurrent features and the next byte observed in user-provided text. It never changes the bundled checkpoint. Corrections are saved only with user action and can be reset/exported. This is supervised local adaptation, not a claim to implement biological synaptic learning. Evaluate before/after loss on separate adaptation and probe text. For fixed input, the adapter cannot change fast/slow activity; during free generation, changed predictions can change the subsequent input trajectory.
 
 ## Experiments
 
