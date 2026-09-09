@@ -1,12 +1,14 @@
 /** Framework-free inference and a separate, resettable local readout adapter. */
 export class FLM {
   constructor(config, binary) {
-    if (config.format !== 'flm-browser-v1' || binary.byteLength !== config.weights_bytes)
+    if (!['flm-browser-v1', 'flm-browser-v2'].includes(config.format) || binary.byteLength !== config.weights_bytes)
       throw new Error('Unsupported or incomplete model package.');
     this.config = config;
     this.n = config.neurons;
     this.features = config.features;
     this.vocab = config.vocabulary;
+    this.lexical = config.format === 'flm-browser-v2';
+    this.pooledFeatures = config.pools * 2;
     this.arrays = {};
     for (const [name, spec] of Object.entries(config.arrays)) {
       if (!Number.isInteger(spec.offset) || !Number.isInteger(spec.length) || spec.offset < 0 || spec.length < 0 ||
@@ -17,9 +19,17 @@ export class FLM {
     }
     const a = this.arrays;
     if (a.offsets.length !== this.n + 1 || a.offsets[0] !== 0 || a.offsets[this.n] !== a.weights.length ||
-        a.weights.length !== a.sources.length || a.drives.length !== this.vocab * this.n ||
-        a.readout_weight.length !== this.vocab * this.features || a.pool.length !== this.n)
+        a.weights.length !== a.sources.length || a.pool.length !== this.n)
       throw new Error('The model graph has inconsistent dimensions.');
+    const expected = { alpha: this.n, beta: this.n, pool_sizes: config.pools,
+      norm_weight: this.pooledFeatures, norm_bias: this.pooledFeatures, readout_bias: this.vocab,
+      ...(this.lexical ? { embedding: this.vocab * this.features, input_weight: this.n * this.features,
+        input_bias: this.n, projection_weight: this.features * this.pooledFeatures, projection_bias: this.features }
+        : { drives: this.vocab * this.n, readout_weight: this.vocab * this.features }) };
+    for (const [name, length] of Object.entries(expected))
+      if (a[name]?.length !== length) throw new Error(`Invalid dimensions for ${name}.`);
+    if ((this.lexical && config.embedding !== this.features) || (!this.lexical && this.features !== this.pooledFeatures))
+      throw new Error('Inconsistent feature dimensions.');
     for (let i = 0; i < this.n; i++) {
       if (a.offsets[i] > a.offsets[i + 1] || a.pool[i] >= config.pools) throw new Error('Invalid graph indices.');
     }
@@ -37,15 +47,20 @@ export class FLM {
     this.slow = new Float32Array(this.n);
     this.next = new Float32Array(this.n);
     this.encoded = new Float32Array(this.features);
+    this.pooled = this.lexical ? new Float32Array(this.pooledFeatures) : this.encoded;
     this.logits = new Float32Array(this.vocab);
   }
 
   step(token) {
     if (!Number.isInteger(token) || token < 0 || token >= this.vocab) throw new Error('Invalid input token.');
     const a = this.arrays, n = this.n, pools = this.config.pools;
-    this.encoded.fill(0);
+    this.pooled.fill(0);
     for (let j = 0; j < n; j++) {
-      let drive = a.drives[token * n + j];
+      let drive;
+      if (this.lexical) {
+        drive = a.input_bias[j];
+        for (let k = 0; k < this.features; k++) drive += a.input_weight[j * this.features + k] * a.embedding[token * this.features + k];
+      } else drive = a.drives[token * n + j];
       if (this.recurrenceEnabled && this.config.variant !== 'no_recurrence') {
         let incoming = 0;
         for (let e = a.offsets[j]; e < a.offsets[j + 1]; e++) incoming += a.weights[e] * this.h[a.sources[e]];
@@ -55,21 +70,27 @@ export class FLM {
       this.next[j] = value;
       this.slow[j] = this.disabled[j] || this.config.variant === 'no_slow' ? 0 :
         (1 - a.beta[j]) * this.slow[j] + a.beta[j] * this.next[j];
-      this.encoded[a.pool[j]] += this.next[j] / a.pool_sizes[a.pool[j]];
-      this.encoded[pools + a.pool[j]] += this.slow[j] / a.pool_sizes[a.pool[j]];
+      this.pooled[a.pool[j]] += this.next[j] / a.pool_sizes[a.pool[j]];
+      this.pooled[pools + a.pool[j]] += this.slow[j] / a.pool_sizes[a.pool[j]];
     }
     [this.h, this.next] = [this.next, this.h];
     let mean = 0, variance = 0;
-    for (const value of this.encoded) mean += value / this.features;
-    for (const value of this.encoded) variance += (value - mean) ** 2 / this.features;
+    for (const value of this.pooled) mean += value / this.pooledFeatures;
+    for (const value of this.pooled) variance += (value - mean) ** 2 / this.pooledFeatures;
     const inverse = 1 / Math.sqrt(variance + this.config.norm_epsilon);
-    for (let k = 0; k < this.features; k++)
-      this.encoded[k] = (this.encoded[k] - mean) * inverse * a.norm_weight[k] + a.norm_bias[k];
+    for (let k = 0; k < this.pooledFeatures; k++)
+      this.pooled[k] = (this.pooled[k] - mean) * inverse * a.norm_weight[k] + a.norm_bias[k];
+    if (this.lexical) for (let k = 0; k < this.features; k++) {
+      let value = a.projection_bias[k];
+      for (let j = 0; j < this.pooledFeatures; j++) value += a.projection_weight[k * this.pooledFeatures + j] * this.pooled[j];
+      this.encoded[k] = value;
+    }
+    const readout = this.lexical ? a.embedding : a.readout_weight;
     for (let v = 0; v < this.vocab; v++) {
       let score = a.readout_bias[v] + (this.adaptationEnabled ? this.adapterBias[v] : 0);
       const start = v * this.features;
       for (let k = 0; k < this.features; k++)
-        score += (a.readout_weight[start + k] + (this.adaptationEnabled ? this.adapter[start + k] : 0)) * this.encoded[k];
+        score += (readout[start + k] + (this.adaptationEnabled ? this.adapter[start + k] : 0)) * this.encoded[k];
       this.logits[v] = score;
     }
     return this.logits;
@@ -125,12 +146,13 @@ export function random(seed = 42) {
   return () => { state = (Math.imul(state, 1664525) + 1013904223) >>> 0; return state / 4294967296; };
 }
 
-export function sample(logits, rng, { temperature = 0.8, topK = 40 } = {}) {
+export function sample(logits, rng, { temperature = 0.8, topK = 40, allowed = null } = {}) {
   if (!Number.isFinite(temperature) || temperature < 0.05 || temperature > 2 || !Number.isInteger(topK) || topK < 1)
     throw new Error('Invalid sampling settings.');
   const candidates = Array.from(logits, (score, token) => ({ score, token }))
-    .filter(x => x.token !== 256 && (x.token === 257 || x.token === 10 || x.token === 9 || x.token >= 32))
+    .filter(x => allowed ? allowed[x.token] : x.token !== 256 && (x.token === 257 || x.token === 10 || x.token === 9 || x.token >= 32))
     .sort((a, b) => b.score - a.score).slice(0, Math.min(topK, logits.length));
+  if (!candidates.length) throw new Error('No allowed sampling candidates.');
   const probabilities = softmax(candidates.map(x => x.score), temperature);
   let draw = rng();
   for (let i = 0; i < candidates.length; i++) { draw -= probabilities[i]; if (draw <= 0) return candidates[i].token; }

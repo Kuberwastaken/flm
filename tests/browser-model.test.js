@@ -1,16 +1,18 @@
-import test from 'node:test';
+import testCase from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { FLM, random, sample, softmax } from '../web/model.js';
 
-const directory = new URL('../public/models/flm-compact/', import.meta.url);
+for (const packageName of ['flm-compact', 'flm-wikitext']) {
+const directory = new URL(`../public/models/${packageName}/`, import.meta.url);
 const config = JSON.parse(readFileSync(new URL('model.json', directory)));
 const raw = readFileSync(new URL('weights.bin', directory));
 const binary = raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength);
 const truth = JSON.parse(readFileSync(new URL('parity.json', directory)));
 const model = () => new FLM(config, binary.slice(0));
 const difference = (a, b) => Math.max(...Array.from(a, (v, i) => Math.abs(v - b[i])));
+const test = (name, fn) => testCase(`${packageName}: ${name}`, fn);
 
 test('published binary matches its checksum', () => {
   assert.equal(createHash('sha256').update(raw).digest('hex'), config.weights_sha256);
@@ -29,12 +31,13 @@ test('reset removes preceding document state', () => {
   assert.deepEqual(Array.from(m.step(97)), before);
 });
 test('fixed seed produces a reproducible continuation', () => {
-  const generate = () => { const m = model(), rng = random(12), tokens = []; let token = 256;
-    for (let i = 0; i < 20; i++) { token = sample(m.step(token), rng); tokens.push(token); }
+  const generate = () => { const m = model(), rng = random(12), tokens = []; let token = config.bos ?? 256;
+    const allowed = m.lexical ? Array.from({length: m.vocab}, (_, i) => i !== config.bos) : null;
+    for (let i = 0; i < 20; i++) { token = sample(m.step(token), rng, {allowed}); tokens.push(token); }
     return tokens; };
   assert.deepEqual(generate(), generate());
 });
-test('local learning improves the next-byte loss on a repeated observed feature', () => {
+test('local learning improves the next-token loss on a repeated observed feature', () => {
   const m = model(); for (const token of truth.tokens) m.step(token);
   const before = -Math.log(softmax(m.logits)[97]);
   for (let k = 0; k < 12; k++) { m.reset(); for (const token of truth.tokens) m.step(token); m.learn(97); }
@@ -65,3 +68,5 @@ test('invalid dimensions, tokens and sampling controls fail clearly', () => {
   const m = model(); assert.throws(() => m.step(-1)); assert.throws(() => m.step(0.5));
   assert.throws(() => sample(m.logits, random(), {temperature: 0}));
 });
+}
+
