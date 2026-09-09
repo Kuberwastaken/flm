@@ -1,0 +1,20 @@
+{
+  "name": "chatflm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "5.3.0",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "vite": "8.2.2"
+  },
+  "engines": { "node": ">=22.12.0" }
+}
