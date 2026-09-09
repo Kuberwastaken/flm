@@ -72,5 +72,18 @@ class LanguageTrainingTests(unittest.TestCase):
                 self.assertAlmostEqual(a['nll'], b['nll'], places=9)
                 self.assertEqual(a['bytes'], 290)
 
+    def test_transformer_cache_owns_only_its_bounded_storage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            graph = Path(directory) / 'graph.npz'; np.savez(graph, **fixture())
+            model = construct('transformer', graph, 270, 42).eval()
+            with torch.no_grad():
+                _, state = model(torch.arange(220).unsqueeze(0))
+                for chunk in (1, 96, 17):
+                    _, state = model(torch.arange(chunk).unsqueeze(0), state)
+                    for key, value in state[1]:
+                        for tensor in (key, value):
+                            self.assertEqual(tensor.shape[2], 95)
+                            self.assertEqual(tensor.untyped_storage().nbytes(), tensor.numel() * tensor.element_size())
+
 
 if __name__ == '__main__': unittest.main()

@@ -71,8 +71,10 @@ class AttentionBlock(nn.Module):
         attended = F.scaled_dot_product_attention(query, key, value, attn_mask=allowed, dropout_p=0.0)
         values = values + self.output(attended.transpose(1, 2).reshape(batch, length, c.width))
         values = values + self.ff(self.norm2(values))
-        # Future chunks need only the last window-1 keys. No state crosses documents.
-        return values, (key[:, :, -(c.window - 1):], value[:, :, -(c.window - 1):])
+        # Own the bounded cache storage: a slice alone retains the whole preceding
+        # concatenation (and a value view can retain the full QKV projection).
+        return values, (key[:, :, -(c.window - 1):].clone(memory_format=torch.contiguous_format),
+                        value[:, :, -(c.window - 1):].clone(memory_format=torch.contiguous_format))
 
 
 class Transformer(Baseline):
