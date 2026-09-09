@@ -1,6 +1,7 @@
 import { FLM, random, sample, softmax } from './model.js';
+import { TextCodec } from './text-codec.js';
 
-let model, active = null;
+let model, codec, active = null;
 const encoder = new TextEncoder();
 const pause = () => new Promise(resolve => setTimeout(resolve, 0));
 const send = (type, data = {}) => postMessage({ type, id: active?.id, ...data });
@@ -8,7 +9,8 @@ const send = (type, data = {}) => postMessage({ type, id: active?.id, ...data })
 function snapshot() {
   const probabilities = softmax(model.logits);
   const top = Array.from(probabilities, (probability, token) => ({ token, probability }))
-    .filter(x => x.token < 256).sort((a, b) => b.probability - a.probability).slice(0, 6);
+    .filter(x => x.token !== codec.bos).sort((a, b) => b.probability - a.probability).slice(0, 6)
+    .map(x => ({...x, label: codec.label(x.token)}));
   return { h: model.h.slice(), slow: model.slow.slice(), top,
     meanActivity: model.h.reduce((sum, x) => sum + Math.abs(x), 0) / model.n };
 }
@@ -16,11 +18,12 @@ function snapshot() {
 async function prime(text) {
   const bytes = encoder.encode(text);
   if (bytes.length > 16000) throw new Error('Context is limited to 16,000 UTF-8 bytes. Start a new conversation or shorten the text.');
-  model.reset(); model.step(256);
-  for (let i = 0; i < bytes.length; i++) {
+  const tokens = codec.encode(text);
+  model.reset(); model.step(codec.bos);
+  for (let i = 0; i < tokens.length; i++) {
     if (active.cancelled) return false;
-    model.step(bytes[i]);
-    if (i % 64 === 63) { send('priming', { done: i + 1, total: bytes.length }); await pause(); }
+    model.step(tokens[i]);
+    if (i % 64 === 63) { send('priming', { done: i + 1, total: tokens.length }); await pause(); }
   }
   return true;
 }
@@ -29,29 +32,30 @@ async function generate(message) {
   if (!await prime(message.prompt)) return;
   const rng = random(message.seed), decoder = new TextDecoder();
   const limit = Math.max(1, Math.min(1600, Number(message.limit) || 400));
-  const started = performance.now(); let text = '', count = 0;
+  const started = performance.now(); let text = '', count = 0, bytes = 0;
   send('state', snapshot());
   while (count < limit && !active.cancelled) {
-    const token = sample(model.logits, rng, message);
-    if (token === 257) break;
-    text += decoder.decode(new Uint8Array([token]), { stream: true });
+    const token = sample(model.logits, rng, {...message, allowed: codec.allowed});
+    if (token === codec.eos) break;
+    const piece = codec.bytes(token); bytes += piece.length;
+    text += decoder.decode(piece, { stream: true });
     model.step(token); count++;
     if (count % 8 === 0) {
-      send('generation', { text, bytes: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+      send('generation', { text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
       await pause();
       if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
     }
   }
   text += decoder.decode();
-  send('generation', { text, bytes: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+  send('generation', { text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
 }
 
 async function score(text) {
-  const bytes = encoder.encode(text); model.reset(); model.step(256); let nll = 0;
-  for (let i = 0; i < bytes.length; i++) {
+  const bytes = encoder.encode(text), tokens = codec.encode(text); model.reset(); model.step(codec.bos); let nll = 0;
+  for (let i = 0; i < tokens.length; i++) {
     if (active.cancelled) return null;
-    nll -= Math.log(Math.max(softmax(model.logits)[bytes[i]], 1e-30));
-    model.step(bytes[i]);
+    nll -= Math.log(Math.max(softmax(model.logits)[tokens[i]], 1e-30));
+    model.step(tokens[i]);
     if (i % 64 === 63) await pause();
   }
   return nll / Math.max(bytes.length, 1) / Math.LN2;
@@ -67,34 +71,45 @@ async function learn(message) {
   model.adaptationEnabled = true;
   const before = message.probe ? await score(message.probe) : null;
   if (active.cancelled) return;
-  let count = 0, nll = 0;
+  const tokens = codec.encode(message.text); let count = 0, nll = 0, scoredBytes = 0;
   for (let epoch = 0; epoch < epochs; epoch++) {
-    model.reset(); model.step(256);
-    for (const token of bytes) {
+    model.reset(); model.step(codec.bos);
+    for (const token of tokens) {
       if (active.cancelled) return;
-      nll += model.learn(token, rate); model.step(token); count++;
+      nll += model.learn(token, rate); model.step(token); count++; scoredBytes += codec.bytes(token).length;
       if (count % 32 === 0) {
-        send('learning', { done: count, total: bytes.length * epochs, trainingBpb: nll / count / Math.LN2, ...snapshot() });
+        send('learning', { done: count, total: tokens.length * epochs, trainingBpb: nll / scoredBytes / Math.LN2, ...snapshot() });
         await pause();
       }
     }
   }
   const after = message.probe ? await score(message.probe) : null;
-  send('learned', { done: count, total: bytes.length * epochs, trainingBpb: nll / count / Math.LN2, before, after, ...snapshot() });
+  send('learned', { done: count, total: tokens.length * epochs, trainingBpb: nll / scoredBytes / Math.LN2, before, after, ...snapshot() });
 }
 
-async function load() {
-  const base = `${import.meta.env.BASE_URL}models/flm-compact/`;
+async function load(message) {
+  const packageName = message.model === 'ami' ? 'flm-compact' : 'flm-wikitext';
+  const base = `${import.meta.env?.BASE_URL ?? '/'}models/${packageName}/`;
   const configResponse = await fetch(`${base}model.json`);
   if (!configResponse.ok) throw new Error(`Model manifest unavailable (${configResponse.status}).`);
   const config = await configResponse.json();
-  send('loading', { message: 'Downloading 1.95 MB checkpoint…' });
+  send('loading', { message: `Downloading ${(config.weights_bytes / 1000000).toFixed(2)} MB checkpoint…` });
   const response = await fetch(`${base}weights.bin`);
   if (!response.ok) throw new Error(`Model download failed (${response.status}).`);
   const binary = await response.arrayBuffer();
   const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', binary)), x => x.toString(16).padStart(2, '0')).join('');
   if (digest !== config.weights_sha256) throw new Error('Model checksum mismatch. Reload to fetch a consistent release.');
-  model = new FLM(config, binary); send('ready', { config });
+  let tokenizer = null;
+  if (config.format === 'flm-browser-v2') {
+    const response = await fetch(`${base}tokenizer.json`);
+    if (!response.ok) throw new Error('Tokenizer download failed.');
+    const payload = await response.arrayBuffer();
+    const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', payload)), x => x.toString(16).padStart(2, '0')).join('');
+    if (hash !== config.browser_tokenizer_sha256) throw new Error('Tokenizer checksum mismatch.');
+    tokenizer = JSON.parse(new TextDecoder().decode(payload));
+  }
+  const loaded = new FLM(config, binary), loadedCodec = new TextCodec(config, tokenizer);
+  model = loaded; codec = loadedCodec; config.package_path = `models/${packageName}`; send('ready', { config });
 }
 
 self.onmessage = async ({ data: message }) => {
@@ -102,7 +117,7 @@ self.onmessage = async ({ data: message }) => {
   if (active) { postMessage({ type: 'error', id: message.id, message: 'Wait for the current operation to finish.' }); return; }
   active = { id: message.id, cancelled: false };
   try {
-    if (message.type === 'load') await load();
+    if (message.type === 'load') await load(message);
     else {
       if (!model) throw new Error('The model is still loading.');
       if (message.type === 'generate') await generate(message);
