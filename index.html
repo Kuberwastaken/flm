@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="description" content="ChatFLM: a small language model trained from scratch around fruit-fly wiring. Explore text, local learning and real recurrent activity in your browser.">
+  <link rel="icon" type="image/svg+xml" href="/mark.svg">
+  <title>ChatFLM — Fly Language Model</title>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="header">
+    <a href="#chat" class="brand" aria-label="ChatFLM home"><img src="/mark.svg" alt="" width="36" height="36"><strong>FLM</strong><span>Fly Language Model</span></a>
+    <nav aria-label="Main navigation"><a href="#chat" data-page="chat" aria-current="page">ChatFLM</a><a href="#learn" data-page="learn">Learning</a><a href="#research" data-page="research">Research</a></nav>
+    <span id="model-status" role="status">Loading model…</span>
+  </header>
+  <div id="notice" role="status" hidden></div>
+  <main id="workspace" tabindex="-1">
+    <div class="experiment" id="experiment">
+      <section class="work-panel" id="chat-page" aria-labelledby="chat-title">
+        <div class="panel-heading"><h1 id="chat-title">ChatFLM</h1><button id="new-chat" data-idle>New</button></div>
+        <p class="intro">Language through a fly’s wiring. A small model learning the patterns of human conversation.</p>
+        <div class="conversation-tools">
+          <label class="sr-only" for="conversation">Saved conversation</label><select id="conversation" data-idle></select>
+          <button id="rename-chat" data-idle>Rename</button><button id="delete-chat" data-idle>Delete</button>
+          <details class="archive-menu"><summary>Files</summary><div><button id="export-chats" data-idle>Export conversations</button><label class="file-button">Import conversations<input id="import-chats" type="file" accept="application/json,.json" data-idle></label></div></details>
+        </div>
+        <div class="mode-row"><label for="mode">Mode</label><select id="mode" data-idle><option value="dialogue">Dialogue continuation</option><option value="completion">Text continuation</option></select></div>
+        <p class="capability" id="capability">Trained on meeting transcripts. It continues dialogue; it has not been trained to follow instructions or give reliable answers.</p>
+        <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="off"></div>
+        <form id="composer">
+          <label for="prompt" id="prompt-label">Your turn</label>
+          <textarea id="prompt" rows="3" maxlength="12000" placeholder="What should we make together?" required></textarea>
+          <div class="composer-actions"><span>Ctrl / ⌘ + Enter to send</span><button type="button" id="stop" disabled>Stop</button><button type="submit" class="primary" id="generate" data-idle>Continue</button></div>
+        </form>
+        <details class="settings"><summary>Generation settings</summary><div class="settings-grid">
+          <label>Temperature<input id="temperature" type="number" min="0.05" max="2" step="0.05" value="0.8" data-idle></label>
+          <label>Top-k bytes<input id="top-k" type="number" min="1" max="258" step="1" value="40" data-idle></label>
+          <label>Maximum bytes<input id="limit" type="number" min="1" max="1600" step="1" value="400" data-idle></label>
+          <label>Random seed<input id="seed" type="number" min="0" max="4294967295" step="1" value="42" data-idle></label>
+          <label class="check"><input id="observe" type="checkbox" checked data-idle>Slow playback for observation</label>
+        </div></details>
+        <div class="run-footer"><output id="generation-stats">Ready after the checkpoint loads.</output><span>Text stays in this browser.</span></div>
+      </section>
+
+      <section class="work-panel" id="learn-page" aria-labelledby="learn-title" hidden>
+        <div class="panel-heading"><h1 id="learn-title">Local learning</h1><button id="clear-learning" data-idle>Restore baseline</button></div>
+        <p class="intro">Give the readout a little experience. See whether it predicts your separate probe text more accurately.</p>
+        <form id="learning-form">
+          <label for="learning-text">Text to learn from</label><textarea id="learning-text" rows="7" placeholder="Paste a short piece of your own writing or dialogue." required></textarea>
+          <div class="inline-actions"><label class="file-button">Load .txt<input id="learning-file" type="file" accept="text/plain,.txt" data-idle></label><span>Up to 6,000 UTF-8 bytes</span></div>
+          <label for="probe-text">Separate probe text <span class="muted">(optional)</span></label><textarea id="probe-text" rows="3" placeholder="Use different sentences to check transfer beyond the training text."></textarea>
+          <div class="settings-grid learning-settings"><label>Passes<input id="epochs" type="number" min="1" max="5" value="2" data-idle></label><label>Learning rate<input id="learning-rate" type="number" min="0.001" max="0.2" step="0.001" value="0.03" data-idle></label></div>
+          <div class="composer-actions"><span id="learning-status" role="status">No local updates yet.</span><button type="button" id="stop-learning" disabled>Stop</button><button class="primary" type="submit" data-idle>Learn from text</button></div>
+        </form>
+        <progress id="learning-progress" max="1" value="0" aria-label="Learning progress" hidden></progress>
+        <div id="learning-result" class="learning-result" hidden></div>
+        <div class="learning-files"><button id="save-learning" data-idle>Save in browser</button><button id="restore-learning" data-idle>Load saved</button><button id="export-learning" data-idle>Export learning</button><label class="file-button">Import learning<input id="import-learning" type="file" accept="application/json,.json" data-idle></label></div>
+        <details open class="method-note"><summary>What changes when it learns?</summary><p>These updates change a separate output adapter. The recurrent wiring and its fast and slow states keep their trained parameters. With the same input, neural activity stays the same; predictions can change. During generation, different predicted bytes then produce different activity.</p><p>Lower loss on the training text can mean memorization. Only a separate probe tests transfer, and a small probe is not a general benchmark. Updates last for this session unless you save them. Restoring the baseline clears session and saved learning.</p></details>
+      </section>
+
+      <aside class="anatomy-panel" aria-labelledby="brain-title">
+        <div class="panel-heading"><h2 id="brain-title">Inside the network</h2><div class="view-tools"><button id="brain-home" aria-label="Reset brain view">Reset view</button><button id="brain-left" aria-label="Rotate brain left">←</button><button id="brain-right" aria-label="Rotate brain right">→</button></div></div>
+        <div class="brain-controls"><label for="state-mode">State</label><select id="state-mode"><option value="h">Fast</option><option value="slow">Slow</option></select><label class="check"><input id="context-points" type="checkbox" checked>Anatomical context</label></div>
+        <div id="brain-view" class="brain-view" role="img" aria-label="Interactive 3D neuron positions. Active model neurons are colored by signed recurrent state. Gray context points are anatomical reference only."><p class="view-loading" id="brain-loading">Loading anatomy…</p></div>
+        <div class="brain-caption"><span><i class="swatch negative"></i>Negative <i class="swatch positive"></i>Positive state</span><span>Drag to rotate · scroll to zoom</span></div>
+        <p class="anatomy-note" id="anatomy-note">1,024 modeled neurons from a 166,700-neuron source graph. Gray points show anatomical context, without simulated activity.</p>
+        <div class="neuron-controls"><label for="neuron">Inspect neuron</label><select id="neuron"><option>Loading…</option></select><button id="mute-neuron" data-idle>Silence</button></div>
+        <output id="neuron-info" class="neuron-info">Select a colored point or use the list.</output>
+        <div class="interventions"><label class="check"><input id="recurrence" type="checkbox" checked data-idle>Recurrent connections</label><label class="check"><input id="adapter-enabled" type="checkbox" checked data-idle>Local learning</label><button id="reset-interventions" data-idle>Reset interventions</button></div>
+        <p id="intervention-note" class="anatomy-note">Changing a control replays the same input from zero state. Silencing is an engineered intervention, not a biological experiment.</p>
+        <div class="prediction-panel"><div><h3>Next byte</h3><ol id="probabilities" aria-label="Next byte probabilities"><li>Waiting for input.</li></ol></div><div><h3>Mean absolute state</h3><svg id="activity-chart" viewBox="0 0 260 76" role="img" aria-label="Mean absolute recurrent state across observed updates"><path d="M0 75H260 M0 1H260" class="chart-grid"/><path id="activity-path" d=""/></svg><span id="activity-value">0.000</span></div></div>
+        <div class="fly-header"><h3>Fly body</h3><label class="check"><input id="body-response" type="checkbox" checked>Map state to pose</label><button id="fly-home" aria-label="Reset fly view">Reset view</button></div>
+        <div id="fly-view" class="fly-view" role="img" aria-label="Articulated NeuroMechFly body. Joint offsets illustrate aggregate network state, not a learned motor policy."><p class="view-loading" id="fly-loading">Loading articulated body…</p></div>
+        <p class="anatomy-note body-note">A female NeuroMechFly body accompanies the male brain graph. Pose changes illustrate state; language training has not taught this body to move.</p>
+      </aside>
+    </div>
+
+    <article id="research-page" class="research-page" hidden>
+      <h1>FLM research notebook</h1><p class="research-lead">Can measured neural wiring provide a useful prior for learning language from very little human speech?</p>
+      <p>FLM turns that question into an inspectable experiment. It learns next-byte prediction from scratch on human meeting transcripts, with recurrent connections selected from a fruit-fly connectome. ChatFLM runs the resulting compact checkpoint in your browser.</p>
+      <h2>The architecture</h2>
+      <figure class="architecture-figure"><svg viewBox="0 0 840 160" role="img" aria-labelledby="architecture-title"><title id="architecture-title">A byte passes through a learned input projection to signed recurrent fly wiring with fast and slow state, then pooled features predict the next byte.</title><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#746e62"/></marker></defs><g fill="none" stroke="#c9c2b5"><rect x="4" y="45" width="100" height="70" rx="4"/><rect x="143" y="45" width="130" height="70" rx="4"/><rect x="313" y="25" width="202" height="110" rx="4"/><rect x="555" y="45" width="122" height="70" rx="4"/><rect x="718" y="45" width="118" height="70" rx="4"/></g><g stroke="#746e62" fill="none" marker-end="url(#arrow)"><path d="M105 80h32M274 80h32M516 80h32M678 80h32"/><path d="M367 23V8h95v15"/></g><g text-anchor="middle" fill="#292820" font-size="15"><text x="54" y="75">UTF-8 byte</text><text x="54" y="96">xₜ</text><text x="208" y="75">Learned input</text><text x="208" y="96">projection</text><text x="414" y="57">Signed fly wiring</text><text x="414" y="86">Fast hₜ · slow sₜ</text><text x="414" y="113">1,024 neurons</text><text x="616" y="75">Pool +</text><text x="616" y="96">normalize</text><text x="777" y="75">Next-byte</text><text x="777" y="96">distribution</text></g></svg><figcaption>FLM compact core. Recurrence carries information forward without a growing attention cache.</figcaption></figure>
+      <p>The connectome determines which directed recurrent edges exist and their assumed fast neurotransmitter signs. Training adjusts their magnitudes, an input projection, bounded time constants and a readout. A slow state filters each neuron’s activity, giving the model two memory timescales. This is a differentiable rate network, not a biophysical reconstruction.</p>
+      <div class="table-scroll"><table><caption>FLM and a conventional decoder transformer</caption><thead><tr><th>Property</th><th>FLM compact</th><th>Decoder transformer</th></tr></thead><tbody><tr><th>Communication</th><td>Fixed directed graph; trained edge strengths</td><td>Content-dependent attention between token representations</td></tr><tr><th>Memory</th><td>Fixed-size fast and slow recurrent state</td><td>Past token keys and values, within a context window</td></tr><tr><th>Position in sequence</th><td>State evolves in causal order</td><td>Position encoding and causal attention</td></tr><tr><th>Learning</th><td>Next-byte cross-entropy and backpropagation through time</td><td>Next-token cross-entropy and backpropagation</td></tr><tr><th>Browser adaptation</th><td>Separate online readout adapter</td><td>Architecture-dependent; not a defining transformer feature</td></tr><tr><th>Tradeoff</th><td>Small state; sequential training and lossy memory</td><td>Parallel training; more expensive long-context attention/cache</td></tr></tbody></table></div>
+      <h2>Human speech, without a teacher model</h2><p>The primary corpus is the <a href="https://groups.inf.ed.ac.uk/ami/corpus/">AMI Meeting Corpus</a>, under CC BY 4.0. FLM uses the manual transcript text, not audio. Participants and related meeting sessions are grouped before partitioning: 139 training documents, 16 validation documents and 16 test documents. The training split contains 947,966 whitespace-delimited words, including turn labels.</p><p>All transcript normalization, split assignments, checksums and limitations are recorded. These are custom participant-disjoint language-model splits, not the official AMI speech-recognition benchmark. LibriSpeech acquisition remains an optional, incomplete follow-up and contributes no training data to this release.</p>
+      <h2>What the evidence can establish</h2><div id="research-results"><p>Training and matched comparisons are in progress. The browser checkpoint is a working intermediate release; no superiority over a transformer or a randomized graph has been established.</p></div>
+      <p>A lower held-out loss measures next-byte prediction in this domain. It does not establish reasoning, factual knowledge, consciousness, animal behavior or general conversational ability. The interesting claim to test is whether wiring and multiple timescales improve data efficiency under equal training budgets.</p>
+      <h2>What changes in the “fly”?</h2><p>Offline training changes the artificial network’s input responses, edge magnitudes, time constants and prediction readout. Those changes can be measured using the same input before and after training. The anatomy provides a location for visualizing the state; it does not make learned text an animal’s experience. Browser learning changes only a separate readout adapter. The body animation is an explicitly designed mapping from state to pose.</p>
+      <h2>Research foundations</h2><ul class="sources"><li><a href="https://male-cns.janelia.org/">MaleCNS, Janelia</a> — source connectome and anatomical identities.</li><li><a href="https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/">Google Research: mapping the complete male fruit-fly brain</a> — reconstruction context.</li><li><a href="https://www.nature.com/articles/s41586-024-07763-9">Shiu et al., 2024</a> — a whole-brain computational model of fly behavior.</li><li><a href="https://www.nature.com/articles/s41586-024-07939-3">Lappalainen et al., 2024</a> — connectome-constrained models of neural computation.</li><li><a href="https://arxiv.org/abs/2306.01885">Morra et al., 2023</a> — connectome-inspired reservoir computing.</li><li><a href="https://www.nature.com/articles/s41467-020-17236-y">Bellec et al., 2020</a> — recurrent learning with eligibility traces; a future comparison, not FLM’s current optimizer.</li><li><a href="https://arxiv.org/abs/2302.13939">SpikeGPT</a>, <a href="https://arxiv.org/abs/2305.13048">RWKV</a> and <a href="https://arxiv.org/abs/2312.00752">Mamba</a> — prior non-attention and recurrent language-model directions.</li><li><a href="https://www.nature.com/articles/s41592-024-02497-y">NeuroMechFly v2</a> — the embodied simulation platform underlying the separate body geometry.</li></ul>
+      <h2>Reproduce and inspect</h2><p id="release-detail">Loading checkpoint details…</p><div class="document-links"><a href="https://github.com/Kuberwastaken/flm">Repository</a><a href="/models/flm-compact/model.json" download>Checkpoint manifest</a><a href="/data/ami.json" download>Dataset card</a><a href="/data/graph-card.json" download>Graph card</a><a href="/licenses/" id="license-link">Attribution</a></div>
+      <p class="muted">FLM is an independent research prototype by Kuber. Original code: MIT. Brain data and AMI transcripts: CC BY 4.0. Body assets retain their upstream licenses.</p>
+    </article>
+  </main>
+  <footer class="footer"><span>FLM 0.1 · Built to be inspected.</span><a href="#research">Methods & evidence</a><a href="https://kuber.studio">Kuber</a></footer>
+  <dialog id="rename-dialog"><form method="dialog"><h2>Rename conversation</h2><label for="conversation-name">Name</label><input id="conversation-name" maxlength="120" required><div class="dialog-actions"><button value="cancel" formnovalidate>Cancel</button><button value="save" class="primary">Save</button></div></form></dialog>
+  <dialog id="delete-dialog"><form method="dialog"><h2>Delete this conversation?</h2><p>This removes its locally saved text. Export it first if you want a copy.</p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="delete" class="primary">Delete</button></div></form></dialog>
+  <noscript>ChatFLM needs JavaScript to run the model in your browser. Research and source are available at github.com/Kuberwastaken/flm.</noscript>
+  <script type="module" src="/web/app.js"></script>
+</body>
+</html>
