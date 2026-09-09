@@ -1,0 +1,18 @@
+{
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "device": "CPU",
+  "cpu": "Intel Core i5-1335U",
+  "logical_processors": 12,
+  "memory_gib": 16,
+  "packages": {
+    "torch": "2.8.0",
+    "numpy": "2.2.6",
+    "scipy": "1.13.1",
+    "requests": "2.32.5",
+    "pyarrow": "19.0.1",
+    "tokenizers": "0.22.2",
+    "matplotlib": "3.10.9"
+  },
+  "note": "Training jobs sometimes share CPU time. Their interval speeds are not standalone comparative runtime benchmarks."
+}

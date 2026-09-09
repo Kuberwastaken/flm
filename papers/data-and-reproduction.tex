@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+\input{style}
+\hypersetup{pdftitle={FLM Data and Reproduction Note},pdfauthor={Kuber},pdfsubject={Working dataset and reproduction report},pdflang={en}}
+\title{\textbf{FLM Data and Reproduction Note}\\[6pt]\large From pinned human text and connectome arrays to a verifiable browser model}
+\author{Kuber\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
+\date{10 September 2026 --- companion to the FLM working report}
+\begin{document}
+\maketitle
+\begin{abstract}
+This note records the data transformations, split boundaries, tokenizer, checkpoint interfaces and verification rules used by FLM. The main language comparison uses WikiText-2 raw with official article partitions and a lossless vocabulary trained exclusively on training text. The earlier AMI dialogue study remains separate. Source hashes and machine-readable cards accompany each stage. No raw audio, private speech, pretrained language parameters or teacher-generated training corpus is used. The document specifies what can be reproduced now and distinguishes completed functional verification from unfinished final benchmarking.
+\end{abstract}
+
+\section{Dataset choice}
+The initial question concerned learning from a small amount of human speech. AMI provides human meeting transcripts, but a meeting-only model is narrow and its custom participant-disjoint split is not a standard language-model benchmark. The expanded study therefore adopts WikiText-2 raw \cite{wikitext,wikitextcard}: diverse human-written articles with official partitions and an established language-modeling lineage. This changes the domain from spoken conversation to written prose; it must not be described as an improvement in speech understanding.
+
+WikiText-2 is small enough for repeated local training, yet broad enough to expose vocabulary, punctuation, long-document structure and several topic domains. It is not a balanced sample of all human language. BabyLM's small-data framing is a useful next extension \cite{babylm}, but no BabyLM content is included in the current experiment. A future mixture requires separate component-level licenses, provenance and evaluation rules.
+
+\section{Pinned acquisition and article boundaries}
+The source is Salesforce's WikiText distribution, configuration \code{wikitext-2-raw-v1}. The pinned revision is:
+\begin{quote}\small\code{b08601e04326c79dfdd32d625aee71d232d685c3}\end{quote}
+Three parquet files are downloaded with fixed expected sizes and SHA-256 values. A mismatch fails acquisition. The dataset card stores both source-file and normalized-output hashes, including complete split statistics.
+
+\begin{table}[ht]\centering
+\begin{tabular}{lrrrr}\toprule
+Split & Source rows & Articles & Words & UTF-8 bytes\\\midrule
+Train & 36,718 & 600 & 2,051,910 & 10,914,845\\
+Validation & 3,760 & 60 & 213,886 & 1,144,248\\
+Test & 4,358 & 60 & 241,211 & 1,287,656\\\bottomrule
+\end{tabular}
+\caption{Counts from the exact acquired raw variant. Words are whitespace-delimited counts from this pipeline, not a claim to reproduce another tokenizer's published word counts.}
+\end{table}
+
+Source row strings are concatenated exactly. Existing newlines are preserved; empty strings add no characters. The pipeline neither lowercases nor invents line breaks. A top-level article heading must use single equals delimiters and be isolated by blank source rows. This second condition matters: a single-equals pattern by itself incorrectly splits some sports-table legends. The fixed parser is tested against that failure and reconstructs exactly the original source concatenation.
+
+State resets occur at article boundaries. Article identities derive from normalized titles for cross-split auditing; separate exact text hashes detect identical documents. The audit found no repeated article identities or exact duplicated complete articles across partitions. This is not an exhaustive search for overlapping quotations, facts or near-duplicate spans. The raw variant retains preprocessing artifacts and must not be advertised as an untouched Wikipedia source.
+
+Publisher metadata lists CC BY-SA 3.0 and GFDL, while the dataset-card prose links a different Creative Commons version. The FLM card records that discrepancy rather than silently choosing a new license. Downloaded and normalized corpus text remains local and is ignored by Git. The website distributes model parameters, metadata and generated examples, not the source corpus.
+
+\section{Lossless training-only vocabulary}
+The tokenizer uses Hugging Face Tokenizers 0.22.2 \cite{tokenizers}, byte-level pre-tokenization, no added prefix space and no normalization. Its initial alphabet represents all 256 byte values. BPE learns merges only from the 600 training articles, with a minimum pair frequency of two and 4,094 ordinary vocabulary items. The model reserves two additional integer IDs: BOS=0 and EOS=1.
+
+No special-token strings are registered with the underlying tokenizer. Thus a user literally typing a boundary-looking string is encoded as ordinary text; only the document-building caller inserts boundary IDs. This prevents text content from unexpectedly becoming an instruction to reset or end the model sequence. Unicode, spaces, tabs, newlines and arbitrary byte-alphabet pieces remain representable.
+
+\begin{table}[ht]\centering
+\begin{tabular}{lrrr}\toprule
+Split & Content tokens & UTF-8 bytes & Bytes/token\\\midrule
+Train & 3,083,090 & 10,914,845 & 3.5402\\
+Validation & 322,742 & 1,144,248 & 3.5454\\
+Test & 367,981 & 1,287,656 & 3.4992\\\bottomrule
+\end{tabular}
+\caption{Frozen-tokenizer encoding statistics. Encoding test text is a deterministic transformation, not test likelihood evaluation or tokenizer fitting.}
+\end{table}
+
+Every training article round-trips exactly. Each split cache records flat token arrays, document offsets, identities and raw-byte counts. Token lengths reconstruct the likelihood denominator exactly. The browser uses the same byte IDs and ordered merges; independent reference fixtures check exact token IDs across 114 cases including contractions, Hindi, Japanese, emoji, zero-width joiners, unusual spaces, control characters and literal boundary-looking strings.
+
+\section{The separate AMI experiment}
+AMI annotations release 1.6.2 provides manual meeting transcripts under CC BY 4.0 \cite{ami}. Participant identities and related meeting families are connected before partitioning, producing 139 training, 16 validation and 16 test documents. Training contains 947,966 whitespace-delimited words and 4,637,005 UTF-8 bytes. Validation and test contain 385,750 and 392,508 bytes respectively.
+
+The AMI path lowercases and linearizes transcript turns with local speaker labels. Overlapping speech becomes an ordered text sequence. These are custom language-model partitions, not the official AMI speech-recognition benchmark. No audio is fed to FLM. The AMI byte vocabulary uses raw byte IDs 0--255 and boundaries 256/257, and its browser checkpoint is identified separately from WikiText. AMI and WikiText adapters cannot be interchanged because their hashes, feature dimensions and vocabularies differ.
+
+\section{Connectome and body provenance}
+The graph snapshot is pinned to revision \code{776d115ee5aa934578a87fd6d260d138084f59c1} of the public source representation. Acquisition checks 29 required files and reconstructs verified sparse arrays. Counts are 166,700 neurons, 25,582,938 directed neuron-pair edges and 124,177,617 contacts. The complete extraction is distinct from the trained central subset of 1,024 neurons and 76,130 edges.
+
+Selection is based on anatomy before language results. The compact graph retains original neuron IDs, positions, cell-type annotations, edge signs and contact-derived weights. Independent reproduction from the acquired full arrays matches every tracked compact-graph array exactly. Missing soma coordinates remain missing; they are not replaced by invented positions. Anatomical coordinates are locations of somas, not full neuron arbors.
+
+The 39 body meshes retain NeuroMechFly-derived geometry and upstream notices \cite{neuromechfly}. Automated forward-kinematics checks match the reference joint coordinates. The mesh specimen is female; the graph is male. ChatFLM's body pose summarizes artificial network state. Reproducing the geometry does not reproduce a learned sensorimotor policy, and the language optimizer contains no embodiment objective.
+
+\section{Training and selection records}
+All three main architectures share the same train-only tokenizer, sequence sampler, optimizer schedule and 6,000-update budget. Seeds 42 and 43 produce separate runs. Sampling uses its own RNG, ensuring matched inputs despite different model parameter counts and initialization draws. Checkpoints preserve model and optimizer parameters, sampler RNG state, PyTorch RNG state, exact exposure counts, source revision and tokenizer/graph/cache hashes.
+
+Resume rejects a changed protocol. Tests verify that restoring a checkpoint yields exactly the same next sampled batch and next optimizer update for FLM, GRU and transformer. Validation state resets between articles and streams within each article using native architecture state. Scoring is invariant to article order and chunking within numerical precision. Boundary tokens are excluded; raw token byte lengths determine the denominator.
+
+Final test evaluation requires completion artifacts and unchanged selected-checkpoint hashes for all six registered main runs. The chosen checkpoints are frozen before the test cache is scored. Results retain per-article negative log likelihood and byte counts. Paired bootstrap comparisons resample matching articles, preserving a common denominator. Intervals describe article-sampling variation conditional on the checkpoints. Two training seeds are insufficient for broad claims about optimizer stability or a general model family.
+
+\section{Browser package and local learning}
+The lexical inference package stores the shared 4,096 by 96 embedding once, input projection, normalized signed recurrent weights in destination-major CSR, pooling assignments, update rates, normalization, output projection and biases. Array shapes, byte offsets, data types and checksums are explicit. The binary is 2,713,236 bytes. Manifest, tokenizer and anatomy hashes are verified before use.
+
+Independent PyTorch fixtures supply full next-token logits, fast and slow states, and projected features after a fixed prefix. JavaScript parity tests check all entries, not a small hand-picked sample. The worker also has integration tests for loading, deterministic generation, scoring, local adaptation, clearing, intervention replay and cancellation during long context priming.
+
+Local learning is an optional readout correction. It uses only user-provided preceding text and next-token targets, with separate before/after probe loss when supplied. The dense correction is exported as little-endian float32 base64 to remain practical for ordinary browser storage; legacy numeric-array exports remain readable. Imports validate checkpoint identity, dimensions, finite values and coefficient bounds. Conversations retain the dataset, checkpoint hash, sampling settings and intervention settings used for each generated passage.
+
+\section{Reproduction entry points}
+The repository README provides the complete current command sequence. The core entry points are:
+\begin{center}
+\begin{tabular}{p{.45\linewidth}p{.45\linewidth}}\toprule
+Command & Purpose\\\midrule
+\code{python -m flm.wikitext} & Pinned text acquisition and article audit\\
+\code{python -m flm.tokenizer} & Train-only vocabulary and frozen split encoding\\
+\code{python -m flm.language_suite} & Registered main training runs\\
+\code{python -m flm.language_report} & Validation artifact consolidation\\
+\code{python -m flm.language_test} & Gated final test evaluation\\
+\code{python -m flm.export_lexical} & Browser export; checkpoint argument required\\
+\code{npm test} & Browser-core, worker and geometry tests\\
+\code{npm run build} & Static production build and attribution pages\\\bottomrule
+\end{tabular}
+\end{center}
+
+Raw corpora, complete graph downloads and training intermediates stay in ignored local directories. Compact graph assets, tokenizer metadata, browser packages, reports and meaningful code changes are versioned in sequential commits. GitHub Pages hosts the generated public interface at \url{https://flm.kuber.studio}; the source repository remains private. No API secret or remote language service is needed for browser inference.
+
+The working release still requires completion of the main training study, final test publication and broader mechanism controls. Those gaps are stated in the report and website. Reproducibility is evidence that the specified computation was performed; it is not evidence that the computation reproduces an animal's cognition.
+
+\begingroup\raggedright
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+\end{document}
