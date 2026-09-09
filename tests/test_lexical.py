@@ -37,9 +37,12 @@ class LexicalTests(unittest.TestCase):
             Transformer(BaselineConfig('transformer', embedding=96, width=108, heads=6, vocabulary=4096, tied_readout=True))]
         for model in models:
             self.assertLess(abs(model.parameter_card()['trainable_parameters'] / 600003 - 1), .02)
+            # Large tied output dot products amplify float32 GEMM rounding when
+            # chunk dimensions change. Check the causal identity in float64.
+            model = model.double()
             tokens = torch.randint(2, 4096, (1, 20)); model.eval()
             whole, _ = model(tokens); first, state = model(tokens[:, :9]); rest, _ = model(tokens[:, 9:], state)
-            torch.testing.assert_close(whole, torch.cat((first, rest), dim=1), atol=2e-6, rtol=2e-5)
+            torch.testing.assert_close(whole, torch.cat((first, rest), dim=1), atol=1e-10, rtol=1e-10)
             whole.square().mean().backward()
             self.assertTrue(torch.isfinite(model.embedding.weight.grad).all())
             self.assertGreater(float(model.embedding.weight.grad.abs().sum()), 0)
