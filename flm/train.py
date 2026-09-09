@@ -92,7 +92,10 @@ def save_checkpoint(path: Path, model: FLM, optimizer, sampler: Sampler, step: i
 
 
 def restored(path: Path, graph_path: Path, device: str = "cpu"):
-    checkpoint = torch.load(path, map_location=device, weights_only=True)
+    # PyTorch 2.8 exposes __version__ as a harmless str subclass; accept that
+    # legacy metadata type while retaining the restricted tensor-only loader.
+    with torch.serialization.safe_globals([torch.torch_version.TorchVersion]):
+        checkpoint = torch.load(path, map_location=device, weights_only=True)
     model = FLM(load_graph(graph_path), Config(**checkpoint["config"])).to(device)
     model.load_state_dict(checkpoint["model"])
     if checkpoint["run"]["graph_sha256"] != sha256(graph_path):
@@ -119,7 +122,7 @@ def train(args):
         training=dict(batch=args.batch, sequence=args.sequence, steps=args.steps, learning_rate=args.learning_rate,
                       warmup_tokens=args.warmup, threads=args.threads, device=args.device),
         source_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        python_torch=torch.__version__, parameter_card=model.parameter_card(),
+        python_torch=str(torch.__version__), parameter_card=model.parameter_card(),
         state_protocol="Random within-document windows; fresh state per window; warmup prefix excluded from training loss",
         test_set_used_for_training=False)
     start_step, best = 0, float("inf")
