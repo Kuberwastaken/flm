@@ -1,0 +1,346 @@
+{
+  "dataset": "WikiText-2 raw",
+  "status": "validation progress; test results not included",
+  "measurement": "Fixed article prefixes; lower bits per UTF-8 byte is better. Compare models at the same update count and seed.",
+  "runs": [
+    {
+      "id": "flm-s42",
+      "variant": "flm",
+      "seed": 42,
+      "parameters": 600003,
+      "protocol": {
+        "steps": 6000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "eval_tokens": 32768,
+        "threads": 4,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+        "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+        "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+      },
+      "complete": false,
+      "validation": [
+        {
+          "step": 0,
+          "presented_tokens": 0,
+          "bits_per_byte": 3.4640037142576174,
+          "token_perplexity": 5263.335142199168,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "df8b69c24818e50048df799f86fd6b49261a2581ac32550f9ee365a2e7a00936"
+        },
+        {
+          "step": 500,
+          "presented_tokens": 768000,
+          "bits_per_byte": 2.287044223128317,
+          "token_perplexity": 286.3476295029146,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "6a64488a7e0f5324fde73661bdc2703beed14e497fe3700d36b731136abad15c"
+        },
+        {
+          "step": 1000,
+          "presented_tokens": 1536000,
+          "bits_per_byte": 2.136728308544109,
+          "token_perplexity": 197.43053974360623,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "be5e20a5113be3fbece332c14cc856876685f343154c6d5a894c8f91b0f42c33"
+        },
+        {
+          "step": 1500,
+          "presented_tokens": 2304000,
+          "bits_per_byte": 2.061640680624221,
+          "token_perplexity": 163.96466104350574,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "cefda266db6b0b06b54c0fd3073337ccd390e483a75552513f23c212ce40df48"
+        },
+        {
+          "step": 2000,
+          "presented_tokens": 3072000,
+          "bits_per_byte": 2.0135569920978464,
+          "token_perplexity": 145.57794657875584,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "fb543162eeeafc8d0ee534433035b7b723c10406985053cf468718f710862132"
+        },
+        {
+          "step": 2500,
+          "presented_tokens": 3840000,
+          "bits_per_byte": 1.9854636563028905,
+          "token_perplexity": 135.80503660043757,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "bd1652ff21feaf30e322c08d5532da6e190e4e1283d05d6d106d6bf2c9e3a746"
+        },
+        {
+          "step": 3000,
+          "presented_tokens": 4608000,
+          "bits_per_byte": 1.9630415020620382,
+          "token_perplexity": 128.47792725825516,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "a36c1cecb0f71ff363db5e964da8f5bacc322e013f4bed1053cf8c14ed6c04b7"
+        }
+      ],
+      "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
+    },
+    {
+      "id": "gru-s42",
+      "variant": "gru",
+      "seed": 42,
+      "parameters": 595408,
+      "protocol": {
+        "steps": 6000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "eval_tokens": 32768,
+        "threads": 4,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+        "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+        "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+      },
+      "complete": false,
+      "validation": [
+        {
+          "step": 0,
+          "presented_tokens": 0,
+          "bits_per_byte": 3.361639326081018,
+          "token_perplexity": 4085.963231628399,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "3798c0dcb5f3f16c7095cf0b7ad7a8421c538eaeb0b70c24d639a106305b3377"
+        },
+        {
+          "step": 500,
+          "presented_tokens": 768000,
+          "bits_per_byte": 2.294919142180667,
+          "token_perplexity": 291.98016463391684,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "74ec0be78ffd330d1902725ca6ca8dd7bffe10a6ae9890109d19c56a1cc571b3"
+        },
+        {
+          "step": 1000,
+          "presented_tokens": 1536000,
+          "bits_per_byte": 2.1268626259945087,
+          "token_perplexity": 192.67082925705628,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "04f470b67b9c4b7894e025ea67e9fe4d5159556602ce2671b3860f5892158088"
+        },
+        {
+          "step": 1500,
+          "presented_tokens": 2304000,
+          "bits_per_byte": 2.0200993213824265,
+          "token_perplexity": 147.95300502761853,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "675b1049129f78207e09192e3ab7daa67e9bf5849653bcbc4e8ac4d71aec7f2e"
+        },
+        {
+          "step": 2000,
+          "presented_tokens": 3072000,
+          "bits_per_byte": 1.9590084122929925,
+          "token_perplexity": 127.20257727810254,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "f4282d53ea7e44821e81def1b719f89455afc873eb1fddb547a6ce78f68a2554"
+        },
+        {
+          "step": 2500,
+          "presented_tokens": 3840000,
+          "bits_per_byte": 1.9167577884982638,
+          "token_perplexity": 114.57965410581271,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "5bf281556032c2d9ef6ad0849a325e3a1246ebec8f2f031760b9355b2984a092"
+        },
+        {
+          "step": 3000,
+          "presented_tokens": 4608000,
+          "bits_per_byte": 1.89128749869695,
+          "token_perplexity": 107.58349364901774,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "b80691a06deb52d2a4de5ee68ffb5a543be0bf3724e007cfd70bd86422e802ee"
+        },
+        {
+          "step": 3500,
+          "presented_tokens": 5376000,
+          "bits_per_byte": 1.8722841430992219,
+          "token_perplexity": 102.64338992494503,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "b9d50f1da3187c1d9bb83b0ee0399a5bcd308cd60d38f43fb0fe9b30bd4a8dee"
+        },
+        {
+          "step": 4000,
+          "presented_tokens": 6144000,
+          "bits_per_byte": 1.8556756924883373,
+          "token_perplexity": 98.51199059388203,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "6246f6a16225d210d994e2b554898359835c4478c09e939db2c4fb0ddc185fc1"
+        }
+      ],
+      "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
+    },
+    {
+      "id": "transformer-s42",
+      "variant": "transformer",
+      "seed": 42,
+      "parameters": 607468,
+      "protocol": {
+        "steps": 6000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "eval_tokens": 32768,
+        "threads": 4,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+        "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+        "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+      },
+      "complete": true,
+      "validation": [
+        {
+          "step": 0,
+          "presented_tokens": 0,
+          "bits_per_byte": 3.420612592695807,
+          "token_perplexity": 4727.672922253184,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "5a78a45ccb0b6981ebe4f2455d4ba315efbb7ef0d1dd19f7ddb2e34ee4677b1e"
+        },
+        {
+          "step": 500,
+          "presented_tokens": 768000,
+          "bits_per_byte": 2.2842899376454637,
+          "token_perplexity": 284.40338248410904,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "ae66578e65b3d6aa15d81e5cee7aafe7d4bc2f8ca3aabe2752b29029eab3c384"
+        },
+        {
+          "step": 1000,
+          "presented_tokens": 1536000,
+          "bits_per_byte": 2.1141070839399876,
+          "token_perplexity": 186.68658995391604,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "b89d5c55b7843f4d59ca2f01dbb7fdb8c6ed65e25f5aff7ebb35c9a4ba345e2b"
+        },
+        {
+          "step": 1500,
+          "presented_tokens": 2304000,
+          "bits_per_byte": 2.024381210890134,
+          "token_perplexity": 149.52839724122026,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "12459cdc928f4613f26a1a6cb0124fa977ab6e5f2399654136092d406edcf1da"
+        },
+        {
+          "step": 2000,
+          "presented_tokens": 3072000,
+          "bits_per_byte": 1.9624333137324739,
+          "token_perplexity": 128.28478938683926,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "c60befe9e247a252cd9e2feecf70fa88c093d6e283daf458c8dc52187d38a1c4"
+        },
+        {
+          "step": 2500,
+          "presented_tokens": 3840000,
+          "bits_per_byte": 1.9197967715584685,
+          "token_perplexity": 115.44421705627148,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "b1faae15b35fb989475e300e493ed037f709c925d15f76d374d76ef1e7fe9c8f"
+        },
+        {
+          "step": 3000,
+          "presented_tokens": 4608000,
+          "bits_per_byte": 1.8869946140654208,
+          "token_perplexity": 106.44712687942048,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "f69baea1d721bab6b421bd30e8cb340ea5074eebc91c7b17bf6a3124954d206b"
+        },
+        {
+          "step": 3500,
+          "presented_tokens": 5376000,
+          "bits_per_byte": 1.869146437923502,
+          "token_perplexity": 101.84981795409341,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "82fe815e16a873131661c1fbb72dcc39c4038587c30adc1c0b895c10fb3cb08b"
+        },
+        {
+          "step": 4000,
+          "presented_tokens": 6144000,
+          "bits_per_byte": 1.8451799292532582,
+          "token_perplexity": 95.98731738863839,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "cbce9a943dd763c0f8854c02d55cd8c7befd0348eda48f1b963dc8db72740277"
+        },
+        {
+          "step": 4500,
+          "presented_tokens": 6912000,
+          "bits_per_byte": 1.8345739954648304,
+          "token_perplexity": 93.50186242658268,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "be50ff6802d42f534cc5a1d1a511ce713716fc7e61b74ba2a2963bfbd5e9e008"
+        },
+        {
+          "step": 5000,
+          "presented_tokens": 7680000,
+          "bits_per_byte": 1.8184151399211124,
+          "token_perplexity": 89.83826462284816,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "064c342f34e6098993ba9e598b488680ade43cb4ca75df1a5f141a4670efeb24"
+        },
+        {
+          "step": 5500,
+          "presented_tokens": 8448000,
+          "bits_per_byte": 1.815012692020713,
+          "token_perplexity": 89.08533561924266,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "0283fb0bc4a07668914525713880e4f29e793b39e1ad048d4f612de5dbce9715"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "bits_per_byte": 1.8112767388558602,
+          "token_perplexity": 88.26587146796328,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "c6d9b2ad482dca8f2b3f06b7203e1ee6ce23d884817e5bd2b224f5088ee052f8"
+        }
+      ],
+      "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
+    }
+  ]
+}
