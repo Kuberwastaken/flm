@@ -107,11 +107,11 @@
     }
   },
   "variant": "flm",
-  "checkpoint_step": 1000,
-  "checkpoint_sha256": "335c1c404b6ada1d48d750cdcb0e7f54c18ea8ba91f080bf2e4ecf188366b068",
-  "weights_sha256": "c376ff13a45e124a0f501d7b7e401376d0fe701445d63cc1b5cb95eba6d921b4",
+  "checkpoint_step": 3000,
+  "checkpoint_sha256": "e9987c22712bed56c0ac284ab7b15b6c04951fb9bd69270cdc0649b601c5eb83",
+  "weights_sha256": "dda5d207dcbb898e48bebe6429172fde7b29d84b9e88926b9f896177fe869f52",
   "weights_bytes": 1949980,
-  "anatomy_sha256": "c717e2a40efa6a696a24f550b8413b0900dc57a5154fdc05345c1a432070d745",
+  "anatomy_sha256": "8acef74b6e141d9476b889c63d6fcb6eef81e60985744822d96e869f9b5536de",
   "source_graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
   "trained_parameters": 228069,
   "retained_edges": 76130,
@@ -132,7 +132,7 @@
       "threads": 4,
       "device": "cpu"
     },
-    "source_commit": "e6b93e6c148d41324945109d23791be177c1a190",
+    "source_commit": "5273fa394dde6f9859d6caad89f4af4ada9e09d8",
     "python_torch": "2.8.0+cpu",
     "parameter_card": {
       "config": {
@@ -160,7 +160,12 @@
       "vocabulary": 258
     },
     "state_protocol": "Random within-document windows; fresh state per window; warmup prefix excluded from training loss",
-    "test_set_used_for_training": false
+    "test_set_used_for_training": false,
+    "resumed_from": {
+      "path": "runs\\flm-ami-42\\last.pt",
+      "sha256": "d68ccc440f59347a56b5cb73b2d5bd940bee4121f81b623de34d95c90baa4838",
+      "step": 1000
+    }
   },
   "norm_epsilon": 1e-05,
   "description": "A compact fly-wired model trained from scratch on human meeting transcripts.",

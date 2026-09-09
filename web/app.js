@@ -139,7 +139,7 @@ function selectNeuron(index) {
 function neuronInfo() {
   if (!anatomy) return;
   const sign = anatomy.source_sign[selected];
-  $('neuron-info').textContent = `ID ${anatomy.body_ids[selected]} · ${anatomy.cell_types[selected]} · ${sign > 0 ? 'positive' : sign < 0 ? 'negative' : 'zero'} source sign` +
+  $('neuron-info').textContent = `ID ${anatomy.body_ids[selected]} · ${anatomy.cell_types[selected] || 'untyped'} · ${sign > 0 ? 'positive' : sign < 0 ? 'negative' : 'zero'} source sign` +
     (lastState ? ` · fast ${lastState.h[selected].toFixed(4)} · slow ${lastState.slow[selected].toFixed(4)}` : '') +
     (anatomy.positions[selected] ? '' : ' · soma position unavailable');
   $('mute-neuron').textContent = disabled.has(selected) ? 'Restore' : 'Silence';
@@ -198,7 +198,7 @@ async function loadViews() {
   try {
     brain = new BrainView($('brain-view'), selectNeuron); anatomy = await brain.load(config); $('brain-loading').hidden = true;
     $('neuron').replaceChildren(...anatomy.body_ids.map((id, i) => {
-      const option = document.createElement('option'); option.value = String(i); option.textContent = `${anatomy.cell_types[i]} · ${id}`; return option;
+      const option = document.createElement('option'); option.value = String(i); option.textContent = `${anatomy.cell_types[i] || 'untyped'} · ${id}`; return option;
     }));
     const missing = anatomy.positions.filter(x => !x).length;
     $('anatomy-note').textContent = `${config.neurons.toLocaleString()} modeled neurons from ${config.source_neurons.toLocaleString()} in the source graph; ${missing} without a soma position. Gray points are anatomical context only.`;

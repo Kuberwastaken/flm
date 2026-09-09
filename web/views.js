@@ -45,7 +45,7 @@ class View {
 export class BrainView extends View {
   constructor(element, onSelect) {
     super(element, '#191a18'); this.onSelect = onSelect;
-    this.homePosition = new THREE.Vector3(0, 0, 6); this.home();
+    this.homePosition = new THREE.Vector3(0, 0, 4.8); this.home();
     this.raycaster = new THREE.Raycaster(); this.raycaster.params.Points.threshold = 0.04;
     let down;
     this.renderer.domElement.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
@@ -62,12 +62,18 @@ export class BrainView extends View {
     const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buffer)), x => x.toString(16).padStart(2, '0')).join('');
     if (digest !== config.anatomy_sha256) throw new Error('Anatomy checksum mismatch. Reload to fetch a consistent release.');
     this.anatomy = JSON.parse(new TextDecoder().decode(buffer));
-    const reference = this.anatomy.context_positions || this.anatomy.positions.filter(Boolean);
+    // Display crop follows the source viewer's brain range, excluding the VNC.
+    // This affects context framing only, never which neurons are simulated.
+    const reference = (this.anatomy.context_positions || this.anatomy.positions.filter(Boolean))
+      .filter(p => p[2] >= 9000 && p[2] <= 58000);
     const bounds = new THREE.Box3().setFromPoints(reference.map(p => new THREE.Vector3(...p)));
     const center = bounds.getCenter(new THREE.Vector3()), extent = bounds.getSize(new THREE.Vector3());
     const scale = 3.9 / Math.max(extent.x, extent.y, extent.z);
-    // Preserve anatomical voxel coordinates; display x horizontally, z vertically.
-    const position = p => [(p[0] - center.x) * scale, -(p[2] - center.z) * scale, (p[1] - center.y) * scale];
+    // A rigid 25-degree tilt matches the readable frontal anatomical orientation.
+    const sine = Math.sin(25 * Math.PI / 180), cosine = Math.cos(25 * Math.PI / 180);
+    const position = p => [-(p[0] - center.x) * scale,
+      -((p[1] - center.y) * sine + (p[2] - center.z) * cosine) * scale,
+      ((p[1] - center.y) * cosine - (p[2] - center.z) * sine) * scale];
     const contextGeometry = new THREE.BufferGeometry();
     contextGeometry.setAttribute('position', new THREE.Float32BufferAttribute(reference.flatMap(position), 3));
     this.contextPoints = new THREE.Points(contextGeometry, new THREE.PointsMaterial({ color: '#81837b', size: 1.6, sizeAttenuation: false, transparent: true, opacity: 0.38 }));
@@ -77,8 +83,8 @@ export class BrainView extends View {
     this.anatomy.positions.forEach((p, i) => { if (p) { this.renderedIndices.push(i); positions.push(...position(p)); } });
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.Float32BufferAttribute(new Float32Array(positions.length).fill(0.55), 3));
-    this.activePoints = new THREE.Points(geometry, new THREE.PointsMaterial({ vertexColors: true, size: 3.4, sizeAttenuation: false }));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(new Float32Array(positions.length).fill(0.15), 3));
+    this.activePoints = new THREE.Points(geometry, new THREE.PointsMaterial({ vertexColors: true, size: 2.7, sizeAttenuation: false }));
     this.scene.add(this.activePoints);
     const selectionGeometry = new THREE.BufferGeometry();
     selectionGeometry.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0], 3));
@@ -113,7 +119,7 @@ export class BrainView extends View {
 export class FlyView extends View {
   constructor(element) {
     super(element, '#f2eee6'); this.camera.up.set(0, 0, 1);
-    this.homePosition = new THREE.Vector3(3.8, -4.8, 3.3); this.home();
+    this.homePosition = new THREE.Vector3(2.6, -3.2, 2.2); this.home();
     this.scene.add(new THREE.HemisphereLight('#fffaf0', '#807660', 2.8));
     const light = new THREE.DirectionalLight('#ffffff', 3); light.position.set(2, -3, 7); this.scene.add(light);
     this.fly = new THREE.Group(); this.scene.add(this.fly); this.meshes = [];

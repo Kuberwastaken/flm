@@ -55,7 +55,7 @@ def export_model(checkpoint: Path, graph_path: Path, output: Path, anatomy_sourc
     if anatomy_source:
         raw_positions = np.load(anatomy_source, allow_pickle=False)
         available = raw_positions[np.isfinite(raw_positions).all(axis=1)]
-        indices = np.linspace(0, len(available) - 1, min(6000, len(available)), dtype=int)
+        indices = np.linspace(0, len(available) - 1, min(24000, len(available)), dtype=int)
         anatomy["context_positions"] = available[indices].tolist()
         anatomy["context_note"] = "Downsampled anatomical reference only; these background points do not display simulated activity"
     write_json(output / "anatomy.json", anatomy)
