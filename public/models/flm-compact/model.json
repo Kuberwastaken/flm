@@ -107,9 +107,9 @@
     }
   },
   "variant": "flm",
-  "checkpoint_step": 3000,
-  "checkpoint_sha256": "e9987c22712bed56c0ac284ab7b15b6c04951fb9bd69270cdc0649b601c5eb83",
-  "weights_sha256": "dda5d207dcbb898e48bebe6429172fde7b29d84b9e88926b9f896177fe869f52",
+  "checkpoint_step": 6000,
+  "checkpoint_sha256": "52e96fa1386ae50359c516e985956a9ea1329780384c0d6848b2b550700de80a",
+  "weights_sha256": "bf4664e25a358c846cc94da2560b1a150e1ef8237e26d29c405b0d69b8f77716",
   "weights_bytes": 1949980,
   "anatomy_sha256": "8acef74b6e141d9476b889c63d6fcb6eef81e60985744822d96e869f9b5536de",
   "source_graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
