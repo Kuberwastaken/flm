@@ -19,6 +19,8 @@ from .train import restored
 def export_model(checkpoint: Path, graph_path: Path, output: Path, anatomy_source: Path | None = None):
     torch.set_num_threads(2)
     model, saved = restored(checkpoint, graph_path)
+    if model.config.vocabulary != VOCAB or model.config.tied_readout:
+        raise ValueError('This exporter targets the legacy byte checkpoint; use the lexical package exporter for subword models')
     model.eval()
     graph = load_graph(graph_path)
     n, p = model.config.neurons, model.config.pools

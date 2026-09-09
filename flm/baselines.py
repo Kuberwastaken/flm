@@ -15,25 +15,29 @@ class BaselineConfig:
     heads: int = 4
     layers: int = 2
     window: int = 96
+    vocabulary: int = VOCAB
+    tied_readout: bool = False
 
 
 class Baseline(nn.Module):
     def parameter_card(self):
         groups = {name: p.numel() for name, p in self.named_parameters()}
         return dict(config=asdict(self.config), trainable_parameters=sum(groups.values()),
-                    parameter_groups=groups, vocabulary=VOCAB)
+                    parameter_groups=groups, vocabulary=self.config.vocabulary)
 
 
 class GRU(Baseline):
     def __init__(self, config=None):
         super().__init__(); self.config = config or BaselineConfig('gru'); c = self.config
-        self.embedding = nn.Embedding(VOCAB, c.embedding)
+        self.embedding = nn.Embedding(c.vocabulary, c.embedding)
         self.core = nn.GRU(c.embedding, c.hidden, batch_first=True)
-        self.readout = nn.Linear(c.hidden, VOCAB)
+        self.readout = nn.Linear(c.hidden, c.embedding if c.tied_readout else c.vocabulary)
+        if c.tied_readout: self.output_bias = nn.Parameter(torch.zeros(c.vocabulary))
 
     def forward(self, tokens, state=None):
         values, state = self.core(self.embedding(tokens), state)
-        return self.readout(values), state
+        features = self.readout(values)
+        return (F.linear(features, self.embedding.weight, self.output_bias) if self.config.tied_readout else features), state
 
 
 def rotary(values, positions):
@@ -75,13 +79,19 @@ class Transformer(Baseline):
     def __init__(self, config=None):
         super().__init__(); self.config = config or BaselineConfig('transformer'); c = self.config
         if c.width % (2 * c.heads) or c.window < 2: raise ValueError('Invalid transformer dimensions')
-        self.embedding = nn.Embedding(VOCAB, c.width)
+        self.embedding = nn.Embedding(c.vocabulary, c.embedding if c.tied_readout else c.width)
+        if c.tied_readout:
+            self.input_projection = nn.Linear(c.embedding, c.width)
+            self.output_bias = nn.Parameter(torch.zeros(c.vocabulary))
         self.blocks = nn.ModuleList([AttentionBlock(c) for _ in range(c.layers)])
-        self.norm = nn.LayerNorm(c.width); self.readout = nn.Linear(c.width, VOCAB)
+        self.norm = nn.LayerNorm(c.width); self.readout = nn.Linear(c.width, c.embedding if c.tied_readout else c.vocabulary)
 
     def forward(self, tokens, state=None):
         offset, cached = state if state is not None else (0, [None] * len(self.blocks))
         values = self.embedding(tokens); next_cache = []
+        if self.config.tied_readout: values = self.input_projection(values)
         for block, cache in zip(self.blocks, cached):
             values, cache = block(values, offset, cache); next_cache.append(cache)
-        return self.readout(self.norm(values)), (offset + tokens.shape[1], next_cache)
+        features = self.readout(self.norm(values))
+        logits = F.linear(features, self.embedding.weight, self.output_bias) if self.config.tied_readout else features
+        return logits, (offset + tokens.shape[1], next_cache)

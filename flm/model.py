@@ -20,6 +20,8 @@ class Config:
     embedding: int = 64
     variant: str = "flm"
     backend: str = "auto"
+    vocabulary: int = VOCAB
+    tied_readout: bool = False
 
 
 class FLM(nn.Module):
@@ -40,14 +42,16 @@ class FLM(nn.Module):
         self.register_buffer("pool_index", torch.as_tensor(graph["pool"], dtype=torch.long))
         sizes = np.bincount(graph["pool"], minlength=c.pools)
         self.register_buffer("pool_sizes", torch.tensor(np.maximum(sizes, 1), dtype=torch.float32))
-        self.embedding = nn.Embedding(VOCAB, c.embedding)
+        self.embedding = nn.Embedding(c.vocabulary, c.embedding)
         self.input = nn.Linear(c.embedding, n)
         self.edge_log_gain = nn.Parameter(torch.zeros(len(self.row)))
         self.alpha_logit = nn.Parameter(torch.linspace(-1.5, 1.5, n))
         self.beta_logit = nn.Parameter(torch.linspace(-2.5, 0.5, n))
         self.recurrent_logit = nn.Parameter(torch.tensor(0.0))
         self.norm = nn.LayerNorm(c.pools * 2)
-        self.readout = nn.Linear(c.pools * 2, VOCAB)
+        self.readout = nn.Linear(c.pools * 2, c.embedding if c.tied_readout else c.vocabulary)
+        if c.tied_readout:
+            self.output_bias = nn.Parameter(torch.zeros(c.vocabulary))
         nn.init.normal_(self.embedding.weight, std=0.2)
         nn.init.xavier_uniform_(self.input.weight, gain=0.7)
         nn.init.zeros_(self.input.bias)
@@ -98,13 +102,17 @@ class FLM(nn.Module):
             state = self.transition(drives[:, t], state, constants)
             features.append(torch.cat((self.pool(state[0]), self.pool(state[1])), dim=-1))
         encoded = self.norm(torch.stack(features, dim=1))
-        logits = self.readout(encoded)
+        if self.config.tied_readout:
+            encoded = self.readout(encoded)
+            logits = F.linear(encoded, self.embedding.weight, self.output_bias)
+        else:
+            logits = self.readout(encoded)
         return (logits, state, encoded) if return_features else (logits, state)
 
     def parameter_card(self) -> dict:
         groups = {name: parameter.numel() for name, parameter in self.named_parameters()}
         return dict(config=asdict(self.config), trainable_parameters=sum(groups.values()),
-                    parameter_groups=groups, edges=len(self.row), vocabulary=VOCAB)
+                    parameter_groups=groups, edges=len(self.row), vocabulary=self.config.vocabulary)
 
 
 def load_graph(path: str | Path) -> dict:

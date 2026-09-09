@@ -134,7 +134,7 @@ def train(args):
         model, checkpoint = restored(args.resume, args.graph, args.device)
         if checkpoint["run"]["train_sha256"] != run["train_sha256"]:
             raise ValueError("Resume training corpus mismatch")
-        if checkpoint["config"] != asdict(config):
+        if asdict(Config(**checkpoint["config"])) != asdict(config):
             raise ValueError("Resume configuration mismatch")
         optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=0.01)
         optimizer.load_state_dict(checkpoint["optimizer"])
