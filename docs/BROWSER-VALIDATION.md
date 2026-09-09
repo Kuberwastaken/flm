@@ -18,3 +18,10 @@ Production preview, 10 September 2026: the 1,000-update lexical checkpoint gener
 The Research view loaded three validation curves, selected the common 1,000-update point, and displayed FLM 2.137, GRU 2.127 and transformer 2.114 bits/byte. Switching the fixed prompt updated all three unedited sample columns. Full-page capture showed stitching overlaps; a DOM audit confirmed unique IDs, one source list and one instance of each of the eight research headings.
 
 Automated worker integration verifies generation, scoring, adaptation, clearing, neuron silencing and cancellation during priming for both AMI and WikiText. The 27 Python checks and 26 JavaScript checks passed after lexical support. Binary browser/PyTorch parity also passed for the subsequently exported 3,000-update WikiText checkpoint. The later packed-adapter storage format still needs a direct browser save/reload check.
+
+
+## Live WikiText verification
+
+The 3,000-update WikiText package is deployed at the custom domain with HTTPS enforcement. The Pages workflow succeeded at commit `8cf2ab2`. The live worker learned two passes / 62 token updates from 99 bytes of original garden-and-bird text: online training 2.447 bits/byte, separate 45-byte probe 3.983 to 3.800 bits/byte. Saving the packed adapter succeeded; after reload, Load saved reported that the checkpoint-specific learning was restored. This is a functional related-text check, not a benchmark result.
+
+At the 390-pixel viewport setting, the live Research view had document client/scroll widths of 375/375 pixels. Sample columns stacked into a 335.2-pixel single column. All three measured comparison rows were visible and no console errors were captured.
