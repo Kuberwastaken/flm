@@ -21,7 +21,8 @@ The full reference body comprises 39 NeuroMechFly STL meshes. The body specimen 
 
 ## Dataset decisions
 
-- [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/): the primary compact experiment uses CC BY 4.0 manual meeting transcripts. The recorded custom split separates globally identified participants and related meeting families; see `data/cards/ami.json`. The primary training partition contains 139 documents and 947,966 whitespace-delimited words including turn labels.
+- [WikiText-2 raw](https://huggingface.co/datasets/Salesforce/wikitext): the main matched comparison now uses the official 600/60/60 article partitions, a train-only 4,096-token vocabulary and near-600k-parameter FLM/GRU/transformer models. See `WIKITEXT-PROTOCOL.md`.
+- [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/): the initial compact experiment uses CC BY 4.0 manual meeting transcripts. The recorded custom split separates globally identified participants and related meeting families; see `data/cards/ami.json`. The primary training partition contains 139 documents and 947,966 whitespace-delimited words including turn labels.
 - [LibriSpeech, OpenSLR 12](https://www.openslr.org/12): CC BY 4.0, recorded English audiobook speech with transcripts. Optional acquisition stopped after service rate limiting. No incomplete partition was used. See `DATA-STATUS.md`.
 - [Official Hugging Face distribution](https://huggingface.co/datasets/openslr/librispeech_asr): possible text-only retrieval via the dataset viewer, avoiding large audio downloads. Record the revision and exact retrieved rows because the viewer endpoint may track the current dataset.
 - [BabyLM guidelines](https://babylm.github.io/guidelines.html): useful low-data evaluation framing, but corpus components mix speech and written text and require individual provenance checks.

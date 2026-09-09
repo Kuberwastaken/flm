@@ -37,3 +37,20 @@ Browser personalization updates a separate full readout correction (258 by 256 c
 ## Experiments
 
 Compare full proposed core, no slow state, recurrence disabled and a genuinely rewired directed graph preserving degrees and source-sign constraints. Also report trivial language baselines. A lower training loss alone does not support a quality claim. A compact model does not establish whole-brain scaling, and a single-seed result does not establish general topology superiority.
+
+
+## FLM 0.2 lexical interface
+
+The WikiText experiment retains the core equations above but replaces the byte vocabulary with 4,096 train-only byte-BPE IDs (BOS=0, EOS=1). A token can contain multiple bytes, so the discrete update rates now apply per token, not per byte or millisecond. A 96-dimensional embedding is shared by the input and output interfaces:
+
+```
+e_t = E[x_t]
+h_t, s_t = recurrent_core(input_linear(e_t), h_previous, s_previous)
+f_t = layer_norm(concatenate(pool(h_t), pool(s_t)))
+z_t = projection_256_to_96(f_t)
+logits_t = E @ z_t + output_bias
+```
+
+There is no attention or direct token-to-logit bypass. The shared embedding has 393,216 coefficients; the total model has 600,003 trainable parameters. A small GRU (595,408) and two-layer RoPE transformer (607,468) share this lexical interface and tokenizer. Full settings are registered in `WIKITEXT-PROTOCOL.md`.
+
+The lexical browser adapter adds a 4,096 by 96 correction plus output bias. It uses `z_t` as its observed feature and changes neither the original tied embedding nor the recurrent core. Float32 corrections are packed as little-endian base64 for checkpoint-specific storage; legacy array adapters remain readable. Scoring sums next-token negative log likelihood and divides by the exact UTF-8 byte lengths of target pieces, excluding boundary IDs. This is canonical-token-sequence codelength per byte, not a published word-token WikiText perplexity.

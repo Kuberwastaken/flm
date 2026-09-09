@@ -9,3 +9,12 @@ Local desktop browser, checkpoint 3,000, 10 September 2026. These are functional
 - At the 390-pixel responsive viewport setting, the browser's document client width and scroll width were both 375 pixels: no horizontal document overflow. Desktop layout places conversation on the left and brain/body on the right; narrow layout stacks them.
 
 Outstanding release checks include production-bundle behavior, cancellation, intervention replay, storage roundtrip, keyboard navigation, failed asset handling, download links and the deployed custom domain. Add verified results here as those checks complete.
+
+
+## WikiText browser revision
+
+Production preview, 10 September 2026: the 1,000-update lexical checkpoint generated 200 actual tokens / 751 bytes from the original prompt `The history of science`, at 73.7 tokens/s including observation delay. It produced sentence fragments, invented details and repetition. This is a functional observation, not a quality or throughput benchmark. Both 3D canvases loaded, all 1,024 model identities were available, and no browser console errors were captured.
+
+The Research view loaded three validation curves, selected the common 1,000-update point, and displayed FLM 2.137, GRU 2.127 and transformer 2.114 bits/byte. Switching the fixed prompt updated all three unedited sample columns. Full-page capture showed stitching overlaps; a DOM audit confirmed unique IDs, one source list and one instance of each of the eight research headings.
+
+Automated worker integration verifies generation, scoring, adaptation, clearing, neuron silencing and cancellation during priming for both AMI and WikiText. The 27 Python checks and 26 JavaScript checks passed after lexical support. Binary browser/PyTorch parity also passed for the subsequently exported 3,000-update WikiText checkpoint. The later packed-adapter storage format still needs a direct browser save/reload check.
