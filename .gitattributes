@@ -1,0 +1,4 @@
+# These artifacts contain hashes of their exact bytes. Keep them identical on
+# Windows and Unix checkouts regardless of the user's core.autocrlf setting.
+data/** -text
+public/** -text
