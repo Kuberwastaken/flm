@@ -61,7 +61,7 @@ def export_model(checkpoint: Path, graph_path: Path, output: Path, anatomy_sourc
     write_json(output / "anatomy.json", anatomy)
     configuration = dict(format="flm-browser-v1", name="FLM 0.1", model_id=f"flm-central-{n}-ami-s{saved['run']['seed']}",
         neurons=n, pools=p, features=p * 2, vocabulary=VOCAB, arrays=index, variant=model.config.variant,
-        checkpoint_step=saved["step"], checkpoint_sha256=sha256(checkpoint),
+        checkpoint_step=saved["step"], checkpoint_sha256=saved["_file_sha256"],
         weights_sha256=sha256(output / "weights.bin"), weights_bytes=len(binary),
         anatomy_sha256=sha256(output / "anatomy.json"), source_graph_sha256=sha256(graph_path),
         trained_parameters=saved["run"]["parameter_card"]["trainable_parameters"],

@@ -17,6 +17,10 @@ from .provenance import SPEECH_DATASET, SPEECH_REVISION, sha256, write_json
 SPLITS = {"train": "train.100", "validation": "validation", "test": "test"}
 
 
+class RateLimited(RuntimeError):
+    """Stop acquisition without discarding already verified cache entries."""
+
+
 def normalized(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip().lower()
 
@@ -35,6 +39,8 @@ def fetch_batch(cache: Path, split: str, offset: int) -> dict:
     for attempt in range(6):
         try:
             response = requests.get("https://datasets-server.huggingface.co/rows", params=parameters, timeout=60)
+            if response.status_code == 429:
+                raise RateLimited("Dataset service rate limited this request. Verified cache is preserved; acquisition is incomplete.")
             response.raise_for_status()
             revision = response.headers.get("x-revision")
             if revision != SPEECH_REVISION:
@@ -60,18 +66,24 @@ def fetch_batch(cache: Path, split: str, offset: int) -> dict:
     raise RuntimeError("Unreachable download state")
 
 
-def acquire(raw: Path, workers: int = 4) -> dict[str, list[dict]]:
+def acquire(raw: Path, workers: int = 1) -> dict[str, list[dict]]:
     result = {}
     for name, split in SPLITS.items():
         first = fetch_batch(raw, split, 0)
         batches = {0: first}
         offsets = list(range(100, first["total"], 100))
-        with ThreadPoolExecutor(max_workers=workers) as pool:
+        pool = ThreadPoolExecutor(max_workers=workers)
+        try:
             jobs = {pool.submit(fetch_batch, raw, split, offset): offset for offset in offsets}
             for index, future in enumerate(as_completed(jobs), 1):
                 batches[jobs[future]] = future.result()
                 if index % 25 == 0:
                     print(f"{name}: {index + 1}/{len(offsets) + 1} transcript batches", flush=True)
+        except BaseException:
+            pool.shutdown(wait=True, cancel_futures=True)
+            raise
+        else:
+            pool.shutdown(wait=True)
         rows = [row for offset in sorted(batches) for row in batches[offset]["rows"]]
         if len(rows) != first["total"] or len({r["id"] for r in rows}) != len(rows):
             raise ValueError(f"Incomplete or repeated rows in {split}")
@@ -130,7 +142,7 @@ def main() -> None:
     p.add_argument("--raw", type=Path, default=Path("data/raw/librispeech"))
     p.add_argument("--output", type=Path, default=Path("data/processed/librispeech"))
     p.add_argument("--card", type=Path, default=Path("data/cards/librispeech.json"))
-    p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--workers", type=int, default=1)
     a = p.parse_args()
     print(json.dumps(prepare(acquire(a.raw, a.workers), a.output, a.card), indent=2), flush=True)
 

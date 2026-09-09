@@ -4,6 +4,8 @@ from __future__ import annotations
 import argparse
 from dataclasses import asdict
 import json
+import hashlib
+import io
 import math
 from pathlib import Path
 import random
@@ -94,8 +96,10 @@ def save_checkpoint(path: Path, model: FLM, optimizer, sampler: Sampler, step: i
 def restored(path: Path, graph_path: Path, device: str = "cpu"):
     # PyTorch 2.8 exposes __version__ as a harmless str subclass; accept that
     # legacy metadata type while retaining the restricted tensor-only loader.
+    payload = path.read_bytes()
     with torch.serialization.safe_globals([torch.torch_version.TorchVersion]):
-        checkpoint = torch.load(path, map_location=device, weights_only=True)
+        checkpoint = torch.load(io.BytesIO(payload), map_location=device, weights_only=True)
+    checkpoint["_file_sha256"] = hashlib.sha256(payload).hexdigest()
     model = FLM(load_graph(graph_path), Config(**checkpoint["config"])).to(device)
     model.load_state_dict(checkpoint["model"])
     if checkpoint["run"]["graph_sha256"] != sha256(graph_path):
@@ -137,7 +141,7 @@ def train(args):
         sampler.rng.bit_generator.state = checkpoint["sampler_rng"]
         torch.set_rng_state(checkpoint["torch_rng"].cpu())
         start_step, best = checkpoint["step"], checkpoint["best"]
-        run["resumed_from"] = dict(path=str(args.resume), sha256=sha256(args.resume), step=start_step)
+        run["resumed_from"] = dict(path=str(args.resume), sha256=checkpoint["_file_sha256"], step=start_step)
     write_json(args.output / "run.json", run)
     if not args.resume:
         initial = evaluate(model, validation, args.sequence, args.eval_bytes)
