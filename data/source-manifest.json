@@ -1,0 +1,182 @@
+{
+  "repository": "Xenova/fruit-fly-simulation",
+  "revision": "776d115ee5aa934578a87fd6d260d138084f59c1",
+  "accessed": "2026-09-10",
+  "selection": "Pinned graph manifest, neuron metadata and CSR chunks only",
+  "files": [
+    {
+      "path": "counts-000.bin.gz",
+      "bytes": 1484341,
+      "sha256": "9557547409e4337e239cca437232519a46ab70da388c838c4690ce9075f8154a",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-000.bin.gz"
+    },
+    {
+      "path": "counts-001.bin.gz",
+      "bytes": 1387906,
+      "sha256": "5b4b9f5bc758365f811c179136bde0efafefecb3f2e38d9c77c6f578348284cc",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-001.bin.gz"
+    },
+    {
+      "path": "counts-002.bin.gz",
+      "bytes": 1348762,
+      "sha256": "99ca1bf06a5d5241bc03d6030c7316ac9ba04fae0e28f89b61df381ff742b51f",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-002.bin.gz"
+    },
+    {
+      "path": "counts-003.bin.gz",
+      "bytes": 1292309,
+      "sha256": "45b67880669ec58ac52a32e7772c4235d18fc3aec30fd134dff7f31230580bb1",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-003.bin.gz"
+    },
+    {
+      "path": "counts-004.bin.gz",
+      "bytes": 1224124,
+      "sha256": "bca4fb5858a053d522b1d0267485bdc3ee30834b30bf21ae1565083fd271ec08",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-004.bin.gz"
+    },
+    {
+      "path": "counts-005.bin.gz",
+      "bytes": 1171043,
+      "sha256": "29bbb9aa73369c464efbe21b295fe8b366ccd4472a6063b79ae5148777a97545",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-005.bin.gz"
+    },
+    {
+      "path": "counts-006.bin.gz",
+      "bytes": 1143999,
+      "sha256": "2209e06115901073f0ec44de5fd14e3d5883258b0b0a1041a9857c17a8918cf8",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-006.bin.gz"
+    },
+    {
+      "path": "counts-007.bin.gz",
+      "bytes": 1143644,
+      "sha256": "3eeeb95127136c9ac255ca7c0f537bc03d746c550003fb801b818759a591d353",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-007.bin.gz"
+    },
+    {
+      "path": "counts-008.bin.gz",
+      "bytes": 1079155,
+      "sha256": "1a39ecec53bc797e20b4721c68769509588549fbdd92ee9c844a37e0967ac236",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-008.bin.gz"
+    },
+    {
+      "path": "counts-009.bin.gz",
+      "bytes": 1307947,
+      "sha256": "43c3de5488acec22dabd7d35e5a77fbcc00d759bfc2eae524bfef6d167db8db6",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-009.bin.gz"
+    },
+    {
+      "path": "counts-010.bin.gz",
+      "bytes": 1351055,
+      "sha256": "9081dfc904a509862d52ccb07a4fa7fee3915b0ccd288d3dd4b5e5cf420dab26",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-010.bin.gz"
+    },
+    {
+      "path": "counts-011.bin.gz",
+      "bytes": 1323261,
+      "sha256": "4f81baf423e14b4f64f8414b892c414c5a59901b4de587570604634f0e483e80",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-011.bin.gz"
+    },
+    {
+      "path": "counts-012.bin.gz",
+      "bytes": 252165,
+      "sha256": "0d6de1acde7eabb105484a787cab407f762fdd2d2b1f787fccc374c8df02f86f",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/counts-012.bin.gz"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 7089,
+      "sha256": "7f8cb6ba333bfc3854a24f773223bc86a0d18e4c8a6490b87e141fe6d50e4357",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/manifest.json"
+    },
+    {
+      "path": "neurons.json.gz",
+      "bytes": 2381484,
+      "sha256": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/neurons.json.gz"
+    },
+    {
+      "path": "offsets-000.bin.gz",
+      "bytes": 373277,
+      "sha256": "92d07c6e051f8c1ffd54856eeaaa6deafd9e9be353dec8428eaecacd6bf979eb",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/offsets-000.bin.gz"
+    },
+    {
+      "path": "sources-000.bin.gz",
+      "bytes": 4274980,
+      "sha256": "af727ff992fb6d08af2c6ab2483782c2c24efad7e2fd3223a0cfdb8bc6428631",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-000.bin.gz"
+    },
+    {
+      "path": "sources-001.bin.gz",
+      "bytes": 4709932,
+      "sha256": "23b559e6373e88ee813f634bd22ad5837c8141c60d14125a885909fda3a5361f",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-001.bin.gz"
+    },
+    {
+      "path": "sources-002.bin.gz",
+      "bytes": 4940312,
+      "sha256": "d2a58e9dfeebd3e51d7312f2a0fca917f59552287340527fe6a4f2e6c4184ee4",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-002.bin.gz"
+    },
+    {
+      "path": "sources-003.bin.gz",
+      "bytes": 5141778,
+      "sha256": "b978c5bcab5b2f6f25d6aab5824242416d0ece0b7c70bbb0e391a51f8815d0a2",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-003.bin.gz"
+    },
+    {
+      "path": "sources-004.bin.gz",
+      "bytes": 5273857,
+      "sha256": "a60d8976ced1d3d909281acf6530fe38478e169408bd947cf33f239707890ce0",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-004.bin.gz"
+    },
+    {
+      "path": "sources-005.bin.gz",
+      "bytes": 5347949,
+      "sha256": "cf61bd68c3bf65bcfea10811464b5d3a1d0e4f2380fac6c43551a384f5ded37d",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-005.bin.gz"
+    },
+    {
+      "path": "sources-006.bin.gz",
+      "bytes": 5393958,
+      "sha256": "bbbab29ec94faa20f530fb59bea9e792be98c96da9663c058b41495b05ba171f",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-006.bin.gz"
+    },
+    {
+      "path": "sources-007.bin.gz",
+      "bytes": 5441391,
+      "sha256": "519b3f742b7dfa88731b9573d948500e7cc0382ad519ad68c4996614d0978884",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-007.bin.gz"
+    },
+    {
+      "path": "sources-008.bin.gz",
+      "bytes": 5429458,
+      "sha256": "9971d0157b0567490d07c186dbec86dcb03da77a9cf594fae066cfe89be343e1",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-008.bin.gz"
+    },
+    {
+      "path": "sources-009.bin.gz",
+      "bytes": 4838482,
+      "sha256": "714d4b7ec952f70284b299e2f569a5513f3b31d97c9b62489e8ad92999532020",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-009.bin.gz"
+    },
+    {
+      "path": "sources-010.bin.gz",
+      "bytes": 4722514,
+      "sha256": "3cfd5547381bd65dce0887117616384093b98a76bdc976a439ba9b3c41705456",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-010.bin.gz"
+    },
+    {
+      "path": "sources-011.bin.gz",
+      "bytes": 4367497,
+      "sha256": "b870990873f766161843677a329ab14111be8f259f1f2d5ffb56e239d04febea",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-011.bin.gz"
+    },
+    {
+      "path": "sources-012.bin.gz",
+      "bytes": 902084,
+      "sha256": "526fc2ec0371a9eafcba42d7affd6ffd930bd77ccd193baf9d18f39a70dc741e",
+      "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/sources-012.bin.gz"
+    }
+  ]
+}
