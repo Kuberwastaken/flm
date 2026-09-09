@@ -1,0 +1,30 @@
+{
+  "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+  "partitions": {
+    "train": {
+      "documents": 600,
+      "tokens": 3083090,
+      "utf8_bytes": 10914845,
+      "bytes_per_token": 3.5402291207846672,
+      "cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+      "source_sha256": "39b819156035020a7e30741bd76c947b93b16d446f061a1251f643e37e25f84c"
+    },
+    "validation": {
+      "documents": 60,
+      "tokens": 322742,
+      "utf8_bytes": 1144248,
+      "bytes_per_token": 3.545395393224309,
+      "cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+      "source_sha256": "c9413c075be5c28190f08731f3284e3bdb7bc55e4ae7114ba9c5e04dc6bc7fc7"
+    },
+    "test": {
+      "documents": 60,
+      "tokens": 367981,
+      "utf8_bytes": 1287656,
+      "bytes_per_token": 3.499245884977757,
+      "cache_sha256": "e6da687ff04fb44b538384e60ef70719d1e5dc39885befe715a230bda912992f",
+      "source_sha256": "6ad5d9381edeffbd811d2d678a51b23f4276afdc27dbcd55046be97eedd0a98f"
+    }
+  },
+  "test_usage": "Encoded after fitting the train-only tokenizer for reproducible scoring; no test losses or model selection performed"
+}

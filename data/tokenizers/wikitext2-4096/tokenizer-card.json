@@ -1,0 +1,19 @@
+{
+  "algorithm": "Byte-level BPE",
+  "implementation": "tokenizers 0.22.2",
+  "vocabulary": 4096,
+  "train_sha256": "39b819156035020a7e30741bd76c947b93b16d446f061a1251f643e37e25f84c",
+  "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+  "training_documents": 600,
+  "normalization": "none",
+  "prefix_space": false,
+  "all_bytes_retained": true,
+  "boundaries": {
+    "bos": 0,
+    "eos": 1,
+    "offset": 2
+  },
+  "validation_or_test_used_for_training": false,
+  "training_roundtrip": "Every training document decodes to exactly its original UTF-8 string",
+  "source": "https://huggingface.co/docs/tokenizers/api/pre-tokenizers"
+}
