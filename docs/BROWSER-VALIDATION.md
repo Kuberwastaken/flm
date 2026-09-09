@@ -22,6 +22,6 @@ Automated worker integration verifies generation, scoring, adaptation, clearing,
 
 ## Live WikiText verification
 
-The 3,000-update WikiText package is deployed at the custom domain with HTTPS enforcement. The Pages workflow succeeded at commit `8cf2ab2`. The live worker learned two passes / 62 token updates from 99 bytes of original garden-and-bird text: online training 2.447 bits/byte, separate 45-byte probe 3.983 to 3.800 bits/byte. Saving the packed adapter succeeded; after reload, Load saved reported that the checkpoint-specific learning was restored. This is a functional related-text check, not a benchmark result.
+The 3,000-update WikiText package is deployed at the custom domain with HTTPS enforcement. The Pages workflow succeeded at commit `8cf2ab2`. The live worker learned two passes / 62 token updates from 103 bytes of original garden-and-bird text: online training 2.447 bits/byte, separate 47-byte probe 3.983 to 3.800 bits/byte. Saving the packed adapter succeeded; after reload, Load saved reported that the checkpoint-specific learning was restored. This is a functional related-text check, not a benchmark result.
 
 At the 390-pixel viewport setting, the live Research view had document client/scroll widths of 375/375 pixels. Sample columns stacked into a 335.2-pixel single column. All three measured comparison rows were visible and no console errors were captured.
