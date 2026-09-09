@@ -8,3 +8,13 @@
 @media(max-width:1050px){.header{padding:12px 20px;gap:18px}.brand span{display:none}.header nav{gap:20px}.work-panel{padding:24px 20px}.anatomy-panel{padding:24px 20px}.experiment{grid-template-columns:minmax(330px,1fr) minmax(370px,1fr)}.brain-view{height:290px}.neuron-controls{flex-wrap:wrap}.neuron-controls label{width:100%}.brain-caption{font-size:9px}.interventions{gap:9px}}
 @media(max-width:760px){.header{flex-wrap:wrap;gap:4px 12px;padding:12px 16px 0}.header nav{order:3;width:100%;justify-content:space-between;gap:8px;margin-top:5px}.header nav a{padding:10px 4px}.brand strong{font-size:22px}#model-status{margin-left:auto;width:160px}.experiment{display:block}.work-panel{border-right:0;border-bottom:1px solid var(--border);padding:24px 20px}.messages{min-height:210px;max-height:420px}.anatomy-panel{padding:24px 20px}.brain-view{height:320px}.fly-view{height:270px}.brain-caption{font-size:10px}.neuron-controls{flex-wrap:nowrap}.neuron-controls label{width:auto}.research-page{padding:28px 20px;font-size:15px}.research-page h1{font-size:27px}.research-lead{font-size:20px}.footer{padding:20px;gap:16px;flex-wrap:wrap}.footer span{width:100%}.composer-actions>span{font-size:10px}.conversation-tools{gap:4px}.conversation-tools button{font-size:11px}.archive-menu summary{font-size:11px}.intro{font-size:15px}.document-links{gap:12px}#notice{padding:12px 20px}.architecture-figure svg{min-width:640px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+.comparison-controls { display:flex; flex-wrap:wrap; gap:16px; margin:24px 0 12px; }
+.comparison-controls label { display:grid; gap:6px; }
+#validation-chart { width:100%; height:auto; font-family:inherit; font-size:13px; fill:var(--text, #292820); }
+.chart-legend { display:flex; justify-content:center; gap:24px; }
+.sample-passages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:24px 0; }
+.sample-passages article { border-top:1px solid #c9c2b5; }
+.sample-passages p { white-space:pre-wrap; overflow-wrap:anywhere; font-size:14px; line-height:1.65; }
+#probabilities code { overflow-wrap:anywhere; min-width:0; }
+@media(max-width:760px) { .sample-passages { grid-template-columns:1fr; } }

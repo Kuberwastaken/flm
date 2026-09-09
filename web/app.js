@@ -1,4 +1,5 @@
 import './style.css';
+import { loadResearch } from './research.js';
 import { BrainView, FlyView } from './views.js';
 import { STORAGE_KEY, ADAPTER_KEY, validateConversations, contextFor, download } from './storage.js';
 
@@ -7,7 +8,7 @@ const selectedModel = new URLSearchParams(location.search).get('model') === 'ami
 const isLexical = selectedModel === 'wikitext';
 const adapterKey = () => `${ADAPTER_KEY}-${config.weights_sha256}`;
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
-let ready = false, busy = false, operation = '', sequence = 0, activeId = 0;
+let ready = false, busy = false, operation = '', sequence = 0, activeId = 0, researchLoaded = false;
 let config, brain, fly, anatomy, lastState, selected = 0, disabled = new Set(), lastPrompt = '';
 let conversations = [], currentId, pendingMessage, pendingElement, trace = [], storageBlocked = false;
 
@@ -94,6 +95,7 @@ $('model').onchange = () => switchModel($('model').value);
 
 function showPage() {
   const page = ['chat', 'learn', 'research'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'chat';
+  if (page === 'research' && !researchLoaded) { researchLoaded = true; loadResearch(); }
   $('experiment').hidden = page === 'research'; $('research-page').hidden = page !== 'research';
   $('chat-page').hidden = page !== 'chat'; $('learn-page').hidden = page !== 'learn';
   document.querySelectorAll('[data-page]').forEach(link => {
