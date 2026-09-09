@@ -38,7 +38,7 @@ class NGram:
         nll, size, scores = 0., 0, []; started = time.perf_counter()
         limit = max(96, byte_limit // len(documents)) if byte_limit else None
         for identity, document in documents:
-            tokens = [int(x) for x in document[:limit + 1] if True] if limit else [int(x) for x in document]
+            tokens = [int(x) for x in document[:limit + 1]] if limit else [int(x) for x in document]
             doc_nll, doc_size = 0., 0
             for i in range(1, len(tokens)):
                 if tokens[i] >= 256: continue

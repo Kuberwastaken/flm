@@ -6,10 +6,11 @@ const $ = id => document.getElementById(id);
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
 let ready = false, busy = false, operation = '', sequence = 0, activeId = 0;
 let config, brain, fly, anatomy, lastState, selected = 0, disabled = new Set(), lastPrompt = '';
-let conversations = [], currentId, pendingMessage, pendingElement, trace = [];
+let conversations = [], currentId, pendingMessage, pendingElement, trace = [], storageBlocked = false;
 
 function notice(message) { $('notice').textContent = message; $('notice').hidden = !message; }
 function store() {
+  if (storageBlocked) return;
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(conversations)); }
   catch { notice('Browser storage is unavailable or full. You can keep using ChatFLM and export your conversations.'); }
 }
@@ -36,7 +37,8 @@ function choices() {
 function makeMessage(message) {
   const article = document.createElement('article'); article.className = `message ${message.role}`;
   const header = document.createElement('div'); header.className = 'message-header';
-  const title = document.createElement('strong'); title.textContent = message.role === 'user' ? 'You' : 'FLM';
+  const title = document.createElement('strong'); title.textContent = message.role === 'user' ? 'You' :
+    `FLM${message.checkpointStep ? ` · checkpoint ${message.checkpointStep.toLocaleString()}` : ' · earlier session'}`;
   const copy = document.createElement('button'); copy.textContent = 'Copy'; copy.type = 'button'; copy.setAttribute('aria-label', `Copy ${message.role === 'user' ? 'your' : 'FLM'} message`);
   copy.onclick = async () => { try { await navigator.clipboard.writeText(message.text); copy.textContent = 'Copied'; setTimeout(() => copy.textContent = 'Copy', 1600); } catch { notice('Clipboard unavailable. Select the message text to copy it.'); } };
   header.append(title, copy); const body = document.createElement('div'); body.className = 'message-text'; body.textContent = message.text;
@@ -68,7 +70,7 @@ function newConversation(mode = $('mode').value || 'dialogue') {
 try {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) conversations = validateConversations(JSON.parse(saved));
-} catch { notice('Saved conversations could not be read. The existing storage has not been imported.'); }
+} catch { storageBlocked = true; notice('Saved conversations could not be read. Existing storage is preserved; this session will not overwrite it. Export new conversations to keep them.'); }
 if (conversations.length) { currentId = conversations[0].id; renderConversation(); } else newConversation('dialogue');
 
 function showPage() {
@@ -125,7 +127,10 @@ $('composer').onsubmit = event => {
     conversation.messages.pop(); notice('Check the generation settings: temperature 0.05–2, top-k 1–258, maximum bytes 1–1,600 and a nonnegative 32-bit integer seed.'); return;
   }
   if (conversation.title === 'New conversation') conversation.title = text.replace(/\s+/g, ' ').slice(0, 55);
-  renderConversation(); pendingMessage = { role: 'model', text: '' }; conversation.messages.push(pendingMessage);
+  renderConversation(); pendingMessage = { role: 'model', text: '', checkpointStep: config.checkpoint_step,
+    modelHash: config.weights_sha256, createdAt: new Date().toISOString(), settings: {
+      seed, temperature, topK, limit, adaptation: $('adapter-enabled').checked,
+      recurrence: $('recurrence').checked, disabled: [...disabled] } }; conversation.messages.push(pendingMessage);
   pendingElement = makeMessage(pendingMessage); pendingElement.classList.add('pending');
   $('prompt').value = ''; trace = []; lastPrompt = prompt; store();
   run('generate', { prompt, temperature, topK, limit, seed, observe: $('observe').checked });
