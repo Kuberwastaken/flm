@@ -2,9 +2,20 @@ import tempfile
 from pathlib import Path
 import unittest
 from flm.language_test import freeze_selection, paired_interval
+from flm.runtime_benchmark import state_storage
+import torch
 
 
 class ReportTests(unittest.TestCase):
+    def test_state_accounting_distinguishes_views_from_owned_storage(self):
+        backing = torch.zeros(100)
+        sliced = backing[:10]
+        result = state_storage((10, [sliced, backing[10:20]]))
+        self.assertEqual(result['logical_tensor_bytes'], 80)
+        self.assertEqual(result['allocated_tensor_bytes'], 400)
+        owned = state_storage([sliced.clone()])
+        self.assertEqual(owned['allocated_tensor_bytes'], 40)
+
     def test_test_selection_fails_closed_when_a_registered_run_is_missing(self):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(ValueError, 'incomplete'): freeze_selection(Path(directory))
