@@ -51,6 +51,8 @@ def restore(path, graph_path, lexicon):
 
 @torch.no_grad()
 def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96):
+    if not documents or chunk_size < 1 or (token_limit is not None and token_limit < 1):
+        raise ValueError('Evaluation requires documents, a positive chunk size and a positive optional token limit')
     was_training = model.training; model.eval(); lengths = torch.from_numpy(lexicon.lengths)
     started = time.perf_counter(); records = []; total_nll, total_tokens, total_bytes = 0., 0, 0
     for i, (identity, document) in enumerate(documents):
@@ -66,6 +68,7 @@ def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96):
         records.append(dict(document=identity, nll=nll, tokens=tokens, bytes=byte_count, bits_per_byte=nll / max(1, byte_count) / math.log(2)))
         total_nll += nll; total_tokens += tokens; total_bytes += byte_count
     model.train(was_training)
+    if not total_tokens or not total_bytes: raise ValueError('Evaluation contains no scored text')
     return dict(bits_per_byte=total_nll / total_bytes / math.log(2), token_perplexity=math.exp(total_nll / total_tokens),
         nll=total_nll, tokens=total_tokens, bytes=total_bytes, documents=records, seconds=time.perf_counter() - started,
         tokenizer_sha256=lexicon.sha256, subset='fixed per-article token prefixes' if token_limit else 'entire supplied split',
