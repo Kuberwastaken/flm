@@ -1,0 +1,732 @@
+{
+  "name": "AMI manual meeting transcripts",
+  "version": "1.6.2",
+  "license": "CC-BY-4.0",
+  "source": "https://groups.inf.ed.ac.uk/ami/download/",
+  "archive_url": "https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip",
+  "archive_sha256": "b56e5babb2496b8795deeeda7e71178d7fbc9963f94276cf2a3f4b56ebbc9f9d",
+  "independent_participant_components": 34,
+  "statistics": {
+    "train": {
+      "documents": 139,
+      "speakers": 158,
+      "words": 947966,
+      "utf8_bytes": 4637005,
+      "sha256": "c77a5626512c1de5b8e748a74793be96dda95b1ab7deb4c34a919d0dce2a3348"
+    },
+    "validation": {
+      "documents": 16,
+      "speakers": 16,
+      "words": 76773,
+      "utf8_bytes": 385750,
+      "sha256": "e4d617769bc09156482c4e212ae98b3e16130e8acff4c4b9983ce6e6f53ed4bc"
+    },
+    "test": {
+      "documents": 16,
+      "speakers": 16,
+      "words": 81685,
+      "utf8_bytes": 392508,
+      "sha256": "d132c9181eb6016c23efbc51558a359a7892eaabd0fda5ff79792f6c60c3bfd5"
+    }
+  },
+  "assignments": {
+    "ES2005a": {
+      "split": "test",
+      "participant_component": "ES2005a"
+    },
+    "ES2005b": {
+      "split": "test",
+      "participant_component": "ES2005a"
+    },
+    "ES2005c": {
+      "split": "test",
+      "participant_component": "ES2005a"
+    },
+    "ES2005d": {
+      "split": "test",
+      "participant_component": "ES2005a"
+    },
+    "ES2016a": {
+      "split": "validation",
+      "participant_component": "ES2016a"
+    },
+    "ES2016b": {
+      "split": "validation",
+      "participant_component": "ES2016a"
+    },
+    "ES2016c": {
+      "split": "validation",
+      "participant_component": "ES2016a"
+    },
+    "ES2016d": {
+      "split": "validation",
+      "participant_component": "ES2016a"
+    },
+    "TS3011a": {
+      "split": "train",
+      "participant_component": "TS3011a"
+    },
+    "TS3011b": {
+      "split": "train",
+      "participant_component": "TS3011a"
+    },
+    "TS3011c": {
+      "split": "train",
+      "participant_component": "TS3011a"
+    },
+    "TS3011d": {
+      "split": "train",
+      "participant_component": "TS3011a"
+    },
+    "ES2014a": {
+      "split": "train",
+      "participant_component": "ES2014a"
+    },
+    "ES2014b": {
+      "split": "train",
+      "participant_component": "ES2014a"
+    },
+    "ES2014c": {
+      "split": "train",
+      "participant_component": "ES2014a"
+    },
+    "ES2014d": {
+      "split": "train",
+      "participant_component": "ES2014a"
+    },
+    "ES2011a": {
+      "split": "train",
+      "participant_component": "ES2011a"
+    },
+    "ES2011b": {
+      "split": "train",
+      "participant_component": "ES2011a"
+    },
+    "ES2011c": {
+      "split": "train",
+      "participant_component": "ES2011a"
+    },
+    "ES2011d": {
+      "split": "train",
+      "participant_component": "ES2011a"
+    },
+    "IS1007a": {
+      "split": "train",
+      "participant_component": "IS1007a"
+    },
+    "IS1007b": {
+      "split": "train",
+      "participant_component": "IS1007a"
+    },
+    "IS1007c": {
+      "split": "train",
+      "participant_component": "IS1007a"
+    },
+    "IS1007d": {
+      "split": "train",
+      "participant_component": "IS1007a"
+    },
+    "ES2006a": {
+      "split": "train",
+      "participant_component": "ES2006a"
+    },
+    "ES2006b": {
+      "split": "train",
+      "participant_component": "ES2006a"
+    },
+    "ES2006c": {
+      "split": "train",
+      "participant_component": "ES2006a"
+    },
+    "ES2006d": {
+      "split": "train",
+      "participant_component": "ES2006a"
+    },
+    "EN2006a": {
+      "split": "train",
+      "participant_component": "EN2006a"
+    },
+    "EN2006b": {
+      "split": "train",
+      "participant_component": "EN2006a"
+    },
+    "EN2004a": {
+      "split": "train",
+      "participant_component": "EN2004a"
+    },
+    "IS1009a": {
+      "split": "train",
+      "participant_component": "IS1009a"
+    },
+    "IS1009b": {
+      "split": "train",
+      "participant_component": "IS1009a"
+    },
+    "IS1009c": {
+      "split": "train",
+      "participant_component": "IS1009a"
+    },
+    "IS1009d": {
+      "split": "train",
+      "participant_component": "IS1009a"
+    },
+    "TS3010a": {
+      "split": "test",
+      "participant_component": "TS3010a"
+    },
+    "TS3010b": {
+      "split": "test",
+      "participant_component": "TS3010a"
+    },
+    "TS3010c": {
+      "split": "test",
+      "participant_component": "TS3010a"
+    },
+    "TS3010d": {
+      "split": "test",
+      "participant_component": "TS3010a"
+    },
+    "ES2015a": {
+      "split": "validation",
+      "participant_component": "ES2015a"
+    },
+    "ES2015b": {
+      "split": "validation",
+      "participant_component": "ES2015a"
+    },
+    "ES2015c": {
+      "split": "validation",
+      "participant_component": "ES2015a"
+    },
+    "ES2015d": {
+      "split": "validation",
+      "participant_component": "ES2015a"
+    },
+    "ES2003a": {
+      "split": "train",
+      "participant_component": "ES2003a"
+    },
+    "ES2003b": {
+      "split": "train",
+      "participant_component": "ES2003a"
+    },
+    "ES2003c": {
+      "split": "train",
+      "participant_component": "ES2003a"
+    },
+    "ES2003d": {
+      "split": "train",
+      "participant_component": "ES2003a"
+    },
+    "ES2008a": {
+      "split": "train",
+      "participant_component": "ES2008a"
+    },
+    "ES2008b": {
+      "split": "train",
+      "participant_component": "ES2008a"
+    },
+    "ES2008c": {
+      "split": "train",
+      "participant_component": "ES2008a"
+    },
+    "ES2008d": {
+      "split": "train",
+      "participant_component": "ES2008a"
+    },
+    "ES2009a": {
+      "split": "train",
+      "participant_component": "ES2009a"
+    },
+    "ES2009b": {
+      "split": "train",
+      "participant_component": "ES2009a"
+    },
+    "ES2009c": {
+      "split": "train",
+      "participant_component": "ES2009a"
+    },
+    "ES2009d": {
+      "split": "train",
+      "participant_component": "ES2009a"
+    },
+    "TS3003a": {
+      "split": "train",
+      "participant_component": "TS3003a"
+    },
+    "TS3003b": {
+      "split": "train",
+      "participant_component": "TS3003a"
+    },
+    "TS3003c": {
+      "split": "train",
+      "participant_component": "TS3003a"
+    },
+    "TS3003d": {
+      "split": "train",
+      "participant_component": "TS3003a"
+    },
+    "EN2001a": {
+      "split": "train",
+      "participant_component": "EN2001a"
+    },
+    "EN2001b": {
+      "split": "train",
+      "participant_component": "EN2001a"
+    },
+    "EN2001d": {
+      "split": "train",
+      "participant_component": "EN2001a"
+    },
+    "EN2001e": {
+      "split": "train",
+      "participant_component": "EN2001a"
+    },
+    "TS3005a": {
+      "split": "train",
+      "participant_component": "TS3005a"
+    },
+    "TS3005b": {
+      "split": "train",
+      "participant_component": "TS3005a"
+    },
+    "TS3005c": {
+      "split": "train",
+      "participant_component": "TS3005a"
+    },
+    "TS3005d": {
+      "split": "train",
+      "participant_component": "TS3005a"
+    },
+    "TS3008a": {
+      "split": "train",
+      "participant_component": "TS3008a"
+    },
+    "TS3008b": {
+      "split": "train",
+      "participant_component": "TS3008a"
+    },
+    "TS3008c": {
+      "split": "train",
+      "participant_component": "TS3008a"
+    },
+    "TS3008d": {
+      "split": "train",
+      "participant_component": "TS3008a"
+    },
+    "TS3006a": {
+      "split": "train",
+      "participant_component": "TS3006a"
+    },
+    "TS3006b": {
+      "split": "train",
+      "participant_component": "TS3006a"
+    },
+    "TS3006c": {
+      "split": "train",
+      "participant_component": "TS3006a"
+    },
+    "TS3006d": {
+      "split": "train",
+      "participant_component": "TS3006a"
+    },
+    "TS3009a": {
+      "split": "test",
+      "participant_component": "TS3009a"
+    },
+    "TS3009b": {
+      "split": "test",
+      "participant_component": "TS3009a"
+    },
+    "TS3009c": {
+      "split": "test",
+      "participant_component": "TS3009a"
+    },
+    "TS3009d": {
+      "split": "test",
+      "participant_component": "TS3009a"
+    },
+    "ES2010a": {
+      "split": "validation",
+      "participant_component": "ES2010a"
+    },
+    "ES2010b": {
+      "split": "validation",
+      "participant_component": "ES2010a"
+    },
+    "ES2010c": {
+      "split": "validation",
+      "participant_component": "ES2010a"
+    },
+    "ES2010d": {
+      "split": "validation",
+      "participant_component": "ES2010a"
+    },
+    "EN2003a": {
+      "split": "train",
+      "participant_component": "EN2003a"
+    },
+    "EN2005a": {
+      "split": "train",
+      "participant_component": "EN2005a"
+    },
+    "EN2009b": {
+      "split": "train",
+      "participant_component": "EN2005a"
+    },
+    "EN2009c": {
+      "split": "train",
+      "participant_component": "EN2005a"
+    },
+    "EN2009d": {
+      "split": "train",
+      "participant_component": "EN2005a"
+    },
+    "TS3012a": {
+      "split": "train",
+      "participant_component": "TS3012a"
+    },
+    "TS3012b": {
+      "split": "train",
+      "participant_component": "TS3012a"
+    },
+    "TS3012c": {
+      "split": "train",
+      "participant_component": "TS3012a"
+    },
+    "TS3012d": {
+      "split": "train",
+      "participant_component": "TS3012a"
+    },
+    "TS3007a": {
+      "split": "train",
+      "participant_component": "TS3007a"
+    },
+    "TS3007b": {
+      "split": "train",
+      "participant_component": "TS3007a"
+    },
+    "TS3007c": {
+      "split": "train",
+      "participant_component": "TS3007a"
+    },
+    "TS3007d": {
+      "split": "train",
+      "participant_component": "TS3007a"
+    },
+    "IB4001": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4002": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4003": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4004": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4005": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4010": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IB4011": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1001": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1002": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1005": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1007": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1008": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1009": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1012": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1013": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1014": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IN1016": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1000a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1000b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1000c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1000d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1001a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1001b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1001c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1001d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1002b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1002c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1002d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1003a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1003b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1003c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1003d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1004a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1004b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1004c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1004d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1005a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1005b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1005c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1006a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1006b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1006c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1006d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1008a": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1008b": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1008c": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "IS1008d": {
+      "split": "train",
+      "participant_component": "IB4001"
+    },
+    "TS3004a": {
+      "split": "train",
+      "participant_component": "TS3004a"
+    },
+    "TS3004b": {
+      "split": "train",
+      "participant_component": "TS3004a"
+    },
+    "TS3004c": {
+      "split": "train",
+      "participant_component": "TS3004a"
+    },
+    "TS3004d": {
+      "split": "train",
+      "participant_component": "TS3004a"
+    },
+    "ES2002a": {
+      "split": "train",
+      "participant_component": "ES2002a"
+    },
+    "ES2002b": {
+      "split": "train",
+      "participant_component": "ES2002a"
+    },
+    "ES2002c": {
+      "split": "train",
+      "participant_component": "ES2002a"
+    },
+    "ES2002d": {
+      "split": "train",
+      "participant_component": "ES2002a"
+    },
+    "ES2012a": {
+      "split": "train",
+      "participant_component": "ES2012a"
+    },
+    "ES2012b": {
+      "split": "train",
+      "participant_component": "ES2012a"
+    },
+    "ES2012c": {
+      "split": "train",
+      "participant_component": "ES2012a"
+    },
+    "ES2012d": {
+      "split": "train",
+      "participant_component": "ES2012a"
+    },
+    "ES2007a": {
+      "split": "test",
+      "participant_component": "ES2007a"
+    },
+    "ES2007b": {
+      "split": "test",
+      "participant_component": "ES2007a"
+    },
+    "ES2007c": {
+      "split": "test",
+      "participant_component": "ES2007a"
+    },
+    "ES2007d": {
+      "split": "test",
+      "participant_component": "ES2007a"
+    },
+    "ES2013a": {
+      "split": "validation",
+      "participant_component": "ES2013a"
+    },
+    "ES2013b": {
+      "split": "validation",
+      "participant_component": "ES2013a"
+    },
+    "ES2013c": {
+      "split": "validation",
+      "participant_component": "ES2013a"
+    },
+    "ES2013d": {
+      "split": "validation",
+      "participant_component": "ES2013a"
+    },
+    "ES2004a": {
+      "split": "train",
+      "participant_component": "ES2004a"
+    },
+    "ES2004b": {
+      "split": "train",
+      "participant_component": "ES2004a"
+    },
+    "ES2004c": {
+      "split": "train",
+      "participant_component": "ES2004a"
+    },
+    "ES2004d": {
+      "split": "train",
+      "participant_component": "ES2004a"
+    },
+    "EN2002a": {
+      "split": "train",
+      "participant_component": "EN2002a"
+    },
+    "EN2002b": {
+      "split": "train",
+      "participant_component": "EN2002a"
+    },
+    "EN2002c": {
+      "split": "train",
+      "participant_component": "EN2002a"
+    },
+    "EN2002d": {
+      "split": "train",
+      "participant_component": "EN2002a"
+    }
+  },
+  "transformations": [
+    "Read word and punctuation annotations; omit nonlexical events",
+    "Split on sentence punctuation or >1 second pause",
+    "Sort speaker segments by onset; retain generic a/b/c/d speaker markers",
+    "Lowercase and normalize spacing; retain spoken hesitations",
+    "Partition participant/family connected components by fixed hash order, 8/10 train, 1/10 validation, 1/10 test"
+  ],
+  "limitations": [
+    "A custom participant-disjoint text split, not the official ASR benchmark",
+    "Overlapping speech is linearized by segment onset",
+    "Mostly design-team meetings; narrow conversational domain",
+    "Word counts include speaker labels",
+    "No audio or teacher-generated dialogue used"
+  ]
+}

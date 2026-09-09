@@ -13,3 +13,9 @@ The processed source distribution is [Neural Canvas](https://huggingface.co/spac
 Vassil Panayotov, Guoguo Chen, Daniel Povey and Sanjeev Khudanpur. LibriSpeech: An ASR corpus based on public domain audio books, ICASSP 2015. [OpenSLR 12](https://www.openslr.org/12). CC BY 4.0.
 
 FLM retrieves only transcript text and document IDs from the official `openslr/librispeech_asr` distribution, then lowercases, normalizes whitespace, groups utterances and removes specified exact duplicates. The data card records the transformations and partition limits. Training on transcripts does not train an acoustic model.
+
+## AMI Meeting Corpus
+
+The AMI Project and corpus contributors. [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/), manual annotations version 1.6.2. The official release licenses signals and transcription under CC BY 4.0. See the [download and license page](https://groups.inf.ed.ac.uk/ami/download/).
+
+FLM uses word/punctuation transcriptions, omits nonlexical events, linearizes overlapping segments, applies generic speaker labels and lowercases the text. Its custom split keeps participants and meeting families together. No audio or unrelated annotation types are used. Archive hash, transformations, assignment rules and limitations are in `data/cards/ami.json`.
