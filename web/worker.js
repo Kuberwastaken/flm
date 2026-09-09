@@ -1,0 +1,125 @@
+import { FLM, random, sample, softmax } from './model.js';
+
+let model, active = null;
+const encoder = new TextEncoder();
+const pause = () => new Promise(resolve => setTimeout(resolve, 0));
+const send = (type, data = {}) => postMessage({ type, id: active?.id, ...data });
+
+function snapshot() {
+  const probabilities = softmax(model.logits);
+  const top = Array.from(probabilities, (probability, token) => ({ token, probability }))
+    .filter(x => x.token < 256).sort((a, b) => b.probability - a.probability).slice(0, 6);
+  return { h: model.h.slice(), slow: model.slow.slice(), top,
+    meanActivity: model.h.reduce((sum, x) => sum + Math.abs(x), 0) / model.n };
+}
+
+async function prime(text) {
+  const bytes = encoder.encode(text);
+  if (bytes.length > 16000) throw new Error('Context is limited to 16,000 UTF-8 bytes. Start a new conversation or shorten the text.');
+  model.reset(); model.step(256);
+  for (let i = 0; i < bytes.length; i++) {
+    if (active.cancelled) return false;
+    model.step(bytes[i]);
+    if (i % 64 === 63) { send('priming', { done: i + 1, total: bytes.length }); await pause(); }
+  }
+  return true;
+}
+
+async function generate(message) {
+  if (!await prime(message.prompt)) return;
+  const rng = random(message.seed), decoder = new TextDecoder();
+  const limit = Math.max(1, Math.min(1600, Number(message.limit) || 400));
+  const started = performance.now(); let text = '', count = 0;
+  send('state', snapshot());
+  while (count < limit && !active.cancelled) {
+    const token = sample(model.logits, rng, message);
+    if (token === 257) break;
+    text += decoder.decode(new Uint8Array([token]), { stream: true });
+    model.step(token); count++;
+    if (count % 8 === 0) {
+      send('generation', { text, bytes: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+      await pause();
+      if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
+    }
+  }
+  text += decoder.decode();
+  send('generation', { text, bytes: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+}
+
+async function score(text) {
+  const bytes = encoder.encode(text); model.reset(); model.step(256); let nll = 0;
+  for (let i = 0; i < bytes.length; i++) {
+    if (active.cancelled) return null;
+    nll -= Math.log(Math.max(softmax(model.logits)[bytes[i]], 1e-30));
+    model.step(bytes[i]);
+    if (i % 64 === 63) await pause();
+  }
+  return nll / Math.max(bytes.length, 1) / Math.LN2;
+}
+
+async function learn(message) {
+  const bytes = encoder.encode(message.text), probeBytes = encoder.encode(message.probe || '');
+  if (!bytes.length || bytes.length > 6000 || probeBytes.length > 2000)
+    throw new Error('Use 1–6,000 training bytes and at most 2,000 separate probe bytes.');
+  const epochs = Number(message.epochs), rate = Number(message.rate);
+  if (!Number.isInteger(epochs) || epochs < 1 || epochs > 5 || !Number.isFinite(rate) || rate <= 0 || rate > 0.2)
+    throw new Error('Invalid learning settings.');
+  model.adaptationEnabled = true;
+  const before = message.probe ? await score(message.probe) : null;
+  if (active.cancelled) return;
+  let count = 0, nll = 0;
+  for (let epoch = 0; epoch < epochs; epoch++) {
+    model.reset(); model.step(256);
+    for (const token of bytes) {
+      if (active.cancelled) return;
+      nll += model.learn(token, rate); model.step(token); count++;
+      if (count % 32 === 0) {
+        send('learning', { done: count, total: bytes.length * epochs, trainingBpb: nll / count / Math.LN2, ...snapshot() });
+        await pause();
+      }
+    }
+  }
+  const after = message.probe ? await score(message.probe) : null;
+  send('learned', { done: count, total: bytes.length * epochs, trainingBpb: nll / count / Math.LN2, before, after, ...snapshot() });
+}
+
+async function load() {
+  const base = `${import.meta.env.BASE_URL}models/flm-compact/`;
+  const configResponse = await fetch(`${base}model.json`);
+  if (!configResponse.ok) throw new Error(`Model manifest unavailable (${configResponse.status}).`);
+  const config = await configResponse.json();
+  send('loading', { message: 'Downloading 1.95 MB checkpoint…' });
+  const response = await fetch(`${base}weights.bin`);
+  if (!response.ok) throw new Error(`Model download failed (${response.status}).`);
+  const binary = await response.arrayBuffer();
+  const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', binary)), x => x.toString(16).padStart(2, '0')).join('');
+  if (digest !== config.weights_sha256) throw new Error('Model checksum mismatch. Reload to fetch a consistent release.');
+  model = new FLM(config, binary); send('ready', { config });
+}
+
+self.onmessage = async ({ data: message }) => {
+  if (message.type === 'stop') { if (active) active.cancelled = true; return; }
+  if (active) { postMessage({ type: 'error', id: message.id, message: 'Wait for the current operation to finish.' }); return; }
+  active = { id: message.id, cancelled: false };
+  try {
+    if (message.type === 'load') await load();
+    else {
+      if (!model) throw new Error('The model is still loading.');
+      if (message.type === 'generate') await generate(message);
+      else if (message.type === 'learn') await learn(message);
+      else if (message.type === 'export') send('adapter', { adapter: model.exportLearning(), destination: message.destination });
+      else if (message.type === 'import') { model.importLearning(message.adapter); send('notice', { message: 'Learning restored for this checkpoint.' }); }
+      else if (message.type === 'clear') { model.clearLearning(); send('notice', { message: 'Local learning cleared. Original readout restored.' }); }
+      else if (message.type === 'controls') {
+        model.recurrenceEnabled = Boolean(message.recurrence);
+        model.adaptationEnabled = Boolean(message.adaptation);
+        model.disabled.fill(0);
+        for (const index of message.disabled || []) {
+          if (Number.isInteger(index) && index >= 0 && index < model.n) model.disabled[index] = 1;
+        }
+        if (message.prompt && await prime(message.prompt)) send('state', snapshot());
+      } else throw new Error('Unknown operation.');
+    }
+  } catch (error) { send('error', { message: error.message }); }
+  finally { send('idle', { cancelled: active.cancelled }); active = null; }
+};
