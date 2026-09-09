@@ -1,0 +1,13 @@
+# Broader language experiment
+
+The main research direction is now WikiText-2 raw, following the request for a standard, varied corpus and a meaningful basic-transformer comparison. AMI remains the initial human-dialogue experiment. Its 6,000-update training run will finish; the pending 12-run AMI comparison queue was stopped before it started so compute can go to the broader study. The earlier AMI protocol is retained as a versioned, deferred experiment.
+
+WikiText-2 is a widely used, human-written Wikipedia language-model corpus with official train/validation/test partitions. The raw variant retains words before unknown-word replacement, case, punctuation and numbers. It still includes WikiText markup/tokenization artifacts, so it must not be described as an untouched Wikipedia dump. We preserve source row strings and group complete articles for state reset and leakage auditing.
+
+The initial byte model spends many recurrent updates spelling individual words. The next experiment will evaluate a small, lossless byte-pair vocabulary learned only from the WikiText training split. FLM and the comparator will share this tokenizer and presented-token schedule; no pretrained tokenizer, embedding or teacher model is needed. A tied input/output lexical interface is a candidate for keeping the output layer small. This is a planned architecture revision, not an already measured improvement.
+
+The comparison must include a compact causal transformer and GRU with similar parameter counts, an n-gram reference, explicit data exposure and held-out scores. Report subword perplexity only within the shared tokenizer and bits per original UTF-8 byte for normalized likelihood. Do not compare these numbers directly to standard word-level WikiText perplexities. Register the exact settings before training; preserve the AMI release and identify the dataset/checkpoint used for each generated passage.
+
+BabyLM's 10M-word track is the next relevant extension for diverse small-data acquisition studies. Its mixed corpus has component-specific provenance and licenses. It is not silently folded into this experiment. Tiny Shakespeare is a useful small qualitative sanity dataset, but it is too narrow to replace the main benchmark. Later behavior, memory and graph interventions remain in scope after the broader model comparison is working.
+
+Sources: [WikiText publisher card](https://huggingface.co/datasets/Salesforce/wikitext), [Pointer Sentinel Mixture Models](https://arxiv.org/abs/1609.07843), [BabyLM 2026 guidelines](https://babylm.github.io/guidelines.html), [Hugging Face byte-level tokenization](https://huggingface.co/docs/tokenizers/api/pre-tokenizers).
