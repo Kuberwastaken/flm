@@ -78,3 +78,15 @@ for run in runs:
     '\\newcommand{\\BrowserUpdate}{'+str(config['checkpoint_step'])+'}\n'+
     '\\newcommand{\\MatchedRows}{'+ '\n'.join(table)+'}\n',encoding='utf8')
 print(f'Generated four figures and the matched-update table at step {common}.')
+
+test_path = ROOT / 'reports/wikitext2/summary.json'
+if test_path.exists():
+    test = json.loads(test_path.read_text(encoding='utf8')); rows = []
+    for aggregate in test['aggregates']:
+        values = [next(r for r in test['runs'] if r['variant'] == aggregate['variant'] and r['seed'] == seed)['score']['bits_per_byte'] for seed in (42, 43)]
+        rows.append(f"{NAMES[aggregate['variant']]} & {values[0]:.4f} & {values[1]:.4f} & {aggregate['mean_bpb']:.4f} & {aggregate['seed_standard_deviation']:.4f} " + r'\\')
+    text = '\\newcommand{\\TestRows}{' + '\n'.join(rows) + '}\n'
+    text += '\\newcommand{\\NgramTest}{' + f"{test['ngram']['score']['bits_per_byte']:.4f}" + '}\n'
+    intervals = [f"{c['training_seed']} & {NAMES[c['second']]} & {c['difference_bpb']:+.4f} & [{c['lower_95']:+.4f}, {c['upper_95']:+.4f}] " + r'\\' for c in test['paired_comparisons']]
+    text += '\\newcommand{\\TestIntervals}{' + '\n'.join(intervals) + '}\n'
+    (ROOT / 'papers/test-measured.tex').write_text(text, encoding='utf8')
