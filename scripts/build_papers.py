@@ -10,7 +10,7 @@ bibtex = shutil.which('bibtex') or str(Path(latex).with_name('bibtex.exe'))
 output = root / 'output/pdf'; output.mkdir(parents=True, exist_ok=True)
 work = root / 'work/papers'; work.mkdir(parents=True, exist_ok=True)
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--only', nargs='+', choices=('flm', 'data-and-reproduction', 'local-learning'), default=['flm', 'data-and-reproduction', 'local-learning'])
+parser.add_argument('--only', nargs='+', choices=('flm', 'data-and-reproduction', 'local-learning', 'wiring-controls'), default=['flm', 'data-and-reproduction', 'local-learning', 'wiring-controls'])
 args = parser.parse_args()
 for name in args.only:
     commands = [

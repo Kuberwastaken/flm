@@ -1,0 +1,11 @@
+{
+  "summary_sha256": "e22210b36cb2d5869cbcf5ae68690d6daa10c73d2d793c00d70c2d3625a54e99",
+  "runs": 60,
+  "numerical_include_sha256": "86860ac0e9d579b57b852154f5950d8de9f88008dc8a8e224c05e1c750f61df9",
+  "generator_sha256": "34587fc7247464b7ef58ba79de995bf85102ceaecf000e3625ef245739533404",
+  "figures": {
+    "wiring-matrix.png": "a050a2ae19c51d9b08c5493eceb33fd236f8a94ac99c657a2602286ced18b5d2",
+    "wiring-context-delay8.png": "e2cc39e9d1460faf179badd1609d8f1b4239e5fed0ad2cc5f39530170a44d6de",
+    "wiring-gradient-alignment.png": "943ea8591a71c638cf483944451b385bd6900010c942e46a13cc5b221f25d373"
+  }
+}
