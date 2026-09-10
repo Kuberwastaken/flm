@@ -31,7 +31,12 @@ def main():
         'public/research/figures/scan-data.png', 'public/research/figures/scan-data.svg',
         'flm/__init__.py', 'flm/scan.py', 'flm/scan_task.py', 'flm/provenance.py',
         'flm/tokenizer.py', 'tests/test_scan.py',
-        'data/tokenizers/wikitext2-4096/tokenizer.json')]
+        'data/tokenizers/wikitext2-4096/tokenizer.json',
+        'docs/SUBSET-AUDIT.md', 'docs/LANGUAGE-CORE-CONTROLS.md',
+        'reports/subset-audit/summary.json', 'reports/subset-audit/nodes.csv',
+        'reports/subset-audit/cell-types.csv', 'flm/subset_audit.py',
+        'flm/graph.py', 'tests/test_subset_audit.py',
+        'data/graphs/central-1024/graph-card.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

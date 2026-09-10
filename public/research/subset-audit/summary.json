@@ -1,0 +1,139 @@
+{
+  "study": "Selection and boundary audit of the frozen 1024-neuron language graph",
+  "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+  "graph_card_sha256": "eff916879b0d69897679c96197f21d764d9fd58eb7e2dec3cff52c410b812aab",
+  "source_revision": "776d115ee5aa934578a87fd6d260d138084f59c1",
+  "sources": {
+    "offsets.npy": "0b9ed4362d420e879fe608c330dbd9ac7f52964036352fdcae1a0755d686fdc7",
+    "sources.npy": "62c82e082bcdbbc778139539dbd52df698ad84a720c36b7255f1a1ba3c8416f0",
+    "counts.npy": "d9f1eb2922ff05470312ae3ba6a92932ec6c1e60f12166f2ea240c73ce1426c0",
+    "fast_sign.npy": "8761a283602b74d66bc7cbe910fbfbcc06da5810e58e306881533eb1fb23b3c4",
+    "body_ids.npy": "ddfa789213c8c5066400c026b65c112c267781c2e3ab380a39dd437866e704d6",
+    "neurons.json.gz": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864"
+  },
+  "auditor_sha256": "e9347cbb4faf23089e4c6a020a5b13bedf16b7da3cc71994eccf633ab3d1581e",
+  "population": {
+    "acquired": 166700,
+    "eligible": 32164,
+    "selected": 1024,
+    "fraction_of_acquired": 0.006142771445710858,
+    "fraction_of_eligible": 0.03183683621440119,
+    "selected_cell_type_labels": 507,
+    "selected_nonempty_cell_type_labels": 506,
+    "selected_side_counts": {
+      "L": 477,
+      "R": 527,
+      "M": 20
+    },
+    "selected_source_signs": {
+      "-1": 449,
+      "0": 85,
+      "1": 490
+    }
+  },
+  "selection": {
+    "rule": "Top incoming-plus-outgoing raw contact strength within the cb_intrinsic population; body ID breaks ties; canonical order is cell type then body ID.",
+    "exact_rank_replay": true,
+    "exact_retained_edges_contacts_and_initial_weights": true,
+    "maximum_central_strength": 221887,
+    "last_selected_strength": 7862,
+    "first_excluded_strength": 7858,
+    "graph_git_history": [
+      "7b78e2ff5653b8634377d4e69740d5a041314619 2026-09-10T02:56:20+05:30 feat: build traceable central-brain graph and specify recurrent architecture"
+    ],
+    "interpretation": "Anatomical eligibility plus a connectivity ranking and computational size limit; not a functionally complete circuit selection."
+  },
+  "connections": {
+    "inside": {
+      "connections": 88457,
+      "contacts": 1967664
+    },
+    "outside_to_selected": {
+      "connections": 847059,
+      "contacts": 7595687
+    },
+    "selected_to_outside": {
+      "connections": 799007,
+      "contacts": 5588715
+    },
+    "outside": {
+      "connections": 23848415,
+      "contacts": 109025551
+    },
+    "inside_active": {
+      "connections": 76130,
+      "contacts": 1760995
+    },
+    "inside_zero_sign": {
+      "connections": 12327,
+      "contacts": 206669
+    }
+  },
+  "boundary": {
+    "incoming_cut_fraction": 0.7942495261336743,
+    "outgoing_cut_fraction": 0.739602261877018,
+    "incident_contacts_counting_internal_once": 15152066,
+    "retained_fast_fraction_of_incident_contacts": 0.11622144465315819,
+    "denominator_note": "Incoming and outgoing fractions each count internal contacts once; their denominators differ. Incident-union totals count an internal contact once, not twice."
+  },
+  "cell_type_prefix_examples": {
+    "KC": {
+      "source": 4064,
+      "eligible": 4064,
+      "selected": 0
+    },
+    "MBON": {
+      "source": 97,
+      "eligible": 97,
+      "selected": 48
+    },
+    "EPG": {
+      "source": 50,
+      "eligible": 50,
+      "selected": 6
+    },
+    "PFN": {
+      "source": 456,
+      "eligible": 456,
+      "selected": 0
+    },
+    "PFL": {
+      "source": 50,
+      "eligible": 50,
+      "selected": 0
+    },
+    "FB": {
+      "source": 602,
+      "eligible": 602,
+      "selected": 34
+    },
+    "ER": {
+      "source": 282,
+      "eligible": 282,
+      "selected": 1
+    },
+    "LHCENT": {
+      "source": 44,
+      "eligible": 44,
+      "selected": 21
+    }
+  },
+  "tables": {
+    "nodes.csv": {
+      "bytes": 120438,
+      "sha256": "4fa1f380ea929aa6c357035e94fd32c21a28a863490260977a2eb3b0453cc209"
+    },
+    "cell-types.csv": {
+      "bytes": 165227,
+      "sha256": "7f3827ede3b8534bef47f553f9d07cd0316ba4f56714de119c1dabab474d6f8a"
+    }
+  },
+  "limitations": [
+    "No boundary input or feedback from excluded neurons is simulated.",
+    "Raw contact fractions do not estimate lost functional current or preserved computational capacity.",
+    "Cell-type prefix examples use the published labels literally; they do not establish complete circuit membership.",
+    "Zero-sign source outputs are removed after node selection; their loss is distinct from the subset boundary.",
+    "Graph history and source replay are evidence of the recorded procedure, not proof about unrecorded design decisions.",
+    "This audit is independent of language outcomes and does not establish any anatomical language advantage."
+  ]
+}

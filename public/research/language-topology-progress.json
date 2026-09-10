@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-10T12:23:26.267897+00:00",
+  "snapshot_utc": "2026-09-10T12:53:46.298947+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 3,
@@ -312,7 +312,7 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s42",
       "reference": false,
-      "saved_step": 3000,
+      "saved_step": 4500,
       "complete": false,
       "validation": [
         {
@@ -344,6 +344,21 @@
           "step": 3000,
           "bits_per_byte": 1.971245411499298,
           "token_perplexity": 131.11177639151222
+        },
+        {
+          "step": 3500,
+          "bits_per_byte": 1.9596843164738322,
+          "token_perplexity": 127.41542628024148
+        },
+        {
+          "step": 4000,
+          "bits_per_byte": 1.9428933092697842,
+          "token_perplexity": 122.23174314749902
+        },
+        {
+          "step": 4500,
+          "bits_per_byte": 1.934623592305225,
+          "token_perplexity": 119.75678556763694
         }
       ]
     },
@@ -430,7 +445,7 @@
       "graph": "data/graphs/central-1024-null101/graph.npz",
       "output": "runs/language-topology-v1/null101-s43",
       "reference": false,
-      "saved_step": 2000,
+      "saved_step": 3500,
       "complete": false,
       "validation": [
         {
@@ -452,6 +467,21 @@
           "step": 2000,
           "bits_per_byte": 2.0185631190751114,
           "token_perplexity": 147.39186041999943
+        },
+        {
+          "step": 2500,
+          "bits_per_byte": 1.9872799277912572,
+          "token_perplexity": 136.41654166868042
+        },
+        {
+          "step": 3000,
+          "bits_per_byte": 1.966861516738052,
+          "token_perplexity": 129.69768757004954
+        },
+        {
+          "step": 3500,
+          "bits_per_byte": 1.9463096950700147,
+          "token_perplexity": 123.26906788071614
         }
       ]
     },

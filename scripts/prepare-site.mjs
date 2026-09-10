@@ -11,6 +11,23 @@ await copyFile('docs/WIRING-RESULTS.md', 'public/research/wiring-results.md');
 await copyFile('docs/INFERENCE-BUNDLE.md', 'public/research/inference-guide.md');
 await copyFile('docs/CLOSED-LOOP-PROTOCOL.md', 'public/research/closed-loop-protocol.md');
 await copyFile('docs/CLOSED-LOOP-REPRODUCTION.md', 'public/research/closed-loop-reproduction.md');
+await mkdir('public/research/subset-audit', { recursive: true });
+for (const name of ['summary.json', 'nodes.csv', 'cell-types.csv'])
+  await copyFile(`reports/subset-audit/${name}`, `public/research/subset-audit/${name}`);
+await copyFile('flm/subset_audit.py', 'public/research/subset-audit/subset_audit.py');
+await copyFile('flm/graph.py', 'public/research/subset-audit/graph.py');
+let subsetNote = await readFile('docs/SUBSET-AUDIT.md', 'utf8');
+for (const [source, target] of [
+  ['../reports/subset-audit/', 'subset-audit/'],
+  ['../flm/subset_audit.py', 'subset-audit/subset_audit.py'],
+  ['../flm/graph.py', 'subset-audit/graph.py'],
+  ['../data/graphs/central-1024/graph-card.json', '../data/graph-card.json'],
+  ['LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md'],
+]) subsetNote = subsetNote.replaceAll(source, target);
+await writeFile('public/research/subset-audit.md', subsetNote);
+await writeFile('public/research/language-core-controls.md',
+  (await readFile('docs/LANGUAGE-CORE-CONTROLS.md', 'utf8'))
+    .replaceAll('LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md'));
 await copyFile('data/cards/scan.json', 'public/research/scan-data-card.json');
 await copyFile('scripts/scan_data_report.py', 'public/research/scan_data_report.py');
 let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
