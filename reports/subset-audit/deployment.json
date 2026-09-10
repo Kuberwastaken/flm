@@ -1,0 +1,156 @@
+{
+  "verified_utc": "2026-09-10T13:01:57.151254+00:00",
+  "release_commit": "49d46a254d3798520bc9c93e1a5b21fcd3352966",
+  "site": "https://flm.kuber.studio/",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "49d46a254d3798520bc9c93e1a5b21fcd3352966",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34479914850",
+    "workflowName": "Verify and publish ChatFLM"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 59931,
+      "sha256": "28be3710ce9a73265233e078ddef05832e353cd6344acd1f969efcd246eaddb5"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 6238864,
+      "sha256": "b64205b1648023bb86ed28c649445be68f1bdaf3d602b0f3f2391d1e970697b5"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "status": 200,
+      "bytes": 15193,
+      "sha256": "d14baefd860d589ff6d950c30a2daec881f2eab0752f485a01517f7568454a13"
+    },
+    {
+      "path": "research/subset-audit.md",
+      "status": 200,
+      "bytes": 6210,
+      "sha256": "89a43fb6359d8c06e3037d92a51ba57fb91c54d7c2509cc3d3cc6134c090b10c"
+    },
+    {
+      "path": "research/language-core-controls.md",
+      "status": 200,
+      "bytes": 4044,
+      "sha256": "3c8a957e781b2662c93c1c9275a5dc3c956aab50352b974a875d353173d36ed1"
+    },
+    {
+      "path": "research/subset-audit/summary.json",
+      "status": 200,
+      "bytes": 4911,
+      "sha256": "7773e445d74cd4589548e05a90f046d29ff0ff6ea67d109f2495cb8d7b02c30b"
+    },
+    {
+      "path": "research/subset-audit/nodes.csv",
+      "status": 200,
+      "bytes": 120438,
+      "sha256": "4fa1f380ea929aa6c357035e94fd32c21a28a863490260977a2eb3b0453cc209"
+    },
+    {
+      "path": "research/subset-audit/cell-types.csv",
+      "status": 200,
+      "bytes": 165227,
+      "sha256": "7f3827ede3b8534bef47f553f9d07cd0316ba4f56714de119c1dabab474d6f8a"
+    },
+    {
+      "path": "research/subset-audit/graph.py",
+      "status": 200,
+      "bytes": 6428,
+      "sha256": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99"
+    },
+    {
+      "path": "research/subset-audit/subset_audit.py",
+      "status": 200,
+      "bytes": 13014,
+      "sha256": "e9347cbb4faf23089e4c6a020a5b13bedf16b7da3cc71994eccf633ab3d1581e"
+    },
+    {
+      "path": "research/instruction-transfer.md",
+      "status": 200,
+      "bytes": 11411,
+      "sha256": "06e765ef6fa9510c9ce5dbd4220a6c56406e75956a52a8f85a63ab6c53222ee6"
+    },
+    {
+      "path": "research/scan-data-card.json",
+      "status": 200,
+      "bytes": 15226,
+      "sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292"
+    },
+    {
+      "path": "research/scan-data.json",
+      "status": 200,
+      "bytes": 20066,
+      "sha256": "76d3f7800eef904d6569adadc33c785032785dbc8e88c1d12f7ca911ec1e7c2a"
+    },
+    {
+      "path": "research/scan_data_report.py",
+      "status": 200,
+      "bytes": 7629,
+      "sha256": "947a2342c2df7759f69125c063a354641320250691feb3adb924bd006b39490d"
+    },
+    {
+      "path": "research/figures/scan-data.png",
+      "status": 200,
+      "bytes": 123937,
+      "sha256": "c4454cdd49dc73dd247005b5710dc53ea931cdc1daa851bc347f41bb40ba76b1"
+    },
+    {
+      "path": "research/figures/scan-data.svg",
+      "status": 200,
+      "bytes": 39675,
+      "sha256": "2cfc524c8b91e42dd05fa327122af4d887fec05eab176ecdb6cab0cd1ee1fbd9"
+    },
+    {
+      "path": "research/figures/scan-encoding.csv",
+      "status": 200,
+      "bytes": 1554269,
+      "sha256": "b05ef75a46e9789a3c18a6e8a14cadfce01d43e0b516c5160e044d72324a33a6"
+    },
+    {
+      "path": "licenses/SCAN-BSD.txt",
+      "status": 200,
+      "bytes": 1532,
+      "sha256": "5caff9408d400e1d9b271bf48b967154cdf6a37c16c965f91775da3af9291f67"
+    },
+    {
+      "path": "licenses/index.html",
+      "status": 200,
+      "bytes": 1323,
+      "sha256": "4b0e0b7dc70114f1c4970043b2825022c75573e8719b9431721e4f3f97c9c22a"
+    }
+  ],
+  "local_checks": {
+    "subset_audit_tests": 4,
+    "browser_tests": 50,
+    "production_build_passed": true,
+    "source_archive_payloads": 120,
+    "fresh_archive_subset_tests": 4,
+    "public_note_links": 14,
+    "frozen_language_sources_and_protocol_unchanged": true
+  },
+  "study_snapshot": "2026-09-10T12:53:46.298947+00:00",
+  "browser_check": {
+    "verified_utc": "2026-09-10T13:02:54.795249+00:00",
+    "url": "https://flm.kuber.studio/#research",
+    "subset_explanation_and_link_visible": true,
+    "dated_snapshot_completed_controls": 3,
+    "pending_test_panel_hidden": true,
+    "pending_test_panel_has_no_layout": true,
+    "new_test_rows": 0,
+    "horizontal_overflow": false
+  },
+  "readme_review": {
+    "commit": "41c0c2e",
+    "default_reading_words": 1537,
+    "local_links_checked": 62,
+    "embedded_figures": 6,
+    "working_papers": 5,
+    "separate_agent_claim_review": "No material mismatches found"
+  }
+}
