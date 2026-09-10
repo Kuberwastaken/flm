@@ -155,5 +155,30 @@
     }
   ],
   "scope": "Author credit and PDF metadata only; research text, layout and results unchanged.",
-  "visual_review": "All four changed first pages inspected; all remaining rendered pages are pixel-identical to the reviewed preceding release."
+  "visual_review": "All four changed first pages inspected; all remaining rendered pages are pixel-identical to the reviewed preceding release.",
+  "archives": [
+    {
+      "archive": "public/research/language-topology-graphs.zip",
+      "previous_sha256": "b2ccf5d64093d6a93c4d4f48bf120b9bf68d866343b80ded0915789157e2430d",
+      "sha256": "14ae9c6bd8cd6c41af13e1be6dbf14258478cf6a2d5ce3d62af247699e02a65b",
+      "bytes": 1663281,
+      "changed_entries": [
+        "LICENSE",
+        "manifest.json"
+      ],
+      "all_other_payloads_byte_identical": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "public/research/wiring-learning-records.zip",
+      "previous_sha256": "a8a192f7b74c77c2151627d57ed8d0ed5daca619deb8417ea5ae6934cb666fd0",
+      "sha256": "b36eb302b0a6a60135f92a85f0f4f2741780c2b857f3d8170d00a618019ad040",
+      "bytes": 18053227,
+      "changed_entries": [
+        "LICENSE"
+      ],
+      "all_other_payloads_byte_identical": true,
+      "crc_verified": true
+    }
+  ]
 }
