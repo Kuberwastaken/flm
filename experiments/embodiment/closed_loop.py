@@ -206,8 +206,16 @@ def main():
     args=parser.parse_args(); OUTPUT.mkdir(parents=True,exist_ok=True)
     if sys.platform=='win32':
         import ctypes
-        if not ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(),0x4000):
-            raise OSError('Unable to lower the physical worker priority')
+        from ctypes import wintypes
+        kernel=ctypes.WinDLL('kernel32',use_last_error=True)
+        kernel.GetCurrentProcess.restype=wintypes.HANDLE
+        kernel.SetPriorityClass.argtypes=(wintypes.HANDLE,wintypes.DWORD)
+        kernel.SetPriorityClass.restype=wintypes.BOOL
+        kernel.GetPriorityClass.argtypes=(wintypes.HANDLE,)
+        kernel.GetPriorityClass.restype=wintypes.DWORD
+        process=kernel.GetCurrentProcess()
+        if not kernel.SetPriorityClass(process,0x4000): raise ctypes.WinError(ctypes.get_last_error())
+        if kernel.GetPriorityClass(process)!=0x4000: raise OSError('Physical worker priority was not lowered')
     with assay_lease(): run_assay(args.case)
 
 
