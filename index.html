@@ -96,7 +96,7 @@
         <p>The controls preserve every neuron's directed in/out degrees, source sign, incoming signed weights, original self-connections and pool membership. They use the same 1,024 nodes, initial parameter tensors, tokenizer, sampled text, optimizer and 6,000-update budget as the measured references. They start from scratch.</p>
         <p id="language-subset-note">Why 1,024 neurons? The selector ranks 32,164 central-brain intrinsic neurons by their incoming-plus-outgoing contacts within that population, then applies a computational size limit. This cuts 79.42% of the selected neurons' incoming and 73.96% of their outgoing raw contacts. The retained graph is not an intact biological circuit. The <a href="/research/subset-audit.md">selection and boundary audit</a> records the exact rule, cell-type coverage and per-neuron losses.</p>
         <p id="language-topology-status" role="status">Loading the language control snapshot…</p>
-        <div class="table-scroll"><table><caption>Validation at the latest shared update for each pair · measured minus control · negative favors measured wiring</caption><thead><tr><th>Control</th><th>Training seed</th><th>Shared update</th><th>Measured BPB</th><th>Control BPB</th><th>Difference</th></tr></thead><tbody id="language-topology-rows"></tbody></table></div>
+        <div class="table-scroll"><table><caption>Validation at the latest shared update for each pair · measured minus control · negative favors the measured fast/slow model</caption><thead><tr><th>Control</th><th>Training seed</th><th>Shared update</th><th>Measured BPB</th><th>Control BPB</th><th>Difference</th></tr></thead><tbody id="language-topology-rows"></tbody></table></div>
         <p>All eight new runs must finish before their test checkpoints are frozen and scored. Three graph seeds crossed with two training seeds expose both sources of variation; the six contrasts share two measured references. Slow-state retraining is separate from disabling memory only during inference. The cue/context experiments below answer a different question.</p>
         <div class="document-links"><a href="/research/language-topology-protocol.md">Declared language control protocol</a><a href="/research/language-topology-progress.json">Dated validation snapshot</a></div>
         <details class="method-note" id="language-structure-details"><summary>Inspect the measured graph and all three wiring controls</summary>
@@ -118,6 +118,16 @@
           </details>
           <p>The six topology contrasts share two measured references; they are not six independent replications. Article intervals do not include graph, initialization or dataset uncertainty. Every condition allocates 600,003 parameter entries, but the no-slow model's 1,024 beta entries are disconnected from its loss. This study does not estimate an interaction between topology and slow memory.</p>
           <p><a href="/research/language-topology-results.json">All selected checkpoints, test articles and paired comparisons</a></p>
+          <div id="language-topology-records-download" hidden>
+            <div id="language-topology-result-figure"><figure class="measured-figure"><a href="/research/figures/language-topology-test.png"><img id="language-topology-test-figure" loading="lazy" alt="All six measured-versus-rewired language contrasts and both retrained slow-state contrasts, with paired article intervals. Negative differences favor the measured model with fast and slow state." width="1656" height="1044"></a><figcaption>Every wiring and slow-state contrast on a shared scale. The intervals condition on each pair of trained checkpoints.</figcaption></figure></div>
+            <div class="document-links"><a id="language-topology-records-link">Complete score records and arithmetic checker · ZIP</a><a href="/research/figures/language-topology-test.csv">All plotted values · CSV</a><a href="/research/language-topology-release.json">Record release details and checksum</a></div>
+            <p>The NumPy-only checker recomputes reported losses, means and intervals. This checks the supplied arithmetic; it does not rerun training or test inference.</p>
+          </div>
+          <div id="language-topology-inference-download" hidden>
+            <p>Run the measured, rewired and retrained no-slow models locally with the same prompt. The download includes all ten selected checkpoints, their exact graphs, the shared tokenizer and installation instructions. These are text-continuation models without instruction tuning.</p>
+            <div class="document-links"><a id="language-topology-inference-link">Ten selected models and local inference runtime · ZIP</a><a href="/research/language-topology-samples.json">Forty unedited fixed-prompt continuations</a><a href="/research/language-topology-inference-release.json">Model identities, replay checks and checksum</a></div>
+          </div>
+          <p id="language-topology-download-status" role="status"></p>
         </div>
       </section>
       <h2>The architecture</h2>

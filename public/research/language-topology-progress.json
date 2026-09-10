@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-10T13:39:41.238990+00:00",
+  "snapshot_utc": "2026-09-10T14:49:34.781825+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 5,
@@ -534,7 +534,7 @@
       "graph": "data/graphs/central-1024-null103/graph.npz",
       "output": "runs/language-topology-v1/null103-s43",
       "reference": false,
-      "saved_step": 1000,
+      "saved_step": 4500,
       "complete": false,
       "validation": [
         {
@@ -546,6 +546,41 @@
           "step": 1000,
           "bits_per_byte": 2.125000185377672,
           "token_perplexity": 191.78525317032236
+        },
+        {
+          "step": 1500,
+          "bits_per_byte": 2.0618355883299215,
+          "token_perplexity": 164.0437309880921
+        },
+        {
+          "step": 2000,
+          "bits_per_byte": 2.018264706678121,
+          "token_perplexity": 147.28310333505686
+        },
+        {
+          "step": 2500,
+          "bits_per_byte": 1.9865197160521582,
+          "token_perplexity": 136.16025807199293
+        },
+        {
+          "step": 3000,
+          "bits_per_byte": 1.9656821423998843,
+          "token_perplexity": 129.31987356384755
+        },
+        {
+          "step": 3500,
+          "bits_per_byte": 1.9453676020024369,
+          "token_perplexity": 122.98214217198345
+        },
+        {
+          "step": 4000,
+          "bits_per_byte": 1.932310559443348,
+          "token_perplexity": 119.07355451985585
+        },
+        {
+          "step": 4500,
+          "bits_per_byte": 1.9232972789226714,
+          "token_perplexity": 116.44816743259808
         }
       ]
     },
@@ -558,9 +593,40 @@
       "graph": "data/graphs/central-1024-null107/graph.npz",
       "output": "runs/language-topology-v1/null107-s43",
       "reference": false,
-      "saved_step": 0,
+      "saved_step": 3000,
       "complete": false,
-      "validation": []
+      "validation": [
+        {
+          "step": 500,
+          "bits_per_byte": 2.280756464864647,
+          "token_perplexity": 281.92842684440893
+        },
+        {
+          "step": 1000,
+          "bits_per_byte": 2.1257872868455063,
+          "token_perplexity": 192.15901612401981
+        },
+        {
+          "step": 1500,
+          "bits_per_byte": 2.063333002733469,
+          "token_perplexity": 164.65247356354982
+        },
+        {
+          "step": 2000,
+          "bits_per_byte": 2.01889418024662,
+          "token_perplexity": 147.51261039740973
+        },
+        {
+          "step": 2500,
+          "bits_per_byte": 1.9880868862200336,
+          "token_perplexity": 136.6891123800771
+        },
+        {
+          "step": 3000,
+          "bits_per_byte": 1.967126293160077,
+          "token_perplexity": 129.7826606272903
+        }
+      ]
     },
     {
       "label": "no-slow-s43",
