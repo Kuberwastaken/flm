@@ -12,6 +12,9 @@
 .comparison-controls { display:flex; flex-wrap:wrap; gap:16px; margin:24px 0 12px; }
 #export-dialog { max-width:640px; }
 .measured-figure { margin:24px 0; }
+.research-study { margin:24px 0; padding:16px 0; border-top:1px solid var(--border); }
+.research-study > summary { font-size:18px; font-weight:500; cursor:pointer; }
+.research-study > section:first-of-type > h2 { margin-top:24px; }
 .figure-panels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; align-items:center; }
 @media(max-width:600px) { .figure-panels { grid-template-columns:1fr; } }
 .measured-figure img { width:100%; height:auto; display:block; }
