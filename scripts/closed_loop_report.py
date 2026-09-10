@@ -6,7 +6,6 @@ import csv
 import hashlib
 import json
 from pathlib import Path
-import shutil
 import subprocess
 import sys
 import zipfile
@@ -119,11 +118,12 @@ def main():
                     '-frames:v','1',str(output/'closed-loop-poster.png')],check=True)
     files={}
     for path in sorted(folder.glob('*')):
-        if path.suffix in ('.npz','.csv','.json'): files[path.relative_to(ROOT).as_posix()]=path.read_bytes()
+        if path.suffix in ('.npz','.csv','.json','.mp4'): files[path.relative_to(ROOT).as_posix()]=path.read_bytes()
     graph_path=ROOT/'data/graphs/central-256/graph.npz'
     if any(row['graph_sha256']!=sha(graph_path) for row in report['neural_models']):
         raise ValueError('The anatomical identity map changed')
     for name in ['docs/CLOSED-LOOP-PROTOCOL.md','docs/LOCAL-LEARNING-PROTOCOL.md',
+                 'docs/CLOSED-LOOP-REPRODUCTION.md','scripts/audit_feedback_release.py',
                  'LICENSE','licenses/CC-BY-4.0.txt','licenses/DATA-ATTRIBUTION.md',
                  'experiments/embodiment/choice_runtime.py','experiments/embodiment/feedback.py',
                  'experiments/embodiment/closed_loop.py','experiments/embodiment/calibrate.py',
