@@ -46,3 +46,64 @@ All headings follow their chosen command; erroneous neural
 choices remain in the record. Identical commands produce identical trajectories
 from the shared physical initialization. No online neural sensory feedback,
 learned balance, learned gait or language-to-motor transfer is tested here.
+
+## Online pose feedback
+
+The next [declared assay](../../docs/CLOSED-LOOP-PROTOCOL.md) uses current
+simulated position and heading to form a new sensory cue every 55 ms. The
+trained network processes eleven frames before issuing each high-level choice;
+it resets between cycles to match its original training. Frozen-pose controls
+keep the same changing waypoint schedule, and a scripted reference exposes the
+contribution of the engineered feedback/deadband/gait wrapper.
+
+The shared initialization and final BPTT, fixed-core and eligibility checkpoints
+have a NumPy inference package under `data/controllers/choice-v1`. The exporter
+in the original PyTorch environment verifies all three initial states agree and
+creates 128-frame parity fixtures for each of the four models. Both environments
+pass state/logit checks at absolute 2e-6 and relative 2e-5, with identical argmax.
+To reproduce the export when the original cue checkpoints are available:
+
+```sh
+python scripts/export_choice_runtime.py
+```
+
+The committed package suffices to run physics in the isolated environment:
+
+```sh
+python experiments/embodiment/closed_loop.py
+```
+
+This runs all 27 conditions plus an exact repeat of the predeclared video case.
+It owns an OS-held lease for the output directory, resumes only verified
+completed cases, limits numerical thread pools to one and lowers its own
+Windows process priority. It does not change the language trainer's priority,
+threads or frozen sources. Never start another writer while it is live.
+`--case eligibility-live-switch` runs only that declared case; full publication
+still requires every condition and the repeat.
+
+The first physical case completed with 2,001 body observations, 400 neural
+frames and 36 delayed decisions. Independent reconstruction from recorded pose
+reproduces every sensory input, neural state, query choice and applied command.
+Five deliberately altered records remain rejected even after their archive
+hashes are updated: wrong cue, command before query, invented neural state,
+wrong sampled pose and wrong phase progress. Run this integration audit after
+the first case exists:
+
+```sh
+python scripts/verify_feedback_faults.py
+```
+
+After the entire physical queue finishes, the research environment runs:
+
+```sh
+python scripts/closed_loop_report.py
+```
+
+The reporter refuses incomplete cohorts, independently replays all controllers,
+checks the repeated physical/neural arrays and builds a staged release under
+`output/closed-loop-release`. Review its figures and video before publishing.
+The first video contains 200 frames at 25 fps: two simulated seconds shown at
+quarter speed. The encoder expands the requested 480×360 image to 480×368 for
+codec block compatibility; physical measurements use MuJoCo state, not pixels.
+Results are exploratory, use one model/physics seed and contain no language
+weights or new learning during physical trials.

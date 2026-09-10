@@ -114,3 +114,13 @@ also runs each of the six models through its CLI with the original fixed prompt.
 The release includes the shared tokenizer, graph, runtime, protocol and file
 hashes; access to the private repository is unnecessary for inference. This is
 reproduction work alongside the topology queue, not a new fitted comparison.
+
+The next physical assay now closes the high-level pose-to-neural-choice loop.
+Its declared cohort crosses four fixed cue-model checkpoints with live/frozen
+pose and three waypoint scenarios, plus a scripted reference (27 conditions)
+and one exact physical repeat. The first case passed independent causal replay;
+the remaining physical queue is running at lower CPU priority while language
+controls remain first. No language checkpoint, frozen topology input or
+language training schedule changed. Complete-cohort reporting and visual review
+are required before publishing a comparative physical conclusion. Language-to-
+control transfer and online motor learning remain later studies.
