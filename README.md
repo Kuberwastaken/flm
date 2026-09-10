@@ -28,7 +28,7 @@ Both FLM seeds trail both baselines. The [article-level scores and paired bootst
 
 ## The critical control: change the wiring
 
-**Priority as of 10 September 2026: finish the language topology study.** Three of eight new controls are complete. BabyLM remains paused; new transfer and behavior experiments are deferred.
+**Priority as of 10 September 2026: finish the language topology study.** Four of eight new controls are complete. BabyLM remains paused; new transfer and behavior experiments are deferred.
 
 ![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
 
