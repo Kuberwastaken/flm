@@ -28,6 +28,22 @@ await writeFile('public/research/subset-audit.md', subsetNote);
 for (const name of ['controls', 'train', 'study', 'test'])
   await copyFile(`flm/language_core_${name}.py`, `public/research/language_core_${name}.py`);
 await copyFile('docs/LANGUAGE-CORE-PROTOCOL.md', 'public/research/language-core-protocol.md');
+await copyFile('docs/LANGUAGE-DYNAMICS-PROTOCOL.md', 'public/research/language-dynamics-protocol.md');
+for (const name of ['identity', 'replay'])
+  await copyFile(`reports/language-dynamics/${name}.json`, `public/research/language-dynamics-${name}.json`);
+for (const name of ['language_dynamics', 'language_dynamics_study'])
+  await copyFile(`flm/${name}.py`, `public/research/${name}.py`);
+let dynamicsNote = await readFile('docs/LANGUAGE-DYNAMICS-FINDINGS.md', 'utf8');
+for (const [source, target] of [
+  ['../public/research/', ''],
+  ['LANGUAGE-DYNAMICS-PROTOCOL.md', 'language-dynamics-protocol.md'],
+  ['LANGUAGE-CORE-PROTOCOL.md', 'language-core-protocol.md'],
+  ['../reports/language-dynamics/identity.json', 'language-dynamics-identity.json'],
+  ['../reports/language-dynamics/replay.json', 'language-dynamics-replay.json'],
+  ['../flm/language_dynamics.py', 'language_dynamics.py'],
+  ['../flm/language_dynamics_study.py', 'language_dynamics_study.py'],
+]) dynamicsNote = dynamicsNote.replaceAll(source, target);
+await writeFile('public/research/language-dynamics-findings.md', dynamicsNote);
 for (const name of ['identity', 'software-preflight', 'replay-diagnostic'])
   await copyFile(`reports/language-core/${name}.json`, `public/research/language-core-${name}.json`);
 await writeFile('public/research/language-core-controls.md',

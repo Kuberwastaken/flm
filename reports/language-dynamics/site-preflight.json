@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-09-10T20:50:28.843728+00:00",
+  "npm_tests": 53,
+  "build_passed": true,
+  "links": [
+    "research/figures/language-dynamics-pulses.svg",
+    "research/language-core-protocol.md",
+    "research/language-dynamics-curves.csv",
+    "research/language-dynamics-findings.md",
+    "research/language-dynamics-identity.json",
+    "research/language-dynamics-protocol.md",
+    "research/language-dynamics-release.json",
+    "research/language-dynamics-replay.json",
+    "research/language-dynamics-replay.zip",
+    "research/language-dynamics-summary.csv",
+    "research/language_dynamics.py",
+    "research/language_dynamics_study.py"
+  ],
+  "frozen_protocol_sources_and_records_copied_exactly": true,
+  "preview_keyboard_expansion_verified": true,
+  "preview_diagnostic_initially_collapsed": true,
+  "preview_first_research_section": "Does measured wiring help language?",
+  "preview_horizontal_overflow": false,
+  "changed_file_hashes": {
+    "index.html": "c8b64303186c1b7b48f712aa903891b1654ed35d4c57b73f052eebf3cd215443",
+    "scripts/prepare-site.mjs": "2411b05fcc532694cce6191b9547abd4aabfea77477c8521ec197b9a181a51e5"
+  }
+}

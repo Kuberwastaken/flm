@@ -1,0 +1,136 @@
+{
+  "study": "Language-trained recurrent dynamics diagnostic v1",
+  "declared_utc": "2026-09-10T20:26:42.001896+00:00",
+  "source_commit": "2b28d50c60790baf1e172879ff15760c211c2bb3",
+  "sources": {
+    "flm/__init__.py": "f65658600bc989d85d6ce8dc345fb921865a1ef54c3d2d450a9230658a235a5a",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "flm/graph.py": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "flm/language_dynamics.py": "951df7278765169107f24303cad6a36922517a2d5381b8fe1cc919982eb95462",
+    "flm/language_dynamics_study.py": "c1ece9c94380b61dc259f7f5923febc379cdcd00d5896f37ac94c22ded1b053f"
+  },
+  "inputs": {
+    "docs/LANGUAGE-DYNAMICS-PROTOCOL.md": "e628a1060bc9a9121a9b7596c4852b4deccec4e444e55acd0c9a9c45a9a8b5a3",
+    "data/graphs/central-1024/graph.npz": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+    "data/tokenizers/wikitext2-4096/tokenizer.json": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+    "data/graphs/central-1024/graph-card.json": "eff916879b0d69897679c96197f21d764d9fd58eb7e2dec3cff52c410b812aab",
+    "reports/language-core/identity.json": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+    "reports/language-topology/selection.json": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+    "reports/language-dynamics/software-preflight.json": "c7cf6845b8100e8036189052f9177051c0c2d188e30985f2d50a2d18b7700b67"
+  },
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "references": {
+    "42": {
+      "label": "measured-s42",
+      "seed": 42,
+      "topology": "measured",
+      "graph_seed": null,
+      "variant": "flm",
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s42",
+      "reference": true,
+      "checkpoint": "runs/wikitext2/flm-s42/best.pt",
+      "checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.9096990391099853,
+      "parameters": 600003
+    },
+    "43": {
+      "label": "measured-s43",
+      "seed": 43,
+      "topology": "measured",
+      "graph_seed": null,
+      "variant": "flm",
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s43",
+      "reference": true,
+      "checkpoint": "runs/wikitext2/flm-s43/best.pt",
+      "checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.9107256505795487,
+      "parameters": 600003
+    }
+  },
+  "conditions": [
+    {
+      "label": "initial_shared",
+      "seed": null,
+      "mode": "initial"
+    },
+    {
+      "label": "trained-s42",
+      "seed": 42,
+      "mode": "trained"
+    },
+    {
+      "label": "edges_gain_only-s42",
+      "seed": 42,
+      "mode": "edges_gain_only"
+    },
+    {
+      "label": "time_constants_only-s42",
+      "seed": 42,
+      "mode": "time_constants_only"
+    },
+    {
+      "label": "trained-s43",
+      "seed": 43,
+      "mode": "trained"
+    },
+    {
+      "label": "edges_gain_only-s43",
+      "seed": 43,
+      "mode": "edges_gain_only"
+    },
+    {
+      "label": "time_constants_only-s43",
+      "seed": 43,
+      "mode": "time_constants_only"
+    }
+  ],
+  "schedule": {
+    "amplitudes": [
+      0.001,
+      1.0
+    ],
+    "directions": 8,
+    "seed": 91011,
+    "silence": 256,
+    "snapshots": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "threads": 1,
+    "nonlinear_dtype": "float32",
+    "linear_dtype": "float64"
+  },
+  "pulse_sha256": "9647fc6c38682ed31e198a119d282f11d7acbff7856dd4ade9e76eb6b0052cfb",
+  "shared_initial_core_sha256": "84837f1b0c17591053ad0a3528934a6a2c31341c18c85af8738aff3c8bc31648",
+  "initial_dynamics_match_across_seeds": true,
+  "trained_core_sha256": {
+    "42": "66b09fe979d4036d397cadcc24bf2c500d4d7662ef665ed0d64b393a326c0503",
+    "43": "e8e14a9fadc4416c43f94479bef0f4fa1f7ea70a2a0fc93056067cc1b6689a30"
+  },
+  "source_full_state_sha256": {
+    "42": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+    "43": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965"
+  },
+  "corpus_tokens_read": false,
+  "scope": "Direct-drive core diagnostic; no language scoring, fitting, or behavioral transfer"
+}
