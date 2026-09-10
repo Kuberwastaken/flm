@@ -1,0 +1,24 @@
+{
+  "verified_utc": "2026-09-10T21:44:46.757454+00:00",
+  "deployment_commit": "bbffb0c360280654f289d8b0f4e0f69965f8d407",
+  "workflow_run": 34533118184,
+  "workflow_conclusion": "success",
+  "live_files_match_local_build": [
+    {
+      "path": "research/instruction-transfer.md",
+      "sha256": "a72c46db545ec6756d8f3d360129a97bac08d7b1d4e313c41bad88778cbb1b64",
+      "bytes": 14609
+    },
+    {
+      "path": "research/scan_train.py",
+      "sha256": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c",
+      "bytes": 15373
+    },
+    {
+      "path": "research/scan-training-preflight.json",
+      "sha256": "287b2eaad584b11df82c4dac0c149f9471637cefb2045ee391fe7e9d75794d10",
+      "bytes": 2469
+    }
+  ],
+  "new_instruction_benchmark_scores": false
+}
