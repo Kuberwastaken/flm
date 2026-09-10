@@ -12,6 +12,7 @@ from .language_test import freeze_selection
 from .language_train import restore
 from .provenance import write_json
 from .tokenizer import Lexicon
+from .study_index import publish_index
 
 
 def state_storage(state):
@@ -62,10 +63,12 @@ def main():
         result = dict(variant=run['variant'], checkpoint_sha256=saved['_file_sha256'],
             parameters=model.parameter_card()['trainable_parameters'], **measure(model, prefix, continuation))
         results.append(result); print(json.dumps(result), flush=True)
-    write_json(a.output, dict(platform=platform.platform(), torch=str(torch.__version__), threads=a.threads,
+    report = dict(platform=platform.platform(), torch=str(torch.__version__), threads=a.threads,
         batch=1, dtype='float32', device='CPU', tokenizer_sha256=lexicon.sha256, results=results,
         protocol='Call only after all training processes have exited. One warmup and five repeated identical original-text trials; tokenization excluded; forced identical token inputs across models.',
-        caveat='This measures the implemented eager PyTorch path, including FLM recurrent-weight preparation per forward call. It is not a hardware-independent FLOP, peak-memory or energy comparison. Normal OS background activity can affect timings.'))
+        caveat='This measures the implemented eager PyTorch path, including FLM recurrent-weight preparation per forward call. It is not a hardware-independent FLOP, peak-memory or energy comparison. Normal OS background activity can affect timings.')
+    write_json(a.output, report)
+    write_json(Path('public/research/runtime.json'), report); publish_index()
 
 
 if __name__ == '__main__': main()

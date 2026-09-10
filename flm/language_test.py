@@ -11,6 +11,7 @@ from .ngram import NGram
 from .provenance import sha256, write_json
 from .tokenizer import Lexicon, read_cache
 from .train import read_documents
+from .study_index import publish_index
 
 VARIANTS = ('flm', 'gru', 'transformer')
 SEEDS = (42, 43)
@@ -144,6 +145,7 @@ def main():
         caution='Two seeds give limited information about training variability. Article bootstrap intervals do not account for other corpora, tuning choices or biological validity.')
     write_json(a.output / 'summary.json', summary)
     write_json(Path('public/research/test-results.json'), summary)
+    publish_index()
 
 
 if __name__ == '__main__': main()

@@ -95,6 +95,39 @@
       <p>The connectome determines which directed recurrent edges exist and their assumed fast neurotransmitter signs. Training adjusts their magnitudes, an input projection, bounded time constants and a readout. A slow state filters each neuron’s activity, giving the model two memory timescales. This is a differentiable rate network, not a biophysical reconstruction.</p>
       <div class="table-scroll"><table><caption>FLM and a conventional decoder transformer</caption><thead><tr><th>Property</th><th>FLM compact</th><th>Decoder transformer</th></tr></thead><tbody><tr><th>Communication</th><td>Fixed directed graph; trained edge strengths</td><td>Content-dependent attention between token representations</td></tr><tr><th>Memory</th><td>Fixed-size fast and slow recurrent state</td><td>Past token keys and values, within a context window</td></tr><tr><th>Position in sequence</th><td>State evolves in causal order</td><td>Position encoding and causal attention</td></tr><tr><th>Learning</th><td>Next-token cross-entropy and backpropagation through time</td><td>Next-token cross-entropy and backpropagation</td></tr><tr><th>Browser adaptation</th><td>Separate online readout adapter</td><td>Architecture-dependent; not a defining transformer feature</td></tr><tr><th>Tradeoff</th><td>Small state; sequential training and lossy memory</td><td>Parallel training; more expensive long-context attention/cache</td></tr></tbody></table></div>
       <h2>A standard corpus, trained from scratch</h2><p>The main experiment uses <a href="https://huggingface.co/datasets/Salesforce/wikitext">WikiText-2 raw</a>: 600 training articles, 60 validation articles and 60 test articles, preserving the official partitions. The training set contains 2,051,910 whitespace-delimited words and 10,914,845 UTF-8 bytes. This is written Wikipedia-derived text, not speech transcripts.</p><p>A lossless 4,096-token byte-pair vocabulary is learned exclusively from the training articles. FLM, a GRU and a small decoder transformer share this tokenizer, training windows and approximately 600,000 trainable parameters. There are no pretrained weights or teacher-generated training examples. Results are reported in bits per UTF-8 byte; perplexity is comparable only within this shared tokenizer.</p><p>The earlier <a href="https://groups.inf.ed.ac.uk/ami/corpus/">AMI Meeting Corpus</a> experiment uses manual transcripts under CC BY 4.0: 139 training, 16 validation and 16 test documents in custom participant-disjoint partitions. It remains a separate dialogue study. WikiText source metadata and its differing license statements are documented in the dataset card; corpus text is not redistributed here.</p>
+      <section aria-labelledby="test-title">
+        <h2 id="test-title">Held-out language comparison</h2>
+        <p id="test-progress" role="status">The six registered runs are finishing. Full test scores will appear here after every checkpoint has been selected on validation.</p>
+        <div id="test-results" hidden>
+          <div class="table-scroll"><table>
+            <caption>Complete WikiText-2 test split · bits per UTF-8 byte · lower is better</caption>
+            <thead><tr><th>Model</th><th>Seed 42</th><th>Seed 43</th><th>Mean</th><th>Seed SD</th></tr></thead>
+            <tbody id="test-rows"></tbody>
+          </table></div>
+          <p id="test-interpretation"></p>
+          <details class="method-note"><summary>Paired uncertainty and the n-gram reference</summary>
+            <div class="table-scroll"><table>
+              <caption>FLM minus baseline · positive means worse FLM loss</caption>
+              <thead><tr><th>Comparison</th><th>Training seed</th><th>Difference</th><th>95% article interval</th></tr></thead>
+              <tbody id="test-intervals"></tbody>
+            </table></div>
+            <p>Intervals resample the same test articles together 10,000 times. They describe uncertainty conditional on these trained checkpoints.</p>
+            <p id="ngram-result"></p><p id="test-caution"></p>
+          </details>
+          <p><a href="/research/test-results.json" download>Download test results, article scores and checkpoint hashes</a></p>
+        </div>
+      </section>
+      <section id="runtime-results" aria-labelledby="runtime-title" hidden>
+        <h2 id="runtime-title">Inference cost on this implementation</h2>
+        <p id="runtime-description"></p>
+        <div class="table-scroll"><table>
+          <caption>CPU throughput and persistent sequence state</caption>
+          <thead><tr><th>Model</th><th>Prefill tokens/s</th><th>Next tokens/s</th><th>State bytes</th></tr></thead>
+          <tbody id="runtime-rows"></tbody>
+        </table></div>
+        <p id="runtime-caution" class="muted"></p>
+        <p><a href="/research/runtime.json" download>Download repeated measurements and environment</a></p>
+      </section>
       <h2>Compare learning at the same exposure</h2><div id="research-results"><p>FLM, GRU and transformer use the same training text, vocabulary and sampled windows. Select the same update count to compare prediction loss. These curves use validation prefixes; the final untouched test results will be reported separately.</p><div class="comparison-controls"><label>Training seed<select id="comparison-seed"></select></label><label>Compare at update<select id="comparison-step"></select></label></div><p id="comparison-progress" role="status">Loading measured results…</p><figure><svg id="validation-chart" viewBox="0 0 780 330" role="img" aria-label="Validation loss by training update"></svg><figcaption class="chart-legend"><span style="color:#a74c20">— FLM</span><span style="color:#497569">— GRU</span><span style="color:#666277">— Transformer</span></figcaption></figure><div class="table-scroll"><table><caption>Matched update and training seed · lower loss is better</caption><thead><tr><th>Model</th><th>Parameters</th><th>Bits / byte</th><th>Token perplexity</th></tr></thead><tbody id="comparison-rows"></tbody></table></div><p><a href="/research/validation.json" download>Download measured curves and provenance</a></p></div><h2>The same prompt, three models</h2><div class="comparison-controls"><label>Checkpoint<select id="sample-checkpoint"></select></label><label>Prompt<select id="sample-prompt"></select></label></div><p id="sample-settings">Loading fixed-prompt samples…</p><div id="sample-passages" class="sample-passages"></div><p><a id="sample-download" download>Download samples and checkpoint hashes</a></p><h2>What the evidence can establish</h2>
       <p>A lower held-out loss measures next-token prediction on the evaluated text. It does not establish reasoning, factual knowledge, consciousness, animal behavior or general conversational ability. The interesting claim to test is whether wiring and multiple timescales improve data efficiency under equal training budgets.</p>
       <h2>What changes in the “fly”?</h2><p>Offline training changes the artificial network’s input responses, edge magnitudes, time constants and prediction readout. Those changes can be measured using the same input before and after training. The anatomy provides a location for visualizing the state; it does not make learned text an animal’s experience. Browser learning changes only a separate readout adapter. The body animation is an explicitly designed mapping from state to pose.</p>
