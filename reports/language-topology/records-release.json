@@ -1,8 +1,8 @@
 {
-  "verified_utc": "2026-09-10T18:06:06.272811+00:00",
+  "verified_utc": "2026-09-10T18:24:30.906140+00:00",
   "archive": "public/research/language-topology-records.zip",
-  "bytes": 259741,
-  "archive_sha256": "44666cbf01919d81c9ea30b2c95b24dd25b74fac992d9a6a3d6af759a980d2a5",
+  "bytes": 271441,
+  "archive_sha256": "31d9b13264dcc377f0d7ad486c38eeb362d5cbd3c41c3d7c49515466891a24a0",
   "payloads": 39,
   "full_checkpoint_and_score_gate_passed": true,
   "arithmetic_audit": {
@@ -73,5 +73,5 @@
     "scope": "Arithmetic audit of supplied scores; not independent training, test inference or source authentication",
     "uncertainty": "Intervals condition on each fitted pair; six topology contrasts share two measured references"
   },
-  "manifest_sha256": "c8df75618e7cb1a92da31de1596f750b8336a22cfa4000ee90de71571498b89d"
+  "manifest_sha256": "952b13b6e21dc281739ff796c739dee3b0f0f500cacd9c382a4eb94d9a39fac7"
 }

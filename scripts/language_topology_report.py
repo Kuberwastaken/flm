@@ -94,7 +94,7 @@ def draw(rows, output, *, title='WikiText-2 · all language topology and slow-st
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 9,
         'axes.spines.top': False, 'axes.spines.right': False,
         'axes.labelcolor': '#292820', 'text.color': '#292820',
-        'svg.fonttype': 'none', 'svg.hashsalt': 'flm-language-topology-v1'})
+        'svg.fonttype': 'path', 'svg.hashsalt': 'flm-language-topology-v1'})
     fig, axes = plt.subplots(2, 1, figsize=(9.2, 5.8), sharex=True,
                              gridspec_kw={'height_ratios': [3, 1.4]})
     fig.subplots_adjust(left=.23, right=.97, top=.88, bottom=.24, hspace=.58)

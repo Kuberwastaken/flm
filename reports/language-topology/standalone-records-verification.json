@@ -1,7 +1,7 @@
 {
-  "verified_utc": "2026-09-10T18:08:06.215945+00:00",
-  "archive_sha256": "44666cbf01919d81c9ea30b2c95b24dd25b74fac992d9a6a3d6af759a980d2a5",
-  "archive_bytes": 259741,
+  "verified_utc": "2026-09-10T18:25:16.150583+00:00",
+  "archive_sha256": "31d9b13264dcc377f0d7ad486c38eeb362d5cbd3c41c3d7c49515466891a24a0",
+  "archive_bytes": 271441,
   "payloads": 39,
   "fresh_extraction_outside_repository": true,
   "all_manifest_hashes_verified": true,
