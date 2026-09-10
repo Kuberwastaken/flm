@@ -1,0 +1,45 @@
+{
+  "verified_utc": "2026-09-10T16:28:24.625427+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "43060a5bf0558e051bf3522a6a34ce43947df886",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34502095025"
+  },
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "artifact": {
+    "path": "research/language-topology-progress.json",
+    "bytes": 20739,
+    "sha256": "1c3800c193e8d0d684ae83322a41754cc9c5958c8e57ebf48de2c5bf16b78dfd"
+  },
+  "snapshot_utc": "2026-09-10T16:25:44.217153+00:00",
+  "completed_new_controls": 7,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "unfinished_control": {
+    "label": "no-slow-s43",
+    "saved_updates": 3000,
+    "latest_validation_bpb": 1.9762711522142065,
+    "complete": false
+  },
+  "final_test_result_published": false,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T16:28:44.949Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 7,
+    "validation_rows": 8,
+    "unfinished_control_matched_updates": 3000,
+    "displayed_measured_validation_bpb": 1.9679,
+    "displayed_no_slow_validation_bpb": 1.9763,
+    "displayed_measured_minus_control_bpb": -0.0084,
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [null, null],
+    "page_width": 598,
+    "viewport_width": 614
+  }
+}
