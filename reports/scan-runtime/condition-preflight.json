@@ -1,0 +1,1906 @@
+{
+  "verified_utc": "2026-09-10T23:04:06.968818+00:00",
+  "source_sha256": {
+    "flm/scan_conditions.py": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+    "tests/test_scan_conditions.py": "eaa114a18b5be4fdeb6f2234b4b183105f157d4b39e52fbd23307d268c0ce06c",
+    "flm/scan_inputs.py": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+    "flm/scan_train.py": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c"
+  },
+  "prepared_conditions": [
+    {
+      "condition": {
+        "label": "simple/flm-initial-s42",
+        "split": "simple",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/flm-initial-s42",
+          "split": "simple",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "simple/flm-wikitext-s42",
+        "split": "simple",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/flm-wikitext-s42",
+          "split": "simple",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "simple/gru-initial-s42",
+        "split": "simple",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/gru-initial-s42",
+          "split": "simple",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "8e942af5b514b3e281c1333e3dde62582028ba5a63c1c8c17f336fdb1e1998fb",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "simple/gru-wikitext-s42",
+        "split": "simple",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/gru-wikitext-s42",
+          "split": "simple",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "36481d3b42080ee1aa1a5d6e8db292bc3f04c731da0c619f800f778be2543ce9",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "simple/transformer-initial-s42",
+        "split": "simple",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/transformer-initial-s42",
+          "split": "simple",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "a72225ded081a59c8f5b9756fcbc97af286e45de9c4d665b5b6a2d441625e3a4",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "simple/transformer-wikitext-s42",
+        "split": "simple",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/transformer-wikitext-s42",
+          "split": "simple",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "ed848783c5e3c1e77ee2b277e94dff9aa7bd0097bb6a9fefc8174f0e9eb12f20",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "simple/flm-initial-s43",
+        "split": "simple",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/flm-initial-s43",
+          "split": "simple",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "simple/flm-wikitext-s43",
+        "split": "simple",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/flm-wikitext-s43",
+          "split": "simple",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "simple/gru-initial-s43",
+        "split": "simple",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/gru-initial-s43",
+          "split": "simple",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "70bd644c8f24b8a796f75056a19cbcb50e909764155ae342896b1826fad7ed11",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "simple/gru-wikitext-s43",
+        "split": "simple",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/gru-wikitext-s43",
+          "split": "simple",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "765b3ba2d06b4a350d968d2742f208e410e4141d22d5cf18936e21f2648a108c",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "simple/transformer-initial-s43",
+        "split": "simple",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/transformer-initial-s43",
+          "split": "simple",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "85f240d5cc952fbab709c95ccc5f803b30abeb8a41f8f823e6ea677cd4810903",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "simple/transformer-wikitext-s43",
+        "split": "simple",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "simple/transformer-wikitext-s43",
+          "split": "simple",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "simple",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "simple_split/tasks_train_simple.txt",
+          "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+          "processed_path": "data/processed/scan/simple/train.jsonl",
+          "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16728,
+          "unique_commands": 16728,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "b1dc9d7d77727fa3688a29dfd0e4f800982dda129d004535b8c0c77494ee0d24",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "125037aeecae983e78e7238d5c57a3b22c8328752b8a6ddd6a89b5ddd662f4e6",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "length/flm-initial-s42",
+        "split": "length",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/flm-initial-s42",
+          "split": "length",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "length/flm-wikitext-s42",
+        "split": "length",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/flm-wikitext-s42",
+          "split": "length",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "length/gru-initial-s42",
+        "split": "length",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/gru-initial-s42",
+          "split": "length",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "8e942af5b514b3e281c1333e3dde62582028ba5a63c1c8c17f336fdb1e1998fb",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "length/gru-wikitext-s42",
+        "split": "length",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/gru-wikitext-s42",
+          "split": "length",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "36481d3b42080ee1aa1a5d6e8db292bc3f04c731da0c619f800f778be2543ce9",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "length/transformer-initial-s42",
+        "split": "length",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/transformer-initial-s42",
+          "split": "length",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "a72225ded081a59c8f5b9756fcbc97af286e45de9c4d665b5b6a2d441625e3a4",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "length/transformer-wikitext-s42",
+        "split": "length",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/transformer-wikitext-s42",
+          "split": "length",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "ed848783c5e3c1e77ee2b277e94dff9aa7bd0097bb6a9fefc8174f0e9eb12f20",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "length/flm-initial-s43",
+        "split": "length",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/flm-initial-s43",
+          "split": "length",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "length/flm-wikitext-s43",
+        "split": "length",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/flm-wikitext-s43",
+          "split": "length",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "length/gru-initial-s43",
+        "split": "length",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/gru-initial-s43",
+          "split": "length",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "70bd644c8f24b8a796f75056a19cbcb50e909764155ae342896b1826fad7ed11",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "length/gru-wikitext-s43",
+        "split": "length",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/gru-wikitext-s43",
+          "split": "length",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "765b3ba2d06b4a350d968d2742f208e410e4141d22d5cf18936e21f2648a108c",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "length/transformer-initial-s43",
+        "split": "length",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/transformer-initial-s43",
+          "split": "length",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "85f240d5cc952fbab709c95ccc5f803b30abeb8a41f8f823e6ea677cd4810903",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "length/transformer-wikitext-s43",
+        "split": "length",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "length/transformer-wikitext-s43",
+          "split": "length",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "length",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "length_split/tasks_train_length.txt",
+          "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+          "processed_path": "data/processed/scan/length/train.jsonl",
+          "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 16990,
+          "unique_commands": 16990,
+          "repeated_rows": 0,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "b1dc9d7d77727fa3688a29dfd0e4f800982dda129d004535b8c0c77494ee0d24",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "8767aa9becac26ab78f980a2957d3318f76183898d13052fcc6a03c536c24823",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/flm-initial-s42",
+        "split": "add_primitive_jump",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/flm-initial-s42",
+          "split": "add_primitive_jump",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/flm-wikitext-s42",
+        "split": "add_primitive_jump",
+        "variant": "flm",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/flm-wikitext-s42",
+          "split": "add_primitive_jump",
+          "variant": "flm",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/gru-initial-s42",
+        "split": "add_primitive_jump",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/gru-initial-s42",
+          "split": "add_primitive_jump",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "8e942af5b514b3e281c1333e3dde62582028ba5a63c1c8c17f336fdb1e1998fb",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/gru-wikitext-s42",
+        "split": "add_primitive_jump",
+        "variant": "gru",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/gru-wikitext-s42",
+          "split": "add_primitive_jump",
+          "variant": "gru",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "36481d3b42080ee1aa1a5d6e8db292bc3f04c731da0c619f800f778be2543ce9",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/transformer-initial-s42",
+        "split": "add_primitive_jump",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/transformer-initial-s42",
+          "split": "add_primitive_jump",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "a72225ded081a59c8f5b9756fcbc97af286e45de9c4d665b5b6a2d441625e3a4",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/transformer-wikitext-s42",
+        "split": "add_primitive_jump",
+        "variant": "transformer",
+        "seed": 42,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/transformer-wikitext-s42",
+          "split": "add_primitive_jump",
+          "variant": "transformer",
+          "seed": 42,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+          "original_source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5",
+          "initial_state_sha256": "ed848783c5e3c1e77ee2b277e94dff9aa7bd0097bb6a9fefc8174f0e9eb12f20",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/flm-initial-s43",
+        "split": "add_primitive_jump",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/flm-initial-s43",
+          "split": "add_primitive_jump",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/flm-wikitext-s43",
+        "split": "add_primitive_jump",
+        "variant": "flm",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/flm-wikitext-s43",
+          "split": "add_primitive_jump",
+          "variant": "flm",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+          "original_source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d",
+          "initial_state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 600003
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/gru-initial-s43",
+        "split": "add_primitive_jump",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/gru-initial-s43",
+          "split": "add_primitive_jump",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "70bd644c8f24b8a796f75056a19cbcb50e909764155ae342896b1826fad7ed11",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/gru-wikitext-s43",
+        "split": "add_primitive_jump",
+        "variant": "gru",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/gru-wikitext-s43",
+          "split": "add_primitive_jump",
+          "variant": "gru",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+          "original_source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951",
+          "initial_state_sha256": "765b3ba2d06b4a350d968d2742f208e410e4141d22d5cf18936e21f2648a108c",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 595408
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/transformer-initial-s43",
+        "split": "add_primitive_jump",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "initial"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/transformer-initial-s43",
+          "split": "add_primitive_jump",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "initial"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "85f240d5cc952fbab709c95ccc5f803b30abeb8a41f8f823e6ea677cd4810903",
+          "inherits_language_weights": false,
+          "language_pretraining_updates": 0,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    },
+    {
+      "condition": {
+        "label": "add_primitive_jump/transformer-wikitext-s43",
+        "split": "add_primitive_jump",
+        "variant": "transformer",
+        "seed": 43,
+        "initialization": "wikitext"
+      },
+      "binding": {
+        "format": "flm-scan-condition-v1",
+        "condition": {
+          "label": "add_primitive_jump/transformer-wikitext-s43",
+          "split": "add_primitive_jump",
+          "variant": "transformer",
+          "seed": 43,
+          "initialization": "wikitext"
+        },
+        "training_input": {
+          "format": "flm-scan-training-input-v1",
+          "split": "add_primitive_jump",
+          "partition": "train",
+          "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+          "source": "add_prim_split/tasks_train_addprim_jump.txt",
+          "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+          "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+          "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+          "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+          "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+          "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+          "rows": 14670,
+          "unique_commands": 13204,
+          "repeated_rows": 1466,
+          "order": "Exact publisher file order, including every repeated row and original source line",
+          "test_partition_opened": false
+        },
+        "language_source": {
+          "language_selection_sha256": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+          "source_audit_sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+          "source_checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+          "original_source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366",
+          "initial_state_sha256": "b1dc9d7d77727fa3688a29dfd0e4f800982dda129d004535b8c0c77494ee0d24",
+          "inherits_language_weights": true,
+          "language_pretraining_updates": 6000,
+          "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+          "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+        },
+        "ordered_rows_sha256": "1a60616735bfb650004fbd8eeeb8d1413debc9e8dbec9dc092ea99c8b38ef8d5",
+        "preparation_source_sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+        "tokenizer_scope": "Shared train-fitted WikiText vocabulary in both initial and pretrained conditions"
+      },
+      "parameters": 607468
+    }
+  ],
+  "condition_count": 36,
+  "matched_split_seed_groups": 6,
+  "focused_tests_passed": 6,
+  "test_command": "python -X utf8 -m unittest discover -s tests -p test_scan_conditions.py -v",
+  "all_group_rows_order_weights_and_tokenizer_matched": true,
+  "test_partitions_opened": false,
+  "neural_predictions": false,
+  "fitting_started": false,
+  "downstream_budget_chosen": false,
+  "active_core_identity_unchanged": true,
+  "scope": "Preparation against real source checkpoints and official training files; not an instruction benchmark result or a frozen downstream study.",
+  "fixture_tests_verified_utc": "2026-09-10T23:06:14.074946+00:00",
+  "fixture_training": {
+    "architectures": [
+      "flm",
+      "gru",
+      "transformer"
+    ],
+    "updates": 6,
+    "threads": 1,
+    "official_scan_examples_used": false,
+    "exact_resumed_final_tensors_history_rows_and_exposure": true
+  }
+}

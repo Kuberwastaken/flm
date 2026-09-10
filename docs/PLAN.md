@@ -62,6 +62,8 @@ The [selection-payload preflight](../reports/babylm/selection-payload-preflight.
 
 The [food-response extension outline](FOOD-RESPONSE-PLAN.md) separates fruit-like odor navigation, sugar contact and language-to-behavior transfer. It is proposed work, without new fits or food-response results; the browser's before/after replay uses only the existing sensory-choice recordings.
 
+The [SCAN condition preparation](SCAN-CONDITION-PREPARATION.md) now binds all 36 planned combinations to their exact official training rows and verified initial/pretrained source tensors. All combinations passed preparation, and six focused tests cover input changes and fixture resumption. The timing pilot, downstream budget, immutable study declaration, scheduler and whole-study test gate still precede any official transfer fits.
+
 The [continuing research program](RESEARCH-PROGRAM.md) records the wider questions and sources. New studies must follow existing compute priorities rather than competing with the active queue. Completion of the compact release, topology report or diagnostic does not complete the larger-data, scaling, alternative-learning or transfer work listed here.
 
 ## Delivery and verification at each stage
