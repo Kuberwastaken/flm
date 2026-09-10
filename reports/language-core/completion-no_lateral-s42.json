@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-09-10T21:18:25.733388+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "selected": {
+    "label": "no_lateral-s42",
+    "control": "no_lateral",
+    "seed": 42,
+    "reference": false,
+    "graph": "data/graphs/central-1024/graph.npz",
+    "output": "runs/language-core-v1/no_lateral-s42",
+    "checkpoint": "runs/language-core-v1/no_lateral-s42/checkpoint-006000.pt",
+    "checkpoint_sha256": "467f15e082c3780dc1984b7512348b51875470fe61f420672eba6aea72b3d623",
+    "checkpoint_step": 6000,
+    "selection_validation_bpb": 1.9162647046534984,
+    "allocated_parameters": 600003,
+    "trainable_parameters": 600003,
+    "frozen_parameters": 0
+  },
+  "all_12_checkpoint_payloads_optimizer_exposure_and_mechanism_verified": true,
+  "complete_record_sha256": "364c24adaeed8e8c0e2677a4be332b7f74071255944532d6cabce17f8044ca1d",
+  "new_test_scores": false
+}

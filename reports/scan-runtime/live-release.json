@@ -1,0 +1,24 @@
+{
+  "verified_utc": "2026-09-10T21:18:27.955763+00:00",
+  "deployment_commit": "b2fc7f8e95f67372a016975c0f764740c8b1932d",
+  "workflow_run": 34531222503,
+  "workflow_conclusion": "success",
+  "live_files_match_local_build": [
+    {
+      "path": "research/instruction-transfer.md",
+      "sha256": "69cb583305d9702fa85458e170b276b5d5838cc9fb6b19d36fda06dceae2d56a",
+      "bytes": 13232
+    },
+    {
+      "path": "research/scan_runtime.py",
+      "sha256": "e814c3fcf5acc28e7be5dbc7a5f0856f0b9d984c3177198f6bac4d65611f3c3f",
+      "bytes": 11055
+    },
+    {
+      "path": "research/scan-runtime-preflight.json",
+      "sha256": "f9dbf55acae49261a355a92186caacaaa55515697722e6573ee9e0a5b5575047",
+      "bytes": 2060
+    }
+  ],
+  "new_instruction_benchmark_scores": false
+}

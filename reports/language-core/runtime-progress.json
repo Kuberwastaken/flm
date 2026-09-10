@@ -1,12 +1,12 @@
 {
-  "verified_utc": "2026-09-10T21:06:49.952981+00:00",
+  "verified_utc": "2026-09-10T21:18:25.733388+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
-  "condition": "no_lateral-s42",
-  "saved_step": 4000,
-  "committed_checkpoints": 8,
-  "checkpoint_sha256": "398d53f792831bd50defc01ebf83b737e06cb2dabfd8815188bbbd6c6f5c9b25",
+  "condition": "no_temporal_state-s42",
+  "saved_step": 0,
+  "committed_checkpoints": 0,
+  "checkpoint_sha256": null,
   "frozen_tensors_match_initialization": null,
-  "graph_pooling_optimizer_rng_and_exposure_verified": true,
+  "graph_pooling_optimizer_rng_and_exposure_verified": false,
   "source_identity_verified": true,
   "queue_session_id": 20410,
   "queue_live_confirmed_by_session_poll": true,
@@ -31,10 +31,26 @@
       "allocated_parameters": 600003,
       "trainable_parameters": 521824,
       "frozen_parameters": 78179
+    },
+    {
+      "label": "no_lateral-s42",
+      "control": "no_lateral",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_lateral-s42",
+      "checkpoint": "runs/language-core-v1/no_lateral-s42/checkpoint-006000.pt",
+      "checkpoint_sha256": "467f15e082c3780dc1984b7512348b51875470fe61f420672eba6aea72b3d623",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.9162647046534984,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0
     }
   ],
-  "completed_new_fit_count": 1,
+  "completed_new_fit_count": 2,
   "planned_new_fit_count": 6,
   "fixed_core_completed_all_12_checkpoints_verified": true,
-  "figure_preflight": "reports/language-core/figure-preflight.json"
+  "figure_preflight": "reports/language-core/figure-preflight.json",
+  "active_checkpoint_note": "No saved checkpoint yet"
 }
