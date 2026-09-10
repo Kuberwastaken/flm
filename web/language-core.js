@@ -100,6 +100,20 @@ export async function decodeCoreResults(bytes, release) {
   validateCoreRecordRelease(report, release); return report;
 }
 
+export async function fetchCoreRecords(base = '/', {fetcher = fetch, signal} = {}) {
+  const prefix = base.endsWith('/') ? base : `${base}/`;
+  const paths = ['language-core-results.json', 'language-core-release.json'];
+  const responses = await Promise.all(paths.map(path => fetcher(`${prefix}research/${path}`, {cache:'no-store', signal})));
+  for (const response of responses) {
+    if (!response.ok) throw new Error(`Completed language comparison unavailable (${response.status}).`);
+  }
+  const [bytes, release] = await Promise.all([responses[0].arrayBuffer(), responses[1].json()]);
+  const report = await decodeCoreResults(bytes, release);
+  // Return only a fully checked pair. The caller replaces its existing content
+  // after this resolves; this loader itself does not publish or mutate the DOM.
+  return {report, release, base:prefix};
+}
+
 // The caller uses decodeCoreResults before mounting a fetched report.
 // Python publication gates verify real checkpoints and recompute bootstrap CIs;
 // this browser component checks the supplied data, not independent model inference.

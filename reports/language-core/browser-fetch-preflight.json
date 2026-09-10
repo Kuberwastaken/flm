@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-09-10T23:26:52.470730+00:00",
+  "source_sha256": {
+    "web/language-core.js": "248ad3f2b6b9f728aaecbef9d8b07cf7f1b71dfeec949af1b43470376ac86e03",
+    "tests/language-core.test.js": "479a29158a14fa8face096ac00c97d69af97cf84073341770ca69b60d85dba2f",
+    "tests/language-core-loading.test.js": "f5f587031230e00fbec229986415fe66d535b94e0729d1045534506ee87ed6da"
+  },
+  "targeted_tests_passed": 10,
+  "new_fetch_tests": 4,
+  "command": "node --test tests/language-core.test.js tests/language-core-loading.test.js",
+  "scope": "Synthetic payloads and mocked HTTP responses only; no real computation scores loaded or published.",
+  "checks": [
+    "Both files use no-store and preserve caller cancellation signal",
+    "Missing either resource refuses before response-body decoding",
+    "Summary checksum and frozen release identity reject mixed artifacts",
+    "Network and cancellation errors propagate without returning a partial pair"
+  ],
+  "production_imported": false,
+  "existing_view_renderer_unchanged": true,
+  "active_numerical_study_identity_unchanged": true
+}
