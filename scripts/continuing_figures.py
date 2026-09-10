@@ -3,6 +3,7 @@ from pathlib import Path
 import csv
 import json
 import shutil
+import subprocess
 import sys
 import numpy as np
 import matplotlib
@@ -14,11 +15,15 @@ from flm.provenance import sha256, write_json
 
 OUT = ROOT / 'public/research'; FIG = OUT / 'figures'; FIG.mkdir(parents=True, exist_ok=True)
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10, 'axes.spines.top': False,
-    'axes.spines.right': False, 'svg.fonttype': 'none', 'savefig.dpi': 180})
+    'axes.spines.right': False, 'svg.fonttype': 'path', 'savefig.dpi': 180})
 
 
 def save(fig, name):
     for suffix in ('svg', 'png'): fig.savefig(FIG / f'{name}.{suffix}', bbox_inches='tight', facecolor='#faf8f5')
+    fig.canvas.draw()
+    for index, axis in enumerate(fig.axes, 1):
+        box = axis.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.dpi_scale_trans.inverted()).expanded(1.04, 1.04)
+        fig.savefig(FIG / f'{name}-{index}.svg', bbox_inches=box, facecolor='#faf8f5')
     plt.close(fig)
 
 
@@ -65,6 +70,9 @@ with (FIG / 'physical-trajectories.csv').open('w', newline='', encoding='utf8') 
     writer = csv.writer(stream); writer.writerow(['condition', 'time_seconds', 'x_mm', 'y_mm', 'z_mm', 'yaw_rad', 'contacts']); writer.writerows(rows)
 shutil.copyfile(calibration_path, OUT / 'physical-calibration.json')
 video = ROOT / 'runs/embodiment/calibration/left_drive.mp4'; shutil.copyfile(video, OUT / 'physical-calibration.mp4')
+ffmpeg = next((ROOT / '.venv-embodied/Lib/site-packages/imageio_ffmpeg/binaries').glob('ffmpeg-*.exe'))
+subprocess.run([str(ffmpeg), '-loglevel', 'error', '-ss', '2', '-i', str(video), '-frames:v', '1', '-y',
+    str(OUT / 'physical-calibration-poster.png')], check=True)
 
 acquisition = ROOT / 'data/cards/babylm-2026-acquisition.json'; overlap = ROOT / 'data/cards/babylm-2026-overlap.json'
 data = json.loads(acquisition.read_text(encoding='utf8'))

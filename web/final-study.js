@@ -23,6 +23,16 @@ async function verifiedArtifact(record) {
 
 export async function loadFinalStudy() {
   try {
+    const response = await fetch(`${import.meta.env.BASE_URL}research/babylm-data.json`);
+    if (!response.ok) throw new Error('Corpus audit unavailable.');
+    const report = await response.json();
+    const labels = { bnc_spoken: ['BNC spoken', 'Spoken conversation'], childes: ['CHILDES', 'Child-directed speech'],
+      gutenberg: ['Gutenberg', 'Books'], open_subtitles: ['OpenSubtitles', 'Subtitle dialogue'],
+      simple_wiki: ['Simple Wikipedia', 'Encyclopedia'], switchboard: ['Switchboard', 'Telephone conversation'] };
+    $('babylm-rows').replaceChildren(...Object.entries(labels).map(([component, [label, domain]]) =>
+      row([label, ...['train-10m', 'train-100m'].map(partition => number(report.files.find(file => file.partition === partition && file.component === component).whitespace_words)), domain])));
+  } catch (error) { $('babylm-rows').replaceChildren(row([error.message])); }
+  try {
     const response = await fetch(`${import.meta.env.BASE_URL}research/study-index.json`);
     if (!response.ok) throw new Error(`Study index unavailable (${response.status}).`);
     const index = await response.json();
