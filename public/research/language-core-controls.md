@@ -1,9 +1,16 @@
-# Language computation controls: follow-up definitions
+# Language computation controls: implementation and interpretation
 
-**Status: prospective, no runs launched.** Finish and report all controls in
-the frozen [topology study](language-topology-protocol.md) first. This document
-clarifies the next causal questions; it does not amend that protocol or
-pre-register a completed experiment.
+The separate [language computation protocol](language-core-protocol.md) declares
+six new fits and two existing full-FLM references. This document explains their
+mechanisms and limits. The completed [topology study](language-topology-protocol.md)
+and its source identities remain unchanged. No computation-control language
+results are reported here.
+
+The [study identity](language-core-identity.json) binds sources,
+initializations and sampled exposure. The
+[software preflight](language-core-software-preflight.json) and
+[numerical diagnostic](language-core-replay-diagnostic.json) record
+the checks and their limits.
 
 Learned embeddings, input projection, normalization and readout can predict
 text without useful anatomical computation. The separate sensory fixed-core
@@ -17,16 +24,19 @@ language comparisons would distinguish different claims:
 | No temporal state | Start both states from zero for each individual token during training and evaluation | Does this model improve on a learned current-token predictor by carrying history? |
 
 The mechanism definitions are implemented separately in
-[`flm/language_core_controls.py`](language_core_controls.py). They have
-no training command and do not modify the frozen topology sources. The extended
-checkpoint configuration records the control explicitly; the existing language
-loader rejects it rather than silently restoring a different mechanism. A
-separate declared training, resume and evaluation harness is still required.
+[`flm/language_core_controls.py`](language_core_controls.py). The extended
+checkpoint configuration records the control explicitly; the original language
+loader rejects it rather than silently restoring a different mechanism. The
+separate [trainer](language_core_train.py),
+[study harness](language_core_study.py) and
+[test gate](language_core_test.py) now implement declared restoration,
+checkpoint selection and evaluation. These source files describe the new study;
+they are not included in the completed topology release's paper/source snapshot.
 
 The current implementation's `no_recurrence` variant means **no lateral
 recurrence**, not no memory: `(1-alpha) h` and the slow update still retain
 history. Acute inference-time disabling is a different intervention from
-retraining. The ongoing `no_slow` comparison only removes slow-state dynamics
+retraining. The completed `no_slow` comparison only removes slow-state dynamics
 and cannot substitute for any of these controls.
 
 ## What “fixed” includes
@@ -44,16 +54,17 @@ called parameter matched to full FLM: total stored parameters match while the
 trainable degrees of freedom differ. Conversely, a readout-only reservoir would
 also freeze the input interface and answer a separate, stricter question.
 
-## Requirements before fitting
+## Verification and scope
 
-Use an independent control harness without editing the numerical sources of
-the current study. Declare exact seeds, initialization tensors, token streams,
+The independent control harness preserves the numerical sources of
+the completed study. Its protocol declares exact seeds, initialization tensors, token streams,
 graph identity, exposure, optimizer groups, validation checkpoint selection
-and test gate before training. Report stored, trainable and gradient-connected
-parameters separately. For a no-temporal-state implementation, verify that
+and test gate before training. It reports stored, trainable and gradient-connected
+parameters separately. For the no-temporal-state implementation, tests verify that
 two different prefixes ending in the same token give identical logits before
-claiming it is memoryless. For a fixed core, verify all frozen tensors after
-every saved checkpoint; do not infer freezing from an optimizer label.
+claiming it is memoryless. For a fixed core, the harness verifies all frozen
+tensors before every save and on every checkpoint restored at completion;
+freezing is not inferred from an optimizer label.
 
 The implementation tests use artificial token IDs and a 16-node fixture. They
 check equal initialization and RNG state, prefix invariance, whole-chunk versus
@@ -61,7 +72,13 @@ streamed inference, and equivalence to resetting the original model separately
 for every token, including lexical-interface gradients. They also check that
 only the memoryless condition has no gradient path to earlier input drives,
 and that fixed parameters survive five fixture optimizer updates and reject
-corrupted saved tensors. These are software checks, not language results.
+corrupted saved tensors. The trainer tests additionally compare a 1,000-update
+fixture run with a run interrupted during saving, then resumed from update 500.
+Model tensors, optimizer moments, RNG, exposure and selection agree exactly.
+These fixture checks use one CPU thread. Full-size reference preflight separately
+requires exact single-thread and bounded four-thread numerical replay; the
+[protocol](language-core-protocol.md) records the observed numerical limitation.
+These are software checks, not language results.
 The parameter card separates stored from trainable entries. A gradient probe
 reports unused tensors separately from connected zero derivatives for one
 specified loss; neither count should be described as effective model capacity.

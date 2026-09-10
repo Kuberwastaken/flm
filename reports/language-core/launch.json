@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-09-10T19:10:09.501375+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "frozen_commit": "35fc3be",
+  "numerical_source_commit": "a428b2e8c35db91e29c15eb8514f5ef7517d7b30",
+  "queue_command": "python -u -X utf8 -m flm.language_core_study train",
+  "queue_session_id": 20410,
+  "process_id": 14464,
+  "run": "fixed_dynamics-s42",
+  "latest_observed_training": {
+    "label": "fixed_dynamics-s42",
+    "step": 200,
+    "train_loss": 6.63935163974762,
+    "tokens_per_second": 2038.4424689486598,
+    "learning_rate": 0.0019987244261090854,
+    "gradient_norm": 1.17021906375885,
+    "presented_tokens": 307200,
+    "presented_bytes": 1085109,
+    "scored_bytes": 905382,
+    "attempt_seconds": 148.9897185000009,
+    "resumed_from": 0
+  },
+  "planned_new_fits": 6,
+  "reused_full_references": 2,
+  "new_test_results_available": false,
+  "babylm_queue": "Paused at FLM 12000 and GRU 6500 until computation study completes",
+  "scope": "Observed queue launch and training progress, not a completed fit or checkpoint verification"
+}

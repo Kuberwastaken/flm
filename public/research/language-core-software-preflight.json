@@ -1,0 +1,35 @@
+{
+  "verified_utc": "2026-09-10T19:02:50.101611+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p \"test_language_core*.py\" -v",
+  "exit_code": 0,
+  "tests_passed": 21,
+  "tests_failed": 0,
+  "torch": "2.8.0+cpu",
+  "fixture": {
+    "neurons": 16,
+    "vocabulary": 32,
+    "threads": 1
+  },
+  "checks": [
+    "Every mechanism shares exact initial parameter tensors and construction RNG",
+    "Memoryless prefix invariance, single-token-reset oracle and input-drive gradient paths",
+    "Exact optimizer resume for all four mechanisms",
+    "Actual fixed-dynamics training loop: interrupted save, resume from update 500, exact 1000-update uninterrupted model/optimizer/RNG/exposure",
+    "All 6000 learning-rate values match the completed trainer expression",
+    "Reject changed frozen tensors, graph/pooling buffers, mechanism, optimizer inventories/settings/moments and sampled exposure",
+    "Only contiguous committed checkpoint manifests eligible; partial payloads ignored and committed corruption rejected",
+    "Test scoring fails before cache decoding when any condition is incomplete; frozen reselection rejected",
+    "All primary/secondary contrast directions and complete condition inventory"
+  ],
+  "source_sha256": {
+    "flm/language_core_controls.py": "39f7952630c6eb6694efcd4a37e3b3ac16b85ff80df7e846e0b9bb3fe15dd0c1",
+    "flm/language_core_train.py": "0159e9da3b22935bdb065bea094e9d57e4f5f3a84d30f2965b7d11e657b0a8af",
+    "flm/language_core_study.py": "d93d7dd7306bba3598c2699f49a5e480cff98c4e5605e59baec63e815a70b98c",
+    "flm/language_core_test.py": "d1be5599f729834acf9b8ec753df302d37d8f64cb232f0f397a0f0859688cfd9",
+    "tests/test_language_core_controls.py": "e3cb2c8f85aa3b99955b815ec80c7b2604cf47aaf7b14062455cee050e7a7f4c",
+    "tests/test_language_core_training.py": "0c04c971cfffbe46c8155ac967778ce5d06d10fc8bdb9ac67956c9d79db90cbd",
+    "tests/test_model.py": "0fae2f7a2922cfe4975f58199f15dea0804058fbb4ea0c50a15510dff8af64ac",
+    "docs/LANGUAGE-CORE-PROTOCOL.md": "22b8af7692588d163433c18c21c5744f6fde510d237ec9a5df6a326b67c50b1d"
+  },
+  "scope": "Software fixture verification, not language results. Full-size exact single-thread and bounded four-thread real-text reference replay is required separately before study freeze."
+}

@@ -22,8 +22,16 @@ matches its selected tensors and buffers, all forty source continuations, and
 one fresh-archive CLI replay per condition. These checks establish the published
 record's reproducibility boundaries, not independent retraining.
 
-Next, implement the training/evaluation harness and fit the prospective
-fixed-dynamics, no-lateral-recurrence and no-temporal-state language controls.
+The separate [language computation study](LANGUAGE-CORE-PROTOCOL.md) is frozen
+and its serial training queue has started. It retrains fixed-dynamics,
+no-lateral-recurrence and no-temporal-state controls with seeds 42/43, against
+the two existing full-FLM references. No new language test scores are available.
+All six new fits and eight selections must finish before test scoring.
+Its [identity](../reports/language-core/identity.json) records exact shared
+initialization and sampled exposure, exact single-thread reference replay, and
+bounded four-thread numerical replay. Twenty-one fixture tests cover mechanisms,
+checkpoint corruption, interrupted saves, exact single-thread resume and test
+gates. Four-thread bitwise trajectory reproducibility is not established.
 The larger-data queue stays paused: the first BabyLM FLM run completed 12,000
 updates and the GRU is saved at 6,500. Resume its registered comparison after
 the language computation controls; do not replace the broader data/domain study
@@ -38,8 +46,8 @@ The [subset audit](SUBSET-AUDIT.md) explains the computational selection of
 73.96% of outgoing raw contacts. No intact learning circuit is established.
 Interpret the topology result in that restricted setting. The next language
 causality questions are [fixed recurrent dynamics, no lateral recurrence and
-no temporal state](LANGUAGE-CORE-CONTROLS.md); these are prospective controls
-with tested definitions but no language fits. They must not alter the completed
+no temporal state](LANGUAGE-CORE-CONTROLS.md); their language fits are now under
+way, with results pending. They must not alter the completed
 topology study. SCAN remains prepared and deferred.
 
 ## 1. Preserve the completed shared language reference
