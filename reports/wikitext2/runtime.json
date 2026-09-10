@@ -1,0 +1,100 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.8.0+cpu",
+  "threads": 4,
+  "batch": 1,
+  "dtype": "float32",
+  "device": "CPU",
+  "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+  "results": [
+    {
+      "variant": "flm",
+      "checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+      "parameters": 600003,
+      "prefill_tokens": 128,
+      "decode_tokens": 128,
+      "repeats": 5,
+      "prefill_seconds": [
+        0.03439710009843111,
+        0.03152840002439916,
+        0.030261600157245994,
+        0.03125330014154315,
+        0.03717739996500313
+      ],
+      "decode_seconds": [
+        0.6264657001011074,
+        0.6387574998661876,
+        0.6235859000589699,
+        0.7074986000079662,
+        0.7052372999023646
+      ],
+      "median_prefill_tokens_per_second": 4059.8317675791827,
+      "median_decode_tokens_per_second": 200.38903656992605,
+      "state": {
+        "logical_tensor_bytes": 8192,
+        "allocated_tensor_bytes": 8192,
+        "scope": "Persistent sequence tensors only; excludes Python bookkeeping, model weights, temporary activations and adapters"
+      }
+    },
+    {
+      "variant": "gru",
+      "checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+      "parameters": 595408,
+      "prefill_tokens": 128,
+      "decode_tokens": 128,
+      "repeats": 5,
+      "prefill_seconds": [
+        0.012766000116243958,
+        0.011999999871477485,
+        0.01188710005953908,
+        0.011333400150761008,
+        0.011942100012674928
+      ],
+      "decode_seconds": [
+        0.03666500002145767,
+        0.03823269996792078,
+        0.03591539990156889,
+        0.03761060000397265,
+        0.035102800000458956
+      ],
+      "median_prefill_tokens_per_second": 10718.382852609278,
+      "median_decode_tokens_per_second": 3491.0677737648934,
+      "state": {
+        "logical_tensor_bytes": 800,
+        "allocated_tensor_bytes": 800,
+        "scope": "Persistent sequence tensors only; excludes Python bookkeeping, model weights, temporary activations and adapters"
+      }
+    },
+    {
+      "variant": "transformer",
+      "checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+      "parameters": 607468,
+      "prefill_tokens": 128,
+      "decode_tokens": 128,
+      "repeats": 5,
+      "prefill_seconds": [
+        0.007492100121453404,
+        0.005500699859112501,
+        0.0038805000949651003,
+        0.003912499872967601,
+        0.004148199921473861
+      ],
+      "decode_seconds": [
+        0.1768930999096483,
+        0.17518860008567572,
+        0.17736539989709854,
+        0.20661469991318882,
+        0.1742275001015514
+      ],
+      "median_prefill_tokens_per_second": 30856.75773180224,
+      "median_decode_tokens_per_second": 723.6008643942504,
+      "state": {
+        "logical_tensor_bytes": 164160,
+        "allocated_tensor_bytes": 164160,
+        "scope": "Persistent sequence tensors only; excludes Python bookkeeping, model weights, temporary activations and adapters"
+      }
+    }
+  ],
+  "protocol": "Call only after all training processes have exited. One warmup and five repeated identical original-text trials; tokenization excluded; forced identical token inputs across models.",
+  "caveat": "This measures the implemented eager PyTorch path, including FLM recurrent-weight preparation per forward call. It is not a hardware-independent FLOP, peak-memory or energy comparison. Normal OS background activity can affect timings."
+}

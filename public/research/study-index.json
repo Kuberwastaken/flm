@@ -1,4 +1,10 @@
 {
-  "test": null,
-  "runtime": null
+  "test": {
+    "file": "test-results.json",
+    "sha256": "34f8fbf09a983178321c1b358e919a4484128e6ffe81270f5c8e6a357b154f96"
+  },
+  "runtime": {
+    "file": "runtime.json",
+    "sha256": "b86fbfd4af4c55963519fc51b8632b3002779e014a93da4e7dac71e6f7aee04b"
+  }
 }
