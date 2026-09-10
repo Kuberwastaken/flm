@@ -1,0 +1,67 @@
+{
+  "verified_utc": "2026-09-10T15:11:01.627252+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "2220219201bb01095375180a9b64887b5bc931fd",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34493598333"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 62363,
+      "sha256": "8c2df9bd09aef09286427e8476413879ac5b7394a1e6c98f643ee796c4b16cba"
+    },
+    {
+      "path": "assets/index-Dsn6bkyf.js",
+      "bytes": 568386,
+      "sha256": "b1ef776d095c11a6014d6c0d1917435d46f02c119723db1cf961348ad3e65070"
+    },
+    {
+      "path": "assets/index-p8eYSiJG.css",
+      "bytes": 19990,
+      "sha256": "3a5d60b28ad6860548fc8f389af59dbc399145ab449d90518bc3c74e126b83a7"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "all_existing_ids_and_link_targets_preserved": true,
+  "preview": {
+    "width": 598,
+    "before_visible_words": 4111,
+    "after_visible_words": 2190,
+    "before_height_pixels": 19873.875,
+    "after_height_pixels": 9750.1123046875,
+    "keyboard_sensory_expansion_verified": true,
+    "sensory_sections_visible_when_expanded": 5,
+    "sensory_choice_rows": 5,
+    "wiring_rows": 5,
+    "feedback_rows": 5,
+    "physical_scenario_switch_to_positive_verified": true,
+    "positive_trained_error_degrees": 7.68,
+    "physical_scenario_restored_to_switch": true,
+    "babylm_pointer_open_and_close_verified": true,
+    "babylm_source_rows": 6,
+    "babylm_model_rows": 3
+  },
+  "live_browser": {
+    "verified_utc": "2026-09-10T15:09:52.391Z",
+    "url": "https://flm.kuber.studio/#research",
+    "first_headings": [
+      "Does measured wiring help language?",
+      "Held-out language comparison",
+      "The architecture",
+      "A standard corpus, trained from scratch"
+    ],
+    "visible_words": 2190,
+    "page_height_pixels": 9750.1123046875,
+    "page_width": 598,
+    "viewport_width": 598,
+    "secondary_studies_initially_collapsed": true,
+    "baseline_rows": 3,
+    "final_topology_test_hidden": true,
+    "completed_new_topology_runs": 5
+  },
+  "scope": "Presentation hierarchy and access to existing evidence; no models, scores or scientific conclusions changed"
+}
