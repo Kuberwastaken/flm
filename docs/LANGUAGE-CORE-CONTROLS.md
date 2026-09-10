@@ -16,6 +16,13 @@ language comparisons would distinguish different claims:
 | No lateral recurrence | Remove `W h` at every training and evaluation step; keep the leaky fast state and slow state | Does communication along graph edges improve on independent temporal units? |
 | No temporal state | Start both states from zero for each individual token during training and evaluation | Does this model improve on a learned current-token predictor by carrying history? |
 
+The mechanism definitions are implemented separately in
+[`flm/language_core_controls.py`](../flm/language_core_controls.py). They have
+no training command and do not modify the frozen topology sources. The extended
+checkpoint configuration records the control explicitly; the existing language
+loader rejects it rather than silently restoring a different mechanism. A
+separate declared training, resume and evaluation harness is still required.
+
 The current implementation's `no_recurrence` variant means **no lateral
 recurrence**, not no memory: `(1-alpha) h` and the slow update still retain
 history. Acute inference-time disabling is a different intervention from
@@ -47,6 +54,17 @@ parameters separately. For a no-temporal-state implementation, verify that
 two different prefixes ending in the same token give identical logits before
 claiming it is memoryless. For a fixed core, verify all frozen tensors after
 every saved checkpoint; do not infer freezing from an optimizer label.
+
+The implementation tests use artificial token IDs and a 16-node fixture. They
+check equal initialization and RNG state, prefix invariance, whole-chunk versus
+streamed inference, and equivalence to resetting the original model separately
+for every token, including lexical-interface gradients. They also check that
+only the memoryless condition has no gradient path to earlier input drives,
+and that fixed parameters survive five fixture optimizer updates and reject
+corrupted saved tensors. These are software checks, not language results.
+The parameter card separates stored from trainable entries. A gradient probe
+reports unused tensors separately from connected zero derivatives for one
+specified loss; neither count should be described as effective model capacity.
 
 Start with the measured graph to establish whether recurrent computation
 contributes to the language result. A later topology-by-trainability factorial

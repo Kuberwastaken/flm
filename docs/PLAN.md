@@ -126,12 +126,21 @@ archive extraction passes its own NumPy-only audit without the repository.
 No language checkpoint, frozen topology input or language schedule changed.
 Language-to-control transfer and online motor learning remain later studies.
 
-Three of the eight new language controls have now completed training. Null
+Four of the eight new language controls have now completed training. Null
 graphs 101, 103 and 107 at training seed 42 have validation loss 1.9072, 1.9083
 and 1.9086 BPB, respectively, versus 1.9097 for the measured reference. These
 small differences favor the nulls on validation only; the full test comparison
-remains gated. The scheduler continues the first retrained no-slow-state model
-and null graph 101 with training seed 43.
+remains gated. The retrained no-slow-state model at seed 42 has validation loss
+1.9195 BPB versus 1.9097 for the corresponding full model; this is one seed's
+validation comparison. The scheduler continues null graphs 101 and 103 with
+training seed 43.
+
+The reviewer-requested language computation controls now have separate,
+fixture-tested mechanism definitions: fixed recurrent dynamics, no lateral
+recurrence, and no temporal state. They do not change the frozen study or start
+training. A declared follow-up harness, checkpoint restoration and selection
+gate remain to be implemented after the topology result is reported. See
+[the control definitions and limits](LANGUAGE-CORE-CONTROLS.md).
 
 Preparation for language-to-action transfer now uses SCAN's three canonical
 splits. All 20,910 command interpretations, official memberships, repeated-row
