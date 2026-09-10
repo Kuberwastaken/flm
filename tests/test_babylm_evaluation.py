@@ -48,8 +48,9 @@ class BabyLMEvaluationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             for path in (TOKENIZER, GRAPH, Path('docs/BABYLM-PROTOCOL.md'), Path('docs/BABYLM-EVALUATION.md'),
-                         Path('data/prompts/babylm-original.json'), TOKENIZER.with_name('validation-panel.json')):
+                         Path('data/prompts/babylm-original.json')):
                 (root / path).parent.mkdir(parents=True, exist_ok=True); (root / path).write_bytes(b'fixture')
+            write_json(root / TOKENIZER.with_name('validation-panel.json'), dict(ids=['fixture'], target_tokens_per_block=49152))
             token_hash = sha256(root / TOKENIZER); parts = {}; hashes = {}
             for name in ('train-10m', 'train-100m', 'validation', 'test'):
                 parts[name] = dict(fixture=name)
@@ -70,11 +71,19 @@ class BabyLMEvaluationTests(unittest.TestCase):
                     for variant in ('flm', 'gru', 'transformer'):
                         dest = root / f'runs/babylm-{scale}/{variant}-s{seed}'; dest.mkdir()
                         (dest / 'best.pt').write_bytes(f'{scale}-{seed}-{variant}'.encode())
+                        (dest / 'last.pt').write_bytes(b'final fixture')
                         write_json(dest / 'complete.json', dict(steps=12000, protocol=protocol, best_validation_bpb=2., best_checkpoint_sha256=sha256(dest / 'best.pt')))
                         write_json(dest / 'run.json', dict(seed=seed, protocol=protocol, source_commit='fixture',
                             test_set_used_for_training=False, parameter_card=dict(config=dict(variant=variant))))
-            with patch('flm.babylm_test.read_mmap', side_effect=lambda path, _: ([], [], read_json(path / 'manifest.json'))):
+            with patch('flm.babylm_test.read_mmap', side_effect=lambda path, _: ([], [], read_json(path / 'manifest.json'))), \
+                    patch('flm.babylm_test.Lexicon'), patch('flm.babylm_test.validation_coverage', return_value=[]), \
+                    patch('flm.babylm_test.verify_completed_payloads', return_value={}) as payloads:
                 result = freeze_selection(root); self.assertEqual(len(result['runs']), 12)
+                self.assertEqual(payloads.call_count, 12)
+                payloads.side_effect = [{}] * 11 + [ValueError('Invalid final registered payload')]
+                with self.assertRaisesRegex(ValueError, 'final registered payload'): freeze_selection(root)
+                self.assertFalse((root / 'reports/babylm/selection.json').exists())
+                payloads.side_effect = None
                 path = root / 'runs/babylm-100m/transformer-s43/complete.json'; complete = read_json(path)
                 write_json(path, dict(complete, steps=10000))
                 with self.assertRaisesRegex(ValueError, 'protocol changed'): freeze_selection(root)

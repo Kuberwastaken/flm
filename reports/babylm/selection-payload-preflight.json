@@ -1,0 +1,65 @@
+{
+  "verified_utc": "2026-09-10T22:47:04.544887+00:00",
+  "scope": "One existing completed 10M FLM seed-42 run plus small synthetic payload tests; not the unfinished twelve-run release.",
+  "source_sha256": {
+    "flm/babylm_test.py": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
+    "tests/test_babylm_evaluation.py": "e403e65ea6090a848b34a2e5e4c6aa3b0d91282e2d1e843ef261f1ecd01391e7",
+    "tests/test_babylm_selection_payloads.py": "b99e5c2a6c472f685d3ff6f5a0226d17ab826e4bf08af07ee908d91e70217c82"
+  },
+  "completed_run_verified": {
+    "scale": "10m",
+    "seed": 42,
+    "variant": "flm",
+    "checkpoint": "runs/babylm-10m/flm-s42/best.pt",
+    "checkpoint_sha256": "fe0f21c3ac72289b5fd11e534f98d4979965b4556c102b480d652a53a4952de6",
+    "selection_validation_bpb": 1.9811101259407082,
+    "training_source_commit": "518a55bbeb39d7f9653b68603deff57e370b562e",
+    "checkpoint_step": 12000,
+    "final_checkpoint_sha256": "b4586202dc4d63c3d4710deeaeb360c814a2c42d0223a03301f2d0d8e1e37a39",
+    "validation_record_sha256": {
+      "validation-000500.json": "64f33add38a0c882cd002bf57e8ffaa1dde564d7cf146e1e761b08bbb3964864",
+      "validation-001000.json": "2fc305cfa3dede397687f7afcfa045e3cfc7aa76f9c4226389cd92978f0c5610",
+      "validation-001500.json": "717cbdf363320296bb60d587b8754325d5b107240763b70ac2f839a2c0a01c63",
+      "validation-002000.json": "e107e649e75ff05865dc8afcf71d8e29db29a69acb9dc02b03ba41735c1f1604",
+      "validation-002500.json": "366dcf69a54010f2971efa3cd99b3f4bd8b6a715c1deefc92de350af0617a083",
+      "validation-003000.json": "31432898c403301c1c7e28f3d2bbf214af62f28c5e0f42bccc434ffac8289995",
+      "validation-003500.json": "6cfd8a847389e716a4fec89b953104a22288bfc53edd4a6d43378f17cd76ee81",
+      "validation-004000.json": "1c93d4c085ce0c24cd846d399653b9b8bfd5d227e4be5812d10643d719bb79da",
+      "validation-004500.json": "4e53cd190cfe9fae12e3f5befb56ba3b32ec3f10b503b4639d9a3d9f72426c25",
+      "validation-005000.json": "45cd02faa7d9fb470919d25b812287a86aa090dc8e9530e389a7618c5ee97816",
+      "validation-005500.json": "c7686130f66fd2b606c1a5ebc7e58fb404351d263b9a3a626b21784e3d2c881c",
+      "validation-006000.json": "a47c7d2aef66bd3cfebadfc93bdc0ed6767c1de11d3725f9c9c2dfb7472eff89",
+      "validation-006500.json": "ba5d27c904b4dcace10d7b3cedd8579f0a0ccac8e96c95bc8a994c989d02ae80",
+      "validation-007000.json": "2e8b2ec80726961c65af800745281fc4c0725fa0e39beb9bb49a67c93df86bdd",
+      "validation-007500.json": "65fba166f311be1ab2f405e9083c666f5686e46f88fbc778a02752144ef4fa5a",
+      "validation-008000.json": "1df7bfd71f6f91b1526f6f761af722e46353b4f502c6b120e75a120b19ed7151",
+      "validation-008500.json": "6ac7df8dd89750709e8e00fb2f8a70e936a9e585855f7db4ba8fcb0b3731cf75",
+      "validation-009000.json": "beea3b9cacee5ef5671139cf9a01189572199bc54cca776174933ce506d916ec",
+      "validation-009500.json": "668704b3ef14e5278a349e05d548fd3a9c16ccb21ac7e697aeaa4ee9fbf93eb6",
+      "validation-010000.json": "7d7a12669dd0e1bd7132158189c15ac9f58d54af1c6f380701048ff26acd29e3",
+      "validation-010500.json": "58e5618a28d4c902cc9a4e3f4c12dd11769f58239abe4a652d5d718b23e6240f",
+      "validation-011000.json": "8b4771a3ac1627a886157d9567f992b5d44dcfcd973fc34c41da1dc04c756c5f",
+      "validation-011500.json": "fb33cfe1f1bcd01344e272ae2d702964814dc0f27e8ea4ce7f7c15ef74f75aae",
+      "validation-012000.json": "551cab07209c4bde330c4502d50de9197e1293bfa588bc22e37553eb8f936222"
+    },
+    "final_exposure": {
+      "presented_tokens": 18432000,
+      "presented_bytes": 53899201,
+      "scored_bytes": 44912041
+    }
+  },
+  "validation_blocks": 48,
+  "test_cache_opened": false,
+  "new_fitting_or_scoring": false,
+  "focused_tests_passed": 11,
+  "full_selection_refused": "Registered BabyLM run incomplete: runs\\babylm-10m\\gru-s42",
+  "active_core_identity_unchanged": true,
+  "evaluation_declaration_sha256": "874e8030ed44282cfa7d67e17de9052cde3e420494e8254fcad87a41c4b2db21",
+  "test_log_sha256": "db228798efdf1194df7da5a75e861b8b2a59c5f830548fcfd4c7e7ca9762800c",
+  "tests_verified_utc": "2026-09-10T22:48:43.814052+00:00",
+  "test_scope": [
+    "Eleven focused tests; synthetic payload fixtures and complete-block evaluator parity.",
+    "An invalid twelfth payload refuses selection; no selection file is written.",
+    "Validation ties require the earlier checkpoint; wrong panel counts, incomplete updates and nonfinite weights are rejected."
+  ]
+}

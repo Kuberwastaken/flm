@@ -25,12 +25,79 @@ OUTPUT = Path('reports/babylm')
 def read_json(path): return json.loads(path.read_text(encoding='utf8'))
 
 
+def validation_coverage(documents, panel, lexicon, token_limit=49152):
+    ids = panel['ids']; lookup = dict(documents)
+    if (not ids or len(set(ids)) != len(ids) or not set(ids).issubset(lookup)
+            or len(ids) * panel['target_tokens_per_block'] != token_limit):
+        raise ValueError('Invalid fixed validation panel')
+    output = []
+    for index, identity in enumerate(ids):
+        quota = token_limit // len(ids) + int(index < token_limit % len(ids))
+        targets = lookup[identity][1:quota + 1]
+        output.append((identity, int((targets >= 2).sum()), int(lexicon.lengths[targets].sum())))
+    return output
+
+
+def verify_completed_payloads(root, selected, protocol, lexicon, expected_coverage):
+    """Bind actual final/selected payloads and all 24 validation observations.
+
+    This restores weights without running inference. Completion metadata alone
+    must not allow a late invalid model to be discovered after earlier test runs.
+    """
+    folder = root / Path(selected['checkpoint']).parent
+    model, best = restore(root / selected['checkpoint'], root / GRAPH, lexicon)
+    final_model, final = restore(folder / 'last.pt', root / GRAPH, lexicon)
+    for payload, restored_model in ((best, model), (final, final_model)):
+        run = payload['run']
+        if (run['protocol'] != protocol or run['seed'] != selected['seed']
+                or payload['config']['variant'] != selected['variant']
+                or run['source_commit'] != selected['training_source_commit']
+                or run['test_set_used_for_training'] is not False):
+            raise ValueError('Completed checkpoint run identity changed')
+        if restored_model.parameter_card() != run['parameter_card']:
+            raise ValueError('Completed checkpoint parameter card changed')
+        if any(not bool(torch.isfinite(value).all()) for value in payload['model'].values()):
+            raise ValueError('Completed checkpoint contains nonfinite weights')
+        if payload['best'] != selected['selection_validation_bpb']:
+            raise ValueError('Completed checkpoint selection score changed')
+    if best['_file_sha256'] != selected['checkpoint_sha256'] or final['step'] != 12000:
+        raise ValueError('Selected checkpoint changed or final training update missing')
+    observations = []; hashes = {}
+    for step in range(500, 12001, 500):
+        path = folder / f'validation-{step:06d}.json'; score = read_json(path)
+        records = score['documents']
+        counts = [(row['document'], row['tokens'], row['bytes']) for row in records]
+        if (not counts or len({row[0] for row in counts}) != len(counts)
+                or any(row[1] <= 0 or row[2] <= 0 for row in counts)
+                or counts != expected_coverage):
+            raise ValueError('Validation selection coverage changed')
+        if (score['tokenizer_sha256'] != lexicon.sha256
+                or score['tokens'] != sum(row[1] for row in counts)
+                or score['bytes'] != sum(row[2] for row in counts)
+                or any(not math.isfinite(row['nll']) or row['nll'] < 0 for row in records)
+                or not math.isclose(score['nll'], math.fsum(row['nll'] for row in records), rel_tol=1e-10)
+                or not math.isclose(score['bits_per_byte'], score['nll'] / score['bytes'] / math.log(2), rel_tol=1e-10)
+                or not math.isfinite(score['bits_per_byte']) or score['bits_per_byte'] <= 0):
+            raise ValueError('Invalid validation selection arithmetic')
+        observations.append((score['bits_per_byte'], step))
+        hashes[path.name] = sha256(path)
+    value, selected_step = min(observations)
+    if value != selected['selection_validation_bpb'] or best['step'] != selected_step:
+        raise ValueError('Checkpoint is not the earliest minimum-validation selection')
+    exposure = final['run']['exposure']
+    if (exposure['presented_tokens'] != 12000 * 1536
+            or exposure['presented_bytes'] <= 0 or exposure['scored_bytes'] <= 0):
+        raise ValueError('Final checkpoint exposure is incomplete')
+    return dict(checkpoint_step=selected_step, final_checkpoint_sha256=final['_file_sha256'],
+                validation_record_sha256=hashes, final_exposure=exposure)
+
+
 def freeze_selection(root=Path('.')):
-    """Check completeness first, then every declared identity; never read losses."""
+    """Check completeness, identities and validation selection; never score test losses."""
     folders = [(scale, seed, variant, Path(f'runs/babylm-{scale}/{variant}-s{seed}'))
                for scale in SCALES for seed in SEEDS for variant in VARIANTS]
     for _, _, _, folder in folders:
-        if not all((root / folder / name).exists() for name in ('complete.json', 'best.pt')):
+        if not all((root / folder / name).exists() for name in ('complete.json', 'best.pt', 'last.pt')):
             raise ValueError(f'Registered BabyLM run incomplete: {folder}')
     tokenizer_hash = sha256(root / TOKENIZER); graph_hash = sha256(root / GRAPH)
     card_path = TOKENIZER.with_name('tokenization-card.json'); card = read_json(root / card_path)
@@ -38,7 +105,8 @@ def freeze_selection(root=Path('.')):
     manifest_hashes = {}
     for partition in ('train-10m', 'train-100m', 'validation', 'test'):
         path = root / CACHE / partition
-        _, _, manifest = read_mmap(path, tokenizer_hash)
+        documents, _, manifest = read_mmap(path, tokenizer_hash)
+        if partition == 'validation': validation_documents = documents
         if manifest != card['partitions'][partition]: raise ValueError('Prepared corpus differs from its frozen card')
         manifest_hashes[partition] = sha256(path / 'manifest.json')
     panel_hash = sha256(root / TOKENIZER.with_name('validation-panel.json'))
@@ -58,7 +126,9 @@ def freeze_selection(root=Path('.')):
             threads=4, tokenizer_sha256=tokenizer_hash, train_cache_sha256=manifest_hashes[f'train-{scale}'],
             validation_cache_sha256=manifest_hashes['validation'], graph_sha256=graph_hash,
             validation_panel_sha256=panel_hash, evaluation_unit='block', cache_identity='SHA-256 of verified mmap manifest')
-    runs = []
+    runs = []; lexicon = Lexicon(root / TOKENIZER)
+    coverage = validation_coverage(validation_documents,
+        read_json(root / TOKENIZER.with_name('validation-panel.json')), lexicon)
     for scale, seed, variant, folder in folders:
         complete = read_json(root / folder / 'complete.json'); run = read_json(root / folder / 'run.json')
         if complete['steps'] != 12000 or complete['protocol'] != protocols[scale] or run['protocol'] != protocols[scale]:
@@ -68,9 +138,11 @@ def freeze_selection(root=Path('.')):
             raise ValueError(f'Invalid selected checkpoint: {folder}')
         if run['seed'] != seed or run['parameter_card']['config']['variant'] != variant or run['test_set_used_for_training']:
             raise ValueError(f'Wrong registered run identity: {folder}')
-        runs.append(dict(scale=scale, seed=seed, variant=variant, checkpoint=(folder / 'best.pt').as_posix(),
+        selected = dict(scale=scale, seed=seed, variant=variant, checkpoint=(folder / 'best.pt').as_posix(),
             checkpoint_sha256=digest, selection_validation_bpb=complete['best_validation_bpb'],
-            training_source_commit=run['source_commit']))
+            training_source_commit=run['source_commit'])
+        selected.update(verify_completed_payloads(root, selected, protocols[scale], lexicon, coverage))
+        runs.append(selected)
     return dict(dataset='BabyLM 2026 English', runs=runs, protocols=protocols, study_sha256=studies,
         tokenizer_sha256=tokenizer_hash, graph_sha256=graph_hash, manifest_sha256=manifest_hashes,
         tokenization_card_sha256=sha256(root / card_path), training_protocol_sha256=protocol_hash,
@@ -85,7 +157,7 @@ def restore_selected(selected, selection, lexicon):
         raise ValueError('Checkpoint changed after selection freeze')
     if saved['run']['seed'] != selected['seed'] or saved['config']['variant'] != selected['variant']:
         raise ValueError('Checkpoint belongs to another run')
-    if saved['best'] != selected['selection_validation_bpb'] or not 500 <= saved['step'] <= 12000 or saved['step'] % 500:
+    if saved['best'] != selected['selection_validation_bpb'] or saved['step'] != selected['checkpoint_step']:
         raise ValueError('Checkpoint does not represent the declared validation selection')
     return model, saved
 

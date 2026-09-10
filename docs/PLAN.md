@@ -50,6 +50,8 @@ The paused 10M GRU seed-42 run has a [verified checkpoint at update 6,500](../re
 
 Complete all twelve runs and freeze selection before the declared test evaluation. Report source-component codelength and overlap-filtered analyses with exact text denominators. Retain all fixed-prompt continuations, repetitions and unsuccessful outputs. Compare FLM, GRU and transformer at the declared exposure, and distinguish data-volume effects from architecture or capacity changes. Update the [data cards and acquisition status](DATA-STATUS.md), model cards, figures, papers and public release with the complete results.
 
+The [selection-payload preflight](../reports/babylm/selection-payload-preflight.json) checks the completed 10M FLM run and eleven focused tests. The gate now restores every selected/final payload and verifies all 24 validation records against the fixed panel before any model test inference. This preparation does not imply that the eleven unfinished runs have passed; the full selection command still refuses the incomplete study.
+
 ## Remaining research after these controls
 
 1. **Broader data and evaluation.** Extend the mixed-data study to bounded, licensed corpora and stronger grammar, generation and adaptation evaluations. Preserve source identities, document-level splits, duplicate audits and train-only preprocessing. Keep any teacher-assisted data curation separately labeled. Raw audio learning, broader conversational ability and code execution are distinct objectives, not properties of the present text models.
