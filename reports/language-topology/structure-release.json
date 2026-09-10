@@ -1,0 +1,44 @@
+{
+  "release_commit": "c643dc3b3cabe628bfa3b564856ebafd91f0f620",
+  "pages_run": 34458712555,
+  "checked_utc": "2026-09-10T09:07:42.0275182Z",
+  "artifacts": [
+    {
+      "path": "research/language-topology-structure.json",
+      "status": 200,
+      "sha256": "decc8c4352533ff04e363dc7291f7ade1011ab7e1ff7b81d93d3b0286c1c1bfe",
+      "bytes": 10575
+    },
+    {
+      "path": "research/language-topology-graphs.zip",
+      "status": 200,
+      "sha256": "b2ccf5d64093d6a93c4d4f48bf120b9bf68d866343b80ded0915789157e2430d",
+      "bytes": 1663287
+    },
+    {
+      "path": "research/figures/language-topology-nodes.csv",
+      "status": 200,
+      "sha256": "b5e34a7ea5e2320ff66da6de41529b46a5c77419f7d3e0945bf533cdbcae484c",
+      "bytes": 313856
+    },
+    {
+      "path": "research/figures/language-topology-matrices.png",
+      "status": 200,
+      "sha256": "420ff4ff3186197122fcc8712721482d04e1e8409e3b03df86cebd50f46323b6",
+      "bytes": 974190
+    },
+    {
+      "path": "research/figures/language-topology-matrices.svg",
+      "status": 200,
+      "sha256": "bacf6fc2917fc3670cfcd997ad491ed7fdbff7f05875225a36befb4e2dd7990d",
+      "bytes": 183814
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "status": 200,
+      "sha256": "6e3e8bfc51456d02663e0df210a01c38024916ca933390184d4efd1653613301",
+      "bytes": 8765
+    }
+  ],
+  "language_test_status": "Pending all eight new runs; published validation through saved update 4000"
+}

@@ -213,12 +213,23 @@ At the actual 598-pixel preview viewport, the expanded audit shows all four
 correct graph rows, the loaded figure and three download links. Document and
 scroll widths both equal 598; the table remains inside the research column.
 The completed-test block stays hidden while language training is pending.
-Desktop and mobile breakpoint checks are not claimed for this addition:
-the attempted desktop overrides did not change the measured width during this
-review and were reset. The earlier documented mobile checks predate this view.
+The attached preview surface did not honor viewport overrides. A separate
+temporary test tab resolved that limitation: at desktop width 1280 the expanded
+figure and all four rows render, with document and scroll widths both 1265. At
+mobile width 390 they both equal 375, and the 550-pixel table scrolls inside its
+335-pixel container. The figure loads and final-test results remain hidden.
+The temporary tab was closed and the viewport override reset after review.
 
 The previous paper release, commit `88ff8fd`, completed Pages run
 `34456998206`. The deployed five-page PDF, source archive and 2,000-update
 snapshot all matched local SHA-256 hashes. Both new paper links appeared in
 the public Research view. This confirms publication, not language-study
 completion.
+
+The graph-audit release, `c643dc3`, completed Pages run `34458712555`. The live
+Research view shows all four structural rows and all three download links.
+Its saved update-4,000 pair reads measured 1.9340 versus rewired 1.9324 BPB,
+difference +0.0016; that is partial validation, not a test conclusion. The
+graph JSON, graph ZIP, node CSV, PNG/SVG figures and progress snapshot all match
+local bytes; `reports/language-topology/structure-release.json` records their
+verified SHA-256 hashes and deployment identity.
