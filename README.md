@@ -6,6 +6,8 @@ FLM is a small recurrent language model whose directed connections are selected 
 
 The main experiment uses **WikiText-2 raw**, a standard written-language corpus with 600 training articles and 2.05 million training words. A 4,096-token lossless byte-pair vocabulary is learned only from those articles. FLM, a GRU and a basic decoder transformer use the same tokenizer, sampled training windows and approximately 600,000 parameters. The earlier AMI meeting-transcript model remains available as a separate dialogue experiment.
 
+The continuing study adds the official **BabyLM 2026 10M- and 100M-word corpora**, verified locally across six spoken/written components. Its [registered protocol](docs/BABYLM-PROTOCOL.md) separates data diversity, model capacity and training exposure. Measured neural interventions and a real, separately calibrated NeuroMechFly physics environment support later learning and behavior studies. See the [continuing research program](docs/RESEARCH-PROGRAM.md).
+
 This is a working research prototype, not an instruction-following assistant. The current matched validation curves do **not** establish an FLM advantage over the baselines. See the site's Research view for measured curves, matched-update controls and unedited fixed-prompt continuations. The second training seed and final test-set evaluation are still pending; validation scores must not be described as final test results.
 
 ## What is different?
@@ -25,7 +27,7 @@ npm run dev -- --port 5180
 
 Open the URL printed by Vite. Use `npm run build` and `npm run preview -- --port 5181` to inspect a production build. GitHub Actions publishes `dist/` to Pages. `public/CNAME` points to `flm.kuber.studio`; the repository remains private while the generated website is public.
 
-Text and adaptation stay in the browser. Conversations are saved locally and can be exported/imported. Learning changes a separate output adapter and persists only when explicitly saved or exported. Adapters are tied to a checkpoint hash. A model switch reloads the workspace, so save session learning first. Browser storage can be unavailable or full; file export remains available. The optional 3D views need WebGL; text inference runs in a CPU worker.
+Text and adaptation stay in the browser. Conversations are saved locally and can be exported/imported. Learning changes a separate output adapter and persists only when explicitly saved or exported. Adapters are tied to a checkpoint hash. A model switch reloads the workspace, so save session learning first. Exports expose their complete JSON for copying when native file downloads are unavailable. The optional 3D views need WebGL; text inference runs in a CPU worker.
 
 ## Reproduce the language experiment
 
@@ -65,6 +67,36 @@ python -m flm.graph --source data/processed/connectome --output work/reproduced-
 ```
 
 The acquisition verifies 166,700 neurons, 25,582,938 directed neuron-pair edges and 124,177,617 contacts. The trained subset has 1,024 neurons and 76,130 retained edges. [Graph provenance](data/graphs/central-1024/graph-card.json) records selection and source identities. Training the full connectome is a separate scaling stage, not demonstrated by this compact release.
+
+## Larger corpora and physical behavior
+
+The BabyLM pipeline preserves original UTF-8 text, learns its vocabulary only from
+the 10M training set, audits normalized line overlap and stores source-indexed
+blocks in verified memory-mapped files. Raw corpora stay local. The publisher's
+training-repository MIT metadata does not replace component rights.
+
+```sh
+python -m flm.babylm acquire
+python -m flm.babylm_audit
+python -m flm.babylm_prepare
+python -m flm.babylm_suite
+```
+
+The suite requires the completed WikiText runtime report first, then runs the
+12 registered combinations serially: two corpora, two seeds and three models,
+12,000 updates each. It can take many hours on a CPU. `--scales 10m --seeds 42
+--variants flm` runs a specified portion of the same protocol. All comparisons
+share the 10M-fitted tokenizer and a frozen 48-block validation panel. Official
+test scores and an overlap-filtered sensitivity analysis are separate from
+training progress. Do not treat the 100M dataset label as a 100M-parameter model.
+
+The physics environment uses Python 3.12 with `requirements-embodied.txt`; the
+exact measured environment is recorded in `requirements-embodied-lock.txt`.
+Run `experiments/embodiment/calibrate.py` inside that isolated environment to
+reproduce the designed walking controls. See its [README](experiments/embodiment/README.md).
+The research page includes the actual simulated video and trajectory data. This
+calibration has no FLM connection or learned motor head; the browser body view
+remains a separate illustrative state-to-pose mapping.
 
 ## Verification and layout
 

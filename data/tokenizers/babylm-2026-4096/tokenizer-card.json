@@ -1,0 +1,26 @@
+{
+  "algorithm": "Byte-level BPE",
+  "implementation": "tokenizers 0.22.2",
+  "vocabulary": 4096,
+  "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+  "training_sources": {
+    "bnc_spoken": "8f3042f4104cf356052fda784682d8e8170fd1fd8c795a1c3e172f9eb2ebfa3c",
+    "childes": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+    "gutenberg": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+    "open_subtitles": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+    "simple_wiki": "0ac614aa069ea3908c07c9755bf80bb500d4cee15cd972e9f93cccf89639e9a7",
+    "switchboard": "89c99649777be2f76f5054e9f1aa364b7e1a62844e219fe810205be6d99399b5"
+  },
+  "fitted_partition": "train-10m",
+  "validation_or_test_used_for_training": false,
+  "normalization": "none",
+  "prefix_space": false,
+  "all_bytes_retained": true,
+  "block_target_bytes": 16384,
+  "boundaries": {
+    "bos": 0,
+    "eos": 1,
+    "offset": 2
+  },
+  "encoding_audit": "Every encoded block is checked for exact byte reconstruction."
+}

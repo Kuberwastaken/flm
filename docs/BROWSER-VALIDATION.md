@@ -25,3 +25,23 @@ Automated worker integration verifies generation, scoring, adaptation, clearing,
 The 3,000-update WikiText package is deployed at the custom domain with HTTPS enforcement. The Pages workflow succeeded at commit `8cf2ab2`. The live worker learned two passes / 62 token updates from 103 bytes of original garden-and-bird text: online training 2.447 bits/byte, separate 47-byte probe 3.983 to 3.800 bits/byte. Saving the packed adapter succeeded; after reload, Load saved reported that the checkpoint-specific learning was restored. This is a functional related-text check, not a benchmark result.
 
 At the 390-pixel viewport setting, the live Research view had document client/scroll widths of 375/375 pixels. Sample columns stacked into a 335.2-pixel single column. All three measured comparison rows were visible and no console errors were captured.
+
+## Completed-checkpoint and extended research checks
+
+Production preview, WikiText checkpoint 6,000: keyboard generation produced 24
+actual tokens. Switching between AMI and WikiText, selecting an existing
+conversation from the other dataset, and importing an AMI archive while WikiText
+was selected preserved the correct model/conversation association. An incompatible
+learning file was rejected without disabling the loaded model. Export exposed the
+complete 2,119,150-byte adapter JSON and Copy JSON succeeded. Native download events
+were unavailable in this in-app browser, so file delivery is not inferred from a
+button click; the explicit JSON fallback is verified.
+
+The extended Research page displays all six measured BabyLM component counts.
+Neural-response and physical-trajectory panels load correctly and stack vertically
+at a 390-pixel viewport without document overflow. The four-second physics video
+played to completion (duration/currentTime 4, ended true, readyState 4, no media
+error). Its recording represents one simulated second at quarter-speed playback.
+The viewport override was reset after verification. The complete verification
+suite now passes 35 Python tests and 27 JavaScript tests, including identical
+sampling/scoring between uint16 memory-mapped and int64 in-memory token data.
