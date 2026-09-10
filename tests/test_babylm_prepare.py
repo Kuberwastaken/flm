@@ -10,6 +10,7 @@ from flm.corpus_cache import read_mmap
 from flm.provenance import sha256
 from flm.tokenizer import Lexicon
 from flm.train import Sampler
+from flm.language_train import load_training_data, evaluate, construct
 
 
 class BabyLMPreparationTests(unittest.TestCase):
@@ -41,6 +42,13 @@ class BabyLMPreparationTests(unittest.TestCase):
                 a = narrow.sample(4, 'cpu'); b = wide.sample(4, 'cpu')
                 np.testing.assert_array_equal(a[0], b[0]); np.testing.assert_array_equal(a[1], b[1])
             with self.assertRaises(ValueError): read_mmap(cache, 'wrong-tokenizer')
+            train, validation, identities = load_training_data(root, lexicon, training_cache=cache, validation_cache=cache)
+            model = construct('gru', None, lexicon.vocabulary, 42)
+            narrow_score = evaluate(model, validation, lexicon, token_limit=120, unit='block')
+            wide_score = evaluate(model, [(i, d.astype(np.int64)) for i, d in validation], lexicon, token_limit=120, unit='block')
+            self.assertEqual(narrow_score['bits_per_byte'], wide_score['bits_per_byte'])
+            self.assertIn('per block', narrow_score['protocol'])
+            del train, validation
             del documents, narrow, wide
             # Tampering metadata is caught before any token is returned.
             with (cache / 'blocks.jsonl').open('a') as stream: stream.write('\n')

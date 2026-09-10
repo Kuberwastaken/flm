@@ -9,6 +9,7 @@ import math
 from pathlib import Path
 import subprocess
 import time
+import numpy as np
 import torch
 from torch.nn import functional as F
 from .baselines import GRU, Transformer, BaselineConfig
@@ -16,6 +17,7 @@ from .graph import rewire
 from .model import FLM, Config, load_graph
 from .provenance import sha256, write_json
 from .tokenizer import Lexicon, read_cache
+from .corpus_cache import read_mmap
 from .train import Sampler, save_checkpoint
 
 
@@ -50,7 +52,7 @@ def restore(path, graph_path, lexicon):
 
 
 @torch.no_grad()
-def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96):
+def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96, unit='article'):
     if not documents or chunk_size < 1 or (token_limit is not None and token_limit < 1):
         raise ValueError('Evaluation requires documents, a positive chunk size and a positive optional token limit')
     was_training = model.training; model.eval(); lengths = torch.from_numpy(lexicon.lengths)
@@ -61,7 +63,7 @@ def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96):
             document = document[:quota + 1]
         state = None; nll, tokens, byte_count = 0., 0, 0
         for start in range(0, len(document) - 1, chunk_size):
-            values = torch.from_numpy(document[start:start + chunk_size + 1].copy()).unsqueeze(0)
+            values = torch.from_numpy(document[start:start + chunk_size + 1].astype(np.int64, copy=True)).unsqueeze(0)
             logits, state = model(values[:, :-1], state); targets = values[:, 1:].reshape(-1)
             losses = F.cross_entropy(logits.reshape(-1, lexicon.vocabulary), targets, reduction='none'); mask = targets >= 2
             nll += float(losses[mask].sum()); tokens += int(mask.sum()); byte_count += int(lengths[targets].sum())
@@ -71,17 +73,43 @@ def evaluate(model, documents, lexicon, token_limit=None, chunk_size=96):
     if not total_tokens or not total_bytes: raise ValueError('Evaluation contains no scored text')
     return dict(bits_per_byte=total_nll / total_bytes / math.log(2), token_perplexity=math.exp(total_nll / total_tokens),
         nll=total_nll, tokens=total_tokens, bytes=total_bytes, documents=records, seconds=time.perf_counter() - started,
-        tokenizer_sha256=lexicon.sha256, subset='fixed per-article token prefixes' if token_limit else 'entire supplied split',
-        protocol='Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded')
+        tokenizer_sha256=lexicon.sha256, subset=f'fixed per-{unit} token prefixes' if token_limit else 'entire supplied split',
+        protocol=f'Reset per {unit}; carry native state within {unit}; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded')
+
+
+def load_training_data(data, lexicon, validation_panel=None, training_cache=None, validation_cache=None):
+    identities = {}; splits = {}
+    for split in ('train', 'validation'):
+        explicit = training_cache if split == 'train' else validation_cache
+        path = explicit if explicit is not None else data / f'{split}.npz'
+        if path.is_file():
+            splits[split] = read_cache(path); identities[split] = sha256(path)
+        else:
+            directory = explicit if explicit is not None else data / split
+            splits[split], _, _ = read_mmap(directory, lexicon.sha256)
+            identities[split] = sha256(directory / 'manifest.json')
+    if validation_panel is not None:
+        panel = json.loads(validation_panel.read_text(encoding='utf8'))
+        if panel['cache_manifest_sha256'] != identities['validation']:
+            raise ValueError('Validation panel cache changed')
+        lookup = dict(splits['validation']); ids = panel['ids']
+        if len(set(ids)) != len(ids) or not ids: raise ValueError('Validation panel IDs must be unique and nonempty')
+        splits['validation'] = [(identity, lookup[identity]) for identity in ids]
+    return splits['train'], splits['validation'], identities
 
 
 def train(args):
     torch.set_num_threads(args.threads); lexicon = Lexicon(args.tokenizer)
-    documents = read_cache(args.data / 'train.npz'); validation = read_cache(args.data / 'validation.npz')
+    panel = getattr(args, 'validation_panel', None); unit = getattr(args, 'unit', 'article')
+    documents, validation, identities = load_training_data(args.data, lexicon, panel,
+        getattr(args, 'training_cache', None), getattr(args, 'validation_cache', None))
+    eval_tokens = 32768 if panel is None else len(validation) * json.loads(panel.read_text(encoding='utf8'))['target_tokens_per_block']
     protocol = dict(steps=args.steps, batch=16, sequence=96, warmup=16, learning_rate=.002, final_learning_rate=.0002,
-        lr_warmup_updates=100, weight_decay=.01, eval_tokens=32768, threads=args.threads,
-        tokenizer_sha256=lexicon.sha256, train_cache_sha256=sha256(args.data / 'train.npz'),
-        validation_cache_sha256=sha256(args.data / 'validation.npz'), graph_sha256=sha256(args.graph))
+        lr_warmup_updates=100, weight_decay=.01, eval_tokens=eval_tokens, threads=args.threads,
+        tokenizer_sha256=lexicon.sha256, train_cache_sha256=identities['train'],
+        validation_cache_sha256=identities['validation'], graph_sha256=sha256(args.graph))
+    if panel is not None:
+        protocol.update(validation_panel_sha256=sha256(panel), evaluation_unit=unit, cache_identity='SHA-256 of verified mmap manifest')
     sampler = Sampler(documents, args.seed, 96); start, best = 0, float('inf'); presented_bytes = 0; scored_bytes = 0
     if args.resume:
         model, saved = restore(args.resume, args.graph, lexicon)
@@ -101,7 +129,7 @@ def train(args):
     if args.resume: optimizer.load_state_dict(saved['optimizer'])
     args.output.mkdir(parents=True, exist_ok=True); write_json(args.output / 'run.json', run)
     if not args.resume:
-        initial = evaluate(model, validation, lexicon, protocol['eval_tokens'])
+        initial = evaluate(model, validation, lexicon, protocol['eval_tokens'], unit=unit)
         write_json(args.output / 'initial-validation.json', initial)
         print(json.dumps(dict(event='initial', variant=args.variant, seed=args.seed, parameters=model.parameter_card()['trainable_parameters'], bits_per_byte=initial['bits_per_byte'])), flush=True)
     started = time.perf_counter(); interval = started; loss_sum = 0.; interval_steps = 0
@@ -123,7 +151,7 @@ def train(args):
             with (args.output / 'history.jsonl').open('a', encoding='utf8') as handle: handle.write(json.dumps(record) + '\n')
             print(json.dumps(record), flush=True); interval = time.perf_counter(); interval_steps = 0; loss_sum = 0.
         if step % 500 == 0 or step == args.steps:
-            measured = evaluate(model, validation, lexicon, protocol['eval_tokens'])
+            measured = evaluate(model, validation, lexicon, protocol['eval_tokens'], unit=unit)
             write_json(args.output / f'validation-{step:06d}.json', measured)
             improved = measured['bits_per_byte'] < best; best = min(best, measured['bits_per_byte'])
             run['exposure'] = dict(presented_tokens=step * 1536, presented_bytes=presented_bytes, scored_bytes=scored_bytes)
@@ -145,6 +173,10 @@ def main():
     parser.add_argument('--graph', type=Path, default=Path('data/graphs/central-1024/graph.npz'))
     parser.add_argument('--output', type=Path, default=Path('runs/wikitext2/flm-s42'))
     parser.add_argument('--resume', type=Path)
+    parser.add_argument('--validation-panel', type=Path)
+    parser.add_argument('--training-cache', type=Path)
+    parser.add_argument('--validation-cache', type=Path)
+    parser.add_argument('--unit', choices=('article', 'block'), default='article')
     args = parser.parse_args()
     if args.steps < 1 or args.threads < 1: parser.error('Positive steps and threads required')
     train(args)
