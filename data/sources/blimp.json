@@ -1,0 +1,344 @@
+{
+  "dataset": "BLiMP",
+  "revision": "3e56b06fcabca9b30822fc66435fca6b1aa40bb1",
+  "files": [
+    {
+      "path": "data/adjunct_island.jsonl",
+      "bytes": 359284,
+      "git_blob_sha1": "e2b90a7a52ce5814147eaa9d3ab1695d4945ee99"
+    },
+    {
+      "path": "data/anaphor_gender_agreement.jsonl",
+      "bytes": 436749,
+      "git_blob_sha1": "c0bcabdf757ee96f2b16642525899a09e341a352"
+    },
+    {
+      "path": "data/anaphor_number_agreement.jsonl",
+      "bytes": 450861,
+      "git_blob_sha1": "60f2e3ae7e31db6cc39bbeaa2d617b053294a54e"
+    },
+    {
+      "path": "data/animate_subject_passive.jsonl",
+      "bytes": 462292,
+      "git_blob_sha1": "b2acb4f13b386cc6a36a0fcd8e050097f485e89d"
+    },
+    {
+      "path": "data/animate_subject_trans.jsonl",
+      "bytes": 433098,
+      "git_blob_sha1": "1b79d6675f46fd726ffd01be674bb489a05db6cd"
+    },
+    {
+      "path": "data/causative.jsonl",
+      "bytes": 317162,
+      "git_blob_sha1": "9d87193e8bb03a093ada2139cce5c54a65c53442"
+    },
+    {
+      "path": "data/complex_NP_island.jsonl",
+      "bytes": 392362,
+      "git_blob_sha1": "6408fc3f99912adbd07ddec9bd5516485b541f8b"
+    },
+    {
+      "path": "data/coordinate_structure_constraint_complex_left_branch.jsonl",
+      "bytes": 571696,
+      "git_blob_sha1": "9886be5fd29d272ff565aafc4318877cee6f5d6e"
+    },
+    {
+      "path": "data/coordinate_structure_constraint_object_extraction.jsonl",
+      "bytes": 366045,
+      "git_blob_sha1": "34ee9af2a53a5d61bf60043db1085acb856a131d"
+    },
+    {
+      "path": "data/determiner_noun_agreement_1.jsonl",
+      "bytes": 468642,
+      "git_blob_sha1": "0371d50db2793a9c8e8c595b03bde41f5005a931"
+    },
+    {
+      "path": "data/determiner_noun_agreement_2.jsonl",
+      "bytes": 488856,
+      "git_blob_sha1": "daaee047ecdea0461f61a8c03613c6359b15ba21"
+    },
+    {
+      "path": "data/determiner_noun_agreement_irregular_1.jsonl",
+      "bytes": 474932,
+      "git_blob_sha1": "e22a3bae2e76d1cea652749885d3c70833dc89d0"
+    },
+    {
+      "path": "data/determiner_noun_agreement_irregular_2.jsonl",
+      "bytes": 490854,
+      "git_blob_sha1": "82a76cb1f6227c747bf70e37b8552c78de48908c"
+    },
+    {
+      "path": "data/determiner_noun_agreement_with_adj_2.jsonl",
+      "bytes": 526806,
+      "git_blob_sha1": "c4a4bc8855f504a09a4540190c3d2257392782f4"
+    },
+    {
+      "path": "data/determiner_noun_agreement_with_adj_irregular_1.jsonl",
+      "bytes": 499664,
+      "git_blob_sha1": "127e2b39eca536856a836eb7f3964273196b8ba3"
+    },
+    {
+      "path": "data/determiner_noun_agreement_with_adj_irregular_2.jsonl",
+      "bytes": 528528,
+      "git_blob_sha1": "1512082143089483185a59a9f8a86c339ff923ba"
+    },
+    {
+      "path": "data/determiner_noun_agreement_with_adjective_1.jsonl",
+      "bytes": 504676,
+      "git_blob_sha1": "d88783ab29047e41857b6a0c01c84bcfb3a06c80"
+    },
+    {
+      "path": "data/distractor_agreement_relational_noun.jsonl",
+      "bytes": 525650,
+      "git_blob_sha1": "d454cd7d6b293866b427b6759b88fbb8b9c646bf"
+    },
+    {
+      "path": "data/distractor_agreement_relative_clause.jsonl",
+      "bytes": 564770,
+      "git_blob_sha1": "ebc95e27000b7febd42c85151de1cb4a3aa33054"
+    },
+    {
+      "path": "data/drop_argument.jsonl",
+      "bytes": 304196,
+      "git_blob_sha1": "9248308b2de7c3908b5a11182ff031d17cd70ba2"
+    },
+    {
+      "path": "data/ellipsis_n_bar_1.jsonl",
+      "bytes": 411980,
+      "git_blob_sha1": "7993468a2e4947682892753209e2564dbd18a01b"
+    },
+    {
+      "path": "data/ellipsis_n_bar_2.jsonl",
+      "bytes": 427551,
+      "git_blob_sha1": "8ff2575169766be19f0c48f8679a5379c83c34ce"
+    },
+    {
+      "path": "data/existential_there_object_raising.jsonl",
+      "bytes": 550672,
+      "git_blob_sha1": "c5e5e6b58bc761f518e7a1d341fd93df343f50cf"
+    },
+    {
+      "path": "data/existential_there_quantifiers_1.jsonl",
+      "bytes": 357321,
+      "git_blob_sha1": "7708d54c4c92def643c3bdab7a71b2a9ae82e96b"
+    },
+    {
+      "path": "data/existential_there_quantifiers_2.jsonl",
+      "bytes": 359216,
+      "git_blob_sha1": "57c9a8f229f5db072f995f124e776b1dd4af6c0b"
+    },
+    {
+      "path": "data/existential_there_subject_raising.jsonl",
+      "bytes": 394453,
+      "git_blob_sha1": "32df72bb2ab132e7413a4ef3b3123fddee48af82"
+    },
+    {
+      "path": "data/expletive_it_object_raising.jsonl",
+      "bytes": 587648,
+      "git_blob_sha1": "dc931799d641384ec9b2d77f7f9a4fecb4234ada"
+    },
+    {
+      "path": "data/inchoative.jsonl",
+      "bytes": 298709,
+      "git_blob_sha1": "ee4957baf1bdf2b66ca724e34c7a656516679cf4"
+    },
+    {
+      "path": "data/intransitive.jsonl",
+      "bytes": 305487,
+      "git_blob_sha1": "4f5b4ec58f621ebe4156e262ecf829f0547122fc"
+    },
+    {
+      "path": "data/irregular_past_participle_adjectives.jsonl",
+      "bytes": 444520,
+      "git_blob_sha1": "59833aff857d635689685ffc699d4c8d5560c396"
+    },
+    {
+      "path": "data/irregular_past_participle_verbs.jsonl",
+      "bytes": 420119,
+      "git_blob_sha1": "89f57d5a7513ef1577ff4bc7533948320fb8130d"
+    },
+    {
+      "path": "data/irregular_plural_subject_verb_agreement_1.jsonl",
+      "bytes": 460705,
+      "git_blob_sha1": "99a06c91da16d40695e3cfadeef69609b8e6e992"
+    },
+    {
+      "path": "data/irregular_plural_subject_verb_agreement_2.jsonl",
+      "bytes": 453376,
+      "git_blob_sha1": "1065055efd751d24dd998cb2c271870f0bace652"
+    },
+    {
+      "path": "data/left_branch_island_echo_question.jsonl",
+      "bytes": 482617,
+      "git_blob_sha1": "f2536d74b3008ee6332eaeb442a76a4c84ea37b7"
+    },
+    {
+      "path": "data/left_branch_island_simple_question.jsonl",
+      "bytes": 343450,
+      "git_blob_sha1": "6902f226eeed8eae5e24c238bd25a7ade66abd2e"
+    },
+    {
+      "path": "data/matrix_question_npi_licensor_present.jsonl",
+      "bytes": 457806,
+      "git_blob_sha1": "372695783155b6be601751255be7fd3840fdbfef"
+    },
+    {
+      "path": "data/npi_present_1.jsonl",
+      "bytes": 438013,
+      "git_blob_sha1": "eccaaa35995ac0ead2751ab6df109d67a9fd20c5"
+    },
+    {
+      "path": "data/npi_present_2.jsonl",
+      "bytes": 422136,
+      "git_blob_sha1": "4e4d11b474504779250155b6839e76f6fc2b8726"
+    },
+    {
+      "path": "data/only_npi_licensor_present.jsonl",
+      "bytes": 459170,
+      "git_blob_sha1": "bd139697bb55a7abc12a49e46394d34b1108e34a"
+    },
+    {
+      "path": "data/only_npi_scope.jsonl",
+      "bytes": 583720,
+      "git_blob_sha1": "98a10ffd68a29734ce5376447af6dc00a8e990d8"
+    },
+    {
+      "path": "data/passive_1.jsonl",
+      "bytes": 340272,
+      "git_blob_sha1": "9df36a61ba48c6c05c26d01be61a942b75b49ffa"
+    },
+    {
+      "path": "data/passive_2.jsonl",
+      "bytes": 308350,
+      "git_blob_sha1": "50fcbbeeb0ca3708519fb895321462f3930dcaaf"
+    },
+    {
+      "path": "data/principle_A_c_command.jsonl",
+      "bytes": 527689,
+      "git_blob_sha1": "0e46a2789c757a953f883206eb1108edcff6767d"
+    },
+    {
+      "path": "data/principle_A_case_1.jsonl",
+      "bytes": 477239,
+      "git_blob_sha1": "5e05bff424927ea25bbad964ff2df179f2103186"
+    },
+    {
+      "path": "data/principle_A_case_2.jsonl",
+      "bytes": 492973,
+      "git_blob_sha1": "8bac97358facd764da1871d5fbc6517565ea2817"
+    },
+    {
+      "path": "data/principle_A_domain_1.jsonl",
+      "bytes": 499865,
+      "git_blob_sha1": "9e31850a1ae2055c836614a0a8be2cda9cfd2ac9"
+    },
+    {
+      "path": "data/principle_A_domain_2.jsonl",
+      "bytes": 493189,
+      "git_blob_sha1": "df9915a6222d3a76b01d9c3dfb2056a7dcebacb7"
+    },
+    {
+      "path": "data/principle_A_domain_3.jsonl",
+      "bytes": 513886,
+      "git_blob_sha1": "33ece70082af14e769e78d81a1548067cdeb8a26"
+    },
+    {
+      "path": "data/principle_A_reconstruction.jsonl",
+      "bytes": 345494,
+      "git_blob_sha1": "9ca5bffa24dbffde4d896a17fc904d9b5714938c"
+    },
+    {
+      "path": "data/regular_plural_subject_verb_agreement_1.jsonl",
+      "bytes": 451850,
+      "git_blob_sha1": "846083500c7e341c24c1f7411aa624de85f148bb"
+    },
+    {
+      "path": "data/regular_plural_subject_verb_agreement_2.jsonl",
+      "bytes": 456477,
+      "git_blob_sha1": "a0a39113346823981537f4bbdd4635c87eaed1e5"
+    },
+    {
+      "path": "data/sentential_negation_npi_licensor_present.jsonl",
+      "bytes": 490996,
+      "git_blob_sha1": "6d27d60a10711924ed106ce324af16bd1b04e6f6"
+    },
+    {
+      "path": "data/sentential_negation_npi_scope.jsonl",
+      "bytes": 614930,
+      "git_blob_sha1": "ad979d7cf8a7c946bd55c1fd42609555663637f6"
+    },
+    {
+      "path": "data/sentential_subject_island.jsonl",
+      "bytes": 365822,
+      "git_blob_sha1": "adda829c23e32f65d5d74d406c77859dc93c4242"
+    },
+    {
+      "path": "data/superlative_quantifiers_1.jsonl",
+      "bytes": 381189,
+      "git_blob_sha1": "6ca9e29eb5e6047c6ec4265d72bf0fd72cdc9541"
+    },
+    {
+      "path": "data/superlative_quantifiers_2.jsonl",
+      "bytes": 516120,
+      "git_blob_sha1": "7288ec731732ec3da5dab96dac98a618cd60de68"
+    },
+    {
+      "path": "data/tough_vs_raising_1.jsonl",
+      "bytes": 343026,
+      "git_blob_sha1": "13ef8df91ca9ef388a78e805734062dfe117b708"
+    },
+    {
+      "path": "data/tough_vs_raising_2.jsonl",
+      "bytes": 364074,
+      "git_blob_sha1": "d0cf2001774939217a00c0807e43eb64076f490c"
+    },
+    {
+      "path": "data/transitive.jsonl",
+      "bytes": 460291,
+      "git_blob_sha1": "6c97f105c0ddeaf86acc436058e659b4e900c14d"
+    },
+    {
+      "path": "data/wh_island.jsonl",
+      "bytes": 448630,
+      "git_blob_sha1": "e182b245c882cc6709a6a7b5aad3d368550f68ff"
+    },
+    {
+      "path": "data/wh_questions_object_gap.jsonl",
+      "bytes": 387435,
+      "git_blob_sha1": "f282de6e19c294dd3039e5f54a595e9a40ce5c0b"
+    },
+    {
+      "path": "data/wh_questions_subject_gap.jsonl",
+      "bytes": 389983,
+      "git_blob_sha1": "141d6dfcac81ff1dee269a1e89043b0866c3199d"
+    },
+    {
+      "path": "data/wh_questions_subject_gap_long_distance.jsonl",
+      "bytes": 462660,
+      "git_blob_sha1": "af9a2c140a416be92e26239e75cbb7bd1a819555"
+    },
+    {
+      "path": "data/wh_vs_that_no_gap.jsonl",
+      "bytes": 383262,
+      "git_blob_sha1": "b797147fa995e35c6c98149009d508660b32b64f"
+    },
+    {
+      "path": "data/wh_vs_that_no_gap_long_distance.jsonl",
+      "bytes": 441429,
+      "git_blob_sha1": "cc30f0bfa2d7814b6fc1f0f626d3c1d7ef93a025"
+    },
+    {
+      "path": "data/wh_vs_that_with_gap.jsonl",
+      "bytes": 367776,
+      "git_blob_sha1": "e5e459e0c66731e1a19366fc300b97972cf1472d"
+    },
+    {
+      "path": "data/wh_vs_that_with_gap_long_distance.jsonl",
+      "bytes": 425985,
+      "git_blob_sha1": "427efae86505aba8cd3926bb4a9d6e3a6b4c81a6"
+    }
+  ],
+  "source": "https://github.com/alexwarstadt/blimp",
+  "license": "CC BY 4.0",
+  "authors": "Alex Warstadt, Alicia Parrish, Haokun Liu, Anhad Mohananey, Wei Peng, Sheng-Fu Wang and Samuel R. Bowman"
+}
