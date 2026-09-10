@@ -22,6 +22,14 @@ The [completed 60-run cue/context study](WIRING-RESULTS.md) gives mixed results
 and cannot answer the language claim. Keep its evidence separate from language,
 browser adaptation and physical motor control.
 
+The [subset audit](SUBSET-AUDIT.md) explains the computational selection of
+1,024 neurons and quantifies the large boundary loss: 79.42% of incoming and
+73.96% of outgoing raw contacts. No intact learning circuit is established.
+Interpret the topology result in that restricted setting. The next language
+causality questions are [fixed recurrent dynamics, no lateral recurrence and
+no temporal state](LANGUAGE-CORE-CONTROLS.md); these are prospective controls,
+not changes to the active experiment. SCAN remains prepared and deferred.
+
 ## 1. Preserve the completed shared language reference
 
 Both seeds of FLM, GRU and the compact transformer are complete. Validation-selected
