@@ -1,0 +1,38 @@
+{
+  "verified_utc": "2026-09-10T21:14:23.335332+00:00",
+  "tests": 9,
+  "exit_code": 0,
+  "command": "python -X utf8 -m unittest discover -s tests -p test_scan_runtime.py -v",
+  "torch": "2.8.0+cpu",
+  "threads": 1,
+  "neural_fixture_dtype": "float64",
+  "neural_fixture_models": [
+    "16-neuron FLM",
+    "12-hidden GRU",
+    "one-layer 12-wide transformer"
+  ],
+  "fixture_vocabulary": "Independent 258-ID byte codec; no acquired SCAN records loaded",
+  "source_sha256": {
+    "flm/scan_runtime.py": "e814c3fcf5acc28e7be5dbc7a5f0856f0b9d984c3177198f6bac4d65611f3c3f",
+    "flm/scan_task.py": "0ecbcb9f608f5d50c498a33aa4155e5170a6905bdcc57fb07da84a13b35340e9",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "tests/test_scan_runtime.py": "cc5280b859a1c97cf8e1e43a080394e73815c0e69c168a9dbded5767846a82f1"
+  },
+  "log_sha256": "1a5eae2a415494e8c7b80e94a8de5708cf2485b2540126e80774cc15e2f74be1",
+  "checks": [
+    "Right padding and repeated examples preserve loss boundaries",
+    "Action/EOS-token weighted NLL excludes prompt and padding logits",
+    "Padded batch losses and parameter gradients match independent examples",
+    "Prefix embeddings receive temporal credit despite unscored prefix logits",
+    "Full-vocabulary generation retains invalid tokens and independent EOS/cap termination",
+    "Batched cached generation matches independent full-prefix generation in all three architectures",
+    "Generation preserves learned tensors, RNG and training mode in the tested architectures",
+    "Complete supplied cohorts retain every failure and exact denominators",
+    "Altered decoding, shortened traces and changed command/cap bindings are rejected"
+  ],
+  "scope": "Numerical runtime preparation, not a fitted instruction model or official-partition benchmark",
+  "corpus_records_loaded": false,
+  "scan_training_runs_started": 0,
+  "scan_test_scores_available": false
+}
