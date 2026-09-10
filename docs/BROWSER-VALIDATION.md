@@ -304,3 +304,40 @@ position. All six command blocks are present. The guide was visually checked
 at 1,280 px and 390 px; the mobile document has matching 375 px client/scroll
 widths. Long command lines scroll within keyboard-focusable code blocks instead
 of widening the page. Its temporary viewport was reset and tab closed.
+
+## Complete online pose-feedback release
+
+All 27 physical conditions and the predeclared repeat are complete. The
+independent audit replays 10,800 control frames and 972 delayed decisions,
+recomputes pose-derived inputs, command timing and phase-specific progress, and
+verifies exact repeated arrays. A fresh extraction of the 45,873,321-byte
+archive passes the same audit in the isolated NumPy environment. It contains
+117 manifest payloads, including the four controllers and original video.
+
+All 50 JavaScript tests and six feedback unit tests pass. The five earlier
+causal fault-injection checks remain recorded with the unchanged verifier
+identity. The report refuses incomplete cohorts. The JavaScript view also
+rejects missing conditions, inconsistent differences, wrong checkpoint or
+trajectory identities and falsely reported identical paths. The production
+build passes with the existing large-chunk warning, now 564.24 kB.
+
+The results view was checked at 1,280 px and 390 px. The page client/scroll
+widths match at 1,265 and 375 px, respectively. Positive, negative and switched
+targets each update the five-row primary table, nine-row expanded outcomes and
+corresponding figure. Scripted frozen conditions are correctly labeled not run.
+On mobile, both tables scroll inside keyboard-focusable regions without page
+overflow. The actual neural-state image loads and its caption preserves the
+5 ms sampling, 55 ms resets and separate color scales.
+
+Native keyboard playback reaches the end of the eight-second video, with
+readyState 4 and no media error. All six evidence links wrap in the narrow
+layout. The temporary viewport was reset and its tab closed. The page shows
+two of eight language controls complete while the completed-test container
+remains hidden. Larger-data training remains paused.
+
+All four pages of the new LaTeX note were rendered and inspected. Tables include
+every condition, figures have readable labels, and the compiler has no overflow
+or missing-citation warnings. Author metadata and the visible byline both read
+Kuber Mehta. `reports/embodiment/closed-loop/reviewed-release.json` records the
+review and file hashes; `paper-inputs.json` binds all generated measurements to
+the verified candidate.

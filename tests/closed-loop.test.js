@@ -1,6 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { validateFeedback, feedbackRows, degrees, CONTROLLERS, SCENARIOS } from '../web/closed-loop.js';
+
+test('the shipped physical cohort renders all scenarios with its actual evidence', () => {
+  const report = validateFeedback(JSON.parse(readFileSync(new URL('../public/research/closed-loop.json', import.meta.url), 'utf8')));
+  for (const scenario of Object.keys(SCENARIOS)) {
+    const rows = feedbackRows(report, scenario);
+    assert.equal(rows.length, 5);
+    assert.equal(rows.filter(row => row.frozen).length, 4);
+    for (const model of ['bptt', 'reservoir', 'eligibility']) {
+      const row = rows.find(item => item.model === model);
+      assert.equal(row.live.physical_qpos_sha256, rows.at(-1).live.physical_qpos_sha256);
+      assert.ok(row.contrast.live_minus_frozen_error_rad < 0);
+    }
+  }
+});
 
 // Analytic fixtures exercise reporting invariants; these are never published as observations.
 function fixture() {

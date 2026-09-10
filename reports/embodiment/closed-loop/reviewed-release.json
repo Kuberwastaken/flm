@@ -1,0 +1,102 @@
+{
+  "verified_utc": "2026-09-10T11:33:12.972589+00:00",
+  "conditions": 27,
+  "exact_repeat": true,
+  "fresh_archive_audit": true,
+  "numerical_tests": {
+    "feedback_unit": 6,
+    "javascript": 50,
+    "causal_fault_rejections": 5
+  },
+  "pdf": {
+    "pages": 4,
+    "all_pages_visually_reviewed": true,
+    "author": "Kuber Mehta",
+    "compiler_warnings": []
+  },
+  "browser": {
+    "desktop_width": 1280,
+    "desktop_client_and_scroll": 1265,
+    "mobile_width": 390,
+    "mobile_client_and_scroll": 375,
+    "scenarios_checked": [
+      "positive",
+      "negative",
+      "switch"
+    ],
+    "summary_rows_per_scenario": 5,
+    "outcome_rows_per_scenario": 9,
+    "tables_keyboard_focusable": true,
+    "video_duration_seconds": 8,
+    "video_playback_reached_end": true,
+    "actual_neural_panel_loaded": true,
+    "topology_new_runs_complete": 2,
+    "topology_test_view_hidden": true
+  },
+  "build": {
+    "passed": true,
+    "known_javascript_chunk_warning_kb": 564.24
+  },
+  "files": {
+    "public/research/closed-loop.json": {
+      "bytes": 50879,
+      "sha256": "4767d5a65a310bbac6ccf787b68a013eb72c9cfd57176f69f6b94f6885d1a9b7"
+    },
+    "public/research/closed-loop.csv": {
+      "bytes": 3974,
+      "sha256": "ba8875b120c73260fbe119d2629bce65edd4a7bbdfa861f16ed27269ba2c94d8"
+    },
+    "public/research/closed-loop-records.zip": {
+      "bytes": 45873321,
+      "sha256": "aae603af22f6cce2d519db12c8c91ab3684021e03b5ad57887af8fb689dd589a"
+    },
+    "public/research/closed-loop.pdf": {
+      "bytes": 486295,
+      "sha256": "b0b5d692d64f1eeaa38ca321d24abe95f3f9e7f93e0d1f59546b6503399f5ce1"
+    },
+    "public/research/paper-source.zip": {
+      "bytes": 3081560,
+      "sha256": "7e51382a261add9210d37b662f71efdeb70014ea43166b1e8a7d9fffb66d2b41"
+    },
+    "public/research/closed-loop.mp4": {
+      "bytes": 2120872,
+      "sha256": "a602579d4d82dcdc6fa6b18be43fce17ed42e267292b3a71d137013287b6f0e7"
+    },
+    "public/research/closed-loop-poster.png": {
+      "bytes": 77037,
+      "sha256": "3a868d67731c79c8372a4c3238541ad0ac966f1e224709734fb15c7a2af873ff"
+    },
+    "public/research/figures/closed-loop-positive.png": {
+      "bytes": 135124,
+      "sha256": "4e76e20d19b7784548a5d98c1fa532aa8323dec61cd3a2a11097d76aee74fedc"
+    },
+    "public/research/figures/closed-loop-positive.svg": {
+      "bytes": 174893,
+      "sha256": "c9bf2c0da2b002c0f95f0392794fad10f39bac6addb04c4b5e8569bc1a069bd1"
+    },
+    "public/research/figures/closed-loop-negative.png": {
+      "bytes": 130512,
+      "sha256": "a6878e1ffd349652053d6b04518a9154b219e9d59b372107097b68fe62ed4bd8"
+    },
+    "public/research/figures/closed-loop-negative.svg": {
+      "bytes": 173043,
+      "sha256": "38819c3e2dfbcb89cdc6b30ff42f1bbfdae10617dbd92b3d1a49fdb357947bba"
+    },
+    "public/research/figures/closed-loop-switch.png": {
+      "bytes": 141644,
+      "sha256": "94fc9cc5e4f5bf9dad41f70a7d7903df3a15d19f3adfb267fe9450629a9772e2"
+    },
+    "public/research/figures/closed-loop-switch.svg": {
+      "bytes": 172949,
+      "sha256": "1f6023af23ce5d152a74f4bdc732f07965f8f1f005726c21206786fa18e734cf"
+    },
+    "public/research/figures/closed-loop-neural.png": {
+      "bytes": 174134,
+      "sha256": "ef52034351ea91fd68f314d45093212ef0bb5bd08e23b9659269e937a01b079a"
+    },
+    "public/research/figures/closed-loop-neural.svg": {
+      "bytes": 92444,
+      "sha256": "f24b0b9133b0c4f8792efaca7879ccf7a70dba44186d285a8f5f67aacc5aec4c"
+    }
+  }
+}
