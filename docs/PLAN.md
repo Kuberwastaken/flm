@@ -40,6 +40,8 @@ Finish and verify all six fits before freezing all eight selected checkpoint ide
 
 Follow the protocol's queue and recovery instructions, with one training writer per output directory. Do not restart the completed topology scheduler, alter frozen numerical sources, or add another writer to an active run. Review the full report, inference exports and browser presentation before publishing conclusions. Then resume the registered BabyLM comparison.
 
+The [computation result view](../web/language-core.js) is prepared but not imported by the live page. Its [fixture checks](../reports/language-core/browser-preflight.json) cover the eight-model inventory, article arithmetic, signed contrasts, release-audit agreement and private table rendering. After the full Python release gates pass, checksum the published summary with `decodeCoreResults` before mounting `coreResultsView`; replace the pending study copy with findings supported by the complete results. These presentation checks are not new language measurements or an independent bootstrap audit.
+
 ## Next: resume the larger-data comparison
 
 BabyLM remains paused during the computation study. Its 10M/100M training corpora, common evaluation partitions, shared train-fitted tokenizer and overlap audit are prepared; one of twelve training runs has completed. The saved runs must continue under the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), not be replaced by the small-corpus mechanism study.

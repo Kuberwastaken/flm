@@ -1,10 +1,10 @@
 {
-  "verified_utc": "2026-09-10T22:06:56.298706+00:00",
+  "verified_utc": "2026-09-10T22:19:16.593710+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
   "condition": "fixed_dynamics-s43",
-  "saved_step": 2000,
-  "committed_checkpoints": 4,
-  "checkpoint_sha256": "510d0ff18eb7cc2e5109ec0c70d4df108cf615ef2dda31622f45537d9c39063c",
+  "saved_step": 3000,
+  "committed_checkpoints": 6,
+  "checkpoint_sha256": "5602a7eb88066c8e36526d433b1fd82009e8438d9e65d1355dbef00ead003419",
   "frozen_tensors_match_initialization": true,
   "graph_pooling_optimizer_rng_and_exposure_verified": true,
   "source_identity_verified": true,
@@ -68,5 +68,6 @@
   "fixed_core_completed_all_12_checkpoints_verified": true,
   "figure_preflight": "reports/language-core/figure-preflight.json",
   "active_checkpoint_note": "Second initialization seed; only atomically committed checkpoints counted.",
-  "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s42.json"
+  "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s42.json",
+  "browser_preflight": "reports/language-core/browser-preflight.json"
 }

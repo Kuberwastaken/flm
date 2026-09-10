@@ -1,0 +1,27 @@
+{
+  "verified_utc": "2026-09-10T22:19:16.600708+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "sources": {
+    "web/language-core.js": "cbd6391d930b67e828820c2846237dfde611a5773919a4a7b6fa85f01c94f21e",
+    "tests/language-core.test.js": "479a29158a14fa8face096ac00c97d69af97cf84073341770ca69b60d85dba2f",
+    "tests/helpers/core-results-fixture.js": "66c6ddabd0c2f196e26883aea8e2eaed5d40878a4b9ded0534bc22f2673305e3"
+  },
+  "targeted_tests": 6,
+  "full_node_suite_tests": 65,
+  "full_node_suite_failures": 0,
+  "log_sha256": "be1e468bb0c6c26f5d2f5fbf4c5037a149b15227b6ed0d37c9158024a74d528d",
+  "checks": [
+    "All eight model/seed conditions with selected steps and declared parameter inventory",
+    "Complete 60-article coverage and normalized codelength with shared identities and exact denominators",
+    "Six primary and two secondary effects, signs, descriptive means and fixed bootstrap metadata",
+    "Displayed intervals and means match independent release-audit records",
+    "Serialized summary checksum checked before JSON decoding",
+    "Private browser: eight model rows, six primary rows, two secondary rows; native keyboard disclosure",
+    "Private browser: 1280 CSS-pixel viewport and 375-pixel container; focusable horizontal table regions; no page overflow"
+  ],
+  "scope": "Artificial presentation fixtures only. No neural inference, bootstrap recomputation, new fitting or test scoring.",
+  "production_component_imported": false,
+  "synthetic_fixture_published": false,
+  "numerical_study_identity_unchanged": true,
+  "integration_pending": "After complete Python publication gates, checksum the released summary, mount the view, interpret all results and verify the deployed page."
+}
