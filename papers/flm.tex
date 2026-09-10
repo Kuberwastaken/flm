@@ -1,6 +1,7 @@
 \documentclass[10pt]{article}
 \input{style}
 \input{measured}
+\input{test-measured}
 \hypersetup{pdftitle={FLM: A Fly-Wired Recurrent Language Model},pdfauthor={Kuber},pdfsubject={Working methods and validation report},pdflang={en}}
 \title{\textbf{FLM: A Fly-Wired Recurrent Language Model}\\[6pt]\large An inspectable small-data experiment with matched lexical baselines}
 \author{Kuber\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
@@ -8,7 +9,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We implement a compact language model whose directed recurrent topology is selected from a fruit-fly connectome. A differentiable rate core with fast and slow state receives a learned text interface and predicts a lossless, training-only byte-pair vocabulary. The 600,003-parameter model is compared with a 595,408-parameter GRU and a 607,468-parameter decoder transformer on the official WikiText-2 raw partitions. All models share lexical dimensions, training windows and update budgets. The browser implementation exposes actual state, interventions and a separate online readout adapter. This report documents the implemented methods and preliminary validation evidence. The current matched result does not show an advantage over the conventional baselines. Final test-set scoring is gated on completion of all six registered runs. Anatomical identity, small recurrent state and browser accessibility are demonstrated engineering properties; improved data efficiency, biological learning and whole-brain language competence are not established.
+We implement a compact language model whose directed recurrent topology is selected from a fruit-fly connectome. A differentiable rate core with fast and slow state receives a learned text interface and predicts a lossless, training-only byte-pair vocabulary. The 600,003-parameter model is compared with a 595,408-parameter GRU and a 607,468-parameter decoder transformer on the official WikiText-2 raw partitions. All models share lexical dimensions, training windows and update budgets. Across two completed training seeds, full test loss averages 1.9744 bits/byte for FLM, 1.9049 for GRU and 1.8767 for transformer. FLM outperforms a separate n-gram reference but trails both neural baselines. Acute interventions show that recurrence and slow state contribute to its learned predictions. The browser exposes actual state and a separate readout adapter. Verified 10M/100M-word BabyLM corpora and reproducible physical walking controls establish subsequent research stages; they do not establish a language-trained animal or a competitive general assistant.
 \end{abstract}
 
 \section{Question and scope}
@@ -85,8 +86,8 @@ Every 500 updates, validation uses deterministic per-article prefixes with a tot
 \end{equation}
 This measures the codelength of the canonical token sequence per byte. Shared-tokenizer perplexity is also reported; it must not be compared directly to published word-token WikiText perplexities. The same exact article bytes are required for paired final-test comparisons.
 
-\section{Preliminary evidence}
-The table reports seed 42 at the largest update count currently shared by all three published validation trajectories. It is a validation-prefix comparison, not a final held-out test result. The full six-run study is still being completed. Graph-specific superiority cannot be inferred without the declared rewired and disabled-mechanism controls.
+\section{Language results}
+All six registered runs completed 6,000 updates. The first table reports matched seed-42 validation prefixes; the following test comparison uses the separately frozen validation-selected checkpoints. Every selected checkpoint came from update 6,000. Graph-specific superiority cannot be inferred without matched, retrained topology controls.
 
 \begin{table}[ht]\centering
 \begin{tabular}{lrrr}\toprule
@@ -96,7 +97,24 @@ Model & Parameters & Bits/byte & Token perplexity\\\midrule
 \caption{Matched validation at \MatchedUpdate\ updates, seed 42. Lower is better. Values are generated directly from versioned evaluation artifacts.}
 \end{table}
 \begin{figure}[ht]\centering\includegraphics[width=\linewidth]{validation.png}
-\caption{Actual validation trajectories. Unequal trajectory endpoints indicate unfinished runs, not equal-compute endpoints. Compare the same update count. The focused panel makes differences after early vocabulary acquisition visible.}\end{figure}
+\caption{Completed seed-42 validation trajectories under the same update budget. The focused panel makes differences after early vocabulary acquisition visible.}\end{figure}
+
+After freezing all six checkpoint hashes and the validation-selected n-gram smoothing, the complete 60-article test partition was scored: 367,981 text tokens and 1,287,656 UTF-8 bytes. Neither test loss nor generated samples determined checkpoint selection.
+\begin{table}[ht]\centering
+\begin{tabular}{lrrrr}\toprule
+Model & Seed 42 & Seed 43 & Mean & Seed SD\\\midrule
+\TestRows
+\bottomrule\end{tabular}
+\caption{Complete held-out WikiText-2 test loss, bits per UTF-8 byte. Lower is better. SD is the sample standard deviation of two training seeds.}
+\end{table}
+The separate four-byte-context n-gram scores \NgramTest\ bits/byte. FLM's mean loss is 0.0695 bits/byte above GRU and 0.0977 above transformer. Paired article resampling preserves a common byte denominator and yields positive FLM-minus-baseline intervals in both seeds.
+\begin{table}[ht]\centering
+\begin{tabular}{rlrr}\toprule
+Seed & Baseline & FLM minus baseline & 95\% article interval\\\midrule
+\TestIntervals
+\bottomrule\end{tabular}
+\caption{10,000 paired article bootstrap replicates. These intervals condition on the trained checkpoints; they do not include uncertainty from other corpora or architecture tuning.}
+\end{table}
 
 The current FLM result trails the conventional baselines. Unedited same-prompt continuations show learned word and phrase structure, but also repetition, malformed names, preprocessing markers and unsupported statements. These outputs justify completion mode rather than an assistant claim. A few attractive continuations would not demonstrate factual knowledge or understanding.
 
@@ -108,16 +126,28 @@ FLM stores 2,048 float32 state values, or 8,192 bytes per sequence. The GRU's hi
 \begin{figure}[ht]\centering\includegraphics[width=.83\linewidth]{state-memory.png}
 \caption{Persistent sequence-state storage derived from the implemented dimensions. The transformer's cache is bounded; FLM is not the smallest-state comparator.}\end{figure}
 
+After training and preprocessing processes exited, an isolated four-thread float32 CPU measurement used the same 128-token prefix and 128 forced continuation tokens, one warmup and five repeats. Median prefill/decode rates were 4,060/200 tokens/s for FLM, 10,718/3,491 for GRU and 30,857/724 for transformer. Tokenization was excluded. The eager FLM path prepares recurrent weights at each forward call, including each one-token decode call; these timings describe this implementation and are not optimal-kernel, energy or hardware-independent comparisons. Measured owned state storage agrees with the dimensional accounting above.
+
 Browser learning updates a separate $4096\times96$ output correction and bias by the observed next-token cross-entropy gradient, with rate scaling by $1/\sqrt{96}$, small decay and bounded coefficients. It does not modify the bundled embedding, recurrent wiring or time constants. Consequently, a fixed input has the same recurrent activity before and after readout adaptation; free generation can follow a different trajectory because its selected input tokens change. Separate probe text is scored before and after updates. Lower training loss alone may be memorization.
 
 The 3D brain displays actual fast or slow state for modeled neurons. Gray points are anatomical context without simulated activity. Silencing a neuron zeroes both its states, and controls replay the same input from zero for an interpretable intervention. The body uses 39 attributed NeuroMechFly meshes and verified articulated kinematics \cite{neuromechfly}. It is a female body paired with a male brain graph. Head and wing offsets are designed summaries of state, not trained motor outputs, physics, reward learning or animal behavior.
 
+\section{Mechanisms and physical controls}
+Acute validation interventions remove recurrent inter-neuron communication or the slow-state feature without retraining. For seed 42, loss rises from 1.9097 to 2.0631 and 1.9952 respectively; for seed 43, it rises from 1.9107 to 2.0294 and 1.9899. Leak memory remains in the recurrence-off condition. Both trained models use these mechanisms, but disrupting a learned computation is not a matched architectural comparison. Replaying an original 77-token paragraph from zero state before and after training also gives different fast and slow trajectories.
+\begin{figure}[ht]\centering\includegraphics[width=\linewidth]{mechanism-s42.png}
+\caption{Seed-42 validation interventions and responses to identical input. State magnitudes are measured, not animation signals. The diagnostic uses no test text.}\end{figure}
+
+A separate Python 3.12 environment pins FlyGym 2.1.0 and MuJoCo 3.9.0 for actual articulated physics. A designed hybrid turning controller uses preprogrammed steps and contact feedback for 42 actuated joint degrees of freedom. After identical initialization and settling, one-second trials at 0.1 ms steps produce x displacement 13.461 mm under symmetric drive, and heading changes of $-2.556$ and $+2.811$ radians under opposite drive asymmetries. Repeating the symmetric trial reproduces every recorded thorax position exactly. All trajectories retain finite state and remain upright over this short calibration.
+\begin{figure}[ht]\centering\includegraphics[width=\linewidth]{physical-calibration.png}
+\caption{Measured physical trajectories and heading changes under prescribed descending drives. FLM is disconnected; no motor learning occurs in these controls. The associated recording is shown at quarter speed on the research page.}\end{figure}
+This establishes a measurable action interface for future comparisons of fixed, language-trained and task-adapted recurrent cores. It is separate from the browser's illustrative pose mapping. Sensor observations, learned motor heads, rewards and task success must be recorded before claiming a learned skill or transfer from language.
+
 \section{Limits and next experiments}
 The selected central subset changes connectivity and removes biological inputs. Source signs, artificial pooling and rate dynamics simplify biology. The shared vocabulary, short training chunks, modest exposure and two seeds limit language and statistical conclusions. A CPU-friendly implementation may have very different cost on sparse accelerators. No energy efficiency or full-connectome training result is claimed.
 
-Final test scoring freezes checkpoint hashes only after every registered main run completes, scores all test articles and bootstraps paired article loss differences. These intervals are conditional on trained checkpoints; two seeds do not characterize broad training variability. Follow-up controls preserve directed degrees and source-sign constraints through actual edge rewiring, and disable recurrence or slow state under the same schedule before attributing a benefit to anatomy.
+The completed test intervals are conditional on trained checkpoints; two seeds do not characterize broad training variability. Follow-up controls preserve directed degrees and source-sign constraints through actual edge rewiring, and retrain disabled-mechanism models under the same schedule before attributing a benefit to anatomy.
 
-Further work should separate improved lexical learning from a graph effect; evaluate delayed recall and context interference; test adaptation retention and reset boundaries; and extend to a provenance-audited small-data corpus such as BabyLM. Whole-graph language training requires a separate sparse-kernel and memory study. Learned motor behavior requires an embodied task, observations, actions and an objective. Those studies may be valuable, but none follows automatically from language tokens coloring a rendered brain.
+The next registered language study uses verified BabyLM 2026 10M/100M-word corpora and a shared tokenizer fitted to the 10M training set, as detailed in the data note. A fixed 6,700-pair BLiMP diagnostic panel \cite{blimp} adds grammatical contrasts beyond average likelihood; it is evaluation-only, not a synthetic training corpus. Longer-term studies compare delayed recall, interference, adaptation retention and forward-time eligibility or reward-modulated learning against BPTT. Such learning rules have prior work and are not unique to fly wiring. Whole-graph training remains a separate capacity and kernel study. The empirical direction must follow measured improvements and failures rather than the assumption that anatomy guarantees an advantage.
 
 \begingroup\raggedright
 \bibliographystyle{plain}
