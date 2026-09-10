@@ -3,6 +3,7 @@
 - Work in sequential, descriptive commits. Commit each completed coherent change, including research, data tooling, experiments, fixes and documentation. Never squash completed history unless explicitly requested.
 - Any delegated work must follow the same commit discipline. Keep ownership clear and serialize integration/commits; do not allow simultaneous index mutations.
 - Product names are FLM (Fly Language Model) and ChatFLM. Do not introduce references to the social-media language demo or its author in source, product copy, documentation, commits or release notes.
+- Use Kuber Mehta for author credits. Keep the existing account handles and domain names in URLs.
 - Preserve provenance and component licenses. Do not commit private data, credentials, downloaded raw corpora or large training intermediates.
 - A graph subset must be labeled a subset. Displayed activity must come from actual inference state. No scripted neural activity or hardcoded generated answers presented as model output.
 - Keep language prediction, browser adaptation, body animation and biological simulation claims distinct.
