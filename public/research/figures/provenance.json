@@ -1,0 +1,15 @@
+{
+  "mechanism_sha256": "2300b26d9721ddc6fb2a5a7d727ae063cc15f7c78ae088f70435fa1ac2c1f7c9",
+  "calibration_sha256": "73f41d996bf3408e246390dde15b02e051bf45242722a97cd59eb310f85d957c",
+  "video_sha256": "6e09613c729e5bd8add0ed170b9dfffd06d998127f6b67732247d5365b9f9953",
+  "sources": "Measured FLM arrays and FlyGym simulation; no generated neural activity or synthetic plot data.",
+  "video_note": "One simulated second, displayed at quarter speed; upstream designed controller, FLM disconnected, no learning.",
+  "figures": {
+    "mechanism-response.csv": "c669d842313f214c9e84ad1ac70d5bb41801d99d8d570577771e8fd79985d5d6",
+    "mechanism-s42.png": "d111fa81e0d26d1c233bbfea98391897016999194ecbcdd7af482b92fe6157b5",
+    "mechanism-s42.svg": "c12f987964ca4a24bcc9814395900f3ff304bec48c3fbf473baabf8e4c1f3908",
+    "physical-calibration.png": "8ba992f9253f24b692ba00d721b6a7bab8f940528970409599c9ba55396a296d",
+    "physical-calibration.svg": "56211bb3d3862cdc3dc5c4a53633c20a0664c05d942432a7c2f4f82e67438f6c",
+    "physical-trajectories.csv": "4958baccdf96594a9c73b553d5ee9460de32ae31bd3e65b39069b0df25f75a82"
+  }
+}
