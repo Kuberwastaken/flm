@@ -1,0 +1,27 @@
+{
+  "verified_utc": "2026-09-10T22:06:56.312491+00:00",
+  "exporter_sha256": "d27e88c7619a90cb0dd76cadbc4262b6e0645e80e6900f10f82114e92a5566de",
+  "replay_sha256": "0f9567a857f0bc572b054c232df5e4f566732c83d134931d1a56dcbec83699f7",
+  "bytes": 42430,
+  "original_report_sha256": "d9ee8c78ba75ca9e268652358e7254c2621abd2aadade8f73040032df5262997",
+  "original_trials_verified": 40,
+  "unique_physical_commands": 2,
+  "samples_per_path": 101,
+  "source_check": "All original NPZ hashes and exact time/position/yaw/qpos equality within each command verified by exporter.",
+  "node_tests": 59,
+  "new_display_validation_tests": 6,
+  "test_log_sha256": "c517966013acfe14a30bc02c32b59329b9c213099579163b33aea8ac00444f9e",
+  "production_build": true,
+  "browser_viewport_css_width": 614,
+  "browser_checks": [
+    "Both paths render on the same scale with recorded position and heading",
+    "Time slider Home selects 0.0001 s; ArrowRight selects 0.0101 s; End selects 1.0000 s",
+    "Reward method at update 600 retains incorrect action and labels reversed task target",
+    "No horizontal page overflow at inspected viewport"
+  ],
+  "food_response_note_links_resolve": true,
+  "new_model_fits": false,
+  "new_physical_simulations": false,
+  "new_food_response_results": false,
+  "frozen_language_study_identity_verified": true
+}

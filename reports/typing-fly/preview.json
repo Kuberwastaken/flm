@@ -1,0 +1,18 @@
+{
+  "verified_utc": "2026-09-10T22:06:56.317500+00:00",
+  "sources": {
+    "web/typing-fly.js": "9f70e1cff826bd2cbb5b087e2edfc247073020a884b874c89db01ddd87302fe0",
+    "web/typing-fly.css": "f1bb8288a8f6e99d552c1958e4bc7cc25e49e65950015726fdfc75c18a925e75",
+    "web/app.js": "45aa13193635fc6661012ea60ebfc35b1ec98f0e78c89eb4586de0c526242ecb"
+  },
+  "browser_checks": [
+    "Actual BabyLM generation enters typing state with active leg and key CSS animations",
+    "Unchecking Animate fly disables animation while model tokens continue",
+    "Stop returns to idle with no animation; output retained",
+    "A normal 200-token completion returns to idle",
+    "Decorative figure and scope label render beside composer without horizontal overflow"
+  ],
+  "reduced_motion": "Media-query and matchMedia guards reviewed; reduced-motion browser emulation not performed.",
+  "code_scope": "No model, neural state, worker, or physical controller changes.",
+  "existing_node_tests_passed": 53
+}

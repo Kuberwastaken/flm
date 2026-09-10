@@ -1,0 +1,51 @@
+{
+  "verified_utc": "2026-09-10T22:06:09.027874+00:00",
+  "deployment": {
+    "conclusion": "success",
+    "headSha": "e45c565e078d56d44d8c41335e32493e1ba13ccc",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34535452159"
+  },
+  "workflow_run": 34535452159,
+  "live_files_match_production_build": [
+    {
+      "path": "index.html",
+      "bytes": 71474,
+      "sha256": "0e512caadb821700c8031775423367f9c9eaf9df9b129ad1c0c450c14bdbb730"
+    },
+    {
+      "path": "research/choice-replay.json",
+      "bytes": 42430,
+      "sha256": "0f9567a857f0bc572b054c232df5e4f566732c83d134931d1a56dcbec83699f7"
+    },
+    {
+      "path": "research/choice_replay.py",
+      "bytes": 7190,
+      "sha256": "d27e88c7619a90cb0dd76cadbc4262b6e0645e80e6900f10f82114e92a5566de"
+    },
+    {
+      "path": "research/food-response-plan.md",
+      "bytes": 5970,
+      "sha256": "b92221874f09e242727db1f06e0af9233b78bb672edb77ad2bba807daf7456b4"
+    },
+    {
+      "path": "assets/index-D2TKtt3J.js",
+      "bytes": 575739,
+      "sha256": "9a52ea7e28aef878fb70506e0a4823f97a15d9a3a4e0e899606f60e99c066dfc"
+    },
+    {
+      "path": "assets/index-CbjttII7.css",
+      "bytes": 21952,
+      "sha256": "7b0fe3c4a4e0d9ccd965e1095019f799b5599589dc01c496e19cf4712d21ea44"
+    }
+  ],
+  "browser_checks": [
+    "Public research replay opens with Enter and exposes all condition selectors",
+    "Live time slider Home yields actual first recorded frame at 0.0001 s",
+    "Live WikiText continuation enters typing state with moving legs and keys at 40 generated tokens",
+    "Stop ends the illustration; no horizontal page overflow at the inspected 614 CSS-pixel viewport"
+  ],
+  "main_node_tests_passed": 59,
+  "no_new_training_or_physical_trials_for_replay": true,
+  "food_response_plan_is_proposed_only": true
+}
