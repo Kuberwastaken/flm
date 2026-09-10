@@ -22,7 +22,7 @@ for (const [source, target] of [
 await writeFile('public/research/instruction-transfer.md', instructionNote);
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
   await copyFile(source, target);
-const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name));
+const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name)).sort();
 for (const name of files) await copyFile(`licenses/${name}`, `public/licenses/${name}`);
 await copyFile('LICENSE', 'public/licenses/FLM-MIT.txt');
 files.unshift('FLM-MIT.txt');
