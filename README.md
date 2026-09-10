@@ -38,11 +38,11 @@ The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest 
 
 The eight new fits comprise six rewired models and two retrained no-slow models, alongside two reused measured references. Every model allocates 600,003 parameter entries. The no-slow variant disconnects its 1,024 beta entries from the objective; normalization can still make nominal slow-feature readout columns nonzero. Allocated parameters therefore do not establish equal effective capacity. This tests the implemented slow-state branch, not all memory alternatives. See the [frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md).
 
-The [follow-up language controls](docs/LANGUAGE-CORE-CONTROLS.md) now have separate [implementations](flm/language_core_controls.py) for fixed dynamics, no lateral recurrence and no temporal state, with nine passing fixture tests. Their training/evaluation harness and language fits remain pending; they are the next methodological priority. Removing lateral recurrence retains fast/slow memory; the no-temporal-state control resets both states for every token.
+The [follow-up protocol](docs/LANGUAGE-CORE-PROTOCOL.md) declares fixed dynamics, no lateral recurrence and no temporal state, each with seeds 42 and 43. The mechanisms and [separate harness](flm/language_core_study.py) passed 21 fixture tests. Ten-update reference checks were exact at one CPU thread and within declared bounds at four; training uses four threads without promising bitwise repeatability. Removing lateral recurrence retains fast/slow memory; no temporal state resets both states for every token.
 
 </details>
 
-**Next methodological priority:** the [language computation controls](docs/LANGUAGE-CORE-CONTROLS.md), whose language fits remain pending. BabyLM remains paused while this release is finalized; new transfer and behavior experiments remain deferred.
+**Current study:** the six-fit [language computation study](docs/LANGUAGE-CORE-PROTOCOL.md) is [frozen](reports/language-core/identity.json) and training is underway. New test scores remain gated until all six fits finish and all eight selections, including two reused full-model references, are frozen. BabyLM remains paused during this study; new transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -282,6 +282,6 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 
 </details>
 
-The next methodological step is to test whether learning recurrent dynamics is necessary for language prediction. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
+The active computation study tests whether learning recurrent dynamics is necessary for language prediction. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).
