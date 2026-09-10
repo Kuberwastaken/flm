@@ -1,0 +1,31 @@
+{
+  "verified_utc": "2026-09-10T20:26:29.510861+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p test_language_dynamics.py -v",
+  "tests_passed": 11,
+  "tests_failed": 0,
+  "exit_code": 0,
+  "log_sha256": "1f6e062501e78a3b8805f1e41d9e789bc265a7285f825979b0db047fb103ddae",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "fixture": "16-node artificial graph and synthetic drives; no trained language dynamics measured by this preflight",
+  "checks": [
+    "Full fast/slow zero-state Jacobian agrees with autograd; block-triangular spectral magnitudes agree with full-J solve",
+    "Isolated-unit fast and slow responses match their closed forms",
+    "Every pulse starts at zero; repeated probes preserve exact source tensors and Torch RNG",
+    "Each intervention copies exactly its declared recurrent groups and preserves source models",
+    "Rademacher directions are deterministic with unit RMS",
+    "Odd pulse symmetry and bounded nonlinear states hold on large-input fixtures",
+    "Normalized initial linearization error scales quadratically with small pulse amplitude",
+    "Settling descriptors respect later rebounds and censor unobserved decay",
+    "Malformed pulses and misordered/duplicated snapshot times reject",
+    "Changed case identity or array bytes reject",
+    "Replay proof is bound to all current condition and summary bytes"
+  ],
+  "source_sha256": {
+    "flm/language_dynamics.py": "951df7278765169107f24303cad6a36922517a2d5381b8fe1cc919982eb95462",
+    "flm/language_dynamics_study.py": "c1ece9c94380b61dc259f7f5923febc379cdcd00d5896f37ac94c22ded1b053f",
+    "tests/test_language_dynamics.py": "8c9a7e5077afc0adb91e5a7e9e2a8ede0524f0d9dc6eae692f9748970059e163",
+    "docs/LANGUAGE-DYNAMICS-PROTOCOL.md": "e628a1060bc9a9121a9b7596c4852b4deccec4e444e55acd0c9a9c45a9a8b5a3"
+  },
+  "scope": "Software preflight before freezing the direct-drive diagnostic; not language accuracy, memory capacity, behavioral transfer or biological evidence."
+}
