@@ -147,6 +147,149 @@
       "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
     },
     {
+      "id": "flm-s43",
+      "variant": "flm",
+      "seed": 43,
+      "parameters": 600003,
+      "protocol": {
+        "steps": 6000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "eval_tokens": 32768,
+        "threads": 4,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+        "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+        "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+      },
+      "complete": true,
+      "validation": [
+        {
+          "step": 0,
+          "presented_tokens": 0,
+          "bits_per_byte": 3.4701015414805423,
+          "token_perplexity": 5343.326501008048,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "8bf0034910f05366e693ae837168ca9acefcd8c89d332c3ccde9998bdcbe6b53"
+        },
+        {
+          "step": 500,
+          "presented_tokens": 768000,
+          "bits_per_byte": 2.295645522914354,
+          "token_perplexity": 292.50525658484554,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "c32475c9e2565cf8a629809ea7b933cf714edab9d140abcef77c8884608cde50"
+        },
+        {
+          "step": 1000,
+          "presented_tokens": 1536000,
+          "bits_per_byte": 2.131158570307363,
+          "token_perplexity": 194.72914322028018,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "34935e2ee56765c7627339003cdb038467c5ea14cbd53b7e31635ddd55e44a1d"
+        },
+        {
+          "step": 1500,
+          "presented_tokens": 2304000,
+          "bits_per_byte": 2.0647620122785635,
+          "token_perplexity": 165.23551397485568,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "840c429bc9eda50d0abc5aa6afdddfb440e93781413e5d275f26706e15d715d1"
+        },
+        {
+          "step": 2000,
+          "presented_tokens": 3072000,
+          "bits_per_byte": 2.020279033844324,
+          "token_perplexity": 148.01878989312084,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "d7db71196d56ad254086a5e28e9b74725ee3eba5659d54bb9fb0aa27fbf161c4"
+        },
+        {
+          "step": 2500,
+          "presented_tokens": 3840000,
+          "bits_per_byte": 1.9868651563892965,
+          "token_perplexity": 136.2766536414206,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "ca73543d2ba36673bbdbcce375599f46150e2b8421e9173ec1fa55983e7141ae"
+        },
+        {
+          "step": 3000,
+          "presented_tokens": 4608000,
+          "bits_per_byte": 1.9678971024319716,
+          "token_perplexity": 130.03034874347136,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "d436b7cfc0357058568ac4023a650fe74e8b5446e61bebc39afefef5b1999d9a"
+        },
+        {
+          "step": 3500,
+          "presented_tokens": 5376000,
+          "bits_per_byte": 1.9472440499845827,
+          "token_perplexity": 123.55429803031356,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "2c3612ddcdd1dee6b1dbde5a7e2a4a3c19b6c701adfe5b950b4cdcfcda34b097"
+        },
+        {
+          "step": 4000,
+          "presented_tokens": 6144000,
+          "bits_per_byte": 1.934413596848371,
+          "token_perplexity": 119.6945949724892,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "711caed512b2a64b2f123fa811fda01b998e98923ab047bd36c8019df5c6188e"
+        },
+        {
+          "step": 4500,
+          "presented_tokens": 6912000,
+          "bits_per_byte": 1.9260197578763922,
+          "token_perplexity": 117.23500994641536,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "7310e392a25d74511f3f4ecce340e22279af9f0a48c4e233065e6c5f24008628"
+        },
+        {
+          "step": 5000,
+          "presented_tokens": 7680000,
+          "bits_per_byte": 1.9187546606277253,
+          "token_perplexity": 115.14701351761211,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "a4445cf106cdce00abb6e7f5b3ce24065b01b3e0771033227420983d6f1fa01d"
+        },
+        {
+          "step": 5500,
+          "presented_tokens": 8448000,
+          "bits_per_byte": 1.9139361356210431,
+          "token_perplexity": 113.78271737305981,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "fedc18a9375ee579f2f9dff11871860042a85193eb936d1f2fcfd3a739674032"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "bits_per_byte": 1.9107256505795487,
+          "token_perplexity": 112.88269954949243,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "cf85578d3b8fe6f7a340487c3b1ec9e11621a7d7937a3ad518d80327ff5f1d68"
+        }
+      ],
+      "source_commit": "81d15ad7c4395bfbc59e5034ddf955b59dd90d3d"
+    },
+    {
       "id": "gru-s42",
       "variant": "gru",
       "seed": 42,
@@ -310,7 +453,7 @@
         "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
         "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
       },
-      "complete": false,
+      "complete": true,
       "validation": [
         {
           "step": 0,
@@ -374,6 +517,60 @@
           "evaluated_tokens": 32768,
           "evaluated_bytes": 116937,
           "artifact_sha256": "10775779a660353d3e3d71c762ef152a11b4624045f5fb8fc60060a1cd23670a"
+        },
+        {
+          "step": 3500,
+          "presented_tokens": 5376000,
+          "bits_per_byte": 1.880813577365894,
+          "token_perplexity": 104.83199893325795,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "f3230b7335337f41ef4fe6fdb9f61247384a70e7f4a48c0ef07c7844aa8ed0b0"
+        },
+        {
+          "step": 4000,
+          "presented_tokens": 6144000,
+          "bits_per_byte": 1.865249161258249,
+          "token_perplexity": 100.87267682367518,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "208bee2899d6be60bbffb69a44782a336fde682ad60640a8e0888c34962c06ac"
+        },
+        {
+          "step": 4500,
+          "presented_tokens": 6912000,
+          "bits_per_byte": 1.8536435925137766,
+          "token_perplexity": 98.01805469837068,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "060fed4100636ece65ac3986254d3d1bed16ae8f7a2aedbbe54c302966d6da93"
+        },
+        {
+          "step": 5000,
+          "presented_tokens": 7680000,
+          "bits_per_byte": 1.8455138377563387,
+          "token_perplexity": 96.06663108175506,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "6893dfb2bfd7e1f7124195bea7149ab5e71cd5d5807aa3d03798929d4b6d4d7a"
+        },
+        {
+          "step": 5500,
+          "presented_tokens": 8448000,
+          "bits_per_byte": 1.840426577360163,
+          "token_perplexity": 94.86532318156308,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "43ef6ebf342d11e34efe28d255928d4e2d7239b071ef9a89588caf3ab95c6ee6"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "bits_per_byte": 1.8364134450793355,
+          "token_perplexity": 93.92826914168603,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "f155634b8e01a411fcc696d52741857f32d12415b3d126677cdc71c7ebf99a32"
         }
       ],
       "source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951"

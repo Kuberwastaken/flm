@@ -1,0 +1,73 @@
+{
+  "protocol": {
+    "steps": 6000,
+    "batch": 16,
+    "sequence": 96,
+    "warmup": 16,
+    "learning_rate": 0.002,
+    "final_learning_rate": 0.0002,
+    "lr_warmup_updates": 100,
+    "weight_decay": 0.01,
+    "eval_tokens": 32768,
+    "threads": 4,
+    "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+    "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+    "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+    "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+  },
+  "runs": [
+    {
+      "variant": "flm",
+      "seed": 42,
+      "checkpoint": "runs\\wikitext2\\flm-s42\\best.pt",
+      "checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+      "selection_validation_bpb": 1.9096990391099853
+    },
+    {
+      "variant": "gru",
+      "seed": 42,
+      "checkpoint": "runs\\wikitext2\\gru-s42\\best.pt",
+      "checkpoint_sha256": "7f7ff50277a01569949d305ec55f3f9f17f6a73df569fb3f150d90072b127ee4",
+      "selection_validation_bpb": 1.829255113634344
+    },
+    {
+      "variant": "transformer",
+      "seed": 42,
+      "checkpoint": "runs\\wikitext2\\transformer-s42\\best.pt",
+      "checkpoint_sha256": "7fe956869f6bccf8971e2d6764af488524cd714067095e170e7c2a96f94ca24b",
+      "selection_validation_bpb": 1.8112767388558602
+    },
+    {
+      "variant": "flm",
+      "seed": 43,
+      "checkpoint": "runs\\wikitext2\\flm-s43\\best.pt",
+      "checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+      "selection_validation_bpb": 1.9107256505795487
+    },
+    {
+      "variant": "gru",
+      "seed": 43,
+      "checkpoint": "runs\\wikitext2\\gru-s43\\best.pt",
+      "checkpoint_sha256": "086683a3ca1c048ad91b15003e15b08ac359caee62361e698d9255dedb50acb6",
+      "selection_validation_bpb": 1.8364134450793355
+    },
+    {
+      "variant": "transformer",
+      "seed": 43,
+      "checkpoint": "runs\\wikitext2\\transformer-s43\\best.pt",
+      "checkpoint_sha256": "527e66702560291d61ea2b04671d021a94c43307cf5b1fe294783158191f7086",
+      "selection_validation_bpb": 1.8138328084572959
+    }
+  ],
+  "selection": "Lowest fixed-prefix validation bits/byte during the registered 6000-update run",
+  "inputs": {
+    "tokenization_card_sha256": "9881b8261fb44b1c54e9b2635753d5b09accffb9e7f4cc449d196dfd06c4b3c1",
+    "ngram_tuning_sha256": "90f150fe7fdb728d808b6e1ccc04d28d06235a5f284ed2052ad3e8f652fce445",
+    "test_cache_sha256": "e6da687ff04fb44b538384e60ef70719d1e5dc39885befe715a230bda912992f",
+    "test_source_sha256": "6ad5d9381edeffbd811d2d678a51b23f4276afdc27dbcd55046be97eedd0a98f"
+  },
+  "ngram": {
+    "context_bytes": 4,
+    "smoothing": 4.0
+  }
+}
