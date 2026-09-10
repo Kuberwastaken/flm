@@ -1,0 +1,273 @@
+{
+  "dataset": "BabyLM 2026 English",
+  "files": [
+    {
+      "partition": "train-10m",
+      "component": "bnc_spoken",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "bnc_spoken.train.txt",
+      "bytes": 4064608,
+      "git_blob_sha1": "b52b1829e2c3f6b304a9f5baa938b0daa9f1d354",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/bnc_spoken.train.txt"
+    },
+    {
+      "partition": "train-10m",
+      "component": "childes",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "childes.train.txt",
+      "bytes": 15159891,
+      "git_blob_sha1": "1c22434447dad140886005dd49d028320cc36f32",
+      "lfs_sha256": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/childes.train.txt"
+    },
+    {
+      "partition": "train-10m",
+      "component": "gutenberg",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "gutenberg.train.txt",
+      "bytes": 14031163,
+      "git_blob_sha1": "284e4cfb6ee67d9b32b3b14b48e90e25a7765976",
+      "lfs_sha256": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/gutenberg.train.txt"
+    },
+    {
+      "partition": "train-10m",
+      "component": "open_subtitles",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "open_subtitles.train.txt",
+      "bytes": 12159704,
+      "git_blob_sha1": "322824f88c917442eaa21deab45c2b2cbbd280d9",
+      "lfs_sha256": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/open_subtitles.train.txt"
+    },
+    {
+      "partition": "train-10m",
+      "component": "simple_wiki",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "simple_wiki.train.txt",
+      "bytes": 8861946,
+      "git_blob_sha1": "0ce73f7392c3aadb60632154ccbf2f8ecbde1909",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/simple_wiki.train.txt"
+    },
+    {
+      "partition": "train-10m",
+      "component": "switchboard",
+      "repository": "BabyLM-community/BabyLM-2026-Strict-Small",
+      "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+      "filename": "switchboard.train.txt",
+      "bytes": 122528,
+      "git_blob_sha1": "cefbf3bee72c027125845d093ff11ad87f0f5173",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/switchboard.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "bnc_spoken",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "bnc_spoken.train.txt",
+      "bytes": 39534314,
+      "git_blob_sha1": "379dfaa113a51d5f36d3e25060a547aaa49efb7b",
+      "lfs_sha256": "4f6cc76f656d5666941852196e35fb5f060bcbb8abebb0b70fe17c3802428a0c",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/bnc_spoken.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "childes",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "childes.train.txt",
+      "bytes": 152297628,
+      "git_blob_sha1": "86a1664c570904d8caba4f30af6ae3d7bb010f55",
+      "lfs_sha256": "d6c0e39e2c283bfa5489cde80031a4fb9237ca8065a8301580df10e3b6843a98",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/childes.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "gutenberg",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "gutenberg.train.txt",
+      "bytes": 141116557,
+      "git_blob_sha1": "52f0e7590ddd4121db8886079c06b7cb6df7ca02",
+      "lfs_sha256": "ee404a84c2f42e0cd52bdaa0366cf398328be1b038ede33d07851f69ea1c2837",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/gutenberg.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "open_subtitles",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "open_subtitles.train.txt",
+      "bytes": 121187495,
+      "git_blob_sha1": "cc739f24d2ca8456c68564f0844c8ef107de479b",
+      "lfs_sha256": "9aa48a9448ce6450238868537e4aab43065cca5dae94c948a189e5b802911929",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/open_subtitles.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "simple_wiki",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "simple_wiki.train.txt",
+      "bytes": 87947184,
+      "git_blob_sha1": "444173531d68ecfd6181de68d63c86245d05041b",
+      "lfs_sha256": "b7cd8fd945d3986c673bf92fa28df44bf8e4ea655c37c2cacd97cdd8a9146cf2",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/simple_wiki.train.txt"
+    },
+    {
+      "partition": "train-100m",
+      "component": "switchboard",
+      "repository": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "filename": "switchboard.train.txt",
+      "bytes": 1219017,
+      "git_blob_sha1": "e40a65671f5c9e1bcc15e6f7b3185ad50783cd72",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict/resolve/9e57baaaa91ac3c638746be14d1d5fa6c789f4cf/switchboard.train.txt"
+    },
+    {
+      "partition": "validation",
+      "component": "bnc_spoken",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "bnc_spoken.dev",
+      "bytes": 6539125,
+      "git_blob_sha1": "0588e676da75f5a372a5facbe0bc0cabe6e78502",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/bnc_spoken.dev"
+    },
+    {
+      "partition": "validation",
+      "component": "childes",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "childes.dev",
+      "bytes": 14684091,
+      "git_blob_sha1": "78ba89d41d214e7ba556469179f415008583d9d3",
+      "lfs_sha256": "5823392e65a6da3344811845504c5d1ad9acec42315e2bd938be5eb01a8422a5",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/childes.dev"
+    },
+    {
+      "partition": "validation",
+      "component": "gutenberg",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "gutenberg.dev",
+      "bytes": 15605575,
+      "git_blob_sha1": "80717cff502179608237b5f60a5fa8c5cfaa230f",
+      "lfs_sha256": "760ebc4c697b91308dd21f643ae3c3071e3e1222960fcf8af04119addc50e99b",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/gutenberg.dev"
+    },
+    {
+      "partition": "validation",
+      "component": "open_subtitles",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "open_subtitles.dev",
+      "bytes": 11029539,
+      "git_blob_sha1": "e454f8333030a51915958c39a5e755642c05fc60",
+      "lfs_sha256": "2e8038d3216c28d7319d0cb564011061d64e093e426b0ca816a9def481481e6b",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/open_subtitles.dev"
+    },
+    {
+      "partition": "validation",
+      "component": "simple_wiki",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "simple_wiki.dev",
+      "bytes": 8170440,
+      "git_blob_sha1": "6acfd2db24d9ac7b487fbfd680930d6a8e8417f2",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/simple_wiki.dev"
+    },
+    {
+      "partition": "validation",
+      "component": "switchboard",
+      "repository": "BabyLM-community/BabyLM-dev",
+      "revision": "169f42e32d0aaf65ec6b91d55bafad27a3afc729",
+      "filename": "switchboard.dev",
+      "bytes": 724013,
+      "git_blob_sha1": "f30c821bb0ff40b4ccec4915e226394dfecd1be9",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-dev/resolve/169f42e32d0aaf65ec6b91d55bafad27a3afc729/switchboard.dev"
+    },
+    {
+      "partition": "test",
+      "component": "bnc_spoken",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "bnc_spoken.test",
+      "bytes": 4889225,
+      "git_blob_sha1": "d9b44e4b9e7e9a7eff023fac77ca1068254f0d61",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/bnc_spoken.test"
+    },
+    {
+      "partition": "test",
+      "component": "childes",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "childes.test",
+      "bytes": 14707424,
+      "git_blob_sha1": "e77d00c3303071f10600663c5bc07c97d73e4049",
+      "lfs_sha256": "c6b9e5d5479d003381a9a5ea8905ed82ac9c418cbc53395d4234bbb218ee8424",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/childes.test"
+    },
+    {
+      "partition": "test",
+      "component": "gutenberg",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "gutenberg.test",
+      "bytes": 13296106,
+      "git_blob_sha1": "181440b2dd2722b5dbbf973a4f9a1b08eb2b46b4",
+      "lfs_sha256": "df309abec59a9143cb5220d81438297d24526024608e6bb795ca8c1a7069c9bd",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/gutenberg.test"
+    },
+    {
+      "partition": "test",
+      "component": "open_subtitles",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "open_subtitles.test",
+      "bytes": 10388196,
+      "git_blob_sha1": "00642253500102d6dff3f42c77bf31eade38ea1e",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/open_subtitles.test"
+    },
+    {
+      "partition": "test",
+      "component": "simple_wiki",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "simple_wiki.test",
+      "bytes": 7618762,
+      "git_blob_sha1": "a4c27b4c405dcc5aa288a9c9fc29dea70247aaa7",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/simple_wiki.test"
+    },
+    {
+      "partition": "test",
+      "component": "switchboard",
+      "repository": "BabyLM-community/BabyLM-Test",
+      "revision": "2c47b98e2dc3707465aed81da69dc36cdca5d13b",
+      "filename": "switchboard.test",
+      "bytes": 823158,
+      "git_blob_sha1": "dcd9e3dc8306a681e1eb489f8d80a70954ec9a8c",
+      "lfs_sha256": null,
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-Test/resolve/2c47b98e2dc3707465aed81da69dc36cdca5d13b/switchboard.test"
+    }
+  ],
+  "publisher": "BabyLM-community",
+  "source": "https://babylm.github.io/",
+  "licensing": "Training repository metadata says MIT. Component provenance and rights remain distinct; no raw corpus text is redistributed by FLM.",
+  "interpretation": "10M and 100M are publisher budget labels. Count actual words, lines and bytes locally; no model-specific token count is implied."
+}
