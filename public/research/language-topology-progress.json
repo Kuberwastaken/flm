@@ -1,8 +1,8 @@
 {
-  "snapshot_utc": "2026-09-10T15:28:28.957867+00:00",
+  "snapshot_utc": "2026-09-10T15:57:40.132053+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
-  "completed_new_runs": 6,
+  "completed_new_runs": 7,
   "registered_updates": 6000,
   "test_status": "Pending all eight new runs and frozen checkpoint selections",
   "comparison": "Validation at matched updates only. Existing measured references are reused, not additional independent runs.",
@@ -608,8 +608,8 @@
       "graph": "data/graphs/central-1024-null107/graph.npz",
       "output": "runs/language-topology-v1/null107-s43",
       "reference": false,
-      "saved_step": 4500,
-      "complete": false,
+      "saved_step": 6000,
+      "complete": true,
       "validation": [
         {
           "step": 500,
@@ -655,6 +655,21 @@
           "step": 4500,
           "bits_per_byte": 1.9251955595844268,
           "token_perplexity": 116.99624317887158
+        },
+        {
+          "step": 5000,
+          "bits_per_byte": 1.9180082606587283,
+          "token_perplexity": 114.93461527903166
+        },
+        {
+          "step": 5500,
+          "bits_per_byte": 1.9129241881443935,
+          "token_perplexity": 113.49825926954993
+        },
+        {
+          "step": 6000,
+          "bits_per_byte": 1.9097996699259834,
+          "token_perplexity": 112.624438153527
         }
       ]
     },
@@ -667,9 +682,20 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s43",
       "reference": false,
-      "saved_step": 0,
+      "saved_step": 1000,
       "complete": false,
-      "validation": []
+      "validation": [
+        {
+          "step": 500,
+          "bits_per_byte": 2.302670134820804,
+          "token_perplexity": 297.6322421958308
+        },
+        {
+          "step": 1000,
+          "bits_per_byte": 2.136712914693046,
+          "token_perplexity": 197.42302211582674
+        }
+      ]
     }
   ]
 }
