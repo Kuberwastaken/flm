@@ -88,7 +88,8 @@ def main():
                 linestyle=':' if model=='scripted' else ('--' if model=='reservoir' else '-'))
         axes[0].set(xlabel='Simulated time (s)',ylabel='Absolute target-bearing error (degrees)',xlim=(0,2),ylim=(0,180))
         axes[0].grid(axis='y',color='#d6d0c5',linewidth=.6)
-        axes[0].legend(frameon=False,fontsize=8,ncol=2,loc='upper left')
+        axes[0].legend(frameon=False,fontsize=8,ncol=3,loc='lower left',
+                       bbox_to_anchor=(0,1.01),borderaxespad=0,columnspacing=.9)
         for mode,style in [('live','-'),('frozen','--')]:
             trace=traces[f'eligibility-{mode}-{scenario}']; positions=trace['thorax_position_mm']
             axes[1].plot(positions[:,0],positions[:,1],color=COLORS['eligibility'],linestyle=style,
@@ -100,7 +101,7 @@ def main():
         axes[1].legend(frameon=False,fontsize=8,loc='best')
         if scenario=='switch':
             axes[0].axvline(1,color='#a8a094',linestyle='--',linewidth=.8)
-            axes[0].text(1.03,172,'Target switches',fontsize=8,color='#625c52')
+            axes[0].text(1.03,100,'Target switches',fontsize=8,color='#625c52')
         fig.savefig(output/f'closed-loop-{scenario}.svg')
         fig.savefig(output/f'closed-loop-{scenario}.png',dpi=160); plt.close(fig)
     trace=traces['eligibility-live-switch']
