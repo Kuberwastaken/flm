@@ -3,8 +3,10 @@ import { loadResearch } from './research.js';
 import { BrainView, FlyView } from './views.js';
 import { STORAGE_KEY, ADAPTER_KEY, validateConversations, conversationForModel, contextFor, download } from './storage.js';
 import { MODEL_PACKAGES } from './packages.js';
+import { createTypingFly } from './typing-fly.js';
 
 const $ = id => document.getElementById(id);
+const typingFly = createTypingFly($('typing-fly'));
 const requestedModel = new URLSearchParams(location.search).get('model');
 const selectedModel = Object.hasOwn(MODEL_PACKAGES, requestedModel) ? requestedModel : 'wikitext';
 const isLexical = MODEL_PACKAGES[selectedModel].lexical;
@@ -13,6 +15,7 @@ const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'modu
 let ready = false, busy = false, operation = '', sequence = 0, activeId = 0, researchLoaded = false;
 let config, brain, fly, anatomy, lastState, selected = 0, disabled = new Set(), lastPrompt = '';
 let conversations = [], currentId, pendingMessage, pendingElement, trace = [], storageBlocked = false;
+let generationStopped = false;
 
 function notice(message) { $('notice').textContent = message; $('notice').hidden = !message; }
 function store() {
@@ -23,6 +26,7 @@ function store() {
 function current() { return conversations.find(x => x.id === currentId); }
 function setBusy(value) {
   busy = value;
+  if (!value) typingFly.setState('idle');
   document.querySelectorAll('[data-idle]').forEach(element => { element.disabled = !ready || value; });
   for (const id of ['generate', 'rename-chat', 'delete-chat']) $(id).disabled ||= !current();
   $('stop').disabled = !value || operation !== 'generate';
@@ -33,6 +37,7 @@ function setBusy(value) {
 function run(type, data = {}) {
   if (busy) return false;
   operation = type; activeId = ++sequence; setBusy(true); notice('');
+  if (type === 'generate') { generationStopped = false; typingFly.setState('reading'); }
   worker.postMessage({ type, id: activeId, ...data }); return true;
 }
 function choices() {
@@ -191,7 +196,10 @@ $('composer').onsubmit = event => {
   run('generate', { prompt, temperature, topK, limit, seed, observe: $('observe').checked });
 };
 $('prompt').onkeydown = event => { if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) { event.preventDefault(); $('composer').requestSubmit(); } };
-for (const id of ['stop', 'stop-learning']) $(id).onclick = () => { worker.postMessage({ type: 'stop' }); $(id).disabled = true; };
+for (const id of ['stop', 'stop-learning']) $(id).onclick = () => {
+  if (id === 'stop') { generationStopped = true; typingFly.setState('idle'); }
+  worker.postMessage({ type: 'stop' }); $(id).disabled = true;
+};
 
 function selectNeuron(index) {
   selected = index; $('neuron').value = String(index); brain?.select(index); neuronInfo();
@@ -282,6 +290,7 @@ worker.onmessage = ({ data }) => {
   if (data.type === 'priming') $('generation-stats').textContent = `Reading context: ${data.done.toLocaleString()} / ${data.total.toLocaleString()} tokens`;
   if (data.type === 'state') updateState(data);
   if (data.type === 'generation') {
+    if (!generationStopped) typingFly.setState('typing');
     if (pendingMessage) {
       pendingMessage.text = data.text; pendingElement.querySelector('.message-text').textContent = data.text;
       const view = $('messages'); if (view.scrollHeight - view.scrollTop - view.clientHeight < 140) view.scrollTop = view.scrollHeight;
@@ -305,7 +314,7 @@ worker.onmessage = ({ data }) => {
     catch { notice('Browser storage is full or unavailable. Export learning to a file instead.'); }
   }
   if (data.type === 'notice') notice(data.message);
-  if (data.type === 'error') notice(data.message);
+  if (data.type === 'error') { generationStopped = true; typingFly.setState('idle'); notice(data.message); }
   if (data.type === 'idle') {
     if (operation === 'generate') {
       pendingElement?.classList.remove('pending');
