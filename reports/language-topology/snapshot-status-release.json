@@ -1,0 +1,49 @@
+{
+  "verified_utc": "2026-09-10T16:53:31.735944+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "d0f7290bb36fc0210693518a22a42d76e7d0a527",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34504543764"
+  },
+  "artifacts": [
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 21029,
+      "sha256": "5aa0d1d0496bc9b3cbce3de6b09e8e1fe1c98598ea2ee659f1b3014aa8e22efb"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6330510,
+      "sha256": "6470ca6e09ea5f0d4687dced34fec8c8d2acc41223afc28e9832fdbd77bdc2a4"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "snapshot_utc": "2026-09-10T16:47:52.562068+00:00",
+  "completed_new_controls": 7,
+  "unfinished_control_saved_updates": 4000,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "source_archive_check": "reports/language-topology/snapshot-status-source-release.json",
+  "final_test_result_published": false,
+  "existing_browser_completion_marker_preserved": true,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T16:53:08.366Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 7,
+    "validation_rows": 8,
+    "unfinished_control_matched_updates": 4000,
+    "displayed_measured_validation_bpb": 1.9344,
+    "displayed_no_slow_validation_bpb": 1.9434,
+    "displayed_measured_minus_control_bpb": -0.0090,
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [null, null],
+    "page_width": 598,
+    "viewport_width": 614
+  }
+}
