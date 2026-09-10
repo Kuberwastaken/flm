@@ -13,12 +13,26 @@ from .tokenizer import Lexicon
 
 
 @torch.no_grad()
-def export(checkpoint, graph_path, tokenizer_path, output, anatomy_source=None):
+def export(checkpoint, graph_path, tokenizer_path, output, anatomy_source=None, profile='wikitext'):
     torch.set_num_threads(2)
     lexicon = Lexicon(tokenizer_path)
     model, saved = restore(checkpoint, graph_path, lexicon)
     if not isinstance(model, FLM) or not model.config.tied_readout:
         raise ValueError('The lexical browser package requires a tied-readout FLM')
+    profiles = {
+        'wikitext': dict(name='FLM WikiText',dataset='WikiText-2 raw',slug='wikitext2',
+            tokenizer_sha256='ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d',
+            description='A compact fly-wired next-token predictor trained from scratch on WikiText-2 raw.',
+            license='MIT original code; CC BY 4.0 anatomy; WikiText source attribution and license notes in the dataset card'),
+        'babylm': dict(name='FLM BabyLM 10M',dataset='BabyLM 2026 English 10M',slug='babylm2026-10m',
+            tokenizer_sha256='46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242',
+            description='A compact fly-wired next-token predictor trained from scratch on the BabyLM 2026 10M-word mixture. Full matched baseline evaluation is pending.',
+            license='MIT original code; CC BY 4.0 anatomy; underlying BabyLM components retain their source rights; raw text is not redistributed')}
+    if profile not in profiles or lexicon.sha256 != profiles[profile]['tokenizer_sha256']:
+        raise ValueError('Dataset profile does not match the checkpoint tokenizer')
+    details=profiles[profile]
+    if profile=='babylm' and (saved['step']!=12000 or saved['run']['protocol']['train_cache_sha256']!='4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd'):
+        raise ValueError('The BabyLM preview requires the complete registered 10M training exposure')
     model.eval(); graph = load_graph(graph_path)
     n, p, d = model.config.neurons, model.config.pools, model.config.embedding
     w, alpha, beta, gain = model.constants()
@@ -53,8 +67,8 @@ def export(checkpoint, graph_path, tokenizer_path, output, anatomy_source=None):
     tokenizer = json.loads(browser_tokenizer.read_text(encoding='utf8'))
     if tokenizer['tokenizer_sha256'] != lexicon.sha256: raise ValueError('Browser tokenizer provenance mismatch')
     shutil.copyfile(browser_tokenizer, output / 'tokenizer.json')
-    config = dict(format='flm-browser-v2', name='FLM WikiText', dataset='WikiText-2 raw',
-        model_id=f'flm-central-{n}-wikitext2-s{saved["run"]["seed"]}',
+    config = dict(format='flm-browser-v2', name=details['name'], dataset=details['dataset'],
+        model_id=f'flm-central-{n}-{details["slug"]}-s{saved["run"]["seed"]}',
         neurons=n, pools=p, features=d, embedding=d, vocabulary=lexicon.vocabulary, bos=0, eos=1,
         arrays=index, variant=model.config.variant, checkpoint_step=saved['step'],
         checkpoint_sha256=saved['_file_sha256'], weights_sha256=sha256(output / 'weights.bin'),
@@ -63,9 +77,13 @@ def export(checkpoint, graph_path, tokenizer_path, output, anatomy_source=None):
         source_graph_sha256=sha256(graph_path), trained_parameters=saved['run']['parameter_card']['trainable_parameters'],
         retained_edges=len(row), source_neurons=card['source_neurons'], training=saved['run'],
         norm_epsilon=float(model.norm.eps),
-        description='A compact fly-wired next-token predictor trained from scratch on WikiText-2 raw.',
+        description=details['description'],
         capability='Experimental text completion; not instruction tuned or a reliable question-answering system.',
-        license='MIT original code; CC BY 4.0 anatomy; WikiText source attribution and license notes in the dataset card')
+        license=details['license'])
+    if profile=='babylm':
+        config.update(publication_status='Experimental completed-budget preview; full twelve-run test evaluation pending',
+            checkpoint_choice='Fixed update 12000, seed 42; no test loss or generated sample used for selection',
+            training_words=10000000,presented_training_tokens=18432000)
     write_json(output / 'model.json', config)
     tokens = [0] + lexicon.encode('The history of science includes many unexpected discoveries.\n')
     logits, state, features = model(torch.tensor([tokens]), return_features=True)
@@ -81,7 +99,8 @@ def main():
     p.add_argument('--tokenizer', type=Path, default=Path('data/tokenizers/wikitext2-4096/tokenizer.json'))
     p.add_argument('--output', type=Path, default=Path('public/models/flm-wikitext'))
     p.add_argument('--anatomy-source', type=Path)
-    a = p.parse_args(); export(a.checkpoint, a.graph, a.tokenizer, a.output, a.anatomy_source)
+    p.add_argument('--profile', choices=('wikitext','babylm'), default='wikitext')
+    a = p.parse_args(); export(a.checkpoint, a.graph, a.tokenizer, a.output, a.anatomy_source, a.profile)
 
 
 if __name__ == '__main__': main()
