@@ -1,0 +1,1868 @@
+{
+  "study": "Measured-graph language computation controls v1",
+  "declared_utc": "2026-09-10T19:05:07.827628+00:00",
+  "source_commit": "a428b2e8c35db91e29c15eb8514f5ef7517d7b30",
+  "protocol_sha256": "22b8af7692588d163433c18c21c5744f6fde510d237ec9a5df6a326b67c50b1d",
+  "training_protocol": {
+    "steps": 6000,
+    "batch": 16,
+    "sequence": 96,
+    "warmup": 16,
+    "learning_rate": 0.002,
+    "final_learning_rate": 0.0002,
+    "lr_warmup_updates": 100,
+    "weight_decay": 0.01,
+    "eval_tokens": 32768,
+    "threads": 4,
+    "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+    "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+    "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+    "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+  },
+  "sources": {
+    "flm/language_core_controls.py": "39f7952630c6eb6694efcd4a37e3b3ac16b85ff80df7e846e0b9bb3fe15dd0c1",
+    "flm/language_core_train.py": "0159e9da3b22935bdb065bea094e9d57e4f5f3a84d30f2965b7d11e657b0a8af",
+    "flm/language_core_study.py": "d93d7dd7306bba3598c2699f49a5e480cff98c4e5605e59baec63e815a70b98c",
+    "flm/language_core_test.py": "d1be5599f729834acf9b8ec753df302d37d8f64cb232f0f397a0f0859688cfd9",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+    "flm/language_bridge.py": "66591cac46aa8f3402bedf24443511eb72b9919e66ccee85df58d937e9be2d2d",
+    "flm/language_topology.py": "89492ae63ab82e8a6cc959d52bf07d04b6937f73ac4494da1c20921899d77f44",
+    "flm/language_topology_test.py": "d2eb60bf81be06899e4d912cb2f5a6734c427545b67547620f81e4ef010550be",
+    "flm/language_test.py": "0818dce2152d55b00d17fa6074248c52eaa4f292bff5fbc5fc073d414cc6c157",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "flm/graph.py": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "flm/wiring_controls.py": "854c3a3005b685fe385c5c5e97ab8211733efe4b49bb87aea66d9349813ee6d6",
+    "flm/ngram.py": "3a9f589233f6bc5a002aea6b9a5eeae29273b3f803d662ec04e61d87194efe0e",
+    "flm/study_index.py": "d808303468b2cd218cb3f030c5139ecf5d4676386e2cd68d01ebd089fe34f69e"
+  },
+  "inputs": {
+    "docs/LANGUAGE-CORE-PROTOCOL.md": "22b8af7692588d163433c18c21c5744f6fde510d237ec9a5df6a326b67c50b1d",
+    "data/graphs/central-1024/graph.npz": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+    "data/tokenizers/wikitext2-4096/tokenizer.json": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+    "data/graphs/central-1024/graph-card.json": "eff916879b0d69897679c96197f21d764d9fd58eb7e2dec3cff52c410b812aab",
+    "data/tokenizers/wikitext2-4096/tokenization-card.json": "9881b8261fb44b1c54e9b2635753d5b09accffb9e7f4cc449d196dfd06c4b3c1",
+    "data/processed/wikitext2-bpe/train.npz": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+    "data/processed/wikitext2-bpe/validation.npz": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+    "data/processed/wikitext2-bpe/test.npz": "e6da687ff04fb44b538384e60ef70719d1e5dc39885befe715a230bda912992f",
+    "reports/language-topology/identity.json": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+    "reports/language-topology/selection.json": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+    "reports/language-topology/summary.json": "2bcfb603f79465da0327c134303f177b443ffa72d4e45965459dbf7dee402c98",
+    "reports/language-topology/final-release.json": "77e050712f3c6cbbb7532d11147fe90aebb123be4f389542afe9f99d57321827",
+    "reports/language-core/software-preflight.json": "23c46d9aca5c20c36d3b8d196df2b72b3081fb3e72792c14d0e21db972463de8",
+    "reports/language-core/replay-diagnostic.json": "f1140d6733c0613a81f7fb45d1ce7205dd6a7b2687f4d5a8097391565bdfe41d",
+    "reports/wikitext2/test-flm-s42.json": "def7849b536284a576fc174314d253d6f12c9edbd32e81c389716bfffbd64bd2",
+    "reports/wikitext2/test-flm-s43.json": "1bfb9e58a8b1b99999a16b8393181819025bf5d84da69d89de878d4b981b5daa"
+  },
+  "torch": "2.8.0+cpu",
+  "conditions": [
+    {
+      "label": "full-s42",
+      "control": "full",
+      "seed": 42,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s42"
+    },
+    {
+      "label": "fixed_dynamics-s42",
+      "control": "fixed_dynamics",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/fixed_dynamics-s42"
+    },
+    {
+      "label": "no_lateral-s42",
+      "control": "no_lateral",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_lateral-s42"
+    },
+    {
+      "label": "no_temporal_state-s42",
+      "control": "no_temporal_state",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_temporal_state-s42"
+    },
+    {
+      "label": "full-s43",
+      "control": "full",
+      "seed": 43,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s43"
+    },
+    {
+      "label": "fixed_dynamics-s43",
+      "control": "fixed_dynamics",
+      "seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/fixed_dynamics-s43"
+    },
+    {
+      "label": "no_lateral-s43",
+      "control": "no_lateral",
+      "seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_lateral-s43"
+    },
+    {
+      "label": "no_temporal_state-s43",
+      "control": "no_temporal_state",
+      "seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_temporal_state-s43"
+    }
+  ],
+  "reference_checkpoints": {
+    "full-s42": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+    "full-s43": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f"
+  },
+  "compatibility": [
+    {
+      "seed": 42,
+      "initial_parameter_sha256": "09a752cff9575d5d4e1f97057857e8cfbd576fb77129725fa818ee74f44cf441",
+      "controls": {
+        "full": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "flm",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "full"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": true,
+                "nonzero_entries": 76130
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": true,
+                "nonzero_entries": 1
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 600003,
+            "nonzero_in_probe": 600003,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "fixed_dynamics": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "flm",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "fixed_dynamics"
+            },
+            "trainable_parameters": 521824,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 78179,
+            "frozen_groups": [
+              "edge_log_gain",
+              "alpha_logit",
+              "beta_logit",
+              "recurrent_logit"
+            ]
+          },
+          "optimizer_parameter_names": [
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 521824,
+            "nonzero_in_probe": 521824,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "no_lateral": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "no_recurrence",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "no_lateral"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 523872,
+            "nonzero_in_probe": 523872,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "no_temporal_state": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "no_recurrence",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "no_temporal_state"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 523872,
+            "nonzero_in_probe": 523872,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        }
+      },
+      "replays": [
+        {
+          "threads": 1,
+          "updates": 10,
+          "exact_sampler": true,
+          "losses": [
+            8.556640625,
+            8.53911304473877,
+            8.55544662475586,
+            8.519540786743164,
+            8.50220775604248,
+            8.425739288330078,
+            8.44748592376709,
+            8.3951416015625,
+            8.415750503540039,
+            8.357340812683105
+          ],
+          "maximum_parameter_absolute_difference": 0.0,
+          "maximum_loss_absolute_difference": 0.0,
+          "maximum_validation_nll_absolute_difference": 0.0,
+          "exact_parameter_match": true,
+          "final_parameter_sha256": "f416c0e9893b8fc664839f2e5a97dabf179fd86e7f0248089dd05cf071122946",
+          "bounds": {
+            "parameter_absolute": 0.0,
+            "loss_absolute": 0.0,
+            "validation_nll_absolute": 0.0
+          }
+        },
+        {
+          "threads": 4,
+          "updates": 10,
+          "exact_sampler": true,
+          "losses": [
+            8.556640625,
+            8.53911304473877,
+            8.555445671081543,
+            8.519540786743164,
+            8.50220775604248,
+            8.425739288330078,
+            8.44748592376709,
+            8.3951416015625,
+            8.415750503540039,
+            8.357340812683105
+          ],
+          "maximum_parameter_absolute_difference": 1.1641532182693481e-10,
+          "maximum_loss_absolute_difference": 0.0,
+          "maximum_validation_nll_absolute_difference": 0.0,
+          "exact_parameter_match": false,
+          "final_parameter_sha256": "a81defdb72f181bd55be3e14bdd2c31705d7021024d23a956af5a915f617efa5",
+          "bounds": {
+            "parameter_absolute": 1e-07,
+            "loss_absolute": 1e-06,
+            "validation_nll_absolute": 0.0001
+          }
+        }
+      ],
+      "interpretation": "Single-thread exact numerical replay; four-thread bounded numerical replay. Training retains the historical four-thread protocol."
+    },
+    {
+      "seed": 43,
+      "initial_parameter_sha256": "689701c278f1508e86ea5e33e864ada9d7c21d8be39d6d9a9f6bfde5d15c2e96",
+      "controls": {
+        "full": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "flm",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "full"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": true,
+                "nonzero_entries": 76130
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": true,
+                "nonzero_entries": 1
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 600003,
+            "nonzero_in_probe": 600003,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "fixed_dynamics": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "flm",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "fixed_dynamics"
+            },
+            "trainable_parameters": 521824,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 78179,
+            "frozen_groups": [
+              "edge_log_gain",
+              "alpha_logit",
+              "beta_logit",
+              "recurrent_logit"
+            ]
+          },
+          "optimizer_parameter_names": [
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 521824,
+            "nonzero_in_probe": 521824,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "no_lateral": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "no_recurrence",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "no_lateral"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 523872,
+            "nonzero_in_probe": 523872,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        },
+        "no_temporal_state": {
+          "parameter_card": {
+            "config": {
+              "neurons": 1024,
+              "pools": 128,
+              "embedding": 96,
+              "variant": "no_recurrence",
+              "backend": "auto",
+              "vocabulary": 4096,
+              "tied_readout": true,
+              "control": "no_temporal_state"
+            },
+            "trainable_parameters": 600003,
+            "parameter_groups": {
+              "edge_log_gain": 76130,
+              "alpha_logit": 1024,
+              "beta_logit": 1024,
+              "recurrent_logit": 1,
+              "output_bias": 4096,
+              "embedding.weight": 393216,
+              "input.weight": 98304,
+              "input.bias": 1024,
+              "norm.weight": 256,
+              "norm.bias": 256,
+              "readout.weight": 24576,
+              "readout.bias": 96
+            },
+            "edges": 76130,
+            "vocabulary": 4096,
+            "allocated_parameters": 600003,
+            "frozen_parameters": 0,
+            "frozen_groups": []
+          },
+          "optimizer_parameter_names": [
+            "edge_log_gain",
+            "alpha_logit",
+            "beta_logit",
+            "recurrent_logit",
+            "output_bias",
+            "embedding.weight",
+            "input.weight",
+            "input.bias",
+            "norm.weight",
+            "norm.bias",
+            "readout.weight",
+            "readout.bias"
+          ],
+          "gradient_probe": {
+            "groups": {
+              "edge_log_gain": {
+                "entries": 76130,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "alpha_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "beta_logit": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "recurrent_logit": {
+                "entries": 1,
+                "connected": false,
+                "nonzero_entries": 0
+              },
+              "output_bias": {
+                "entries": 4096,
+                "connected": true,
+                "nonzero_entries": 4096
+              },
+              "embedding.weight": {
+                "entries": 393216,
+                "connected": true,
+                "nonzero_entries": 393216
+              },
+              "input.weight": {
+                "entries": 98304,
+                "connected": true,
+                "nonzero_entries": 98304
+              },
+              "input.bias": {
+                "entries": 1024,
+                "connected": true,
+                "nonzero_entries": 1024
+              },
+              "norm.weight": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "norm.bias": {
+                "entries": 256,
+                "connected": true,
+                "nonzero_entries": 256
+              },
+              "readout.weight": {
+                "entries": 24576,
+                "connected": true,
+                "nonzero_entries": 24576
+              },
+              "readout.bias": {
+                "entries": 96,
+                "connected": true,
+                "nonzero_entries": 96
+              }
+            },
+            "connected_in_probe": 523872,
+            "nonzero_in_probe": 523872,
+            "interpretation": "Autograd connectivity and nonzero entries for this loss only; not effective capacity"
+          }
+        }
+      },
+      "replays": [
+        {
+          "threads": 1,
+          "updates": 10,
+          "exact_sampler": true,
+          "losses": [
+            8.591306686401367,
+            8.476092338562012,
+            8.540325164794922,
+            8.548812866210938,
+            8.47559928894043,
+            8.493646621704102,
+            8.455172538757324,
+            8.39087200164795,
+            8.368121147155762,
+            8.345579147338867
+          ],
+          "maximum_parameter_absolute_difference": 0.0,
+          "maximum_loss_absolute_difference": 0.0,
+          "maximum_validation_nll_absolute_difference": 0.0,
+          "exact_parameter_match": true,
+          "final_parameter_sha256": "7835f39cfcf64a52d2da8af90b4f1cf328d61f89fff2848aa0a03e910e44a12b",
+          "bounds": {
+            "parameter_absolute": 0.0,
+            "loss_absolute": 0.0,
+            "validation_nll_absolute": 0.0
+          }
+        },
+        {
+          "threads": 4,
+          "updates": 10,
+          "exact_sampler": true,
+          "losses": [
+            8.591306686401367,
+            8.476092338562012,
+            8.540325164794922,
+            8.548813819885254,
+            8.47559928894043,
+            8.493645668029785,
+            8.455172538757324,
+            8.39087200164795,
+            8.368121147155762,
+            8.345580101013184
+          ],
+          "maximum_parameter_absolute_difference": 5.820766091346741e-11,
+          "maximum_loss_absolute_difference": 0.0,
+          "maximum_validation_nll_absolute_difference": 0.0,
+          "exact_parameter_match": false,
+          "final_parameter_sha256": "85879dbb7f6b91deb0e47e948831956972b2c65dd9c043177f41f0e01d182797",
+          "bounds": {
+            "parameter_absolute": 1e-07,
+            "loss_absolute": 1e-06,
+            "validation_nll_absolute": 0.0001
+          }
+        }
+      ],
+      "interpretation": "Single-thread exact numerical replay; four-thread bounded numerical replay. Training retains the historical four-thread protocol."
+    }
+  ],
+  "initial_parameter_sha256": {
+    "42": "09a752cff9575d5d4e1f97057857e8cfbd576fb77129725fa818ee74f44cf441",
+    "43": "689701c278f1508e86ea5e33e864ada9d7c21d8be39d6d9a9f6bfde5d15c2e96"
+  },
+  "sampling": {
+    "42": {
+      "500": {
+        "stream_sha256": "b40416a01147955470649571c3f5b75aa880751552b5360184f03dae62c1e705",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 221105455619877715709170822168487601576,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2650789070
+        },
+        "exposure": {
+          "presented_tokens": 768000,
+          "presented_bytes": 2714463,
+          "scored_bytes": 2263930
+        }
+      },
+      "1000": {
+        "stream_sha256": "a85be6b56d255f14934b3b357d3ab94ff65a7af7e48f790de3f4859975103361",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 143895442546640507359822610946788700296,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 1902451929
+        },
+        "exposure": {
+          "presented_tokens": 1536000,
+          "presented_bytes": 5438174,
+          "scored_bytes": 4533950
+        }
+      },
+      "1500": {
+        "stream_sha256": "8f1767d991aba81ae9df7d234044463a7ef87620ebdec31e7d6395fe01d554d4",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 286839845910585005088943694679428377448,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2044216620
+        },
+        "exposure": {
+          "presented_tokens": 2304000,
+          "presented_bytes": 8161006,
+          "scored_bytes": 6802132
+        }
+      },
+      "2000": {
+        "stream_sha256": "2fe37196456209faf2877fe33d1d66dcebc676fb7bc839e68468d73f9e3c7696",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 216331248703295366225603706330737153608,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 4215870250
+        },
+        "exposure": {
+          "presented_tokens": 3072000,
+          "presented_bytes": 10879796,
+          "scored_bytes": 9068457
+        }
+      },
+      "2500": {
+        "stream_sha256": "dcd5d2774752d7fd30a1ac0171b5371266a9db9ff879da5f04d85f13182b921e",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 288928403521958176494849141038566011176,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 383036554
+        },
+        "exposure": {
+          "presented_tokens": 3840000,
+          "presented_bytes": 13605405,
+          "scored_bytes": 11340275
+        }
+      },
+      "3000": {
+        "stream_sha256": "01bd7bfc483a1f3c8dd92622cb143261c5b1ba1320dbab4ae0f181f9954d7c2e",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 84463216527320526279252890268025207816,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2045695092
+        },
+        "exposure": {
+          "presented_tokens": 4608000,
+          "presented_bytes": 16326178,
+          "scored_bytes": 13606908
+        }
+      },
+      "3500": {
+        "stream_sha256": "0eb992242275eb350fe34bab7c5315a9b62449bb2784ab4d4428330a6c2bf2d0",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 107796261587949597406160664236878755560,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 797619883
+        },
+        "exposure": {
+          "presented_tokens": 5376000,
+          "presented_bytes": 19050093,
+          "scored_bytes": 15877143
+        }
+      },
+      "4000": {
+        "stream_sha256": "5818335d2ab9b05f31810cfe796fe2249515620734a2e9f9ea913cb548d8825b",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 282006116933057088663850936424277549512,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2730137882
+        },
+        "exposure": {
+          "presented_tokens": 6144000,
+          "presented_bytes": 21775209,
+          "scored_bytes": 18150054
+        }
+      },
+      "4500": {
+        "stream_sha256": "238ac6bbd330962b4eb5b4a9d82a0c48a27adfc0d8beaaf9b32e3dd2674b3439",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 61787609010645014380711524167267237032,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2207484047
+        },
+        "exposure": {
+          "presented_tokens": 6912000,
+          "presented_bytes": 24494351,
+          "scored_bytes": 20416790
+        }
+      },
+      "5000": {
+        "stream_sha256": "aff1e62e1fa1e75c209bde4e65dcbb81c2af8a3d3e559436ab73d8003d6de15a",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 240757300577644425203989237384280688520,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 286817144
+        },
+        "exposure": {
+          "presented_tokens": 7680000,
+          "presented_bytes": 27215790,
+          "scored_bytes": 22684926
+        }
+      },
+      "5500": {
+        "stream_sha256": "68e8ee59a3fca06837b34ee51ed40add365f5b86429f012353002b376457e60c",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 178914637576274729112372426725681185384,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 2809237238
+        },
+        "exposure": {
+          "presented_tokens": 8448000,
+          "presented_bytes": 29942336,
+          "scored_bytes": 24957183
+        }
+      },
+      "6000": {
+        "stream_sha256": "3df308e34a280bfbca4722b263132aa3c0197463e6b24fd4bba1d0e24f37c02f",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 300235794816698920065837725793872457032,
+            "inc": 332724090758049132448979897138935081983
+          },
+          "has_uint32": 0,
+          "uinteger": 1849092187
+        },
+        "exposure": {
+          "presented_tokens": 9216000,
+          "presented_bytes": 32661129,
+          "scored_bytes": 27224178
+        }
+      }
+    },
+    "43": {
+      "500": {
+        "stream_sha256": "52be60019dfe5c12a0b9bcaab778fa80aeaf23d88cc9feeefc040d813f0945da",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 298653870986693828936226928796516193196,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 628933507
+        },
+        "exposure": {
+          "presented_tokens": 768000,
+          "presented_bytes": 2726174,
+          "scored_bytes": 2273107
+        }
+      },
+      "1000": {
+        "stream_sha256": "5518552714c106fe853dd7266e61eee239d783464ee2158f5dd0021b742ca3c9",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230351382545185414321512823740172015756,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 4167776011
+        },
+        "exposure": {
+          "presented_tokens": 1536000,
+          "presented_bytes": 5448115,
+          "scored_bytes": 4541830
+        }
+      },
+      "1500": {
+        "stream_sha256": "977419a6ed5ca2e24e571313210bb602f57697b4e8d6a60bebc981a2406e3db6",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 288153081786111512805800690883013086572,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 311728828
+        },
+        "exposure": {
+          "presented_tokens": 2304000,
+          "presented_bytes": 8168476,
+          "scored_bytes": 6808756
+        }
+      },
+      "2000": {
+        "stream_sha256": "ff585b65cf516cd90b96618de3d4a835014b7fbe4522411add2dc04baf5bad6c",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 40242078071679793838425211590684242508,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 380830119
+        },
+        "exposure": {
+          "presented_tokens": 3072000,
+          "presented_bytes": 10890547,
+          "scored_bytes": 9076217
+        }
+      },
+      "2500": {
+        "stream_sha256": "61521f0a6e06313270728aa93e358eb726fd8dd09bc9761d0925ab92737cbfe1",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 227343740658840680035934914401566148396,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 1092133838
+        },
+        "exposure": {
+          "presented_tokens": 3840000,
+          "presented_bytes": 13605951,
+          "scored_bytes": 11339203
+        }
+      },
+      "3000": {
+        "stream_sha256": "5a8bd7837b0207e6e6a7e0c25ea3d87d3cacb5ce0f7544eca91f24613f4289f1",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 51033575285706588140472831820558404620,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 1016458519
+        },
+        "exposure": {
+          "presented_tokens": 4608000,
+          "presented_bytes": 16330262,
+          "scored_bytes": 13609640
+        }
+      },
+      "3500": {
+        "stream_sha256": "5b21bfc3c602dd9a6390f42806b2620e52774281ec56f9d0319cc5b17c3b869a",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 299143152758599518474269137738297164012,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 4023138189
+        },
+        "exposure": {
+          "presented_tokens": 5376000,
+          "presented_bytes": 19052041,
+          "scored_bytes": 15876610
+        }
+      },
+      "4000": {
+        "stream_sha256": "92fe70537feeca43d67ab52bcba2d37b962b5a3fb29cdb140035934eccddd5ff",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 153006469423317369314356650183035708876,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 662861661
+        },
+        "exposure": {
+          "presented_tokens": 6144000,
+          "presented_bytes": 21767009,
+          "scored_bytes": 18139650
+        }
+      },
+      "4500": {
+        "stream_sha256": "a3500b41320063a6a07b61864f1d8e83d2b44513556ffb118e715249eedf78f6",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 306714166955054669681703752518936165036,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 534400481
+        },
+        "exposure": {
+          "presented_tokens": 6912000,
+          "presented_bytes": 24489614,
+          "scored_bytes": 20407086
+        }
+      },
+      "5000": {
+        "stream_sha256": "9d16b3bdc0f9af552e08d4fe8446f66ec0f277ba7936f20bd4e4a84f8843ad57",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 289715318800378133825362100100456316812,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 3762580079
+        },
+        "exposure": {
+          "presented_tokens": 7680000,
+          "presented_bytes": 27212931,
+          "scored_bytes": 22676355
+        }
+      },
+      "5500": {
+        "stream_sha256": "42071313dfbd9894855446b8da5a793ea1a526845283b7f88ad5e76ed447b638",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 120823506362964629744100662952712795244,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 2503028401
+        },
+        "exposure": {
+          "presented_tokens": 8448000,
+          "presented_bytes": 29933626,
+          "scored_bytes": 24944421
+        }
+      },
+      "6000": {
+        "stream_sha256": "545faf0a99dadd95aca8aa73de4f0536457934ce8c73791f91e07be591cd0f4d",
+        "sampler_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 332058031050062119430259889362463480140,
+            "inc": 25065611243303971628957076795638243391
+          },
+          "has_uint32": 0,
+          "uinteger": 634997241
+        },
+        "exposure": {
+          "presented_tokens": 9216000,
+          "presented_bytes": 32655175,
+          "scored_bytes": 27212240
+        }
+      }
+    }
+  },
+  "validation_denominators": {
+    "tokens": 32768,
+    "bytes": 116937,
+    "documents": [
+      {
+        "document": "wikitext2-validation-0000",
+        "tokens": 547,
+        "bytes": 1731
+      },
+      {
+        "document": "wikitext2-validation-0001",
+        "tokens": 547,
+        "bytes": 1826
+      },
+      {
+        "document": "wikitext2-validation-0002",
+        "tokens": 547,
+        "bytes": 1916
+      },
+      {
+        "document": "wikitext2-validation-0003",
+        "tokens": 547,
+        "bytes": 1715
+      },
+      {
+        "document": "wikitext2-validation-0004",
+        "tokens": 547,
+        "bytes": 1862
+      },
+      {
+        "document": "wikitext2-validation-0005",
+        "tokens": 547,
+        "bytes": 1844
+      },
+      {
+        "document": "wikitext2-validation-0006",
+        "tokens": 547,
+        "bytes": 1907
+      },
+      {
+        "document": "wikitext2-validation-0007",
+        "tokens": 547,
+        "bytes": 2019
+      },
+      {
+        "document": "wikitext2-validation-0008",
+        "tokens": 546,
+        "bytes": 2154
+      },
+      {
+        "document": "wikitext2-validation-0009",
+        "tokens": 546,
+        "bytes": 1951
+      },
+      {
+        "document": "wikitext2-validation-0010",
+        "tokens": 546,
+        "bytes": 2086
+      },
+      {
+        "document": "wikitext2-validation-0011",
+        "tokens": 546,
+        "bytes": 1980
+      },
+      {
+        "document": "wikitext2-validation-0012",
+        "tokens": 546,
+        "bytes": 1879
+      },
+      {
+        "document": "wikitext2-validation-0013",
+        "tokens": 546,
+        "bytes": 1900
+      },
+      {
+        "document": "wikitext2-validation-0014",
+        "tokens": 546,
+        "bytes": 1606
+      },
+      {
+        "document": "wikitext2-validation-0015",
+        "tokens": 546,
+        "bytes": 1986
+      },
+      {
+        "document": "wikitext2-validation-0016",
+        "tokens": 546,
+        "bytes": 1881
+      },
+      {
+        "document": "wikitext2-validation-0017",
+        "tokens": 546,
+        "bytes": 1793
+      },
+      {
+        "document": "wikitext2-validation-0018",
+        "tokens": 546,
+        "bytes": 1897
+      },
+      {
+        "document": "wikitext2-validation-0019",
+        "tokens": 546,
+        "bytes": 2052
+      },
+      {
+        "document": "wikitext2-validation-0020",
+        "tokens": 546,
+        "bytes": 1916
+      },
+      {
+        "document": "wikitext2-validation-0021",
+        "tokens": 546,
+        "bytes": 1537
+      },
+      {
+        "document": "wikitext2-validation-0022",
+        "tokens": 546,
+        "bytes": 1969
+      },
+      {
+        "document": "wikitext2-validation-0023",
+        "tokens": 546,
+        "bytes": 1969
+      },
+      {
+        "document": "wikitext2-validation-0024",
+        "tokens": 546,
+        "bytes": 1962
+      },
+      {
+        "document": "wikitext2-validation-0025",
+        "tokens": 546,
+        "bytes": 1846
+      },
+      {
+        "document": "wikitext2-validation-0026",
+        "tokens": 546,
+        "bytes": 2274
+      },
+      {
+        "document": "wikitext2-validation-0027",
+        "tokens": 546,
+        "bytes": 1927
+      },
+      {
+        "document": "wikitext2-validation-0028",
+        "tokens": 546,
+        "bytes": 2288
+      },
+      {
+        "document": "wikitext2-validation-0029",
+        "tokens": 546,
+        "bytes": 1975
+      },
+      {
+        "document": "wikitext2-validation-0030",
+        "tokens": 546,
+        "bytes": 1938
+      },
+      {
+        "document": "wikitext2-validation-0031",
+        "tokens": 546,
+        "bytes": 1951
+      },
+      {
+        "document": "wikitext2-validation-0032",
+        "tokens": 546,
+        "bytes": 2203
+      },
+      {
+        "document": "wikitext2-validation-0033",
+        "tokens": 546,
+        "bytes": 1992
+      },
+      {
+        "document": "wikitext2-validation-0034",
+        "tokens": 546,
+        "bytes": 2129
+      },
+      {
+        "document": "wikitext2-validation-0035",
+        "tokens": 546,
+        "bytes": 1798
+      },
+      {
+        "document": "wikitext2-validation-0036",
+        "tokens": 546,
+        "bytes": 1972
+      },
+      {
+        "document": "wikitext2-validation-0037",
+        "tokens": 546,
+        "bytes": 1888
+      },
+      {
+        "document": "wikitext2-validation-0038",
+        "tokens": 546,
+        "bytes": 2295
+      },
+      {
+        "document": "wikitext2-validation-0039",
+        "tokens": 546,
+        "bytes": 1895
+      },
+      {
+        "document": "wikitext2-validation-0040",
+        "tokens": 546,
+        "bytes": 1967
+      },
+      {
+        "document": "wikitext2-validation-0041",
+        "tokens": 546,
+        "bytes": 1907
+      },
+      {
+        "document": "wikitext2-validation-0042",
+        "tokens": 546,
+        "bytes": 2009
+      },
+      {
+        "document": "wikitext2-validation-0043",
+        "tokens": 546,
+        "bytes": 2026
+      },
+      {
+        "document": "wikitext2-validation-0044",
+        "tokens": 546,
+        "bytes": 1823
+      },
+      {
+        "document": "wikitext2-validation-0045",
+        "tokens": 546,
+        "bytes": 1929
+      },
+      {
+        "document": "wikitext2-validation-0046",
+        "tokens": 546,
+        "bytes": 2289
+      },
+      {
+        "document": "wikitext2-validation-0047",
+        "tokens": 546,
+        "bytes": 2075
+      },
+      {
+        "document": "wikitext2-validation-0048",
+        "tokens": 546,
+        "bytes": 1923
+      },
+      {
+        "document": "wikitext2-validation-0049",
+        "tokens": 546,
+        "bytes": 1975
+      },
+      {
+        "document": "wikitext2-validation-0050",
+        "tokens": 546,
+        "bytes": 2169
+      },
+      {
+        "document": "wikitext2-validation-0051",
+        "tokens": 546,
+        "bytes": 1894
+      },
+      {
+        "document": "wikitext2-validation-0052",
+        "tokens": 546,
+        "bytes": 2000
+      },
+      {
+        "document": "wikitext2-validation-0053",
+        "tokens": 546,
+        "bytes": 1981
+      },
+      {
+        "document": "wikitext2-validation-0054",
+        "tokens": 546,
+        "bytes": 2004
+      },
+      {
+        "document": "wikitext2-validation-0055",
+        "tokens": 546,
+        "bytes": 1841
+      },
+      {
+        "document": "wikitext2-validation-0056",
+        "tokens": 546,
+        "bytes": 1944
+      },
+      {
+        "document": "wikitext2-validation-0057",
+        "tokens": 546,
+        "bytes": 1740
+      },
+      {
+        "document": "wikitext2-validation-0058",
+        "tokens": 546,
+        "bytes": 1901
+      },
+      {
+        "document": "wikitext2-validation-0059",
+        "tokens": 546,
+        "bytes": 1831
+      }
+    ]
+  },
+  "test_gate": "All six new runs and eight selections must be complete before decoding new-control test scores",
+  "prior_test_access": "WikiText baseline and topology test results already inspected; exploratory extension"
+}
