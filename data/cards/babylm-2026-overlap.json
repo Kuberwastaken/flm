@@ -1,0 +1,227 @@
+{
+  "acquisition_card_sha256": "b1e040fb0df288c5595341f1597f163c78f636a4a606c578525b2ac0e613c84a",
+  "files": [
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\bnc_spoken.train.txt",
+      "partition": "train-10m",
+      "total_lines": 65220,
+      "substantial_lines": 27846,
+      "substantial_words": 632597
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\childes.train.txt",
+      "partition": "train-10m",
+      "total_lines": 531305,
+      "substantial_lines": 85428,
+      "substantial_words": 1028041
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\gutenberg.train.txt",
+      "partition": "train-10m",
+      "total_lines": 59934,
+      "substantial_lines": 47971,
+      "substantial_words": 2507105
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\open_subtitles.train.txt",
+      "partition": "train-10m",
+      "total_lines": 386046,
+      "substantial_lines": 87239,
+      "substantial_words": 1082766
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\simple_wiki.train.txt",
+      "partition": "train-10m",
+      "total_lines": 58709,
+      "substantial_lines": 35632,
+      "substantial_words": 1399703
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-10m\\switchboard.train.txt",
+      "partition": "train-10m",
+      "total_lines": 2892,
+      "substantial_lines": 1135,
+      "substantial_words": 18108
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\bnc_spoken.train.txt",
+      "partition": "train-100m",
+      "total_lines": 803341,
+      "substantial_lines": 276294,
+      "substantial_words": 5813196
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\childes.train.txt",
+      "partition": "train-100m",
+      "total_lines": 5638783,
+      "substantial_lines": 793980,
+      "substantial_words": 9330129
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\gutenberg.train.txt",
+      "partition": "train-100m",
+      "total_lines": 661928,
+      "substantial_lines": 534293,
+      "substantial_words": 25036271
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\open_subtitles.train.txt",
+      "partition": "train-100m",
+      "total_lines": 3824550,
+      "substantial_lines": 859298,
+      "substantial_words": 10869081
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\simple_wiki.train.txt",
+      "partition": "train-100m",
+      "total_lines": 642735,
+      "substantial_lines": 356958,
+      "substantial_words": 13944771
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\train-100m\\switchboard.train.txt",
+      "partition": "train-100m",
+      "total_lines": 30559,
+      "substantial_lines": 11014,
+      "substantial_words": 173948
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\bnc_spoken.dev",
+      "partition": "validation",
+      "total_lines": 130000,
+      "substantial_lines": 45220,
+      "substantial_words": 962803
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\childes.dev",
+      "partition": "validation",
+      "total_lines": 520153,
+      "substantial_lines": 81854,
+      "substantial_words": 946437
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\gutenberg.dev",
+      "partition": "validation",
+      "total_lines": 65000,
+      "substantial_lines": 52718,
+      "substantial_words": 2768261
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\open_subtitles.dev",
+      "partition": "validation",
+      "total_lines": 375000,
+      "substantial_lines": 74660,
+      "substantial_words": 904605
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\simple_wiki.dev",
+      "partition": "validation",
+      "total_lines": 60000,
+      "substantial_lines": 30558,
+      "substantial_words": 1304689
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\validation\\switchboard.dev",
+      "partition": "validation",
+      "total_lines": 18000,
+      "substantial_lines": 6557,
+      "substantial_words": 104784
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\bnc_spoken.test",
+      "partition": "test",
+      "total_lines": 90000,
+      "substantial_lines": 34384,
+      "substantial_words": 737001
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\childes.test",
+      "partition": "test",
+      "total_lines": 540000,
+      "substantial_lines": 74424,
+      "substantial_words": 837526
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\gutenberg.test",
+      "partition": "test",
+      "total_lines": 55000,
+      "substantial_lines": 46003,
+      "substantial_words": 2366678
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\open_subtitles.test",
+      "partition": "test",
+      "total_lines": 345000,
+      "substantial_lines": 71814,
+      "substantial_words": 881820
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\simple_wiki.test",
+      "partition": "test",
+      "total_lines": 60000,
+      "substantial_lines": 27675,
+      "substantial_words": 1195715
+    },
+    {
+      "path": "data\\raw\\babylm-2026\\test\\switchboard.test",
+      "partition": "test",
+      "total_lines": 20000,
+      "substantial_lines": 7320,
+      "substantial_words": 119292
+    }
+  ],
+  "unique_substantial_normalized_lines": 3243137,
+  "comparisons": [
+    {
+      "first": "train-10m",
+      "second": "train-100m",
+      "shared_unique_normalized_lines": 273981,
+      "occurrences_in_first": 285251,
+      "occurrences_in_second": 286383,
+      "words_in_second_matching_first": 6684026
+    },
+    {
+      "first": "train-10m",
+      "second": "validation",
+      "shared_unique_normalized_lines": 243,
+      "occurrences_in_first": 590,
+      "occurrences_in_second": 289,
+      "words_in_second_matching_first": 3504
+    },
+    {
+      "first": "train-10m",
+      "second": "test",
+      "shared_unique_normalized_lines": 471,
+      "occurrences_in_first": 2934,
+      "occurrences_in_second": 1995,
+      "words_in_second_matching_first": 26085
+    },
+    {
+      "first": "train-100m",
+      "second": "validation",
+      "shared_unique_normalized_lines": 8520,
+      "occurrences_in_first": 11851,
+      "occurrences_in_second": 9083,
+      "words_in_second_matching_first": 112339
+    },
+    {
+      "first": "train-100m",
+      "second": "test",
+      "shared_unique_normalized_lines": 4981,
+      "occurrences_in_first": 11375,
+      "occurrences_in_second": 7459,
+      "words_in_second_matching_first": 120954
+    },
+    {
+      "first": "validation",
+      "second": "test",
+      "shared_unique_normalized_lines": 236,
+      "occurrences_in_first": 495,
+      "occurrences_in_second": 635,
+      "words_in_second_matching_first": 8425
+    }
+  ],
+  "normalization": "Collapse whitespace and casefold; compare SHA-256 of complete lines with at least 8 words and 40 normalized characters.",
+  "limits": "This detects substantial normalized whole-line overlap. It does not establish book, conversation or speaker disjointness, and it is not a near-duplicate paragraph audit. Common phrases can still match. The official training partitions remain unchanged.",
+  "test_usage": "Text identity audit only; no model test loss or model selection."
+}
