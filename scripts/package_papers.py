@@ -15,8 +15,10 @@ def main():
         'research_figures.py', 'continuing_figures.py', 'behavior_figures.py',
         'physical_choice_report.py', 'choice_paper_data.py', 'build_papers.py',
         'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py',
-        'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py', 'scan_data_report.py')]
-    files += [ROOT / name for name in ('README.md', 'LICENSE', 'pyproject.toml',
+        'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py', 'scan_data_report.py',
+        'audit_language_topology_report.py', 'language_topology_report.py', 'package_language_topology.py',
+        'package_topology_inference.py', 'verify_topology_inference_release.py')]
+    files += [ROOT / name for name in ('README.md', 'LICENSE', 'pyproject.toml', 'package.json',
         'docs/figures/readme_figures.py', 'public/research/test-results.json',
         'public/brand/provenance.json', 'docs/RESEARCH-PROGRAM.md', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
@@ -39,6 +41,15 @@ def main():
         'flm/language_core_controls.py', 'tests/test_language_core_controls.py',
         'flm/model.py', 'flm/baselines.py', 'flm/train.py', 'flm/language_train.py',
         'flm/corpus_cache.py', 'tests/test_model.py',
+        'flm/inference.py', 'flm/topology_inference.py', 'flm/language_report.py',
+        'flm/language_topology.py', 'flm/language_topology_test.py', 'flm/language_test.py',
+        'flm/language_bridge.py', 'flm/wiring_controls.py', 'flm/ngram.py', 'flm/study_index.py',
+        'tests/test_topology_inference.py', 'tests/test_topology_inference_release.py',
+        'tests/test_language_topology_audit.py', 'tests/test_language_topology_report.py',
+        'tests/test_language_topology_evaluation.py', 'tests/language-topology.test.js',
+        'web/language-topology.js', 'web/language-structure.js',
+        'docs/WIKITEXT-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-OPERATIONS.md', 'data/cards/wikitext2.json',
+        'data/tokenizers/wikitext2-4096/tokenizer-card.json',
         'data/graphs/central-1024/graph-card.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.

@@ -1,0 +1,55 @@
+{
+  "verified_utc": "2026-09-10T15:39:12.580117+00:00",
+  "archive": "public/research/paper-source.zip",
+  "archive_sha256": "900993f066dd6b16d0ccb7e72cab293cd4784562246cced5153be17cdafef375",
+  "archive_bytes": 6330458,
+  "source_payloads": 156,
+  "archive_crc_and_all_manifest_hashes_passed": true,
+  "unique_members_and_safe_relative_paths_verified": true,
+  "fresh_extraction_outside_repository": true,
+  "pythonpath_removed": true,
+  "python_environment_variables_ignored": true,
+  "extracted_flm_import_path_asserted": true,
+  "node_module_type_declared_in_archived_package_json": true,
+  "checks": [
+    {
+      "name": "python_topology_tests",
+      "exit_code": 0,
+      "elapsed_seconds": 179.75,
+      "discovered": 25,
+      "run": 25,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    {
+      "name": "browser_release_tests",
+      "exit_code": 0,
+      "elapsed_seconds": 0.406,
+      "tests_passed": 7,
+      "tests_failed": 0
+    }
+  ],
+  "checked_sources": {
+    "flm/topology_inference.py": "0e4454bd75508976ef443e50ffec01818f7c901bfa9b1c27a06abbfd96a2eaf3",
+    "scripts/audit_language_topology_report.py": "cf81196772da42c131c69ab183d7d8bf3f802ed8db6445aa46a47fca1c7f0f8c",
+    "scripts/package_language_topology.py": "d14375f58810068d6b44b427497e2a4b195fbfdc9627c2be1ab458dbff2fe67f",
+    "scripts/package_papers.py": "16615e5379e9cc48f1ffbf2bf4f6e65fefd5170bd1009c73b574c10f82d9d2f5",
+    "scripts/package_topology_inference.py": "be429e54c329384cc8bc28415bb642c5846e97096c79e2e7672e29bc176e7b89",
+    "scripts/verify_topology_inference_release.py": "14b280e8406405633af516736a5a40a2335907bcf90dd90eba62f009fd1b1639",
+    "tests/language-topology.test.js": "8035528ae03078a25dfba96392774e7e3e205d46b3f7ade1f4ae8e8b215df3ec",
+    "tests/test_language_core_controls.py": "e3cb2c8f85aa3b99955b815ec80c7b2604cf47aaf7b14062455cee050e7a7f4c",
+    "tests/test_language_topology_audit.py": "5d11110e99e87beeb23ef01aa2c605e0716d57a50f05a56c359cad69b4f88930",
+    "tests/test_language_topology_evaluation.py": "408f48a986603f1b2f6c767c8cb5f15c8773731f3665e6441e01a6ab7d086e6c",
+    "tests/test_language_topology_report.py": "6b462e5e068837cd79238ebb2e81906f66436edb4622cde19f0d18e165c64366",
+    "tests/test_model.py": "0fae2f7a2922cfe4975f58199f15dea0804058fbb4ea0c50a15510dff8af64ac",
+    "tests/test_scan.py": "c7d90fe127c1a40b47b8c5ace5ac3eb2d1962edf008870102babf8866d8cb3b2",
+    "tests/test_subset_audit.py": "0486278609df3ccc2fff46b03e571d8aca188865a016fc68bee7b3eac042649e",
+    "tests/test_topology_inference.py": "23cfed87d95c0d14ffd392fcf0a020c8a875298f7d7bc3287979c2784095df69",
+    "tests/test_topology_inference_release.py": "9b805b7f381433defc2585ad222354d88d79bb5014c81f88d435b83f92d7cadc",
+    "web/language-topology.js": "33c0ef25f7d802233d4f9d544829e538c0fba0b4c3bb15d0bc549e9b613a0bd3"
+  },
+  "scope": "Paper/source snapshot, not a full runnable application repository. Topology release tests use artificial scores and untrained 16-neuron models; they do not establish the actual language-study result.",
+  "actual_study_final_result_present": false
+}
