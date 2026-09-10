@@ -2,11 +2,12 @@ import copy
 import unittest
 
 from flm.scan import audit_pair, interpret, parse, statistics
-from flm.scan_task import encode_example, score_actions
+from flm.scan_task import action_ids, decode_action_ids, encode_example, score_actions
 
 
 class ByteLexicon:
     """An independent byte codec makes the loss-boundary check transparent."""
+    vocabulary = 258
     def encode(self, text):
         return [byte + 2 for byte in text.encode('utf8')]
 
@@ -64,7 +65,7 @@ class ScanDataTests(unittest.TestCase):
 
 class ScanTaskTests(unittest.TestCase):
     def test_only_target_bytes_and_eos_receive_loss(self):
-        example = encode_example({'command': 'walk', 'actions': ['I_WALK']}, ByteLexicon())
+        example = encode_example({'command': 'walk', 'actions': ['I_WALK']}, ByteLexicon(), action_format='literal')
         scored = [token for token, active in zip(example['target'], example['loss_mask']) if active]
         self.assertEqual(ByteLexicon().decode(scored[:-1]), ' I_WALK')
         self.assertEqual(scored[-1], 1)
@@ -78,6 +79,22 @@ class ScanTaskTests(unittest.TestCase):
         second = encode_example({'command': 'walk', 'actions': ['I_JUMP']}, ByteLexicon())
         self.assertEqual(first['generation_prefix'], second['generation_prefix'])
         self.assertNotEqual(first['target'], second['target'])
+
+    def test_byte_actions_are_one_token_each_and_roundtrip_exactly(self):
+        reference = ['I_WALK', 'I_WALK', 'I_TURN_LEFT', 'I_JUMP']
+        example = encode_example({'command': 'jump left after walk twice', 'actions': reference}, ByteLexicon())
+        scored = [token for token, mask in zip(example['target'], example['loss_mask']) if mask]
+        self.assertEqual(example['supervised_tokens'], len(reference) + 1)
+        self.assertEqual(decode_action_ids(scored, ByteLexicon()), {'actions':reference, 'terminated':True})
+        self.assertEqual(ByteLexicon().decode(scored[:-1]), 'WW<J')
+
+    def test_invalid_generated_tokens_and_post_eos_text_are_not_repaired(self):
+        result = decode_action_ids([0, 1], ByteLexicon())
+        self.assertEqual(result['actions'], ['INVALID_TOKEN:0'])
+        self.assertFalse(score_actions(['I_WALK'], result['actions'], terminated=result['terminated'])['exact_match'])
+        self.assertEqual(decode_action_ids([], ByteLexicon()), {'actions':[], 'terminated':False})
+        with self.assertRaises(ValueError):
+            decode_action_ids([1, action_ids(ByteLexicon())['I_WALK']], ByteLexicon())
 
     def test_terminal_marker_is_required_for_exact_success(self):
         self.assertTrue(score_actions(['I_WALK'], ['I_WALK'], terminated=True)['exact_match'])
