@@ -28,15 +28,15 @@ Both FLM seeds trail both baselines. The [article-level scores and paired bootst
 
 ## The critical control: change the wiring
 
-**Priority as of 10 September 2026: finish the language topology study.** Seven of eight new controls are complete. BabyLM remains paused; new transfer and behavior experiments are deferred.
+**Priority as of 10 September 2026: finish the language topology study.** All eight new controls have completed 6,000 updates, all ten checkpoint selections are frozen, and full test evaluation is underway. Complete test results are pending. BabyLM remains paused; new transfer and behavior experiments are deferred.
 
 ![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
 
 *Orange and green denote modeled edge signs; blank entries have no edge. These are graph matrices, not neural activity. Every panel contains 1,024 neurons and 76,130 edges.*
 
-The [language topology protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) holds the rest of the language machinery fixed and trains three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling are preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
+The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest of the language machinery fixed and trained three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling were preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
 
-Two further models are retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All checkpoint selections must be frozen before any new control test losses are read. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated validation snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
+Two further models were retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All ten [checkpoint selections](reports/language-topology/selection.json) were frozen before new control test scoring began. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated study snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
 
 The [follow-up language controls](docs/LANGUAGE-CORE-CONTROLS.md) now have separate [implementations](flm/language_core_controls.py) for fixed dynamics, no lateral recurrence and no temporal state, with nine passing fixture tests. Their training/evaluation harness and language fits remain pending; topology stays the priority. Removing lateral recurrence retains fast/slow memory; the no-temporal-state control resets both states for every token.
 
@@ -91,7 +91,7 @@ The difference is the computation and structural prior; the primary language exp
 
 </details>
 
-FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The baseline comparison is complete; the rewired and retrained slow-state comparisons are still running. The evidence currently supports a working experimental platform, while the anatomical language-prior hypothesis remains unresolved.
+FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The baseline comparison and control fits are complete; full control test evaluation is underway. The evidence currently supports a working experimental platform, while the anatomical language-prior hypothesis remains unresolved.
 
 ## Run ChatFLM locally
 
