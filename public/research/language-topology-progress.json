@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-10T09:37:11.466586+00:00",
+  "snapshot_utc": "2026-09-10T10:02:27.895462+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 1,
@@ -164,7 +164,7 @@
       "graph": "data/graphs/central-1024-null103/graph.npz",
       "output": "runs/language-topology-v1/null103-s42",
       "reference": false,
-      "saved_step": 1000,
+      "saved_step": 2000,
       "complete": false,
       "validation": [
         {
@@ -176,6 +176,16 @@
           "step": 1000,
           "bits_per_byte": 2.1333927016817746,
           "token_perplexity": 195.80825817880833
+        },
+        {
+          "step": 1500,
+          "bits_per_byte": 2.0602066119592144,
+          "token_perplexity": 163.38406025927193
+        },
+        {
+          "step": 2000,
+          "bits_per_byte": 2.01237748937091,
+          "token_perplexity": 145.15382671154987
         }
       ]
     },
@@ -188,9 +198,20 @@
       "graph": "data/graphs/central-1024-null107/graph.npz",
       "output": "runs/language-topology-v1/null107-s42",
       "reference": false,
-      "saved_step": 0,
+      "saved_step": 1000,
       "complete": false,
-      "validation": []
+      "validation": [
+        {
+          "step": 500,
+          "bits_per_byte": 2.2739904866741587,
+          "token_perplexity": 277.24926815296726
+        },
+        {
+          "step": 1000,
+          "bits_per_byte": 2.1333664779933104,
+          "token_perplexity": 195.79555717139672
+        }
+      ]
     },
     {
       "label": "no-slow-s42",
