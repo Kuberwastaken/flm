@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-09-10T22:41:54.322246+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "selected": {
+    "label": "fixed_dynamics-s43",
+    "control": "fixed_dynamics",
+    "seed": 43,
+    "reference": false,
+    "graph": "data/graphs/central-1024/graph.npz",
+    "output": "runs/language-core-v1/fixed_dynamics-s43",
+    "checkpoint": "runs/language-core-v1/fixed_dynamics-s43/checkpoint-006000.pt",
+    "checkpoint_sha256": "a486c80b6e641facc0e1a16ed7cd311098ded1fd831684a8f0438b519770b6f5",
+    "checkpoint_step": 6000,
+    "selection_validation_bpb": 1.9180409802164975,
+    "allocated_parameters": 600003,
+    "trainable_parameters": 521824,
+    "frozen_parameters": 78179
+  },
+  "all_12_checkpoint_payloads_optimizer_exposure_and_mechanism_verified": true,
+  "complete_record_sha256": "a04c8d3fb9fe66a3c05173ca439ff9f4a9a2dd875605ba0a8c2181569131f02b",
+  "new_test_scores": false
+}
