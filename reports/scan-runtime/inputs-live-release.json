@@ -1,0 +1,51 @@
+{
+  "verified_utc": "2026-09-10T22:59:04.365883+00:00",
+  "commit": "2c5cffd0140dd9e50edc789da46fc0d87e9410bb",
+  "workflow_run": 34539904426,
+  "ci": {
+    "conclusion": "success",
+    "headSha": "2c5cffd0140dd9e50edc789da46fc0d87e9410bb",
+    "status": "completed"
+  },
+  "files": [
+    {
+      "path": "research/instruction-transfer.md",
+      "bytes": 16110,
+      "sha256": "aa3dda40fe595201d48aac88fb03a82fb9444ff60b321d42b38d7eaff5915769",
+      "status": 200
+    },
+    {
+      "path": "research/babylm-evaluation.md",
+      "bytes": 4881,
+      "sha256": "874e8030ed44282cfa7d67e17de9052cde3e420494e8254fcad87a41c4b2db21",
+      "status": 200
+    },
+    {
+      "path": "research/scan_inputs.py",
+      "bytes": 2895,
+      "sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+      "status": 200
+    },
+    {
+      "path": "research/scan_source_audit.py",
+      "bytes": 7103,
+      "sha256": "3210ad2b56ac77e7dce1ea6d705c30921ebb66d808c0a70215607c0eedc3fccd",
+      "status": 200
+    },
+    {
+      "path": "research/scan-input-preflight.json",
+      "bytes": 3675,
+      "sha256": "83a90fcc96675afc0cb1efa02d3737e35e16b72b05513381e2244c279a018ce6",
+      "status": 200
+    },
+    {
+      "path": "research/scan-source-preflight.json",
+      "bytes": 7870,
+      "sha256": "8706a6f7a3161270025b6e4f44b3f4cf044c4185efdecdf62d88c208dad4caef",
+      "status": 200
+    }
+  ],
+  "local_instruction_note_links_checked": 14,
+  "scope": "Source and preparation-document release only; no new benchmark scores or UI behavior.",
+  "training_priority_unchanged": true
+}
