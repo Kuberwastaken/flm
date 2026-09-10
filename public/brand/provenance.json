@@ -1,0 +1,10 @@
+{
+  "anatomy_sha256": "92f2d5eef9ba4f880e2ee077cc27022ad8440d865c89816b3b1110f0a6b6dedb",
+  "coordinate_source": "MaleCNS; attribution in /licenses/",
+  "rendering": "Rigid 25-degree anatomical projection; gray anatomical context and orange selected neuron positions. No activity is represented.",
+  "selected_positions": 1019,
+  "modeled_neurons": 1024,
+  "missing_positions": 5,
+  "font": "IBM Plex Sans, SIL Open Font License",
+  "generator": "scripts/brand_visuals.py"
+}
