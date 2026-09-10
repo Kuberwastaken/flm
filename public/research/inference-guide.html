@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Kuber Mehta">
+  <meta name="description" content="Run the six published FLM, GRU and transformer WikiText checkpoints locally on your own prompts.">
+  <title>Run the comparison models — FLM</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { max-width: 900px; margin: 40px auto; padding: 0 24px; background: #faf8f5; color: #292820; font: 17px/1.7 Georgia, serif; }
+    a { color: #a74c20; text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid #a74c20; outline-offset: 4px; }
+    h1 { font-size: 32px; line-height: 1.3; margin: 24px 0 16px; }
+    h2 { font-size: 24px; line-height: 1.4; margin: 32px 0 12px; }
+    p, ul { margin: 12px 0 20px; }
+    li { margin: 8px 0; }
+    code { font-size: .85em; overflow-wrap: anywhere; }
+    pre { max-width: 100%; overflow-x: auto; padding: 16px; border: 1px solid #d7d2c9; background: #f2efe9; line-height: 1.6; }
+    pre code { overflow-wrap: normal; }
+    footer { margin: 40px 0 24px; padding-top: 20px; border-top: 1px solid #d7d2c9; }
+    @media (max-width: 480px) { body { margin-top: 24px; padding: 0 20px; } h1 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <nav aria-label="Back to research"><a href="/#research">← FLM research</a></nav>
+  <main>
+    <h1>Run the comparison models</h1>
+    <p>Try the published WikiText checkpoints for FLM, GRU and transformer on the same prompt. The 14.3 MB bundle includes both training seeds for each model, the shared tokenizer, the measured graph subset and a standalone Python runtime.</p>
+    <p>These are small text continuation models, trained from scratch with about 600,000 parameters. They have not been instruction-tuned. Their unedited samples include repetition, malformed words and invented statements. The <a href="/#research">completed test comparison</a> reports FLM behind both neural baselines.</p>
+    <p><a href="/research/wikitext2-inference.zip" download>Download all six models · ZIP</a> · <a href="/research/inference-release.json">Inspect hashes and verification</a></p>
+
+    <h2>1. Extract and install</h2>
+    <p>Unzip the download into a new directory and open a terminal there. Inference does not require access to the private repository, a training corpus, a GPU or an API key.</p>
+    <p>The release was tested on Windows with Python 3.10.11 and PyTorch 2.8.0 CPU. Create an environment:</p>
+    <pre tabindex="0" aria-label="Create a Python environment"><code>python -m venv .venv</code></pre>
+    <p>Activate it in Windows PowerShell:</p>
+    <pre tabindex="0" aria-label="Activate on Windows"><code>.venv\Scripts\Activate.ps1</code></pre>
+    <p>Or in a Linux shell:</p>
+    <pre tabindex="0" aria-label="Activate on Linux"><code>source .venv/bin/activate</code></pre>
+    <p>Then install the CPU runtime and the pinned inference dependencies:</p>
+    <pre tabindex="0" aria-label="Install inference dependencies"><code>python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-inference.txt</code></pre>
+    <p>The CPU command follows the <a href="https://pytorch.org/get-started/previous-versions/#v280">official PyTorch 2.8 instructions</a>. NumPy 2.2.6, SciPy 1.13.1 and tokenizers 0.22.2 are pinned in the included requirements file. The Linux commands have not been independently tested for this release.</p>
+
+    <h2>2. Compare one prompt</h2>
+    <p>Run these commands from the extracted directory with the environment active:</p>
+    <pre tabindex="0" aria-label="Generate with all three architectures"><code>python -X utf8 -m flm.inference --model flm --prompt "The history of science"
+python -X utf8 -m flm.inference --model gru --prompt "The history of science"
+python -X utf8 -m flm.inference --model transformer --prompt "The history of science"</code></pre>
+    <p>Each command prints JSON containing the continuation, token IDs, byte count, model identity and sampling settings. The defaults match the published examples: training seed 42, sampling seed 17, temperature 0.8, top-k 40 and up to 128 output tokens.</p>
+    <p>The other fixed prompts are <code>In the summer, the village</code>, <code>The small animal moved through</code> and <code>Language is a way to</code>. Replace the quoted prompt with your own text to explore the models.</p>
+
+    <h2>3. Change the settings</h2>
+    <p>Use <code>--training-seed 43</code> for the second trained initialization. A sampling seed controls token choices from one trained model; it does not select a different checkpoint.</p>
+    <pre tabindex="0" aria-label="Select another trained initialization"><code>python -X utf8 -m flm.inference --model flm --training-seed 43 --prompt "A small animal" --sampling-seed 29 --temperature 0.8 --top-k 40 --tokens 256</code></pre>
+    <ul>
+      <li><code>--temperature 0</code> uses greedy argmax. Top-k and sampling seed then have no effect.</li>
+      <li><code>--tokens</code> accepts 1 to 1,024 output tokens. The end-of-document token can stop generation earlier.</li>
+      <li>Keep prompts and sampling settings equal when comparing architectures.</li>
+    </ul>
+    <p>Each invocation starts with fresh state. The full prompt is fed in chunks of at most 96 tokens, carrying each model's native recurrent state or attention cache. The CLI uses one CPU thread. Other runtime versions or platforms can alter numerical results and sampled text.</p>
+
+    <h2>What the verification covers</h2>
+    <p>Every exported tensor and fixed buffer is identical to its original selected checkpoint. The exporter reproduces all four published prompts for all six models, and a fresh archive extraction passes six further CLI checks. The original training checkpoint, exported file and tensor state each have separate hashes in the release records.</p>
+    <p>The loader checks the complete bundle and matching runtime sources before loading a checkpoint. Model files contain inference tensors and configuration; optimizer state, training RNG, raw corpora and user conversations are omitted. This bundle cannot resume the original training runs.</p>
+    <p>Generation excludes the beginning-of-document token and byte pieces containing control characters other than tab/newline. Published likelihoods use the full model distribution without this generation filter. New prompts do not change the frozen benchmark results.</p>
+    <p>ChatFLM's browser engine remains FLM-only. The graph-control and BabyLM comparisons are continuing studies and are not part of this six-model release.</p>
+    <p><a href="/research/inference-guide.md" download>Download the complete guide · Markdown</a> · <a href="/research/inference-release.json">Release record</a> · <a href="/licenses/">Component attribution</a></p>
+  </main>
+  <footer>FLM by <a href="https://kuber.studio">Kuber Mehta</a>. Original code and model weights: MIT. Brain graph: CC BY 4.0; source attribution is included in the bundle.</footer>
+</body>
+</html>

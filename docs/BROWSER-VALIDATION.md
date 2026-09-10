@@ -289,3 +289,18 @@ were individually inspected. The paper source archive was regenerated and its
 entry hashes verified. The two other research archives containing an original
 MIT notice received the same author correction, with every non-notice payload
 verified byte-identical. `reports/authorship-release.json` records these changes.
+
+Pages release `e9a5f1b` passed run `34464437590`. Twelve live artifacts match their
+local bytes, including the 14,329,947-byte inference archive with SHA-256
+`0f60877292aa2e3982ebf573c5fb07033ef76d7d2ca402c701611a27c83ed5d0`.
+All four live PDFs report Kuber Mehta in their author metadata. The live topology
+table uses saved updates 6,000/2,000/1,000 for the three seed-42 controls; its
+completed-test container is hidden, has zero rendered rectangles and no test
+rows. `reports/wikitext2/inference-deployment.json` retains the artifact checks.
+
+The installation guide also has a readable HTML version linked from Research.
+Navigation was verified after the research page finished restoring its scroll
+position. All six command blocks are present. The guide was visually checked
+at 1,280 px and 390 px; the mobile document has matching 375 px client/scroll
+widths. Long command lines scroll within keyboard-focusable code blocks instead
+of widening the page. Its temporary viewport was reset and tab closed.

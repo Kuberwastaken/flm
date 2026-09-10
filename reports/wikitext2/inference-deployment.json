@@ -1,0 +1,92 @@
+{
+  "release_commit": "e9a5f1b4e17c5527b5b4d413c133948a0167f484",
+  "pages_run": 34464437590,
+  "checked_utc": "2026-09-10T10:10:08.519064+00:00",
+  "artifacts": [
+    {
+      "path": "research/wikitext2-inference.zip",
+      "status": 200,
+      "sha256": "0f60877292aa2e3982ebf573c5fb07033ef76d7d2ca402c701611a27c83ed5d0",
+      "bytes": 14329947
+    },
+    {
+      "path": "research/inference-release.json",
+      "status": 200,
+      "sha256": "c7ed287a40db19731054b51f837ce617e966b67e5710ef443e55bde747e1e381",
+      "bytes": 6579
+    },
+    {
+      "path": "research/inference-guide.md",
+      "status": 200,
+      "sha256": "5cf3332cdd3360179a315e0d03a2a6fc0382dee20193f97affb77cb118a8156c",
+      "bytes": 6635
+    },
+    {
+      "path": "research/flm.pdf",
+      "status": 200,
+      "sha256": "58694bc25cb065474e7335e2f857ef380d3a5ef39563793971df6dea2ee5c1be",
+      "bytes": 916319,
+      "pdf_author": "Kuber Mehta"
+    },
+    {
+      "path": "research/data-and-reproduction.pdf",
+      "status": 200,
+      "sha256": "d035fb2b0ba4e4a2e1663e7ee0ac0fc021c7401dca2b3ec65c41d0e2c2ef880a",
+      "bytes": 240897,
+      "pdf_author": "Kuber Mehta"
+    },
+    {
+      "path": "research/local-learning.pdf",
+      "status": 200,
+      "sha256": "c4021be7b33d9a08d6fb7e624d6405ad23e799d879ef9716b7ca2b4930342608",
+      "bytes": 454730,
+      "pdf_author": "Kuber Mehta"
+    },
+    {
+      "path": "research/wiring-controls.pdf",
+      "status": 200,
+      "sha256": "a677b7237dc6fc933b62447395688424aa60582c6b4d0931d37937c89b2a30a2",
+      "bytes": 527913,
+      "pdf_author": "Kuber Mehta"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "sha256": "3d440fbef431c2428ab4e21d797db857509b7c873090a7d7e47704a56d76b730",
+      "bytes": 2770698
+    },
+    {
+      "path": "research/language-topology-graphs.zip",
+      "status": 200,
+      "sha256": "14ae9c6bd8cd6c41af13e1be6dbf14258478cf6a2d5ce3d62af247699e02a65b",
+      "bytes": 1663281
+    },
+    {
+      "path": "research/wiring-learning-records.zip",
+      "status": 200,
+      "sha256": "b36eb302b0a6a60135f92a85f0f4f2741780c2b857f3d8170d00a618019ad040",
+      "bytes": 18053227
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "status": 200,
+      "sha256": "7662285c19df433e55d825eaf489299673ba9e7d82c6a149272c75881f9c6733",
+      "bytes": 10236
+    },
+    {
+      "path": "licenses/FLM-MIT.txt",
+      "status": 200,
+      "sha256": "c0accc94c019408cee8e3903fe85e52fa82ba7ce979ead33a71b452d42738c1b",
+      "bytes": 1211
+    }
+  ],
+  "local_ui_review": {
+    "desktop_width": 1280,
+    "mobile_width": 390,
+    "document_client_equals_scroll_width": true,
+    "all_three_inference_links_visible": true,
+    "complete_author_credit": true,
+    "temporary_viewport_reset": true
+  },
+  "language_controls": "1/8 complete; graph 103 and graph 107 still fitting. New control test scores remain gated."
+}
