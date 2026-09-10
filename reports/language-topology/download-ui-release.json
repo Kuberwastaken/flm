@@ -1,0 +1,59 @@
+{
+  "verified_utc": "2026-09-10T14:52:59.291692+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "62ff644b6972c1845ffc3e2654d9fc3fd16bdc0e",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34491795152"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 61908,
+      "sha256": "4f12295ea3369180fa8dc68f014dafbf362ed0a202fa3c4a955f51323e0de47c"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 18551,
+      "sha256": "968c330baf8f7d02e925578650db854e98306635db0168d395fc68e22b48eb46"
+    },
+    {
+      "path": "assets/index-mPGiyL2I.js",
+      "bytes": 568386,
+      "sha256": "b1ef776d095c11a6014d6c0d1917435d46f02c119723db1cf961348ad3e65070"
+    }
+  ],
+  "snapshot_utc": "2026-09-10T14:49:34.781825+00:00",
+  "completed_new_controls": 5,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "browser_tests_passed": 53,
+  "build_passed": true,
+  "release_ui": {
+    "identity_and_selected_checkpoint_checks": true,
+    "score_archive_requires_full_gate_and_matching_contrasts": true,
+    "model_archive_requires_ten_matching_models_and_fresh_replays": true,
+    "final_result_artifacts_published": false
+  },
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "browser_verification": {
+    "verified_utc": "2026-09-10T14:53:32.707Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 5,
+    "validation_rows": 8,
+    "active_control_saved_updates": {
+      "null103-s43": 4500,
+      "null107-s43": 3000
+    },
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [
+      null,
+      null
+    ],
+    "page_width": 598,
+    "viewport_width": 598,
+    "rendered_script": "https://flm.kuber.studio/assets/index-mPGiyL2I.js"
+  }
+}
