@@ -1,0 +1,74 @@
+{
+  "verified_utc": "2026-09-10T16:03:26.172908+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "6981ae8671da9ee5a5a56a21141bc67e23d540de",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34499243475"
+  },
+  "artifacts": [
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 20157,
+      "sha256": "d27f9631e0b15886c577606af8b9b93b1cf3c96be558169826e1ddccec127636"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6330461,
+      "sha256": "37225cfe923cac5d0f2358c5b05bf4e3b1a0ca66af2c672680d9834947165ceb"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "snapshot_utc": "2026-09-10T15:57:40.132053+00:00",
+  "completed_new_controls": 7,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "frozen_source_and_input_hashes_match": true,
+  "source_archive": {
+    "verified_utc": "2026-09-10T15:59:01.926304+00:00",
+    "archive": "public/research/paper-source.zip",
+    "archive_sha256": "37225cfe923cac5d0f2358c5b05bf4e3b1a0ca66af2c672680d9834947165ceb",
+    "archive_bytes": 6330461,
+    "source_payloads": 156,
+    "changed_payloads_since_fresh_extraction_tests": [
+      "README.md"
+    ],
+    "all_source_and_test_payloads_unchanged": true,
+    "baseline_fresh_extraction_archive_sha256": "900993f066dd6b16d0ccb7e72cab293cd4784562246cced5153be17cdafef375",
+    "baseline_fresh_extraction_check": "reports/language-topology/source-release.json",
+    "archived_readme_matches_committed_readme": true
+  },
+  "newly_completed_run": {
+    "label": "null107-s43",
+    "updates": 6000,
+    "best_validation_bpb": 1.9097996699259834,
+    "best_checkpoint_sha256": "c46a0ad193cfc215fdb48ba6a3140b0604c8a0f747f12cb65f5937c1c6f1745a",
+    "completion_gate_passed": true
+  },
+  "final_test_result_published": false,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T16:02:33.403Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 7,
+    "validation_rows": 8,
+    "rewired_rows_at_6000_matched_updates": 6,
+    "newly_completed_control": {
+      "label": "null107-s43",
+      "matched_updates": 6000,
+      "displayed_measured_validation_bpb": 1.9107,
+      "displayed_control_validation_bpb": 1.9098,
+      "displayed_measured_minus_control_bpb": 0.0009
+    },
+    "unfinished_no_slow_s43_matched_updates_at_published_snapshot": 1000,
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [null, null],
+    "source_archive_link": "/research/paper-source.zip",
+    "page_width": 598,
+    "viewport_width": 614
+  }
+}
