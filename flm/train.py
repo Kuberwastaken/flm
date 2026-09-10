@@ -49,7 +49,7 @@ class Sampler:
             document = self.documents[index]
             offset = int(self.rng.integers(0, len(document) - self.length))
             chunks.append(document[offset:offset + self.length + 1])
-        tokens = torch.from_numpy(np.stack(chunks)).to(device)
+        tokens = torch.from_numpy(np.stack(chunks).astype(np.int64, copy=False)).to(device)
         return tokens[:, :-1], tokens[:, 1:]
 
 
