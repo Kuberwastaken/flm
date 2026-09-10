@@ -1,0 +1,23 @@
+{
+  "label": "null101-s42",
+  "seed": 42,
+  "topology": "rewired",
+  "graph_seed": 101,
+  "variant": "flm",
+  "graph": "data/graphs/central-1024-null101/graph.npz",
+  "output": "runs/language-topology-v1/null101-s42",
+  "reference": false,
+  "checkpoint": "runs/language-topology-v1/null101-s42/best.pt",
+  "checkpoint_sha256": "75a471540d533e1772fb9a0e4ba45c28ce7842f6f0a9babd1376c8f650e0b882",
+  "checkpoint_step": 6000,
+  "selection_validation_bpb": 1.9072333028675554,
+  "parameters": 600003,
+  "verified_utc": "2026-09-10T09:37:00.066546+00:00",
+  "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "verified_exposure": {
+    "presented_tokens": 9216000,
+    "presented_bytes": 32661129,
+    "scored_bytes": 27224178
+  },
+  "status": "Training complete; study-wide selection and control test scoring remain pending"
+}

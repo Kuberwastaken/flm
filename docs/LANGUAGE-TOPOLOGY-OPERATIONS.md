@@ -88,3 +88,13 @@ single-worker intervals. The recorded resource check saw 53% total CPU usage,
 3,003 MiB available RAM and no page reads. These are operational observations
 with different overlapping windows on a shared laptop, not a controlled
 hardware benchmark or a change to the matched language training budget.
+
+The first new condition, graph 101 with training seed 42, subsequently completed
+all 6,000 updates and passed the existing complete-run checks. Its minimum
+validation loss is 1.9072333 BPB at update 6,000, compared with the measured
+seed-42 reference's 1.9096990 at the same update. The corresponding checkpoint
+SHA-256 is `75a471540d533e1772fb9a0e4ba45c28ce7842f6f0a9babd1376c8f650e0b882`.
+The audited trajectory contains 9,216,000 presented tokens. The scheduler
+automatically started graph 107/seed 42 while graph 103/seed 42 continued.
+This is one completed control's validation result; all-eight completion,
+study-wide checkpoint freezing and new control test scoring remain pending.
