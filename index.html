@@ -125,6 +125,13 @@
           <p><a href="/research/test-results.json" download>Download test results, article scores and checkpoint hashes</a></p>
         </div>
       </section>
+      <section aria-labelledby="grammar-title">
+        <h2 id="grammar-title">Grammatical preferences beyond average loss</h2>
+        <p>A fixed <a href="https://github.com/alexwarstadt/blimp">BLiMP</a> panel asks whether the model assigns a higher probability to an acceptable sentence than to a minimally changed, unacceptable version. It contains 100 pairs from each of 67 expert-written grammar templates: 6,700 pairs in total. These are evaluation-only examples, selected before reading model scores.</p>
+        <div class="table-scroll"><table><caption>Frozen WikiText checkpoints · grammatical preference accuracy</caption><thead><tr><th>Model</th><th>Seed 42</th><th>Seed 43</th><th>Mean</th></tr></thead><tbody id="grammar-rows"></tbody></table></div>
+        <p>FLM and transformer both average about 54% on this panel, with their ordering changing between training seeds. This does not establish a reliable FLM grammar advantage. These are subset results, so they should not be compared directly with published full-benchmark scores.</p>
+        <p><a href="/research/grammar-results.json">Category scores and protocol</a> · <a href="/research/grammar-pair-scores.zip">Every pair score and checkpoint identity · ZIP</a></p>
+      </section>
       <section aria-labelledby="mechanism-title">
         <h2 id="mechanism-title">What learning changes in the network</h2>
         <p>Replaying the same paragraph before and after training gives different fast and slow state responses. Removing recurrent communication raises validation loss from 1.910 to 2.063 bits/byte; removing the slow state raises it to 1.995. Both mechanisms contribute to this trained model. These acute interventions do not establish that fly anatomy outperforms a different graph.</p>

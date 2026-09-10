@@ -23,6 +23,13 @@ async function verifiedArtifact(record) {
 
 export async function loadFinalStudy() {
   try {
+    const response = await fetch(`${import.meta.env.BASE_URL}research/grammar-results.json`);
+    if (!response.ok) throw new Error('Grammar results unavailable.');
+    const report = await response.json();
+    $('grammar-rows').replaceChildren(...report.aggregates.map(result =>
+      row([names[result.variant], ...result.accuracies.map(value => `${(value * 100).toFixed(2)}%`), `${(result.mean * 100).toFixed(2)}%`])));
+  } catch (error) { $('grammar-rows').replaceChildren(row([error.message])); }
+  try {
     const response = await fetch(`${import.meta.env.BASE_URL}research/babylm-data.json`);
     if (!response.ok) throw new Error('Corpus audit unavailable.');
     const report = await response.json();
