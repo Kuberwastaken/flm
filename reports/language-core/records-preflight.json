@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-09-10T20:07:12.032008+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p test_language_core_records.py -v",
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "exit_code": 0,
+  "log_sha256": "5f93fd452e40f3a06f352a24457713b24d490314e0cf0ed58a0bdee843e659cd",
+  "fixture": "Eight artificial conditions and 480 synthetic article-score rows; complete real-checkpoint gate mocked only for packaging integration. No raw corpus or trained checkpoint read.",
+  "checks": [
+    "All eight individual scores, two reused reference-score records and selected identities survive serialization",
+    "All 480 article CSV rows preserve NLL, byte/token counts and BPB; all eight model and eight contrast CSV rows are present",
+    "Exact archive payload hashes and inventory; no model, optimizer or corpus files",
+    "Fresh archive extraction outside the repository reproduces all independent arithmetic with flm/torch imports disabled and PYTHONPATH removed",
+    "Incomplete study, changed individual/reference score, different selected study or failed standalone arithmetic cannot publish a score archive",
+    "Malformed archive paths and altered archive payloads reject before arithmetic execution"
+  ],
+  "live_incomplete_study_rejected": true,
+  "live_rejection_reason": "Final computation scores and frozen selections are not available",
+  "live_test_decoder_arithmetic_and_archive_verifier_not_called": true,
+  "actual_computation_scores_or_records_archive_created": false,
+  "source_sha256": {
+    "scripts/package_language_core.py": "e8b6c796d15e1004adbd4934d83aa6347c58bd4b2d064c77928b2cde4aad20a8",
+    "scripts/audit_language_core_report.py": "6fe653715079bd4df3b963c4d5ae9ef3a87fd64e2a6c3b56a3bcd683b9e4cc6e",
+    "scripts/language_core_report.py": "e5417701b9c0f1571a666c2396bd23b819659213b894cdcf147aca826087f15c",
+    "tests/test_language_core_records.py": "f7fc5b2bc9a5c89fd1e2b4b96b487735c8ec69baa61fa583ba6731b287eb4ed6",
+    "tests/test_language_core_audit.py": "051d561bbbbd4187c7325ca68c1a6a21317daa5f6a3b85a3a7c11148715fd900"
+  },
+  "scope": "Score packaging software preflight only; real computation results remain pending all six new fits and eight frozen selections. The independent auditor checks supplied arithmetic, not data/checkpoint authenticity or likelihood inference."
+}
