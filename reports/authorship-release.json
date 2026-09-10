@@ -1,0 +1,159 @@
+{
+  "verified_utc": "2026-09-10T09:57:52.008777+00:00",
+  "papers": [
+    {
+      "pdf": "public/research/flm.pdf",
+      "pages": 8,
+      "previous_sha256": "d4b71aa0e714f9ae7148b3006cdbd3d27932a1b4c31f3a482e7a715cb3ece01f",
+      "sha256": "58694bc25cb065474e7335e2f857ef380d3a5ef39563793971df6dea2ee5c1be",
+      "bytes": 916319,
+      "author": "Kuber Mehta",
+      "text_change": "Only the visible byline changes from Kuber to Kuber Mehta.",
+      "rendered_differences": [
+        {
+          "page": 1,
+          "changed_pixel_bbox": [
+            395,
+            247,
+            498,
+            261
+          ]
+        },
+        {
+          "page": 2,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 3,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 4,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 5,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 6,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 7,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 8,
+          "changed_pixel_bbox": null
+        }
+      ]
+    },
+    {
+      "pdf": "public/research/data-and-reproduction.pdf",
+      "pages": 5,
+      "previous_sha256": "eceab6727ae8f50e35e8cbb35ff90684af2082e8edbaf77af54e6c196c98240d",
+      "sha256": "d035fb2b0ba4e4a2e1663e7ee0ac0fc021c7401dca2b3ec65c41d0e2c2ef880a",
+      "bytes": 240897,
+      "author": "Kuber Mehta",
+      "text_change": "Only the visible byline changes from Kuber to Kuber Mehta.",
+      "rendered_differences": [
+        {
+          "page": 1,
+          "changed_pixel_bbox": [
+            395,
+            247,
+            498,
+            261
+          ]
+        },
+        {
+          "page": 2,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 3,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 4,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 5,
+          "changed_pixel_bbox": null
+        }
+      ]
+    },
+    {
+      "pdf": "public/research/local-learning.pdf",
+      "pages": 4,
+      "previous_sha256": "3c9bb2ebf423f02ba4770754ecea5c68aa7d20f4fb38051f3bdf9bbba43d0cbf",
+      "sha256": "c4021be7b33d9a08d6fb7e624d6405ad23e799d879ef9716b7ca2b4930342608",
+      "bytes": 454730,
+      "author": "Kuber Mehta",
+      "text_change": "Only the visible byline changes from Kuber to Kuber Mehta.",
+      "rendered_differences": [
+        {
+          "page": 1,
+          "changed_pixel_bbox": [
+            395,
+            247,
+            498,
+            261
+          ]
+        },
+        {
+          "page": 2,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 3,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 4,
+          "changed_pixel_bbox": null
+        }
+      ]
+    },
+    {
+      "pdf": "public/research/wiring-controls.pdf",
+      "pages": 5,
+      "previous_sha256": "7b1069907c3278573db44feceecf2a2292f6db41ea33245edb034308af5df177",
+      "sha256": "a677b7237dc6fc933b62447395688424aa60582c6b4d0931d37937c89b2a30a2",
+      "bytes": 527913,
+      "author": "Kuber Mehta",
+      "text_change": "Only the visible byline changes from Kuber to Kuber Mehta.",
+      "rendered_differences": [
+        {
+          "page": 1,
+          "changed_pixel_bbox": [
+            395,
+            247,
+            498,
+            261
+          ]
+        },
+        {
+          "page": 2,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 3,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 4,
+          "changed_pixel_bbox": null
+        },
+        {
+          "page": 5,
+          "changed_pixel_bbox": null
+        }
+      ]
+    }
+  ],
+  "scope": "Author credit and PDF metadata only; research text, layout and results unchanged.",
+  "visual_review": "All four changed first pages inspected; all remaining rendered pages are pixel-identical to the reviewed preceding release."
+}
