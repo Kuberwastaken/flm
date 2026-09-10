@@ -13,7 +13,7 @@ This note records the data transformations, split boundaries, tokenizer, checkpo
 \section{Dataset choice}
 The initial question concerned learning from a small amount of human speech. AMI provides human meeting transcripts, but a meeting-only model is narrow and its custom participant-disjoint split is not a standard language-model benchmark. The expanded study therefore adopts WikiText-2 raw \cite{wikitext,wikitextcard}: diverse human-written articles with official partitions and an established language-modeling lineage. This changes the domain from spoken conversation to written prose; it must not be described as an improvement in speech understanding.
 
-WikiText-2 is small enough for repeated local training, yet broad enough to expose vocabulary, punctuation, long-document structure and several topic domains. It is not a balanced sample of all human language. BabyLM's small-data framing is a useful next extension \cite{babylm}, but no BabyLM content is included in the current experiment. A future mixture requires separate component-level licenses, provenance and evaluation rules.
+WikiText-2 is small enough for repeated local training, yet broad enough to expose vocabulary, punctuation, long-document structure and several topic domains. It is not a balanced sample of all human language. The continuing program therefore adds BabyLM's standard 10M- and 100M-word corpora \cite{babylm}. Acquisition, tokenization and overlap audits are complete; their language-training results are a separate experiment and are not included in the WikiText scores.
 
 \section{Pinned acquisition and article boundaries}
 The source is Salesforce's WikiText distribution, configuration \code{wikitext-2-raw-v1}. The pinned revision is:
@@ -58,6 +58,30 @@ AMI annotations release 1.6.2 provides manual meeting transcripts under CC BY 4.
 
 The AMI path lowercases and linearizes transcript turns with local speaker labels. Overlapping speech becomes an ordered text sequence. These are custom language-model partitions, not the official AMI speech-recognition benchmark. No audio is fed to FLM. The AMI byte vocabulary uses raw byte IDs 0--255 and boundaries 256/257, and its browser checkpoint is identified separately from WikiText. AMI and WikiText adapters cannot be interchanged because their hashes, feature dimensions and vocabularies differ.
 
+\section{BabyLM: mixed language at two data scales}
+All 24 official BabyLM 2026 English files are acquired at immutable repository revisions. They comprise Strict-Small and Strict training plus common development and test partitions. Git blob or LFS identities, source bytes and locally computed SHA-256 hashes are checked. The acquisition totals 706,177,689 bytes. Source components are BNC spoken, CHILDES, Gutenberg, OpenSubtitles, Simple Wikipedia and Switchboard. The training repository metadata advertises MIT, but this does not replace component rights; no raw text is redistributed.
+
+The advertised training budgets correspond exactly to measured whitespace-delimited words: 10,000,000 and 100,000,000. A single 4,096-ID byte-level BPE vocabulary is fitted only to the 10M training partition and reused at both scales. It reconstructs every encoded block's original bytes. No normalization, speaker-marker removal or heading cleanup is applied. The publisher's prior toxicity/bias filtering is distinct from FLM preprocessing and does not establish that the resulting corpus is unbiased.
+
+\begin{table}[ht]\centering
+\begin{tabular}{lrrr}\toprule
+Partition & Blocks & Text tokens & UTF-8 bytes\\\midrule
+10M training & 3,351 & 18,591,514 & 54,399,840\\
+100M training & 33,433 & 189,709,779 & 543,302,195\\
+Validation & 3,495 & 19,713,480 & 56,752,783\\
+Test & 3,187 & 18,177,107 & 51,722,871\\\bottomrule
+\end{tabular}
+\caption{Completed BabyLM encoding. Word budgets and model-token counts differ. Boundary IDs are excluded from the text-token column.}
+\end{table}
+
+The training sources have no blank document separators. Consecutive complete lines are grouped at a 16,384-byte target without crossing source files; oversized individual lines remain intact. Every source byte appears in exactly one block. These computational boundaries are not inferred books or conversations. Each block records source hash, byte offsets, line range, token range and text hash. Tokens use little-endian uint16 memory maps with separate offsets and metadata. Sampling converts only the selected mini-batch to int64. Tests establish identical sampled inputs and likelihoods to an in-memory int64 representation.
+
+The cross-partition audit hashes complete lines after whitespace collapse and casefolding, requiring at least eight words and 40 characters. The 10M training partition matches 289 validation and 1,995 test line occurrences; the 100M partition matches 9,083 and 7,459 respectively. These include potentially common language. Shorter or partial matches and near-duplicates are not covered.
+
+Official partitions remain unchanged for the primary benchmark. A secondary analysis excludes any validation/test block containing a substantial line seen in either training partition. This fixed union excludes 587 validation blocks (9,590,905 bytes) and 659 test blocks (10,759,157 bytes). Whole-block exclusion deliberately avoids splicing new contexts, but changes the domain mixture and can discard much more text than the matched lines themselves. Both architectures and data scales use identical exclusions; neither resulting subset is certified contamination-free.
+
+Before training, eight validation blocks per component are selected by SHA-256 of stable IDs, for a 48-block panel and up to 1,024 scored target positions per block. Seven panel blocks contain audited overlap; selection uses the official panel, with that fact recorded. The compact study assigns 12,000 updates to each of FLM, GRU and transformer at seeds 42 and 43, with the same batch, sequence length, warmup positions and optimizer as WikiText. Its 18,432,000 presented-token budget is about 0.99 times the 10M text-token count and 0.097 times the 100M count, sampled with replacement. This is a fixed-exposure data-diversity comparison, not equal epochs or complete one-pass coverage.
+
 \section{Connectome and body provenance}
 The graph snapshot is pinned to revision \code{776d115ee5aa934578a87fd6d260d138084f59c1} of the public source representation. Acquisition checks 29 required files and reconstructs verified sparse arrays. Counts are 166,700 neurons, 25,582,938 directed neuron-pair edges and 124,177,617 contacts. The complete extraction is distinct from the trained central subset of 1,024 neurons and 76,130 edges.
 
@@ -97,7 +121,7 @@ Command & Purpose\\\midrule
 
 Raw corpora, complete graph downloads and training intermediates stay in ignored local directories. Compact graph assets, tokenizer metadata, browser packages, reports and meaningful code changes are versioned in sequential commits. GitHub Pages hosts the generated public interface at \url{https://flm.kuber.studio}; the source repository remains private. No API secret or remote language service is needed for browser inference.
 
-The working release still requires completion of the main training study, final test publication and broader mechanism controls. Those gaps are stated in the report and website. Reproducibility is evidence that the specified computation was performed; it is not evidence that the computation reproduces an animal's cognition.
+The continuing program includes completed-checkpoint language comparisons, larger-data training, alternative learning rules and learned sensorimotor interfaces. Each stage retains separate provenance and evaluation. Reproducibility is evidence that the specified computation was performed; it is not evidence that the computation reproduces an animal's cognition.
 
 \begingroup\raggedright
 \bibliographystyle{plain}
