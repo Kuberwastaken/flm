@@ -58,6 +58,15 @@ the full checkout. The archive itself supports rebuilding the papers from their
 included LaTeX, tables and figures with `python scripts/build_papers.py`; no model
 weights or raw corpora are required for that build.
 
+The archive additionally includes the SCAN preparation note, source audit,
+tokenizer, codec checks and figure generator. From a fresh extraction, run
+`python -m flm.scan` to acquire its nine hash-pinned source files, then
+`python -m unittest discover -s tests -p test_scan.py` and
+`python scripts/scan_data_report.py`. This reproduces data measurements and
+figures, not a fitted instruction model. It needs NumPy, tokenizers 0.22.2 and
+Matplotlib 3.10.9. The command data are acquired from the publisher rather than
+embedded in the archive.
+
 The wiring-controls note has five reviewed pages, including its references.
 Its numerical include and three figures are bound to the verified sixty-run
 summary. To rebuild it after reproducing those runs:

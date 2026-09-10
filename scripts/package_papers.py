@@ -15,7 +15,7 @@ def main():
         'research_figures.py', 'continuing_figures.py', 'behavior_figures.py',
         'physical_choice_report.py', 'choice_paper_data.py', 'build_papers.py',
         'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py',
-        'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py')]
+        'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py', 'scan_data_report.py')]
     files += [ROOT / name for name in ('README.md', 'LICENSE', 'pyproject.toml',
         'docs/figures/readme_figures.py', 'public/research/test-results.json',
         'public/brand/provenance.json', 'docs/RESEARCH-PROGRAM.md', 'docs/INFERENCE-BUNDLE.md',
@@ -25,7 +25,13 @@ def main():
         'reports/wiring-learning/summary.json', 'reports/wiring-learning/paper-inputs.json',
         'docs/CLOSED-LOOP-PROTOCOL.md', 'docs/CLOSED-LOOP-REPRODUCTION.md',
         'public/research/closed-loop.json', 'public/research/closed-loop.csv',
-        'reports/embodiment/closed-loop/paper-inputs.json')]
+        'reports/embodiment/closed-loop/paper-inputs.json',
+        'docs/INSTRUCTION-TRANSFER.md', 'data/cards/scan.json',
+        'reports/scan/data-preparation.json', 'public/research/scan-data.json',
+        'public/research/figures/scan-data.png', 'public/research/figures/scan-data.svg',
+        'flm/__init__.py', 'flm/scan.py', 'flm/scan_task.py', 'flm/provenance.py',
+        'flm/tokenizer.py', 'tests/test_scan.py',
+        'data/tokenizers/wikitext2-4096/tokenizer.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

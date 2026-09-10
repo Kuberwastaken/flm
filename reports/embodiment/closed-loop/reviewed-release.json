@@ -55,8 +55,8 @@
       "sha256": "b0b5d692d64f1eeaa38ca321d24abe95f3f9e7f93e0d1f59546b6503399f5ce1"
     },
     "public/research/paper-source.zip": {
-      "bytes": 5058372,
-      "sha256": "229cec1eabe5a404c4609e76670d2c0d1e9a5b742428bd15abe25544889ece9c"
+      "bytes": 6135358,
+      "sha256": "c53481668b7bb1abca799dcb7567ac9a57eb3d09118ec0343c1ec9c6147a2e1a"
     },
     "public/research/closed-loop.mp4": {
       "bytes": 2120872,
@@ -111,5 +111,11 @@
     "payloads": 95,
     "fresh_extraction_chart_reproduction": true,
     "archive_rebuild_byte_identical": true
+  },
+  "source_archive_scan_extension": {
+    "verified_utc": "2026-09-10T12:26:49.620169+00:00",
+    "payloads": 111,
+    "fresh_data_acquisition_and_figure_reproduction": true,
+    "physical_pdf_and_record_archive_unchanged": true
   }
 }

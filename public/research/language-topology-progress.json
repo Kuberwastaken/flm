@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-10T11:36:59.231096+00:00",
+  "snapshot_utc": "2026-09-10T12:23:26.267897+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 3,
@@ -312,7 +312,7 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s42",
       "reference": false,
-      "saved_step": 1000,
+      "saved_step": 3000,
       "complete": false,
       "validation": [
         {
@@ -324,6 +324,26 @@
           "step": 1000,
           "bits_per_byte": 2.1427994350446387,
           "token_perplexity": 200.41782139909654
+        },
+        {
+          "step": 1500,
+          "bits_per_byte": 2.0719908914696306,
+          "token_perplexity": 168.21670971212166
+        },
+        {
+          "step": 2000,
+          "bits_per_byte": 2.023000205943448,
+          "token_perplexity": 149.01847399097687
+        },
+        {
+          "step": 2500,
+          "bits_per_byte": 1.994932820869632,
+          "token_perplexity": 139.02351903452288
+        },
+        {
+          "step": 3000,
+          "bits_per_byte": 1.971245411499298,
+          "token_perplexity": 131.11177639151222
         }
       ]
     },
@@ -410,9 +430,30 @@
       "graph": "data/graphs/central-1024-null101/graph.npz",
       "output": "runs/language-topology-v1/null101-s43",
       "reference": false,
-      "saved_step": 0,
+      "saved_step": 2000,
       "complete": false,
-      "validation": []
+      "validation": [
+        {
+          "step": 500,
+          "bits_per_byte": 2.280916065282344,
+          "token_perplexity": 282.03975015036724
+        },
+        {
+          "step": 1000,
+          "bits_per_byte": 2.1256108769117263,
+          "token_perplexity": 192.07518283112086
+        },
+        {
+          "step": 1500,
+          "bits_per_byte": 2.0623176124799736,
+          "token_perplexity": 164.2394418125776
+        },
+        {
+          "step": 2000,
+          "bits_per_byte": 2.0185631190751114,
+          "token_perplexity": 147.39186041999943
+        }
+      ]
     },
     {
       "label": "null103-s43",

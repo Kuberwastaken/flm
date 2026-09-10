@@ -1,0 +1,73 @@
+{
+  "verified_utc": "2026-09-10T12:26:49.620169+00:00",
+  "stage": "Data preparation; no neural SCAN scores or physical instruction execution",
+  "source_revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+  "tests_passed": 13,
+  "canonical_encodings_checked": 20910,
+  "figure_visually_reviewed": true,
+  "fresh_source_extraction": {
+    "payloads": 111,
+    "all_payload_hashes_checked": true,
+    "acquired_sources_from_publisher": true,
+    "data_tests_and_figure_reproduction_passed": true,
+    "byte_identical_outputs": [
+      "data/cards/scan.json",
+      "reports/scan/data-preparation.json",
+      "public/research/scan-data.json",
+      "public/research/figures/scan-encoding.csv",
+      "public/research/figures/scan-data.png",
+      "public/research/figures/scan-data.svg"
+    ]
+  },
+  "local_markdown_links_checked": 62,
+  "frozen_language_and_physical_sources_unchanged": true,
+  "archive": {
+    "bytes": 6135358,
+    "sha256": "c53481668b7bb1abca799dcb7567ac9a57eb3d09118ec0343c1ec9c6147a2e1a",
+    "repack_byte_identical": true
+  },
+  "readme_sha256": "c4617a73e3f9769a7e84b610518a65bb8b72d5dcf78f95da048743487ecb6422",
+  "files": {
+    "data/cards/scan.json": {
+      "bytes": 15226,
+      "sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292"
+    },
+    "reports/scan/data-preparation.json": {
+      "bytes": 20066,
+      "sha256": "76d3f7800eef904d6569adadc33c785032785dbc8e88c1d12f7ca911ec1e7c2a"
+    },
+    "public/research/scan-data.json": {
+      "bytes": 20066,
+      "sha256": "76d3f7800eef904d6569adadc33c785032785dbc8e88c1d12f7ca911ec1e7c2a"
+    },
+    "public/research/figures/scan-encoding.csv": {
+      "bytes": 1554269,
+      "sha256": "b05ef75a46e9789a3c18a6e8a14cadfce01d43e0b516c5160e044d72324a33a6"
+    },
+    "public/research/figures/scan-data.png": {
+      "bytes": 123937,
+      "sha256": "c4454cdd49dc73dd247005b5710dc53ea931cdc1daa851bc347f41bb40ba76b1"
+    },
+    "public/research/figures/scan-data.svg": {
+      "bytes": 39675,
+      "sha256": "2cfc524c8b91e42dd05fa327122af4d887fec05eab176ecdb6cab0cd1ee1fbd9"
+    }
+  },
+  "public_markdown_links_checked": [
+    "scan-data-card.json",
+    "../licenses/SCAN-BSD.txt",
+    "figures/scan-data.png",
+    "scan_data_report.py",
+    "figures/scan-encoding.csv",
+    "scan-data.json"
+  ],
+  "production_build": {
+    "passed": true,
+    "known_javascript_chunk_warning_kb": 564.28
+  },
+  "topology_snapshot": {
+    "snapshot_utc": "2026-09-10T12:23:26.267897+00:00",
+    "completed_new_runs": 3,
+    "test_status": "Pending all eight new runs and frozen checkpoint selections"
+  }
+}

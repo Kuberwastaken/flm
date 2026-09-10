@@ -11,6 +11,15 @@ await copyFile('docs/WIRING-RESULTS.md', 'public/research/wiring-results.md');
 await copyFile('docs/INFERENCE-BUNDLE.md', 'public/research/inference-guide.md');
 await copyFile('docs/CLOSED-LOOP-PROTOCOL.md', 'public/research/closed-loop-protocol.md');
 await copyFile('docs/CLOSED-LOOP-REPRODUCTION.md', 'public/research/closed-loop-reproduction.md');
+await copyFile('data/cards/scan.json', 'public/research/scan-data-card.json');
+await copyFile('scripts/scan_data_report.py', 'public/research/scan_data_report.py');
+let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
+for (const [source, target] of [
+  ['../data/cards/scan.json', 'scan-data-card.json'],
+  ['../public/research/', ''],
+  ['../scripts/scan_data_report.py', 'scan_data_report.py'],
+]) instructionNote = instructionNote.replaceAll(source, target);
+await writeFile('public/research/instruction-transfer.md', instructionNote);
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
   await copyFile(source, target);
 const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name));
