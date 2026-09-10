@@ -38,7 +38,7 @@ The [language topology protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) holds the r
 
 Two further models are retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All checkpoint selections must be frozen before any new control test losses are read. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated validation snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
 
-After this comparison, [proposed language controls](docs/LANGUAGE-CORE-CONTROLS.md) would freeze recurrent dynamics while learning the interfaces, and separately remove lateral recurrence. These are future experiments. Existing recurrence-disabled interventions retain fast/slow state; they are not memoryless controls.
+The [follow-up language controls](docs/LANGUAGE-CORE-CONTROLS.md) now have separate [implementations](flm/language_core_controls.py) for fixed dynamics, no lateral recurrence and no temporal state, with nine passing fixture tests. Their training/evaluation harness and language fits remain pending; topology stays the priority. Removing lateral recurrence retains fast/slow memory; the no-temporal-state control resets both states for every token.
 
 ## How FLM predicts a token
 
