@@ -112,7 +112,7 @@ def score_study(root):
         validate_score(result['score'], documents, lexicon); results.append(result)
         print(f'{selected["label"]}: {result["score"]["bits_per_byte"]:.6f} test bits/byte', flush=True)
     report = dict(study='Language topology and retrained slow-state comparison', runs=results,
-        selection_sha256=selection_hash, **summarize(results),
+        selection_sha256=selection_hash, study_identity_sha256=frozen['study_identity_sha256'], **summarize(results),
         limitations=['One selected 1024-neuron subset and one corpus; not a whole-brain language result.',
             'Three constrained null graphs and two training seeds; no proven chain mixing or broad topology superiority.',
             'Slow-state control is retrained on measured wiring only; no topology-by-slow-state interaction estimate.',

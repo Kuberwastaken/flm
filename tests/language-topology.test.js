@@ -42,7 +42,7 @@ function completeFixture() {
       topology_contrasts.push({ training_seed: seed, graph_seed: graph, difference_bpb: .1, lower_95: -.01, upper_95: .2 });
     }
   }
-  return { runs, topology_contrasts, slow_state_contrasts, topology_mean_difference_bpb: .1, slow_state_mean_difference_bpb: -.1 };
+  return { study_identity_sha256: 'a'.repeat(64), runs, topology_contrasts, slow_state_contrasts, topology_mean_difference_bpb: .1, slow_state_mean_difference_bpb: -.1 };
 }
 
 test('completed topology display accepts both signs of observed effects', () => {
@@ -50,6 +50,7 @@ test('completed topology display accepts both signs of observed effects', () => 
   assert.equal(validateFinalResults(report), report);
   assert.ok(report.topology_mean_difference_bpb > 0);
   assert.ok(report.slow_state_mean_difference_bpb < 0);
+  assert.throws(() => validateFinalResults(report, 'b'.repeat(64)), /different study/);
 });
 
 test('completed topology display rejects incomplete or inconsistent evidence', () => {

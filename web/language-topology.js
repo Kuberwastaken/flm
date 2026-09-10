@@ -12,7 +12,8 @@ function tableRow(values) {
   return row;
 }
 
-export function validateFinalResults(report) {
+export function validateFinalResults(report, expectedIdentity) {
+  if (!/^[a-f0-9]{64}$/.test(report.study_identity_sha256 ?? '') || (expectedIdentity !== undefined && report.study_identity_sha256 !== expectedIdentity)) throw new Error('Language test results belong to a different study identity.');
   if (!Array.isArray(report.runs) || report.runs.length !== 10) throw new Error('All ten selected language conditions are required.');
   const lookup = new Map(report.runs.map(run => [run.label, run]));
   if (lookup.size !== 10) throw new Error('Duplicate language test condition.');
@@ -47,8 +48,8 @@ export function validateFinalResults(report) {
   return report;
 }
 
-function renderFinalResults(report) {
-  validateFinalResults(report);
+function renderFinalResults(report, expectedIdentity) {
+  validateFinalResults(report, expectedIdentity);
   const runs = report.runs.map(run => tableRow([conditionName(run), run.seed,
     run.checkpoint_step.toLocaleString(), run.score.bits_per_byte.toFixed(4), run.score.token_perplexity.toFixed(2)]));
   const contrasts = [...report.topology_contrasts, ...report.slow_state_contrasts].map(point => tableRow([
@@ -94,7 +95,7 @@ export async function loadLanguageTopology() {
       if (report.completed_new_runs !== 8) throw new Error('The language control study is incomplete.');
       const response = await fetch(`${import.meta.env.BASE_URL}research/language-topology-results.json`);
       if (!response.ok) throw new Error('The completed language test report is unavailable.');
-      renderFinalResults(await response.json());
+      renderFinalResults(await response.json(), report.study_identity_sha256);
     }
   } catch (error) { $('language-topology-status').textContent = error.message; }
 }
