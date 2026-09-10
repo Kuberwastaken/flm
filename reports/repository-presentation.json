@@ -1,0 +1,34 @@
+{
+  "description": "Connectome-constrained recurrent language models, browser inference, and reproducible studies of wiring, learning, and embodied feedback.",
+  "homepageUrl": "https://flm.kuber.studio",
+  "isPrivate": true,
+  "name": "flm",
+  "repositoryTopics": [
+    {
+      "name": "computational-neuroscience"
+    },
+    {
+      "name": "connectomics"
+    },
+    {
+      "name": "language-model"
+    },
+    {
+      "name": "mujoco"
+    },
+    {
+      "name": "pytorch"
+    },
+    {
+      "name": "recurrent-neural-network"
+    },
+    {
+      "name": "reproducible-research"
+    },
+    {
+      "name": "wikitext"
+    }
+  ],
+  "verified_utc": "2026-09-10T11:44:02.310512+00:00",
+  "scope": "User-requested repository description, homepage and topic update. Visibility preserved."
+}

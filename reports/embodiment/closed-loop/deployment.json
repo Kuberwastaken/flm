@@ -1,0 +1,128 @@
+{
+  "verified_utc": "2026-09-10T11:40:43.586823+00:00",
+  "release_commit": "e894f0d30994f239429f7869b82ce27296a00d7d",
+  "site": "https://flm.kuber.studio/",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "e894f0d30994f239429f7869b82ce27296a00d7d",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34472382567",
+    "workflowName": "Verify and publish ChatFLM"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 59154,
+      "sha256": "61f108184af2edad3fb5328ee31d8b6798207be63f9b220d6f47a1c7a7d9e4e7"
+    },
+    {
+      "path": "research/closed-loop.json",
+      "status": 200,
+      "bytes": 50879,
+      "sha256": "4767d5a65a310bbac6ccf787b68a013eb72c9cfd57176f69f6b94f6885d1a9b7"
+    },
+    {
+      "path": "research/closed-loop.csv",
+      "status": 200,
+      "bytes": 3974,
+      "sha256": "ba8875b120c73260fbe119d2629bce65edd4a7bbdfa861f16ed27269ba2c94d8"
+    },
+    {
+      "path": "research/closed-loop-records.zip",
+      "status": 200,
+      "bytes": 45873321,
+      "sha256": "aae603af22f6cce2d519db12c8c91ab3684021e03b5ad57887af8fb689dd589a"
+    },
+    {
+      "path": "research/closed-loop.mp4",
+      "status": 200,
+      "bytes": 2120872,
+      "sha256": "a602579d4d82dcdc6fa6b18be43fce17ed42e267292b3a71d137013287b6f0e7"
+    },
+    {
+      "path": "research/closed-loop-poster.png",
+      "status": 200,
+      "bytes": 77037,
+      "sha256": "3a868d67731c79c8372a4c3238541ad0ac966f1e224709734fb15c7a2af873ff"
+    },
+    {
+      "path": "research/closed-loop.pdf",
+      "status": 200,
+      "bytes": 486295,
+      "sha256": "b0b5d692d64f1eeaa38ca321d24abe95f3f9e7f93e0d1f59546b6503399f5ce1"
+    },
+    {
+      "path": "research/closed-loop-protocol.md",
+      "status": 200,
+      "bytes": 8132,
+      "sha256": "ce3df2000b5261923e3f9260cfbd54930ccdb827fa0709b2978f1551a4e633eb"
+    },
+    {
+      "path": "research/closed-loop-reproduction.md",
+      "status": 200,
+      "bytes": 4978,
+      "sha256": "f11f97cde26498109a946547fc5d1ef4a56b464956eca2e96e2dfb6fef8ea2c2"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 3081561,
+      "sha256": "5a43bb8e97cf4abc3dedb5b2aebe173182d352c7310dafc142564cc84a7000a5"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "status": 200,
+      "bytes": 13147,
+      "sha256": "2a9b77aad3f851f85d5dce1731c2842baccc90d0102017d929ab190e60ccc39c"
+    },
+    {
+      "path": "research/figures/closed-loop-positive.svg",
+      "status": 200,
+      "bytes": 174893,
+      "sha256": "c9bf2c0da2b002c0f95f0392794fad10f39bac6addb04c4b5e8569bc1a069bd1"
+    },
+    {
+      "path": "research/figures/closed-loop-positive.png",
+      "status": 200,
+      "bytes": 135124,
+      "sha256": "4e76e20d19b7784548a5d98c1fa532aa8323dec61cd3a2a11097d76aee74fedc"
+    },
+    {
+      "path": "research/figures/closed-loop-negative.svg",
+      "status": 200,
+      "bytes": 173043,
+      "sha256": "38819c3e2dfbcb89cdc6b30ff42f1bbfdae10617dbd92b3d1a49fdb357947bba"
+    },
+    {
+      "path": "research/figures/closed-loop-negative.png",
+      "status": 200,
+      "bytes": 130512,
+      "sha256": "a6878e1ffd349652053d6b04518a9154b219e9d59b372107097b68fe62ed4bd8"
+    },
+    {
+      "path": "research/figures/closed-loop-switch.svg",
+      "status": 200,
+      "bytes": 172949,
+      "sha256": "1f6023af23ce5d152a74f4bdc732f07965f8f1f005726c21206786fa18e734cf"
+    },
+    {
+      "path": "research/figures/closed-loop-switch.png",
+      "status": 200,
+      "bytes": 141644,
+      "sha256": "94fc9cc5e4f5bf9dad41f70a7d7903df3a15d19f3adfb267fe9450629a9772e2"
+    },
+    {
+      "path": "research/figures/closed-loop-neural.svg",
+      "status": 200,
+      "bytes": 92444,
+      "sha256": "f24b0b9133b0c4f8792efaca7879ccf7a70dba44186d285a8f5f67aacc5aec4c"
+    },
+    {
+      "path": "research/figures/closed-loop-neural.png",
+      "status": 200,
+      "bytes": 174134,
+      "sha256": "ef52034351ea91fd68f314d45093212ef0bb5bd08e23b9659269e937a01b079a"
+    }
+  ]
+}
