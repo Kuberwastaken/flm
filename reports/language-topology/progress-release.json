@@ -1,0 +1,51 @@
+{
+  "verified_utc": "2026-09-10T13:20:25.782396+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "323cd22f833f00057814af2e74e937b939793cbe",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34481745844"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 59931,
+      "sha256": "28be3710ce9a73265233e078ddef05832e353cd6344acd1f969efcd246eaddb5"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 15919,
+      "sha256": "e4dec5deecc29fcef8bb0f998235abbd2dc1cc8df6004b4753946dc66740eba0"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6238865,
+      "sha256": "d9ec184a51aeb4c19c081f5b9da2cc6a92fad12a9077977134e4e6096558cab3"
+    }
+  ],
+  "new_completed_control": {
+    "label": "no-slow-s42",
+    "steps": 6000,
+    "best_validation_bpb": 1.9195409271920543,
+    "best_checkpoint_sha256": "f942650a8d6b3dbc06aef92a9c54216102479cee4404cc86d8e5a36b0cee6041"
+  },
+  "completed_new_controls": 4,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "prepared_final_figure": {
+    "source_sha256": "3365baab07d31524450bf4ae4ba2d38276f1cc2c66daac0b3e0a7605e5a8a372",
+    "tests_passed": 3,
+    "synthetic_layout_visually_reviewed": true,
+    "real_result_figure_published": false
+  },
+  "evaluation_tests_passed": 5,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T13:21:14.603559+00:00",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 4,
+    "no_slow_seed42_validation_visible": 1.9195,
+    "matched_seed42_reference_visible": 1.9097,
+    "final_test_panel_hidden": true,
+    "final_test_panel_has_no_layout": true,
+    "test_rows": 0
+  }
+}
