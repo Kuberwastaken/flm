@@ -121,3 +121,42 @@ four-second end with readyState 4 and no media error. SHA-256 checks match local
 bytes for both learning summaries, the video, four-page PDF, source archive,
 declared learning protocol and BabyLM snapshot. This records the deployed
 snapshot, not completion of the still-running BabyLM training queue.
+
+## Language topology priority and completed wiring diagnostics
+
+On 10 September, the language-control implementation passed 67 Python tests
+and 42 JavaScript tests. New coverage checks independently crossed graph/model
+seeds, identical initial parameters, actual no-slow retraining, graph-buffer and
+RNG/exposure drift on resume, test gating before incomplete runs, complete
+article denominators, and paired-effect signs. The browser comparison tests
+reject mismatched updates and training seeds. The production build succeeds.
+
+Historical/current numerical replay matches exactly for both WikiText seeds:
+initial parameters, ten AdamW updates, sampled text and validation scoring.
+Three independently generated 1,024-node nulls pass every declared invariant.
+The language queue is running; this entry does not report control test scores.
+BabyLM is paused with its first FLM run complete at 12,000 and GRU saved at 6,500.
+
+The completed 60-run cue/context report verifies all checkpoint/report hashes,
+all probability panels, matched sensory streams and initializations, and all 15
+original measured-cue parameter bridges. All four new scientific figures were
+rendered and visually inspected. The source ZIP now has 50 entries with a
+verified SHA-256 manifest; the separate 60-run archive retains every panel.
+
+At desktop width 1280, Research renders eight language-control rows, five
+wiring summaries and fifteen individual seed rows, without duplicate DOM IDs.
+Switching to cue/delay 48 gives BPTT 100% versus 66.67%; restoring context/delay
+8 gives 63.02% versus 76.04%, matching the verified data. The adjacency, context
+accuracy and expanded gradient figures load correctly. At mobile width 390,
+document and scroll widths are both 375 pixels; the 550-pixel language table
+scrolls within its 335-pixel container. No page-wide overflow occurs.
+
+The BabyLM browser model loads its actual checkpoint 12,000 and both 3D views.
+A new 80-token continuation produces 272 UTF-8 bytes, live next-token
+probabilities and nonzero recurrent state. The output contains malformed
+phrases and invented words, retained as generated; this is not evidence of a
+reliable assistant. Switching to WikiText restores a WikiText conversation;
+switching back restores the BabyLM conversation. The numerical/worker tests
+also cover tokenizer parity, generation, controls, adaptation and checkpoint
+isolation for all three browser packages. Temporary viewport overrides are
+reset after responsive review.
