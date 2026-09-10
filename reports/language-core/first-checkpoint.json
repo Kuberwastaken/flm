@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-09-10T19:15:44.201725+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "label": "fixed_dynamics-s42",
+  "step": 500,
+  "checkpoint_sha256": "c9c4d5ae2a9b4e08815773e2fa0395a5b8837579809dadc630f2d9ee6eed6a7e",
+  "manifest_sha256": "7e5a06d16afbfd4685e73bba7c989ff2b24bc84135141209dc94b752c76a3724",
+  "validation_sha256": "d7a12934355c6e371cd6e26599c38b2b44162d6f583fe589bfdc2c385b2d52fd",
+  "allocated_parameters": 600003,
+  "trainable_parameters": 521824,
+  "frozen_parameters": 78179,
+  "all_frozen_tensors_exact_at_initialization": true,
+  "graph_and_pool_buffers_exact": true,
+  "optimizer_settings_moments_inventory_and_steps_verified": true,
+  "sampler_rng_and_exposure_verified": true,
+  "committed_payload_hashes_verified": true,
+  "exposure": {
+    "presented_tokens": 768000,
+    "presented_bytes": 2714463,
+    "scored_bytes": 2263930
+  },
+  "validation_bpb": 2.299992672132178,
+  "new_test_scores_available": false,
+  "scope": "First committed checkpoint verified; this is not a completed run or a comparative language result."
+}

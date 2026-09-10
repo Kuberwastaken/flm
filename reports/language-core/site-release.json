@@ -1,0 +1,92 @@
+{
+  "verified_utc": "2026-09-10T19:14:19.784601+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "0a3de1f49592014f8cf1c0ec6f72914c4bebe4f6",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34518895446"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 62769,
+      "sha256": "15662d815e222ddf012a0b15f80903d0d5f88d3c15e4b2a75e71eab60f922d32"
+    },
+    {
+      "path": "research/language-core-controls.md",
+      "bytes": 6304,
+      "sha256": "0512241a4312ef464f7be63e22f479cba971fe49c20b3e195ea22cc5d9af90a4"
+    },
+    {
+      "path": "research/language-core-protocol.md",
+      "bytes": 10567,
+      "sha256": "22b8af7692588d163433c18c21c5744f6fde510d237ec9a5df6a326b67c50b1d"
+    },
+    {
+      "path": "research/language-core-identity.json",
+      "bytes": 61180,
+      "sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee"
+    },
+    {
+      "path": "research/language-core-software-preflight.json",
+      "bytes": 2320,
+      "sha256": "23c46d9aca5c20c36d3b8d196df2b72b3081fb3e72792c14d0e21db972463de8"
+    },
+    {
+      "path": "research/language-core-replay-diagnostic.json",
+      "bytes": 1469,
+      "sha256": "f1140d6733c0613a81f7fb45d1ce7205dd6a7b2687f4d5a8097391565bdfe41d"
+    },
+    {
+      "path": "research/language_core_controls.py",
+      "bytes": 5539,
+      "sha256": "39f7952630c6eb6694efcd4a37e3b3ac16b85ff80df7e846e0b9bb3fe15dd0c1"
+    },
+    {
+      "path": "research/language_core_train.py",
+      "bytes": 13988,
+      "sha256": "0159e9da3b22935bdb065bea094e9d57e4f5f3a84d30f2965b7d11e657b0a8af"
+    },
+    {
+      "path": "research/language_core_study.py",
+      "bytes": 19691,
+      "sha256": "d93d7dd7306bba3598c2699f49a5e480cff98c4e5605e59baec63e815a70b98c"
+    },
+    {
+      "path": "research/language_core_test.py",
+      "bytes": 7010,
+      "sha256": "d1be5599f729834acf9b8ec753df302d37d8f64cb232f0f397a0f0859688cfd9"
+    },
+    {
+      "path": "research/language-topology-results.json",
+      "bytes": 151185,
+      "sha256": "2bcfb603f79465da0327c134303f177b443ffa72d4e45965459dbf7dee402c98"
+    },
+    {
+      "path": "research/flm.pdf",
+      "bytes": 735880,
+      "sha256": "d1d88dfad5a408617394e5a48284052c51a3c5af1698a2feb190ec1a553d7f85"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "new_language_test_results_available": false,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T19:14:48.623Z",
+    "url": "https://flm.kuber.studio/#research",
+    "six_fit_training_status_visible": true,
+    "protocol_href": "/research/language-core-protocol.md",
+    "test_results_pending_explicit": true,
+    "retained_topology_test_rows": 10,
+    "retained_topology_interval_rows": 8,
+    "topology_score_download_visible": true,
+    "topology_inference_download_visible": true,
+    "mean_topology_display": "+0.001559",
+    "mean_slow_state_display": "-0.010999",
+    "page_width": 598,
+    "viewport_width": 614
+  },
+  "completed_topology_release_proof": "reports/language-topology/final-release.json"
+}
