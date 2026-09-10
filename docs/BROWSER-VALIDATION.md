@@ -170,3 +170,26 @@ local SHA-256 hashes byte for byte. The 71-entry wiring archive passes its CRC
 check. The first language null run has also saved update 1,000 locally; that
 later training progress is not retroactively part of the published 500-update
 snapshot. No new control test loss has been scored.
+
+## Wiring paper and completed-result gate
+
+The five-page wiring-controls note is built from the reverified sixty-run
+summary. Its generated table, three figures and source inputs have recorded
+hashes. All five final page renders were inspected; the final LaTeX log has no
+overflow or unresolved references. The reviewed PDF SHA-256 is
+`7b1069907c3278573db44feceecf2a2292f6db41ea33245edb034308af5df177`.
+The source archive now contains 57 source files plus its verified manifest.
+
+The full JavaScript suite passes 44 tests. New checks reject missing or duplicate
+conditions, incomplete article coverage, invalid checkpoints, wrong contrast
+signs, inconsistent means and a result from a different study identity. The
+three targeted Python scoring tests pass, including rejection before test-cache
+decoding when any control is incomplete. The production build succeeds.
+
+The preview shows the actual matched 2,000-update validation pair and keeps the
+completed-test block hidden. Both links to the new wiring PDF are present, with
+no duplicate DOM IDs. The completed-result tables await real test data for their
+browser review; fixture checks are not presented as observed language outcomes.
+An attached finalizer waits on the actual training process before invoking the
+strict completion/selection gate and scoring pipeline. Training remains the
+only active writer of control checkpoints.

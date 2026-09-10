@@ -5,7 +5,9 @@ isolated CPU measurements and acute mechanism/physical controls.
 `data-and-reproduction.tex` records source transformations, completed BabyLM
 preparation and reproduction boundaries. `local-learning.tex` reports fifteen
 learning-rule runs and forty physical choice replays, including negative results.
-All three remain working reports for a continuing research program; larger-data
+`wiring-controls.tex` adds the complete sixty-run topology/context experiment
+and exact-versus-local gradient diagnostics. All four remain working reports
+for a continuing research program; larger-data
 training, closed-loop neural control and learned gait policies are separate stages.
 
 ```sh
@@ -41,7 +43,23 @@ The local-learning note has four reviewed pages. Its tables are generated from
 the checked choice summaries, and its figures show all three seeds' mean and
 observed range. After updating reviewed sources, run
 `python scripts/package_papers.py` to create the public source ZIP with a SHA-256
-manifest. The archive includes all three LaTeX sources, their included figures,
+manifest. The archive includes all four LaTeX sources, their included figures,
 generating scripts and published figure CSVs; raw corpora and checkpoints are
 excluded. Re-running numerical studies requires the repository and environments
 described in the main README.
+
+The wiring-controls note has five reviewed pages, including its references.
+Its numerical include and three figures are bound to the verified sixty-run
+summary. To rebuild it after reproducing those runs:
+
+```sh
+python -m flm.wiring_report
+python scripts/wiring_figures.py
+python scripts/wiring_paper_data.py
+python scripts/build_papers.py --only wiring-controls
+```
+
+The language topology comparison remains pending. This note does not present
+toy-task outcomes as answers to the language-prior question. The separate
+language test view is implemented behind the complete-study gate and will be
+reviewed with actual test data after the eight new controls finish.

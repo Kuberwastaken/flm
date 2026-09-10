@@ -89,3 +89,11 @@ this hash-bound experiment and deliberately reject changed data, graph,
 numerical source or checkpoint identities. Independent replications need their
 own declared identities and freshly trained references, not edits to these
 frozen records.
+
+A finalizer is attached to the verified running language-training process.
+After that specific process exits, it invokes the strict all-runs selection
+gate, complete test scoring and the dated snapshot writer. An incomplete or
+changed run stops it before new test losses are read. There is no second training
+writer. On recovery, inspect both the training queue and finalizer before
+launching either again. Completed results still require scientific review and
+browser validation before their next deployment.

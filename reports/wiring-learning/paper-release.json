@@ -1,0 +1,15 @@
+{
+  "pdf": "public/research/wiring-controls.pdf",
+  "pdf_sha256": "7b1069907c3278573db44feceecf2a2292f6db41ea33245edb034308af5df177",
+  "bytes": 527579,
+  "pages": 5,
+  "paper_input_sha256": "d8591f4cd0deda0687f7b3aa5eaff23c5281a33d5fedf7ef638e26d54b4fe5d9",
+  "sources": {
+    "papers/wiring-controls.tex": "d803b9766ec28d7c137b1d95df01c7e20850e64739264020288c693a69d8bb9c",
+    "papers/wiring-measured.tex": "86860ac0e9d579b57b852154f5950d8de9f88008dc8a8e224c05e1c750f61df9",
+    "papers/style.tex": "ed3a4aff472c695a596976af7ad97984606f9a3376f63e9e5335913332aa57dc",
+    "papers/references.bib": "ed8838ffe3345a8646964d16f4b99f64fd1cfa3bb8afe4323d5cecf6c2d9cc20"
+  },
+  "review": "All five final rendered pages inspected; no overflow or unresolved-reference warnings.",
+  "language_topology_test_status": "Pending"
+}
