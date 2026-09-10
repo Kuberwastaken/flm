@@ -13,12 +13,16 @@ def main():
     files += [ROOT / 'scripts' / name for name in (
         'research_figures.py', 'continuing_figures.py', 'behavior_figures.py',
         'physical_choice_report.py', 'choice_paper_data.py', 'build_papers.py',
-        'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py')]
+        'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py',
+        'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py')]
     files += [ROOT / name for name in ('README.md', 'pyproject.toml', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
         'public/research/learned-choice.json', 'docs/WIRING-RESULTS.md',
         'docs/WIRING-LEARNING-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-PROTOCOL.md',
-        'reports/wiring-learning/summary.json', 'reports/wiring-learning/paper-inputs.json')]
+        'reports/wiring-learning/summary.json', 'reports/wiring-learning/paper-inputs.json',
+        'docs/CLOSED-LOOP-PROTOCOL.md', 'docs/CLOSED-LOOP-REPRODUCTION.md',
+        'public/research/closed-loop.json', 'public/research/closed-loop.csv',
+        'reports/embodiment/closed-loop/paper-inputs.json')]
     contents = {path.relative_to(ROOT).as_posix(): path.read_bytes() for path in files}
     manifest = {name: {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
                 for name, data in sorted(contents.items())}

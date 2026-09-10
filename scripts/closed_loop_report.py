@@ -125,6 +125,8 @@ def main():
     for name in ['docs/CLOSED-LOOP-PROTOCOL.md','docs/LOCAL-LEARNING-PROTOCOL.md',
                  'docs/CLOSED-LOOP-REPRODUCTION.md','scripts/audit_feedback_release.py',
                  'LICENSE','licenses/CC-BY-4.0.txt','licenses/DATA-ATTRIBUTION.md',
+                 'licenses/Body-MIT.txt','licenses/Body-Apache-2.0.txt',
+                 'licenses/BODY-PROVENANCE.md','licenses/Neural-Canvas-LICENSE.txt',
                  'experiments/embodiment/choice_runtime.py','experiments/embodiment/feedback.py',
                  'experiments/embodiment/closed_loop.py','experiments/embodiment/calibrate.py',
                  'experiments/embodiment/verify_feedback.py','scripts/closed_loop_report.py',
