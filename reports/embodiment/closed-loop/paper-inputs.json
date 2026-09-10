@@ -1,0 +1,8 @@
+{
+  "candidate_json_sha256": "4767d5a65a310bbac6ccf787b68a013eb72c9cfd57176f69f6b94f6885d1a9b7",
+  "identity_sha256": "438a901ba2c75fd529738904cd46425e069bbb8ecc283718d1206d3bc6ef26af",
+  "complete_conditions": 27,
+  "trained_live_paths_identical_to_scripted": 9,
+  "distinct_recorded_physical_paths": 7,
+  "generator_sha256": "c6a448ff117f2eedaa10975a68d234261601e72829ec483fd8fa7b04cca15817"
+}

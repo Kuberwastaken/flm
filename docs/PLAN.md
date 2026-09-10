@@ -40,8 +40,8 @@ All six WikiText runs completed 6,000 updates. Frozen validation-selected checkp
 Remaining work centers on the continuing program: complete the twelve BabyLM
 runs and component-level held-out evaluation; train matched rewired and disabled
 mechanism controls before attributing benefits to anatomy; strengthen the
-completed forward-learning comparison with harder memory tasks; extend the
-learned-choice physics interface to online sensory feedback; and profile larger
+completed forward-learning comparison with harder memory tasks; test language-
+to-control transfer and online motor learning; and profile larger
 configurations before committing long runs. Extend grammar diagnostics and
 generation analysis without tuning on their evaluation scores. Updated model
 cards, figures, papers, browser checks and deployment evidence accompany each
@@ -69,8 +69,8 @@ the protocol. This establishes neither an anatomical advantage nor learned gait
 or language-to-motor transfer. The subsequent 60-run wiring/context study is now
 complete, with shared initialization, degree/sign/self-edge-preserving controls
 and exact-gradient diagnostics. Its results are mixed across tasks and learning
-rules; they establish no general anatomical advantage. Closed-loop sensory
-coupling remains open.
+rules; they establish no general anatomical advantage. The subsequent online
+pose-feedback assay is described below.
 
 The current priority is the language topology study, declared before fitting
 its controls. Three null graphs are crossed with both original WikiText seeds;
@@ -115,12 +115,19 @@ The release includes the shared tokenizer, graph, runtime, protocol and file
 hashes; access to the private repository is unnecessary for inference. This is
 reproduction work alongside the topology queue, not a new fitted comparison.
 
-The next physical assay now closes the high-level pose-to-neural-choice loop.
-Its declared cohort crosses four fixed cue-model checkpoints with live/frozen
-pose and three waypoint scenarios, plus a scripted reference (27 conditions)
-and one exact physical repeat. The first case passed independent causal replay;
-the remaining physical queue is running at lower CPU priority while language
-controls remain first. No language checkpoint, frozen topology input or
-language training schedule changed. Complete-cohort reporting and visual review
-are required before publishing a comparative physical conclusion. Language-to-
-control transfer and online motor learning remain later studies.
+The online pose-feedback assay is complete. All 27 conditions and an exact
+repeat passed independent causal replay. The three trained cue controllers
+match the scripted reference's body trajectory in every scenario; live pose
+improves their tracking relative to frozen pose. There are seven distinct
+physical trajectories across the cohort, not 27 independent motor skills.
+The four-page note, scenario figures, neural state, video and standalone record
+archive retain all outcomes and make the engineered wrapper explicit. A fresh
+archive extraction passes its own NumPy-only audit without the repository.
+No language checkpoint, frozen topology input or language schedule changed.
+Language-to-control transfer and online motor learning remain later studies.
+
+Two of the eight new language controls have now completed training. Null graphs
+101 and 103 at training seed 42 have validation loss 1.9072 and 1.9083 BPB,
+respectively, versus 1.9097 for the measured reference. These small differences
+favor the nulls on validation only; the full test comparison remains gated.
+The scheduler continues graph 107 and the first retrained no-slow-state model.

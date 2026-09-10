@@ -188,6 +188,31 @@ The [four-page working note](public/research/local-learning.pdf) derives the
 normalized-edge eligibility approximation and reports failures, storage costs
 and reproduction details. See [paper build instructions](papers/README.md).
 
+## Online pose feedback
+
+The [closed-loop assay](docs/CLOSED-LOOP-PROTOCOL.md) is complete: 27 physical
+conditions and one exact repeat, with independently replayed sensory inputs,
+neural states and delayed commands. It crosses untrained/BPTT/fixed-core/
+eligibility checkpoints with live or frozen pose in three waypoint scenarios,
+plus a scripted reference. The three trained controllers have identical physical
+paths to that reference in all scenarios. Live feedback lowers their mean
+angular error from 96.41/93.91/100.50 degrees to 7.68/7.26/16.27 degrees for
+positive/negative/switch targets. This establishes a working cue-to-body
+interface, without evidence that training recurrent dynamics was necessary.
+
+All 27 conditions produce seven distinct recorded body paths. The single model
+and physics seed do not support population intervals. These are fixed sensory
+models using simulator ground truth, an engineered deadband and a designed gait;
+they do not use language weights or learn motor behavior during the assay.
+The [four-page note](public/research/closed-loop.pdf) reports every condition.
+The [45.9 MB standalone records archive](https://flm.kuber.studio/research/closed-loop-records.zip)
+contains all trajectories, controllers, parity fixtures, source and licenses.
+See [audit and fresh-physics instructions](docs/CLOSED-LOOP-REPRODUCTION.md).
+
+The separate language topology comparison remains the priority: two of eight
+new controls have completed their 6,000-update budgets. Their test scores remain
+locked until all runs and checkpoint selections are complete. BabyLM stays paused.
+
 ## Verification and layout
 
 ```sh

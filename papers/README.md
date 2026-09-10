@@ -6,9 +6,10 @@ isolated CPU measurements and acute mechanism/physical controls.
 preparation and reproduction boundaries. `local-learning.tex` reports fifteen
 learning-rule runs and forty physical choice replays, including negative results.
 `wiring-controls.tex` adds the complete sixty-run topology/context experiment
-and exact-versus-local gradient diagnostics. All four remain working reports
-for a continuing research program; larger-data
-training, closed-loop neural control and learned gait policies are separate stages.
+and exact-versus-local gradient diagnostics. `closed-loop.tex` adds 27 physical
+pose-feedback conditions, a scripted reference and an exact repeat. All five
+remain working reports for a continuing research program; larger-data training,
+language-to-control transfer and learned gait policies remain later stages.
 
 ```sh
 python -m pip install -e ".[language,research]"
@@ -43,7 +44,7 @@ The local-learning note has four reviewed pages. Its tables are generated from
 the checked choice summaries, and its figures show all three seeds' mean and
 observed range. After updating reviewed sources, run
 `python scripts/package_papers.py` to create the public source ZIP with a SHA-256
-manifest. The archive includes all four LaTeX sources, their included figures,
+manifest. The archive includes all five LaTeX sources, their included figures,
 generating scripts and published figure CSVs; raw corpora and checkpoints are
 excluded. Re-running numerical studies requires the repository and environments
 described in the main README.
@@ -63,3 +64,18 @@ The language topology comparison remains pending. This note does not present
 toy-task outcomes as answers to the language-prior question. The separate
 language test view is implemented behind the complete-study gate and will be
 reviewed with actual test data after the eight new controls finish.
+
+The closed-loop note has four reviewed pages. Its measurements and figures are
+generated only from the complete physical cohort after independent causal replay:
+
+```sh
+python scripts/closed_loop_report.py
+python scripts/feedback_paper_data.py
+python scripts/build_papers.py --only closed-loop
+```
+
+Review all pages before copying the PDF to the public site. The separate records
+ZIP includes the fixed controllers and every body/neural observation; its own
+audit runs from a fresh extraction without repository access. The paper source
+ZIP contains the compact summary and generated tables, without duplicating that
+45.9 MB record archive.
