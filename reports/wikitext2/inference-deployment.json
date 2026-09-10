@@ -88,5 +88,34 @@
     "complete_author_credit": true,
     "temporary_viewport_reset": true
   },
-  "language_controls": "1/8 complete; graph 103 and graph 107 still fitting. New control test scores remain gated."
+  "language_controls": "1/8 complete; graph 103 and graph 107 still fitting. New control test scores remain gated.",
+  "readable_guide_release": {
+    "commit": "7b6cceb55a4bdbba514d072098dc38708498b3bf",
+    "pages_run": 34465038363,
+    "checked_utc": "2026-09-10T10:16:33.267513+00:00",
+    "artifacts": [
+      {
+        "path": "research/inference-guide.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "dbb027f0aa0082e9da1781252b86c626d6fa6c7c84819e44ed8fe640d63cbaea",
+        "bytes": 7134
+      },
+      {
+        "path": "index.html",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "2e00cb6cdb58194ad91733fb7cf6abec088065b675d4e9134d08b7434a39ffec",
+        "bytes": 53989
+      }
+    ],
+    "public_ui": {
+      "navigation_from_research_verified": true,
+      "command_blocks": 6,
+      "author": "Kuber Mehta",
+      "document_title": "Run the comparison models \u2014 FLM"
+    }
+  },
+  "frozen_study_identity_check": {
+    "source_input_and_protocol_hashes_verified": 23,
+    "unchanged": true
+  }
 }
