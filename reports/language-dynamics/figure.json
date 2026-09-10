@@ -1,0 +1,31 @@
+{
+  "study_identity_sha256": "16edbc6063f39deb244cc62622b95070c2a523983551f07633e2e70b578814fd",
+  "summary_sha256": "c82f0ea0e59676af5806f6f430b76065e4d4c4cd77e4b12337db400062b722f0",
+  "plot_source_sha256": "5cd27172cab4a5eb4bee0b6ce6b5c749dc1bc17426921fdf742ca866bc154a8a",
+  "conditions": 7,
+  "plotted_curve_rows": 3598,
+  "directions_per_line": 8,
+  "scope": "Arithmetic mean of per-direction joint RMS; no inferential band or biological time conversion",
+  "files": {
+    "public/research/figures/language-dynamics-pulses.png": {
+      "bytes": 201371,
+      "sha256": "b3536deabe7e70a7cf6d63569d18232c92988c3d1695bd99037c6e0681973325"
+    },
+    "public/research/figures/language-dynamics-pulses.svg": {
+      "bytes": 124416,
+      "sha256": "263e0231a4bdd65e90ef6487ba07dd2154680a7bf8b212295daff730c0dfa2b1"
+    },
+    "public/research/language-dynamics-curves.csv": {
+      "bytes": 480214,
+      "sha256": "07892e3a63a092620b6f5f77ec981465c06fbd2c28375714b599b7443805dc60"
+    },
+    "public/research/language-dynamics-summary.csv": {
+      "bytes": 1205,
+      "sha256": "be39060094d403033209fb7f671659c1c2ee593ef1574444530f314d9d2ba200"
+    },
+    "public/research/language-dynamics-results.json": {
+      "bytes": 58502,
+      "sha256": "c82f0ea0e59676af5806f6f430b76065e4d4c4cd77e4b12337db400062b722f0"
+    }
+  }
+}
