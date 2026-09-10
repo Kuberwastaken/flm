@@ -138,6 +138,8 @@ GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.
 
 Text inference runs in a CPU worker; optional 3D views require WebGL. Conversations and adaptation stay in the browser. A separate output adapter can be reset, saved and exported; it does not modify the bundled checkpoint and is bound to a checkpoint hash. Save session learning before switching models. Adapter changes cannot alter recurrent activity for a fixed input sequence, though they can change generated tokens and therefore later activity. These browser updates are distinct from training the language core or the sensory networks.
 
+A decorative fly types beside the composer during streamed generation. Its motion toggle and reduced-motion support affect only the illustration; it is separate from the 3D anatomy, inference state and physical recordings.
+
 </details>
 
 ## Try FLM, GRU and transformer
@@ -216,7 +218,11 @@ Values are time-mean absolute target-bearing error; lower is better. Each traine
 
 The complete audit independently replays **10,800 control frames and 972 delayed decisions**, plus the separate repeat. The three scripted cases have no invented neural states. The [45.9 MB standalone archive](https://flm.kuber.studio/research/closed-loop-records.zip) includes controllers, parity fixtures, trajectories, source and licenses; its audit works without FlyGym or repository access. See [reproduction instructions](docs/CLOSED-LOOP-REPRODUCTION.md) and the [four-page report](public/research/closed-loop.pdf).
 
-The language weights are not used in this assay, and no motor learning occurs during it. Earlier [40-case physical replays](public/research/learned-choice.json) used choices made before simulation; they remain a separate experiment. ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
+The language weights are not used in this assay, and no motor learning occurs during it.
+
+The [Research view's before/after replay](https://flm.kuber.studio/#research) revisits the earlier [40 sensory-choice trials](public/research/learned-choice.json): five methods, both cues and checkpoints 0/300/600/900 from seed 17. A time scrubber shows recorded position and yaw on two exactly repeated physical paths, retaining wrong choices. Decisions precede simulation; this is a view of existing evidence, not new fitting, food sensing or language-to-action transfer. Inspect the [replay frames and checkpoint identities](public/research/choice-replay.json).
+
+ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
 
 </details>
 
