@@ -134,7 +134,19 @@ $('delete-dialog').addEventListener('close', () => {
   if (!next) newConversation(isLexical ? 'completion' : 'dialogue');
   else { currentId = next.id; lastPrompt = ''; store(); renderConversation(); }
 });
-$('export-chats').onclick = () => download('chatflm-conversations.json', JSON.stringify(conversations, null, 2));
+function showExport(filename, text) {
+  $('export-dialog').dataset.filename = filename;
+  $('export-json').value = text;
+  $('export-status').textContent = `${filename} · ${new TextEncoder().encode(text).length.toLocaleString()} UTF-8 bytes`;
+  $('export-dialog').showModal();
+}
+$('download-export').onclick = () => download($('export-dialog').dataset.filename, $('export-json').value);
+$('copy-export').onclick = async () => {
+  try { await navigator.clipboard.writeText($('export-json').value); $('export-status').textContent = 'JSON copied. Save it in a .json file to import later.'; }
+  catch { $('export-json').focus(); $('export-json').select(); $('export-status').textContent = 'Use Ctrl / ⌘ + C to copy the selected JSON.'; }
+};
+$('export-dialog').addEventListener('close', () => { $('export-json').value = ''; });
+$('export-chats').onclick = () => showExport('chatflm-conversations.json', JSON.stringify(conversations, null, 2));
 async function importFile(input, limit, callback) {
   const file = input.files?.[0]; if (!file) return;
   try { if (file.size > limit) throw new Error('This file is too large.'); await callback(await file.text()); }
@@ -284,7 +296,7 @@ worker.onmessage = ({ data }) => {
     }
   }
   if (data.type === 'adapter') {
-    if (data.destination === 'file') download('flm-local-learning.json', JSON.stringify(data.adapter));
+    if (data.destination === 'file') showExport('flm-local-learning.json', JSON.stringify(data.adapter));
     else try { localStorage.setItem(adapterKey(), JSON.stringify(data.adapter)); notice('Learning saved for this checkpoint. Use Load saved after reopening.'); }
     catch { notice('Browser storage is full or unavailable. Export learning to a file instead.'); }
   }

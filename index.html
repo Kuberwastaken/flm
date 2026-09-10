@@ -139,6 +139,13 @@
   <footer class="footer"><span>FLM 0.2 · Built to be inspected.</span><a href="#research">Methods & evidence</a><a href="https://kuber.studio">Kuber</a></footer>
   <dialog id="rename-dialog"><form method="dialog"><h2>Rename conversation</h2><label for="conversation-name">Name</label><input id="conversation-name" maxlength="120" required><div class="dialog-actions"><button value="cancel" formnovalidate>Cancel</button><button value="save" class="primary">Save</button></div></form></dialog>
   <dialog id="delete-dialog"><form method="dialog"><h2>Delete this conversation?</h2><p>This removes its locally saved text. Export it first if you want a copy.</p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="delete" class="primary">Delete</button></div></form></dialog>
+  <dialog id="export-dialog" aria-labelledby="export-title">
+    <h2 id="export-title">Export JSON</h2>
+    <p>Save the file, or copy its JSON if downloads are unavailable in this browser.</p>
+    <label for="export-json">File contents</label><textarea id="export-json" rows="8" wrap="off" readonly></textarea>
+    <p id="export-status" role="status"></p>
+    <form method="dialog" class="dialog-actions"><button>Close</button><button id="copy-export" type="button">Copy JSON</button><button id="download-export" type="button" class="primary">Save file</button></form>
+  </dialog>
   <noscript>ChatFLM needs JavaScript to run the model in your browser. Research and source are available at github.com/Kuberwastaken/flm.</noscript>
   <script type="module" src="/web/app.js"></script>
 </body>

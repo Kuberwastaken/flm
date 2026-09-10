@@ -34,6 +34,7 @@ export function contextFor(conversation) {
 export function download(name, content, type = 'application/json') {
   const link = document.createElement('a');
   const url = URL.createObjectURL(new Blob([content], { type }));
-  link.href = url; link.download = name; link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  link.href = url; link.download = name; link.hidden = true;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
