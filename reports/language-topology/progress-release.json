@@ -1,10 +1,10 @@
 {
-  "verified_utc": "2026-09-10T13:20:25.782396+00:00",
+  "verified_utc": "2026-09-10T13:44:28.859666+00:00",
   "workflow": {
     "conclusion": "success",
-    "headSha": "323cd22f833f00057814af2e74e937b939793cbe",
+    "headSha": "22260a5295c82b68a3b32c92d340aee7cf87ff38",
     "status": "completed",
-    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34481745844"
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34484328999"
   },
   "artifacts": [
     {
@@ -14,22 +14,32 @@
     },
     {
       "path": "research/language-topology-progress.json",
-      "bytes": 15919,
-      "sha256": "e4dec5deecc29fcef8bb0f998235abbd2dc1cc8df6004b4753946dc66740eba0"
+      "bytes": 16654,
+      "sha256": "c9d2c1f8a669846d24abd528230aeac59e37b057b0714d2c34ee3049d08b0108"
     },
     {
       "path": "research/paper-source.zip",
-      "bytes": 6238865,
-      "sha256": "d9ec184a51aeb4c19c081f5b9da2cc6a92fad12a9077977134e4e6096558cab3"
+      "bytes": 6259716,
+      "sha256": "eaa154d66b3bdf17ac0c012585d9e61af574d68fbe243b3d6b96a8181744b053"
+    },
+    {
+      "path": "research/language-core-controls.md",
+      "bytes": 5254,
+      "sha256": "5c612e181ca51b6d2f69b32e88f7aef928876c6711c5bc4282dd7eca54d4ddd3"
+    },
+    {
+      "path": "research/language_core_controls.py",
+      "bytes": 5539,
+      "sha256": "39f7952630c6eb6694efcd4a37e3b3ac16b85ff80df7e846e0b9bb3fe15dd0c1"
     }
   ],
   "new_completed_control": {
-    "label": "no-slow-s42",
     "steps": 6000,
-    "best_validation_bpb": 1.9195409271920543,
-    "best_checkpoint_sha256": "f942650a8d6b3dbc06aef92a9c54216102479cee4404cc86d8e5a36b0cee6041"
+    "best_validation_bpb": 1.9092395099147477,
+    "best_checkpoint_sha256": "52c29a27b12c825ebb8e27cb22011c5ef5565576e1c9c1f1097049d48d7546ac",
+    "label": "null101-s43"
   },
-  "completed_new_controls": 4,
+  "completed_new_controls": 5,
   "test_status": "Pending all eight new runs and frozen checkpoint selections",
   "prepared_final_figure": {
     "source_sha256": "3365baab07d31524450bf4ae4ba2d38276f1cc2c66daac0b3e0a7605e5a8a372",
@@ -38,12 +48,25 @@
     "real_result_figure_published": false
   },
   "evaluation_tests_passed": 5,
+  "prepared_core_controls": {
+    "definitions_source_sha256": "39f7952630c6eb6694efcd4a37e3b3ac16b85ff80df7e846e0b9bb3fe15dd0c1",
+    "tests_source_sha256": "e3cb2c8f85aa3b99955b815ec80c7b2604cf47aaf7b14062455cee050e7a7f4c",
+    "tests_passed": 9,
+    "fresh_archive_tests_passed": 9,
+    "source_archive_payloads": 128,
+    "source_archive_since_tested_extraction": "Only README changed from four to five complete; all code byte-identical",
+    "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+    "frozen_numerical_sources_and_inputs_unchanged": true,
+    "training_harness_ready": false,
+    "language_fits_started": false
+  },
   "browser_verification": {
-    "verified_utc": "2026-09-10T13:21:14.603559+00:00",
+    "verified_utc": "2026-09-10T13:44:40.165Z",
     "url": "https://flm.kuber.studio/#research",
-    "completed_new_runs_visible": 4,
-    "no_slow_seed42_validation_visible": 1.9195,
-    "matched_seed42_reference_visible": 1.9097,
+    "completed_new_runs_visible": 5,
+    "null101_seed43_validation_visible": 1.9092,
+    "matched_seed43_reference_visible": 1.9107,
+    "measured_minus_null101_seed43_visible": 0.0015,
     "final_test_panel_hidden": true,
     "final_test_panel_has_no_layout": true,
     "test_rows": 0
