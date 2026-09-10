@@ -1,0 +1,34 @@
+{
+  "verified_utc": "2026-09-10T19:24:05.787074+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p \"test_core_inference.py\" -v",
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "exit_code": 0,
+  "torch": "2.8.0+cpu",
+  "fixture": {
+    "models": 8,
+    "neurons": 16,
+    "training_updates": 3,
+    "selection_metadata": "Artificial 500-update records for runtime fixtures; not completed study fits",
+    "threads": 1,
+    "raw_corpus_read": false
+  },
+  "fresh_process_mechanisms": [
+    "full-s43",
+    "fixed_dynamics-s42",
+    "no_lateral-s43",
+    "no_temporal_state-s42"
+  ],
+  "checks": [
+    "All eight fixture models preserve fitted tensors, configs, logits, fast/slow states and parameter counts",
+    "Memoryless prefix invariance and rejection of a temporal configuration substitution",
+    "Frozen initialization tensors verified even after malicious payload/state rehashing",
+    "Graph/pooling changes, nonfinite tensors, optimizer payloads, incomplete inventory and runtime drift rejected",
+    "Four mechanism branches reproduce greedy continuations in fresh processes outside the repository with PYTHONPATH removed"
+  ],
+  "source_sha256": {
+    "flm/core_inference.py": "461035d8afaf15fa54946324952c79f5e97434d6bdff3bb05aaf4ded2a26d52e",
+    "tests/test_core_inference.py": "fad9e4d64490a2250176fcc15003d1a3c9902af9223c8469ebaca4e7b0110465"
+  },
+  "scope": "Runtime software fixtures only. No completed computation-study model bundle has been published; final full-size export and replay remain gated on all fits and scores."
+}
