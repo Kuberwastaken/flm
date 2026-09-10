@@ -6,6 +6,7 @@ import csv
 import hashlib
 import json
 from pathlib import Path
+import platform
 import subprocess
 import sys
 import zipfile
@@ -62,6 +63,7 @@ def main():
         identity_sha256=sha(folder/'identity.json'),protocol_sha256=identity['inputs']['docs/CLOSED-LOOP-PROTOCOL.md'],
         source_report_sha256=sha(complete_path),verifier_sha256=sha(ROOT/'experiments/embodiment/verify_feedback.py'),
         generator_sha256=sha(Path(__file__)),environment=identity['environment'],
+        verification_environment=dict(python=platform.python_version(),numpy=np.__version__),
         neural_models=json.loads((ROOT/'data/controllers/choice-v1/manifest.json').read_text())['models'],
         runtime_parity=complete['runtime_parity'],repeat_arrays_exact=True,rows=rows,contrasts=contrasts,
         identical_physical_trajectory_groups=[v for v in equivalence.values() if len(v)>1],
