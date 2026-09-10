@@ -22,18 +22,29 @@ The [completed 60-run cue/context study](WIRING-RESULTS.md) gives mixed results
 and cannot answer the language claim. Keep its evidence separate from language,
 browser adaptation and physical motor control.
 
-## 1. Complete the shared language reference
+## 1. Preserve the completed shared language reference
 
-Finish both seeds of FLM, GRU and the compact transformer; select on validation;
-score complete test articles; publish paired intervals, samples, actual runtime
-and state storage. Keep negative results visible. Acute recurrence and slow-state
-diagnostics are separate from retrained ablations. Complete the degree/sign-matched
-rewiring experiment before attributing a benefit to anatomical topology.
+Both seeds of FLM, GRU and the compact transformer are complete. Validation-selected
+checkpoints were scored on every test article, with paired article intervals,
+fixed-prompt samples, actual runtime and state storage published. Mean test
+bits/byte are 1.9744 for FLM, 1.9049 for GRU and 1.8767 for the transformer;
+lower is better. Keep that negative comparison visible. The
+[six-model standalone release](INFERENCE-BUNDLE.md) reproduces the published
+continuations without the training corpus or private repository.
+
+Acute recurrence and slow-state diagnostics remain separate from retrained
+ablations. Finish the degree/sign-matched rewiring experiment before attributing
+a benefit to anatomical topology. The [dated progress record](../public/research/language-topology-progress.json)
+tracks completed controls without opening the final test gate early.
 
 ## 2. Scale data and measure domain differences
 
-Acquire the official BabyLM 2026 Strict-Small and Strict corpora at immutable
-revisions, with their common development and test partitions. The six components
+The official BabyLM 2026 Strict-Small and Strict corpora have been acquired at
+immutable revisions with their common development and test partitions. Their
+source-indexed caches, train-fitted shared tokenizer and overlap audit are ready;
+see [data status](DATA-STATUS.md) and the [evaluation declaration](BABYLM-EVALUATION.md).
+Resume the registered training comparison after the language topology study.
+The six components
 cover spoken language, child-directed speech, books, subtitles and simple
 encyclopedic text. Audit actual words, UTF-8 bytes, line/document boundaries and
 cross-split duplicates rather than assuming the advertised 10M/100M labels are
@@ -79,16 +90,17 @@ identical starting weights and stimuli within each seed. The final 48-frame
 diagnostic gives BPTT 100%, fixed core 86.46%, supervised eligibility 83.33%, and
 no-history/reward eligibility 50%. These are repeated diagnostics from one
 simple task, not a general ranking. The fixed core's strong result motivates
-harder context and memory tasks and a matched rewired control. See
+the completed 60-run context and rewiring extension, whose task-dependent
+results are recorded in [the wiring findings](WIRING-RESULTS.md). See
 [the declared protocol](LOCAL-LEARNING-PROTOCOL.md) and the
 [working research note](../public/research/local-learning.pdf).
 
-Establish a real NeuroMechFly physics simulation with a pinned FlyGym version in
-an isolated environment. Start with reproducible open-loop and closed-loop walking
-controls, then train a documented sensor-to-action interface for cue following,
-turning and reward reversal. Record observations, actions, trajectories, contacts,
-falls and rewards. Compare fixed core, language-trained core and task-adapted core
-using the same initial situations and action budget.
+A real NeuroMechFly simulation now runs in an isolated, pinned FlyGym/MuJoCo
+environment. Its calibrated turning interface and all recorded physical studies
+are reproducible. The next transfer experiment should compare a fixed core,
+language-trained core and task-adapted core using the same initial situations and
+action budget. Learning a sensor-to-action interface, balance or gait requires
+separate objectives and controls; the current studies do not learn joint control.
 
 Separate the effect of learning a new motor head from changes in recurrent
 dynamics. A rendered pose change is not a learned skill. A language-trained core
@@ -101,8 +113,26 @@ calibrated physical command interface. All forty predetermined cases were
 simulated independently; recorded heading follows the selected command in every
 case, including wrong neural choices. This is an offline high-level decision
 followed by physical replay. The two commands yield two reproducible paths;
-learning joint control, online neural feedback and transfer from language
-training remain separate experiments.
+learning joint control and transfer from language training remain separate
+experiments.
+
+The subsequent [online pose-feedback assay](CLOSED-LOOP-REPRODUCTION.md) is also
+complete: four fixed sensory checkpoints, live/frozen pose, three waypoint
+scenarios, three scripted references and one exact repeat. Its 27 primary
+conditions contain 10,800 control frames and 972 delayed decisions. In the
+switching-target case, live pose gives the trained controllers a mean absolute
+bearing error of 16.27 degrees, versus 100.50 degrees with frozen pose. However,
+all three trained methods produce exactly the same physical paths as the
+scripted reference in each scenario. The assay establishes that the engineered
+feedback interface works; it does not establish a need for learned recurrence
+or an anatomical advantage. Ground-truth pose supplies an artificial cue, and
+the designed FlyGym controller supplies gait and contact feedback. Language
+weights are not used and no learning occurs during this physical evaluation.
+
+Retain every condition, including unsuccessful initial models. The complete
+records and standalone causal replay audit are public. Language-to-control
+transfer and online motor learning are still open; future experiments must
+separate their effects from this already adequate scripted controller.
 
 ## 5. Capacity and implementation scaling
 
