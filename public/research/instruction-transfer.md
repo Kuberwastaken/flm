@@ -191,9 +191,30 @@ masked loss, per-example versus padded-batch gradients, instruction-prefix
 credit, cached versus whole-prefix greedy generation, and failure accounting.
 They use small synthetic networks and an independent byte codec, not acquired
 SCAN examples or the full trained checkpoints. These are implementation checks,
-not benchmark scores. The timing pilot, optimizer and schedule declaration,
-resumable trainer, frozen condition inventory and complete-test gate remain to
-be implemented before any of the planned 36 fits begin.
+not benchmark scores.
+
+The [fitting primitives](scan_train.py) additionally support resumable CPU
+updates with explicitly supplied optimizer settings and a warmup/cosine schedule.
+They sample uniformly with replacement over the ordered training rows, so
+deliberate duplicate rows keep their sampling weight. Checkpoints bind the
+starting model, model class/configuration, tokenizer, ordered records, source
+versions and settings, and count both input and supervised-token exposure.
+An OS-held lease excludes a second writer. Only checkpoints with a final commit
+record can resume; a leftover payload from an interrupted save is replayed.
+
+Nine [training/recovery fixture checks](scan-training-preflight.json)
+use six-update runs on the same three tiny architectures. In the recorded
+one-thread environment, interrupted/resumed runs match uninterrupted tensors,
+optimizer moments, RNG state, sampled exposure and loss history exactly. Changed
+starting weights, data, tokenizer or schedule reject resume. Nonfinite final
+updates cannot commit a completion record. These checks do not establish
+bitwise replay for a future full-size, multithreaded training configuration.
+
+The train-only timing pilot, actual optimizer/budget declaration, official
+partition loader, pretrained-versus-initial source validation, whole-study
+condition inventory and complete-test gate remain before any of the planned
+36 benchmark fits begin. The helper itself chooses no research training budget
+and loads no corpus or source language checkpoint.
 
 ## Reproduction and current boundary
 
@@ -201,6 +222,7 @@ be implemented before any of the planned 36 fits begin.
 python -m flm.scan
 python -m unittest discover -s tests -p test_scan.py -v
 python -m unittest discover -s tests -p test_scan_runtime.py -v
+python -m unittest discover -s tests -p test_scan_train.py -v
 python scripts/scan_data_report.py
 ```
 

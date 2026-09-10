@@ -1,0 +1,49 @@
+{
+  "verified_utc": "2026-09-10T21:34:11.314905+00:00",
+  "tests": 9,
+  "exit_code": 0,
+  "command": "python -X utf8 -m unittest discover -s tests -p test_scan_train.py -v",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "threads": 1,
+  "neural_fixture_dtype": "float64",
+  "source_sha256": {
+    "flm/scan_train.py": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c",
+    "flm/scan_runtime.py": "e814c3fcf5acc28e7be5dbc7a5f0856f0b9d984c3177198f6bac4d65611f3c3f",
+    "flm/scan_task.py": "0ecbcb9f608f5d50c498a33aa4155e5170a6905bdcc57fb07da84a13b35340e9",
+    "flm/scan.py": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "tests/test_scan_train.py": "de921274e8a5ac2de57a02c34209c90e24cb28c79399afe12daf6a3ebe645d5e"
+  },
+  "log_sha256": "2f1ecd7b845868d89efc951e1dc46d7ae258d8e1b1e346b6c9a360ac71d7c3a3",
+  "fixture_settings": {
+    "steps": 6,
+    "batch_size": 2,
+    "learning_rate": 0.002,
+    "final_learning_rate": 0.0002,
+    "warmup_steps": 1,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "checkpoint_interval": 3,
+    "sampling_seed": 77,
+    "threads": 1,
+    "context_limit": 96
+  },
+  "checks": [
+    "Exact uninterrupted-versus-resumed model optimizer RNG exposure and history across three architectures",
+    "Interrupted payload without marker resumes from preceding committed boundary",
+    "Ordered rows and intentional duplicate multiplicity determine exact sampled exposure",
+    "Changed starting weights data order multiplicity tokenizer binding or schedule reject resume",
+    "Changed committed bytes reject before deserialization",
+    "Rehashed changed graph optimizer sampling or history reject during semantic restore",
+    "OS-held writer lease rejects a second writer and releases despite failure",
+    "Invalid dimensions or context fail before creating the training directory",
+    "A nonfinite final optimizer update cannot commit a checkpoint or completion record"
+  ],
+  "scope": "Synthetic numerical/recovery checks on tiny CPU models; not a declared downstream budget or SCAN benchmark",
+  "official_scan_records_loaded": false,
+  "full_language_checkpoints_loaded": false,
+  "registered_scan_fits_started": 0,
+  "scan_test_scores_available": false
+}
