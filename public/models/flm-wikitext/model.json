@@ -136,9 +136,9 @@
     }
   },
   "variant": "flm",
-  "checkpoint_step": 3000,
-  "checkpoint_sha256": "62b317a680463db1be77dc1dd5e5550559a1daa029899fb0254fc45b6ba3b4a8",
-  "weights_sha256": "53adb14791a0491e8f788eeca5638ec2f96c2063ca64eba38f95b7dc1fc0cbb4",
+  "checkpoint_step": 6000,
+  "checkpoint_sha256": "fb136f3f70e1a0e1d78f116f112ce4141a88180573713043b4ad5ae04add2446",
+  "weights_sha256": "9b8fbd448987149292725051832d1729313cced533404f7992fd6440b0d695a9",
   "weights_bytes": 2713236,
   "anatomy_sha256": "92f2d5eef9ba4f880e2ee077cc27022ad8440d865c89816b3b1110f0a6b6dedb",
   "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
@@ -202,9 +202,9 @@
     },
     "test_set_used_for_training": false,
     "exposure": {
-      "presented_tokens": 4608000,
-      "presented_bytes": 16326178,
-      "scored_bytes": 13606908
+      "presented_tokens": 9216000,
+      "presented_bytes": 32661129,
+      "scored_bytes": 27224178
     }
   },
   "norm_epsilon": 1e-05,
