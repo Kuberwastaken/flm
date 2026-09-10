@@ -68,6 +68,10 @@ await copyFile('flm/scan_runtime.py', 'public/research/scan_runtime.py');
 await copyFile('reports/scan-runtime/preflight.json', 'public/research/scan-runtime-preflight.json');
 await copyFile('flm/scan_train.py', 'public/research/scan_train.py');
 await copyFile('reports/scan-runtime/training-preflight.json', 'public/research/scan-training-preflight.json');
+await copyFile('flm/scan_inputs.py', 'public/research/scan_inputs.py');
+await copyFile('scripts/scan_source_audit.py', 'public/research/scan_source_audit.py');
+await copyFile('reports/scan-runtime/input-preflight.json', 'public/research/scan-input-preflight.json');
+await copyFile('reports/scan-runtime/source-preflight.json', 'public/research/scan-source-preflight.json');
 let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
 for (const [source, target] of [
   ['../data/cards/scan.json', 'scan-data-card.json'],
@@ -77,6 +81,10 @@ for (const [source, target] of [
   ['../reports/scan-runtime/preflight.json', 'scan-runtime-preflight.json'],
   ['../flm/scan_train.py', 'scan_train.py'],
   ['../reports/scan-runtime/training-preflight.json', 'scan-training-preflight.json'],
+  ['../flm/scan_inputs.py', 'scan_inputs.py'],
+  ['../scripts/scan_source_audit.py', 'scan_source_audit.py'],
+  ['../reports/scan-runtime/input-preflight.json', 'scan-input-preflight.json'],
+  ['../reports/scan-runtime/source-preflight.json', 'scan-source-preflight.json'],
 ]) instructionNote = instructionNote.replaceAll(source, target);
 await writeFile('public/research/instruction-transfer.md', instructionNote);
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])

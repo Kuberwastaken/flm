@@ -57,6 +57,16 @@ ranking. Grammar and learned physical behavior remain separate evaluations.
 
 ## Reproduction
 
+Before publishing the selection or beginning model test inference, the selection
+gate restores all twelve selected and final checkpoint payloads. It verifies run
+identity, finite weights, parameter cards, the final 12,000-update checkpoint,
+and the earliest minimum across all 24 recorded validation observations. Every
+observation must cover the exact fixed-panel token prefixes and decoded byte
+counts. The selection records each validation-file hash, final-checkpoint hash
+and final checkpoint's exposure counters. These checks authenticate the recorded
+selection and completion; they do not reconstruct historical optimizer updates.
+Any invalid run stops the gate before scoring any model.
+
 After the registered queue finishes, run `python -m flm.babylm_test`, then
 `python -m flm.babylm_samples`. Both commands fail before scoring/sampling if
 any registered run is incomplete or its input/checkpoint identity has changed.

@@ -1,0 +1,71 @@
+{
+  "verified_utc": "2026-09-10T22:55:07.126120+00:00",
+  "source_sha256": {
+    "flm/scan_inputs.py": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+    "tests/test_scan_inputs.py": "0f6eabec3259e20ffac0d99c40615dd0924e78a236cfa57c6a0ed76073994a38",
+    "flm/scan.py": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260"
+  },
+  "training_partitions": [
+    {
+      "format": "flm-scan-training-input-v1",
+      "split": "simple",
+      "partition": "train",
+      "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+      "source": "simple_split/tasks_train_simple.txt",
+      "source_sha256": "941bb8a088c5f53ceff12fde902dc008933cf0c4203cc672c47b5f79d73262dd",
+      "processed_path": "data/processed/scan/simple/train.jsonl",
+      "processed_sha256": "3f7fbe02c488497331b18d417ecc8bbf3d1b5e6b40771e6446e2c36cfbe59903",
+      "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+      "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+      "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+      "rows": 16728,
+      "unique_commands": 16728,
+      "repeated_rows": 0,
+      "order": "Exact publisher file order, including every repeated row and original source line",
+      "test_partition_opened": false
+    },
+    {
+      "format": "flm-scan-training-input-v1",
+      "split": "length",
+      "partition": "train",
+      "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+      "source": "length_split/tasks_train_length.txt",
+      "source_sha256": "b034212dc7cf87ce62f3a067dd6ad49c4d5cd18d51d615d13825516bcb1ebbc2",
+      "processed_path": "data/processed/scan/length/train.jsonl",
+      "processed_sha256": "2dd133e8a8aa488e5d5a869396853fb76155a86b23e9e6e2acb00c64e94d3723",
+      "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+      "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+      "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+      "rows": 16990,
+      "unique_commands": 16990,
+      "repeated_rows": 0,
+      "order": "Exact publisher file order, including every repeated row and original source line",
+      "test_partition_opened": false
+    },
+    {
+      "format": "flm-scan-training-input-v1",
+      "split": "add_primitive_jump",
+      "partition": "train",
+      "revision": "c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f",
+      "source": "add_prim_split/tasks_train_addprim_jump.txt",
+      "source_sha256": "e3c78485692e028eed4205e1b8b3fd0e785ef2c12d45b5b89204dadf5b239e23",
+      "processed_path": "data/processed/scan/add_primitive_jump/train.jsonl",
+      "processed_sha256": "4dcee665183871da8462cb772918f0c5b141c8268606bc709f37234022891884",
+      "card_sha256": "484a071295e146caec32ef8c92326cc2d72ac3eeca0697d7b69c6ac0d580c292",
+      "parser_sha256": "b25e854bdbddb2aa5d6c5a6f01b64906ead2bf88e8e5d75159db76d2a7607260",
+      "loader_sha256": "8c4102aec7ef11a9a5f89b8a7270e08d246636d5cb826f4e05f65f10bcc048b2",
+      "rows": 14670,
+      "unique_commands": 13204,
+      "repeated_rows": 1466,
+      "order": "Exact publisher file order, including every repeated row and original source line",
+      "test_partition_opened": false
+    }
+  ],
+  "focused_tests_passed": 5,
+  "command": "python -X utf8 -m unittest discover -s tests -p test_scan_inputs.py -v",
+  "primitive_jump_rows": 1467,
+  "test_partitions_opened": false,
+  "new_fits": false,
+  "new_predictions": false,
+  "active_core_identity_unchanged": true
+}

@@ -210,11 +210,31 @@ starting weights, data, tokenizer or schedule reject resume. Nonfinite final
 updates cannot commit a completion record. These checks do not establish
 bitwise replay for a future full-size, multithreaded training configuration.
 
-The train-only timing pilot, actual optimizer/budget declaration, official
-partition loader, pretrained-versus-initial source validation, whole-study
-condition inventory and complete-test gate remain before any of the planned
-36 benchmark fits begin. The helper itself chooses no research training budget
-and loads no corpus or source language checkpoint.
+The [training-only partition loader](../flm/scan_inputs.py) verifies the chosen
+raw training file against the pinned publisher bytes, then compares every
+processed row with its parsed source. Five corruption tests and the
+[three-partition check](../reports/scan-runtime/input-preflight.json) verify
+order, source lines and multiplicities, including all 1,467 isolated jump rows.
+Updating a processed checksum does not permit deduplication or rearrangement.
+The loader opens neither the test partition nor the complete command universe.
+
+The [language-source audit](../scripts/scan_source_audit.py) reconstructs all six
+original model initializations from their recorded Git source and compares them
+with the current constructor. All initial tensors and fixed buffers match.
+For each selected language checkpoint, historical and current implementations
+also produce exactly equal logits on two synthetic token rows carried through
+chunks of 96 and 15 positions. The [recorded evidence](../reports/scan-runtime/source-preflight.json)
+contains the initial and trained state hashes and every measured difference.
+The current transformer copies its bounded attention cache, while the historical
+implementation retained views. These one-thread forward probes verify the
+observed cases, not all inputs, backward trajectories or multithreaded replay.
+No corpus, SCAN prediction or fitting is involved in this source audit.
+
+The train-only timing pilot, actual optimizer/budget declaration, whole-study
+condition inventory, source binding at fit/resume and complete-test gate remain
+before any of the planned 36 benchmark fits begin. The helpers choose no research
+training budget. The downstream declaration must bind these verified partitions
+and source models before fitting; preparation records are not a frozen study.
 
 ## Reproduction and current boundary
 
@@ -223,6 +243,8 @@ python -m flm.scan
 python -m unittest discover -s tests -p test_scan.py -v
 python -m unittest discover -s tests -p test_scan_runtime.py -v
 python -m unittest discover -s tests -p test_scan_train.py -v
+python -m unittest discover -s tests -p test_scan_inputs.py -v
+python -m scripts.scan_source_audit
 python scripts/scan_data_report.py
 ```
 
