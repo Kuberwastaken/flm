@@ -72,6 +72,16 @@ process blocked by the OS lease, lock release, exact command settings and
 rejection of unverified resume state. The existing numerical/resume/selection
 tests remain applicable because their implementations are unchanged.
 
+After the queue finishes scoring all ten conditions, run
+`python -X utf8 scripts/package_language_topology.py`. It rechecks every selected
+checkpoint and score, then produces the eight-contrast figure, CSV, and a complete
+score-record archive. It refuses incomplete results before creating public
+artifacts. The archive's NumPy-only `audit_language_topology_report.py` separately
+recomputes byte-weighted losses, means and paired intervals from the reported
+article records. This audits supplied arithmetic; it does not independently
+rerun training or inference. The release still needs a fresh-extraction audit,
+visual review, README/paper updates and browser verification before deployment.
+
 The transition was executed at the first control's verified update-5,000 save.
 Its old queue, child and finalizer were identified by command and stopped.
 The new scheduler resumed graph 101/seed 42 and started graph 103/seed 42 from
