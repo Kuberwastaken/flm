@@ -1,0 +1,23 @@
+{
+  "verified_utc": "2026-09-10T20:47:02.694266+00:00",
+  "study_identity_sha256": "16edbc6063f39deb244cc62622b95070c2a523983551f07633e2e70b578814fd",
+  "archive": "language-dynamics-replay.zip",
+  "bytes": 4068637,
+  "sha256": "c33174bb14fcf26568893874c02e50ab78e70d7ff9595557c9b3fd306f20755f",
+  "included_files": 52,
+  "fresh_outside_repository_replay": {
+    "conditions": 7,
+    "exact_metrics_and_arrays": true,
+    "threads": 1,
+    "study_identity_sha256": "16edbc6063f39deb244cc62622b95070c2a523983551f07633e2e70b578814fd",
+    "original_full_checkpoints_needed": false,
+    "corpus_tokens_read": false,
+    "torch": "2.8.0+cpu",
+    "numpy": "2.2.6"
+  },
+  "imported_sources_verified_inside_extracted_archive": true,
+  "source_sha256": {
+    "scripts/replay_language_dynamics.py": "5a8b2560fa6413057044424f5efec8d974c9d7a61ba75fb761ad18e9ddaf1f0b",
+    "scripts/package_language_dynamics.py": "7b759afb02d9a4ba0136f17524bcc8b86e14a43a6a0389cecccfb1f1dfcf5a60"
+  }
+}

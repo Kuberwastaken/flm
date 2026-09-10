@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-09-10T20:47:53.654935+00:00",
+  "tests": 4,
+  "command": "python -X utf8 -m unittest discover -s tests -p test_language_dynamics_release.py -v",
+  "exit_code": 0,
+  "test_source_sha256": "9354710eda74f299424e3b697b3af0c955cace4593c8fb7df88d66484332e5ff",
+  "log_sha256": "4d6eaa69ab16ea1c484e7fcd62ef3466c3e9a48ac5e7d6427a58b3214aeaeea6",
+  "archive_sha256": "c33174bb14fcf26568893874c02e50ab78e70d7ff9595557c9b3fd306f20755f",
+  "checks": [
+    "Restore all seven real cores without full checkpoints",
+    "Reject changed parameter archive",
+    "Reject omitted numerical source",
+    "Reject a rehashed swap that changes undeclared parameter groups"
+  ],
+  "standalone_replay_record": "reports/language-dynamics/standalone-replay.json"
+}
