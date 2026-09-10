@@ -1,12 +1,12 @@
 {
-  "verified_utc": "2026-09-10T11:40:43.586823+00:00",
-  "release_commit": "e894f0d30994f239429f7869b82ce27296a00d7d",
+  "verified_utc": "2026-09-10T12:01:49.897982+00:00",
+  "release_commit": "79a0b785c6b3623b336a09ee03ed2a410fafd7dc",
   "site": "https://flm.kuber.studio/",
   "workflow": {
     "conclusion": "success",
-    "headSha": "e894f0d30994f239429f7869b82ce27296a00d7d",
+    "headSha": "79a0b785c6b3623b336a09ee03ed2a410fafd7dc",
     "status": "completed",
-    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34472382567",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34474172711",
     "workflowName": "Verify and publish ChatFLM"
   },
   "artifacts": [
@@ -14,7 +14,7 @@
       "path": "index.html",
       "status": 200,
       "bytes": 59154,
-      "sha256": "61f108184af2edad3fb5328ee31d8b6798207be63f9b220d6f47a1c7a7d9e4e7"
+      "sha256": "ce53f8f8010e74a0537c5bbf23592e78ab2e484f2ebf2e9fa4e1e06839f043c3"
     },
     {
       "path": "research/closed-loop.json",
@@ -67,8 +67,8 @@
     {
       "path": "research/paper-source.zip",
       "status": 200,
-      "bytes": 3081561,
-      "sha256": "5a43bb8e97cf4abc3dedb5b2aebe173182d352c7310dafc142564cc84a7000a5"
+      "bytes": 5058372,
+      "sha256": "229cec1eabe5a404c4609e76670d2c0d1e9a5b742428bd15abe25544889ece9c"
     },
     {
       "path": "research/language-topology-progress.json",
