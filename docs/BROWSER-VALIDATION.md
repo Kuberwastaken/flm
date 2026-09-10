@@ -113,3 +113,11 @@ the final compiler log has no overflow or unresolved-reference warnings. The
 source ZIP contains 43 files with a verified SHA-256 manifest. The BabyLM
 validation snapshot now includes 9,500 measured updates in its first run; the
 other eleven runs remain pending and no BabyLM test result is published.
+
+Release `18ebaa3` passed GitHub Actions run `34429647837` and deployed to
+`https://flm.kuber.studio`. The live browser shows both five-row tables and the
+9,500-update BabyLM snapshot. The live physical clip also played to its exact
+four-second end with readyState 4 and no media error. SHA-256 checks match local
+bytes for both learning summaries, the video, four-page PDF, source archive,
+declared learning protocol and BabyLM snapshot. This records the deployed
+snapshot, not completion of the still-running BabyLM training queue.
