@@ -38,7 +38,7 @@ The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest 
 
 The eight new fits comprise six rewired models and two retrained no-slow models, alongside two reused measured references. Every model allocates 600,003 parameter entries. The no-slow variant disconnects its 1,024 beta entries from the objective; normalization can still make nominal slow-feature readout columns nonzero. Allocated parameters therefore do not establish equal effective capacity. This tests the implemented slow-state branch, not all memory alternatives. See the [frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md).
 
-The [follow-up protocol](docs/LANGUAGE-CORE-PROTOCOL.md) declares fixed dynamics, no lateral recurrence and no temporal state, each with seeds 42 and 43. The mechanisms and [separate harness](flm/language_core_study.py) passed 21 fixture tests. Ten-update reference checks were exact at one CPU thread and within declared bounds at four; training uses four threads without promising bitwise repeatability. Removing lateral recurrence retains fast/slow memory; no temporal state resets both states for every token.
+The [follow-up protocol](docs/LANGUAGE-CORE-PROTOCOL.md) tests fixed dynamics, no lateral recurrence and no temporal state with seeds 42/43. [Fixed dynamics](docs/LANGUAGE-CORE-CONTROLS.md) freezes recurrent parameters; the lexical interface learns through time. This is not a readout-only reservoir or matched in trainable parameter count. No lateral recurrence retains fast/slow memory; no temporal state resets both states per token. The [separate harness](flm/language_core_study.py) passed fixture tests and exact single-thread/bounded four-thread reference checks. Test results remain pending.
 
 </details>
 
@@ -113,7 +113,7 @@ The difference is the computation and structural prior; the primary language exp
 
 </details>
 
-FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The completed comparison finds no measured-topology advantage in this setup, while retaining slow state helps. Whether optimizing recurrent dynamics is necessary remains a separate language question.
+FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The completed comparison finds no measured-topology advantage in this setup, while retaining slow state helps. Whether optimizing recurrent dynamics improves prediction under this budget remains open.
 
 ## Run ChatFLM locally
 
