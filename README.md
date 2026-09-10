@@ -165,17 +165,24 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 
 Training uses text, without pretrained embeddings, synthetic teacher corpora or private conversations. [Dataset cards](data/cards/) record revisions, hashes and transformations; raw corpora stay local. See [BabyLM's protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md), [acquisition status](docs/DATA-STATUS.md) and [SCAN's data audit](docs/INSTRUCTION-TRANSFER.md).
 
-## Completed learning and behavior studies
+## Additional dynamics and behavior studies
 
-These studies use separate sensory networks and engineered motor interfaces. They do not test whether language knowledge changes a fly's behavior.
+The core diagnostic examines language-trained weights directly. The sensory and physical studies use separate networks and engineered motor interfaces; none tests whether language knowledge changes a fly's behavior.
 
 | Study | Main finding |
 |---|---|
+| [Seven recurrent-core conditions](docs/LANGUAGE-DYNAMICS-FINDINGS.md) | Zero-drive dynamics change after language training; this is not a language or behavior benchmark. |
 | [60 cue/context runs](docs/WIRING-RESULTS.md) | Anatomy and learning-rule effects vary by task; rewired graphs win in some conditions. |
 | [27 physical feedback conditions + repeat](docs/CLOSED-LOOP-REPRODUCTION.md) | Live pose feedback helps; all three trained methods match the scripted reference's physical paths. |
 
 <details>
-<summary>Learning curves, simulated fly video, physical trajectories and full findings</summary>
+<summary>Recurrent pulse responses, learning curves, simulated fly video and full findings</summary>
+
+### Recurrent responses to a synthetic pulse
+
+The [pulse diagnostic](docs/LANGUAGE-DYNAMICS-PROTOCOL.md) compares seven recurrent-core conditions from the two completed WikiText FLM references: one shared initialization, two trained cores and four acute parameter swaps. Eight fixed synthetic directions at amplitudes 0.001 and 1.0 are followed by 256 zero-drive updates, bypassing the normal lexical interface. The zero-state fast spectral radius changes from **1.0207** initially to **0.9912 / 0.8722** after training. Edges/gain-only swaps closely reproduce that shift; time-constants-only swaps remain above one. [All seven conditions replay exactly](reports/language-dynamics/replay.json) in the recorded environment; no new fitting or corpus tokens are used. These local and finite-horizon observations establish neither global stability, memory capacity, improved language accuracy nor behavioral transfer. See [findings and limits](docs/LANGUAGE-DYNAMICS-FINDINGS.md).
+
+![Synthetic-pulse responses of seven recurrent-core conditions from the completed WikiText references.](public/research/figures/language-dynamics-pulses.svg)
 
 ### Memory, reversal and learning rules
 
