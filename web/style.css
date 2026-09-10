@@ -20,7 +20,12 @@
 #export-json { font-family:monospace; font-size:12px; }
 #export-status { font-size:12px; color:var(--muted); margin:12px 0; overflow-wrap:anywhere; }
 .comparison-controls label { display:grid; gap:6px; }
-#validation-chart { width:100%; height:auto; font-family:inherit; font-size:13px; fill:var(--text, #292820); }
+#validation-chart, #babylm-validation-chart { width:100%; height:auto; font-family:inherit; font-size:13px; fill:var(--text, #292820); }
+.comparison-figure { margin:24px 0; }
+.comparison-figure figcaption { font-size:13px; color:var(--muted); }
+.legend-flm { color:#a74c20; }
+.legend-gru { color:#497569; }
+.legend-transformer { color:#666277; }
 .chart-legend { display:flex; justify-content:center; gap:24px; }
 .sample-passages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:24px 0; }
 .sample-passages article { border-top:1px solid #c9c2b5; }

@@ -1,6 +1,9 @@
 import { mkdir, copyFile, readdir, readFile, writeFile } from 'node:fs/promises';
 await mkdir('public/licenses', { recursive: true });
 await mkdir('public/data', { recursive: true });
+await mkdir('public/research', { recursive: true });
+await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
+await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
   await copyFile(source, target);
 const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name));

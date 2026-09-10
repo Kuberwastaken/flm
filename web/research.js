@@ -1,4 +1,5 @@
 import { loadFinalStudy } from './final-study.js';
+import { loadBabyLMStudy } from './babylm-study.js';
 const names = {flm: 'FLM', gru: 'GRU', transformer: 'Transformer'};
 const colors = {flm: '#a74c20', gru: '#497569', transformer: '#666277'};
 const $ = id => document.getElementById(id);
@@ -15,6 +16,7 @@ async function get(path) {
 
 export async function loadResearch() {
   void loadFinalStudy();
+  void loadBabyLMStudy();
   try {
     const [report, samples] = await Promise.all([get('validation.json'), get('samples-index.json')]);
     const runs = report.runs.filter(x => names[x.variant]);

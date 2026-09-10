@@ -1,0 +1,17 @@
+{
+  "description": "Original prompts fixed before inspecting BabyLM model continuations. Groups label prompt style, not validated capabilities.",
+  "prompts": [
+    {"id": "conversation-1", "group": "conversation", "text": "A: What did you do after breakfast?\nB:"},
+    {"id": "conversation-2", "group": "conversation", "text": "A: I cannot find my red coat.\nB:"},
+    {"id": "conversation-3", "group": "conversation", "text": "A: Shall we walk to the park or stay at home?\nB:"},
+    {"id": "narrative-1", "group": "narrative", "text": "Mira found a small wooden box beside the garden gate. When she opened it,"},
+    {"id": "narrative-2", "group": "narrative", "text": "The rain stopped just before the boat reached the island."},
+    {"id": "narrative-3", "group": "narrative", "text": "Every evening, the old dog waited by the empty chair. One evening,"},
+    {"id": "explanation-1", "group": "explanation", "text": "A seed needs water to grow because"},
+    {"id": "explanation-2", "group": "explanation", "text": "A bridge lets people cross a river. The main parts of a bridge"},
+    {"id": "explanation-3", "group": "explanation", "text": "People use maps to find places. A map usually shows"},
+    {"id": "procedural-1", "group": "procedural", "text": "To plant a bean in a pot, first"},
+    {"id": "procedural-2", "group": "procedural", "text": "We wanted to make a paper boat. We put a sheet of paper on the table and"},
+    {"id": "procedural-3", "group": "procedural", "text": "Before leaving for a short walk, I checked"}
+  ]
+}
