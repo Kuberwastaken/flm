@@ -34,7 +34,9 @@ small architecture fixtures reproduce uninterrupted final tensors, loss history,
 sampled rows and exposure after resumption. These tests use six-update artificial
 examples, not official SCAN training or a multithreaded reproduction guarantee.
 
-Remaining work is the train-only timing pilot, fixed optimizer/exposure budget,
+The [train-only timing pilot](SCAN-TIMING-PILOT.md) now has a tested command,
+but its full-size measurements await the priority queues. Remaining work is that
+measurement, the fixed optimizer/exposure budget,
 immutable whole-study declaration, serial execution and an all-condition gate
 before official test generation. The preparation API intentionally sets no
 training budget and runs no scheduler. Keep the language computation queue and

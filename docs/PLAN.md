@@ -64,6 +64,8 @@ The [food-response extension outline](FOOD-RESPONSE-PLAN.md) separates fruit-lik
 
 The [SCAN condition preparation](SCAN-CONDITION-PREPARATION.md) now binds all 36 planned combinations to their exact official training rows and verified initial/pretrained source tensors. All combinations passed preparation, and six focused tests cover input changes and fixture resumption. The timing pilot, downstream budget, immutable study declaration, scheduler and whole-study test gate still precede any official transfer fits.
 
+The [train-only timing pilot command](SCAN-TIMING-PILOT.md) is also fixture-tested and refuses unfinished priority queues. Its eighteen disposable seed-42 cases will inform the common downstream budget after the language controls and BabyLM training finish. No full-size pilot measurements exist yet, and pilot weights cannot warm-start the eventual benchmark.
+
 The [continuing research program](RESEARCH-PROGRAM.md) records the wider questions and sources. New studies must follow existing compute priorities rather than competing with the active queue. Completion of the compact release, topology report or diagnostic does not complete the larger-data, scaling, alternative-learning or transfer work listed here.
 
 ## Delivery and verification at each stage
