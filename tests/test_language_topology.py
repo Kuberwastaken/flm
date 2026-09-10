@@ -10,7 +10,7 @@ from flm.language_topology import conditions, verify_saved, verify_source_identi
 from flm.language_train import construct
 from flm.provenance import sha256
 from flm.wiring_controls import rewire_graph
-from test_wiring_controls import WiringControlTests
+import test_wiring_controls
 
 
 class LanguageTopologyTests(unittest.TestCase):
@@ -28,7 +28,7 @@ class LanguageTopologyTests(unittest.TestCase):
 
     def test_initial_weights_equal_across_graphs_and_slow_control_is_retrainable(self):
         with tempfile.TemporaryDirectory() as directory:
-            original = WiringControlTests().graph(); rewired, _ = rewire_graph(original, 101)
+            original = test_wiring_controls.WiringControlTests().graph(); rewired, _ = rewire_graph(original, 101)
             source = Path(directory) / 'source.npz'; null = Path(directory) / 'null.npz'
             np.savez(source, **original); np.savez(null, **rewired)
             models = [construct(v, p, 270, 42) for v, p in [('flm', source), ('flm', null), ('no_slow', source)]]
@@ -48,7 +48,7 @@ class LanguageTopologyTests(unittest.TestCase):
 
     def test_resume_rejects_stream_exposure_mechanism_and_graph_drift(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / 'graph.npz'; np.savez(path, **WiringControlTests().graph())
+            path = Path(directory) / 'graph.npz'; np.savez(path, **test_wiring_controls.WiringControlTests().graph())
             model = construct('flm', path, 270, 42)
             audit = dict(sampler_rng={'fixture': 1}, exposure={'presented_tokens': 768000})
             identity = dict(training_protocol={'steps': 6000}, sampling={'42': {'500': audit}})
