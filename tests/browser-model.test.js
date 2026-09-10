@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { FLM, random, sample, softmax } from '../web/model.js';
 
-for (const packageName of ['flm-compact', 'flm-wikitext']) {
+for (const packageName of ['flm-compact', 'flm-wikitext', 'flm-babylm']) {
 const directory = new URL(`../public/models/${packageName}/`, import.meta.url);
 const config = JSON.parse(readFileSync(new URL('model.json', directory)));
 const raw = readFileSync(new URL('weights.bin', directory));

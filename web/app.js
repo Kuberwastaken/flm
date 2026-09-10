@@ -2,10 +2,12 @@ import './style.css';
 import { loadResearch } from './research.js';
 import { BrainView, FlyView } from './views.js';
 import { STORAGE_KEY, ADAPTER_KEY, validateConversations, conversationForModel, contextFor, download } from './storage.js';
+import { MODEL_PACKAGES } from './packages.js';
 
 const $ = id => document.getElementById(id);
-const selectedModel = new URLSearchParams(location.search).get('model') === 'ami' ? 'ami' : 'wikitext';
-const isLexical = selectedModel === 'wikitext';
+const requestedModel = new URLSearchParams(location.search).get('model');
+const selectedModel = Object.hasOwn(MODEL_PACKAGES, requestedModel) ? requestedModel : 'wikitext';
+const isLexical = MODEL_PACKAGES[selectedModel].lexical;
 const adapterKey = () => `${ADAPTER_KEY}-${config.weights_sha256}`;
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
 let ready = false, busy = false, operation = '', sequence = 0, activeId = 0, researchLoaded = false;
@@ -60,7 +62,9 @@ function renderConversation() {
   }
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
   $('prompt-label').textContent = conversation.mode === 'dialogue' ? 'Your turn' : 'Text to continue';
-  $('capability').textContent = isLexical
+  $('capability').textContent = selectedModel === 'babylm'
+    ? 'Experimental BabyLM 10M checkpoint: trained from scratch on conversation, child-directed speech, books and other text. It completes passages; the full baseline comparison is still running. It is not an instruction-following assistant.'
+    : isLexical
     ? 'Trained from scratch on WikiText-2. It completes written passages; it is not an instruction-following assistant. Each token contains one or more UTF-8 bytes.'
     : conversation.mode === 'dialogue'
     ? 'Trained on meeting transcripts. It continues dialogue; it has not been trained to follow instructions or give reliable answers.'
@@ -69,7 +73,7 @@ function renderConversation() {
   else {
     const empty = document.createElement('div'); empty.className = 'empty';
     const p = document.createElement('p'); p.textContent = isLexical ? 'Start a passage about history, nature or everyday life. Watch the next-token distribution and the recurrent state as it continues.' : 'Start with the kind of language it has seen: people making plans, discussing ideas and taking turns.'; empty.append(p);
-    for (const text of (isLexical ? ['The history of science', 'In the summer, the village', 'The small animal moved through'] : ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:'])) {
+    for (const text of (selectedModel === 'babylm' ? ['Once upon a time, a little bird', 'What should we do this afternoon?', 'The reason the sky looks blue'] : isLexical ? ['The history of science', 'In the summer, the village', 'The small animal moved through'] : ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:'])) {
       const button = document.createElement('button'); button.textContent = text; button.onclick = () => { $('prompt').value = text; $('prompt').focus(); }; empty.append(button);
     }
     $('messages').append(empty);

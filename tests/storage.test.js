@@ -23,3 +23,13 @@ test('model selection never falls back to an incompatible or legacy conversation
   assert.equal(conversationForModel([], 'ami'), undefined);
   assert.throws(() => validateConversations([{ ...lexical, mode: 'dialogue' }]));
 });
+
+test('BabyLM conversations retain their own model identity through archive validation and selection', () => {
+  const baby = { ...conversation(), id: 'baby', modelPackage: 'babylm', mode: 'completion' };
+  const wiki = { ...baby, id: 'wiki', modelPackage: 'wikitext' };
+  assert.deepEqual(validateConversations([baby, wiki]), [baby, wiki]);
+  assert.equal(conversationForModel([baby, wiki], 'babylm', 'wiki'), baby);
+  assert.equal(conversationForModel([wiki], 'babylm'), undefined);
+  assert.throws(() => validateConversations([{ ...baby, mode: 'dialogue' }]));
+  assert.throws(() => validateConversations([{ ...baby, modelPackage: 'unknown' }]));
+});

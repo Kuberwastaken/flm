@@ -1,5 +1,6 @@
 import { FLM, random, sample, softmax } from './model.js';
 import { TextCodec } from './text-codec.js';
+import { MODEL_PACKAGES } from './packages.js';
 
 let model, codec, active = null;
 const encoder = new TextEncoder();
@@ -88,7 +89,8 @@ async function learn(message) {
 }
 
 async function load(message) {
-  const packageName = message.model === 'ami' ? 'flm-compact' : 'flm-wikitext';
+  if (!Object.hasOwn(MODEL_PACKAGES, message.model)) throw new Error('Unknown model package.');
+  const packageName = MODEL_PACKAGES[message.model].path;
   const base = `${import.meta.env?.BASE_URL ?? '/'}models/${packageName}/`;
   const configResponse = await fetch(`${base}model.json`);
   if (!configResponse.ok) throw new Error(`Model manifest unavailable (${configResponse.status}).`);

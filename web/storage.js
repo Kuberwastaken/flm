@@ -1,3 +1,4 @@
+import { MODEL_PACKAGES } from './packages.js';
 export const STORAGE_KEY = 'chatflm-conversations-v1';
 export const ADAPTER_KEY = 'chatflm-adapter-v1';
 
@@ -13,8 +14,8 @@ export function validateConversations(value) {
   for (const item of value) {
     if (typeof item?.id !== 'string' || ids.has(item.id) || typeof item.title !== 'string' || item.title.length > 120 ||
         !['dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200 ||
-        (item.modelPackage !== undefined && !['ami', 'wikitext'].includes(item.modelPackage)) ||
-        (item.modelPackage === 'wikitext' && item.mode !== 'completion'))
+        (item.modelPackage !== undefined && !Object.hasOwn(MODEL_PACKAGES, item.modelPackage)) ||
+        (MODEL_PACKAGES[item.modelPackage]?.lexical && item.mode !== 'completion'))
       throw new Error('Invalid conversation file.');
     ids.add(item.id);
     for (const message of item.messages) {

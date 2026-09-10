@@ -4,8 +4,9 @@ import { Worker } from 'node:worker_threads';
 import { once } from 'node:events';
 import { readFileSync } from 'node:fs';
 import { TextCodec } from '../web/text-codec.js';
+import { MODEL_PACKAGES } from '../web/packages.js';
 
-for (const selection of ['ami', 'wikitext']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
+for (const selection of ['ami', 'wikitext', 'babylm']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
   const worker = new Worker(new URL('./helpers/worker-harness.mjs', import.meta.url));
   t.after(() => worker.terminate());
   await once(worker, 'message'); let sequence = 0;
@@ -25,7 +26,7 @@ for (const selection of ['ami', 'wikitext']) test(`${selection}: worker generate
   });
   const loaded = await run('load', {model: selection});
   const config = loaded.find(x => x.type === 'ready').config;
-  const tokenizer = selection === 'wikitext' ? JSON.parse(readFileSync(new URL('../public/models/flm-wikitext/tokenizer.json', import.meta.url))) : null;
+  const tokenizer = MODEL_PACKAGES[selection].lexical ? JSON.parse(readFileSync(new URL(`../public/models/${MODEL_PACKAGES[selection].path}/tokenizer.json`, import.meta.url))) : null;
   const codec = new TextCodec(config, tokenizer);
   const settings = {prompt: 'The history of science', limit: 16, seed: 42, temperature: .8, topK: 40};
   const a = (await run('generate', settings)).filter(x => x.type === 'generation').at(-1);
