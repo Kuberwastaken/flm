@@ -1,8 +1,8 @@
 {
-  "snapshot_utc": "2026-09-10T11:14:56.336961+00:00",
+  "snapshot_utc": "2026-09-10T11:36:59.231096+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
-  "completed_new_runs": 2,
+  "completed_new_runs": 3,
   "registered_updates": 6000,
   "test_status": "Pending all eight new runs and frozen checkpoint selections",
   "comparison": "Validation at matched updates only. Existing measured references are reused, not additional independent runs.",
@@ -238,8 +238,8 @@
       "graph": "data/graphs/central-1024-null107/graph.npz",
       "output": "runs/language-topology-v1/null107-s42",
       "reference": false,
-      "saved_step": 5000,
-      "complete": false,
+      "saved_step": 6000,
+      "complete": true,
       "validation": [
         {
           "step": 500,
@@ -290,6 +290,16 @@
           "step": 5000,
           "bits_per_byte": 1.916012188605907,
           "token_perplexity": 114.36852875084222
+        },
+        {
+          "step": 5500,
+          "bits_per_byte": 1.913234611480159,
+          "token_perplexity": 113.5854434692808
+        },
+        {
+          "step": 6000,
+          "bits_per_byte": 1.9085535426523081,
+          "token_perplexity": 112.2778183683605
         }
       ]
     },
@@ -302,9 +312,20 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s42",
       "reference": false,
-      "saved_step": 0,
+      "saved_step": 1000,
       "complete": false,
-      "validation": []
+      "validation": [
+        {
+          "step": 500,
+          "bits_per_byte": 2.290981355470209,
+          "token_perplexity": 289.1499484247607
+        },
+        {
+          "step": 1000,
+          "bits_per_byte": 2.1427994350446387,
+          "token_perplexity": 200.41782139909654
+        }
+      ]
     },
     {
       "label": "measured-s43",

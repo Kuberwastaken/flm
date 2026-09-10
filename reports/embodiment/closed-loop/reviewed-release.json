@@ -30,7 +30,7 @@
     "video_duration_seconds": 8,
     "video_playback_reached_end": true,
     "actual_neural_panel_loaded": true,
-    "topology_new_runs_complete": 2,
+    "topology_new_runs_complete": 3,
     "topology_test_view_hidden": true
   },
   "build": {
@@ -55,8 +55,8 @@
       "sha256": "b0b5d692d64f1eeaa38ca321d24abe95f3f9e7f93e0d1f59546b6503399f5ce1"
     },
     "public/research/paper-source.zip": {
-      "bytes": 3081560,
-      "sha256": "7e51382a261add9210d37b662f71efdeb70014ea43166b1e8a7d9fffb66d2b41"
+      "bytes": 3081561,
+      "sha256": "5a43bb8e97cf4abc3dedb5b2aebe173182d352c7310dafc142564cc84a7000a5"
     },
     "public/research/closed-loop.mp4": {
       "bytes": 2120872,
@@ -98,5 +98,12 @@
       "bytes": 92444,
       "sha256": "f24b0b9133b0c4f8792efaca7879ccf7a70dba44186d285a8f5f67aacc5aec4c"
     }
+  },
+  "updated_language_snapshot": {
+    "snapshot_utc": "2026-09-10T11:36:59.231096+00:00",
+    "sha256": "2a9b77aad3f851f85d5dce1731c2842baccc90d0102017d929ab190e60ccc39c",
+    "local_dom_verified": true,
+    "completed_test_rows": 0,
+    "completed_test_view_hidden": true
   }
 }

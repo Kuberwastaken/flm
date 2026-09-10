@@ -209,7 +209,7 @@ The [45.9 MB standalone records archive](https://flm.kuber.studio/research/close
 contains all trajectories, controllers, parity fixtures, source and licenses.
 See [audit and fresh-physics instructions](docs/CLOSED-LOOP-REPRODUCTION.md).
 
-The separate language topology comparison remains the priority: two of eight
+The separate language topology comparison remains the priority: three of eight
 new controls have completed their 6,000-update budgets. Their test scores remain
 locked until all runs and checkpoint selections are complete. BabyLM stays paused.
 
