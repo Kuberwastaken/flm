@@ -38,7 +38,7 @@ def main():
     text.append(r'\newcommand{\FeedbackDistinctPaths}{' + str(distinct) + '}')
     trace = rows['eligibility-live-switch']['metrics']
     for name, value in [('FeedbackSwitchError', math.degrees(trace['mean_absolute_bearing_error_rad'])), ('FeedbackSwitchDistance', trace['final_target_distance_mm']), ('FeedbackPhaseOne', trace['phase_progress'][0]['progress_toward_target_mm']), ('FeedbackPhaseTwo', trace['phase_progress'][1]['progress_toward_target_mm'])]:
-        text.append(r'\newcommand{\' + name + '}{' + f'{value:.2f}' + '}')
+        text.append('\\newcommand{\\' + name + '}{' + f'{value:.2f}' + '}')
     (ROOT / 'papers/feedback-measured.tex').write_text('\n'.join(text) + '\n', encoding='utf8')
     for name in ('closed-loop-switch.png', 'closed-loop-neural.png'):
         shutil.copyfile(folder / name, ROOT / 'papers/figures' / name)
