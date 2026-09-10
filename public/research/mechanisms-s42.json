@@ -1,0 +1,3004 @@
+{
+  "training_seed": 42,
+  "checkpoint_step": 6000,
+  "checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+  "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+  "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+  "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+  "conditions": [
+    {
+      "condition": "untrained",
+      "score": {
+        "bits_per_byte": 3.4640037142576174,
+        "token_perplexity": 5263.335142199168,
+        "nll": 280773.2686767578,
+        "tokens": 32768,
+        "bytes": 116937,
+        "documents": [
+          {
+            "document": "wikitext2-validation-0000",
+            "nll": 4685.850891113281,
+            "tokens": 547,
+            "bytes": 1731,
+            "bits_per_byte": 3.905403722099516
+          },
+          {
+            "document": "wikitext2-validation-0001",
+            "nll": 4676.654357910156,
+            "tokens": 547,
+            "bytes": 1826,
+            "bits_per_byte": 3.6949540252512274
+          },
+          {
+            "document": "wikitext2-validation-0002",
+            "nll": 4689.857727050781,
+            "tokens": 547,
+            "bytes": 1916,
+            "bits_per_byte": 3.5313332386695975
+          },
+          {
+            "document": "wikitext2-validation-0003",
+            "nll": 4759.583435058594,
+            "tokens": 547,
+            "bytes": 1715,
+            "bits_per_byte": 4.003864383939528
+          },
+          {
+            "document": "wikitext2-validation-0004",
+            "nll": 4687.0784912109375,
+            "tokens": 547,
+            "bytes": 1862,
+            "bits_per_byte": 3.6315923176838587
+          },
+          {
+            "document": "wikitext2-validation-0005",
+            "nll": 4720.221618652344,
+            "tokens": 547,
+            "bytes": 1844,
+            "bits_per_byte": 3.6929719745805927
+          },
+          {
+            "document": "wikitext2-validation-0006",
+            "nll": 4701.788330078125,
+            "tokens": 547,
+            "bytes": 1907,
+            "bits_per_byte": 3.5570250168397024
+          },
+          {
+            "document": "wikitext2-validation-0007",
+            "nll": 4660.239562988281,
+            "tokens": 547,
+            "bytes": 2019,
+            "bits_per_byte": 3.330017091073672
+          },
+          {
+            "document": "wikitext2-validation-0008",
+            "nll": 4642.6434326171875,
+            "tokens": 546,
+            "bytes": 2154,
+            "bits_per_byte": 3.109525838835901
+          },
+          {
+            "document": "wikitext2-validation-0009",
+            "nll": 4645.378112792969,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 3.435091730589722
+          },
+          {
+            "document": "wikitext2-validation-0010",
+            "nll": 4657.488037109375,
+            "tokens": 546,
+            "bytes": 2086,
+            "bits_per_byte": 3.221157667371701
+          },
+          {
+            "document": "wikitext2-validation-0011",
+            "nll": 4671.4903564453125,
+            "tokens": 546,
+            "bytes": 1980,
+            "bits_per_byte": 3.4038060458607418
+          },
+          {
+            "document": "wikitext2-validation-0012",
+            "nll": 4640.072509765625,
+            "tokens": 546,
+            "bytes": 1879,
+            "bits_per_byte": 3.5626448106461277
+          },
+          {
+            "document": "wikitext2-validation-0013",
+            "nll": 4687.891418457031,
+            "tokens": 546,
+            "bytes": 1900,
+            "bits_per_byte": 3.559577737702046
+          },
+          {
+            "document": "wikitext2-validation-0014",
+            "nll": 4707.720886230469,
+            "tokens": 546,
+            "bytes": 1606,
+            "bits_per_byte": 4.229019661552984
+          },
+          {
+            "document": "wikitext2-validation-0015",
+            "nll": 4636.122741699219,
+            "tokens": 546,
+            "bytes": 1986,
+            "bits_per_byte": 3.3678304574028237
+          },
+          {
+            "document": "wikitext2-validation-0016",
+            "nll": 4760.514221191406,
+            "tokens": 546,
+            "bytes": 1881,
+            "bits_per_byte": 3.651233524186192
+          },
+          {
+            "document": "wikitext2-validation-0017",
+            "nll": 4658.1572265625,
+            "tokens": 546,
+            "bytes": 1793,
+            "bits_per_byte": 3.748076034825882
+          },
+          {
+            "document": "wikitext2-validation-0018",
+            "nll": 4659.1793212890625,
+            "tokens": 546,
+            "bytes": 1897,
+            "bits_per_byte": 3.543371060324796
+          },
+          {
+            "document": "wikitext2-validation-0019",
+            "nll": 4643.0025634765625,
+            "tokens": 546,
+            "bytes": 2052,
+            "bits_per_byte": 3.2643454060245523
+          },
+          {
+            "document": "wikitext2-validation-0020",
+            "nll": 4646.6201171875,
+            "tokens": 546,
+            "bytes": 1916,
+            "bits_per_byte": 3.498776513549739
+          },
+          {
+            "document": "wikitext2-validation-0021",
+            "nll": 4651.7197265625,
+            "tokens": 546,
+            "bytes": 1537,
+            "bits_per_byte": 4.3663064288334965
+          },
+          {
+            "document": "wikitext2-validation-0022",
+            "nll": 4671.7255859375,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 3.4229940757877695
+          },
+          {
+            "document": "wikitext2-validation-0023",
+            "nll": 4667.725158691406,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 3.4200629449856486
+          },
+          {
+            "document": "wikitext2-validation-0024",
+            "nll": 4673.913269042969,
+            "tokens": 546,
+            "bytes": 1962,
+            "bits_per_byte": 3.436815236897765
+          },
+          {
+            "document": "wikitext2-validation-0025",
+            "nll": 4720.4652099609375,
+            "tokens": 546,
+            "bytes": 1846,
+            "bits_per_byte": 3.6891612942034255
+          },
+          {
+            "document": "wikitext2-validation-0026",
+            "nll": 4644.072998046875,
+            "tokens": 546,
+            "bytes": 2274,
+            "bits_per_byte": 2.946341725509485
+          },
+          {
+            "document": "wikitext2-validation-0027",
+            "nll": 4664.446472167969,
+            "tokens": 546,
+            "bytes": 1927,
+            "bits_per_byte": 3.492150386034639
+          },
+          {
+            "document": "wikitext2-validation-0028",
+            "nll": 4668.872741699219,
+            "tokens": 546,
+            "bytes": 2288,
+            "bits_per_byte": 2.94395085270591
+          },
+          {
+            "document": "wikitext2-validation-0029",
+            "nll": 4680.508850097656,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 3.4190110920874903
+          },
+          {
+            "document": "wikitext2-validation-0030",
+            "nll": 4637.1549072265625,
+            "tokens": 546,
+            "bytes": 1938,
+            "bits_per_byte": 3.4520125843600016
+          },
+          {
+            "document": "wikitext2-validation-0031",
+            "nll": 4722.5340576171875,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 3.4921458048967455
+          },
+          {
+            "document": "wikitext2-validation-0032",
+            "nll": 4663.4959716796875,
+            "tokens": 546,
+            "bytes": 2203,
+            "bits_per_byte": 3.054018389263706
+          },
+          {
+            "document": "wikitext2-validation-0033",
+            "nll": 4707.970764160156,
+            "tokens": 546,
+            "bytes": 1992,
+            "bits_per_byte": 3.409721924751045
+          },
+          {
+            "document": "wikitext2-validation-0034",
+            "nll": 4678.0123291015625,
+            "tokens": 546,
+            "bytes": 2129,
+            "bits_per_byte": 3.170007134059302
+          },
+          {
+            "document": "wikitext2-validation-0035",
+            "nll": 4678.795104980469,
+            "tokens": 546,
+            "bytes": 1798,
+            "bits_per_byte": 3.7542127337546605
+          },
+          {
+            "document": "wikitext2-validation-0036",
+            "nll": 4677.38818359375,
+            "tokens": 546,
+            "bytes": 1972,
+            "bits_per_byte": 3.421929379707576
+          },
+          {
+            "document": "wikitext2-validation-0037",
+            "nll": 4699.4266357421875,
+            "tokens": 546,
+            "bytes": 1888,
+            "bits_per_byte": 3.5910166855968004
+          },
+          {
+            "document": "wikitext2-validation-0038",
+            "nll": 4714.28466796875,
+            "tokens": 546,
+            "bytes": 2295,
+            "bits_per_byte": 2.9635185672406923
+          },
+          {
+            "document": "wikitext2-validation-0039",
+            "nll": 4704.0958251953125,
+            "tokens": 546,
+            "bytes": 1895,
+            "bits_per_byte": 3.5813064479555425
+          },
+          {
+            "document": "wikitext2-validation-0040",
+            "nll": 4642.3819580078125,
+            "tokens": 546,
+            "bytes": 1967,
+            "bits_per_byte": 3.4049524294510767
+          },
+          {
+            "document": "wikitext2-validation-0041",
+            "nll": 4681.5931396484375,
+            "tokens": 546,
+            "bytes": 1907,
+            "bits_per_byte": 3.5417468306400592
+          },
+          {
+            "document": "wikitext2-validation-0042",
+            "nll": 4717.453186035156,
+            "tokens": 546,
+            "bytes": 2009,
+            "bits_per_byte": 3.387678604837611
+          },
+          {
+            "document": "wikitext2-validation-0043",
+            "nll": 4674.180725097656,
+            "tokens": 546,
+            "bytes": 2026,
+            "bits_per_byte": 3.328438969554377
+          },
+          {
+            "document": "wikitext2-validation-0044",
+            "nll": 4674.486633300781,
+            "tokens": 546,
+            "bytes": 1823,
+            "bits_per_byte": 3.6993190809461236
+          },
+          {
+            "document": "wikitext2-validation-0045",
+            "nll": 4676.501403808594,
+            "tokens": 546,
+            "bytes": 1929,
+            "bits_per_byte": 3.49754555934937
+          },
+          {
+            "document": "wikitext2-validation-0046",
+            "nll": 4721.3353271484375,
+            "tokens": 546,
+            "bytes": 2289,
+            "bits_per_byte": 2.9757304774359645
+          },
+          {
+            "document": "wikitext2-validation-0047",
+            "nll": 4660.8695068359375,
+            "tokens": 546,
+            "bytes": 2075,
+            "bits_per_byte": 3.2405847343338774
+          },
+          {
+            "document": "wikitext2-validation-0048",
+            "nll": 4657.006896972656,
+            "tokens": 546,
+            "bytes": 1923,
+            "bits_per_byte": 3.493832946254889
+          },
+          {
+            "document": "wikitext2-validation-0049",
+            "nll": 4637.124816894531,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 3.3873199885148773
+          },
+          {
+            "document": "wikitext2-validation-0050",
+            "nll": 4640.23876953125,
+            "tokens": 546,
+            "bytes": 2169,
+            "bits_per_byte": 3.08642206608734
+          },
+          {
+            "document": "wikitext2-validation-0051",
+            "nll": 4720.106689453125,
+            "tokens": 546,
+            "bytes": 1894,
+            "bits_per_byte": 3.5953930904650715
+          },
+          {
+            "document": "wikitext2-validation-0052",
+            "nll": 4654.407409667969,
+            "tokens": 546,
+            "bytes": 2000,
+            "bits_per_byte": 3.3574452441024123
+          },
+          {
+            "document": "wikitext2-validation-0053",
+            "nll": 4756.08447265625,
+            "tokens": 546,
+            "bytes": 1981,
+            "bits_per_byte": 3.4636948423776746
+          },
+          {
+            "document": "wikitext2-validation-0054",
+            "nll": 4699.072692871094,
+            "tokens": 546,
+            "bytes": 2004,
+            "bits_per_byte": 3.3828986381147077
+          },
+          {
+            "document": "wikitext2-validation-0055",
+            "nll": 4715.601989746094,
+            "tokens": 546,
+            "bytes": 1841,
+            "bits_per_byte": 3.695369693325811
+          },
+          {
+            "document": "wikitext2-validation-0056",
+            "nll": 4669.879638671875,
+            "tokens": 546,
+            "bytes": 1944,
+            "bits_per_byte": 3.465644133878734
+          },
+          {
+            "document": "wikitext2-validation-0057",
+            "nll": 4650.076965332031,
+            "tokens": 546,
+            "bytes": 1740,
+            "bits_per_byte": 3.855541941170415
+          },
+          {
+            "document": "wikitext2-validation-0058",
+            "nll": 4678.65771484375,
+            "tokens": 546,
+            "bytes": 1901,
+            "bits_per_byte": 3.550697676602824
+          },
+          {
+            "document": "wikitext2-validation-0059",
+            "nll": 4682.044921875,
+            "tokens": 546,
+            "bytes": 1831,
+            "bits_per_byte": 3.689111409070681
+          }
+        ],
+        "seconds": 27.955396899953485,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "subset": "fixed per-article token prefixes",
+        "protocol": "Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded"
+      }
+    },
+    {
+      "condition": "trained",
+      "score": {
+        "bits_per_byte": 1.9096990391099853,
+        "token_perplexity": 112.5964072527091,
+        "nll": 154789.7997894287,
+        "tokens": 32768,
+        "bytes": 116937,
+        "documents": [
+          {
+            "document": "wikitext2-validation-0000",
+            "nll": 2494.740020751953,
+            "tokens": 547,
+            "bytes": 1731,
+            "bits_per_byte": 2.079231112793803
+          },
+          {
+            "document": "wikitext2-validation-0001",
+            "nll": 2412.133331298828,
+            "tokens": 547,
+            "bytes": 1826,
+            "bits_per_byte": 1.9057901396647285
+          },
+          {
+            "document": "wikitext2-validation-0002",
+            "nll": 2612.180633544922,
+            "tokens": 547,
+            "bytes": 1916,
+            "bits_per_byte": 1.9668998151990864
+          },
+          {
+            "document": "wikitext2-validation-0003",
+            "nll": 2591.303466796875,
+            "tokens": 547,
+            "bytes": 1715,
+            "bits_per_byte": 2.1798604437237494
+          },
+          {
+            "document": "wikitext2-validation-0004",
+            "nll": 2258.1593017578125,
+            "tokens": 547,
+            "bytes": 1862,
+            "bits_per_byte": 1.749642978616155
+          },
+          {
+            "document": "wikitext2-validation-0005",
+            "nll": 2604.6517944335938,
+            "tokens": 547,
+            "bytes": 1844,
+            "bits_per_byte": 2.0378081491713043
+          },
+          {
+            "document": "wikitext2-validation-0006",
+            "nll": 2773.4815368652344,
+            "tokens": 547,
+            "bytes": 1907,
+            "bits_per_byte": 2.098210833367894
+          },
+          {
+            "document": "wikitext2-validation-0007",
+            "nll": 2572.2196044921875,
+            "tokens": 547,
+            "bytes": 2019,
+            "bits_per_byte": 1.8380032033077018
+          },
+          {
+            "document": "wikitext2-validation-0008",
+            "nll": 2382.6592712402344,
+            "tokens": 546,
+            "bytes": 2154,
+            "bits_per_byte": 1.5958452714700084
+          },
+          {
+            "document": "wikitext2-validation-0009",
+            "nll": 2603.7994384765625,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 1.9254169848075882
+          },
+          {
+            "document": "wikitext2-validation-0010",
+            "nll": 2407.3597564697266,
+            "tokens": 546,
+            "bytes": 2086,
+            "bits_per_byte": 1.6649501353281577
+          },
+          {
+            "document": "wikitext2-validation-0011",
+            "nll": 2495.4834899902344,
+            "tokens": 546,
+            "bytes": 1980,
+            "bits_per_byte": 1.8182937654692901
+          },
+          {
+            "document": "wikitext2-validation-0012",
+            "nll": 2743.381134033203,
+            "tokens": 546,
+            "bytes": 1879,
+            "bits_per_byte": 2.1063663423832053
+          },
+          {
+            "document": "wikitext2-validation-0013",
+            "nll": 2636.346893310547,
+            "tokens": 546,
+            "bytes": 1900,
+            "bits_per_byte": 2.0018129416011323
+          },
+          {
+            "document": "wikitext2-validation-0014",
+            "nll": 2496.657196044922,
+            "tokens": 546,
+            "bytes": 1606,
+            "bits_per_byte": 2.2427863982152885
+          },
+          {
+            "document": "wikitext2-validation-0015",
+            "nll": 2455.4090270996094,
+            "tokens": 546,
+            "bytes": 1986,
+            "bits_per_byte": 1.7836890366317226
+          },
+          {
+            "document": "wikitext2-validation-0016",
+            "nll": 2400.9591064453125,
+            "tokens": 546,
+            "bytes": 1881,
+            "bits_per_byte": 1.8414948411727003
+          },
+          {
+            "document": "wikitext2-validation-0017",
+            "nll": 2992.892364501953,
+            "tokens": 546,
+            "bytes": 1793,
+            "bits_per_byte": 2.4081600514118304
+          },
+          {
+            "document": "wikitext2-validation-0018",
+            "nll": 2725.791046142578,
+            "tokens": 546,
+            "bytes": 1897,
+            "bits_per_byte": 2.0730022270793027
+          },
+          {
+            "document": "wikitext2-validation-0019",
+            "nll": 2684.322540283203,
+            "tokens": 546,
+            "bytes": 2052,
+            "bits_per_byte": 1.8872606320726324
+          },
+          {
+            "document": "wikitext2-validation-0020",
+            "nll": 2571.9927673339844,
+            "tokens": 546,
+            "bytes": 1916,
+            "bits_per_byte": 1.9366394627531422
+          },
+          {
+            "document": "wikitext2-validation-0021",
+            "nll": 2466.680419921875,
+            "tokens": 546,
+            "bytes": 1537,
+            "bits_per_byte": 2.315333512868702
+          },
+          {
+            "document": "wikitext2-validation-0022",
+            "nll": 2516.4673461914062,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.843826795789412
+          },
+          {
+            "document": "wikitext2-validation-0023",
+            "nll": 2373.2543334960938,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.7388939856287742
+          },
+          {
+            "document": "wikitext2-validation-0024",
+            "nll": 2710.406036376953,
+            "tokens": 546,
+            "bytes": 1962,
+            "bits_per_byte": 1.9930118998351385
+          },
+          {
+            "document": "wikitext2-validation-0025",
+            "nll": 2605.2749633789062,
+            "tokens": 546,
+            "bytes": 1846,
+            "bits_per_byte": 2.0360873617653974
+          },
+          {
+            "document": "wikitext2-validation-0026",
+            "nll": 2248.5079345703125,
+            "tokens": 546,
+            "bytes": 2274,
+            "bits_per_byte": 1.4265220961319593
+          },
+          {
+            "document": "wikitext2-validation-0027",
+            "nll": 2534.2969970703125,
+            "tokens": 546,
+            "bytes": 1927,
+            "bits_per_byte": 1.897362589420411
+          },
+          {
+            "document": "wikitext2-validation-0028",
+            "nll": 2543.7784423828125,
+            "tokens": 546,
+            "bytes": 2288,
+            "bits_per_byte": 1.6039757622141326
+          },
+          {
+            "document": "wikitext2-validation-0029",
+            "nll": 2473.7238159179688,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.807002066710773
+          },
+          {
+            "document": "wikitext2-validation-0030",
+            "nll": 2578.061309814453,
+            "tokens": 546,
+            "bytes": 1938,
+            "bits_per_byte": 1.9191724802770989
+          },
+          {
+            "document": "wikitext2-validation-0031",
+            "nll": 2650.1937255859375,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 1.959723908404858
+          },
+          {
+            "document": "wikitext2-validation-0032",
+            "nll": 2581.355194091797,
+            "tokens": 546,
+            "bytes": 2203,
+            "bits_per_byte": 1.6904713287740367
+          },
+          {
+            "document": "wikitext2-validation-0033",
+            "nll": 2693.183563232422,
+            "tokens": 546,
+            "bytes": 1992,
+            "bits_per_byte": 1.950523378955363
+          },
+          {
+            "document": "wikitext2-validation-0034",
+            "nll": 2418.191925048828,
+            "tokens": 546,
+            "bytes": 2129,
+            "bits_per_byte": 1.6386629864657962
+          },
+          {
+            "document": "wikitext2-validation-0035",
+            "nll": 2673.490936279297,
+            "tokens": 546,
+            "bytes": 1798,
+            "bits_per_byte": 2.145179152186726
+          },
+          {
+            "document": "wikitext2-validation-0036",
+            "nll": 2624.0311584472656,
+            "tokens": 546,
+            "bytes": 1972,
+            "bits_per_byte": 1.919714370907704
+          },
+          {
+            "document": "wikitext2-validation-0037",
+            "nll": 2401.4349670410156,
+            "tokens": 546,
+            "bytes": 1888,
+            "bits_per_byte": 1.8350308887539326
+          },
+          {
+            "document": "wikitext2-validation-0038",
+            "nll": 2519.8751525878906,
+            "tokens": 546,
+            "bytes": 2295,
+            "bits_per_byte": 1.5840572489315337
+          },
+          {
+            "document": "wikitext2-validation-0039",
+            "nll": 2599.6799926757812,
+            "tokens": 546,
+            "bytes": 1895,
+            "bits_per_byte": 1.9791796481960982
+          },
+          {
+            "document": "wikitext2-validation-0040",
+            "nll": 2589.8274841308594,
+            "tokens": 546,
+            "bytes": 1967,
+            "bits_per_byte": 1.8995075079377384
+          },
+          {
+            "document": "wikitext2-validation-0041",
+            "nll": 2681.9029235839844,
+            "tokens": 546,
+            "bytes": 1907,
+            "bits_per_byte": 2.0289292333509317
+          },
+          {
+            "document": "wikitext2-validation-0042",
+            "nll": 2489.5740966796875,
+            "tokens": 546,
+            "bytes": 2009,
+            "bits_per_byte": 1.7878029881560011
+          },
+          {
+            "document": "wikitext2-validation-0043",
+            "nll": 2463.123046875,
+            "tokens": 546,
+            "bytes": 2026,
+            "bits_per_byte": 1.7539661425596624
+          },
+          {
+            "document": "wikitext2-validation-0044",
+            "nll": 2886.5573120117188,
+            "tokens": 546,
+            "bytes": 1823,
+            "bits_per_byte": 2.2843784527049276
+          },
+          {
+            "document": "wikitext2-validation-0045",
+            "nll": 2770.3184814453125,
+            "tokens": 546,
+            "bytes": 1929,
+            "bits_per_byte": 2.071915362811921
+          },
+          {
+            "document": "wikitext2-validation-0046",
+            "nll": 2477.9560546875,
+            "tokens": 546,
+            "bytes": 2289,
+            "bits_per_byte": 1.5617889522229957
+          },
+          {
+            "document": "wikitext2-validation-0047",
+            "nll": 2619.4644470214844,
+            "tokens": 546,
+            "bytes": 2075,
+            "bits_per_byte": 1.8212474060254682
+          },
+          {
+            "document": "wikitext2-validation-0048",
+            "nll": 2740.855438232422,
+            "tokens": 546,
+            "bytes": 1923,
+            "bits_per_byte": 2.056275896272211
+          },
+          {
+            "document": "wikitext2-validation-0049",
+            "nll": 2318.9285583496094,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.6939274588895064
+          },
+          {
+            "document": "wikitext2-validation-0050",
+            "nll": 2480.8716735839844,
+            "tokens": 546,
+            "bytes": 2169,
+            "bits_per_byte": 1.6501342833386434
+          },
+          {
+            "document": "wikitext2-validation-0051",
+            "nll": 2705.882080078125,
+            "tokens": 546,
+            "bytes": 1894,
+            "bits_per_byte": 2.06112072764468
+          },
+          {
+            "document": "wikitext2-validation-0052",
+            "nll": 2753.831329345703,
+            "tokens": 546,
+            "bytes": 2000,
+            "bits_per_byte": 1.986469401145854
+          },
+          {
+            "document": "wikitext2-validation-0053",
+            "nll": 2778.3965759277344,
+            "tokens": 546,
+            "bytes": 1981,
+            "bits_per_byte": 2.0234118938484698
+          },
+          {
+            "document": "wikitext2-validation-0054",
+            "nll": 2575.4087524414062,
+            "tokens": 546,
+            "bytes": 2004,
+            "bits_per_byte": 1.854056604495633
+          },
+          {
+            "document": "wikitext2-validation-0055",
+            "nll": 2832.7428283691406,
+            "tokens": 546,
+            "bytes": 1841,
+            "bits_per_byte": 2.219871825422018
+          },
+          {
+            "document": "wikitext2-validation-0056",
+            "nll": 2531.077667236328,
+            "tokens": 546,
+            "bytes": 1944,
+            "bits_per_byte": 1.878381275013712
+          },
+          {
+            "document": "wikitext2-validation-0057",
+            "nll": 2733.337127685547,
+            "tokens": 546,
+            "bytes": 1740,
+            "bits_per_byte": 2.2663057006836906
+          },
+          {
+            "document": "wikitext2-validation-0058",
+            "nll": 2535.987060546875,
+            "tokens": 546,
+            "bytes": 1901,
+            "bits_per_byte": 1.9245954529245428
+          },
+          {
+            "document": "wikitext2-validation-0059",
+            "nll": 2695.9449157714844,
+            "tokens": 546,
+            "bytes": 1831,
+            "bits_per_byte": 2.1242088260476977
+          }
+        ],
+        "seconds": 26.750106199877337,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "subset": "fixed per-article token prefixes",
+        "protocol": "Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded"
+      }
+    },
+    {
+      "condition": "recurrence_off",
+      "score": {
+        "bits_per_byte": 2.06313332807702,
+        "token_perplexity": 164.5711696535346,
+        "nll": 167226.34732055664,
+        "tokens": 32768,
+        "bytes": 116937,
+        "documents": [
+          {
+            "document": "wikitext2-validation-0000",
+            "nll": 2729.6156005859375,
+            "tokens": 547,
+            "bytes": 1731,
+            "bits_per_byte": 2.2749872273243685
+          },
+          {
+            "document": "wikitext2-validation-0001",
+            "nll": 2665.3170166015625,
+            "tokens": 547,
+            "bytes": 1826,
+            "bits_per_byte": 2.105826748219081
+          },
+          {
+            "document": "wikitext2-validation-0002",
+            "nll": 2880.15673828125,
+            "tokens": 547,
+            "bytes": 1916,
+            "bits_per_byte": 2.1686784150841816
+          },
+          {
+            "document": "wikitext2-validation-0003",
+            "nll": 2848.782196044922,
+            "tokens": 547,
+            "bytes": 1715,
+            "bits_per_byte": 2.3964571118406877
+          },
+          {
+            "document": "wikitext2-validation-0004",
+            "nll": 2439.7390747070312,
+            "tokens": 547,
+            "bytes": 1862,
+            "bits_per_byte": 1.8903326875095932
+          },
+          {
+            "document": "wikitext2-validation-0005",
+            "nll": 2761.7628173828125,
+            "tokens": 547,
+            "bytes": 1844,
+            "bits_per_byte": 2.160727505829564
+          },
+          {
+            "document": "wikitext2-validation-0006",
+            "nll": 2979.4857177734375,
+            "tokens": 547,
+            "bytes": 1907,
+            "bits_per_byte": 2.2540583478926233
+          },
+          {
+            "document": "wikitext2-validation-0007",
+            "nll": 2764.718505859375,
+            "tokens": 547,
+            "bytes": 2019,
+            "bits_per_byte": 1.9755550658034993
+          },
+          {
+            "document": "wikitext2-validation-0008",
+            "nll": 2602.847381591797,
+            "tokens": 546,
+            "bytes": 2154,
+            "bits_per_byte": 1.7433217314825018
+          },
+          {
+            "document": "wikitext2-validation-0009",
+            "nll": 2768.9053344726562,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 2.047506916829676
+          },
+          {
+            "document": "wikitext2-validation-0010",
+            "nll": 2612.596954345703,
+            "tokens": 546,
+            "bytes": 2086,
+            "bits_per_byte": 1.8068938973519444
+          },
+          {
+            "document": "wikitext2-validation-0011",
+            "nll": 2700.6493530273438,
+            "tokens": 546,
+            "bytes": 1980,
+            "bits_per_byte": 1.9677845599962305
+          },
+          {
+            "document": "wikitext2-validation-0012",
+            "nll": 2930.0675048828125,
+            "tokens": 546,
+            "bytes": 1879,
+            "bits_per_byte": 2.249704022759091
+          },
+          {
+            "document": "wikitext2-validation-0013",
+            "nll": 2842.897216796875,
+            "tokens": 546,
+            "bytes": 1900,
+            "bits_per_byte": 2.1586493244367833
+          },
+          {
+            "document": "wikitext2-validation-0014",
+            "nll": 2700.480926513672,
+            "tokens": 546,
+            "bytes": 1606,
+            "bits_per_byte": 2.4258844587151356
+          },
+          {
+            "document": "wikitext2-validation-0015",
+            "nll": 2647.1298217773438,
+            "tokens": 546,
+            "bytes": 1986,
+            "bits_per_byte": 1.9229612620682073
+          },
+          {
+            "document": "wikitext2-validation-0016",
+            "nll": 2605.3638610839844,
+            "tokens": 546,
+            "bytes": 1881,
+            "bits_per_byte": 1.998269815043693
+          },
+          {
+            "document": "wikitext2-validation-0017",
+            "nll": 3268.0674743652344,
+            "tokens": 546,
+            "bytes": 1793,
+            "bits_per_byte": 2.629573194956633
+          },
+          {
+            "document": "wikitext2-validation-0018",
+            "nll": 2914.5210571289062,
+            "tokens": 546,
+            "bytes": 1897,
+            "bits_per_byte": 2.2165340409522045
+          },
+          {
+            "document": "wikitext2-validation-0019",
+            "nll": 2916.764404296875,
+            "tokens": 546,
+            "bytes": 2052,
+            "bits_per_byte": 2.050683012436917
+          },
+          {
+            "document": "wikitext2-validation-0020",
+            "nll": 2841.1431274414062,
+            "tokens": 546,
+            "bytes": 1916,
+            "bits_per_byte": 2.1393022444757186
+          },
+          {
+            "document": "wikitext2-validation-0021",
+            "nll": 2690.5043334960938,
+            "tokens": 546,
+            "bytes": 1537,
+            "bits_per_byte": 2.525424371779493
+          },
+          {
+            "document": "wikitext2-validation-0022",
+            "nll": 2720.117462158203,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.9930421398126523
+          },
+          {
+            "document": "wikitext2-validation-0023",
+            "nll": 2652.8833618164062,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.9437794160230428
+          },
+          {
+            "document": "wikitext2-validation-0024",
+            "nll": 2876.2102661132812,
+            "tokens": 546,
+            "bytes": 1962,
+            "bits_per_byte": 2.114930829498245
+          },
+          {
+            "document": "wikitext2-validation-0025",
+            "nll": 2792.56005859375,
+            "tokens": 546,
+            "bytes": 1846,
+            "bits_per_byte": 2.1824553347333677
+          },
+          {
+            "document": "wikitext2-validation-0026",
+            "nll": 2380.476837158203,
+            "tokens": 546,
+            "bytes": 2274,
+            "bits_per_byte": 1.510247197853643
+          },
+          {
+            "document": "wikitext2-validation-0027",
+            "nll": 2725.3926391601562,
+            "tokens": 546,
+            "bytes": 1927,
+            "bits_per_byte": 2.0404309522530575
+          },
+          {
+            "document": "wikitext2-validation-0028",
+            "nll": 2726.573516845703,
+            "tokens": 546,
+            "bytes": 2288,
+            "bits_per_byte": 1.7192369280474111
+          },
+          {
+            "document": "wikitext2-validation-0029",
+            "nll": 2677.0089111328125,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.9554974584844924
+          },
+          {
+            "document": "wikitext2-validation-0030",
+            "nll": 2800.838104248047,
+            "tokens": 546,
+            "bytes": 1938,
+            "bits_per_byte": 2.085013025454852
+          },
+          {
+            "document": "wikitext2-validation-0031",
+            "nll": 2885.8955078125,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 2.134016984953783
+          },
+          {
+            "document": "wikitext2-validation-0032",
+            "nll": 2743.6390380859375,
+            "tokens": 546,
+            "bytes": 2203,
+            "bits_per_byte": 1.7967473600707888
+          },
+          {
+            "document": "wikitext2-validation-0033",
+            "nll": 2877.3960876464844,
+            "tokens": 546,
+            "bytes": 1992,
+            "bits_per_byte": 2.083938286305667
+          },
+          {
+            "document": "wikitext2-validation-0034",
+            "nll": 2633.3711547851562,
+            "tokens": 546,
+            "bytes": 2129,
+            "bits_per_byte": 1.7844769872374768
+          },
+          {
+            "document": "wikitext2-validation-0035",
+            "nll": 2861.5111083984375,
+            "tokens": 546,
+            "bytes": 1798,
+            "bits_per_byte": 2.296044430219748
+          },
+          {
+            "document": "wikitext2-validation-0036",
+            "nll": 2796.8141479492188,
+            "tokens": 546,
+            "bytes": 1972,
+            "bits_per_byte": 2.0461206397233416
+          },
+          {
+            "document": "wikitext2-validation-0037",
+            "nll": 2607.7124938964844,
+            "tokens": 546,
+            "bytes": 1888,
+            "bits_per_byte": 1.9926556583732253
+          },
+          {
+            "document": "wikitext2-validation-0038",
+            "nll": 2700.273681640625,
+            "tokens": 546,
+            "bytes": 2295,
+            "bits_per_byte": 1.6974603265995265
+          },
+          {
+            "document": "wikitext2-validation-0039",
+            "nll": 2832.528564453125,
+            "tokens": 546,
+            "bytes": 1895,
+            "bits_per_byte": 2.156451141484358
+          },
+          {
+            "document": "wikitext2-validation-0040",
+            "nll": 2809.834259033203,
+            "tokens": 546,
+            "bytes": 1967,
+            "bits_per_byte": 2.0608713529370197
+          },
+          {
+            "document": "wikitext2-validation-0041",
+            "nll": 2883.7970275878906,
+            "tokens": 546,
+            "bytes": 1907,
+            "bits_per_byte": 2.181667367924165
+          },
+          {
+            "document": "wikitext2-validation-0042",
+            "nll": 2690.1819763183594,
+            "tokens": 546,
+            "bytes": 2009,
+            "bits_per_byte": 1.9318627159399542
+          },
+          {
+            "document": "wikitext2-validation-0043",
+            "nll": 2671.88134765625,
+            "tokens": 546,
+            "bytes": 2026,
+            "bits_per_byte": 1.9026209131823257
+          },
+          {
+            "document": "wikitext2-validation-0044",
+            "nll": 3150.864227294922,
+            "tokens": 546,
+            "bytes": 1823,
+            "bits_per_byte": 2.4935470078073614
+          },
+          {
+            "document": "wikitext2-validation-0045",
+            "nll": 2964.4891662597656,
+            "tokens": 546,
+            "bytes": 1929,
+            "bits_per_byte": 2.2171352093997
+          },
+          {
+            "document": "wikitext2-validation-0046",
+            "nll": 2614.318603515625,
+            "tokens": 546,
+            "bytes": 2289,
+            "bits_per_byte": 1.6477345935324388
+          },
+          {
+            "document": "wikitext2-validation-0047",
+            "nll": 2809.9388427734375,
+            "tokens": 546,
+            "bytes": 2075,
+            "bits_per_byte": 1.9536794379134994
+          },
+          {
+            "document": "wikitext2-validation-0048",
+            "nll": 2998.9278564453125,
+            "tokens": 546,
+            "bytes": 1923,
+            "bits_per_byte": 2.24988993576569
+          },
+          {
+            "document": "wikitext2-validation-0049",
+            "nll": 2539.5824584960938,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.8551103892662868
+          },
+          {
+            "document": "wikitext2-validation-0050",
+            "nll": 2653.758270263672,
+            "tokens": 546,
+            "bytes": 2169,
+            "bits_per_byte": 1.7651285828619054
+          },
+          {
+            "document": "wikitext2-validation-0051",
+            "nll": 2911.8966674804688,
+            "tokens": 546,
+            "bytes": 1894,
+            "bits_per_byte": 2.2180458720988234
+          },
+          {
+            "document": "wikitext2-validation-0052",
+            "nll": 2909.857635498047,
+            "tokens": 546,
+            "bytes": 2000,
+            "bits_per_byte": 2.0990185902129586
+          },
+          {
+            "document": "wikitext2-validation-0053",
+            "nll": 3010.3087463378906,
+            "tokens": 546,
+            "bytes": 1981,
+            "bits_per_byte": 2.192305653652876
+          },
+          {
+            "document": "wikitext2-validation-0054",
+            "nll": 2759.4067993164062,
+            "tokens": 546,
+            "bytes": 2004,
+            "bits_per_byte": 1.9865182161522286
+          },
+          {
+            "document": "wikitext2-validation-0055",
+            "nll": 3105.1803283691406,
+            "tokens": 546,
+            "bytes": 1841,
+            "bits_per_byte": 2.4333667902249445
+          },
+          {
+            "document": "wikitext2-validation-0056",
+            "nll": 2727.6742248535156,
+            "tokens": 546,
+            "bytes": 1944,
+            "bits_per_byte": 2.024280903990131
+          },
+          {
+            "document": "wikitext2-validation-0057",
+            "nll": 3007.5564880371094,
+            "tokens": 546,
+            "bytes": 1740,
+            "bits_per_byte": 2.4936705922325086
+          },
+          {
+            "document": "wikitext2-validation-0058",
+            "nll": 2714.0936279296875,
+            "tokens": 546,
+            "bytes": 1901,
+            "bits_per_byte": 2.0597629760770624
+          },
+          {
+            "document": "wikitext2-validation-0059",
+            "nll": 2890.0794067382812,
+            "tokens": 546,
+            "bytes": 1831,
+            "bits_per_byte": 2.2771727077425643
+          }
+        ],
+        "seconds": 14.292471599997953,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "subset": "fixed per-article token prefixes",
+        "protocol": "Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded"
+      }
+    },
+    {
+      "condition": "slow_state_off",
+      "score": {
+        "bits_per_byte": 1.9951740385172911,
+        "token_perplexity": 139.1064953987976,
+        "nll": 161717.93756103516,
+        "tokens": 32768,
+        "bytes": 116937,
+        "documents": [
+          {
+            "document": "wikitext2-validation-0000",
+            "nll": 2680.208709716797,
+            "tokens": 547,
+            "bytes": 1731,
+            "bits_per_byte": 2.23380925133208
+          },
+          {
+            "document": "wikitext2-validation-0001",
+            "nll": 2504.954620361328,
+            "tokens": 547,
+            "bytes": 1826,
+            "bits_per_byte": 1.9791268392372312
+          },
+          {
+            "document": "wikitext2-validation-0002",
+            "nll": 2763.5161743164062,
+            "tokens": 547,
+            "bytes": 1916,
+            "bits_per_byte": 2.0808512944168682
+          },
+          {
+            "document": "wikitext2-validation-0003",
+            "nll": 2724.4888305664062,
+            "tokens": 547,
+            "bytes": 1715,
+            "bits_per_byte": 2.291898848288936
+          },
+          {
+            "document": "wikitext2-validation-0004",
+            "nll": 2387.646026611328,
+            "tokens": 547,
+            "bytes": 1862,
+            "bits_per_byte": 1.8499705059024711
+          },
+          {
+            "document": "wikitext2-validation-0005",
+            "nll": 2710.185760498047,
+            "tokens": 547,
+            "bytes": 1844,
+            "bits_per_byte": 2.120375030671592
+          },
+          {
+            "document": "wikitext2-validation-0006",
+            "nll": 2888.9236755371094,
+            "tokens": 547,
+            "bytes": 1907,
+            "bits_per_byte": 2.1855458102800758
+          },
+          {
+            "document": "wikitext2-validation-0007",
+            "nll": 2700.948272705078,
+            "tokens": 547,
+            "bytes": 2019,
+            "bits_per_byte": 1.9299874585087806
+          },
+          {
+            "document": "wikitext2-validation-0008",
+            "nll": 2514.80712890625,
+            "tokens": 546,
+            "bytes": 2154,
+            "bits_per_byte": 1.684354583874308
+          },
+          {
+            "document": "wikitext2-validation-0009",
+            "nll": 2660.9430541992188,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 1.9676726542189364
+          },
+          {
+            "document": "wikitext2-validation-0010",
+            "nll": 2534.457550048828,
+            "tokens": 546,
+            "bytes": 2086,
+            "bits_per_byte": 1.7528520320225485
+          },
+          {
+            "document": "wikitext2-validation-0011",
+            "nll": 2617.3624877929688,
+            "tokens": 546,
+            "bytes": 1980,
+            "bits_per_byte": 1.907098929973594
+          },
+          {
+            "document": "wikitext2-validation-0012",
+            "nll": 2803.4515075683594,
+            "tokens": 546,
+            "bytes": 1879,
+            "bits_per_byte": 2.1524883381274935
+          },
+          {
+            "document": "wikitext2-validation-0013",
+            "nll": 2728.761993408203,
+            "tokens": 546,
+            "bytes": 1900,
+            "bits_per_byte": 2.0719849450822614
+          },
+          {
+            "document": "wikitext2-validation-0014",
+            "nll": 2706.4403076171875,
+            "tokens": 546,
+            "bytes": 1606,
+            "bits_per_byte": 2.4312378644217416
+          },
+          {
+            "document": "wikitext2-validation-0015",
+            "nll": 2524.0362548828125,
+            "tokens": 546,
+            "bytes": 1986,
+            "bits_per_byte": 1.8335420885918357
+          },
+          {
+            "document": "wikitext2-validation-0016",
+            "nll": 2599.767822265625,
+            "tokens": 546,
+            "bytes": 1881,
+            "bits_per_byte": 1.9939777483494512
+          },
+          {
+            "document": "wikitext2-validation-0017",
+            "nll": 3096.6900939941406,
+            "tokens": 546,
+            "bytes": 1793,
+            "bits_per_byte": 2.4916784393615865
+          },
+          {
+            "document": "wikitext2-validation-0018",
+            "nll": 2849.0580444335938,
+            "tokens": 546,
+            "bytes": 1897,
+            "bits_per_byte": 2.1667485039057213
+          },
+          {
+            "document": "wikitext2-validation-0019",
+            "nll": 2742.161163330078,
+            "tokens": 546,
+            "bytes": 2052,
+            "bits_per_byte": 1.9279251031455238
+          },
+          {
+            "document": "wikitext2-validation-0020",
+            "nll": 2745.7763061523438,
+            "tokens": 546,
+            "bytes": 1916,
+            "bits_per_byte": 2.0674936640273502
+          },
+          {
+            "document": "wikitext2-validation-0021",
+            "nll": 2653.8081970214844,
+            "tokens": 546,
+            "bytes": 1537,
+            "bits_per_byte": 2.4909797822468294
+          },
+          {
+            "document": "wikitext2-validation-0022",
+            "nll": 2643.781524658203,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.9371104595318702
+          },
+          {
+            "document": "wikitext2-validation-0023",
+            "nll": 2530.02001953125,
+            "tokens": 546,
+            "bytes": 1969,
+            "bits_per_byte": 1.8537568997092597
+          },
+          {
+            "document": "wikitext2-validation-0024",
+            "nll": 2779.01416015625,
+            "tokens": 546,
+            "bytes": 1962,
+            "bits_per_byte": 2.043460727531921
+          },
+          {
+            "document": "wikitext2-validation-0025",
+            "nll": 2707.035186767578,
+            "tokens": 546,
+            "bytes": 1846,
+            "bits_per_byte": 2.1156155143345146
+          },
+          {
+            "document": "wikitext2-validation-0026",
+            "nll": 2448.3475646972656,
+            "tokens": 546,
+            "bytes": 2274,
+            "bits_per_byte": 1.5533064599653985
+          },
+          {
+            "document": "wikitext2-validation-0027",
+            "nll": 2663.779510498047,
+            "tokens": 546,
+            "bytes": 1927,
+            "bits_per_byte": 1.9943027969990466
+          },
+          {
+            "document": "wikitext2-validation-0028",
+            "nll": 2628.3040161132812,
+            "tokens": 546,
+            "bytes": 2288,
+            "bits_per_byte": 1.6572732386342557
+          },
+          {
+            "document": "wikitext2-validation-0029",
+            "nll": 2534.7482299804688,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.8515790892632407
+          },
+          {
+            "document": "wikitext2-validation-0030",
+            "nll": 2707.8090209960938,
+            "tokens": 546,
+            "bytes": 1938,
+            "bits_per_byte": 2.015759879393944
+          },
+          {
+            "document": "wikitext2-validation-0031",
+            "nll": 2760.73974609375,
+            "tokens": 546,
+            "bytes": 1951,
+            "bits_per_byte": 2.0414687549331156
+          },
+          {
+            "document": "wikitext2-validation-0032",
+            "nll": 2688.324005126953,
+            "tokens": 546,
+            "bytes": 2203,
+            "bits_per_byte": 1.7605227918744493
+          },
+          {
+            "document": "wikitext2-validation-0033",
+            "nll": 2789.6294860839844,
+            "tokens": 546,
+            "bytes": 1992,
+            "bits_per_byte": 2.0203738079774056
+          },
+          {
+            "document": "wikitext2-validation-0034",
+            "nll": 2507.3457641601562,
+            "tokens": 546,
+            "bytes": 2129,
+            "bits_per_byte": 1.699077172262943
+          },
+          {
+            "document": "wikitext2-validation-0035",
+            "nll": 2791.3067016601562,
+            "tokens": 546,
+            "bytes": 1798,
+            "bits_per_byte": 2.239713201382223
+          },
+          {
+            "document": "wikitext2-validation-0036",
+            "nll": 2700.775115966797,
+            "tokens": 546,
+            "bytes": 1972,
+            "bits_per_byte": 1.9758594657006152
+          },
+          {
+            "document": "wikitext2-validation-0037",
+            "nll": 2529.344024658203,
+            "tokens": 546,
+            "bytes": 1888,
+            "bits_per_byte": 1.932771229383751
+          },
+          {
+            "document": "wikitext2-validation-0038",
+            "nll": 2690.9923706054688,
+            "tokens": 546,
+            "bytes": 2295,
+            "bits_per_byte": 1.6916258597571006
+          },
+          {
+            "document": "wikitext2-validation-0039",
+            "nll": 2709.904510498047,
+            "tokens": 546,
+            "bytes": 1895,
+            "bits_per_byte": 2.063095408220668
+          },
+          {
+            "document": "wikitext2-validation-0040",
+            "nll": 2641.3834228515625,
+            "tokens": 546,
+            "bytes": 1967,
+            "bits_per_byte": 1.937321182122148
+          },
+          {
+            "document": "wikitext2-validation-0041",
+            "nll": 2740.0431518554688,
+            "tokens": 546,
+            "bytes": 1907,
+            "bits_per_byte": 2.07291382643086
+          },
+          {
+            "document": "wikitext2-validation-0042",
+            "nll": 2608.16552734375,
+            "tokens": 546,
+            "bytes": 2009,
+            "bits_per_byte": 1.8729653917951103
+          },
+          {
+            "document": "wikitext2-validation-0043",
+            "nll": 2572.489776611328,
+            "tokens": 546,
+            "bytes": 2026,
+            "bits_per_byte": 1.831845134972715
+          },
+          {
+            "document": "wikitext2-validation-0044",
+            "nll": 3016.1297302246094,
+            "tokens": 546,
+            "bytes": 1823,
+            "bits_per_byte": 2.3869201341046686
+          },
+          {
+            "document": "wikitext2-validation-0045",
+            "nll": 2858.697052001953,
+            "tokens": 546,
+            "bytes": 1929,
+            "bits_per_byte": 2.13801350976004
+          },
+          {
+            "document": "wikitext2-validation-0046",
+            "nll": 2606.5748901367188,
+            "tokens": 546,
+            "bytes": 2289,
+            "bits_per_byte": 1.6428539395831974
+          },
+          {
+            "document": "wikitext2-validation-0047",
+            "nll": 2685.7316284179688,
+            "tokens": 546,
+            "bytes": 2075,
+            "bits_per_byte": 1.8673213019167443
+          },
+          {
+            "document": "wikitext2-validation-0048",
+            "nll": 2841.2259826660156,
+            "tokens": 546,
+            "bytes": 1923,
+            "bits_per_byte": 2.1315770334046453
+          },
+          {
+            "document": "wikitext2-validation-0049",
+            "nll": 2403.561737060547,
+            "tokens": 546,
+            "bytes": 1975,
+            "bits_per_byte": 1.7557501764697283
+          },
+          {
+            "document": "wikitext2-validation-0050",
+            "nll": 2600.902374267578,
+            "tokens": 546,
+            "bytes": 2169,
+            "bits_per_byte": 1.7299718567045486
+          },
+          {
+            "document": "wikitext2-validation-0051",
+            "nll": 2846.621307373047,
+            "tokens": 546,
+            "bytes": 1894,
+            "bits_per_byte": 2.168324415752879
+          },
+          {
+            "document": "wikitext2-validation-0052",
+            "nll": 2873.136016845703,
+            "tokens": 546,
+            "bytes": 2000,
+            "bits_per_byte": 2.0725295416513827
+          },
+          {
+            "document": "wikitext2-validation-0053",
+            "nll": 2914.9937133789062,
+            "tokens": 546,
+            "bytes": 1981,
+            "bits_per_byte": 2.122890951294423
+          },
+          {
+            "document": "wikitext2-validation-0054",
+            "nll": 2694.8048095703125,
+            "tokens": 546,
+            "bytes": 2004,
+            "bits_per_byte": 1.9400107459734617
+          },
+          {
+            "document": "wikitext2-validation-0055",
+            "nll": 2989.4195556640625,
+            "tokens": 546,
+            "bytes": 1841,
+            "bits_per_byte": 2.3426511505122387
+          },
+          {
+            "document": "wikitext2-validation-0056",
+            "nll": 2633.774658203125,
+            "tokens": 546,
+            "bytes": 1944,
+            "bits_per_byte": 1.9545954929056961
+          },
+          {
+            "document": "wikitext2-validation-0057",
+            "nll": 2839.046600341797,
+            "tokens": 546,
+            "bytes": 1740,
+            "bits_per_byte": 2.3539531328538974
+          },
+          {
+            "document": "wikitext2-validation-0058",
+            "nll": 2584.8514709472656,
+            "tokens": 546,
+            "bytes": 1901,
+            "bits_per_byte": 1.9616793259180234
+          },
+          {
+            "document": "wikitext2-validation-0059",
+            "nll": 2816.7892150878906,
+            "tokens": 546,
+            "bytes": 1831,
+            "bits_per_byte": 2.219425358731194
+          }
+        ],
+        "seconds": 16.940452500013635,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "subset": "fixed per-article token prefixes",
+        "protocol": "Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded"
+      }
+    }
+  ],
+  "response": {
+    "stimulus": "A small bird lives in a garden. Each morning it leaves the tree and returns to the same branch. The gardener watches from a window. Later, rain falls on the leaves and the bird shelters beneath them. When the sky clears, it crosses the garden again.",
+    "tokens": 77,
+    "records": [
+      {
+        "position": 0,
+        "token": 0,
+        "piece": "<BOS>",
+        "fast": {
+          "initial_mean_absolute": 0.023114493116736412,
+          "trained_mean_absolute": 0.12406399846076965,
+          "paired_rms_distance": 0.16715337336063385
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0008488452294841409,
+          "trained_mean_absolute": 0.005012591369450092,
+          "paired_rms_distance": 0.008295652456581593
+        }
+      },
+      {
+        "position": 1,
+        "token": 34,
+        "piece": "A",
+        "fast": {
+          "initial_mean_absolute": 0.024180753156542778,
+          "trained_mean_absolute": 0.10710226744413376,
+          "paired_rms_distance": 0.13976050913333893
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0014030586462467909,
+          "trained_mean_absolute": 0.007566943299025297,
+          "paired_rms_distance": 0.01224948838353157
+        }
+      },
+      {
+        "position": 2,
+        "token": 1183,
+        "piece": " small",
+        "fast": {
+          "initial_mean_absolute": 0.025006456300616264,
+          "trained_mean_absolute": 0.10264086723327637,
+          "paired_rms_distance": 0.13461017608642578
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0018371419282630086,
+          "trained_mean_absolute": 0.009649325162172318,
+          "paired_rms_distance": 0.01467194315046072
+        }
+      },
+      {
+        "position": 3,
+        "token": 2154,
+        "piece": " bird",
+        "fast": {
+          "initial_mean_absolute": 0.024417364969849586,
+          "trained_mean_absolute": 0.12249694764614105,
+          "paired_rms_distance": 0.15798237919807434
+        },
+        "slow": {
+          "initial_mean_absolute": 0.002205837285146117,
+          "trained_mean_absolute": 0.012434160336852074,
+          "paired_rms_distance": 0.019363639876246452
+        }
+      },
+      {
+        "position": 4,
+        "token": 314,
+        "piece": " l",
+        "fast": {
+          "initial_mean_absolute": 0.025101836770772934,
+          "trained_mean_absolute": 0.10493816435337067,
+          "paired_rms_distance": 0.13537096977233887
+        },
+        "slow": {
+          "initial_mean_absolute": 0.002462224569171667,
+          "trained_mean_absolute": 0.012538920156657696,
+          "paired_rms_distance": 0.01886901818215847
+        }
+      },
+      {
+        "position": 5,
+        "token": 1263,
+        "piece": "ives",
+        "fast": {
+          "initial_mean_absolute": 0.02633177675306797,
+          "trained_mean_absolute": 0.14378900825977325,
+          "paired_rms_distance": 0.20670075714588165
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0026766061782836914,
+          "trained_mean_absolute": 0.016581077128648758,
+          "paired_rms_distance": 0.02732216939330101
+        }
+      },
+      {
+        "position": 6,
+        "token": 285,
+        "piece": " in",
+        "fast": {
+          "initial_mean_absolute": 0.026247425004839897,
+          "trained_mean_absolute": 0.1347522735595703,
+          "paired_rms_distance": 0.20231463015079498
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0029052195604890585,
+          "trained_mean_absolute": 0.0180592592805624,
+          "paired_rms_distance": 0.032972484827041626
+        }
+      },
+      {
+        "position": 7,
+        "token": 260,
+        "piece": " a",
+        "fast": {
+          "initial_mean_absolute": 0.028729788959026337,
+          "trained_mean_absolute": 0.14817650616168976,
+          "paired_rms_distance": 0.21444252133369446
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0032526892609894276,
+          "trained_mean_absolute": 0.01996541954576969,
+          "paired_rms_distance": 0.04033540561795235
+        }
+      },
+      {
+        "position": 8,
+        "token": 331,
+        "piece": " g",
+        "fast": {
+          "initial_mean_absolute": 0.027257947251200676,
+          "trained_mean_absolute": 0.13183803856372833,
+          "paired_rms_distance": 0.18123741447925568
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0034839690197259188,
+          "trained_mean_absolute": 0.02152818813920021,
+          "paired_rms_distance": 0.04441894590854645
+        }
+      },
+      {
+        "position": 9,
+        "token": 428,
+        "piece": "ard",
+        "fast": {
+          "initial_mean_absolute": 0.031105462461709976,
+          "trained_mean_absolute": 0.1281193196773529,
+          "paired_rms_distance": 0.1870080679655075
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0038337474688887596,
+          "trained_mean_absolute": 0.023998964577913284,
+          "paired_rms_distance": 0.05031291022896767
+        }
+      },
+      {
+        "position": 10,
+        "token": 277,
+        "piece": "en",
+        "fast": {
+          "initial_mean_absolute": 0.02796049416065216,
+          "trained_mean_absolute": 0.11521711200475693,
+          "paired_rms_distance": 0.1695956438779831
+        },
+        "slow": {
+          "initial_mean_absolute": 0.003968462813645601,
+          "trained_mean_absolute": 0.0258084274828434,
+          "paired_rms_distance": 0.0540631003677845
+        }
+      },
+      {
+        "position": 11,
+        "token": 15,
+        "piece": ".",
+        "fast": {
+          "initial_mean_absolute": 0.02803495153784752,
+          "trained_mean_absolute": 0.14442116022109985,
+          "paired_rms_distance": 0.19719548523426056
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0039836266078054905,
+          "trained_mean_absolute": 0.02824549563229084,
+          "paired_rms_distance": 0.05951095372438431
+        }
+      },
+      {
+        "position": 12,
+        "token": 402,
+        "piece": " E",
+        "fast": {
+          "initial_mean_absolute": 0.02781280316412449,
+          "trained_mean_absolute": 0.1452343612909317,
+          "paired_rms_distance": 0.19767366349697113
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004227504134178162,
+          "trained_mean_absolute": 0.0297610592097044,
+          "paired_rms_distance": 0.06323803216218948
+        }
+      },
+      {
+        "position": 13,
+        "token": 596,
+        "piece": "ach",
+        "fast": {
+          "initial_mean_absolute": 0.024144500494003296,
+          "trained_mean_absolute": 0.13367411494255066,
+          "paired_rms_distance": 0.19519980251789093
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004301833920180798,
+          "trained_mean_absolute": 0.032039593905210495,
+          "paired_rms_distance": 0.06801848113536835
+        }
+      },
+      {
+        "position": 14,
+        "token": 3937,
+        "piece": " morning",
+        "fast": {
+          "initial_mean_absolute": 0.02867206372320652,
+          "trained_mean_absolute": 0.1408279687166214,
+          "paired_rms_distance": 0.2052178680896759
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004429489839822054,
+          "trained_mean_absolute": 0.034493010491132736,
+          "paired_rms_distance": 0.07262562215328217
+        }
+      },
+      {
+        "position": 15,
+        "token": 386,
+        "piece": " it",
+        "fast": {
+          "initial_mean_absolute": 0.03273334726691246,
+          "trained_mean_absolute": 0.1287066638469696,
+          "paired_rms_distance": 0.18415942788124084
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004711623303592205,
+          "trained_mean_absolute": 0.036515720188617706,
+          "paired_rms_distance": 0.07701054215431213
+        }
+      },
+      {
+        "position": 16,
+        "token": 473,
+        "piece": " le",
+        "fast": {
+          "initial_mean_absolute": 0.02877967432141304,
+          "trained_mean_absolute": 0.12119467556476593,
+          "paired_rms_distance": 0.15838809311389923
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004919454921036959,
+          "trained_mean_absolute": 0.03672357276082039,
+          "paired_rms_distance": 0.07627841830253601
+        }
+      },
+      {
+        "position": 17,
+        "token": 2387,
+        "piece": "aves",
+        "fast": {
+          "initial_mean_absolute": 0.025121040642261505,
+          "trained_mean_absolute": 0.13322776556015015,
+          "paired_rms_distance": 0.18789373338222504
+        },
+        "slow": {
+          "initial_mean_absolute": 0.004954013042151928,
+          "trained_mean_absolute": 0.03840704262256622,
+          "paired_rms_distance": 0.07964204251766205
+        }
+      },
+      {
+        "position": 18,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.027274256572127342,
+          "trained_mean_absolute": 0.1168430745601654,
+          "paired_rms_distance": 0.16540592908859253
+        },
+        "slow": {
+          "initial_mean_absolute": 0.005077056121081114,
+          "trained_mean_absolute": 0.039328429847955704,
+          "paired_rms_distance": 0.08135201781988144
+        }
+      },
+      {
+        "position": 19,
+        "token": 258,
+        "piece": " t",
+        "fast": {
+          "initial_mean_absolute": 0.02886609174311161,
+          "trained_mean_absolute": 0.12510940432548523,
+          "paired_rms_distance": 0.16544568538665771
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00522852735593915,
+          "trained_mean_absolute": 0.039564382284879684,
+          "paired_rms_distance": 0.0815202072262764
+        }
+      },
+      {
+        "position": 20,
+        "token": 577,
+        "piece": "ree",
+        "fast": {
+          "initial_mean_absolute": 0.027089867740869522,
+          "trained_mean_absolute": 0.12454041093587875,
+          "paired_rms_distance": 0.17540623247623444
+        },
+        "slow": {
+          "initial_mean_absolute": 0.005402863956987858,
+          "trained_mean_absolute": 0.040771059691905975,
+          "paired_rms_distance": 0.08381255716085434
+        }
+      },
+      {
+        "position": 21,
+        "token": 289,
+        "piece": " and",
+        "fast": {
+          "initial_mean_absolute": 0.029798639938235283,
+          "trained_mean_absolute": 0.12311931699514389,
+          "paired_rms_distance": 0.17720337212085724
+        },
+        "slow": {
+          "initial_mean_absolute": 0.005496256519109011,
+          "trained_mean_absolute": 0.04271901026368141,
+          "paired_rms_distance": 0.08730266988277435
+        }
+      },
+      {
+        "position": 22,
+        "token": 1127,
+        "piece": " return",
+        "fast": {
+          "initial_mean_absolute": 0.027503635734319687,
+          "trained_mean_absolute": 0.13944201171398163,
+          "paired_rms_distance": 0.18999338150024414
+        },
+        "slow": {
+          "initial_mean_absolute": 0.005527321714907885,
+          "trained_mean_absolute": 0.044639647006988525,
+          "paired_rms_distance": 0.08979863673448563
+        }
+      },
+      {
+        "position": 23,
+        "token": 84,
+        "piece": "s",
+        "fast": {
+          "initial_mean_absolute": 0.029557982459664345,
+          "trained_mean_absolute": 0.10869818925857544,
+          "paired_rms_distance": 0.1510254442691803
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0056805857457220554,
+          "trained_mean_absolute": 0.04548804461956024,
+          "paired_rms_distance": 0.09051650762557983
+        }
+      },
+      {
+        "position": 24,
+        "token": 291,
+        "piece": " to",
+        "fast": {
+          "initial_mean_absolute": 0.029552942141890526,
+          "trained_mean_absolute": 0.15557041764259338,
+          "paired_rms_distance": 0.21760223805904388
+        },
+        "slow": {
+          "initial_mean_absolute": 0.005905340425670147,
+          "trained_mean_absolute": 0.047561489045619965,
+          "paired_rms_distance": 0.09412117302417755
+        }
+      },
+      {
+        "position": 25,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.02823040448129177,
+          "trained_mean_absolute": 0.15411585569381714,
+          "paired_rms_distance": 0.21816392242908478
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00624646944925189,
+          "trained_mean_absolute": 0.050036538392305374,
+          "paired_rms_distance": 0.0983976200222969
+        }
+      },
+      {
+        "position": 26,
+        "token": 1113,
+        "piece": " same",
+        "fast": {
+          "initial_mean_absolute": 0.027242284268140793,
+          "trained_mean_absolute": 0.16077390313148499,
+          "paired_rms_distance": 0.22651508450508118
+        },
+        "slow": {
+          "initial_mean_absolute": 0.006167738698422909,
+          "trained_mean_absolute": 0.052422165870666504,
+          "paired_rms_distance": 0.10297001153230667
+        }
+      },
+      {
+        "position": 27,
+        "token": 283,
+        "piece": " b",
+        "fast": {
+          "initial_mean_absolute": 0.024250993505120277,
+          "trained_mean_absolute": 0.1387457251548767,
+          "paired_rms_distance": 0.18996931612491608
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00618379469960928,
+          "trained_mean_absolute": 0.05278445780277252,
+          "paired_rms_distance": 0.1030735969543457
+        }
+      },
+      {
+        "position": 28,
+        "token": 3106,
+        "piece": "ranch",
+        "fast": {
+          "initial_mean_absolute": 0.02722608670592308,
+          "trained_mean_absolute": 0.1561286449432373,
+          "paired_rms_distance": 0.21533454954624176
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0062729595229029655,
+          "trained_mean_absolute": 0.053279586136341095,
+          "paired_rms_distance": 0.10343468189239502
+        }
+      },
+      {
+        "position": 29,
+        "token": 15,
+        "piece": ".",
+        "fast": {
+          "initial_mean_absolute": 0.027204250916838646,
+          "trained_mean_absolute": 0.1451653689146042,
+          "paired_rms_distance": 0.19409975409507751
+        },
+        "slow": {
+          "initial_mean_absolute": 0.006366088520735502,
+          "trained_mean_absolute": 0.05452138930559158,
+          "paired_rms_distance": 0.1057380959391594
+        }
+      },
+      {
+        "position": 30,
+        "token": 325,
+        "piece": " The",
+        "fast": {
+          "initial_mean_absolute": 0.028056863695383072,
+          "trained_mean_absolute": 0.14834435284137726,
+          "paired_rms_distance": 0.20292389392852783
+        },
+        "slow": {
+          "initial_mean_absolute": 0.006537768058478832,
+          "trained_mean_absolute": 0.05629131942987442,
+          "paired_rms_distance": 0.10890255123376846
+        }
+      },
+      {
+        "position": 31,
+        "token": 331,
+        "piece": " g",
+        "fast": {
+          "initial_mean_absolute": 0.02673790603876114,
+          "trained_mean_absolute": 0.13212458789348602,
+          "paired_rms_distance": 0.17825007438659668
+        },
+        "slow": {
+          "initial_mean_absolute": 0.006677511613816023,
+          "trained_mean_absolute": 0.056813955307006836,
+          "paired_rms_distance": 0.10946960002183914
+        }
+      },
+      {
+        "position": 32,
+        "token": 428,
+        "piece": "ard",
+        "fast": {
+          "initial_mean_absolute": 0.03064233437180519,
+          "trained_mean_absolute": 0.12694622576236725,
+          "paired_rms_distance": 0.18031705915927887
+        },
+        "slow": {
+          "initial_mean_absolute": 0.006992768496274948,
+          "trained_mean_absolute": 0.058065399527549744,
+          "paired_rms_distance": 0.11123945564031601
+        }
+      },
+      {
+        "position": 33,
+        "token": 821,
+        "piece": "ener",
+        "fast": {
+          "initial_mean_absolute": 0.03312137350440025,
+          "trained_mean_absolute": 0.15233616530895233,
+          "paired_rms_distance": 0.21351048350334167
+        },
+        "slow": {
+          "initial_mean_absolute": 0.007271833252161741,
+          "trained_mean_absolute": 0.059117257595062256,
+          "paired_rms_distance": 0.11368755251169205
+        }
+      },
+      {
+        "position": 34,
+        "token": 2001,
+        "piece": " wat",
+        "fast": {
+          "initial_mean_absolute": 0.030544588342308998,
+          "trained_mean_absolute": 0.13562050461769104,
+          "paired_rms_distance": 0.1779838502407074
+        },
+        "slow": {
+          "initial_mean_absolute": 0.007504153531044722,
+          "trained_mean_absolute": 0.05888989195227623,
+          "paired_rms_distance": 0.11196986585855484
+        }
+      },
+      {
+        "position": 35,
+        "token": 1662,
+        "piece": "ches",
+        "fast": {
+          "initial_mean_absolute": 0.030274786055088043,
+          "trained_mean_absolute": 0.16951271891593933,
+          "paired_rms_distance": 0.24107517302036285
+        },
+        "slow": {
+          "initial_mean_absolute": 0.007578900083899498,
+          "trained_mean_absolute": 0.0608212985098362,
+          "paired_rms_distance": 0.11596748977899551
+        }
+      },
+      {
+        "position": 36,
+        "token": 404,
+        "piece": " from",
+        "fast": {
+          "initial_mean_absolute": 0.03183096647262573,
+          "trained_mean_absolute": 0.14618992805480957,
+          "paired_rms_distance": 0.22571925818920135
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0076020811684429646,
+          "trained_mean_absolute": 0.06229180842638016,
+          "paired_rms_distance": 0.11866322159767151
+        }
+      },
+      {
+        "position": 37,
+        "token": 260,
+        "piece": " a",
+        "fast": {
+          "initial_mean_absolute": 0.0308818556368351,
+          "trained_mean_absolute": 0.15759137272834778,
+          "paired_rms_distance": 0.22696435451507568
+        },
+        "slow": {
+          "initial_mean_absolute": 0.007771452888846397,
+          "trained_mean_absolute": 0.06372097879648209,
+          "paired_rms_distance": 0.12167297303676605
+        }
+      },
+      {
+        "position": 38,
+        "token": 1642,
+        "piece": " wind",
+        "fast": {
+          "initial_mean_absolute": 0.029783004894852638,
+          "trained_mean_absolute": 0.16880807280540466,
+          "paired_rms_distance": 0.231013223528862
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00784686952829361,
+          "trained_mean_absolute": 0.06558546423912048,
+          "paired_rms_distance": 0.12464433908462524
+        }
+      },
+      {
+        "position": 39,
+        "token": 348,
+        "piece": "ow",
+        "fast": {
+          "initial_mean_absolute": 0.02791045419871807,
+          "trained_mean_absolute": 0.1332325041294098,
+          "paired_rms_distance": 0.19176779687404633
+        },
+        "slow": {
+          "initial_mean_absolute": 0.007913431152701378,
+          "trained_mean_absolute": 0.06638959795236588,
+          "paired_rms_distance": 0.1258428394794464
+        }
+      },
+      {
+        "position": 40,
+        "token": 15,
+        "piece": ".",
+        "fast": {
+          "initial_mean_absolute": 0.030796803534030914,
+          "trained_mean_absolute": 0.14819614589214325,
+          "paired_rms_distance": 0.20383211970329285
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008087879046797752,
+          "trained_mean_absolute": 0.06754420697689056,
+          "paired_rms_distance": 0.1274624913930893
+        }
+      },
+      {
+        "position": 41,
+        "token": 2849,
+        "piece": " Later",
+        "fast": {
+          "initial_mean_absolute": 0.029594531282782555,
+          "trained_mean_absolute": 0.15101368725299835,
+          "paired_rms_distance": 0.21380238234996796
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008166651241481304,
+          "trained_mean_absolute": 0.06847678869962692,
+          "paired_rms_distance": 0.12926085293293
+        }
+      },
+      {
+        "position": 42,
+        "token": 13,
+        "piece": ",",
+        "fast": {
+          "initial_mean_absolute": 0.028162745758891106,
+          "trained_mean_absolute": 0.15002107620239258,
+          "paired_rms_distance": 0.2069675624370575
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008166944608092308,
+          "trained_mean_absolute": 0.06798283755779266,
+          "paired_rms_distance": 0.12715710699558258
+        }
+      },
+      {
+        "position": 43,
+        "token": 3027,
+        "piece": " rain",
+        "fast": {
+          "initial_mean_absolute": 0.028395934030413628,
+          "trained_mean_absolute": 0.16000355780124664,
+          "paired_rms_distance": 0.21191717684268951
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008215800859034061,
+          "trained_mean_absolute": 0.06742538511753082,
+          "paired_rms_distance": 0.12475398927927017
+        }
+      },
+      {
+        "position": 44,
+        "token": 2430,
+        "piece": " fall",
+        "fast": {
+          "initial_mean_absolute": 0.02654573693871498,
+          "trained_mean_absolute": 0.1298060417175293,
+          "paired_rms_distance": 0.16520152986049652
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008186656050384045,
+          "trained_mean_absolute": 0.06698735058307648,
+          "paired_rms_distance": 0.12215186655521393
+        }
+      },
+      {
+        "position": 45,
+        "token": 84,
+        "piece": "s",
+        "fast": {
+          "initial_mean_absolute": 0.029752377420663834,
+          "trained_mean_absolute": 0.10644800961017609,
+          "paired_rms_distance": 0.1443432867527008
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008104382082819939,
+          "trained_mean_absolute": 0.06647462397813797,
+          "paired_rms_distance": 0.12048110365867615
+        }
+      },
+      {
+        "position": 46,
+        "token": 327,
+        "piece": " on",
+        "fast": {
+          "initial_mean_absolute": 0.027463313192129135,
+          "trained_mean_absolute": 0.1510087251663208,
+          "paired_rms_distance": 0.2131786346435547
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008074909448623657,
+          "trained_mean_absolute": 0.06702855229377747,
+          "paired_rms_distance": 0.1213284432888031
+        }
+      },
+      {
+        "position": 47,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.026203792542219162,
+          "trained_mean_absolute": 0.1500207781791687,
+          "paired_rms_distance": 0.2159687727689743
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008219931274652481,
+          "trained_mean_absolute": 0.06854475289583206,
+          "paired_rms_distance": 0.12412944436073303
+        }
+      },
+      {
+        "position": 48,
+        "token": 473,
+        "piece": " le",
+        "fast": {
+          "initial_mean_absolute": 0.03043615072965622,
+          "trained_mean_absolute": 0.13656407594680786,
+          "paired_rms_distance": 0.18984653055667877
+        },
+        "slow": {
+          "initial_mean_absolute": 0.0084832226857543,
+          "trained_mean_absolute": 0.06863681972026825,
+          "paired_rms_distance": 0.1245230883359909
+        }
+      },
+      {
+        "position": 49,
+        "token": 2387,
+        "piece": "aves",
+        "fast": {
+          "initial_mean_absolute": 0.026669081300497055,
+          "trained_mean_absolute": 0.143196702003479,
+          "paired_rms_distance": 0.20741119980812073
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008566980250179768,
+          "trained_mean_absolute": 0.06964829564094543,
+          "paired_rms_distance": 0.1264296919107437
+        }
+      },
+      {
+        "position": 50,
+        "token": 289,
+        "piece": " and",
+        "fast": {
+          "initial_mean_absolute": 0.03215816617012024,
+          "trained_mean_absolute": 0.12867392599582672,
+          "paired_rms_distance": 0.18555974960327148
+        },
+        "slow": {
+          "initial_mean_absolute": 0.008778284303843975,
+          "trained_mean_absolute": 0.0703163668513298,
+          "paired_rms_distance": 0.12771163880825043
+        }
+      },
+      {
+        "position": 51,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.03179185092449188,
+          "trained_mean_absolute": 0.14317777752876282,
+          "paired_rms_distance": 0.20570501685142517
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00916118361055851,
+          "trained_mean_absolute": 0.07148713618516922,
+          "paired_rms_distance": 0.12956561148166656
+        }
+      },
+      {
+        "position": 52,
+        "token": 2154,
+        "piece": " bird",
+        "fast": {
+          "initial_mean_absolute": 0.029559368267655373,
+          "trained_mean_absolute": 0.13550648093223572,
+          "paired_rms_distance": 0.19805817306041718
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009400616399943829,
+          "trained_mean_absolute": 0.0725371390581131,
+          "paired_rms_distance": 0.13175088167190552
+        }
+      },
+      {
+        "position": 53,
+        "token": 662,
+        "piece": " she",
+        "fast": {
+          "initial_mean_absolute": 0.032290440052747726,
+          "trained_mean_absolute": 0.14776763319969177,
+          "paired_rms_distance": 0.20502077043056488
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009581880643963814,
+          "trained_mean_absolute": 0.07317475974559784,
+          "paired_rms_distance": 0.1328267753124237
+        }
+      },
+      {
+        "position": 54,
+        "token": 77,
+        "piece": "l",
+        "fast": {
+          "initial_mean_absolute": 0.029751259833574295,
+          "trained_mean_absolute": 0.12007185816764832,
+          "paired_rms_distance": 0.16183431446552277
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00958943460136652,
+          "trained_mean_absolute": 0.07283541560173035,
+          "paired_rms_distance": 0.13179956376552582
+        }
+      },
+      {
+        "position": 55,
+        "token": 754,
+        "piece": "ters",
+        "fast": {
+          "initial_mean_absolute": 0.031431764364242554,
+          "trained_mean_absolute": 0.1464737504720688,
+          "paired_rms_distance": 0.20577691495418549
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009603864513337612,
+          "trained_mean_absolute": 0.07306463271379471,
+          "paired_rms_distance": 0.13302038609981537
+        }
+      },
+      {
+        "position": 56,
+        "token": 283,
+        "piece": " b",
+        "fast": {
+          "initial_mean_absolute": 0.024017641320824623,
+          "trained_mean_absolute": 0.1280021369457245,
+          "paired_rms_distance": 0.1730339080095291
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009624085389077663,
+          "trained_mean_absolute": 0.07201749086380005,
+          "paired_rms_distance": 0.13072480261325836
+        }
+      },
+      {
+        "position": 57,
+        "token": 1437,
+        "piece": "ene",
+        "fast": {
+          "initial_mean_absolute": 0.027066435664892197,
+          "trained_mean_absolute": 0.1252766251564026,
+          "paired_rms_distance": 0.1775621920824051
+        },
+        "slow": {
+          "initial_mean_absolute": 0.00965234637260437,
+          "trained_mean_absolute": 0.07183799147605896,
+          "paired_rms_distance": 0.1307988315820694
+        }
+      },
+      {
+        "position": 58,
+        "token": 697,
+        "piece": "ath",
+        "fast": {
+          "initial_mean_absolute": 0.0278007872402668,
+          "trained_mean_absolute": 0.1262674331665039,
+          "paired_rms_distance": 0.18489304184913635
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009657789021730423,
+          "trained_mean_absolute": 0.07212211191654205,
+          "paired_rms_distance": 0.13157828152179718
+        }
+      },
+      {
+        "position": 59,
+        "token": 706,
+        "piece": " them",
+        "fast": {
+          "initial_mean_absolute": 0.029673617333173752,
+          "trained_mean_absolute": 0.12635643780231476,
+          "paired_rms_distance": 0.18348610401153564
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009618701413273811,
+          "trained_mean_absolute": 0.07258550822734833,
+          "paired_rms_distance": 0.1323103904724121
+        }
+      },
+      {
+        "position": 60,
+        "token": 15,
+        "piece": ".",
+        "fast": {
+          "initial_mean_absolute": 0.031119320541620255,
+          "trained_mean_absolute": 0.14282184839248657,
+          "paired_rms_distance": 0.19179528951644897
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009714766405522823,
+          "trained_mean_absolute": 0.07315576076507568,
+          "paired_rms_distance": 0.13302530348300934
+        }
+      },
+      {
+        "position": 61,
+        "token": 1502,
+        "piece": " When",
+        "fast": {
+          "initial_mean_absolute": 0.02876034751534462,
+          "trained_mean_absolute": 0.13813428580760956,
+          "paired_rms_distance": 0.19722123444080353
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009730516001582146,
+          "trained_mean_absolute": 0.07376134395599365,
+          "paired_rms_distance": 0.13407468795776367
+        }
+      },
+      {
+        "position": 62,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.027878623455762863,
+          "trained_mean_absolute": 0.13501963019371033,
+          "paired_rms_distance": 0.19697578251361847
+        },
+        "slow": {
+          "initial_mean_absolute": 0.009917857125401497,
+          "trained_mean_absolute": 0.07474692165851593,
+          "paired_rms_distance": 0.13576403260231018
+        }
+      },
+      {
+        "position": 63,
+        "token": 1840,
+        "piece": " sk",
+        "fast": {
+          "initial_mean_absolute": 0.027520447969436646,
+          "trained_mean_absolute": 0.13848668336868286,
+          "paired_rms_distance": 0.1888769119977951
+        },
+        "slow": {
+          "initial_mean_absolute": 0.01000820379704237,
+          "trained_mean_absolute": 0.07416357100009918,
+          "paired_rms_distance": 0.13462653756141663
+        }
+      },
+      {
+        "position": 64,
+        "token": 90,
+        "piece": "y",
+        "fast": {
+          "initial_mean_absolute": 0.027063563466072083,
+          "trained_mean_absolute": 0.11908626556396484,
+          "paired_rms_distance": 0.1659853756427765
+        },
+        "slow": {
+          "initial_mean_absolute": 0.010034856386482716,
+          "trained_mean_absolute": 0.07394822686910629,
+          "paired_rms_distance": 0.13418905436992645
+        }
+      },
+      {
+        "position": 65,
+        "token": 3402,
+        "piece": " cle",
+        "fast": {
+          "initial_mean_absolute": 0.02959086000919342,
+          "trained_mean_absolute": 0.13687482476234436,
+          "paired_rms_distance": 0.17415569722652435
+        },
+        "slow": {
+          "initial_mean_absolute": 0.010100890882313251,
+          "trained_mean_absolute": 0.07323292642831802,
+          "paired_rms_distance": 0.13100746273994446
+        }
+      },
+      {
+        "position": 66,
+        "token": 883,
+        "piece": "ars",
+        "fast": {
+          "initial_mean_absolute": 0.029972054064273834,
+          "trained_mean_absolute": 0.13368599116802216,
+          "paired_rms_distance": 0.1783643215894699
+        },
+        "slow": {
+          "initial_mean_absolute": 0.010212041437625885,
+          "trained_mean_absolute": 0.07320421934127808,
+          "paired_rms_distance": 0.13044047355651855
+        }
+      },
+      {
+        "position": 67,
+        "token": 13,
+        "piece": ",",
+        "fast": {
+          "initial_mean_absolute": 0.030445292592048645,
+          "trained_mean_absolute": 0.13469363749027252,
+          "paired_rms_distance": 0.1775035262107849
+        },
+        "slow": {
+          "initial_mean_absolute": 0.010405568405985832,
+          "trained_mean_absolute": 0.07182541489601135,
+          "paired_rms_distance": 0.1266971230506897
+        }
+      },
+      {
+        "position": 68,
+        "token": 386,
+        "piece": " it",
+        "fast": {
+          "initial_mean_absolute": 0.033329714089632034,
+          "trained_mean_absolute": 0.11810867488384247,
+          "paired_rms_distance": 0.1578831970691681
+        },
+        "slow": {
+          "initial_mean_absolute": 0.010643625631928444,
+          "trained_mean_absolute": 0.07168950140476227,
+          "paired_rms_distance": 0.12584340572357178
+        }
+      },
+      {
+        "position": 69,
+        "token": 2201,
+        "piece": " cross",
+        "fast": {
+          "initial_mean_absolute": 0.0327671617269516,
+          "trained_mean_absolute": 0.11699528992176056,
+          "paired_rms_distance": 0.1566292941570282
+        },
+        "slow": {
+          "initial_mean_absolute": 0.01090650912374258,
+          "trained_mean_absolute": 0.0710221379995346,
+          "paired_rms_distance": 0.12367373704910278
+        }
+      },
+      {
+        "position": 70,
+        "token": 280,
+        "piece": "es",
+        "fast": {
+          "initial_mean_absolute": 0.030891625210642815,
+          "trained_mean_absolute": 0.11489203572273254,
+          "paired_rms_distance": 0.1594458967447281
+        },
+        "slow": {
+          "initial_mean_absolute": 0.011096288450062275,
+          "trained_mean_absolute": 0.07115552574396133,
+          "paired_rms_distance": 0.12375681102275848
+        }
+      },
+      {
+        "position": 71,
+        "token": 262,
+        "piece": " the",
+        "fast": {
+          "initial_mean_absolute": 0.03171834349632263,
+          "trained_mean_absolute": 0.13222067058086395,
+          "paired_rms_distance": 0.1860329955816269
+        },
+        "slow": {
+          "initial_mean_absolute": 0.011441567912697792,
+          "trained_mean_absolute": 0.07207001000642776,
+          "paired_rms_distance": 0.12480498105287552
+        }
+      },
+      {
+        "position": 72,
+        "token": 331,
+        "piece": " g",
+        "fast": {
+          "initial_mean_absolute": 0.027393635362386703,
+          "trained_mean_absolute": 0.12624973058700562,
+          "paired_rms_distance": 0.17261992394924164
+        },
+        "slow": {
+          "initial_mean_absolute": 0.011437773704528809,
+          "trained_mean_absolute": 0.07173813879489899,
+          "paired_rms_distance": 0.12421131134033203
+        }
+      },
+      {
+        "position": 73,
+        "token": 428,
+        "piece": "ard",
+        "fast": {
+          "initial_mean_absolute": 0.03402942419052124,
+          "trained_mean_absolute": 0.1260901838541031,
+          "paired_rms_distance": 0.1751817911863327
+        },
+        "slow": {
+          "initial_mean_absolute": 0.01160092931240797,
+          "trained_mean_absolute": 0.0722440630197525,
+          "paired_rms_distance": 0.12497936934232712
+        }
+      },
+      {
+        "position": 74,
+        "token": 277,
+        "piece": "en",
+        "fast": {
+          "initial_mean_absolute": 0.03227340430021286,
+          "trained_mean_absolute": 0.11733895540237427,
+          "paired_rms_distance": 0.16304965317249298
+        },
+        "slow": {
+          "initial_mean_absolute": 0.011754150502383709,
+          "trained_mean_absolute": 0.07230909168720245,
+          "paired_rms_distance": 0.12500280141830444
+        }
+      },
+      {
+        "position": 75,
+        "token": 759,
+        "piece": " again",
+        "fast": {
+          "initial_mean_absolute": 0.032604020088911057,
+          "trained_mean_absolute": 0.12062519043684006,
+          "paired_rms_distance": 0.17651718854904175
+        },
+        "slow": {
+          "initial_mean_absolute": 0.011893972754478455,
+          "trained_mean_absolute": 0.07291946560144424,
+          "paired_rms_distance": 0.12616148591041565
+        }
+      },
+      {
+        "position": 76,
+        "token": 15,
+        "piece": ".",
+        "fast": {
+          "initial_mean_absolute": 0.03278205171227455,
+          "trained_mean_absolute": 0.1389051377773285,
+          "paired_rms_distance": 0.18638983368873596
+        },
+        "slow": {
+          "initial_mean_absolute": 0.012158679775893688,
+          "trained_mean_absolute": 0.07353381812572479,
+          "paired_rms_distance": 0.12708376348018646
+        }
+      }
+    ],
+    "interpretation": "Identical teacher-forced input from zero state. State distance is not a measure of semantic knowledge or animal behavior."
+  },
+  "parameter_changes": [
+    {
+      "name": "edge_log_gain",
+      "parameters": 76130,
+      "initial_l2": 0.0,
+      "trained_l2": 68.94664764404297,
+      "change_l2": 68.94664764404297
+    },
+    {
+      "name": "alpha_logit",
+      "parameters": 1024,
+      "initial_l2": 27.73988914489746,
+      "trained_l2": 41.384220123291016,
+      "change_l2": 19.07520866394043
+    },
+    {
+      "name": "beta_logit",
+      "parameters": 1024,
+      "initial_l2": 42.34975051879883,
+      "trained_l2": 38.42070770263672,
+      "change_l2": 10.632875442504883
+    },
+    {
+      "name": "recurrent_logit",
+      "parameters": 1,
+      "initial_l2": 0.0,
+      "trained_l2": 0.21551662683486938,
+      "change_l2": 0.21551662683486938
+    },
+    {
+      "name": "output_bias",
+      "parameters": 4096,
+      "initial_l2": 0.0,
+      "trained_l2": 6.07493257522583,
+      "change_l2": 6.07493257522583
+    },
+    {
+      "name": "embedding.weight",
+      "parameters": 393216,
+      "initial_l2": 125.24240112304688,
+      "trained_l2": 137.31344604492188,
+      "change_l2": 125.97926330566406
+    },
+    {
+      "name": "input.weight",
+      "parameters": 98304,
+      "initial_l2": 9.26546859741211,
+      "trained_l2": 30.794281005859375,
+      "change_l2": 29.105073928833008
+    },
+    {
+      "name": "input.bias",
+      "parameters": 1024,
+      "initial_l2": 0.0,
+      "trained_l2": 1.5154465436935425,
+      "change_l2": 1.5154465436935425
+    },
+    {
+      "name": "norm.weight",
+      "parameters": 256,
+      "initial_l2": 16.0,
+      "trained_l2": 12.40145492553711,
+      "change_l2": 4.7852888107299805
+    },
+    {
+      "name": "norm.bias",
+      "parameters": 256,
+      "initial_l2": 0.0,
+      "trained_l2": 3.151198148727417,
+      "change_l2": 3.151198148727417
+    },
+    {
+      "name": "readout.weight",
+      "parameters": 24576,
+      "initial_l2": 3.927276611328125,
+      "trained_l2": 12.471360206604004,
+      "change_l2": 11.4475679397583
+    },
+    {
+      "name": "readout.bias",
+      "parameters": 96,
+      "initial_l2": 0.0,
+      "trained_l2": 0.9496904611587524,
+      "change_l2": 0.9496904611587524
+    }
+  ],
+  "protocol": "docs/MECHANISM-PROTOCOL.md",
+  "caution": "Exploratory validation diagnostics after training. Acute removal without retraining is not a matched architectural ablation or a topology advantage test. No held-out test data is used."
+}
