@@ -1,0 +1,27 @@
+{
+  "verified_utc": "2026-09-10T13:07:11.454744+00:00",
+  "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "scoring_sources": {
+    "flm/language_topology_test.py": "8474efecc44df7667e38dee01502203e15e65c38fa33e2ed7147870567162fcc",
+    "flm/language_test.py": "0818dce2152d55b00d17fa6074248c52eaa4f292bff5fbc5fc073d414cc6c157",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31"
+  },
+  "test_source_sha256": "408f48a986603f1b2f6c767c8cb5f15c8773731f3665e6441e01a6ab7d086e6c",
+  "tests_passed": 5,
+  "scope": "Synthetic evaluator fixtures and the real incomplete-study gate; no new control test corpus decoded or scored.",
+  "covered_invariants": [
+    "Byte-weighted aggregate effects with unequal article lengths and opposing article outcomes",
+    "Correct graph and training-seed pairing with input orders permuted",
+    "All six topology contrasts and separate slow-state effects retained",
+    "Declared 10000 paired article resamples with seed31415",
+    "Completion markers cannot replace checkpoint verification",
+    "Duplicate/missing articles, altered denominators and nonfinite or inconsistent scores rejected"
+  ],
+  "actual_gate": {
+    "rejected": "Language control incomplete: no-slow-s42",
+    "test_decoder_calls": 0,
+    "selection_file_exists": false,
+    "public_test_results_exist": false
+  },
+  "frozen_training_sources_and_inputs_unchanged": true
+}
