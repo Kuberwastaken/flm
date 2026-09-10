@@ -96,7 +96,7 @@ else if (conversations.length < 100) newConversation(isLexical ? 'completion' : 
 else { currentId = ''; renderConversation(); }
 $('model').value = selectedModel;
 $('mode').querySelector('[value="dialogue"]').disabled = isLexical;
-$('prompt').placeholder = isLexical ? 'The history of science' : 'What should we make together?';
+$('prompt').placeholder = selectedModel === 'babylm' ? 'Once upon a time, a little bird' : isLexical ? 'The history of science' : 'What should we make together?';
 function switchModel(value, conversationId = null) {
   const url = new URL(location.href); url.searchParams.set('model', value);
   if (conversationId) url.searchParams.set('conversation', conversationId); else url.searchParams.delete('conversation');

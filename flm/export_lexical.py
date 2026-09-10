@@ -31,8 +31,9 @@ def export(checkpoint, graph_path, tokenizer_path, output, anatomy_source=None, 
     if profile not in profiles or lexicon.sha256 != profiles[profile]['tokenizer_sha256']:
         raise ValueError('Dataset profile does not match the checkpoint tokenizer')
     details=profiles[profile]
-    if profile=='babylm' and (saved['step']!=12000 or saved['run']['protocol']['train_cache_sha256']!='4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd'):
-        raise ValueError('The BabyLM preview requires the complete registered 10M training exposure')
+    if profile=='babylm' and (saved['step']!=12000 or saved['run']['seed']!=42 or model.config.variant!='flm' or
+        saved['run']['protocol']['train_cache_sha256']!='4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd'):
+        raise ValueError('The BabyLM preview requires the registered 10M FLM at update 12000, seed 42')
     model.eval(); graph = load_graph(graph_path)
     n, p, d = model.config.neurons, model.config.pools, model.config.embedding
     w, alpha, beta, gain = model.constants()
