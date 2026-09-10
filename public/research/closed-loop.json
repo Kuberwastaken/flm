@@ -1,0 +1,1429 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "conditions": 27,
+  "physical_reproducibility_repeats": 1,
+  "identity_sha256": "438a901ba2c75fd529738904cd46425e069bbb8ecc283718d1206d3bc6ef26af",
+  "protocol_sha256": "ce3df2000b5261923e3f9260cfbd54930ccdb827fa0709b2978f1551a4e633eb",
+  "source_report_sha256": "0d9cd1c4d351b469dce2226c086a0d5655e2c44794ed5b68a91c781fcc2eba63",
+  "verifier_sha256": "7ee7f8b1dc1855b7c73dc02e352acffc3a74b34b6d959b23825782a8369a9e62",
+  "generator_sha256": "e77994ae56f591e56f47decbe25275a41c63ae3b263e2e3a60729a5988c468bf",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "flygym": "2.1.0",
+      "mujoco": "3.9.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "numba": "0.67.0"
+    },
+    "numerical_threads": 1
+  },
+  "verification_environment": {
+    "python": "3.10.11",
+    "numpy": "2.2.6"
+  },
+  "neural_models": [
+    {
+      "id": "initial",
+      "method": "bptt",
+      "training_seed": 17,
+      "checkpoint_step": 0,
+      "file": "initial.npz",
+      "sha256": "56098c1834b604fe6115ba2e152d8e33dbd8fd702d2cb313f73cee0eda11af9e",
+      "source_checkpoint_sha256": "82d569f6ef13725fb57464289a805638a7cfbd89bfa0270718f76a570e963daf",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "bptt",
+      "method": "bptt",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "bptt.npz",
+      "sha256": "44b5b93166cc6075d2730e781f49731d9b1caedcb481a461d6ffa4574bd4052b",
+      "source_checkpoint_sha256": "d6caf16be84e342b06754af1c1aecedb588deb9fbb3bbbc84696b0738651bf28",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "reservoir",
+      "method": "reservoir",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "reservoir.npz",
+      "sha256": "a31df5566a8e4e64ccf92c5fcc2f2535fa5e2ceb1514d98a0fe7da798602a7df",
+      "source_checkpoint_sha256": "1ed298373359ffda490f07261b7d58b62e2a144a0b1d16a8b2d0b4e8f93862b8",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "eligibility",
+      "method": "eligibility",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "eligibility.npz",
+      "sha256": "078dc6e8bfbcd90338e099d6a5e56416434c6add7324e5f1ba571e2f3e5d8065",
+      "source_checkpoint_sha256": "4bc56f4187a10d1f56ecbeaa7ad4504b2054f748baca5a2409d29ac2a07ded22",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    }
+  ],
+  "runtime_parity": [
+    {
+      "model": "initial",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 3.725290298461914e-08,
+        "slow": 1.4901161193847656e-08,
+        "logits": 8.940696716308594e-08
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "bptt",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 8.940696716308594e-08,
+        "logits": 7.152557373046875e-07
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "reservoir",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 3.725290298461914e-08,
+        "slow": 1.4901161193847656e-08,
+        "logits": 2.384185791015625e-06
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "eligibility",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 8.940696716308594e-08,
+        "logits": 2.980232238769531e-07
+      },
+      "argmax_exact": true
+    }
+  ],
+  "repeat_arrays_exact": true,
+  "rows": [
+    {
+      "case": {
+        "label": "initial-live-positive",
+        "model": "initial",
+        "pose_mode": "live",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.7710732131606184,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 47.49356089850556,
+            "progress_toward_target_mm": -3.26602483478883
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 0.6133527055525292,
+        "final_target_distance_mm": 47.49356089850556,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "7441df0b69ae52a139870fe3324b9e0aba51ef18f014a4c8589e3363a532f094",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "9d8f05d8d88e22ac18fc52d50dd9604a4f98a5d8f9c5953891dbbd963c20ea53",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "initial-live-negative",
+        "model": "initial",
+        "pose_mode": "live",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.6080687904309046,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 45.921036872132255,
+            "progress_toward_target_mm": -1.6935104729527382
+          }
+        ],
+        "heading_change_rad": -5.041221993368571,
+        "final_absolute_bearing_error_rad": 1.6379604443806537,
+        "final_target_distance_mm": 45.921036872132255,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9824705939418205,
+        "mean_contact_count": 6.122438780609695,
+        "descending_signal_switches": 3
+      },
+      "trajectory_sha256": "37ab350cc284bba2f966f024acd9f9b59e1781e1094f75901d60b32f67229ae3",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "1164d24ef5142d3a38dccf972567f8d16c4e72f2cdaa4e84fffffdb594ccfbbb",
+      "physical_qpos_sha256": "d44146cb86501dff1e951b4fd73dba0faf250342e139fbf6e9bf2d75823767f1"
+    },
+    {
+      "case": {
+        "label": "initial-live-switch",
+        "model": "initial",
+        "pose_mode": "live",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 2.0436416283249104,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 46.386678801743805,
+            "progress_toward_target_mm": -2.1591427380270787
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.40333609864463,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -7.116371468262976
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "acfea1b7990fe2f1b089e887cf7b18c7053797c6b950e9a8f462884fc6774989",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "66abe4abe54e18fe1ded76b7074e413d39357ef5c1c012632355b6e9175ce938",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "initial-frozen-positive",
+        "model": "initial",
+        "pose_mode": "frozen",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.7710732131606184,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 47.49356089850556,
+            "progress_toward_target_mm": -3.26602483478883
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 0.6133527055525292,
+        "final_target_distance_mm": 47.49356089850556,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "d7fd8482c1c42d28559bdec1033a306db82e7c27be7aee582f995882fb4e4a3d",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "f1e7952788db9e3bd40da69017c742d881534a8f6a9d7bf4115c5e2641acbcef",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "initial-frozen-negative",
+        "model": "initial",
+        "pose_mode": "frozen",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.638963029919767,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -2.2921811677280886
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "15ef8a1989d2eac74e9f9fb8e47769c505f6d250f8d0bfa6f8051577e93b1817",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "0505b08f4eb47d01d312a0618ba138130ed0c2184ed79aeb1e8a5dc72ce02db9",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "initial-frozen-switch",
+        "model": "initial",
+        "pose_mode": "frozen",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 2.0436416283249104,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 46.386678801743805,
+            "progress_toward_target_mm": -2.1591427380270787
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.40333609864463,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -7.116371468262976
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "fdb14dad2780118c40076cc6b994e429f5db117bbf0aca1ef7b283be938f1a19",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "3fd128e4f330f6c01ddecdf38ac6d30a0f74232e874d5e14e556571cbe5c926e",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "bptt-live-positive",
+        "model": "bptt",
+        "pose_mode": "live",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.13408965246651608,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 20.626012891974792,
+            "progress_toward_target_mm": 23.601523171741935
+          }
+        ],
+        "heading_change_rad": 0.5975057557743318,
+        "final_absolute_bearing_error_rad": 0.12536704892256711,
+        "final_target_distance_mm": 20.626012891974792,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.345327336331834,
+        "descending_signal_switches": 19
+      },
+      "trajectory_sha256": "ef14f98feee37c812f8a132a2dca51138b8f7e660d0b021eda688c7336445c47",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "a1312e95315766b0acd1ce675177c21e2f2f3832564ebb2a1577f03f8c0670eb",
+      "physical_qpos_sha256": "d618c1f96d2b01612fefd026dd7d980b667aa21f14c1518312150563284e1999"
+    },
+    {
+      "case": {
+        "label": "bptt-live-negative",
+        "model": "bptt",
+        "pose_mode": "live",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.12662588596827196,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 19.76420337260437,
+            "progress_toward_target_mm": 24.463323026575146
+          }
+        ],
+        "heading_change_rad": -0.355470779798713,
+        "final_absolute_bearing_error_rad": 0.14308113285209068,
+        "final_target_distance_mm": 19.76420337260437,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9811544171391553,
+        "mean_contact_count": 6.289355322338831,
+        "descending_signal_switches": 16
+      },
+      "trajectory_sha256": "9ad4016d79cd404ced89b055d923495f2b04e9673d8122e425c3374a994300b7",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "b398c83542ef9e2b87de6b767ef42f6ed7d74b71bd26bd2f1e3103b084ee750a",
+      "physical_qpos_sha256": "7214ab5d4890d5c81ebcb29620dd24f4560c6337e1612a0480da289a65b293e6"
+    },
+    {
+      "case": {
+        "label": "bptt-live-switch",
+        "model": "bptt",
+        "pose_mode": "live",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.2839662937476114,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 33.37700887829415,
+            "progress_toward_target_mm": 10.850527185422578
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.0202169458789,
+            "end_distance_mm": 28.114063904416145,
+            "progress_toward_target_mm": 10.906153041462755
+          }
+        ],
+        "heading_change_rad": -0.6250540483378415,
+        "final_absolute_bearing_error_rad": 0.14376547925976446,
+        "final_target_distance_mm": 28.114063904416145,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.348325837081459,
+        "descending_signal_switches": 14
+      },
+      "trajectory_sha256": "d23b5cdb1740f7582508ecfb3bd616e8abad0d1dd68fded83a2489776fa085b4",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "d138c20c49fcc5014c30a89f30e834d1b3ac0a8ba325847367a3dfc99e578513",
+      "physical_qpos_sha256": "79e8bfcd2562d6b6df4db4ddc4a6d73160a9aee870083186c632e201a78d6df1"
+    },
+    {
+      "case": {
+        "label": "bptt-frozen-positive",
+        "model": "bptt",
+        "pose_mode": "frozen",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.6825889355142443,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 46.83325639782896,
+            "progress_toward_target_mm": -2.6057203341122346
+          }
+        ],
+        "heading_change_rad": 5.575128126792021,
+        "final_absolute_bearing_error_rad": 1.1444108761014267,
+        "final_target_distance_mm": 46.83325639782896,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.245877061469265,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "83c552b7978c51b654a467c9f8d862e6cab11e9ed05210b4cb293dcdfef6ae37",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "6658924b5598b9982b4655b398fa2208a138ba127c8afad59bd5d60cc99c4107",
+      "physical_qpos_sha256": "9cd945b07f84fa6635a1c6134409824cb8dec8d389f8d0de5051d6d964d0d6c2"
+    },
+    {
+      "case": {
+        "label": "bptt-frozen-negative",
+        "model": "bptt",
+        "pose_mode": "frozen",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.638963029919767,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -2.2921811677280886
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "73b892f7e27bc11642c13ae5fc995ea10c6c4e1a7fa02670c171b42f0f99132f",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "cf4bdae5a66f353d0f2bf2dbb0be38d2fbaab8a0a8a211f2461edb59e77fd909",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "bptt-frozen-switch",
+        "model": "bptt",
+        "pose_mode": "frozen",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.7540723556914397,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 41.23887581463515,
+            "progress_toward_target_mm": 2.988660249081576
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 47.708955659114366,
+            "end_distance_mm": 54.45361765686268,
+            "progress_toward_target_mm": -6.744661997748317
+          }
+        ],
+        "heading_change_rad": 0.759697475335071,
+        "final_absolute_bearing_error_rad": 1.4534560831528742,
+        "final_target_distance_mm": 54.45361765686268,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.24287856071964,
+        "descending_signal_switches": 2
+      },
+      "trajectory_sha256": "96274c1ee68526f6edcd3298306a2bc2e594b4ed8ba17a432f7fd730e4eaae22",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "1431febe54fe2291f0ccb43edda475f2a2d5f796ba73fc13dc20d25d2d5caa26",
+      "physical_qpos_sha256": "25e2ad0c61eb91716ff45c70e79de5bd4e036083e231ebd350a8212d3171463f"
+    },
+    {
+      "case": {
+        "label": "reservoir-live-positive",
+        "model": "reservoir",
+        "pose_mode": "live",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.13408965246651608,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 20.626012891974792,
+            "progress_toward_target_mm": 23.601523171741935
+          }
+        ],
+        "heading_change_rad": 0.5975057557743318,
+        "final_absolute_bearing_error_rad": 0.12536704892256711,
+        "final_target_distance_mm": 20.626012891974792,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.345327336331834,
+        "descending_signal_switches": 19
+      },
+      "trajectory_sha256": "3679210d3d57546531d05ce01e2d12aee13e7fec1595c4b6c02fa3ccf3630891",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "c21df768534d97e493d1862917d5145d81a2516ec7b30705a389087c5b928a54",
+      "physical_qpos_sha256": "d618c1f96d2b01612fefd026dd7d980b667aa21f14c1518312150563284e1999"
+    },
+    {
+      "case": {
+        "label": "reservoir-live-negative",
+        "model": "reservoir",
+        "pose_mode": "live",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.12662588596827196,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 19.76420337260437,
+            "progress_toward_target_mm": 24.463323026575146
+          }
+        ],
+        "heading_change_rad": -0.355470779798713,
+        "final_absolute_bearing_error_rad": 0.14308113285209068,
+        "final_target_distance_mm": 19.76420337260437,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9811544171391553,
+        "mean_contact_count": 6.289355322338831,
+        "descending_signal_switches": 16
+      },
+      "trajectory_sha256": "e554b6845f257ce0dc640ac71150f172abfda1ade6216c365596dbcf5ae0d619",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "6eb4a98577082f269e7a528e7c173940105e6b32fad17063f48a174847d79399",
+      "physical_qpos_sha256": "7214ab5d4890d5c81ebcb29620dd24f4560c6337e1612a0480da289a65b293e6"
+    },
+    {
+      "case": {
+        "label": "reservoir-live-switch",
+        "model": "reservoir",
+        "pose_mode": "live",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.2839662937476114,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 33.37700887829415,
+            "progress_toward_target_mm": 10.850527185422578
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.0202169458789,
+            "end_distance_mm": 28.114063904416145,
+            "progress_toward_target_mm": 10.906153041462755
+          }
+        ],
+        "heading_change_rad": -0.6250540483378415,
+        "final_absolute_bearing_error_rad": 0.14376547925976446,
+        "final_target_distance_mm": 28.114063904416145,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.348325837081459,
+        "descending_signal_switches": 14
+      },
+      "trajectory_sha256": "dc5991044528dae7ea68341156024357e45bef3237bb49e53eb1dab448c1ccc3",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "d28a7f0810069b92516c3867fa5720ea9624fcc5da3864ed094dba71db895215",
+      "physical_qpos_sha256": "79e8bfcd2562d6b6df4db4ddc4a6d73160a9aee870083186c632e201a78d6df1"
+    },
+    {
+      "case": {
+        "label": "reservoir-frozen-positive",
+        "model": "reservoir",
+        "pose_mode": "frozen",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.6825889355142443,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 46.83325639782896,
+            "progress_toward_target_mm": -2.6057203341122346
+          }
+        ],
+        "heading_change_rad": 5.575128126792021,
+        "final_absolute_bearing_error_rad": 1.1444108761014267,
+        "final_target_distance_mm": 46.83325639782896,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.245877061469265,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "f48cbe9ab4fd8c6e9ec945451ea3158f067a5ca1b607be9cdb4bd4cb53b28759",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "f35c7ae6122b6d590ab1e2082101a35efdd9c1708a966105b53c77a3595b6fcb",
+      "physical_qpos_sha256": "9cd945b07f84fa6635a1c6134409824cb8dec8d389f8d0de5051d6d964d0d6c2"
+    },
+    {
+      "case": {
+        "label": "reservoir-frozen-negative",
+        "model": "reservoir",
+        "pose_mode": "frozen",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.638963029919767,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -2.2921811677280886
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "59a5f53a88aaf27557951771b4eea74e02d0f2ccb8714943d9d2fa103c6b5b6e",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "49ea66faa127a37f4a75b9cf8991172b40e16b30ece7afbd8e62dc3f8a5a6607",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "reservoir-frozen-switch",
+        "model": "reservoir",
+        "pose_mode": "frozen",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.7540723556914397,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 41.23887581463515,
+            "progress_toward_target_mm": 2.988660249081576
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 47.708955659114366,
+            "end_distance_mm": 54.45361765686268,
+            "progress_toward_target_mm": -6.744661997748317
+          }
+        ],
+        "heading_change_rad": 0.759697475335071,
+        "final_absolute_bearing_error_rad": 1.4534560831528742,
+        "final_target_distance_mm": 54.45361765686268,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.24287856071964,
+        "descending_signal_switches": 2
+      },
+      "trajectory_sha256": "51ee4b38727d433361b0d325a627adf2c6fc7454d0559c2790e3fdd2d8b7ca78",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "d0f12673ef7563a0b97c30a0fc2d10966ea90e023bf36fa1c94d67d8d441e609",
+      "physical_qpos_sha256": "25e2ad0c61eb91716ff45c70e79de5bd4e036083e231ebd350a8212d3171463f"
+    },
+    {
+      "case": {
+        "label": "eligibility-live-positive",
+        "model": "eligibility",
+        "pose_mode": "live",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.13408965246651608,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 20.626012891974792,
+            "progress_toward_target_mm": 23.601523171741935
+          }
+        ],
+        "heading_change_rad": 0.5975057557743318,
+        "final_absolute_bearing_error_rad": 0.12536704892256711,
+        "final_target_distance_mm": 20.626012891974792,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.345327336331834,
+        "descending_signal_switches": 19
+      },
+      "trajectory_sha256": "cf11a834d8bf0381d30deaf64322ce43379fdb039a6c39a5d49c4b32706dbdf8",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "9b6e328141cf5ade3416fcb544d487963ed231d87b28efd82f2ffdb12ebecc9f",
+      "physical_qpos_sha256": "d618c1f96d2b01612fefd026dd7d980b667aa21f14c1518312150563284e1999"
+    },
+    {
+      "case": {
+        "label": "eligibility-live-negative",
+        "model": "eligibility",
+        "pose_mode": "live",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.12662588596827196,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 19.76420337260437,
+            "progress_toward_target_mm": 24.463323026575146
+          }
+        ],
+        "heading_change_rad": -0.355470779798713,
+        "final_absolute_bearing_error_rad": 0.14308113285209068,
+        "final_target_distance_mm": 19.76420337260437,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9811544171391553,
+        "mean_contact_count": 6.289355322338831,
+        "descending_signal_switches": 16
+      },
+      "trajectory_sha256": "17d22d23cc3ce82a288a07fba4d5afe49a2e8cf65ac28e9055fa5c2f2cd9aa9e",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "29e0e73980b37e7f9123188002300c7237c33d3397f96a99e1faa214e1800ba0",
+      "physical_qpos_sha256": "7214ab5d4890d5c81ebcb29620dd24f4560c6337e1612a0480da289a65b293e6"
+    },
+    {
+      "case": {
+        "label": "eligibility-live-switch",
+        "model": "eligibility",
+        "pose_mode": "live",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.2839662937476114,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 33.37700887829415,
+            "progress_toward_target_mm": 10.850527185422578
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.0202169458789,
+            "end_distance_mm": 28.114063904416145,
+            "progress_toward_target_mm": 10.906153041462755
+          }
+        ],
+        "heading_change_rad": -0.6250540483378415,
+        "final_absolute_bearing_error_rad": 0.14376547925976446,
+        "final_target_distance_mm": 28.114063904416145,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.348325837081459,
+        "descending_signal_switches": 14
+      },
+      "trajectory_sha256": "503539acfd7c1786c229c4d30242f1ef2b2ac01b6e9ec5699e3d860e641ba76b",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "4bd5e14d9c769baf14b09dec889da457bd33f29f6f9ede4da7ae84737eeff84a",
+      "physical_qpos_sha256": "79e8bfcd2562d6b6df4db4ddc4a6d73160a9aee870083186c632e201a78d6df1"
+    },
+    {
+      "case": {
+        "label": "eligibility-frozen-positive",
+        "model": "eligibility",
+        "pose_mode": "frozen",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.6825889355142443,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 46.83325639782896,
+            "progress_toward_target_mm": -2.6057203341122346
+          }
+        ],
+        "heading_change_rad": 5.575128126792021,
+        "final_absolute_bearing_error_rad": 1.1444108761014267,
+        "final_target_distance_mm": 46.83325639782896,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.245877061469265,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "8562f63f92491d0f58e014b44e05fe03b1a5d7dcad7d1a5e83959846aca83557",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "70e79a905e6b2a1afdf4dd864496aa9fea3d728873a5c37db7595397ec2edfc7",
+      "physical_qpos_sha256": "9cd945b07f84fa6635a1c6134409824cb8dec8d389f8d0de5051d6d964d0d6c2"
+    },
+    {
+      "case": {
+        "label": "eligibility-frozen-negative",
+        "model": "eligibility",
+        "pose_mode": "frozen",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.638963029919767,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 46.519707566907606,
+            "progress_toward_target_mm": -2.2921811677280886
+          }
+        ],
+        "heading_change_rad": -5.20843028917388,
+        "final_absolute_bearing_error_rad": 1.492090885364084,
+        "final_target_distance_mm": 46.519707566907606,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9829014034685556,
+        "mean_contact_count": 6.130934532733633,
+        "descending_signal_switches": 1
+      },
+      "trajectory_sha256": "7c5e812181942fe61b61b6f60e6705ad68fd7d428fe81aaef638bfe087ef29cd",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "e119790f809df99f3451b931c0e4814da346c68079dc737fda0f76cbcd9e9140",
+      "physical_qpos_sha256": "c2000b8d3f4f515f3516cd8c64c2dcc3257f4240173828f7a6e75a356d658485"
+    },
+    {
+      "case": {
+        "label": "eligibility-frozen-switch",
+        "model": "eligibility",
+        "pose_mode": "frozen",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 1.7540723556914397,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 41.23887581463515,
+            "progress_toward_target_mm": 2.988660249081576
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 47.708955659114366,
+            "end_distance_mm": 54.45361765686268,
+            "progress_toward_target_mm": -6.744661997748317
+          }
+        ],
+        "heading_change_rad": 0.759697475335071,
+        "final_absolute_bearing_error_rad": 1.4534560831528742,
+        "final_target_distance_mm": 54.45361765686268,
+        "minimum_thorax_height_mm": 0.6444533664680059,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.24287856071964,
+        "descending_signal_switches": 2
+      },
+      "trajectory_sha256": "d78ac4c995ab9be87bc233a47a3e23477f037e296b9423ad4f707fba28c55a0a",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "19d3f5768d0861d405fc66c168db7a7364e0a2c4312e6f636cefc885aba2a334",
+      "physical_qpos_sha256": "25e2ad0c61eb91716ff45c70e79de5bd4e036083e231ebd350a8212d3171463f"
+    },
+    {
+      "case": {
+        "label": "scripted-live-positive",
+        "model": "scripted",
+        "pose_mode": "live",
+        "scenario": "positive"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.13408965246651608,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 20.626012891974792,
+            "progress_toward_target_mm": 23.601523171741935
+          }
+        ],
+        "heading_change_rad": 0.5975057557743318,
+        "final_absolute_bearing_error_rad": 0.12536704892256711,
+        "final_target_distance_mm": 20.626012891974792,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.345327336331834,
+        "descending_signal_switches": 19
+      },
+      "trajectory_sha256": "2318ff14d18df6532e5a7cb5196c2c54f4727475816ce121600b2b102bc76ad5",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "d2f02f4d4ef4b96925d10a81cf9308104135916cb5b91cf3703f831484e863b6",
+      "physical_qpos_sha256": "d618c1f96d2b01612fefd026dd7d980b667aa21f14c1518312150563284e1999"
+    },
+    {
+      "case": {
+        "label": "scripted-live-negative",
+        "model": "scripted",
+        "pose_mode": "live",
+        "scenario": "negative"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.12662588596827196,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 44.22752639917952,
+            "end_distance_mm": 19.76420337260437,
+            "progress_toward_target_mm": 24.463323026575146
+          }
+        ],
+        "heading_change_rad": -0.355470779798713,
+        "final_absolute_bearing_error_rad": 0.14308113285209068,
+        "final_target_distance_mm": 19.76420337260437,
+        "minimum_thorax_height_mm": 0.796640668442041,
+        "minimum_thorax_up_z": 0.9811544171391553,
+        "mean_contact_count": 6.289355322338831,
+        "descending_signal_switches": 16
+      },
+      "trajectory_sha256": "9260c431b7a70775bd97060d1012f500b5cf42bd1ab763e7f1820ad31091e2fd",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "737feac4362da7a83f6ba0f2395863c57f7ac3c4fd49995bb2a5c5a36cad6d0a",
+      "physical_qpos_sha256": "7214ab5d4890d5c81ebcb29620dd24f4560c6337e1612a0480da289a65b293e6"
+    },
+    {
+      "case": {
+        "label": "scripted-live-switch",
+        "model": "scripted",
+        "pose_mode": "live",
+        "scenario": "switch"
+      },
+      "metrics": {
+        "mean_absolute_bearing_error_rad": 0.2839662937476114,
+        "observed_seconds": 2.0,
+        "phase_progress": [
+          {
+            "start_s": 0.0,
+            "end_s": 1.0,
+            "target_mm": [
+              40.0,
+              20.0
+            ],
+            "start_distance_mm": 44.22753606371673,
+            "end_distance_mm": 33.37700887829415,
+            "progress_toward_target_mm": 10.850527185422578
+          },
+          {
+            "start_s": 1.0,
+            "end_s": 2.0,
+            "target_mm": [
+              40.0,
+              -20.0
+            ],
+            "start_distance_mm": 39.0202169458789,
+            "end_distance_mm": 28.114063904416145,
+            "progress_toward_target_mm": 10.906153041462755
+          }
+        ],
+        "heading_change_rad": -0.6250540483378415,
+        "final_absolute_bearing_error_rad": 0.14376547925976446,
+        "final_target_distance_mm": 28.114063904416145,
+        "minimum_thorax_height_mm": 0.6195862231298074,
+        "minimum_thorax_up_z": 0.9462500675366554,
+        "mean_contact_count": 6.348325837081459,
+        "descending_signal_switches": 14
+      },
+      "trajectory_sha256": "5f9b160271ba88bda96ceae2977c414a564b70e0c2f9a443ab67e50f24605333",
+      "controller_replay": {
+        "frames": 400,
+        "decisions": 36,
+        "maximum_state_logit_error": 0.0,
+        "sensory_and_commands_exact": true
+      },
+      "report_sha256": "594bdb24f0a615f91d3f020be3078ea6496a705874391304902c8e93af27fecd",
+      "physical_qpos_sha256": "79e8bfcd2562d6b6df4db4ddc4a6d73160a9aee870083186c632e201a78d6df1"
+    }
+  ],
+  "contrasts": [
+    {
+      "scenario": "positive",
+      "model": "initial",
+      "live_minus_frozen_error_rad": 0.0
+    },
+    {
+      "scenario": "positive",
+      "model": "bptt",
+      "live_minus_frozen_error_rad": -1.5484992830477282
+    },
+    {
+      "scenario": "positive",
+      "model": "reservoir",
+      "live_minus_frozen_error_rad": -1.5484992830477282
+    },
+    {
+      "scenario": "positive",
+      "model": "eligibility",
+      "live_minus_frozen_error_rad": -1.5484992830477282
+    },
+    {
+      "scenario": "negative",
+      "model": "initial",
+      "live_minus_frozen_error_rad": -0.030894239488862496
+    },
+    {
+      "scenario": "negative",
+      "model": "bptt",
+      "live_minus_frozen_error_rad": -1.5123371439514952
+    },
+    {
+      "scenario": "negative",
+      "model": "reservoir",
+      "live_minus_frozen_error_rad": -1.5123371439514952
+    },
+    {
+      "scenario": "negative",
+      "model": "eligibility",
+      "live_minus_frozen_error_rad": -1.5123371439514952
+    },
+    {
+      "scenario": "switch",
+      "model": "initial",
+      "live_minus_frozen_error_rad": 0.0
+    },
+    {
+      "scenario": "switch",
+      "model": "bptt",
+      "live_minus_frozen_error_rad": -1.4701060619438282
+    },
+    {
+      "scenario": "switch",
+      "model": "reservoir",
+      "live_minus_frozen_error_rad": -1.4701060619438282
+    },
+    {
+      "scenario": "switch",
+      "model": "eligibility",
+      "live_minus_frozen_error_rad": -1.4701060619438282
+    }
+  ],
+  "identical_physical_trajectory_groups": [
+    [
+      "initial-live-positive",
+      "initial-live-switch",
+      "initial-frozen-positive",
+      "initial-frozen-negative",
+      "initial-frozen-switch",
+      "bptt-frozen-negative",
+      "reservoir-frozen-negative",
+      "eligibility-frozen-negative"
+    ],
+    [
+      "bptt-live-positive",
+      "reservoir-live-positive",
+      "eligibility-live-positive",
+      "scripted-live-positive"
+    ],
+    [
+      "bptt-live-negative",
+      "reservoir-live-negative",
+      "eligibility-live-negative",
+      "scripted-live-negative"
+    ],
+    [
+      "bptt-live-switch",
+      "reservoir-live-switch",
+      "eligibility-live-switch",
+      "scripted-live-switch"
+    ],
+    [
+      "bptt-frozen-positive",
+      "reservoir-frozen-positive",
+      "eligibility-frozen-positive"
+    ],
+    [
+      "bptt-frozen-switch",
+      "reservoir-frozen-switch",
+      "eligibility-frozen-switch"
+    ]
+  ],
+  "neural_panel": "Eligibility/live/switch. Each column holds the actual state for its following 5 ms control interval; rows preserve the 256-node graph order.",
+  "interpretation": "One training seed and one physical seed; live/frozen pose feedback through an engineered cue/deadband/gait wrapper. No language weights, learned gait or anatomical advantage.",
+  "specimen_note": "MaleCNS graph subset and female NeuroMechFly body come from different specimens."
+}

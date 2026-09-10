@@ -1,0 +1,22 @@
+{
+  "verified_conditions": 27,
+  "verified_repeat": true,
+  "archive_bytes": 45873321,
+  "archive_sha256": "aae603af22f6cce2d519db12c8c91ab3684021e03b5ad57887af8fb689dd589a",
+  "files": {
+    "closed-loop-negative.png": "a6878e1ffd349652053d6b04518a9154b219e9d59b372107097b68fe62ed4bd8",
+    "closed-loop-negative.svg": "38819c3e2dfbcb89cdc6b30ff42f1bbfdae10617dbd92b3d1a49fdb357947bba",
+    "closed-loop-neural.png": "ef52034351ea91fd68f314d45093212ef0bb5bd08e23b9659269e937a01b079a",
+    "closed-loop-neural.svg": "f24b0b9133b0c4f8792efaca7879ccf7a70dba44186d285a8f5f67aacc5aec4c",
+    "closed-loop-positive.png": "4e76e20d19b7784548a5d98c1fa532aa8323dec61cd3a2a11097d76aee74fedc",
+    "closed-loop-positive.svg": "c9bf2c0da2b002c0f95f0392794fad10f39bac6addb04c4b5e8569bc1a069bd1",
+    "closed-loop-poster.png": "3a868d67731c79c8372a4c3238541ad0ac966f1e224709734fb15c7a2af873ff",
+    "closed-loop-records.zip": "aae603af22f6cce2d519db12c8c91ab3684021e03b5ad57887af8fb689dd589a",
+    "closed-loop-switch.png": "94fc9cc5e4f5bf9dad41f70a7d7903df3a15d19f3adfb267fe9450629a9772e2",
+    "closed-loop-switch.svg": "1f6023af23ce5d152a74f4bdc732f07965f8f1f005726c21206786fa18e734cf",
+    "closed-loop.csv": "ba8875b120c73260fbe119d2629bce65edd4a7bbdfa861f16ed27269ba2c94d8",
+    "closed-loop.json": "4767d5a65a310bbac6ccf787b68a013eb72c9cfd57176f69f6b94f6885d1a9b7",
+    "closed-loop.mp4": "a602579d4d82dcdc6fa6b18be43fce17ed42e267292b3a71d137013287b6f0e7"
+  },
+  "status": "Complete candidate generated. Visually review figures/video before copying to public."
+}
