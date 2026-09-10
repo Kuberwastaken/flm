@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-09-10T19:30:54.099914+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p \"test_language_core_report.py\" -v",
+  "exit_code": 0,
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "fixture": "Eight artificial score records over 60 synthetic article identities; source checkpoint verification and token-cache decoding mocked",
+  "checks": [
+    "Missing final report, incomplete run, invalid checkpoint or changed selection fail before test decoding",
+    "Complete supplied-score fixture passes without modifying any artifact",
+    "Altered article denominators, reference-score reuse and mechanism descriptions rejected",
+    "Primary paired intervals and secondary mean recomputed"
+  ],
+  "live_incomplete_study_rejected": true,
+  "live_rejection_reason": "Final computation scores and frozen selections are not available",
+  "live_test_decoder_not_called": true,
+  "source_sha256": {
+    "scripts/language_core_report.py": "e5417701b9c0f1571a666c2396bd23b819659213b894cdcf147aca826087f15c",
+    "tests/test_language_core_report.py": "5de00bbfc72d2081b057b399839ae2b0ab08ff0f945ddc68a13f683c19431d1f"
+  },
+  "scope": "Release-gate software verification; full real-model report verification remains pending all six new fits and eight selected scores."
+}
