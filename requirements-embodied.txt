@@ -1,0 +1,2 @@
+# Isolated Python 3.12+ environment; does not modify the language study runtime.
+flygym==2.1.0
