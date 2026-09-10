@@ -1,153 +1,65 @@
-# FLM implementation plan
+# FLM implementation and research plan
 
-Started 10 September 2026. The repository starts empty; the research workspace already contains a verified MaleCNS extraction and separately cloned public reference material.
+Started 10 September 2026; status revised 11 September 2026 (Asia/Kolkata).
 
-## Deliverable
+## Objective and scope
 
-A working, documented FLM implementation with a trained compact checkpoint, reproducible data/graph tooling, held-out evaluation, browser inference and learning, an anatomical activity view, and ChatFLM deployed to `flm.kuber.studio` if the account supports Pages. Larger whole-graph models must be supported or explicitly remain a documented research stage, not implied by the compact release.
+Develop and evaluate FLM as a language model trained from scratch, with reproducible anatomical graph construction, documented data, matched comparators and ChatFLM at [flm.kuber.studio](https://flm.kuber.studio). The compact browser release is working. It is the starting point for larger-data experiments, capacity scaling, alternative learning rules and controlled language-to-action transfer, not completion of that broader objective.
 
-## Sequential milestones
+The central question remains whether measured neural wiring or its associated computation supplies a useful prior for prediction. Benefits must be demonstrated against appropriate controls. A negative result is part of the evidence, not a reason to hide a comparator or redefine the experiment. The current model is a small text completion system; neither the available results nor its articulated fly view establish an intact simulated brain, conversational competence or language-driven motor skill.
 
-1. [x] Establish repository naming, work rules and research direction.
-2. [x] Record scientific sources and formal architecture/data decisions.
-3. [x] Build verifiable graph acquisition/selection with source-ID provenance.
-4. [x] Acquire licensed speech transcripts and audit train/validation/test isolation.
-5. [x] Implement trainable recurrent core, slow state and controlled adaptation.
-6. [x] Verify gradients, causality, reset behavior and checkpoint reproducibility.
-7. [ ] Train bounded compact experiments and compare real/rewired/no-recurrence models.
-8. [x] Export a browser checkpoint and verify Python/JavaScript parity.
-9. [x] Build ChatFLM: generation, conversation storage, model controls, learning and actual neural visualization.
-10. [ ] Add model/data cards, evaluation results, installation and contribution documentation.
-11. [ ] Verify desktop/mobile UI, keyboard accessibility, downloads and failure handling.
-12. [x] Configure Pages/CNAME, deploy, verify the live domain and commit final evidence.
+## Completed evidence
 
-## Improvement hypotheses
+| Work | Verified outcome and boundary |
+|---|---|
+| Graph and compact architecture | Acquisition, anatomical IDs, graph selection, recurrent/slow-state implementation, causal inference and export are implemented. The [subset audit](SUBSET-AUDIT.md) documents the computational selection of 1,024 neurons and its large cut boundary; it is not an intact circuit. |
+| WikiText baseline comparison | All six runs and complete test evaluations finished. Two-seed mean bits/byte: FLM **1.9744**, GRU **1.9049**, transformer **1.8767**; lower is better. FLM trails both matched comparators. See [results](../public/research/test-results.json) and the [protocol](WIKITEXT-PROTOCOL.md). |
+| Language topology and slow-state controls | All eight new fits completed; all ten checkpoint selections were frozen before scoring the new controls. The [complete report](../reports/language-topology/summary.json) demonstrates **no anatomical advantage in this selected subset and setup**. |
+| Actual recurrent-core dynamics | The [seven-condition pulse diagnostic](LANGUAGE-DYNAMICS-FINDINGS.md) measured changes in the two completed WikiText FLM cores and acute parameter swaps. All cases replay exactly in the recorded environment. It adds no fitting, corpus exposure, language score or behavioral conclusion. |
+| Sensory learning | The initial five-rule comparison and [60-run wiring/context extension](WIRING-RESULTS.md) are complete. Effects differ across tasks; sensory results do not establish language benefits. |
+| Physical feedback | Forty earlier choice replays and the [27-condition live/frozen-pose assay plus repeat](CLOSED-LOOP-REPRODUCTION.md) are complete. All three trained controllers match scripted body paths in each scenario. Language checkpoints are not used, and no gait or online motor learning occurs. |
+| Reproducible product and releases | ChatFLM provides browser inference, separately scoped adaptation, conversation storage and actual inference-state visualization. The six-model baseline bundle, ten-model topology bundle, five working papers, component licenses and release audits are published. See the [README](../README.md), [browser verification](BROWSER-VALIDATION.md) and [topology deployment evidence](../reports/language-topology/final-release.json). |
 
-- Diverse bounded time constants can retain useful context with low recurrent-state cost.
-- Restricted, explicitly reset local adaptation can learn a user's recent vocabulary without retraining all edges.
-- The measured wiring may improve sample efficiency relative to a degree/sign-matched randomized graph. This is a hypothesis to test, not the product tagline.
-- Compact browser inference makes experimentation available without a hosted model API.
+The topology contrasts favor the rewired graphs: measured-minus-rewired test loss averages **+0.001559 bits/byte**, with all six point estimates positive. Three of six conditional article intervals include zero. The contrasts use three null graphs and two training seeds, sharing two measured references; they are not six independent replications. This exploratory extension does not show that anatomy is generally harmful. The separate retrained no-slow comparison favors retaining slow state by **0.010999 bits/byte** on average. The design does not estimate a topology-by-slow-state interaction. Preserve the [frozen declaration](LANGUAGE-TOPOLOGY-PROTOCOL.md), selections, sources and complete records.
 
-The first release trains on transcript text, not raw audio. It will be a small completion model, not an instruction-tuned assistant with world knowledge. The interface should make the model's actual capability clear without burying the experience in implementation detail.
+The pulse diagnostic uses the same completed language references, not the new computation controls below. Its zero-drive fast spectral radius changes from 1.0207 initially to 0.9912/0.8722 after training. Those local measurements and finite-horizon pulse responses establish neither global stability, useful memory capacity, improved language accuracy nor transfer to a fly's behavior.
 
+## Current priority: complete the language computation study
 
-## Current evidence and remaining work
+The separate [protocol](LANGUAGE-CORE-PROTOCOL.md), [source identity](../reports/language-core/identity.json), trainer, restoration checks and test gate are implemented and frozen. Six new fits cross three controls with seeds 42/43, reusing the two completed full-FLM references:
 
-WikiText-2 raw is now the primary standard-corpus experiment, with 600/60/60 articles and a frozen 4,096-token train-only vocabulary. The compact lexical model and AMI dialogue model both run in the browser. Independent PyTorch/browser parity, worker integration and causal/resume checks pass. The Research view compares actual matched-update validation curves and unedited same-prompt outputs for FLM, GRU and transformer. Pages and HTTPS are configured and verified at the custom domain.
+| Control | Question and limitation |
+|---|---|
+| Fixed dynamics | Freeze recurrent edges, gain and time constants; train the lexical interface. Does optimizing the recurrent core help? This is not a readout-only reservoir or a match in trainable parameter count. |
+| No lateral recurrence | Remove communication along graph edges while retaining fast leak and slow state. This model still has temporal memory. |
+| No temporal state | Reset both states for every token, including within training chunks. Does carrying history improve on a learned current-token predictor? |
 
-All six WikiText runs completed 6,000 updates. Frozen validation-selected checkpoints have been scored on complete test articles: two-seed mean FLM 1.9744, GRU 1.9049 and transformer 1.8767 bits/byte. Paired article intervals favor the baselines. Runtime/state measurements and both-seed acute mechanism diagnostics are complete. Keep the simpler n-gram reference separate from parameter-matched models. BabyLM 10M/100M acquisition and encoding are verified; its queue is paused at saved checkpoints while the language topology controls run. Real physical walking controls and a fixed BLiMP grammar diagnostic are also implemented.
+The [dated runtime-progress snapshot](../reports/language-core/runtime-progress.json) records `fixed_dynamics-s42` complete and `no_lateral-s42` active. Consult that checkpoint-backed record for current progress instead of treating a step count in this plan as live status. No new computation-control test scores are available. The [mechanism and parameter card](LANGUAGE-CORE-CONTROLS.md) distinguishes allocated, trainable, frozen and gradient-connected parameters.
 
-Remaining work centers on the continuing program: complete the twelve BabyLM
-runs and component-level held-out evaluation; train matched rewired and disabled
-mechanism controls before attributing benefits to anatomy; strengthen the
-completed forward-learning comparison with harder memory tasks; test language-
-to-control transfer and online motor learning; and profile larger
-configurations before committing long runs. Extend grammar diagnostics and
-generation analysis without tuning on their evaluation scores. Updated model
-cards, figures, papers, browser checks and deployment evidence accompany each
-completed stage. Full-connectome language training and learned motor behavior
-remain unestablished by the compact release.
+Finish and verify all six fits before freezing all eight selected checkpoint identities and decoding any new-control test likelihood. Score every test article, report all declared paired contrasts and retain failures and conflicting outcomes. Article intervals are conditional on the fitted models; these exploratory comparisons do not estimate generalization across datasets or establish anatomical causality. Exact single-thread and bounded four-thread reference checks passed; four-thread training is not promised to reproduce bitwise across executions.
 
-BabyLM's full evaluation and generation path is implemented and tested before
-its test losses are read. All twelve runs must complete before checkpoint
-selection is frozen. Complete-block batching preserves causal state and exact
-text counts; atomic batch caches resume long evaluations. The report separates
-six source components and the predeclared overlap-filtered analysis, with paired
-block intervals. Twelve original prompts and two sampling seeds fix 288 unedited
-continuations. A dated Research-page snapshot exposes progress and permits only
-common-update comparisons. `flm.babylm_pipeline` chains the stages when the current
-training writer has stopped; it must not be launched alongside that writer.
+Follow the protocol's queue and recovery instructions, with one training writer per output directory. Do not restart the completed topology scheduler, alter frozen numerical sources, or add another writer to an active run. Review the full report, inference exports and browser presentation before publishing conclusions. Then resume the registered BabyLM comparison.
 
-The first forward-learning comparison is complete: five rules, three seeds,
-7,200 episodes per run, with shared initialization and sensory streams. Full
-BPTT wins the final long-delay diagnostic; supervised eligibility exceeds its
-no-history control but does not beat the fixed-core mean. Forty separately
-simulated physical replays verify that learned high-level choices drive the
-expected turning command, retaining wrong task choices. The four-page research
-note, all panel predictions, neural states and trajectories are published with
-the protocol. This establishes neither an anatomical advantage nor learned gait
-or language-to-motor transfer. The subsequent 60-run wiring/context study is now
-complete, with shared initialization, degree/sign/self-edge-preserving controls
-and exact-gradient diagnostics. Its results are mixed across tasks and learning
-rules; they establish no general anatomical advantage. The subsequent online
-pose-feedback assay is described below.
+## Next: resume the larger-data comparison
 
-The current priority is the language topology study, declared before fitting
-its controls. Three null graphs are crossed with both original WikiText seeds;
-two further measured-graph models retrain without slow state. Every condition
-uses the original 6,000-update exposure. The historical/current trainers match
-exactly on initialization, ten updates, sampling and validation replay for both
-seeds. The bounded two-worker queue is running. Test evaluation refuses to begin until
-all eight new runs finish and all ten checkpoint selections are frozen. Only
-then resume the larger BabyLM queue, saved at FLM 12,000 and GRU 6,500 updates.
+BabyLM remains paused during the computation study. Its 10M/100M training corpora, common evaluation partitions, shared train-fitted tokenizer and overlap audit are prepared; one of twelve training runs has completed. The saved runs must continue under the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), not be replaced by the small-corpus mechanism study.
 
-Recovery uses `python -m flm.language_topology_queue --workers 2 --score` after
-verifying there is no existing writer. `python -m flm.language_topology_test snapshot` publishes
-checkpoint-backed validation progress; `python -m flm.language_topology_test
-score` freezes and scores the completed comparison. These commands continue
-this hash-bound experiment and deliberately reject changed data, graph,
-numerical source or checkpoint identities. Independent replications need their
-own declared identities and freshly trained references, not edits to these
-frozen records.
+Complete all twelve runs and freeze selection before the declared test evaluation. Report source-component codelength and overlap-filtered analyses with exact text denominators. Retain all fixed-prompt continuations, repetitions and unsuccessful outputs. Compare FLM, GRU and transformer at the declared exposure, and distinguish data-volume effects from architecture or capacity changes. Update the [data cards and acquisition status](DATA-STATUS.md), model cards, figures, papers and public release with the complete results.
 
-The original serial process had an attached finalizer. The bounded scheduler
-replaces that arrangement, holding an OS queue lease and allowing at most two
-separate condition writers. Each retains the prescribed four threads and fixed
-budget; a memory guard can defer the second worker. Its `--score` option invokes
-the strict selection gate, complete test scoring and dated snapshot after all
-training children finish. Do not launch an additional finalizer or legacy queue.
-See [the operational transition and recovery instructions](LANGUAGE-TOPOLOGY-OPERATIONS.md).
-Completed results still require scientific review and browser validation before
-their next deployment.
+## Remaining research after these controls
 
-The exact four language graphs now have a public structural audit, per-node
-statistics and a licensed download bundle. It recomputes degree/sign/weight
-constraints, graph overlaps, reciprocity and components without reading model
-losses. The Research view exposes all controls and a common-order matrix figure.
-This documents the null intervention; it neither changes the registered graphs
-nor resolves the pending language outcome.
+1. **Broader data and evaluation.** Extend the mixed-data study to bounded, licensed corpora and stronger grammar, generation and adaptation evaluations. Preserve source identities, document-level splits, duplicate audits and train-only preprocessing. Keep any teacher-assisted data curation separately labeled. Raw audio learning, broader conversational ability and code execution are distinct objectives, not properties of the present text models.
+2. **Capacity and implementation scaling.** Profile forward/backward throughput and memory before long runs. Vary neuron count, retained edges, lexical width and parameter count separately, retaining anatomical source IDs and measuring boundary loss. Match exposure and report costs against GRU/transformer comparators. Larger subsets and whole-connectome language models remain research stages; checkpointing, streaming evaluation and explicit compute budgets must accompany them.
+3. **Alternative biological learning mechanisms.** Extend the completed sensory comparisons to harder delayed-memory, reversal and interference tasks before applying viable forward-time or reward-modulated eligibility rules to language. Compare with BPTT, a fixed core and suitable history controls; distinguish exact derivatives from approximations, and measure accuracy, retention, compute and plasticity memory. Rate and spiking models require separate declarations. Neither anatomical wiring nor an eligibility trace proves biological fidelity.
+4. **Controlled language-to-action transfer.** [SCAN data preparation](INSTRUCTION-TRANSFER.md) is complete for the simple, length and added-primitive splits, including all 20,910 command interpretations and the reversible action codec. No neural transfer fits or physical instruction execution have started. Freeze the downstream training budget, source identities and evaluation gate before fitting the planned matched initial-versus-language-trained comparisons. Preserve official split memberships and repeated-row weights; retain malformed and incorrect generated actions as errors. Separate any benefit of lexical pretraining, recurrent changes and a newly learned action interface.
+5. **Grounded behavior and online motor learning.** After symbolic transfer, compare fixed, language-trained and task-adapted cores through the same learned sensory/action interface, situations and action budget. Keep instruction accuracy, physical execution, gait and online adaptation as separate outcomes, with adequate scripted controls. The existing body wrapper already solves its simple path tasks; a future task must measure what learning adds. Rhythm/game-like tasks remain possible later experiments, without implying integration with or success at an existing commercial game.
 
-All six completed WikiText FLM/GRU/transformer checkpoints now have a compact
-standalone inference release. Model-only exports preserve the exact tensors and
-fixed buffers and reproduce all 24 published continuations. A fresh extraction
-also runs each of the six models through its CLI with the original fixed prompt.
-The release includes the shared tokenizer, graph, runtime, protocol and file
-hashes; access to the private repository is unnecessary for inference. This is
-reproduction work alongside the topology queue, not a new fitted comparison.
+The [continuing research program](RESEARCH-PROGRAM.md) records the wider questions and sources. New studies must follow existing compute priorities rather than competing with the active queue. Completion of the compact release, topology report or diagnostic does not complete the larger-data, scaling, alternative-learning or transfer work listed here.
 
-The online pose-feedback assay is complete. All 27 conditions and an exact
-repeat passed independent causal replay. The three trained cue controllers
-match the scripted reference's body trajectory in every scenario; live pose
-improves their tracking relative to frozen pose. There are seven distinct
-physical trajectories across the cohort, not 27 independent motor skills.
-The four-page note, scenario figures, neural state, video and standalone record
-archive retain all outcomes and make the engineered wrapper explicit. A fresh
-archive extraction passes its own NumPy-only audit without the repository.
-No language checkpoint, frozen topology input or language schedule changed.
-Language-to-control transfer and online motor learning remain later studies.
+## Delivery and verification at each stage
 
-Five of the eight new language controls have now completed training. Null
-graphs 101, 103 and 107 at training seed 42 have validation loss 1.9072, 1.9083
-and 1.9086 BPB, respectively, versus 1.9097 for the measured reference. These
-small differences favor the nulls on validation only; the full test comparison
-remains gated. The retrained no-slow-state model at seed 42 has validation loss
-1.9195 BPB versus 1.9097 for the corresponding full model; this is one seed's
-validation comparison. Null graph 101 at seed 43 has now completed with 1.9092
-validation BPB versus 1.9107 for its measured reference. The scheduler continues
-null graphs 103 and 107 with training seed 43.
-
-The reviewer-requested language computation controls now have separate,
-fixture-tested mechanism definitions: fixed recurrent dynamics, no lateral
-recurrence, and no temporal state. They do not change the frozen study or start
-training. A declared follow-up harness, checkpoint restoration and selection
-gate remain to be implemented after the topology result is reported. See
-[the control definitions and limits](LANGUAGE-CORE-CONTROLS.md).
-
-Preparation for language-to-action transfer now uses SCAN's three canonical
-splits. All 20,910 command interpretations, official memberships, repeated-row
-weights and causal target masks are audited. A one-token-per-action codec uses
-the existing vocabulary and keeps complete examples within 72 tokens, avoiding
-an accidental context advantage over the 96-token transformer. The research
-note separates planned neural fitting from data checks and later physical
-execution. No new trainer is launched; topology and then BabyLM retain priority.
-See [the data and transfer design](INSTRUCTION-TRANSFER.md).
+- Declare the next experiment before fitting, preserve prior protocols and retain every completed observation. Independent replications need separate identities and output directories.
+- Keep data provenance, licenses, graph scope, exact exposure, checkpoint selection and test denominators reproducible. Publish actual positive, null and negative results with their uncertainty limits.
+- Verify implementation, restored checkpoints, exports and any displayed inference state. Test the browser on desktop/mobile, keyboard access, downloads and failure handling when relevant changes land; retain dated evidence rather than treating checks as a permanent guarantee.
+- Maintain the README as the entry point, with model/data cards, computational figures, working papers and standalone reproduction artifacts. Distinguish browser adaptation, language learning, sensory learning and physical simulation in the interface and documentation.
+- Make sequential, descriptive commits, including delegated work, and verify the deployed artifacts at `flm.kuber.studio`. Keep repository visibility, raw-corpus exclusions and component licenses unchanged.
