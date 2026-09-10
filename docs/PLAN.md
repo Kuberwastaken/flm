@@ -66,6 +66,8 @@ The [SCAN condition preparation](SCAN-CONDITION-PREPARATION.md) now binds all 36
 
 The [train-only timing pilot command](SCAN-TIMING-PILOT.md) is also fixture-tested and refuses unfinished priority queues. Its eighteen disposable seed-42 cases will inform the common downstream budget after the language controls and BabyLM training finish. No full-size pilot measurements exist yet, and pilot weights cannot warm-start the eventual benchmark.
 
+The [language embedding eligibility preparation](LANGUAGE-ELIGIBILITY-PREPARATION.md) verifies a window-bounded factorization against dense local derivatives and tied-output autograd fixtures. It addresses the shared embedding's trace storage, but is not a language trainer or a measured advantage over BPTT. Full integration and training-only cost measurements precede any new learning-rule comparison.
+
 The [continuing research program](RESEARCH-PROGRAM.md) records the wider questions and sources. New studies must follow existing compute priorities rather than competing with the active queue. Completion of the compact release, topology report or diagnostic does not complete the larger-data, scaling, alternative-learning or transfer work listed here.
 
 ## Delivery and verification at each stage
