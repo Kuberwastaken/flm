@@ -1,0 +1,41 @@
+{
+  "verified_utc": "2026-09-10T19:51:49.243921+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p test_core_inference_release.py -v",
+  "exit_code": 0,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "torch": "2.8.0+cpu",
+  "test_log_sha256": "bc5ec064a10ba20173c2c92e2b61221ff138ae21abe2fc15df2e65bb7842e176",
+  "fixture": {
+    "models": 8,
+    "neurons": 16,
+    "actual_training_updates": 3,
+    "selection_metadata": "Artificial 500-update records; not completed study fits",
+    "fixed_prompt_continuations": 32,
+    "fresh_archive_cli_conditions": 8,
+    "threads": 1,
+    "raw_corpus_read": false
+  },
+  "checks": [
+    "Only the real-study completion gate is mocked in full export integration; source restoration, serialization, all tensors/buffers, fixed-prefix logits/states, generation and fresh CLI replay execute normally",
+    "All eight synthetic conditions preserve mechanism/configuration and all 32 existing prompt continuations exactly",
+    "All eight fresh CLI processes import their extracted runtime outside the repository with PYTHONPATH removed",
+    "Exported checkpoints contain model-only payloads; no optimizer, training RNG, raw corpus or source-only payload",
+    "Incomplete study, changed source checkpoint, different owned selection and failed continuation parity cannot create an archive",
+    "Changed archives reject before commands and cannot upgrade the verification record",
+    "Duplicate, unsafe and symlink archive entries reject; original stored ZIP names checked before Windows normalization"
+  ],
+  "fixture_development_note": "Initial path-rejection test exposed ZipInfo normalization of backslashes on Windows; verifier now checks orig_filename as well as normalized filename. Final full suite passes.",
+  "live_incomplete_study_rejected": true,
+  "live_rejection_reason": "Final computation scores and frozen selections are not available",
+  "live_test_decoder_source_loaders_and_generator_not_called": true,
+  "real_computation_inference_archive_created": false,
+  "source_sha256": {
+    "scripts/package_core_inference.py": "eed60c8421f960fd3520ab0ae420b751cf90d20c2c4cc210d6c71fc93684f5db",
+    "scripts/verify_core_inference_release.py": "dceb3bfba96bc7550319910d87fe3fbb30c4b2dcc0be4d542a5f901264584b2c",
+    "tests/test_core_inference_release.py": "bc811b1e009dba95f68913390d8c3c03e4c2cfca7684d9e7817a246869294c48",
+    "flm/core_inference.py": "461035d8afaf15fa54946324952c79f5e97434d6bdff3bb05aaf4ded2a26d52e",
+    "scripts/language_core_report.py": "e5417701b9c0f1571a666c2396bd23b819659213b894cdcf147aca826087f15c"
+  },
+  "scope": "Export and replay software fixtures only. Real study checkpoint export, full-size parity and standalone release verification remain pending all six new fits and all eight selected scores."
+}
