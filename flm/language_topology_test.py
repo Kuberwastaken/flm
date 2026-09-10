@@ -139,9 +139,16 @@ def snapshot(root):
                 raise ValueError('Invalid validation snapshot')
             validation.append(dict(step=update, bits_per_byte=score['bits_per_byte'], token_perplexity=score['token_perplexity']))
         rows.append(dict(**condition, saved_step=step, complete=complete, validation=validation))
+    completed = sum(r['complete'] and not r['reference'] for r in rows)
+    if (root / REPORTS / 'summary.json').exists():
+        test_status = 'Published'
+    elif completed == 8:
+        test_status = 'All training runs verified; awaiting complete test results'
+    else:
+        test_status = 'Pending all eight new runs and frozen checkpoint selections'
     report = dict(snapshot_utc=datetime.now(timezone.utc).isoformat(), study_identity_sha256=sha256(identity_path),
-        new_runs=8, completed_new_runs=sum(r['complete'] and not r['reference'] for r in rows), registered_updates=6000,
-        test_status='Published' if (root / REPORTS / 'summary.json').exists() else 'Pending all eight new runs and frozen checkpoint selections',
+        new_runs=8, completed_new_runs=completed, registered_updates=6000,
+        test_status=test_status,
         comparison='Validation at matched updates only. Existing measured references are reused, not additional independent runs.',
         runs=rows)
     write_json(root / 'public/research/language-topology-progress.json', report)

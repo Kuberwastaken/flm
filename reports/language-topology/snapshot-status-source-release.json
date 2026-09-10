@@ -1,0 +1,42 @@
+{
+  "verified_utc": "2026-09-10T16:49:09.906910+00:00",
+  "archive": "public/research/paper-source.zip",
+  "archive_sha256": "6470ca6e09ea5f0d4687dced34fec8c8d2acc41223afc28e9832fdbd77bdc2a4",
+  "archive_bytes": 6330510,
+  "source_payloads": 156,
+  "prior_archive_sha256": "37225cfe923cac5d0f2358c5b05bf4e3b1a0ca66af2c672680d9834947165ceb",
+  "changed_payloads": [
+    "flm/language_topology_test.py"
+  ],
+  "changed_functions": [
+    "snapshot"
+  ],
+  "unchanged_function_asts": [
+    "freeze_selection",
+    "validate_score",
+    "summarize",
+    "score_study",
+    "main"
+  ],
+  "frozen_source_and_input_files_unchanged": 23,
+  "changed_before_test_selection_freeze": true,
+  "archive_crc_hashes_and_member_paths_verified": true,
+  "fresh_extraction_outside_repository": true,
+  "extracted_flm_import_path_asserted": true,
+  "python_environment_variables_ignored": true,
+  "pythonpath_removed": true,
+  "fresh_extraction_tests": {
+    "pattern": "test_language_topology_evaluation.py",
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 2.985
+  },
+  "actual_incomplete_study_status_verified": true,
+  "later_phase_labels": {
+    "awaiting_results": "All training runs verified; awaiting complete test results",
+    "complete": "Published"
+  },
+  "actual_later_phases_reached": false,
+  "scope": "Reporting phase labels only. Selection, likelihood evaluation, paired statistics and training are unchanged. Verify the later labels again when the actual study reaches those stages."
+}
