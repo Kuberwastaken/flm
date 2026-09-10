@@ -3,5 +3,10 @@
     "file": "samples-001000-s42.json",
     "step": 1000,
     "seed": 42
+  },
+  {
+    "file": "samples-006000-s42.json",
+    "step": 6000,
+    "seed": 42
   }
 ]

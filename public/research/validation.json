@@ -24,7 +24,7 @@
         "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
         "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
       },
-      "complete": false,
+      "complete": true,
       "validation": [
         {
           "step": 0,
@@ -115,6 +115,33 @@
           "evaluated_tokens": 32768,
           "evaluated_bytes": 116937,
           "artifact_sha256": "516f2fd0883ab64c40b230f32ab8e27d96847fc987f61981bc27db05205c8ba5"
+        },
+        {
+          "step": 5000,
+          "presented_tokens": 7680000,
+          "bits_per_byte": 1.91739326132379,
+          "token_perplexity": 114.75990330448276,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "3179bfc34a98de6d447693ea09db267091e5a7df1c3abb6a38614f9c396be0f7"
+        },
+        {
+          "step": 5500,
+          "presented_tokens": 8448000,
+          "bits_per_byte": 1.9139342327564128,
+          "token_perplexity": 113.78218180995947,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "bf57d5b5c5e97b61e071611a3c5fd5dd00400aab4c8fc2d255af763eed50526d"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "bits_per_byte": 1.9096990391099853,
+          "token_perplexity": 112.5964072527091,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "64e5e682ebff6e9589027843e83dea27d6f454f6e1463fcaa5a0674fce6a5bd4"
         }
       ],
       "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
@@ -261,6 +288,95 @@
         }
       ],
       "source_commit": "14cedb6caaa14468f1aa55f53f214ae6ff1d36b5"
+    },
+    {
+      "id": "gru-s43",
+      "variant": "gru",
+      "seed": 43,
+      "parameters": 595408,
+      "protocol": {
+        "steps": 6000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "eval_tokens": 32768,
+        "threads": 4,
+        "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+        "train_cache_sha256": "dccfcab2728e223fc1620a00afba24feafe6d47373ec7619632d3e5b80b89789",
+        "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
+        "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
+      },
+      "complete": false,
+      "validation": [
+        {
+          "step": 0,
+          "presented_tokens": 0,
+          "bits_per_byte": 3.3628182896504257,
+          "token_perplexity": 4097.896398881126,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "93dfb33a569d82fdf2054c53b2ea9ed86dbe2a5f3cc3c27f4225b5db78d049f6"
+        },
+        {
+          "step": 500,
+          "presented_tokens": 768000,
+          "bits_per_byte": 2.29662709534017,
+          "token_perplexity": 293.21632410316124,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "b695303b6c1322464e5fdee94d8150f8d369bcd829be7ccc4d97074ed98c257f"
+        },
+        {
+          "step": 1000,
+          "presented_tokens": 1536000,
+          "bits_per_byte": 2.117295691685834,
+          "token_perplexity": 188.164865952122,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "ccfc01df72ce31fd8c22de34e784a53f45a81e755a1f6cc67f7d8ac82b2ba9d7"
+        },
+        {
+          "step": 1500,
+          "presented_tokens": 2304000,
+          "bits_per_byte": 2.0272341226675583,
+          "token_perplexity": 150.58734073936603,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "6bdb71d55a1e0ecc6d419dfde1d359ed1493396d16c7ab678b68efb9c09bdaf9"
+        },
+        {
+          "step": 2000,
+          "presented_tokens": 3072000,
+          "bits_per_byte": 1.9714659323879231,
+          "token_perplexity": 131.18331448531708,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "1266ca441b78508de9228a00cbca3185e26a283974f0b1a504234d907197c9e8"
+        },
+        {
+          "step": 2500,
+          "presented_tokens": 3840000,
+          "bits_per_byte": 1.9293455565521314,
+          "token_perplexity": 118.2034402603944,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "0e58ca664a4bb270f9f02378abaf946dd5357c620e7f5bb724bbb703e34ff749"
+        },
+        {
+          "step": 3000,
+          "presented_tokens": 4608000,
+          "bits_per_byte": 1.9027440444134145,
+          "token_perplexity": 110.67588913167852,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "10775779a660353d3e3d71c762ef152a11b4624045f5fb8fc60060a1cd23670a"
+        }
+      ],
+      "source_commit": "7d9e53670632bc1d3baa81e78f384a9a9de42951"
     },
     {
       "id": "transformer-s42",
@@ -426,7 +542,7 @@
         "validation_cache_sha256": "a9fe379a68775dc5808338d69d3061c0dfbf2c1e7ae64b8a1f1f55d57e4e6075",
         "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee"
       },
-      "complete": false,
+      "complete": true,
       "validation": [
         {
           "step": 0,
@@ -535,6 +651,15 @@
           "evaluated_tokens": 32768,
           "evaluated_bytes": 116937,
           "artifact_sha256": "b4cda0ee2166cf70a543e81e022b6c7c79a2ec49b732ce5f91971bfbb6260345"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "bits_per_byte": 1.8138328084572959,
+          "token_perplexity": 88.82571496175889,
+          "evaluated_tokens": 32768,
+          "evaluated_bytes": 116937,
+          "artifact_sha256": "40b9ed24172dde0d51b128355df4882d42d452e9f078f76608b8e97b50ed4d7e"
         }
       ],
       "source_commit": "8cf2ab2868ef39f9ea81dc341b028badca66b366"
