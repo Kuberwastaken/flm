@@ -105,3 +105,12 @@ spiking experiments. [Tallec and Ollivier's UORO](https://arxiv.org/abs/1702.050
 uses a stochastic approximation for online recurrent gradients. The occurrence
 factorization above is deterministic and retains a deliberately biased local
 derivative; it is not UORO or a claim of a new general learning principle.
+
+[Dhiman and Panwar (2026)](https://www.nature.com/articles/s41598-026-52140-3)
+also studies eligibility-trace plasticity in Drosophila optic-lobe graph models,
+with separate motion-decoding, energy-proxy and wiring-alignment regimes.
+This is further precedent for combining fly connectivity and local learning,
+not a language-model result. Its energy proxy must not be substituted for
+measured hardware energy, nor its regime-specific null comparisons treated as
+evidence about FLM's central-brain subset. We have inspected the paper, not
+rerun its experiments.

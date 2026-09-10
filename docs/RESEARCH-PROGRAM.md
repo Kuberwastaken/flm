@@ -179,4 +179,5 @@ is provisioned by this plan.
 - [Official 10M corpus](https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small), [100M corpus](https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict), and [GPT-2-family baseline](https://huggingface.co/BabyLM-community/BabyLM-2026-Baseline-GPT2-Strict-Small).
 - [FineWeb-Edu publisher card and curation](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu).
 - [Bellec et al., eligibility propagation](https://www.nature.com/articles/s41467-020-17236-y).
+- [Dhiman and Panwar, optic-lobe information processing and eligibility-trace plasticity (2026)](https://www.nature.com/articles/s41598-026-52140-3). This is additional connectome/local-learning precedent; its sensory and energy-proxy regimes are separate from language. The [embedding preparation note](LANGUAGE-ELIGIBILITY-PREPARATION.md) records the scope.
 - [FlyGym 2.x documentation](https://neuromechfly.org/) and [installation](https://neuromechfly.org/installation/).
