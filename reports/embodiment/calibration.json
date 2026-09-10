@@ -1,0 +1,119 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "versions": {
+    "flygym": "2.1.0",
+    "mujoco": "3.9.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "numba": "0.67.0"
+  },
+  "source": "https://neuromechfly.org/tutorials/4d_turning_controller/",
+  "controller": "Upstream designed hybrid turning controller with preprogrammed steps and contact feedback",
+  "flm_connected": false,
+  "learning_used": false,
+  "repeat_max_position_error_mm": 0.0,
+  "trials": [
+    {
+      "label": "symmetric",
+      "seed": 17,
+      "descending_signal": [
+        1.0,
+        1.0
+      ],
+      "simulation_seconds": 1.0,
+      "physics_steps": 10000,
+      "timestep_seconds": 0.0001,
+      "recorded_samples": 1001,
+      "actuated_joint_dofs": 42,
+      "displacement_mm": [
+        13.461109003766943,
+        1.3655569052344496,
+        -0.06559566767844549
+      ],
+      "yaw_change_rad": 0.1400626022745992,
+      "minimum_thorax_height_mm": 0.637054966725814,
+      "minimum_thorax_up_z": 0.9641693639917782,
+      "mean_contact_count": 6.343656343656344,
+      "wall_seconds": 22.49347950005904,
+      "includes_rendering": false,
+      "trajectory_sha256": "7aaaf1e68e352a3403898025fce8fbec3826e25c07b9c690484aa20cbe402e08"
+    },
+    {
+      "label": "left_drive",
+      "seed": 17,
+      "descending_signal": [
+        1.2,
+        0.4
+      ],
+      "simulation_seconds": 1.0,
+      "physics_steps": 10000,
+      "timestep_seconds": 0.0001,
+      "recorded_samples": 1001,
+      "actuated_joint_dofs": 42,
+      "displacement_mm": [
+        0.7241702296347332,
+        -7.725654319951476,
+        -0.186146837734379
+      ],
+      "yaw_change_rad": -2.5558148594220116,
+      "minimum_thorax_height_mm": 0.808322094042991,
+      "minimum_thorax_up_z": 0.9829840036945325,
+      "mean_contact_count": 6.312687312687313,
+      "wall_seconds": 25.452910100109875,
+      "includes_rendering": true,
+      "trajectory_sha256": "92a1e92c7cb7d25528d5ce455461da737dc4d9d7846a34ebe8275cc33725e391"
+    },
+    {
+      "label": "right_drive",
+      "seed": 17,
+      "descending_signal": [
+        0.4,
+        1.2
+      ],
+      "simulation_seconds": 1.0,
+      "physics_steps": 10000,
+      "timestep_seconds": 0.0001,
+      "recorded_samples": 1001,
+      "actuated_joint_dofs": 42,
+      "displacement_mm": [
+        -0.3669834920833525,
+        7.080938313838222,
+        0.011682076418694454
+      ],
+      "yaw_change_rad": 2.8108133339645214,
+      "minimum_thorax_height_mm": 0.7417776048581377,
+      "minimum_thorax_up_z": 0.9818478233820102,
+      "mean_contact_count": 6.501498501498501,
+      "wall_seconds": 20.78035239991732,
+      "includes_rendering": false,
+      "trajectory_sha256": "002e9d257bde881ecbf218107738859667362c7a5b75817023694c5f1e62a348"
+    },
+    {
+      "label": "symmetric_repeat",
+      "seed": 17,
+      "descending_signal": [
+        1.0,
+        1.0
+      ],
+      "simulation_seconds": 1.0,
+      "physics_steps": 10000,
+      "timestep_seconds": 0.0001,
+      "recorded_samples": 1001,
+      "actuated_joint_dofs": 42,
+      "displacement_mm": [
+        13.461109003766943,
+        1.3655569052344496,
+        -0.06559566767844549
+      ],
+      "yaw_change_rad": 0.1400626022745992,
+      "minimum_thorax_height_mm": 0.637054966725814,
+      "minimum_thorax_up_z": 0.9641693639917782,
+      "mean_contact_count": 6.343656343656344,
+      "wall_seconds": 15.57423000014387,
+      "includes_rendering": false,
+      "trajectory_sha256": "7aaaf1e68e352a3403898025fce8fbec3826e25c07b9c690484aa20cbe402e08"
+    }
+  ],
+  "caution": "Physics and controller calibration only. Descending commands are prescribed; these trials do not demonstrate learned behavior or language transfer."
+}
