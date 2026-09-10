@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 import shutil
+import subprocess
 import zipfile
 import numpy as np
 import matplotlib
@@ -43,11 +44,19 @@ def main():
         physical_cases=len(trials), unique_chosen_commands=len(action_paths), neural_choices_correct=sum(r['neural_choice_correct'] for r in trials),
         heading_matches_chosen_action=chosen_heading_correct, identical_command_replays='Exact equality of all recorded generalized positions within each chosen action',
         full_report='learned-choice-records.json', caution=report['caution'], coupling=report['coupling'])
-    (PUBLIC / 'learned-choice.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf8')
     shutil.copyfile(source, PUBLIC / 'learned-choice-records.json')
     video = WORK / 'eligibility-000300-cue0.mp4'
     if not video.exists(): raise ValueError('The predeclared video case is missing')
-    shutil.copyfile(video, PUBLIC / 'learned-choice.mp4')
+    ffmpeg = shutil.which('ffmpeg')
+    if not ffmpeg: raise RuntimeError('Install FFmpeg on PATH to package the recorded video for streaming')
+    published_video = PUBLIC / 'learned-choice.mp4'
+    subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', '-i', str(video),
+        '-map', '0:v:0', '-c', 'copy', '-movflags', '+faststart', str(published_video)], check=True)
+    summary['video'] = dict(source_sha256=hashlib.sha256(video.read_bytes()).hexdigest(),
+        published_sha256=hashlib.sha256(published_video.read_bytes()).hexdigest(),
+        transformation='MP4 stream copy with metadata first; no video re-encoding',
+        ffmpeg_version=subprocess.check_output([ffmpeg, '-version'], text=True).splitlines()[0])
+    (PUBLIC / 'learned-choice.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf8')
     with zipfile.ZipFile(PUBLIC / 'learned-choice-trajectories.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
         for row in trials:
             label = row['identity']['case']['label']; archive.write(WORK / f'{label}.csv', label + '.csv')
@@ -67,10 +76,10 @@ def main():
     fig.savefig(figures/'learned-choice-probability.svg'); fig.savefig(figures/'learned-choice-probability.png',dpi=160); plt.close(fig)
     fig, ax = plt.subplots(figsize=(6.8,3.8),layout='constrained')
     for action, color in [(0,'#a74c20'),(1,'#497569')]:
-        value=action_paths[action]; ax.plot(value['position'][:,0],value['position'][:,1],color=color,label=f'Chosen action {action}')
-        ax.scatter(*value['position'][-1,:2],color=color,s=24)
-    ax.set(xlabel='Thorax x (mm)',ylabel='Thorax y (mm)',aspect='equal'); ax.legend(frameon=False,fontsize=9)
-    fig.savefig(figures/'learned-choice-paths.svg'); fig.savefig(figures/'learned-choice-paths.png',dpi=160); plt.close(fig)
+        value=action_paths[action]; ax.plot(value['time'],value['yaw'] - value['yaw'][0],color=color,label=f'Chosen action {action}')
+    ax.set(xlabel='Simulated time (s)',ylabel='Change in heading (radians)',xlim=(0,1)); ax.legend(frameon=False,fontsize=9)
+    ax.grid(axis='y',color='#d6d0c5',linewidth=.6)
+    fig.savefig(figures/'learned-choice-heading.svg'); fig.savefig(figures/'learned-choice-heading.png',dpi=160); plt.close(fig)
     print(json.dumps({k:v for k,v in summary.items() if k!='cases'},indent=2))
 
 

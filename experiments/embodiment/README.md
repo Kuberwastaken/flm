@@ -21,3 +21,28 @@ alone is presented as a validated fall detector.
 Controller and model source: [FlyGym turning tutorial](https://neuromechfly.org/tutorials/4d_turning_controller/)
 and the installed FlyGym 2.1.0 distribution. Preserve its Apache-2.0 source license
 and asset-specific notices when redistributing upstream components.
+
+## Learned-choice replay
+
+Complete `python -m flm.behavior_study` in the main PyTorch environment first.
+In the isolated physical environment, run:
+
+```sh
+python experiments/embodiment/learned_choice.py --video
+```
+
+This runs all five learning rules, checkpoints 0/300/600/900, and both fixed cues
+from seed 17: forty independently simulated one-second trials. A neural argmax
+choice selects one of two calibrated descending commands. Every case records
+its input, probabilities, full neural state, checkpoint identity and generalized
+physical positions. Completed trials resume only when identities match. The
+video case is declared in advance: supervised eligibility, update 300, cue 0.
+
+Back in the research environment, `python scripts/physical_choice_report.py`
+verifies all forty trajectories and publishes the video, figures, case records
+and CSV archive. It requires FFmpeg on PATH and moves MP4 metadata to the start
+for streaming without re-encoding video frames; both file hashes are recorded.
+All headings follow their chosen command; erroneous neural
+choices remain in the record. Identical commands produce identical trajectories
+from the shared physical initialization. No online neural sensory feedback,
+learned balance, learned gait or language-to-motor transfer is tested here.
