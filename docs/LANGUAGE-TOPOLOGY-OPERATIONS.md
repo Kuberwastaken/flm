@@ -92,6 +92,16 @@ prompt continuations. The second command runs all ten conditions from a fresh
 extraction before marking its release record verified. No control-model archive
 is generated while the final checkpoint/score gate remains incomplete.
 
+The release integration test uses ten untrained 16-node fixtures and artificial
+article scores. Only the completed-study gate is mocked: model serialization,
+forty source/export sample comparisons, ZIP extraction, all ten standalone CLI
+replays and the browser's pending/verified download checks execute normally.
+It also checks that optimizer, RNG and source-only checkpoint fields are omitted.
+Run it with `python -m unittest discover -s tests -p 'test_topology_inference_release.py' -v`
+in the repository environment with Node.js installed. This verifies release
+machinery; it supplies no language result and does not replace checks on the
+actual final selected models.
+
 The transition was executed at the first control's verified update-5,000 save.
 Its old queue, child and finalizer were identified by command and stopped.
 The new scheduler resumed graph 101/seed 42 and started graph 103/seed 42 from

@@ -1,0 +1,44 @@
+{
+  "verified_utc": "2026-09-10T15:00:35.254908+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p 'test_topology_inference_release.py' -v",
+  "tests_passed": 3,
+  "unittest_reported_seconds": 178.82,
+  "sources": {
+    "tests/test_topology_inference_release.py": "9b805b7f381433defc2585ad222354d88d79bb5014c81f88d435b83f92d7cadc",
+    "scripts/package_topology_inference.py": "be429e54c329384cc8bc28415bb642c5846e97096c79e2e7672e29bc176e7b89",
+    "scripts/verify_topology_inference_release.py": "14b280e8406405633af516736a5a40a2335907bcf90dd90eba62f009fd1b1639",
+    "flm/topology_inference.py": "0e4454bd75508976ef443e50ffec01818f7c901bfa9b1c27a06abbfd96a2eaf3",
+    "web/language-topology.js": "33c0ef25f7d802233d4f9d544829e538c0fba0b4c3bb15d0bc549e9b613a0bd3"
+  },
+  "positive_fixture": {
+    "models": 10,
+    "neurons_per_model": 16,
+    "graphs": 4,
+    "trained": false,
+    "article_scores": "artificial",
+    "shared_tokenizer": "data/tokenizers/wikitext2-4096/tokenizer.json",
+    "mocked_operation": "scripts.package_topology_inference.verified_report only",
+    "real_source_export_continuation_pairs": 40,
+    "real_fresh_extraction_cli_conditions": 10,
+    "all_tensor_and_buffer_values_preserved": true,
+    "fixed_prefix_logits_and_states_preserved": true,
+    "checkpoint_payload_omits_optimizer_rng_and_source_only_fields": true,
+    "browser_gate_rejects_pending_replay": true,
+    "browser_gate_accepts_complete_matching_release": true,
+    "archive_hash_unchanged_by_replay_verification": true
+  },
+  "negative_cases": [
+    "Incomplete study rejected before restore or generation",
+    "Corrupt archive rejected before extraction or CLI execution"
+  ],
+  "actual_study": {
+    "final_artifacts_absent": [
+      "public/research/language-topology-results.json",
+      "public/research/language-topology-inference.zip",
+      "public/research/language-topology-inference-release.json",
+      "public/research/language-topology-samples.json"
+    ],
+    "language_result_verified": false,
+    "scope": "Release machinery only; repeat packaging and verification on all actual selected models after the full study gate"
+  }
+}
