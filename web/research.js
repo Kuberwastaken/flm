@@ -3,6 +3,7 @@ import { loadBabyLMStudy } from './babylm-study.js';
 import { loadWiringStudy } from './wiring-study.js';
 import { loadLanguageTopology } from './language-topology.js';
 import { loadFeedbackStudy } from './closed-loop.js';
+import { loadChoiceReplay } from './choice-replay.js';
 const names = {flm: 'FLM', gru: 'GRU', transformer: 'Transformer'};
 const colors = {flm: '#a74c20', gru: '#497569', transformer: '#666277'};
 const $ = id => document.getElementById(id);
@@ -23,6 +24,7 @@ export async function loadResearch() {
   void loadWiringStudy();
   void loadLanguageTopology();
   void loadFeedbackStudy();
+  void loadChoiceReplay();
   try {
     const [report, samples] = await Promise.all([get('validation.json'), get('samples-index.json')]);
     const runs = report.runs.filter(x => names[x.variant]);

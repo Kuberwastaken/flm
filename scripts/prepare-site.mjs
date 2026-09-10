@@ -2,6 +2,14 @@ import { mkdir, copyFile, readdir, readFile, writeFile } from 'node:fs/promises'
 await mkdir('public/licenses', { recursive: true });
 await mkdir('public/data', { recursive: true });
 await mkdir('public/research', { recursive: true });
+await copyFile('scripts/choice_replay.py', 'public/research/choice_replay.py');
+let foodNote = await readFile('docs/FOOD-RESPONSE-PLAN.md', 'utf8');
+for (const [source, target] of [
+  ['../scripts/choice_replay.py', 'choice_replay.py'],
+  ['../public/research/', ''],
+  ['SUBSET-AUDIT.md', 'subset-audit.md'],
+]) foodNote = foodNote.replaceAll(source, target);
+await writeFile('public/research/food-response-plan.md', foodNote);
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');
