@@ -251,3 +251,12 @@ records the checkpoint hashes, both old/new rows, new scheduler source hash,
 actual process commands and resource observation. It does not claim an old
 parameter-tensor comparison at unsaved intermediate updates. The dated public
 snapshot is still gated on saved checkpoints, and no new control test was read.
+
+Release `48fd6cf` passed Pages run `34461784855`. The deployed progress snapshot
+matches local SHA-256 `511cfe091eee55dd183660f7a4e436325fbc0a158002217c6f229b62c3e921e7`
+and reports one of eight new controls complete. The first row shows update
+6,000, measured 1.9097 versus rewired 1.9072 BPB, difference +0.0025. Graph
+103's row compares both models at update 1,000; graph 107 awaits its first
+saved checkpoint. All four structural rows remain present and the completed
+test block remains hidden. This verifies a training-progress release, not a
+completed topology test comparison.
