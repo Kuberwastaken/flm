@@ -167,11 +167,40 @@ body trajectory, retaining invalid predictions and failed executions. Report
 symbolic correctness separately from whether the physical body followed its
 requested path. A scripted reference remains essential.
 
+## Runtime preparation
+
+The [shared numerical runtime](scan_runtime.py) now connects the prepared
+representation to FLM, GRU and transformer models. It right-pads complete
+examples, preserves repeated training rows, resets state per example, and
+computes mean next-token loss only over action IDs and EOS. Each supervised
+token has equal weight; longer targets contribute more terms than shorter ones.
+Unscored instruction tokens still receive gradients through causal computation.
+
+Generation batches equal-length prefixes, uses the full original vocabulary,
+and restores the caller's command order. Each row stops independently at EOS or
+the declared cap. Invalid token IDs remain in the trace. Supplied predictions
+are decoded again from raw IDs before scoring; altered labels, shortened traces
+and mismatched command/cap records are rejected. Aggregates retain every supplied
+example, report exact sequence success and edit distance, and distinguish
+invalid-token outputs, invalid or empty action sequences, and cap exhaustion.
+Length breakdowns use the reference action count. Official partition coverage
+must still be established by the future study harness.
+
+Nine [runtime fixture checks](scan-runtime-preflight.json) cover
+masked loss, per-example versus padded-batch gradients, instruction-prefix
+credit, cached versus whole-prefix greedy generation, and failure accounting.
+They use small synthetic networks and an independent byte codec, not acquired
+SCAN examples or the full trained checkpoints. These are implementation checks,
+not benchmark scores. The timing pilot, optimizer and schedule declaration,
+resumable trainer, frozen condition inventory and complete-test gate remain to
+be implemented before any of the planned 36 fits begin.
+
 ## Reproduction and current boundary
 
 ```sh
 python -m flm.scan
 python -m unittest discover -s tests -p test_scan.py -v
+python -m unittest discover -s tests -p test_scan_runtime.py -v
 python scripts/scan_data_report.py
 ```
 

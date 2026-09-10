@@ -56,11 +56,15 @@ await writeFile('public/research/language-core-controls.md',
     .replaceAll('../flm/language_core_', 'language_core_'));
 await copyFile('data/cards/scan.json', 'public/research/scan-data-card.json');
 await copyFile('scripts/scan_data_report.py', 'public/research/scan_data_report.py');
+await copyFile('flm/scan_runtime.py', 'public/research/scan_runtime.py');
+await copyFile('reports/scan-runtime/preflight.json', 'public/research/scan-runtime-preflight.json');
 let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
 for (const [source, target] of [
   ['../data/cards/scan.json', 'scan-data-card.json'],
   ['../public/research/', ''],
   ['../scripts/scan_data_report.py', 'scan_data_report.py'],
+  ['../flm/scan_runtime.py', 'scan_runtime.py'],
+  ['../reports/scan-runtime/preflight.json', 'scan-runtime-preflight.json'],
 ]) instructionNote = instructionNote.replaceAll(source, target);
 await writeFile('public/research/instruction-transfer.md', instructionNote);
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])

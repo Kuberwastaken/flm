@@ -1,0 +1,20 @@
+{
+  "verified_utc": "2026-09-10T21:15:45.851265+00:00",
+  "production_build": true,
+  "relative_links": [
+    "licenses/SCAN-BSD.txt",
+    "research/figures/scan-data.png",
+    "research/figures/scan-encoding.csv",
+    "research/scan-data-card.json",
+    "research/scan-data.json",
+    "research/scan-runtime-preflight.json",
+    "research/scan_data_report.py",
+    "research/scan_runtime.py"
+  ],
+  "runtime_and_fixture_record_copied_exactly": true,
+  "source_sha256": {
+    "docs/INSTRUCTION-TRANSFER.md": "ea93dda095bdfa328a7a31409963f3b58b12214e661a616b80d993f5e54bd221",
+    "docs/PLAN.md": "dee18fba28753f758865140327fd88a8ab47e0f5c2adde2335863d96ce4c97d3",
+    "scripts/prepare-site.mjs": "0db8737a0d3be0a89cc00a0c8dea73b2d92bd77e4043099bf664145a8debaf86"
+  }
+}
