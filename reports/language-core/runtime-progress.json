@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-09-10T19:35:33.058610+00:00",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "condition": "fixed_dynamics-s42",
+  "saved_step": 2000,
+  "committed_checkpoints": 4,
+  "checkpoint_sha256": "de03d6da9126cb15a1f8a719fcf6ed70fe7ef9438f836993d52fabeb076f00a1",
+  "frozen_tensors_match_initialization": true,
+  "graph_pooling_optimizer_rng_and_exposure_verified": true,
+  "source_identity_verified": true,
+  "queue_session_id": 20410,
+  "queue_live_confirmed_by_session_poll": true,
+  "new_language_test_results_available": false,
+  "runtime_preflight": "reports/language-core/inference-runtime-preflight.json",
+  "release_gate_preflight": "reports/language-core/report-gate-preflight.json"
+}
