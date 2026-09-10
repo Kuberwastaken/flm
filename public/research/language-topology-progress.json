@@ -1,10 +1,10 @@
 {
-  "snapshot_utc": "2026-09-10T17:16:39.635605+00:00",
+  "snapshot_utc": "2026-09-10T18:05:42.220200+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 8,
   "registered_updates": 6000,
-  "test_status": "All training runs verified; awaiting complete test results",
+  "test_status": "Published",
   "comparison": "Validation at matched updates only. Existing measured references are reused, not additional independent runs.",
   "runs": [
     {

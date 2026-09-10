@@ -1,0 +1,77 @@
+{
+  "verified_utc": "2026-09-10T18:06:06.272811+00:00",
+  "archive": "public/research/language-topology-records.zip",
+  "bytes": 259741,
+  "archive_sha256": "44666cbf01919d81c9ea30b2c95b24dd25b74fac992d9a6a3d6af759a980d2a5",
+  "payloads": 39,
+  "full_checkpoint_and_score_gate_passed": true,
+  "arithmetic_audit": {
+    "verified_runs": 10,
+    "unique_test_articles": 60,
+    "scored_bytes_per_run": 1287656,
+    "scored_tokens_per_run": 367981,
+    "topology_contrasts": [
+      {
+        "training_seed": 42,
+        "graph_seed": 101,
+        "difference_bpb": 0.0018295445790362142,
+        "lower_95": 0.00040965360857811374,
+        "upper_95": 0.00344982475748582
+      },
+      {
+        "training_seed": 42,
+        "graph_seed": 103,
+        "difference_bpb": 0.000981347697706418,
+        "lower_95": -0.0005161127742046056,
+        "upper_95": 0.002530324471180126
+      },
+      {
+        "training_seed": 42,
+        "graph_seed": 107,
+        "difference_bpb": 0.0009107573392167588,
+        "lower_95": -0.00053302863134438,
+        "upper_95": 0.0024613080067226304
+      },
+      {
+        "training_seed": 43,
+        "graph_seed": 101,
+        "difference_bpb": 0.0015228191527548005,
+        "lower_95": 1.6771377748665666e-05,
+        "upper_95": 0.0029534629983667556
+      },
+      {
+        "training_seed": 43,
+        "graph_seed": 103,
+        "difference_bpb": 0.0028086554466028243,
+        "lower_95": 0.0008098013236616237,
+        "upper_95": 0.004744994938540083
+      },
+      {
+        "training_seed": 43,
+        "graph_seed": 107,
+        "difference_bpb": 0.0012981454036488846,
+        "lower_95": -0.00023203506223673102,
+        "upper_95": 0.002742530995424184
+      }
+    ],
+    "slow_state_contrasts": [
+      {
+        "training_seed": 42,
+        "difference_bpb": -0.011835682298552249,
+        "lower_95": -0.014958622554898085,
+        "upper_95": -0.009342520692346815
+      },
+      {
+        "training_seed": 43,
+        "difference_bpb": -0.010163087305289236,
+        "lower_95": -0.012491960918117977,
+        "upper_95": -0.008076703259105198
+      }
+    ],
+    "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+    "selection_sha256": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+    "scope": "Arithmetic audit of supplied scores; not independent training, test inference or source authentication",
+    "uncertainty": "Intervals condition on each fitted pair; six topology contrasts share two measured references"
+  },
+  "manifest_sha256": "c8df75618e7cb1a92da31de1596f750b8336a22cfa4000ee90de71571498b89d"
+}
