@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-09-10T19:59:14.925366+00:00",
+  "command": "python -X utf8 -m unittest discover -s tests -p test_language_core_audit.py -v",
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "exit_code": 0,
+  "log_sha256": "f3d9e4e708f33faa95323a375610a6eaeaeb3386b1c2fc1273c15c2ba3b1660d",
+  "fixture": "Eight artificial condition scores over 60 synthetic articles with unequal byte/token counts, both effect signs and reordered records; no corpus or checkpoints read",
+  "checks": [
+    "Independent aggregate NLL, byte-weighted BPB and shared-tokenizer perplexity arithmetic",
+    "All six primary and two secondary conditional paired-article intervals, plus three primary means and one secondary mean",
+    "Missing/duplicated conditions, wrong mechanism/count/reference declarations, malformed article records and changed score identities rejected",
+    "Incorrect bootstrap settings, effect orientation, intervals and means rejected",
+    "Unordered report, contrast and article inputs produce the same audited result",
+    "Fresh external script agrees with the local audit with flm and torch imports explicitly disabled and PYTHONPATH removed"
+  ],
+  "arithmetic_comparison_tolerance": {
+    "relative": 1e-09,
+    "absolute": 1e-12
+  },
+  "source_sha256": {
+    "scripts/audit_language_core_report.py": "6fe653715079bd4df3b963c4d5ae9ef3a87fd64e2a6c3b56a3bcd683b9e4cc6e",
+    "tests/test_language_core_audit.py": "051d561bbbbd4187c7325ca68c1a6a21317daa5f6a3b85a3a7c11148715fd900"
+  },
+  "scope": "Arithmetic software preflight only; no real computation-control test report exists yet. This checker does not independently authenticate data/checkpoints or rerun likelihood inference."
+}
