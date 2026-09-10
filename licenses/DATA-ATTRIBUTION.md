@@ -19,3 +19,15 @@ FLM retrieves only transcript text and document IDs from the official `openslr/l
 The AMI Project and corpus contributors. [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/), manual annotations version 1.6.2. The official release licenses signals and transcription under CC BY 4.0. See the [download and license page](https://groups.inf.ed.ac.uk/ami/download/).
 
 FLM uses word/punctuation transcriptions, omits nonlexical events, linearizes overlapping segments, applies generic speaker labels and lowercases the text. Its custom split keeps participants and meeting families together. No audio or unrelated annotation types are used. Archive hash, transformations, assignment rules and limitations are in `data/cards/ami.json`.
+
+## SCAN
+
+Brenden Lake and Marco Baroni, *Generalization without Systematicity*, ICML 2018.
+The [publisher repository](https://github.com/brendenlake/SCAN/tree/c4b756cbc010d75c912f16c42c8f15dc6b7e6c8f)
+contains a BSD license notice for CommAI-env software, copyright Facebook,
+2016-present. The exact source notice is retained in `SCAN-BSD.txt`; GitHub's
+license metadata reports `NOASSERTION`. `data/cards/scan.json` preserves this
+distinction and the source hashes. FLM audits the complete command universe and
+three official partitions, preserving duplicate training rows. Its action codec
+is an explicit derived representation for a future instruction-transfer study.
+No neural-model result or physical motor behavior is implied by data preparation.

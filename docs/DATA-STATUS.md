@@ -21,3 +21,12 @@ and custom split rules.
 LibriSpeech is an optional follow-up corpus. The dataset viewer returned HTTP 429 during acquisition. Verified batches remain in the ignored local cache; the download is incomplete and no partial LibriSpeech corpus has been used for training or evaluation. The downloader now stops on rate limiting and cancels queued work. Its default concurrency is one.
 
 The trained release uses orthographic text, not audio, pretrained embeddings or language-model-generated training examples. Speaker turns are linearized; overlap, prosody and many aspects of natural interaction are therefore absent.
+
+SCAN's official simple, length and added-primitive-jump partitions are now
+acquired at a pinned publisher revision and independently checked against all
+20,910 canonical commands. Original repeated training examples are retained.
+Its artificial instruction/action pairs are reserved for a separate transfer
+experiment, not mixed into the primary language corpus. A reversible action
+codec and causal loss masks have been checked on every command; no model has
+been fitted or scored on SCAN. See [the data audit and experimental design](INSTRUCTION-TRANSFER.md)
+and `data/cards/scan.json`. Existing topology and BabyLM priorities are unchanged.

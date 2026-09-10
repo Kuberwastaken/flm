@@ -95,10 +95,17 @@ Two further models are retrained without slow state. This tests the mechanism af
 | **WikiText-2 raw** | Completed standard matched comparison; 600 training articles, 2.05 million training words | Original text and official 600/60/60 article partitions; vocabulary learned only on training text. |
 | **BabyLM 2026 English** | Continuing 10M- and 100M-word comparison | Six spoken/written components; shared 10M-fitted vocabulary, source-indexed caches, normalized-line overlap audit and a declared filtered sensitivity analysis. |
 | **AMI Meeting Corpus** | Earlier dialogue-focused browser model | Manual meeting transcripts; declared participant-disjoint splits and normalization. |
+| **SCAN** | Prepared instruction-transfer benchmark; 20,910 artificial commands | Three official train/test splits, preserved repeated examples and a reversible action codec; no model results yet. |
 
 BabyLM includes spoken BNC, CHILDES, Gutenberg, OpenSubtitles, Simple Wikipedia and Switchboard components. The scale labels refer to corpus word budgets, not model parameter counts. Its common tokenizer and fixed validation panel keep comparisons interpretable; full official test scoring and per-source results wait for the complete registered study. See the [BabyLM protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md) and [acquisition status](docs/DATA-STATUS.md).
 
 Training uses orthographic text, not audio. No pretrained embeddings, synthetic teacher corpus or private conversations enter the primary experiment. Source revisions, hashes, transformations and split rules are recorded in [dataset cards](data/cards/). Raw corpora stay local, and upstream component rights remain in force.
+
+SCAN is a separate test of command composition, not an additional human-language
+pretraining corpus. The [data audit and transfer design](docs/INSTRUCTION-TRANSFER.md)
+explain why literal action labels would introduce a context-length confound and
+how one existing token per action keeps every example within 72 tokens. Its
+grammar oracle checks source integrity only; it never supplies model predictions.
 
 ## Learning and behavior studies
 

@@ -132,3 +132,12 @@ and 1.9086 BPB, respectively, versus 1.9097 for the measured reference. These
 small differences favor the nulls on validation only; the full test comparison
 remains gated. The scheduler continues the first retrained no-slow-state model
 and null graph 101 with training seed 43.
+
+Preparation for language-to-action transfer now uses SCAN's three canonical
+splits. All 20,910 command interpretations, official memberships, repeated-row
+weights and causal target masks are audited. A one-token-per-action codec uses
+the existing vocabulary and keeps complete examples within 72 tokens, avoiding
+an accidental context advantage over the 96-token transformer. The research
+note separates planned neural fitting from data checks and later physical
+execution. No new trainer is launched; topology and then BabyLM retain priority.
+See [the data and transfer design](INSTRUCTION-TRANSFER.md).
