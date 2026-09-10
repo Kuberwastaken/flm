@@ -24,6 +24,7 @@ def main():
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
         'public/research/learned-choice.json', 'docs/WIRING-RESULTS.md',
         'docs/WIRING-LEARNING-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-PROTOCOL.md',
+        'reports/language-topology/identity.json', 'reports/language-topology/selection.json',
         'reports/wiring-learning/summary.json', 'reports/wiring-learning/paper-inputs.json',
         'docs/CLOSED-LOOP-PROTOCOL.md', 'docs/CLOSED-LOOP-REPRODUCTION.md',
         'public/research/closed-loop.json', 'public/research/closed-loop.csv',

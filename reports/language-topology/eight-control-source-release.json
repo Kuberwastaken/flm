@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-09-10T17:22:12.061066+00:00",
+  "archive": "public/research/paper-source.zip",
+  "archive_sha256": "484923e533ac3c1ac89bdb3dc02f95e355cdf3b376396a7bd1886b7dcef7f8c9",
+  "archive_bytes": 6337668,
+  "source_payloads": 158,
+  "prior_archive_sha256": "6470ca6e09ea5f0d4687dced34fec8c8d2acc41223afc28e9832fdbd77bdc2a4",
+  "added_payloads": [
+    "reports/language-topology/identity.json",
+    "reports/language-topology/selection.json"
+  ],
+  "changed_payloads": [
+    "README.md",
+    "scripts/package_papers.py"
+  ],
+  "all_model_scoring_and_test_source_payloads_unchanged": true,
+  "archived_readme_matches_committed_readme": true,
+  "frozen_record_bytes_and_scoring_source_hashes_match": true,
+  "selection_sha256": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+  "baseline_source_check": "reports/language-topology/snapshot-status-source-release.json",
+  "scope": "Completed fits and frozen selection; final control test evaluation is still underway."
+}

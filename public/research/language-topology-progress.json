@@ -1,10 +1,10 @@
 {
-  "snapshot_utc": "2026-09-10T16:47:52.562068+00:00",
+  "snapshot_utc": "2026-09-10T17:16:39.635605+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
-  "completed_new_runs": 7,
+  "completed_new_runs": 8,
   "registered_updates": 6000,
-  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "test_status": "All training runs verified; awaiting complete test results",
   "comparison": "Validation at matched updates only. Existing measured references are reused, not additional independent runs.",
   "runs": [
     {
@@ -682,8 +682,8 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s43",
       "reference": false,
-      "saved_step": 4000,
-      "complete": false,
+      "saved_step": 6000,
+      "complete": true,
       "validation": [
         {
           "step": 500,
@@ -724,6 +724,26 @@
           "step": 4000,
           "bits_per_byte": 1.94336887990753,
           "token_perplexity": 122.37561703613378
+        },
+        {
+          "step": 4500,
+          "bits_per_byte": 1.9360059918325576,
+          "token_perplexity": 120.16699337790101
+        },
+        {
+          "step": 5000,
+          "bits_per_byte": 1.9280282205749495,
+          "token_perplexity": 117.81889563034035
+        },
+        {
+          "step": 5500,
+          "bits_per_byte": 1.9238607625463968,
+          "token_perplexity": 116.61058916259064
+        },
+        {
+          "step": 6000,
+          "bits_per_byte": 1.9207593913923264,
+          "token_perplexity": 115.71943175162158
         }
       ]
     }
