@@ -1,0 +1,39 @@
+{
+  "original_trial_verified": true,
+  "negative_tests": [
+    {
+      "fault": "wrong_sensory_cue",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "self_consistent_archive_hash": true
+    },
+    {
+      "fault": "command_before_query",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "self_consistent_archive_hash": true
+    },
+    {
+      "fault": "invented_neural_state",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "self_consistent_archive_hash": true
+    },
+    {
+      "fault": "wrong_sampled_pose",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "self_consistent_archive_hash": true
+    },
+    {
+      "fault": "wrong_phase_progress",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "self_consistent_archive_hash": true
+    }
+  ],
+  "original_trajectory_sha256": "503539acfd7c1786c229c4d30242f1ef2b2ac01b6e9ec5699e3d860e641ba76b",
+  "verifier_sha256": "7ee7f8b1dc1855b7c73dc02e352acffc3a74b34b6d959b23825782a8369a9e62",
+  "test_source_sha256": "593fbd6e81b7af920262909c37311ad820b0952e40621ba87e0cba5af5a4b9b1",
+  "method": "Each copy has a valid refreshed archive hash; rejection must come from independent causal/state/metric checks."
+}

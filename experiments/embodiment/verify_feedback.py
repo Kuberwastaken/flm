@@ -112,6 +112,18 @@ def verify_trial(root, case, repeat=False):
     for key,value in metrics.items():
         if not math.isclose(record['metrics'][key],value,abs_tol=1e-10,rel_tol=1e-10):
             raise ValueError('Reported physical metric does not reproduce: '+key)
+    if record['metrics']['observed_seconds']!=2 or record['recorded_samples']!=n or record['neural_frames']!=neural_n:
+        raise ValueError('Reported observation budget changed')
+    boundaries=(0,1000,2000) if case['scenario']=='switch' else (0,2000)
+    expected_phases=[]
+    for start,end in zip(boundaries[:-1],boundaries[1:]):
+        before=float(np.linalg.norm(target[start]-a['thorax_position_mm'][start,:2]))
+        after=float(np.linalg.norm(target[start]-a['thorax_position_mm'][end,:2]))
+        expected_phases.append(dict(start_s=start/1000,end_s=end/1000,target_mm=target[start].tolist(),
+            start_distance_mm=before,end_distance_mm=after,progress_toward_target_mm=before-after))
+    if len(record['metrics']['phase_progress'])!=len(expected_phases): raise ValueError('Wrong number of target phases')
+    for expected,actual in zip(expected_phases,record['metrics']['phase_progress']):
+        for key,value in expected.items(): np.testing.assert_allclose(actual[key],value,atol=1e-10,rtol=1e-10)
     return dict(case=case,metrics=record['metrics'],trajectory_sha256=record['trajectory_sha256'],
         controller_replay=dict(frames=neural_n,decisions=decision_index,maximum_state_logit_error=maximum_state_error,
                               sensory_and_commands_exact=True),report_sha256=sha(folder/(label+'.json'))), a
