@@ -1,8 +1,8 @@
 {
-  "snapshot_utc": "2026-09-10T12:53:46.298947+00:00",
+  "snapshot_utc": "2026-09-10T13:14:41.927760+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
-  "completed_new_runs": 3,
+  "completed_new_runs": 4,
   "registered_updates": 6000,
   "test_status": "Pending all eight new runs and frozen checkpoint selections",
   "comparison": "Validation at matched updates only. Existing measured references are reused, not additional independent runs.",
@@ -312,8 +312,8 @@
       "graph": "data/graphs/central-1024/graph.npz",
       "output": "runs/language-topology-v1/no-slow-s42",
       "reference": false,
-      "saved_step": 4500,
-      "complete": false,
+      "saved_step": 6000,
+      "complete": true,
       "validation": [
         {
           "step": 500,
@@ -359,6 +359,21 @@
           "step": 4500,
           "bits_per_byte": 1.934623592305225,
           "token_perplexity": 119.75678556763694
+        },
+        {
+          "step": 5000,
+          "bits_per_byte": 1.9268283452612078,
+          "token_perplexity": 117.46972781419468
+        },
+        {
+          "step": 5500,
+          "bits_per_byte": 1.922861378720291,
+          "token_perplexity": 116.32267628593151
+        },
+        {
+          "step": 6000,
+          "bits_per_byte": 1.9195409271920543,
+          "token_perplexity": 115.37118086792522
         }
       ]
     },
@@ -445,7 +460,7 @@
       "graph": "data/graphs/central-1024-null101/graph.npz",
       "output": "runs/language-topology-v1/null101-s43",
       "reference": false,
-      "saved_step": 3500,
+      "saved_step": 4500,
       "complete": false,
       "validation": [
         {
@@ -482,6 +497,16 @@
           "step": 3500,
           "bits_per_byte": 1.9463096950700147,
           "token_perplexity": 123.26906788071614
+        },
+        {
+          "step": 4000,
+          "bits_per_byte": 1.9326985393848102,
+          "token_perplexity": 119.18788459232483
+        },
+        {
+          "step": 4500,
+          "bits_per_byte": 1.92453294665324,
+          "token_perplexity": 116.80463968023258
         }
       ]
     },
