@@ -1,0 +1,98 @@
+{
+  "verified_utc": "2026-09-10T23:26:52.440459+00:00",
+  "condition": "no_temporal_state-s43",
+  "saved_step": 500,
+  "checkpoint_sha256": "50356ac1d8eea90734f984ce05e7f9298dcb3e5d657a64ca47320071bcbf8378",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "source_graph_optimizer_rng_and_exposure_verified": true,
+  "trained_checkpoint_prefix_probe": {
+    "input_tokens": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        13
+      ],
+      [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        13
+      ],
+      [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        13
+      ],
+      [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        13
+      ],
+      [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        13
+      ],
+      [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        13
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        13
+      ],
+      [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        13
+      ]
+    ],
+    "different_prefixes": 8,
+    "shared_final_token": 13,
+    "identical_last_token_logits": true,
+    "maximum_absolute_difference": 0.0,
+    "model_tensors_and_rng_unchanged": true
+  },
+  "scope": "Synthetic-ID mechanism probe on the first saved training checkpoint; no corpus/test scoring"
+}

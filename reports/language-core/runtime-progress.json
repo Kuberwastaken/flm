@@ -1,12 +1,12 @@
 {
-  "verified_utc": "2026-09-10T23:22:09.172773+00:00",
+  "verified_utc": "2026-09-10T23:26:52.460459+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
   "condition": "no_temporal_state-s43",
-  "saved_step": 0,
-  "committed_checkpoints": 0,
-  "checkpoint_sha256": null,
+  "saved_step": 500,
+  "committed_checkpoints": 1,
+  "checkpoint_sha256": "50356ac1d8eea90734f984ce05e7f9298dcb3e5d657a64ca47320071bcbf8378",
   "frozen_tensors_match_initialization": null,
-  "graph_pooling_optimizer_rng_and_exposure_verified": false,
+  "graph_pooling_optimizer_rng_and_exposure_verified": true,
   "source_identity_verified": true,
   "queue_session_id": 20410,
   "queue_live_confirmed_by_session_poll": true,
@@ -98,6 +98,6 @@
   "fixed_core_completed_all_12_checkpoints_verified": true,
   "figure_preflight": "reports/language-core/figure-preflight.json",
   "active_checkpoint_note": "Second initialization seed; only atomically committed checkpoints counted.",
-  "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s42.json",
+  "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s43.json",
   "browser_preflight": "reports/language-core/browser-preflight.json"
 }
