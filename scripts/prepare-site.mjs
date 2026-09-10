@@ -9,6 +9,8 @@ await copyFile('docs/WIRING-LEARNING-PROTOCOL.md', 'public/research/wiring-learn
 await copyFile('docs/LANGUAGE-TOPOLOGY-PROTOCOL.md', 'public/research/language-topology-protocol.md');
 await copyFile('docs/WIRING-RESULTS.md', 'public/research/wiring-results.md');
 await copyFile('docs/INFERENCE-BUNDLE.md', 'public/research/inference-guide.md');
+await copyFile('docs/CLOSED-LOOP-PROTOCOL.md', 'public/research/closed-loop-protocol.md');
+await copyFile('docs/CLOSED-LOOP-REPRODUCTION.md', 'public/research/closed-loop-reproduction.md');
 for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'], ['data/cards/wikitext2.json', 'public/data/wikitext2.json'], ['data/graphs/central-1024/graph-card.json', 'public/data/graph-card.json']])
   await copyFile(source, target);
 const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name));
