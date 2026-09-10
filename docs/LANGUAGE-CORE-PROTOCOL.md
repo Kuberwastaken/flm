@@ -42,9 +42,24 @@ For each seed, all four conditions must have identical named initial parameter
 tensors and identical post-construction PyTorch RNG state. Graph buffers and
 pooling also match exactly. Confirm the new full-model update implementation
 against the completed trainer on ten real training-text updates and fixed
-validation prefixes. Those checks fit only disposable full references, not
+validation prefixes. Require exact single-thread parameter/loss replay and
+validation NLL. Separately repeat at the historical four training threads,
+requiring maximum absolute parameter differences at most 1e-7, loss differences
+at most 1e-6, and aggregate/per-article validation NLL differences at most 1e-4.
+Retain all measured differences. These numerical bounds are compatibility
+checks, not statistical equivalence margins or permissible changes to results.
+Those checks fit only disposable full references, not
 the six new control runs. Fixture training, corrupted-checkpoint tests and
 artificial-token gradient probes are software preflight, not language evidence.
+
+Before freezing this study, a bitwise four-thread preflight failed. A diagnostic
+ten-update original/new replay had identical losses and a maximum parameter
+difference of 5.82e-11, first appearing in edge gains; the corresponding
+single-thread replay was exact. This has not been traced to a specific kernel.
+The separate exact and bounded checks above were declared in response to that
+numerical diagnostic, before fitting any new condition. Training still uses
+the historical four-thread settings. Do not promise bitwise repeatability of
+future four-thread trajectories across executions or hardware.
 
 ## Fixed training budget and selection
 
@@ -58,9 +73,13 @@ from its recorded inventory. Their absent gradients mean they receive no
 optimizer moments or weight decay updates.
 
 Use the same sampled windows for a given seed as the completed measured run.
-Bind the exact train/validation caches and tokenizer. Recompute and compare
-the full sampled-token stream digest, sampler RNG and byte/token exposure
-at every 500-update checkpoint against the completed study's audit. State
+Bind the exact train/validation caches and tokenizer. During preparation,
+independently replay the complete sampler sequence and compare its stream
+digests, RNG and byte/token exposure at each 500-update boundary with the
+completed study's audit. During training and restore, check the live sampler
+RNG and accumulated byte/token exposure against that audit at every saved
+checkpoint. The training loop does not independently hash its consumed token
+stream; stream identity also relies on the frozen sampler code and inputs. State
 starts fresh for each sampled training window; BPTT operates within it.
 
 Evaluate the same fixed per-article validation prefixes, totaling the existing
@@ -92,7 +111,7 @@ the original seeded model and compare every frozen tensor exactly before
 loading and before every save. Verify all twelve committed checkpoints at run
 completion, including optimizer settings/moments, cumulative validation
 selection, sampled exposure, RNG and validation article denominators. Software
-tests must establish exact uninterrupted/resumed trajectories for each mechanism
+fixture tests at one CPU thread must establish exact uninterrupted/resumed trajectories for each mechanism
 and rejection of corrupted frozen tensors and incompatible configurations.
 
 Record timing and throughput as descriptive training logs; do not present

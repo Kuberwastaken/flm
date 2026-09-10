@@ -157,33 +157,71 @@ def compatibility(root, seed, protocol, lexicon, documents, validation):
                     raise ValueError('Memoryless control retains prefix dependence')
         cards[control] = dict(parameter_card=card, optimizer_parameter_names=optimizer_names(model),
                               gradient_probe=probe)
-    model = construct('full', root / GRAPH, lexicon.vocabulary, seed)
-    samplers = [Sampler(documents, seed, protocol['sequence']) for _ in range(2)]
-    optimizers = [torch.optim.AdamW(reference.parameters(), lr=.002, weight_decay=.01), optimizer_for(model, protocol)]
-    losses = []
-    for step in range(1, 11):
-        batches = [sampler.sample(protocol['batch'], 'cpu') for sampler in samplers]
-        if any(not torch.equal(a, b) for a, b in zip(*batches)):
-            raise ValueError('Reference sampled windows differ')
-        x, y = batches[0]
-        optimizers[0].param_groups[0]['lr'] = .002 * step / 100
-        optimizers[0].zero_grad(set_to_none=True)
-        loss = torch.nn.functional.cross_entropy(reference(x)[0][:, 16:].reshape(-1, lexicon.vocabulary), y[:, 16:].reshape(-1))
-        loss.backward()
-        torch.nn.utils.clip_grad_norm_(reference.parameters(), 1.)
-        optimizers[0].step()
-        actual, _ = update(model, optimizers[1], *batches[1], protocol, step)
-        if float(loss.detach()) != actual or parameter_hash(reference) != parameter_hash(model):
-            raise ValueError(f'Full-model optimizer replay differs at update {step}')
-        losses.append(actual)
-    scores = [evaluate(item, validation[:4], lexicon, token_limit=128) for item in (reference, model)]
-    for key in ('nll', 'bytes', 'tokens', 'documents', 'bits_per_byte'):
-        if scores[0][key] != scores[1][key]:
-            raise ValueError('Full-model evaluation replay differs: ' + key)
-    if samplers[0].rng.bit_generator.state != samplers[1].rng.bit_generator.state:
-        raise ValueError('Full-model sampler RNG replay differs')
-    return dict(seed=seed, initial_parameter_sha256=initial, final_parameter_sha256=parameter_hash(model),
-                exact_updates=10, exact_validation=True, exact_sampler=True, losses=losses, controls=cards)
+    replays = []
+    try:
+        for threads in (1, protocol['threads']):
+            torch.set_num_threads(threads)
+            reference = original_construct('flm', root / GRAPH, lexicon.vocabulary, seed)
+            model = construct('full', root / GRAPH, lexicon.vocabulary, seed)
+            samplers = [Sampler(documents, seed, protocol['sequence']) for _ in range(2)]
+            optimizers = [torch.optim.AdamW(reference.parameters(), lr=.002, weight_decay=.01), optimizer_for(model, protocol)]
+            losses = []
+            maximum_parameter_difference = maximum_loss_difference = 0.
+            for step in range(1, 11):
+                batches = [sampler.sample(protocol['batch'], 'cpu') for sampler in samplers]
+                if any(not torch.equal(a, b) for a, b in zip(*batches)):
+                    raise ValueError('Reference sampled windows differ')
+                x, y = batches[0]
+                # Keep the completed trainer's exact expression, including float
+                # operation order; do not simplify its warmup algebra.
+                progress = max(0., (step - 100) / max(1, 6000 - 100))
+                optimizers[0].param_groups[0]['lr'] = (.0002 + .0018 * .5 *
+                    (1 + math.cos(math.pi * min(progress, 1.)))) * min(step / 100, 1.)
+                optimizers[0].zero_grad(set_to_none=True)
+                loss = torch.nn.functional.cross_entropy(reference(x)[0][:, 16:].reshape(-1, lexicon.vocabulary), y[:, 16:].reshape(-1))
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(reference.parameters(), 1.)
+                optimizers[0].step()
+                actual, _ = update(model, optimizers[1], *batches[1], protocol, step)
+                loss_difference = abs(float(loss.detach()) - actual)
+                differences = [float((value - model.get_parameter(name)).detach().abs().max())
+                               for name, value in reference.named_parameters()]
+                if not math.isfinite(loss_difference) or any(not math.isfinite(value) for value in differences):
+                    raise ValueError('Nonfinite full-model replay difference')
+                maximum_parameter_difference = max(maximum_parameter_difference, *differences)
+                maximum_loss_difference = max(maximum_loss_difference, loss_difference)
+                if threads == 1:
+                    if loss_difference or parameter_hash(reference) != parameter_hash(model):
+                        raise ValueError(f'Single-thread full-model replay differs at update {step}')
+                elif max(differences) > 1e-7 or loss_difference > 1e-6:
+                    raise ValueError(f'Four-thread full-model replay exceeds numerical bounds at update {step}')
+                losses.append(actual)
+            scores = [evaluate(item, validation[:4], lexicon, token_limit=128) for item in (reference, model)]
+            for key in ('bytes', 'tokens', 'tokenizer_sha256'):
+                if scores[0][key] != scores[1][key]:
+                    raise ValueError('Full-model evaluation identity differs: ' + key)
+            coverage = [[{key: row[key] for key in ('document', 'tokens', 'bytes')} for row in score['documents']] for score in scores]
+            if coverage[0] != coverage[1]:
+                raise ValueError('Full-model evaluation article coverage differs')
+            nll_difference = max([abs(scores[0]['nll'] - scores[1]['nll'])] +
+                                 [abs(a['nll'] - b['nll']) for a, b in zip(scores[0]['documents'], scores[1]['documents'])])
+            if not math.isfinite(nll_difference) or nll_difference > (0. if threads == 1 else 1e-4):
+                raise ValueError('Full-model validation replay exceeds numerical bounds')
+            if samplers[0].rng.bit_generator.state != samplers[1].rng.bit_generator.state:
+                raise ValueError('Full-model sampler RNG replay differs')
+            replays.append(dict(threads=threads, updates=10, exact_sampler=True, losses=losses,
+                maximum_parameter_absolute_difference=maximum_parameter_difference,
+                maximum_loss_absolute_difference=maximum_loss_difference,
+                maximum_validation_nll_absolute_difference=nll_difference,
+                exact_parameter_match=parameter_hash(reference) == parameter_hash(model),
+                final_parameter_sha256=parameter_hash(model),
+                bounds=dict(parameter_absolute=0. if threads == 1 else 1e-7,
+                            loss_absolute=0. if threads == 1 else 1e-6,
+                            validation_nll_absolute=0. if threads == 1 else 1e-4)))
+    finally:
+        torch.set_num_threads(protocol['threads'])
+    return dict(seed=seed, initial_parameter_sha256=initial, controls=cards, replays=replays,
+                interpretation='Single-thread exact numerical replay; four-thread bounded numerical replay. Training retains the historical four-thread protocol.')
 
 
 def prepare(root):
@@ -217,7 +255,8 @@ def prepare(root):
         sampling[str(seed)] = sampling_audit(documents, lexicon, seed)
         if sampling[str(seed)] != previous['sampling'][str(seed)]:
             raise ValueError('Historical matched token stream differs')
-        print(json.dumps(dict(event='reference-compatible', seed=seed, exact_updates=10)), flush=True)
+        print(json.dumps(dict(event='reference-compatible', seed=seed, replay_updates=10,
+                              exact_replay_threads=1, bounded_replay_threads=protocol['threads'])), flush=True)
     references = {row['label']: reference_record(root, row, lexicon)['checkpoint_sha256']
                   for row in conditions() if row['reference']}
     sample = read_json(root / 'runs/wikitext2/flm-s42/validation-006000.json')
@@ -227,6 +266,7 @@ def prepare(root):
               Path('data/tokenizers/wikitext2-4096/tokenization-card.json'),
               *[Path('data/processed/wikitext2-bpe') / (split + '.npz') for split in ('train', 'validation', 'test')],
               *[Path('reports/language-topology') / (name + '.json') for name in ('identity', 'selection', 'summary', 'final-release')],
+              *[REPORTS / (name + '.json') for name in ('software-preflight', 'replay-diagnostic')],
               *[Path(f'reports/wikitext2/test-flm-s{seed}.json') for seed in SEEDS]]
     identity = dict(study='Measured-graph language computation controls v1', declared_utc=datetime.now(timezone.utc).isoformat(),
                     source_commit=commit, protocol_sha256=sha256(root / PROTOCOL), training_protocol=protocol,

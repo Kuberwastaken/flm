@@ -1,0 +1,48 @@
+{
+  "recorded_utc": "2026-09-10T19:00:28.756625+00:00",
+  "before_any_new_control_fit": true,
+  "study_identity_created": false,
+  "initial_failed_prepare": {
+    "source_commit": "9c380a4",
+    "seed": 42,
+    "failed_update": 5,
+    "requirement": "Exact parameter hash after every update"
+  },
+  "diagnostic": {
+    "seed": 42,
+    "updates": 10,
+    "comparisons": [
+      {
+        "threads": 1,
+        "pair": "original-original",
+        "exact_parameters": true,
+        "max_parameter_difference": 0.0,
+        "max_loss_difference": 0.0
+      },
+      {
+        "threads": 1,
+        "pair": "original-control",
+        "exact_parameters": true,
+        "max_parameter_difference": 0.0,
+        "max_loss_difference": 0.0
+      },
+      {
+        "threads": 4,
+        "pair": "original-original",
+        "exact_parameters": true,
+        "max_parameter_difference": 0.0,
+        "max_loss_difference": 0.0
+      },
+      {
+        "threads": 4,
+        "pair": "original-control",
+        "exact_parameters": false,
+        "first_different_update": 5,
+        "first_different_group": "edge_log_gain",
+        "max_parameter_difference": 5.820766091346741e-11,
+        "max_loss_difference": 0.0
+      }
+    ]
+  },
+  "interpretation": "No kernel cause established. Exact single-thread and bounded four-thread compatibility checks declared before new control fits; historical training settings unchanged."
+}
