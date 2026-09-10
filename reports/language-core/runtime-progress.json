@@ -1,10 +1,10 @@
 {
-  "verified_utc": "2026-09-10T20:53:55.526281+00:00",
+  "verified_utc": "2026-09-10T21:06:49.952981+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
   "condition": "no_lateral-s42",
-  "saved_step": 2000,
-  "committed_checkpoints": 4,
-  "checkpoint_sha256": "8203de09a98f4fbc74f1ef1cc210c99eec7fdfd7fc0196bcd786784691e1e168",
+  "saved_step": 4000,
+  "committed_checkpoints": 8,
+  "checkpoint_sha256": "398d53f792831bd50defc01ebf83b737e06cb2dabfd8815188bbbd6c6f5c9b25",
   "frozen_tensors_match_initialization": null,
   "graph_pooling_optimizer_rng_and_exposure_verified": true,
   "source_identity_verified": true,
@@ -35,5 +35,6 @@
   ],
   "completed_new_fit_count": 1,
   "planned_new_fit_count": 6,
-  "fixed_core_completed_all_12_checkpoints_verified": true
+  "fixed_core_completed_all_12_checkpoints_verified": true,
+  "figure_preflight": "reports/language-core/figure-preflight.json"
 }

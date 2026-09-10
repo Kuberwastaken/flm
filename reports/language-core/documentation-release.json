@@ -1,0 +1,13 @@
+{
+  "verified_utc": "2026-09-10T21:06:50.311226+00:00",
+  "deployment_commit": "719ff978a33d2c1e31f33a9af6b0a51270756346",
+  "workflow_run": 34530120001,
+  "workflow_conclusion": "success",
+  "live_instruction_note_sha256": "ac9d725992fc52c3feb22d393bf9521a29e406ea7c2f1c044160a51f63d4dd20",
+  "source_documents": {
+    "docs/PLAN.md": "c6f85b5f6bfef1729dab3e41f0ddd5e332827b162f02dfdd7622d4539557f7fa",
+    "docs/INSTRUCTION-TRANSFER.md": "60f13cd6c89909f399c1f553a0fc76dcc65b0fe0c3d730e8486361b3aaba3091",
+    "docs/DATA-STATUS.md": "c48558d228e50cb110685033698a83f9ed790c8b37e1ca55e75df805b50cf4cf"
+  },
+  "new_test_results": false
+}

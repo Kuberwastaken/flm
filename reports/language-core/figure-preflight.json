@@ -18,5 +18,16 @@
   ],
   "layout_visually_reviewed": true,
   "layout_fixture_published": false,
-  "real_results_generated": false
+  "real_results_generated": false,
+  "real_pending_study_gate_checked_utc": "2026-09-10T21:05:58.573042+00:00",
+  "real_pending_study_rejected_before_any_output": true,
+  "real_outputs_absent": [
+    "public/research/figures/language-core-test.png",
+    "public/research/figures/language-core-test.svg",
+    "public/research/figures/language-core-test.csv",
+    "papers/language-core-measured.tex",
+    "papers/figures/language-core-test.png",
+    "docs/LANGUAGE-CORE-RESULTS.md",
+    "reports/language-core/figures.json"
+  ]
 }
