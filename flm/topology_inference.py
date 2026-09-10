@@ -113,7 +113,7 @@ def load_model(root, name):
         actual = getattr(model, target)
         if not torch.equal(actual, torch.as_tensor(graph[source], dtype=actual.dtype)):
             raise ValueError('Checkpoint graph buffer differs from its selected graph: ' + target)
-    sizes = torch.bincount(torch.as_tensor(graph['pool']), minlength=model.config.pools).clamp_min(1).float()
+    sizes = torch.bincount(torch.as_tensor(graph['pool'], dtype=torch.long), minlength=model.config.pools).clamp_min(1).float()
     if not torch.equal(model.pool_sizes, sizes):
         raise ValueError('Checkpoint pooling sizes differ from the selected graph')
     model.eval()

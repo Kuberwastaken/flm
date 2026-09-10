@@ -82,6 +82,16 @@ article records. This audits supplied arithmetic; it does not independently
 rerun training or inference. The release still needs a fresh-extraction audit,
 visual review, README/paper updates and browser verification before deployment.
 
+For independent inference after the same gate, run
+`python -X utf8 scripts/package_topology_inference.py`, followed by
+`python -X utf8 scripts/verify_topology_inference_release.py`. The separate
+`flm.topology_inference` runtime binds all ten selected models to their own graph,
+tokenizer, seed and slow-state setting; it preserves the original six-model
+release. The exporter checks tensors, logits, recurrent states and forty fixed-
+prompt continuations. The second command runs all ten conditions from a fresh
+extraction before marking its release record verified. No control-model archive
+is generated while the final checkpoint/score gate remains incomplete.
+
 The transition was executed at the first control's verified update-5,000 save.
 Its old queue, child and finalizer were identified by command and stopped.
 The new scheduler resumed graph 101/seed 42 and started graph 103/seed 42 from
