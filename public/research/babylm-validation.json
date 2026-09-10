@@ -1,6 +1,6 @@
 {
   "dataset": "BabyLM 2026 English",
-  "snapshot_utc": "2026-09-10T01:40:43.818358+00:00",
+  "snapshot_utc": "2026-09-10T02:23:06.602378+00:00",
   "registered_updates": 12000,
   "registered_runs": 12,
   "runs": [
@@ -451,6 +451,545 @@
             }
           },
           "artifact_sha256": "1c93d4c085ce0c24cd846d399653b9b8bfd5d227e4be5812d10643d719bb79da"
+        },
+        {
+          "step": 4500,
+          "presented_tokens": 6912000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.93615045716626,
+              "token_perplexity": 93.66236889971596,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.9161942480241227,
+              "token_perplexity": 24.16257975940222,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.088198548520666,
+              "token_perplexity": 132.55746232391036,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.157297572427733,
+              "token_perplexity": 70.25610202858145,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.2873691397120277,
+              "token_perplexity": 137.82597733239118,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.990945880744875,
+              "token_perplexity": 40.79792913596348,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.0672474185852043,
+              "token_perplexity": 70.08541431313164,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "4e53cd190cfe9fae12e3f5befb56ba3b32ec3f10b503b4639d9a3d9f72426c25"
+        },
+        {
+          "step": 5000,
+          "presented_tokens": 7680000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.9252979904669998,
+              "token_perplexity": 91.3091217254636,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.938485252125798,
+              "token_perplexity": 25.074561466494128,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.077273119160917,
+              "token_perplexity": 129.21108953394912,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.148130445987751,
+              "token_perplexity": 68.9980523165467,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.2696905665165383,
+              "token_perplexity": 132.6773110582289,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.9209280103168895,
+              "token_perplexity": 35.809228699367885,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.050989461907733,
+              "token_perplexity": 67.78172648241775,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "45cd02faa7d9fb470919d25b812287a86aa090dc8e9530e389a7618c5ee97816"
+        },
+        {
+          "step": 5500,
+          "presented_tokens": 8448000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.9172731985263207,
+              "token_perplexity": 89.6071345591069,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.9153681401342435,
+              "token_perplexity": 24.12942657196093,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0693241033480905,
+              "token_perplexity": 126.82958292266218,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.14148193687593,
+              "token_perplexity": 68.09976178870406,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.2581613884438285,
+              "token_perplexity": 129.42365164738385,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.9212371911724528,
+              "token_perplexity": 35.82985811069948,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.041812049373235,
+              "token_perplexity": 66.51492119914859,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "c7686130f66fd2b606c1a5ebc7e58fb404351d263b9a3a626b21784e3d2c881c"
+        },
+        {
+          "step": 6000,
+          "presented_tokens": 9216000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.9239238884717564,
+              "token_perplexity": 91.0154099076176,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.9231606593882697,
+              "token_perplexity": 24.443972193759603,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0652148592374795,
+              "token_perplexity": 125.61572489927985,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.1390858369317582,
+              "token_perplexity": 67.77889585827866,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.241893387165256,
+              "token_perplexity": 124.96791084431197,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.9252053941310028,
+              "token_perplexity": 36.09568521590589,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.040722684347134,
+              "token_perplexity": 66.36613123905434,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "a47c7d2aef66bd3cfebadfc93bdc0ed6767c1de11d3725f9c9c2dfb7472eff89"
+        },
+        {
+          "step": 6500,
+          "presented_tokens": 9984000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.9115600313601386,
+              "token_perplexity": 88.4147903409024,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.893631523976906,
+              "token_perplexity": 23.27325471124007,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0541507189523256,
+              "token_perplexity": 122.4048519684839,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.1252624328150467,
+              "token_perplexity": 65.95707938979261,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.2288949441430974,
+              "token_perplexity": 121.51819865828703,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8956874569348097,
+              "token_perplexity": 34.16455980522829,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.0233577818225212,
+              "token_perplexity": 64.03880331192174,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "ba5d27c904b4dcace10d7b3cedd8579f0a0ccac8e96c95bc8a994c989d02ae80"
+        },
+        {
+          "step": 7000,
+          "presented_tokens": 10752000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.9100807341479675,
+              "token_perplexity": 88.10865383860873,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.9082194793774871,
+              "token_perplexity": 23.844431361142394,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0449877911284173,
+              "token_perplexity": 119.80794314960829,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.125288106580074,
+              "token_perplexity": 65.96041718894152,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.221232640533858,
+              "token_perplexity": 119.52945028127195,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8599901183935785,
+              "token_perplexity": 31.9666663165351,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.0165789870573994,
+              "token_perplexity": 63.15258547239749,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "2e8b2ec80726961c65af800745281fc4c0725fa0e39beb9bb49a67c93df86bdd"
+        },
+        {
+          "step": 7500,
+          "presented_tokens": 11520000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.8993645747746501,
+              "token_perplexity": 85.92239899859001,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.8783294941584254,
+              "token_perplexity": 22.68881655002639,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.045254111775503,
+              "token_perplexity": 119.88263922600497,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.119787466513013,
+              "token_perplexity": 65.24913381130706,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.215136439323351,
+              "token_perplexity": 117.97045809761136,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8700246189688992,
+              "token_perplexity": 32.56979849731031,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.010136821372744,
+              "token_perplexity": 62.321744796304124,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "65fba166f311be1ab2f405e9083c666f5686e46f88fbc778a02752144ef4fa5a"
+        },
+        {
+          "step": 8000,
+          "presented_tokens": 12288000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.8943521632978646,
+              "token_perplexity": 84.91849709511776,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.8801399787346682,
+              "token_perplexity": 22.757192534290173,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.039209293046375,
+              "token_perplexity": 118.19863462921465,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.1118915221919363,
+              "token_perplexity": 64.24150190523495,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.207521740555116,
+              "token_perplexity": 116.05166850953478,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.870522699349765,
+              "token_perplexity": 32.6000307284126,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.0057649515490104,
+              "token_perplexity": 61.76414319392806,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "1df7bfd71f6f91b1526f6f761af722e46353b4f502c6b120e75a120b19ed7151"
+        },
+        {
+          "step": 8500,
+          "presented_tokens": 13056000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.8952032348652,
+              "token_perplexity": 85.08812194969464,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.8774237430755272,
+              "token_perplexity": 22.654686479399153,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0345813167781213,
+              "token_perplexity": 116.92534909446512,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.1055489427150187,
+              "token_perplexity": 63.44338228879798,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.202439833826878,
+              "token_perplexity": 114.78850033619311,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8578710069007653,
+              "token_perplexity": 31.840730726040753,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 2.000871120256399,
+              "token_perplexity": 61.14588487317782,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "6ac7df8dd89750709e8e00fb2f8a70e936a9e585855f7db4ba8fcb0b3731cf75"
+        },
+        {
+          "step": 9000,
+          "presented_tokens": 13824000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.8885327904305682,
+              "token_perplexity": 83.76767905675065,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.8789657599583058,
+              "token_perplexity": 22.71282274958251,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.029840868793266,
+              "token_perplexity": 115.63533863857803,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.1033702523484172,
+              "token_perplexity": 63.17152066366746,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.195967789628917,
+              "token_perplexity": 113.19968209829537,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8663857157502974,
+              "token_perplexity": 32.34977517762605,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 1.9987191830613602,
+              "token_perplexity": 60.87598425542775,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "beea3b9cacee5ef5671139cf9a01189572199bc54cca776174933ce506d916ec"
+        },
+        {
+          "step": 9500,
+          "presented_tokens": 14592000,
+          "components": {
+            "bnc_spoken": {
+              "bits_per_byte": 1.8807317095203122,
+              "token_perplexity": 82.2493945911705,
+              "bytes": 27711,
+              "tokens": 8192
+            },
+            "childes": {
+              "bits_per_byte": 1.8726284419566523,
+              "token_perplexity": 22.474845873761087,
+              "bytes": 19643,
+              "tokens": 8192
+            },
+            "gutenberg": {
+              "bits_per_byte": 2.0281668410177094,
+              "token_perplexity": 115.18319671145146,
+              "bytes": 27659,
+              "tokens": 8192
+            },
+            "open_subtitles": {
+              "bits_per_byte": 2.0952035380693217,
+              "token_perplexity": 62.16278775446544,
+              "bytes": 23295,
+              "tokens": 8192
+            },
+            "simple_wiki": {
+              "bits_per_byte": 2.1936964886279937,
+              "token_perplexity": 112.64733050258609,
+              "bytes": 25452,
+              "tokens": 8192
+            },
+            "switchboard": {
+              "bits_per_byte": 1.8432253850174622,
+              "token_perplexity": 30.98382212741526,
+              "bytes": 22015,
+              "tokens": 8192
+            },
+            "all": {
+              "bits_per_byte": 1.9908653736417405,
+              "token_perplexity": 59.90101152519588,
+              "bytes": 145775,
+              "tokens": 49152
+            }
+          },
+          "artifact_sha256": "668704b3ef14e5278a349e05d548fd3a9c16ccb21ac7e697aeaa4ee9fbf93eb6"
         }
       ],
       "source_commit": "518a55bbeb39d7f9653b68603deff57e370b562e",
