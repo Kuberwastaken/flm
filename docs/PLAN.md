@@ -37,4 +37,13 @@ WikiText-2 raw is now the primary standard-corpus experiment, with 600/60/60 art
 
 All six WikiText runs completed 6,000 updates. Frozen validation-selected checkpoints have been scored on complete test articles: two-seed mean FLM 1.9744, GRU 1.9049 and transformer 1.8767 bits/byte. Paired article intervals favor the baselines. Runtime/state measurements and both-seed acute mechanism diagnostics are complete. Keep the simpler n-gram reference separate from parameter-matched models. BabyLM 10M/100M acquisition and encoding are verified; its registered training queue is active. Real physical walking controls and a fixed BLiMP grammar diagnostic are also implemented.
 
-Remaining deliverables: full test scoring with paired article uncertainty; completed fixed-prompt comparisons; standalone runtime/state-memory measurements; graph/slow-state controls before any topology claim; computational figures and LaTeX research/data papers; final model cards and reproducibility audit; browser storage/download/accessibility checks; final deployment verification. The full-connectome language model and learned motor behavior are explicitly future scaling/embodiment stages. They must not be implied by the compact language release.
+Remaining work centers on the continuing program: complete the twelve BabyLM
+runs and component-level held-out evaluation; train matched rewired and disabled
+mechanism controls before attributing benefits to anatomy; compare forward-time
+local learning with BPTT on controlled tasks; connect documented sensory inputs
+and learned actions to the calibrated physics environment; and profile larger
+configurations before committing long runs. Extend grammar diagnostics and
+generation analysis without tuning on their evaluation scores. Updated model
+cards, figures, papers, browser checks and deployment evidence accompany each
+completed stage. Full-connectome language training and learned motor behavior
+remain unestablished by the compact release.

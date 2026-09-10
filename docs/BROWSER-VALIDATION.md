@@ -45,3 +45,12 @@ error). Its recording represents one simulated second at quarter-speed playback.
 The viewport override was reset after verification. The complete verification
 suite now passes 35 Python tests and 27 JavaScript tests, including identical
 sampling/scoring between uint16 memory-mapped and int64 in-memory token data.
+
+The completed-study production build shows all six test scores, all four paired
+article intervals, the separately tuned n-gram and the isolated CPU/state table.
+Displayed values agree with the numerical artifacts. The fixed 6,700-pair grammar
+panel shows both seeds and their means; mobile result tables remain inside their
+horizontal scroll containers without document overflow. Final verification after
+the linguistic scorer addition passes 37 Python and 27 JavaScript tests. The
+updated eight-page methods report and five-page data note were rendered and all
+13 pages inspected; the final bibliography change was re-rendered and reviewed.
