@@ -81,8 +81,8 @@ seeds. The new serial queue is running. Test evaluation refuses to begin until
 all eight new runs finish and all ten checkpoint selections are frozen. Only
 then resume the larger BabyLM queue, saved at FLM 12,000 and GRU 6,500 updates.
 
-Recovery uses `python -m flm.language_topology train` after verifying there is
-no existing writer. `python -m flm.language_topology_test snapshot` publishes
+Recovery uses `python -m flm.language_topology_queue --workers 2 --score` after
+verifying there is no existing writer. `python -m flm.language_topology_test snapshot` publishes
 checkpoint-backed validation progress; `python -m flm.language_topology_test
 score` freezes and scores the completed comparison. These commands continue
 this hash-bound experiment and deliberately reject changed data, graph,
@@ -90,13 +90,15 @@ numerical source or checkpoint identities. Independent replications need their
 own declared identities and freshly trained references, not edits to these
 frozen records.
 
-A finalizer is attached to the verified running language-training process.
-After that specific process exits, it invokes the strict all-runs selection
-gate, complete test scoring and the dated snapshot writer. An incomplete or
-changed run stops it before new test losses are read. There is no second training
-writer. On recovery, inspect both the training queue and finalizer before
-launching either again. Completed results still require scientific review and
-browser validation before their next deployment.
+The original serial process had an attached finalizer. The bounded scheduler
+replaces that arrangement, holding an OS queue lease and allowing at most two
+separate condition writers. Each retains the prescribed four threads and fixed
+budget; a memory guard can defer the second worker. Its `--score` option invokes
+the strict selection gate, complete test scoring and dated snapshot after all
+training children finish. Do not launch an additional finalizer or legacy queue.
+See [the operational transition and recovery instructions](LANGUAGE-TOPOLOGY-OPERATIONS.md).
+Completed results still require scientific review and browser validation before
+their next deployment.
 
 The exact four language graphs now have a public structural audit, per-node
 statistics and a licensed download bundle. It recomputes degree/sign/weight
