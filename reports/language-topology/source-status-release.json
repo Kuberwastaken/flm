@@ -1,0 +1,67 @@
+{
+  "verified_utc": "2026-09-10T15:43:37.041069+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "eb594498f791a096f78a4341bdfaf622e1eb47fd",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34497143567"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 62363,
+      "sha256": "8c2df9bd09aef09286427e8476413879ac5b7394a1e6c98f643ee796c4b16cba"
+    },
+    {
+      "path": "assets/index-Dsn6bkyf.js",
+      "bytes": 568386,
+      "sha256": "b1ef776d095c11a6014d6c0d1917435d46f02c119723db1cf961348ad3e65070"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 19424,
+      "sha256": "46b581149d80a348ff26c763c22941431848491c0ce63ff1825478d49d582247"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6330458,
+      "sha256": "900993f066dd6b16d0ccb7e72cab293cd4784562246cced5153be17cdafef375"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "snapshot_utc": "2026-09-10T15:28:28.957867+00:00",
+  "completed_new_controls": 6,
+  "test_status": "Pending all eight new runs and frozen checkpoint selections",
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "source_archive_fresh_extraction_check": "reports/language-topology/source-release.json",
+  "source_archive_payloads": 156,
+  "final_test_result_published": false,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T15:42:31.352Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 6,
+    "validation_rows": 8,
+    "newly_completed_control": {
+      "label": "null103-s43",
+      "matched_updates": 6000,
+      "displayed_measured_validation_bpb": 1.9107,
+      "displayed_control_validation_bpb": 1.9084,
+      "displayed_measured_minus_control_bpb": 0.0023
+    },
+    "unfinished_rows_at_published_snapshot": {
+      "null107-s43": 4500,
+      "no-slow-s43": "Awaiting checkpoint"
+    },
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [null, null],
+    "source_archive_link": "/research/paper-source.zip",
+    "page_width": 598,
+    "viewport_width": 614,
+    "rendered_script": "https://flm.kuber.studio/assets/index-Dsn6bkyf.js"
+  }
+}
