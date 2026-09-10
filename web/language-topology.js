@@ -1,3 +1,5 @@
+import { loadLanguageStructure } from './language-structure.js';
+
 const $ = id => document.getElementById(id);
 const signed = value => `${value > 0 ? '+' : ''}${value.toFixed(4)}`;
 const conditionName = run => run.reference ? 'Measured · fast and slow' : run.variant === 'no_slow' ? 'Retrained without slow state' : `Rewired · graph ${run.graph_seed}`;
@@ -82,6 +84,7 @@ export async function loadLanguageTopology() {
     const response = await fetch(`${import.meta.env.BASE_URL}research/language-topology-progress.json`);
     if (!response.ok) throw new Error('Language topology snapshot unavailable.');
     const report = await response.json();
+    void loadLanguageStructure(report.study_identity_sha256);
     $('language-topology-status').textContent = `${report.completed_new_runs} of ${report.new_runs} new runs complete; two completed measured references. Snapshot: ${new Date(report.snapshot_utc).toLocaleString()}. Test comparison: ${report.test_status}.`;
     const rows = matchedValidation(report).map(({ control, point, reference, difference }) => {
       const label = control.variant === 'no_slow' ? 'Retrained without slow state' : `Rewired · graph ${control.graph_seed}`;

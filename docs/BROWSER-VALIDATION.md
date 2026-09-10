@@ -193,3 +193,32 @@ browser review; fixture checks are not presented as observed language outcomes.
 An attached finalizer waits on the actual training process before invoking the
 strict completion/selection gate and scoring pipeline. Training remains the
 only active writer of control checkpoints.
+
+## Exact language graph audit
+
+The new structural view reproduces all four frozen 1,024-node/76,130-edge
+graphs. Every null passes the invariant checks again, and the audit reproduces
+the recorded topology statistics without reading losses or language text. The
+4,096-row node CSV includes outgoing strength as well as preserved counts;
+the graph ZIP passes its CRC and every manifest SHA-256 check. All four signed
+matrices were visually reviewed in the generated 3,200-pixel scientific figure.
+
+The full JavaScript suite now passes 46 tests. New structural tests bind the
+display to the current study identity and reject missing graphs, duplicate
+hashes, changed constraints, inconsistent components and asymmetric overlaps.
+Both new Python tests pass, including a directed graph whose degrees are
+preserved while outgoing weighted strengths change. Production build succeeds.
+
+At the actual 598-pixel preview viewport, the expanded audit shows all four
+correct graph rows, the loaded figure and three download links. Document and
+scroll widths both equal 598; the table remains inside the research column.
+The completed-test block stays hidden while language training is pending.
+Temporary 1280/390-style responsive checks are not claimed for this addition:
+the viewport API did not change the measured width during this review and its
+override was reset. The earlier documented mobile checks predate this view.
+
+The previous paper release, commit `88ff8fd`, completed Pages run
+`34456998206`. The deployed five-page PDF, source archive and 2,000-update
+snapshot all matched local SHA-256 hashes. Both new paper links appeared in
+the public Research view. This confirms publication, not language-study
+completion.

@@ -97,3 +97,10 @@ changed run stops it before new test losses are read. There is no second trainin
 writer. On recovery, inspect both the training queue and finalizer before
 launching either again. Completed results still require scientific review and
 browser validation before their next deployment.
+
+The exact four language graphs now have a public structural audit, per-node
+statistics and a licensed download bundle. It recomputes degree/sign/weight
+constraints, graph overlaps, reciprocity and components without reading model
+losses. The Research view exposes all controls and a common-order matrix figure.
+This documents the null intervention; it neither changes the registered graphs
+nor resolves the pending language outcome.
