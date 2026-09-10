@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,9 @@ def main():
         'physical_choice_report.py', 'choice_paper_data.py', 'build_papers.py',
         'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py',
         'closed_loop_report.py', 'feedback_paper_data.py', 'audit_feedback_release.py')]
-    files += [ROOT / name for name in ('README.md', 'pyproject.toml', 'docs/INFERENCE-BUNDLE.md',
+    files += [ROOT / name for name in ('README.md', 'LICENSE', 'pyproject.toml',
+        'docs/figures/readme_figures.py', 'public/research/test-results.json',
+        'public/brand/provenance.json', 'docs/RESEARCH-PROGRAM.md', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
         'public/research/learned-choice.json', 'docs/WIRING-RESULTS.md',
         'docs/WIRING-LEARNING-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-PROTOCOL.md',
@@ -23,6 +26,19 @@ def main():
         'docs/CLOSED-LOOP-PROTOCOL.md', 'docs/CLOSED-LOOP-REPRODUCTION.md',
         'public/research/closed-loop.json', 'public/research/closed-loop.csv',
         'reports/embodiment/closed-loop/paper-inputs.json')]
+    # Preserve the project's overview and its actual embedded figures together.
+    # The source archive remains a paper snapshot, not a runnable repository.
+    readme = (ROOT / 'README.md').read_text(encoding='utf8')
+    for target in re.findall(r'!\[[^\]]*\]\(([^)\s]+)\)', readme):
+        if '://' in target:
+            raise ValueError('README figures must have local, archived source assets')
+        figure = (ROOT / target).resolve()
+        if not figure.is_relative_to(ROOT.resolve()) or not figure.is_file():
+            raise ValueError('Missing or nonlocal README figure: ' + target)
+        files.append(figure)
+        if figure.with_suffix('.svg').is_file():
+            files.append(figure.with_suffix('.svg'))
+    files += sorted(path for path in (ROOT / 'licenses').iterdir() if path.suffix in ('.txt', '.md'))
     contents = {path.relative_to(ROOT).as_posix(): path.read_bytes() for path in files}
     manifest = {name: {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
                 for name, data in sorted(contents.items())}

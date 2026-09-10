@@ -49,6 +49,15 @@ generating scripts and published figure CSVs; raw corpora and checkpoints are
 excluded. Re-running numerical studies requires the repository and environments
 described in the main README.
 
+The source archive also includes the repository README, all six of its embedded
+figures, available SVG versions, component notices, and the completed WikiText
+test report used by `docs/figures/readme_figures.py`. That chart can be regenerated
+with NumPy and Matplotlib without loading a checkpoint. The README is a project
+overview: its broader repository links and application/training commands require
+the full checkout. The archive itself supports rebuilding the papers from their
+included LaTeX, tables and figures with `python scripts/build_papers.py`; no model
+weights or raw corpora are required for that build.
+
 The wiring-controls note has five reviewed pages, including its references.
 Its numerical include and three figures are bound to the verified sixty-run
 summary. To rebuild it after reproducing those runs:

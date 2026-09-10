@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-09-10T11:57:28.059345+00:00",
+  "author": "Kuber Mehta",
+  "agent_commits": [
+    "9e2e92f",
+    "5be8c7c"
+  ],
+  "local_link_occurrences": 54,
+  "unique_local_targets": 42,
+  "embedded_visuals": 6,
+  "readme_sha256": "caf7e045324d301392829df3759ea3f56cef3e9bbde3d24938b9700904bb6887",
+  "chart_source_sha256": "34f8fbf09a983178321c1b358e919a4484128e6ffe81270f5c8e6a357b154f96",
+  "chart_png_sha256": "dab773e7b1a3029570d6ace8256329a40b89eddad7f9a883409bbd67bb1ca79f",
+  "chart_svg_sha256": "c9fc5c081e2a046fd2ac82da58f28f457b6f0f4653835da9bd3aaf002547142e",
+  "chart_visually_reviewed": true,
+  "archive": {
+    "bytes": 5058372,
+    "sha256": "229cec1eabe5a404c4609e76670d2c0d1e9a5b742428bd15abe25544889ece9c",
+    "payloads": 95,
+    "every_payload_hash_verified": true,
+    "fresh_extraction_chart_reproduction": true,
+    "archive_rebuild_byte_identical": true
+  },
+  "frozen_language_and_physical_identity_unchanged": true,
+  "scope": "README and repository presentation; three of eight language controls complete, final control test gate remains closed."
+}
