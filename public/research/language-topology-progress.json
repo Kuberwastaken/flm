@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-09-10T08:43:49.599216+00:00",
+  "snapshot_utc": "2026-09-10T09:04:43.719662+00:00",
   "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
   "new_runs": 8,
   "completed_new_runs": 0,
@@ -90,7 +90,7 @@
       "graph": "data/graphs/central-1024-null101/graph.npz",
       "output": "runs/language-topology-v1/null101-s42",
       "reference": false,
-      "saved_step": 2000,
+      "saved_step": 4000,
       "complete": false,
       "validation": [
         {
@@ -112,6 +112,26 @@
           "step": 2000,
           "bits_per_byte": 2.011719931418062,
           "token_perplexity": 144.9179218721328
+        },
+        {
+          "step": 2500,
+          "bits_per_byte": 1.9837565291989863,
+          "token_perplexity": 135.2327776723859
+        },
+        {
+          "step": 3000,
+          "bits_per_byte": 1.9615599856519639,
+          "token_perplexity": 128.00796072390955
+        },
+        {
+          "step": 3500,
+          "bits_per_byte": 1.9490391936137965,
+          "token_perplexity": 124.10415422391151
+        },
+        {
+          "step": 4000,
+          "bits_per_byte": 1.9324174926042308,
+          "token_perplexity": 119.10505467082523
         }
       ]
     },

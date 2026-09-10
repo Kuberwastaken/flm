@@ -213,9 +213,9 @@ At the actual 598-pixel preview viewport, the expanded audit shows all four
 correct graph rows, the loaded figure and three download links. Document and
 scroll widths both equal 598; the table remains inside the research column.
 The completed-test block stays hidden while language training is pending.
-Temporary 1280/390-style responsive checks are not claimed for this addition:
-the viewport API did not change the measured width during this review and its
-override was reset. The earlier documented mobile checks predate this view.
+Desktop and mobile breakpoint checks are not claimed for this addition:
+the attempted desktop overrides did not change the measured width during this
+review and were reset. The earlier documented mobile checks predate this view.
 
 The previous paper release, commit `88ff8fd`, completed Pages run
 `34456998206`. The deployed five-page PDF, source archive and 2,000-update
