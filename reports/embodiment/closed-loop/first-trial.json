@@ -1,0 +1,52 @@
+{
+  "case": {
+    "label": "eligibility-live-switch",
+    "model": "eligibility",
+    "pose_mode": "live",
+    "scenario": "switch"
+  },
+  "metrics": {
+    "mean_absolute_bearing_error_rad": 0.2839662937476114,
+    "observed_seconds": 2.0,
+    "phase_progress": [
+      {
+        "start_s": 0.0,
+        "end_s": 1.0,
+        "target_mm": [
+          40.0,
+          20.0
+        ],
+        "start_distance_mm": 44.22753606371673,
+        "end_distance_mm": 33.37700887829415,
+        "progress_toward_target_mm": 10.850527185422578
+      },
+      {
+        "start_s": 1.0,
+        "end_s": 2.0,
+        "target_mm": [
+          40.0,
+          -20.0
+        ],
+        "start_distance_mm": 39.0202169458789,
+        "end_distance_mm": 28.114063904416145,
+        "progress_toward_target_mm": 10.906153041462755
+      }
+    ],
+    "heading_change_rad": -0.6250540483378415,
+    "final_absolute_bearing_error_rad": 0.14376547925976446,
+    "final_target_distance_mm": 28.114063904416145,
+    "minimum_thorax_height_mm": 0.6195862231298074,
+    "minimum_thorax_up_z": 0.9462500675366554,
+    "mean_contact_count": 6.348325837081459,
+    "descending_signal_switches": 14
+  },
+  "trajectory_sha256": "503539acfd7c1786c229c4d30242f1ef2b2ac01b6e9ec5699e3d860e641ba76b",
+  "controller_replay": {
+    "frames": 400,
+    "decisions": 36,
+    "maximum_state_logit_error": 0.0,
+    "sensory_and_commands_exact": true
+  },
+  "report_sha256": "4bd5e14d9c769baf14b09dec889da457bd33f29f6f9ede4da7ae84737eeff84a",
+  "scope": "First predeclared video case; 1 of 27 physical conditions, no comparative conclusion"
+}
