@@ -79,6 +79,16 @@ for run in runs:
     '\\newcommand{\\MatchedRows}{'+ '\n'.join(table)+'}\n',encoding='utf8')
 print(f'Generated four figures and the matched-update table at step {common}.')
 
+np.savetxt(OUT / 'state-memory.csv', np.column_stack((length, np.full_like(length,8192),
+    np.full_like(length,800), np.minimum(length,95)*2*2*108*4)), delimiter=',', fmt='%d',
+    header='processed_tokens,flm_state_bytes,gru_state_bytes,transformer_state_bytes', comments='')
+np.savetxt(OUT / 'time-scales.csv', np.column_stack((np.arange(len(positions)), array('alpha'), array('beta'),
+    np.log(.5)/np.log1p(-array('alpha').astype(np.float64)), np.log(.5)/np.log1p(-array('beta').astype(np.float64)))),
+    delimiter=',', header='model_index,alpha,beta,fast_half_life_tokens,slow_half_life_tokens', comments='')
+np.savetxt(OUT / 'anatomy-selected.csv', np.column_stack((np.arange(len(positions)), positions,
+    np.array(anatomy['source_sign']))), delimiter=',', header='model_index,source_x,source_y,source_z,source_sign', comments='')
+np.savetxt(OUT / 'anatomy-context.csv', context, delimiter=',', header='source_x,source_y,source_z', comments='')
+
 test_path = ROOT / 'reports/wikitext2/summary.json'
 if test_path.exists():
     test = json.loads(test_path.read_text(encoding='utf8')); rows = []
