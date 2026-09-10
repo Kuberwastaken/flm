@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-09-10T17:33:23.085423+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "640eebbfad5df693a3429e9ede166bd2852f49b5",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34508467333"
+  },
+  "artifacts": [
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 21611,
+      "sha256": "dc3a3534d394ec989a2656fb196826ae8ea213903a2b818d0be1ffcae6156f84"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6337668,
+      "sha256": "484923e533ac3c1ac89bdb3dc02f95e355cdf3b376396a7bd1886b7dcef7f8c9"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "snapshot_utc": "2026-09-10T17:16:39.635605+00:00",
+  "completed_new_controls": 8,
+  "test_status": "All training runs verified; awaiting complete test results",
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "frozen_selection_sha256": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+  "source_archive_check": "reports/language-topology/eight-control-source-release.json",
+  "final_test_result_published": false,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T17:32:58.496Z",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_new_runs_visible": 8,
+    "validation_rows": 8,
+    "all_pairs_matched_updates": 6000,
+    "test_rows": 0,
+    "final_and_download_panels_hidden": true,
+    "final_and_download_panels_have_no_layout": true,
+    "result_image_src": null,
+    "download_hrefs": [
+      null,
+      null
+    ],
+    "page_width": 598,
+    "viewport_width": 614
+  }
+}
