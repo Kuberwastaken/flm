@@ -1,0 +1,316 @@
+{
+  "dataset": "BabyLM 2026 English",
+  "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+  "acquisition_card_sha256": "b1e040fb0df288c5595341f1597f163c78f636a4a606c578525b2ac0e613c84a",
+  "partitions": {
+    "train-10m": {
+      "format": "flm-mmap-tokens-v1",
+      "dtype": "<u2",
+      "identity": {
+        "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+        "sources": {
+          "bnc_spoken": "8f3042f4104cf356052fda784682d8e8170fd1fd8c795a1c3e172f9eb2ebfa3c",
+          "childes": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+          "gutenberg": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+          "open_subtitles": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+          "simple_wiki": "0ac614aa069ea3908c07c9755bf80bb500d4cee15cd972e9f93cccf89639e9a7",
+          "switchboard": "89c99649777be2f76f5054e9f1aa364b7e1a62844e219fe810205be6d99399b5"
+        },
+        "block_target_bytes": 16384,
+        "overlap_audit_sha256": null
+      },
+      "blocks": 3351,
+      "text_tokens": 18591514,
+      "utf8_bytes": 54399840,
+      "components": {
+        "bnc_spoken": {
+          "blocks": 250,
+          "text_tokens": 1191772,
+          "utf8_bytes": 4064608,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "childes": {
+          "blocks": 927,
+          "text_tokens": 6111326,
+          "utf8_bytes": 15159891,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "gutenberg": {
+          "blocks": 874,
+          "text_tokens": 4099784,
+          "utf8_bytes": 14031163,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "open_subtitles": {
+          "blocks": 744,
+          "text_tokens": 4182541,
+          "utf8_bytes": 12159704,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "simple_wiki": {
+          "blocks": 548,
+          "text_tokens": 2961811,
+          "utf8_bytes": 8861946,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "switchboard": {
+          "blocks": 8,
+          "text_tokens": 44280,
+          "utf8_bytes": 122528,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        }
+      },
+      "files": {
+        "tokens.u16": "65323ab539fb4289dc29ffbbff1197152bf046d3a6040cde9e2616271b484350",
+        "offsets.npy": "fecddeccabf8499b778187478706ddbd7cf624c7f8f8c6b4a5fb8a55539a6288",
+        "blocks.jsonl": "adf4718e6abd5f91c821853dafe8f7e2a4fbcfe31b7fd30a531a3dd0e802e8ed"
+      },
+      "boundary_semantics": "Artificial whole-line blocks within a component file; true document and speaker boundaries unknown.",
+      "roundtrip": "Every block reconstructs its exact source bytes; every source byte is retained once."
+    },
+    "validation": {
+      "format": "flm-mmap-tokens-v1",
+      "dtype": "<u2",
+      "identity": {
+        "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+        "sources": {
+          "bnc_spoken": "2c546720837b059da82634b5554a7694bbb9bdeef18f52734da11ba443795cd8",
+          "childes": "5823392e65a6da3344811845504c5d1ad9acec42315e2bd938be5eb01a8422a5",
+          "gutenberg": "760ebc4c697b91308dd21f643ae3c3071e3e1222960fcf8af04119addc50e99b",
+          "open_subtitles": "2e8038d3216c28d7319d0cb564011061d64e093e426b0ca816a9def481481e6b",
+          "simple_wiki": "0ca18973a91069bf917bae9072ff511d39b474d590ab2241cb717221d8532c98",
+          "switchboard": "3dcd2a40051f8e90dadaa0ef656183c1ace7c62682f3306c86ed86aa8cfd057a"
+        },
+        "block_target_bytes": 16384,
+        "overlap_audit_sha256": "cee4b8bd60623c153c2db58b8dd4dac11c49a8ec335fb82dfed8eacfe7d19a54"
+      },
+      "blocks": 3495,
+      "text_tokens": 19713480,
+      "utf8_bytes": 56752783,
+      "components": {
+        "bnc_spoken": {
+          "blocks": 402,
+          "text_tokens": 1968846,
+          "utf8_bytes": 6539125,
+          "overlapping_blocks": 31,
+          "overlapping_block_bytes": 504275,
+          "overlapping_lines": 190
+        },
+        "childes": {
+          "blocks": 898,
+          "text_tokens": 6334975,
+          "utf8_bytes": 14684091,
+          "overlapping_blocks": 400,
+          "overlapping_block_bytes": 6544886,
+          "overlapping_lines": 8429
+        },
+        "gutenberg": {
+          "blocks": 970,
+          "text_tokens": 4595188,
+          "utf8_bytes": 15605575,
+          "overlapping_blocks": 28,
+          "overlapping_block_bytes": 453488,
+          "overlapping_lines": 195
+        },
+        "open_subtitles": {
+          "blocks": 675,
+          "text_tokens": 3849315,
+          "utf8_bytes": 11029539,
+          "overlapping_blocks": 86,
+          "overlapping_block_bytes": 1406895,
+          "overlapping_lines": 155
+        },
+        "simple_wiki": {
+          "blocks": 505,
+          "text_tokens": 2697793,
+          "utf8_bytes": 8170440,
+          "overlapping_blocks": 42,
+          "overlapping_block_bytes": 681361,
+          "overlapping_lines": 114
+        },
+        "switchboard": {
+          "blocks": 45,
+          "text_tokens": 267363,
+          "utf8_bytes": 724013,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        }
+      },
+      "files": {
+        "tokens.u16": "371f2a7614f6b22aaf8204f3db090a10718dfbde29658dba772403b6d1269bb7",
+        "offsets.npy": "d7383f14c040d27b0abc4a2428243b63a24e0a1b7acbf32a21ebf1ca7afc7991",
+        "blocks.jsonl": "97f62f31a457de8186c2dd4baed69f2fc83d8b1861b2130554e81cabad7e4f6b"
+      },
+      "boundary_semantics": "Artificial whole-line blocks within a component file; true document and speaker boundaries unknown.",
+      "roundtrip": "Every block reconstructs its exact source bytes; every source byte is retained once."
+    },
+    "test": {
+      "format": "flm-mmap-tokens-v1",
+      "dtype": "<u2",
+      "identity": {
+        "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+        "sources": {
+          "bnc_spoken": "bdfc15bb70e1bd5f66d6a6113ef47995b7fe7fac247bd8afddfac87b86627b4b",
+          "childes": "c6b9e5d5479d003381a9a5ea8905ed82ac9c418cbc53395d4234bbb218ee8424",
+          "gutenberg": "df309abec59a9143cb5220d81438297d24526024608e6bb795ca8c1a7069c9bd",
+          "open_subtitles": "59cf3e496921fb89f2581cae4f91ce5d2009513ad10778eb4181381d7ea44066",
+          "simple_wiki": "e3b1dec6f381115c82630b229ba427edd0f79553ccb9b40fdfc965e31bc7da70",
+          "switchboard": "f30501f856a0f63571f81716b2e7f7420cfc9ca4b4705671111063065792e713"
+        },
+        "block_target_bytes": 16384,
+        "overlap_audit_sha256": "cee4b8bd60623c153c2db58b8dd4dac11c49a8ec335fb82dfed8eacfe7d19a54"
+      },
+      "blocks": 3187,
+      "text_tokens": 18177107,
+      "utf8_bytes": 51722871,
+      "components": {
+        "bnc_spoken": {
+          "blocks": 300,
+          "text_tokens": 1460188,
+          "utf8_bytes": 4889225,
+          "overlapping_blocks": 4,
+          "overlapping_block_bytes": 64708,
+          "overlapping_lines": 23
+        },
+        "childes": {
+          "blocks": 899,
+          "text_tokens": 6349354,
+          "utf8_bytes": 14707424,
+          "overlapping_blocks": 408,
+          "overlapping_block_bytes": 6677120,
+          "overlapping_lines": 4848
+        },
+        "gutenberg": {
+          "blocks": 830,
+          "text_tokens": 3896256,
+          "utf8_bytes": 13296106,
+          "overlapping_blocks": 53,
+          "overlapping_block_bytes": 858794,
+          "overlapping_lines": 818
+        },
+        "open_subtitles": {
+          "blocks": 635,
+          "text_tokens": 3621022,
+          "utf8_bytes": 10388196,
+          "overlapping_blocks": 90,
+          "overlapping_block_bytes": 1472280,
+          "overlapping_lines": 1421
+        },
+        "simple_wiki": {
+          "blocks": 472,
+          "text_tokens": 2549987,
+          "utf8_bytes": 7618762,
+          "overlapping_blocks": 104,
+          "overlapping_block_bytes": 1686255,
+          "overlapping_lines": 349
+        },
+        "switchboard": {
+          "blocks": 51,
+          "text_tokens": 300300,
+          "utf8_bytes": 823158,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        }
+      },
+      "files": {
+        "tokens.u16": "a11c4667b470e4dd974ce9ac640360a7b40829ad54abef4efae64112fc4abd01",
+        "offsets.npy": "952395b79223628278b868f120cd104015eb5bad7d629f6c4cbf09ff4defcba8",
+        "blocks.jsonl": "efb9d4bca04acd10e1683ea14d9354a608eb8cb6a3d1fd9466c89345207de739"
+      },
+      "boundary_semantics": "Artificial whole-line blocks within a component file; true document and speaker boundaries unknown.",
+      "roundtrip": "Every block reconstructs its exact source bytes; every source byte is retained once."
+    },
+    "train-100m": {
+      "format": "flm-mmap-tokens-v1",
+      "dtype": "<u2",
+      "identity": {
+        "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+        "sources": {
+          "bnc_spoken": "4f6cc76f656d5666941852196e35fb5f060bcbb8abebb0b70fe17c3802428a0c",
+          "childes": "d6c0e39e2c283bfa5489cde80031a4fb9237ca8065a8301580df10e3b6843a98",
+          "gutenberg": "ee404a84c2f42e0cd52bdaa0366cf398328be1b038ede33d07851f69ea1c2837",
+          "open_subtitles": "9aa48a9448ce6450238868537e4aab43065cca5dae94c948a189e5b802911929",
+          "simple_wiki": "b7cd8fd945d3986c673bf92fa28df44bf8e4ea655c37c2cacd97cdd8a9146cf2",
+          "switchboard": "2cb1ed1b47300893b29254081830899c80ac174278b1c1abcade2887821265b1"
+        },
+        "block_target_bytes": 16384,
+        "overlap_audit_sha256": null
+      },
+      "blocks": 33433,
+      "text_tokens": 189709779,
+      "utf8_bytes": 543302195,
+      "components": {
+        "bnc_spoken": {
+          "blocks": 2426,
+          "text_tokens": 11882806,
+          "utf8_bytes": 39534314,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "childes": {
+          "blocks": 9308,
+          "text_tokens": 64584857,
+          "utf8_bytes": 152297628,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "gutenberg": {
+          "blocks": 8784,
+          "text_tokens": 41818840,
+          "utf8_bytes": 141116557,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "open_subtitles": {
+          "blocks": 7410,
+          "text_tokens": 41683567,
+          "utf8_bytes": 121187495,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "simple_wiki": {
+          "blocks": 5430,
+          "text_tokens": 29290684,
+          "utf8_bytes": 87947184,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        },
+        "switchboard": {
+          "blocks": 75,
+          "text_tokens": 449025,
+          "utf8_bytes": 1219017,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        }
+      },
+      "files": {
+        "tokens.u16": "e1daba83810e8d630a4eb4c9143f740ff9712aa564305f9d723ddd326b535107",
+        "offsets.npy": "6a4a7e79fa84cb97f9755d2f28f2ad14df68919fbf0b0562fa46ebd06c114542",
+        "blocks.jsonl": "31ddc3b65fd4b1868416fa295f5c0bf6399dabf869c2244d1fa631c6b2fb6b1d"
+      },
+      "boundary_semantics": "Artificial whole-line blocks within a component file; true document and speaker boundaries unknown.",
+      "roundtrip": "Every block reconstructs its exact source bytes; every source byte is retained once."
+    }
+  },
+  "test_usage": "Source identity, overlap and lossless encoding only; no test losses or checkpoint selection."
+}
