@@ -2,7 +2,7 @@
 
 Data preparation is complete; neural fitting and physical instruction execution
 have not started. This stage prepares a standard test of whether text pretraining
-helps a model learn command interpretation. The language topology study retains
+helps a model learn command interpretation. The language computation study retains
 compute priority, followed by the registered BabyLM comparison. None of their
 frozen inputs, checkpoints or schedules are changed by this preparation.
 
