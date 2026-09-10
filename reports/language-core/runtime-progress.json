@@ -1,12 +1,12 @@
 {
-  "verified_utc": "2026-09-10T21:21:14.980254+00:00",
+  "verified_utc": "2026-09-10T21:52:05.543192+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
-  "condition": "no_temporal_state-s42",
-  "saved_step": 500,
-  "committed_checkpoints": 1,
-  "checkpoint_sha256": "7798e246a0873cef1ba559322d89d4e2203a25d14b1b934a4150de6213d184a7",
+  "condition": "fixed_dynamics-s43",
+  "saved_step": 0,
+  "committed_checkpoints": 0,
+  "checkpoint_sha256": null,
   "frozen_tensors_match_initialization": null,
-  "graph_pooling_optimizer_rng_and_exposure_verified": true,
+  "graph_pooling_optimizer_rng_and_exposure_verified": false,
   "source_identity_verified": true,
   "queue_session_id": 20410,
   "queue_live_confirmed_by_session_poll": true,
@@ -46,12 +46,27 @@
       "allocated_parameters": 600003,
       "trainable_parameters": 600003,
       "frozen_parameters": 0
+    },
+    {
+      "label": "no_temporal_state-s42",
+      "control": "no_temporal_state",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/no_temporal_state-s42",
+      "checkpoint": "runs/language-core-v1/no_temporal_state-s42/checkpoint-006000.pt",
+      "checkpoint_sha256": "b18c4c4b4491c3eede278501642fe0797651bb67be8fb0fa4eaaf1f9c00781f1",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 2.0303651813713115,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0
     }
   ],
-  "completed_new_fit_count": 2,
+  "completed_new_fit_count": 3,
   "planned_new_fit_count": 6,
   "fixed_core_completed_all_12_checkpoints_verified": true,
   "figure_preflight": "reports/language-core/figure-preflight.json",
-  "active_checkpoint_note": "First atomically committed checkpoint restored; eight synthetic prefixes ending in one ID give identical final logits",
+  "active_checkpoint_note": "Second initialization seed; only atomically committed checkpoints counted.",
   "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s42.json"
 }
