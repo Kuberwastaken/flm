@@ -8,7 +8,7 @@ The main experiment uses **WikiText-2 raw**, a standard written-language corpus 
 
 The continuing study adds the official **BabyLM 2026 10M- and 100M-word corpora**, verified locally across six spoken/written components. Its [registered protocol](docs/BABYLM-PROTOCOL.md) separates data diversity, model capacity and training exposure. Measured neural interventions and a real, separately calibrated NeuroMechFly physics environment support later learning and behavior studies. See the [continuing research program](docs/RESEARCH-PROGRAM.md).
 
-This is a working research prototype, not an instruction-following assistant. The current matched validation curves do **not** establish an FLM advantage over the baselines. See the site's Research view for measured curves, matched-update controls and unedited fixed-prompt continuations. The second training seed and final test-set evaluation are still pending; validation scores must not be described as final test results.
+This is a working research prototype, not an instruction-following assistant. The completed two-seed WikiText test comparison gives mean losses of **1.9744 bits/byte for FLM, 1.9049 for GRU and 1.8767 for transformer**; lower is better. FLM trails both neural baselines under this protocol. The Research view includes full article scores, paired intervals, measured inference costs and unedited fixed-prompt continuations. BabyLM training is a separate, continuing experiment.
 
 ## What is different?
 
