@@ -19,7 +19,7 @@ function svg(name, attributes, text = '') {
 
 export async function loadBabyLMStudy() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}research/babylm-validation.json`);
+    const response = await fetch(`${import.meta.env.BASE_URL}research/babylm-validation.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`BabyLM snapshot unavailable (${response.status}).`);
     const report = await response.json();
     $('babylm-snapshot').textContent = `${report.runs.filter(run => run.complete).length} of ${report.registered_runs} runs complete. Snapshot: ${new Date(report.snapshot_utc).toLocaleString()}. The table uses validation measurements; final test scores will follow the completed comparison.`;

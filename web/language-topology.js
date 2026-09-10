@@ -81,7 +81,7 @@ export function matchedValidation(report) {
 
 export async function loadLanguageTopology() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}research/language-topology-progress.json`);
+    const response = await fetch(`${import.meta.env.BASE_URL}research/language-topology-progress.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language topology snapshot unavailable.');
     const report = await response.json();
     void loadLanguageStructure(report.study_identity_sha256);
