@@ -54,3 +54,30 @@ horizontal scroll containers without document overflow. Final verification after
 the linguistic scorer addition passes 37 Python and 27 JavaScript tests. The
 updated eight-page methods report and five-page data note were rendered and all
 13 pages inspected; the final bibliography change was re-rendered and reviewed.
+
+## BabyLM evaluation and progress interface
+
+The complete evaluation path adds nine meaningful Python checks: ragged batched
+likelihoods versus independent blocks for FLM/GRU/Transformer; overlap exclusion;
+paired block intervals; incomplete-study gating; changed-budget/checkpoint
+rejection; cached-batch identity/count validation; reproducible sampling, EOS,
+control-byte filtering, invalid UTF-8 and repetition accounting. The full suite
+passes 46 Python tests and 27 JavaScript tests. A separate float32 check on 890
+tokens / 2,793 bytes of existing BabyLM validation text found maximum batched
+versus independent difference 4.27e-8 bits/byte across all three untrained models.
+No BabyLM test likelihoods or continuations were inspected for these checks.
+
+The production preview shows the dated twelve-run snapshot, six selectable
+validation components and only update counts shared by all three architectures.
+Selecting Gutenberg changes the measured curve. Selecting the unstarted 100M
+runs removes the curve and keeps comparisons unavailable. Exposure text correctly
+reports approximately 99.1% and 9.7% of corpus token counts for the fixed budget,
+explicitly distinguishing this ratio from unique-text coverage.
+
+Desktop chart and table were visually inspected at a 1280-pixel viewport. At
+390 pixels, document client/scroll widths both measured 375 pixels. The chart
+reflows its viewBox to the 335.2-pixel drawing width, preserving readable labels;
+tables stay within their horizontal scroll containers. All four controls remain
+usable, and the browser still loads the completed WikiText checkpoint. Pending
+BabyLM measurements are never rendered as zero scores or ranked against finished
+runs. The new snapshot/protocol/prompt links resolve in the production build.

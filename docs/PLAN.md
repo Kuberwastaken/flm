@@ -47,3 +47,13 @@ generation analysis without tuning on their evaluation scores. Updated model
 cards, figures, papers, browser checks and deployment evidence accompany each
 completed stage. Full-connectome language training and learned motor behavior
 remain unestablished by the compact release.
+
+BabyLM's full evaluation and generation path is implemented and tested before
+its test losses are read. All twelve runs must complete before checkpoint
+selection is frozen. Complete-block batching preserves causal state and exact
+text counts; atomic batch caches resume long evaluations. The report separates
+six source components and the predeclared overlap-filtered analysis, with paired
+block intervals. Twelve original prompts and two sampling seeds fix 288 unedited
+continuations. A dated Research-page snapshot exposes progress and permits only
+common-update comparisons. `flm.babylm_pipeline` chains the stages when the current
+training writer has stopped; it must not be launched alongside that writer.

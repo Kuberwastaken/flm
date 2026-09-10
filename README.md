@@ -79,7 +79,7 @@ training-repository MIT metadata does not replace component rights.
 python -m flm.babylm acquire
 python -m flm.babylm_audit
 python -m flm.babylm_prepare
-python -m flm.babylm_suite
+python -m flm.babylm_pipeline
 ```
 
 The suite requires the completed WikiText runtime report first, then runs the
@@ -89,6 +89,24 @@ The suite requires the completed WikiText runtime report first, then runs the
 share the 10M-fitted tokenizer and a frozen 48-block validation panel. Official
 test scores and an overlap-filtered sensitivity analysis are separate from
 training progress. Do not treat the 100M dataset label as a 100M-parameter model.
+
+`babylm_pipeline` runs or resumes training, freezes all twelve validation-selected
+checkpoints, evaluates every official test block, computes the predeclared
+overlap-filtered and per-source scores, and generates all 288 fixed-prompt
+continuations. Start it only after any existing training process has stopped;
+there must be one training writer. To run training alone or a specified portion,
+use `python -m flm.babylm_suite` with the selection flags above. Completed training
+is reused; a failure stops dependent stages. Full test evaluation can also take
+hours on a CPU, with atomic completed-batch caches for recovery.
+
+The individual follow-on commands are `python -m flm.babylm_test` and
+`python -m flm.babylm_samples`. They refuse incomplete studies or changed
+checkpoint/data identities. `python -m flm.babylm_report` publishes a dated
+validation snapshot without reading model test losses. The website compares
+only updates shared by all three architectures, and can isolate each source
+component. See the [evaluation declaration](docs/BABYLM-EVALUATION.md) and
+[original prompt panel](data/prompts/babylm-original.json). Repetition measurements
+are descriptive; they do not score truth or replace human assessment.
 
 The physics environment uses Python 3.12 with `requirements-embodied.txt`; the
 exact measured environment is recorded in `requirements-embodied-lock.txt`.
