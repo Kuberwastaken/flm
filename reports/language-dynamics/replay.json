@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-09-10T20:29:53.089371+00:00",
+  "study_identity_sha256": "16edbc6063f39deb244cc62622b95070c2a523983551f07633e2e70b578814fd",
+  "conditions": 7,
+  "exact_metric_and_array_replay": true,
+  "threads": 1,
+  "summary_sha256": "c82f0ea0e59676af5806f6f430b76065e4d4c4cd77e4b12337db400062b722f0",
+  "case_artifact_sha256": {
+    "case-initial_shared.json": "daa43a68360424ce8f0523a3326f7a78fb04870502eea08c03201f7c314cd8ad",
+    "case-initial_shared.npz": "c497c56e2d53165fdb85c34559da11cc63061bf7fd6a9d3ef871b0ff182f3457",
+    "case-trained-s42.json": "a5d26dfb22dd2f174353d4058cb503fb9e25fda51ed682941255f51d3f5b2713",
+    "case-trained-s42.npz": "a0fb7cd29ee185d2c1e031bd94204b942a9aebbcc5e8a9ae4efe56b3b5bef492",
+    "case-edges_gain_only-s42.json": "5b88f1083d0aa13dc47a8b531e15684a737f0f1ac9f150a9aaf19029f0b0b155",
+    "case-edges_gain_only-s42.npz": "c39f8766497a0fd035b7b7b641ab427f86c297c4caca74190f8e295c179fcc7c",
+    "case-time_constants_only-s42.json": "7a3e3c86ec88d90f7e6fdd255c2719e44c07295636568508a5e991fafd04367d",
+    "case-time_constants_only-s42.npz": "4ce2f6bd4f1de30b12f681e462e25ed5f8a9d8861a9b9dbb9a4f1b000eee9624",
+    "case-trained-s43.json": "d1f5ee4027d4d8204e19aececb97d9d2588ba30eff23f5c6d232af0432edc4f9",
+    "case-trained-s43.npz": "238312125e6847a13e110f97f6222786101722c98e3bb2ce5df8611733d25ea2",
+    "case-edges_gain_only-s43.json": "8a641c2c0512ef16be9d061abc84d1be97f5cd8e9cc541bedea1b5e060e4b190",
+    "case-edges_gain_only-s43.npz": "ca3298ea622e7f99f84d37d9fbec749cee686819b0c73c4f38202c74e20b5b9f",
+    "case-time_constants_only-s43.json": "d9e0073887765ba95032e3899533adcb8c2b22a139337109b9f49406bfe6d90c",
+    "case-time_constants_only-s43.npz": "29c6cc51edbc5c4d7553304d8dc1caa9d022f358a5817652d2779987209e4d52"
+  },
+  "scope": "Same-environment replay of this dynamics diagnostic; not independent training or language evaluation"
+}

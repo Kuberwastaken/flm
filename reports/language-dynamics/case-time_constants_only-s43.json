@@ -1,0 +1,198 @@
+{
+  "condition": {
+    "label": "time_constants_only-s43",
+    "seed": 43,
+    "mode": "time_constants_only"
+  },
+  "study_identity_sha256": "16edbc6063f39deb244cc62622b95070c2a523983551f07633e2e70b578814fd",
+  "metrics": {
+    "core_sha256": "42d3e448cd5d5670de908006f5714f0e09f71b8e7cc047a312aece2ad86f6082",
+    "parameters": {
+      "alpha": {
+        "minimum": 0.1338595300912857,
+        "median": 0.6287404596805573,
+        "maximum": 0.8971602320671082
+      },
+      "beta": {
+        "minimum": 0.00966613832861185,
+        "median": 0.02860093768686056,
+        "maximum": 0.08258984237909317
+      },
+      "recurrent_gain": 1.524999976158142,
+      "bare_fast_leak_half_life": {
+        "minimum": 0.3047359159385319,
+        "median": 0.6995454866275186,
+        "maximum": 4.823296694379418
+      },
+      "bare_slow_leak_half_life": {
+        "minimum": 8.041092312212816,
+        "median": 23.886920117697052,
+        "maximum": 71.36166539599036
+      }
+    },
+    "spectrum": {
+      "fast_spectral_radius": 1.022276869225836,
+      "slow_diagonal_spectral_radius": 0.9903338616713881,
+      "joint_spectral_radius": 1.022276869225836,
+      "leading_relative_residual": 1.6425429825741407e-16
+    },
+    "pulses": [
+      {
+        "amplitude": 0.001,
+        "directions": [
+          {
+            "probe": 0,
+            "peak_joint_rms": 0.011803102385994604,
+            "peak_time": 256,
+            "final_joint_rms": 0.011803102385994604,
+            "normalized_response_energy": 3254.9648169530774,
+            "energy_fraction_at_64_plus": 0.9997378971861834,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 1,
+            "peak_joint_rms": 0.005646989643401245,
+            "peak_time": 256,
+            "final_joint_rms": 0.005646989643401245,
+            "normalized_response_energy": 741.1553453611148,
+            "energy_fraction_at_64_plus": 0.9994956443190777,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 2,
+            "peak_joint_rms": 0.006522882533028621,
+            "peak_time": 256,
+            "final_joint_rms": 0.006522882533028621,
+            "normalized_response_energy": 989.3682167684977,
+            "energy_fraction_at_64_plus": 0.9995678197694043,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 3,
+            "peak_joint_rms": 0.020001300528659345,
+            "peak_time": 256,
+            "final_joint_rms": 0.020001300528659345,
+            "normalized_response_energy": 9473.36160127436,
+            "energy_fraction_at_64_plus": 0.9997875336899714,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 4,
+            "peak_joint_rms": 0.007618723878045833,
+            "peak_time": 256,
+            "final_joint_rms": 0.007618723878045833,
+            "normalized_response_energy": 1350.6881962353707,
+            "energy_fraction_at_64_plus": 0.9996410039159794,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 5,
+            "peak_joint_rms": 0.001413300477790377,
+            "peak_time": 256,
+            "final_joint_rms": 0.001413300477790377,
+            "normalized_response_energy": 46.57330495019965,
+            "energy_fraction_at_64_plus": 0.9947854925827486,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 6,
+            "peak_joint_rms": 0.013448853869870821,
+            "peak_time": 256,
+            "final_joint_rms": 0.013448853869870821,
+            "normalized_response_energy": 4234.923249706044,
+            "energy_fraction_at_64_plus": 0.9997528462613586,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 7,
+            "peak_joint_rms": 0.006737418287980142,
+            "peak_time": 256,
+            "final_joint_rms": 0.006737418287980142,
+            "normalized_response_energy": 1055.6487696422264,
+            "energy_fraction_at_64_plus": 0.9995899440514145,
+            "observed_one_percent_settling_time": null
+          }
+        ]
+      },
+      {
+        "amplitude": 1.0,
+        "directions": [
+          {
+            "probe": 0,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11146628363632219,
+            "normalized_response_energy": 2.528633966586367,
+            "energy_fraction_at_64_plus": 0.8614230164858763,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 1,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11121432195944617,
+            "normalized_response_energy": 2.1017627056676016,
+            "energy_fraction_at_64_plus": 0.9034212179447078,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 2,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11128343132505635,
+            "normalized_response_energy": 2.193519553206068,
+            "energy_fraction_at_64_plus": 0.8966130936060039,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 3,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11156107219659041,
+            "normalized_response_energy": 2.8165015042502826,
+            "energy_fraction_at_64_plus": 0.8157636212685379,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 4,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11134444621021021,
+            "normalized_response_energy": 2.2770392369481547,
+            "energy_fraction_at_64_plus": 0.8916463975186475,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 5,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.10947283158612128,
+            "normalized_response_energy": 1.3391976050149923,
+            "energy_fraction_at_64_plus": 0.8949496103467875,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 6,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11146884778272242,
+            "normalized_response_energy": 2.531841707685231,
+            "energy_fraction_at_64_plus": 0.8579184517558031,
+            "observed_one_percent_settling_time": null
+          },
+          {
+            "probe": 7,
+            "peak_joint_rms": 0.3333690025325176,
+            "peak_time": 0,
+            "final_joint_rms": 0.11129245146600501,
+            "normalized_response_energy": 2.2025606561430755,
+            "energy_fraction_at_64_plus": 0.8971001030985439,
+            "observed_one_percent_settling_time": null
+          }
+        ]
+      }
+    ]
+  },
+  "arrays": "case-time_constants_only-s43.npz",
+  "arrays_sha256": "29c6cc51edbc5c4d7553304d8dc1caa9d022f358a5817652d2779987209e4d52"
+}
