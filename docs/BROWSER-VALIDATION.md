@@ -140,7 +140,7 @@ BabyLM is paused with its first FLM run complete at 12,000 and GRU saved at 6,50
 The completed 60-run cue/context report verifies all checkpoint/report hashes,
 all probability panels, matched sensory streams and initializations, and all 15
 original measured-cue parameter bridges. All four new scientific figures were
-rendered and visually inspected. The source ZIP now has 50 entries with a
+rendered and visually inspected. The source ZIP now has 50 source files plus a
 verified SHA-256 manifest; the separate 60-run archive retains every panel.
 
 At desktop width 1280, Research renders eight language-control rows, five
@@ -160,3 +160,13 @@ switching back restores the BabyLM conversation. The numerical/worker tests
 also cover tokenizer parity, generation, controls, adaptation and checkpoint
 isolation for all three browser packages. Temporary viewport overrides are
 reset after responsive review.
+
+Release `da31299` passed Pages run `34454987903`. The public site shows eight
+language-control rows, the matching 500-update comparison, all five context
+result rows, the retained three-model WikiText test table and the paused BabyLM
+snapshot. The public BabyLM checkpoint loads to ready with both 3D canvases.
+Nine deployed protocol, result, figure, archive and model artifacts match their
+local SHA-256 hashes byte for byte. The 71-entry wiring archive passes its CRC
+check. The first language null run has also saved update 1,000 locally; that
+later training progress is not retroactively part of the published 500-update
+snapshot. No new control test loss has been scored.
