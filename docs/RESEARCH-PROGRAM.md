@@ -3,6 +3,25 @@
 This extends the compact WikiText release. WikiText is a calibration experiment,
 not the endpoint. Preserve its frozen protocol and report before moving on.
 
+## Current priority: isolate the language wiring effect
+
+On 10 September, the larger-data queue was paused at saved checkpoints to
+prioritize the missing language topology comparison. The first BabyLM FLM run
+completed 12,000 updates; the GRU is saved at 6,500. Resume those runs after the
+control study rather than expanding the corpus or model first.
+
+The [declared language protocol](LANGUAGE-TOPOLOGY-PROTOCOL.md) adds three
+independent degree/sign/self-edge-preserving graphs crossed with both WikiText
+training seeds, and two controls retrained without slow state. Original measured
+references are frozen and reused. Numerical replay checks match their historical
+initialization, optimizer updates, sampling and evaluation. All new runs must
+complete before control test scores are read. The result may favor measured
+wiring, favor rewiring or demonstrate no useful advantage under this protocol.
+
+The [completed 60-run cue/context study](WIRING-RESULTS.md) gives mixed results
+and cannot answer the language claim. Keep its evidence separate from language,
+browser adaptation and physical motor control.
+
 ## 1. Complete the shared language reference
 
 Finish both seeds of FLM, GRU and the compact transformer; select on validation;

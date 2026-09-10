@@ -35,7 +35,7 @@ The first release trains on transcript text, not raw audio. It will be a small c
 
 WikiText-2 raw is now the primary standard-corpus experiment, with 600/60/60 articles and a frozen 4,096-token train-only vocabulary. The compact lexical model and AMI dialogue model both run in the browser. Independent PyTorch/browser parity, worker integration and causal/resume checks pass. The Research view compares actual matched-update validation curves and unedited same-prompt outputs for FLM, GRU and transformer. Pages and HTTPS are configured and verified at the custom domain.
 
-All six WikiText runs completed 6,000 updates. Frozen validation-selected checkpoints have been scored on complete test articles: two-seed mean FLM 1.9744, GRU 1.9049 and transformer 1.8767 bits/byte. Paired article intervals favor the baselines. Runtime/state measurements and both-seed acute mechanism diagnostics are complete. Keep the simpler n-gram reference separate from parameter-matched models. BabyLM 10M/100M acquisition and encoding are verified; its registered training queue is active. Real physical walking controls and a fixed BLiMP grammar diagnostic are also implemented.
+All six WikiText runs completed 6,000 updates. Frozen validation-selected checkpoints have been scored on complete test articles: two-seed mean FLM 1.9744, GRU 1.9049 and transformer 1.8767 bits/byte. Paired article intervals favor the baselines. Runtime/state measurements and both-seed acute mechanism diagnostics are complete. Keep the simpler n-gram reference separate from parameter-matched models. BabyLM 10M/100M acquisition and encoding are verified; its queue is paused at saved checkpoints while the language topology controls run. Real physical walking controls and a fixed BLiMP grammar diagnostic are also implemented.
 
 Remaining work centers on the continuing program: complete the twelve BabyLM
 runs and component-level held-out evaluation; train matched rewired and disabled
@@ -66,5 +66,26 @@ simulated physical replays verify that learned high-level choices drive the
 expected turning command, retaining wrong task choices. The four-page research
 note, all panel predictions, neural states and trajectories are published with
 the protocol. This establishes neither an anatomical advantage nor learned gait
-or language-to-motor transfer. Rewired controls, stronger context-dependent
-tasks, learning-signal diagnostics and closed-loop sensory coupling remain open.
+or language-to-motor transfer. The subsequent 60-run wiring/context study is now
+complete, with shared initialization, degree/sign/self-edge-preserving controls
+and exact-gradient diagnostics. Its results are mixed across tasks and learning
+rules; they establish no general anatomical advantage. Closed-loop sensory
+coupling remains open.
+
+The current priority is the language topology study, declared before fitting
+its controls. Three null graphs are crossed with both original WikiText seeds;
+two further measured-graph models retrain without slow state. Every condition
+uses the original 6,000-update exposure. The historical/current trainers match
+exactly on initialization, ten updates, sampling and validation replay for both
+seeds. The new serial queue is running. Test evaluation refuses to begin until
+all eight new runs finish and all ten checkpoint selections are frozen. Only
+then resume the larger BabyLM queue, saved at FLM 12,000 and GRU 6,500 updates.
+
+Recovery uses `python -m flm.language_topology train` after verifying there is
+no existing writer. `python -m flm.language_topology_test snapshot` publishes
+checkpoint-backed validation progress; `python -m flm.language_topology_test
+score` freezes and scores the completed comparison. These commands continue
+this hash-bound experiment and deliberately reject changed data, graph,
+numerical source or checkpoint identities. Independent replications need their
+own declared identities and freshly trained references, not edits to these
+frozen records.

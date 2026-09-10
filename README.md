@@ -8,6 +8,18 @@ The main experiment uses **WikiText-2 raw**, a standard written-language corpus 
 
 The continuing study adds the official **BabyLM 2026 10M- and 100M-word corpora**, verified locally across six spoken/written components. Its [registered protocol](docs/BABYLM-PROTOCOL.md) separates data diversity, model capacity and training exposure. Measured neural interventions and a real, separately calibrated NeuroMechFly physics environment support later learning and behavior studies. See the [continuing research program](docs/RESEARCH-PROGRAM.md).
 
+**Current priority: does the measured wiring help language?** The
+[language control study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) trains three
+independently rewired graphs with both original seeds and two models retrained
+without slow state. It preserves the original WikiText data, initialization,
+sampling and budget. BabyLM training is paused at saved checkpoints while these
+controls run. A degree-matched anatomical advantage remains unestablished.
+
+The [completed 60-run cue/context study](docs/WIRING-RESULTS.md) has mixed
+outcomes, including conditions where rewiring performs better. All seeds,
+checkpoints, prediction panels and gradient diagnostics are retained. It is a
+separate artificial-task experiment, not evidence of a language advantage.
+
 This is a working research prototype, not an instruction-following assistant. The completed two-seed WikiText test comparison gives mean losses of **1.9744 bits/byte for FLM, 1.9049 for GRU and 1.8767 for transformer**; lower is better. FLM trails both neural baselines under this protocol. The Research view includes full article scores, paired intervals, measured inference costs and unedited fixed-prompt continuations. BabyLM training is a separate, continuing experiment.
 
 ## What is different?
