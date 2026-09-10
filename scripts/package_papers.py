@@ -36,6 +36,9 @@ def main():
         'reports/subset-audit/summary.json', 'reports/subset-audit/nodes.csv',
         'reports/subset-audit/cell-types.csv', 'flm/subset_audit.py',
         'flm/graph.py', 'tests/test_subset_audit.py',
+        'flm/language_core_controls.py', 'tests/test_language_core_controls.py',
+        'flm/model.py', 'flm/baselines.py', 'flm/train.py', 'flm/language_train.py',
+        'flm/corpus_cache.py', 'tests/test_model.py',
         'data/graphs/central-1024/graph-card.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.

@@ -126,14 +126,15 @@ archive extraction passes its own NumPy-only audit without the repository.
 No language checkpoint, frozen topology input or language schedule changed.
 Language-to-control transfer and online motor learning remain later studies.
 
-Four of the eight new language controls have now completed training. Null
+Five of the eight new language controls have now completed training. Null
 graphs 101, 103 and 107 at training seed 42 have validation loss 1.9072, 1.9083
 and 1.9086 BPB, respectively, versus 1.9097 for the measured reference. These
 small differences favor the nulls on validation only; the full test comparison
 remains gated. The retrained no-slow-state model at seed 42 has validation loss
 1.9195 BPB versus 1.9097 for the corresponding full model; this is one seed's
-validation comparison. The scheduler continues null graphs 101 and 103 with
-training seed 43.
+validation comparison. Null graph 101 at seed 43 has now completed with 1.9092
+validation BPB versus 1.9107 for its measured reference. The scheduler continues
+null graphs 103 and 107 with training seed 43.
 
 The reviewer-requested language computation controls now have separate,
 fixture-tested mechanism definitions: fixed recurrent dynamics, no lateral

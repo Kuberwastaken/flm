@@ -25,9 +25,11 @@ for (const [source, target] of [
   ['LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md'],
 ]) subsetNote = subsetNote.replaceAll(source, target);
 await writeFile('public/research/subset-audit.md', subsetNote);
+await copyFile('flm/language_core_controls.py', 'public/research/language_core_controls.py');
 await writeFile('public/research/language-core-controls.md',
   (await readFile('docs/LANGUAGE-CORE-CONTROLS.md', 'utf8'))
-    .replaceAll('LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md'));
+    .replaceAll('LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md')
+    .replaceAll('../flm/language_core_controls.py', 'language_core_controls.py'));
 await copyFile('data/cards/scan.json', 'public/research/scan-data-card.json');
 await copyFile('scripts/scan_data_report.py', 'public/research/scan_data_report.py');
 let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
