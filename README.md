@@ -2,7 +2,7 @@
 
 **[Open ChatFLM](https://flm.kuber.studio)** · [Methods](docs/ARCHITECTURE.md) · [Research basis](docs/RESEARCH.md) · [Comparison protocol](docs/WIKITEXT-PROTOCOL.md)
 
-FLM is a small recurrent language model whose directed connections are selected from a fruit-fly connectome. ChatFLM runs the trained model locally in a browser, displays its actual recurrent state at anatomical neuron positions, and lets you inspect predictions, silence neurons and adapt a separate readout to your own text.
+FLM is a small recurrent language model by Kuber Mehta whose directed connections are selected from a fruit-fly connectome. ChatFLM runs the trained model locally in a browser, displays its actual recurrent state at anatomical neuron positions, and lets you inspect predictions, silence neurons and adapt a separate readout to your own text.
 
 The main experiment uses **WikiText-2 raw**, a standard written-language corpus with 600 training articles and 2.05 million training words. A 4,096-token lossless byte-pair vocabulary is learned only from those articles. FLM, a GRU and a basic decoder transformer use the same tokenizer, sampled training windows and approximately 600,000 parameters. The earlier AMI meeting-transcript model remains available as a separate dialogue experiment.
 
@@ -40,6 +40,27 @@ npm run dev -- --port 5180
 Open the URL printed by Vite. Use `npm run build` and `npm run preview -- --port 5181` to inspect a production build. GitHub Actions publishes `dist/` to Pages. `public/CNAME` points to `flm.kuber.studio`; the repository remains private while the generated website is public.
 
 Text and adaptation stay in the browser. Conversations are saved locally and can be exported/imported. Learning changes a separate output adapter and persists only when explicitly saved or exported. Adapters are tied to a checkpoint hash. A model switch reloads the workspace, so save session learning first. Exports expose their complete JSON for copying when native file downloads are unavailable. The optional 3D views need WebGL; text inference runs in a CPU worker.
+
+## Try FLM, GRU and transformer locally
+
+The [six-model inference bundle](https://flm.kuber.studio/research/wikitext2-inference.zip)
+contains the published WikiText checkpoints for both training seeds, their shared
+tokenizer, measured graph subset and a standalone Python runtime. It runs without
+access to the private repository or training corpus. Follow the
+[installation and generation guide](docs/INFERENCE-BUNDLE.md), then compare:
+
+```sh
+python -X utf8 -m flm.inference --model flm --prompt "The history of science"
+python -X utf8 -m flm.inference --model gru --prompt "The history of science"
+python -X utf8 -m flm.inference --model transformer --prompt "The history of science"
+```
+
+Run these commands inside the extracted bundle after installing its dependencies.
+The [release record](https://flm.kuber.studio/research/inference-release.json)
+identifies all six original selected checkpoints and the archive's SHA-256.
+Every exported tensor and fixed buffer matches exactly; all 24 published
+continuations replay under the tested CPU environment. This is local continuation
+inference. ChatFLM's browser engine remains FLM-only.
 
 ## Reproduce the language experiment
 

@@ -14,7 +14,7 @@ def main():
         'research_figures.py', 'continuing_figures.py', 'behavior_figures.py',
         'physical_choice_report.py', 'choice_paper_data.py', 'build_papers.py',
         'package_papers.py', 'wiring_figures.py', 'wiring_paper_data.py')]
-    files += [ROOT / name for name in ('README.md', 'pyproject.toml',
+    files += [ROOT / name for name in ('README.md', 'pyproject.toml', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
         'public/research/learned-choice.json', 'docs/WIRING-RESULTS.md',
         'docs/WIRING-LEARNING-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-PROTOCOL.md',

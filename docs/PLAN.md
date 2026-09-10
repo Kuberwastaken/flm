@@ -106,3 +106,11 @@ constraints, graph overlaps, reciprocity and components without reading model
 losses. The Research view exposes all controls and a common-order matrix figure.
 This documents the null intervention; it neither changes the registered graphs
 nor resolves the pending language outcome.
+
+All six completed WikiText FLM/GRU/transformer checkpoints now have a compact
+standalone inference release. Model-only exports preserve the exact tensors and
+fixed buffers and reproduce all 24 published continuations. A fresh extraction
+also runs each of the six models through its CLI with the original fixed prompt.
+The release includes the shared tokenizer, graph, runtime, protocol and file
+hashes; access to the private repository is unnecessary for inference. This is
+reproduction work alongside the topology queue, not a new fitted comparison.
