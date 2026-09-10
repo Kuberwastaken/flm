@@ -4,29 +4,58 @@
 
 [![FLM: a compact modeled subset of the male fruit-fly connectome, trained from scratch and inspectable in the browser.](public/brand/flm-social.png)](https://flm.kuber.studio)
 
-**Can measured neural wiring provide a useful prior for language learning?** FLM is a small recurrent next-token predictor by **Kuber Mehta** that puts this question into a runnable experiment. Its recurrent connections follow a declared subset of the fruit-fly connectome. Its embeddings, edge magnitudes, update rates and readout learn from text, starting without a pretrained language model.
+**Can measured neural wiring provide a useful prior for language learning?** FLM is a small recurrent next-token predictor by **Kuber Mehta**. It learns from scratch within a declared subset of the fruit-fly connectome.
 
-ChatFLM lets you generate text, inspect token probabilities and actual neural state in 3D, silence neurons, and fit a separate readout adapter to your own text. It runs locally in your browser. The name describes the interface: the current models are research prototypes for continuation, with limited coherence and no instruction-following training.
+ChatFLM runs inference in your browser, with token probabilities, actual neural state in 3D, neuron interventions and a separate readout adapter. The models generate continuations with limited coherence; they have no instruction-following training.
 
-**The completed language comparison favors the conventional baselines.** FLM learns next-token prediction, but its WikiText test loss is worse than the matched GRU and transformer. Whether the measured graph itself helps remains the central open experiment. The project publishes negative results, fixed-prompt outputs, full study records and tools to check those claims.
+## Language results
 
-## Where the research stands
+**FLM trails both matched neural baselines on the completed WikiText comparison.** Lower test bits per byte (BPB) is better.
 
-Snapshot: **10 September 2026**. The [Research view](https://flm.kuber.studio/#research) exposes dated progress and complete results.
+![Completed WikiText test losses for all six selected checkpoints: FLM has higher bits per byte than the GRU and transformer.](docs/figures/readme-wikitext.png)
 
-| Question | Study | Finding or current status |
-|---|---|---|
-| Can this model learn text? | WikiText-2, three architectures × two seeds | Complete. FLM **1.9744**, GRU **1.9049**, transformer **1.8767** test bits/byte; lower is better. |
-| Does measured wiring help language? | Three independently rewired graphs × two seeds, plus two retrained slow-state controls | **3 of 8 new controls complete.** Test scoring waits for every run and all ten checkpoint selections, including measured references. |
-| Do anatomy and local learning help memory tasks? | 60 cue/context runs: five learning rules × two topologies × two tasks × three seeds | Complete. Outcomes depend on task and learning rule; rewiring wins in some conditions. |
-| Can learned choices use feedback from a physical body? | 27 MuJoCo conditions and an exact repeat | Complete. Live pose feedback helps, but all three trained methods produce the same body paths as the scripted reference. |
-| Does the result hold with more diverse language? | BabyLM 2026, 10M/100M words × three architectures × two seeds | Data prepared; **1 of 12 training runs complete**. Paused while the language topology controls finish. |
+*Each circle or square is one training seed; diamonds are two-seed means. No uncertainty interval is shown. This [generated figure](docs/figures/readme_figures.py) reads the [published test report](public/research/test-results.json) directly.*
 
-These studies answer different questions. The small sensory networks used in behavior experiments have separate weights and inputs from the language models.
+| Model | Parameters | Seed 42 test BPB | Seed 43 test BPB | Mean test BPB |
+|---|---:|---:|---:|---:|
+| FLM | 600,003 | 1.9732 | 1.9756 | **1.9744** |
+| GRU | 595,408 | 1.9045 | 1.9052 | **1.9049** |
+| Transformer | 607,468 | 1.8770 | 1.8764 | **1.8767** |
+
+All six runs share the official article partitions, tokenizer and 6,000-update budget. Within each seed, the three architectures receive identical sampled training windows. Each run receives 9,216,000 input-token presentations. The final score covers all 60 test articles and 1,287,656 target bytes. BPB measures next-token codelength divided by exact UTF-8 target bytes; it is not the word-token perplexity often quoted for WikiText.
+
+Both FLM seeds trail both baselines. The [article-level scores and paired bootstrap intervals](public/research/test-results.json) make the comparison inspectable; the intervals are conditional on the fitted checkpoints, not estimates over many independently trained models. The Research view also includes [fixed-prompt continuations](public/research/samples-index.json), [grammar diagnostics](public/research/grammar-results.json) and [measured inference costs](public/research/runtime.json). Attractive samples are not the selection criterion.
+
+## The critical control: change the wiring
+
+**Priority as of 10 September 2026: finish the language topology study.** Three of eight new controls are complete. BabyLM remains paused; new transfer and behavior experiments are deferred.
+
+![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
+
+*Orange and green denote modeled edge signs; blank entries have no edge. These are graph matrices, not neural activity. Every panel contains 1,024 neurons and 76,130 edges.*
+
+The [language topology protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) holds the rest of the language machinery fixed and trains three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling are preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
+
+Two further models are retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All checkpoint selections must be frozen before any new control test losses are read. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated validation snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
+
+After this comparison, [proposed language controls](docs/LANGUAGE-CORE-CONTROLS.md) would freeze recurrent dynamics while learning the interfaces, and separately remove lateral recurrence. These are future experiments. Existing recurrence-disabled interventions retain fast/slow state; they are not memoryless controls.
 
 ## How FLM predicts a token
 
 The current lexical model has **1,024 retained neurons, 76,130 directed edges and 600,003 trainable parameters**. A learned 4,096-token byte-BPE vocabulary connects text to a signed recurrent core. Pooling combines the core's fast and slow state, then a tied lexical readout predicts the next token.
+
+Each token updates fast and slow recurrent state through fixed edge locations. A transformer instead computes content-dependent attention. The primary language model still learns through backpropagation; the structural prior and sequence computation are the differences.
+
+The [subset audit](docs/SUBSET-AUDIT.md) reproduces the selection: rank 32,164 `cb_intrinsic` neurons by incoming-plus-outgoing raw contacts within that eligible population, break ties by body ID, and retain 1,024. This is an anatomical eligibility rule and connectivity ranking with a computational size limit, **not an intact circuit**. The subset contains **0.61% of the 166,700 acquired neurons**.
+
+The boundary cuts **79.42% of incoming and 73.96% of outgoing raw contacts**, using different denominators; these fractions do not measure lost functional current. A separate source-sign filter removes 12,327 internal connections, leaving 76,130. Literal labels include zero of 4,064 `KC`-prefix neurons, 48 of 97 `MBON`-prefix neurons and six of 50 `EPG`-prefix neurons; those counts do not certify circuit membership. See the [audit records](reports/subset-audit/summary.json) and [graph provenance](data/graphs/central-1024/graph-card.json).
+
+The core is a differentiable rate network. Contact counts and neurotransmitter annotations inform versioned modeling choices, rather than recovering measured synaptic strengths or pretrained knowledge.
+
+<details>
+<summary>Architecture diagram, update equations and comparison with a transformer</summary>
+
+The recorded graph commit precedes the first trainer, with no recorded performance-based subset search. This documents the tracked procedure; it does not prove what unrecorded design choices occurred. The [subset audit](docs/SUBSET-AUDIT.md) retains the history and exact source replay.
 
 ```mermaid
 flowchart LR
@@ -60,54 +89,69 @@ logits     = tied_lexical_readout(features)
 
 The difference is the computation and structural prior; the primary language experiment still uses gradient-based learning. The recurrent state occupies **8 KiB in float32**, independent of sequence length. A GRU also has constant-size recurrent memory. That count excludes weights, temporary activations and adapters, and the compressed state can forget information. The measured CPU implementation is slower than both baselines; sparse connectivity alone does not establish an energy advantage. See the [architecture specification](docs/ARCHITECTURE.md) and [runtime observations](public/research/runtime.json).
 
-The core is a differentiable rate network. Contact counts and neurotransmitter annotations inform explicitly versioned modeling choices; they do not recover measured functional synaptic strengths or pretrained knowledge. The complete acquired graph contains 166,700 neurons, while this language release trains only its declared subset. See [graph provenance](data/graphs/central-1024/graph-card.json) and the [source research](docs/RESEARCH.md).
+</details>
 
-## Language results
+FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The baseline comparison is complete; the rewired and retrained slow-state comparisons are still running. The evidence currently supports a working experimental platform, while the anatomical language-prior hypothesis remains unresolved.
 
-![Completed WikiText test losses for all six selected checkpoints: FLM has higher bits per byte than the GRU and transformer.](docs/figures/readme-wikitext.png)
+## Run ChatFLM locally
 
-*Each circle or square is one training seed; diamonds are two-seed means. No uncertainty interval is shown. This [generated figure](docs/figures/readme_figures.py) reads the [published test report](public/research/test-results.json) directly.*
+Requires **Node.js 22.12 or newer**. Browser checkpoints, tokenizer and attributed anatomical/body assets are included. No hosted inference API or key is required.
 
-| Model | Parameters | Seed 42 test BPB | Seed 43 test BPB | Mean test BPB |
-|---|---:|---:|---:|---:|
-| FLM | 600,003 | 1.9732 | 1.9756 | **1.9744** |
-| GRU | 595,408 | 1.9045 | 1.9052 | **1.9049** |
-| Transformer | 607,468 | 1.8770 | 1.8764 | **1.8767** |
+```sh
+npm ci --ignore-scripts
+npm run dev -- --port 5180
+```
 
-All six runs share the official article partitions, tokenizer and 6,000-update budget. Within each seed, the three architectures receive identical sampled training windows. Each run receives 9,216,000 input-token presentations. The final score covers all 60 test articles and 1,287,656 target bytes. BPB measures next-token codelength divided by exact UTF-8 target bytes; it is not the word-token perplexity often quoted for WikiText.
+<details>
+<summary>Production preview, deployment and browser adaptation</summary>
 
-Both FLM seeds trail both baselines. The [article-level scores and paired bootstrap intervals](public/research/test-results.json) make the comparison inspectable; the intervals are conditional on the fitted checkpoints, not estimates over many independently trained models. The Research view also includes [fixed-prompt continuations](public/research/samples-index.json), [grammar diagnostics](public/research/grammar-results.json) and [measured inference costs](public/research/runtime.json). Attractive samples are not the selection criterion.
+Open the URL printed by Vite. For a production build:
 
-### The critical control: change the wiring
+```sh
+npm run build
+node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5181 --strictPort
+```
 
-![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
+GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.kuber.studio`. The repository remains private while the generated website and standalone release archives are public.
 
-*Orange and green denote modeled edge signs; blank entries have no edge. These are graph matrices, not neural activity. Every panel contains 1,024 neurons and 76,130 edges.*
+Text inference runs in a CPU worker; optional 3D views require WebGL. Conversations and adaptation stay in the browser. A separate output adapter can be reset, saved and exported; it does not modify the bundled checkpoint and is bound to a checkpoint hash. Save session learning before switching models. Adapter changes cannot alter recurrent activity for a fixed input sequence, though they can change generated tokens and therefore later activity. These browser updates are distinct from training the language core or the sensory networks.
 
-The [language topology protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) holds the rest of the language machinery fixed and trains three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling are preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
+</details>
 
-Two further models are retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All checkpoint selections must be frozen before any new control test losses are read. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated validation snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
+## Try FLM, GRU and transformer
 
-## Data: beyond meeting transcripts
+The [six-model inference bundle](https://flm.kuber.studio/research/wikitext2-inference.zip) includes both published training seeds for each architecture, their shared tokenizer, the measured graph and a standalone Python runtime. It works without this repository or the training corpus. Follow the [public installation guide](https://flm.kuber.studio/research/inference-guide.html), then run inside the extracted bundle:
 
-| Corpus | Role | Handling |
-|---|---|---|
-| **WikiText-2 raw** | Completed standard matched comparison; 600 training articles, 2.05 million training words | Original text and official 600/60/60 article partitions; vocabulary learned only on training text. |
-| **BabyLM 2026 English** | Continuing 10M- and 100M-word comparison | Six spoken/written components; shared 10M-fitted vocabulary, source-indexed caches, normalized-line overlap audit and a declared filtered sensitivity analysis. |
-| **AMI Meeting Corpus** | Earlier dialogue-focused browser model | Manual meeting transcripts; declared participant-disjoint splits and normalization. |
-| **SCAN** | Prepared instruction-transfer benchmark; 20,910 artificial commands | Three official train/test splits, preserved repeated examples and a reversible action codec; no model results yet. |
+```sh
+python -X utf8 -m flm.inference --model flm --prompt "The history of science"
+python -X utf8 -m flm.inference --model gru --prompt "The history of science"
+python -X utf8 -m flm.inference --model transformer --prompt "The history of science"
+```
 
-BabyLM includes spoken BNC, CHILDES, Gutenberg, OpenSubtitles, Simple Wikipedia and Switchboard components. The scale labels refer to corpus word budgets, not model parameter counts. Its common tokenizer and fixed validation panel keep comparisons interpretable; full official test scoring and per-source results wait for the complete registered study. See the [BabyLM protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md) and [acquisition status](docs/DATA-STATUS.md).
+The [release record](public/research/inference-release.json) identifies all original selected checkpoints and the archive's SHA-256. Exported tensors and fixed buffers match their sources; all 24 published continuations replay under the tested CPU environment. ChatFLM's browser engine remains FLM-only. See [runtime and sampling details](docs/INFERENCE-BUNDLE.md).
 
-Training uses orthographic text, not audio. No pretrained embeddings, synthetic teacher corpus or private conversations enter the primary experiment. Source revisions, hashes, transformations and split rules are recorded in [dataset cards](data/cards/). Raw corpora stay local, and upstream component rights remain in force.
+## Data and deferred work
 
-SCAN is a separate test of command composition, not an additional human-language
-pretraining corpus. The [data audit and transfer design](docs/INSTRUCTION-TRANSFER.md)
-explain why literal action labels would introduce a context-length confound and
-how one existing token per action keeps every example within 72 tokens. Its
-grammar oracle checks source integrity only; it never supplies model predictions.
+| Corpus | Role and handling |
+|---|---|
+| **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Prepared and paused after 1 of 12 training runs; shared 10M-fitted tokenizer and overlap audit. |
+| **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
+| **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 
-## Learning and behavior studies
+Training uses text, without pretrained embeddings, synthetic teacher corpora or private conversations. [Dataset cards](data/cards/) record revisions, hashes and transformations; raw corpora stay local. See [BabyLM's protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md), [acquisition status](docs/DATA-STATUS.md) and [SCAN's data audit](docs/INSTRUCTION-TRANSFER.md).
+
+## Completed learning and behavior studies
+
+These studies use separate sensory networks and engineered motor interfaces. They do not test whether language knowledge changes a fly's behavior.
+
+| Study | Main finding |
+|---|---|
+| [60 cue/context runs](docs/WIRING-RESULTS.md) | Anatomy and learning-rule effects vary by task; rewired graphs win in some conditions. |
+| [27 physical feedback conditions + repeat](docs/CLOSED-LOOP-REPRODUCTION.md) | Live pose feedback helps; all three trained methods match the scripted reference's physical paths. |
+
+<details>
+<summary>Learning curves, simulated fly video, physical trajectories and full findings</summary>
 
 ### Memory, reversal and learning rules
 
@@ -143,6 +187,8 @@ The complete audit independently replays **10,800 control frames and 972 delayed
 
 The language weights are not used in this assay, and no motor learning occurs during it. Earlier [40-case physical replays](public/research/learned-choice.json) used choices made before simulation; they remain a separate experiment. ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
 
+</details>
+
 ## Papers and evidence
 
 All five papers are working reports for the continuing program. They include limitations and reproduction boundaries; they are not claims of peer review.
@@ -157,39 +203,12 @@ All five papers are working reports for the continuing program. They include lim
 
 The [public LaTeX source archive](https://flm.kuber.studio/research/paper-source.zip) contains sources, generated tables and figures. [Build instructions](papers/README.md) describe the toolchain. [Research consolidation](docs/RESEARCH.md) connects the work to primary connectomics, recurrent-model and eligibility-trace literature; [the continuing program](docs/RESEARCH-PROGRAM.md) separates completed evidence from proposed experiments.
 
-## Run ChatFLM locally
+## Reproduce and verify
 
-Requires **Node.js 22.12 or newer**. Browser checkpoints, tokenizer and attributed anatomical/body assets are included. No hosted inference API or key is required.
+The [matched language protocol](docs/WIKITEXT-PROTOCOL.md) and [topology operations guide](docs/LANGUAGE-TOPOLOGY-OPERATIONS.md) define the active experiment. Preserve frozen inputs and completed observations; run only one writer per output directory. Training and full evaluation can take many hours on a laptop.
 
-```sh
-npm ci --ignore-scripts
-npm run dev -- --port 5180
-```
-
-Open the URL printed by Vite. For a production build:
-
-```sh
-npm run build
-node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5181 --strictPort
-```
-
-GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.kuber.studio`. The repository remains private while the generated website and standalone release archives are public.
-
-Text inference runs in a CPU worker; optional 3D views require WebGL. Conversations and adaptation stay in the browser. A separate output adapter can be reset, saved and exported; it does not modify the bundled checkpoint and is bound to a checkpoint hash. Save session learning before switching models. Adapter changes cannot alter recurrent activity for a fixed input sequence, though they can change generated tokens and therefore later activity. These browser updates are distinct from training the language core or the sensory networks.
-
-## Try FLM, GRU and transformer
-
-The [six-model inference bundle](https://flm.kuber.studio/research/wikitext2-inference.zip) includes both published training seeds for each architecture, their shared tokenizer, the measured graph and a standalone Python runtime. It works without this repository or the training corpus. Follow the [public installation guide](https://flm.kuber.studio/research/inference-guide.html), then run inside the extracted bundle:
-
-```sh
-python -X utf8 -m flm.inference --model flm --prompt "The history of science"
-python -X utf8 -m flm.inference --model gru --prompt "The history of science"
-python -X utf8 -m flm.inference --model transformer --prompt "The history of science"
-```
-
-The [release record](public/research/inference-release.json) identifies all original selected checkpoints and the archive's SHA-256. Exported tensors and fixed buffers match their sources; all 24 published continuations replay under the tested CPU environment. ChatFLM's browser engine remains FLM-only. See [runtime and sampling details](docs/INFERENCE-BUNDLE.md).
-
-## Reproduce the experiments
+<details>
+<summary>Training commands, acquisition, study entry points and physics environments</summary>
 
 The language environment requires Python 3.10 or newer; measured runs use PyTorch 2.8.0 on CPU. Raw corpora and training intermediates are ignored by Git. Training and full evaluation can take many hours on a laptop. Use separate output directories for different protocols, and never launch a second writer against an active run.
 
@@ -214,7 +233,10 @@ Acquisition verifies pinned revisions, sizes and SHA-256 hashes. Article groupin
 
 Physical simulation uses its own Python 3.12 environment and [pinned dependencies](requirements-embodied-lock.txt). Auditing released trajectories requires only NumPy and the included source; rerunning the physics requires FlyGym/MuJoCo. Keep a new simulation's identity and observations separate from downloaded records.
 
-## Verification, layout and contribution
+</details>
+
+<details>
+<summary>Verification commands and repository layout</summary>
 
 ```sh
 python -m unittest discover -s tests -p "test_*.py"
@@ -234,6 +256,8 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 | `docs/`, `papers/`, `tests/` | Protocols, research decisions, LaTeX sources and verification |
 | `runs/`, `data/raw/`, `data/processed/` | Local, untracked training and corpus intermediates |
 
-The immediate priority is to finish and interpret the matched language topology study, then resume the registered BabyLM comparison. Language-to-control transfer, learned balance/gait and whole-connectome training remain later experiments. Contributions should preserve provenance, add meaningful checks for changed behavior, retain unsuccessful runs and avoid changing a study's frozen machinery mid-run. Work is recorded in sequential, descriptive commits.
+</details>
+
+Finish and interpret the topology comparison before resuming BabyLM. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).
