@@ -1,11 +1,11 @@
 {
-  "verified_utc": "2026-09-10T20:07:15.172768+00:00",
+  "verified_utc": "2026-09-10T20:43:42.663698+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
-  "condition": "fixed_dynamics-s42",
-  "saved_step": 4000,
-  "committed_checkpoints": 8,
-  "checkpoint_sha256": "c177e58ee7d154ee06e323f524f68b264ca49c1215bf64e0e0e2de3cee19f4cd",
-  "frozen_tensors_match_initialization": true,
+  "condition": "no_lateral-s42",
+  "saved_step": 1000,
+  "committed_checkpoints": 2,
+  "checkpoint_sha256": "247a2fdf88bf16d1d6a279921701ea58f0df84a20b68eab5a27c4893c0bfb8cc",
+  "frozen_tensors_match_initialization": null,
   "graph_pooling_optimizer_rng_and_exposure_verified": true,
   "source_identity_verified": true,
   "queue_session_id": 20410,
@@ -15,5 +15,25 @@
   "release_gate_preflight": "reports/language-core/report-gate-preflight.json",
   "export_preflight": "reports/language-core/inference-export-preflight.json",
   "arithmetic_preflight": "reports/language-core/arithmetic-preflight.json",
-  "records_preflight": "reports/language-core/records-preflight.json"
+  "records_preflight": "reports/language-core/records-preflight.json",
+  "completed_new_fits": [
+    {
+      "label": "fixed_dynamics-s42",
+      "control": "fixed_dynamics",
+      "seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/language-core-v1/fixed_dynamics-s42",
+      "checkpoint": "runs/language-core-v1/fixed_dynamics-s42/checkpoint-006000.pt",
+      "checkpoint_sha256": "663f8088c78754db8163c1342a9f80546bcfe4e9966be43ee846e7f1b58f560d",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.91526921917729,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 521824,
+      "frozen_parameters": 78179
+    }
+  ],
+  "completed_new_fit_count": 1,
+  "planned_new_fit_count": 6,
+  "fixed_core_completed_all_12_checkpoints_verified": true
 }
