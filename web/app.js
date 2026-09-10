@@ -1,7 +1,7 @@
 import './style.css';
 import { loadResearch } from './research.js';
 import { BrainView, FlyView } from './views.js';
-import { STORAGE_KEY, ADAPTER_KEY, validateConversations, contextFor, download } from './storage.js';
+import { STORAGE_KEY, ADAPTER_KEY, validateConversations, conversationForModel, contextFor, download } from './storage.js';
 
 const $ = id => document.getElementById(id);
 const selectedModel = new URLSearchParams(location.search).get('model') === 'ami' ? 'ami' : 'wikitext';
@@ -22,6 +22,7 @@ function current() { return conversations.find(x => x.id === currentId); }
 function setBusy(value) {
   busy = value;
   document.querySelectorAll('[data-idle]').forEach(element => { element.disabled = !ready || value; });
+  for (const id of ['generate', 'rename-chat', 'delete-chat']) $(id).disabled ||= !current();
   $('stop').disabled = !value || operation !== 'generate';
   $('stop-learning').disabled = !value || operation !== 'learn';
   $('prompt').readOnly = value;
@@ -36,6 +37,7 @@ function choices() {
   $('conversation').replaceChildren(...conversations.map(item => {
     const option = document.createElement('option'); option.value = item.id; option.textContent = item.title; return option;
   }));
+  if (!current()) $('conversation').prepend(new Option('Choose a saved conversation', ''));
   $('conversation').value = currentId;
 }
 function makeMessage(message) {
@@ -49,7 +51,13 @@ function makeMessage(message) {
   article.append(header, body); $('messages').append(article); return article;
 }
 function renderConversation() {
-  const conversation = current(); if (!conversation) return;
+  const conversation = current();
+  if (!conversation) {
+    choices(); $('messages').replaceChildren();
+    const message = document.createElement('p'); message.className = 'empty';
+    message.textContent = 'The archive holds 100 conversations. Export or delete a saved conversation to make room for this model.';
+    $('messages').append(message); setBusy(busy); return;
+  }
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
   $('prompt-label').textContent = conversation.mode === 'dialogue' ? 'Your turn' : 'Text to continue';
   $('capability').textContent = isLexical
@@ -78,11 +86,10 @@ try {
   if (saved) conversations = validateConversations(JSON.parse(saved));
 } catch { storageBlocked = true; notice('Saved conversations could not be read. Existing storage is preserved; this session will not overwrite it. Export new conversations to keep them.'); }
 const requestedConversation = new URLSearchParams(location.search).get('conversation');
-const matchingConversation = conversations.find(x => x.id === requestedConversation && (x.modelPackage || 'ami') === selectedModel)
-  || conversations.find(x => (x.modelPackage || 'ami') === selectedModel);
+const matchingConversation = conversationForModel(conversations, selectedModel, requestedConversation);
 if (matchingConversation) { currentId = matchingConversation.id; renderConversation(); }
 else if (conversations.length < 100) newConversation(isLexical ? 'completion' : 'dialogue');
-else { currentId = conversations[0].id; renderConversation(); }
+else { currentId = ''; renderConversation(); }
 $('model').value = selectedModel;
 $('mode').querySelector('[value="dialogue"]').disabled = isLexical;
 $('prompt').placeholder = isLexical ? 'The history of science' : 'What should we make together?';
@@ -108,12 +115,13 @@ window.addEventListener('hashchange', showPage); showPage();
 $('new-chat').onclick = () => newConversation();
 $('conversation').onchange = () => {
   const target = conversations.find(x => x.id === $('conversation').value);
+  if (!target) return;
   if ((target.modelPackage || 'ami') !== selectedModel) { switchModel(target.modelPackage || 'ami', target.id); return; }
   currentId = target.id; lastPrompt = ''; renderConversation();
 };
 $('mode').onchange = () => {
   const mode = $('mode').value;
-  if (current().messages.length) newConversation(mode);
+  if (!current() || current().messages.length) newConversation(mode);
   else { current().mode = mode; store(); renderConversation(); }
 };
 $('rename-chat').onclick = () => { $('conversation-name').value = current().title; $('rename-dialog').showModal(); };
@@ -122,7 +130,9 @@ $('delete-chat').onclick = () => $('delete-dialog').showModal();
 $('delete-dialog').addEventListener('close', () => {
   if ($('delete-dialog').returnValue !== 'delete') return;
   conversations = conversations.filter(x => x.id !== currentId);
-  if (!conversations.length) newConversation(); else { currentId = conversations[0].id; store(); renderConversation(); }
+  const next = conversationForModel(conversations, selectedModel);
+  if (!next) newConversation(isLexical ? 'completion' : 'dialogue');
+  else { currentId = next.id; lastPrompt = ''; store(); renderConversation(); }
 });
 $('export-chats').onclick = () => download('chatflm-conversations.json', JSON.stringify(conversations, null, 2));
 async function importFile(input, limit, callback) {
@@ -135,7 +145,10 @@ $('import-chats').onchange = () => importFile($('import-chats'), 3000000, text =
   const imported = validateConversations(JSON.parse(text));
   const merged = [...conversations];
   for (const item of imported) merged.push({ ...item, id: crypto.randomUUID() });
-  conversations = validateConversations(merged); currentId = conversations.at(-1)?.id || currentId;
+  conversations = validateConversations(merged);
+  const next = conversationForModel(conversations, selectedModel, conversations.at(-1)?.id);
+  if (next) currentId = next.id;
+  lastPrompt = '';
   store(); renderConversation(); notice(`Imported ${imported.length} conversations.`);
 });
 
@@ -143,6 +156,7 @@ $('composer').onsubmit = event => {
   event.preventDefault(); if (!ready || busy) return;
   const text = $('prompt').value.trim(); if (!text) return;
   const conversation = current();
+  if (!conversation || (conversation.modelPackage || 'ami') !== selectedModel) { notice('Select a conversation for this model before continuing.'); return; }
   if (conversation.messages.length >= 198) { notice('This conversation is full. Start a new one to continue.'); return; }
   const message = { role: 'user', text }; conversation.messages.push(message);
   const prompt = contextFor(conversation);
