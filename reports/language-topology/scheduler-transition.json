@@ -1,0 +1,127 @@
+{
+  "label": "null101-s42",
+  "saved_step": 5000,
+  "checkpoint_sha256": "7c6493b33518d005ab86fb924f7332d75181c07efd855933a2f09c8fe512a34c",
+  "best_step": 5000,
+  "best_sha256": "855d13c20de0f30dd0612beb9ff4c309eb8160f96b6c8a90fe8fc025912015cc",
+  "exposure": {
+    "presented_tokens": 7680000,
+    "presented_bytes": 27215790,
+    "scored_bytes": 22684926
+  },
+  "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "verified_sampler_and_graph_buffers": true,
+  "reason": "Resume identical state under bounded condition concurrency",
+  "replay_verification": {
+    "checked_utc": "2026-09-10T09:23:53.382312+00:00",
+    "verifier_sha256": "b669ec58f705dd148bcc14e2125824a6241bc318b65cd676314da811ff814815",
+    "matching_logged_updates_after_resume": 200,
+    "comparisons": [
+      {
+        "step": 5100,
+        "exact_fields": [
+          "train_loss",
+          "gradient_norm",
+          "learning_rate",
+          "presented_tokens",
+          "presented_bytes",
+          "scored_bytes"
+        ],
+        "original": {
+          "step": 5100,
+          "train_loss": 4.637316851615906,
+          "tokens_per_second": 2423.9002893393695,
+          "learning_rate": 0.00030138313244908573,
+          "presented_tokens": 7833600,
+          "presented_bytes": 27761296,
+          "scored_bytes": 23139350,
+          "gradient_norm": 0.72503662109375,
+          "attempt_seconds": 4019.294849599999
+        },
+        "resumed": {
+          "step": 5100,
+          "train_loss": 4.637316851615906,
+          "tokens_per_second": 1683.232575571945,
+          "learning_rate": 0.00030138313244908573,
+          "presented_tokens": 7833600,
+          "presented_bytes": 27761296,
+          "scored_bytes": 23139350,
+          "gradient_norm": 0.72503662109375,
+          "attempt_seconds": 91.25299680000171
+        }
+      },
+      {
+        "step": 5200,
+        "exact_fields": [
+          "train_loss",
+          "gradient_norm",
+          "learning_rate",
+          "presented_tokens",
+          "presented_bytes",
+          "scored_bytes"
+        ],
+        "original": {
+          "step": 5200,
+          "train_loss": 4.621844329833984,
+          "tokens_per_second": 2727.3495308303004,
+          "learning_rate": 0.0002804287044305781,
+          "presented_tokens": 7987200,
+          "presented_bytes": 28307303,
+          "scored_bytes": 23594416,
+          "gradient_norm": 0.7218922972679138,
+          "attempt_seconds": 4075.613956099998
+        },
+        "resumed": {
+          "step": 5200,
+          "train_loss": 4.621844329833984,
+          "tokens_per_second": 1520.5127519826221,
+          "learning_rate": 0.0002804287044305781,
+          "presented_tokens": 7987200,
+          "presented_bytes": 28307303,
+          "scored_bytes": 23594416,
+          "gradient_norm": 0.7218922972679138,
+          "attempt_seconds": 192.27245890000268
+        }
+      }
+    ],
+    "limitation": "Equality of logged losses, gradient norms and exposure fields; no old 5100/5200 full-tensor checkpoint exists for an independent tensor comparison."
+  },
+  "scheduler": {
+    "event": "scheduler-start",
+    "pid": 4972,
+    "maximum_workers": 2,
+    "threads_per_worker": 4,
+    "minimum_available_mib_for_additional_worker": 2048,
+    "study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+    "scheduler_sha256": "ecd2faee1ebf859ca6b9362c1936ee0a1ce9c7a7303013f732becdea2818af32",
+    "pending": [
+      "null101-s42",
+      "null103-s42",
+      "null107-s42",
+      "no-slow-s42",
+      "null101-s43",
+      "null103-s43",
+      "null107-s43",
+      "no-slow-s43"
+    ],
+    "test_scoring_after_completion": true
+  },
+  "observed_live_trainers": [
+    {
+      "ProcessId": 13944,
+      "CommandLine": "C:\\Users\\yokub\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe -X utf8 -m flm.language_train --variant flm --graph data/graphs/central-1024-null101/graph.npz --seed 42 --steps 6000 --threads 4 --output runs/language-topology-v1/null101-s42 --resume \"X:\\Bigger-Projects\\fruit fly\\flm\\runs\\language-topology-v1\\null101-s42\\last.pt\""
+    },
+    {
+      "ProcessId": 14624,
+      "CommandLine": "C:\\Users\\yokub\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe -X utf8 -m flm.language_train --variant flm --graph data/graphs/central-1024-null103/graph.npz --seed 42 --steps 6000 --threads 4 --output runs/language-topology-v1/null103-s42"
+    }
+  ],
+  "concurrent_resource_observation": {
+    "available_mib": 3003,
+    "pages_input_per_second": 0,
+    "page_reads_per_second": 0,
+    "cpu_percent": 53,
+    "checked_utc": "2026-09-10T09:23:53.2081123Z",
+    "qualification": "One observed resource sample on the shared laptop, not an isolated performance benchmark."
+  }
+}

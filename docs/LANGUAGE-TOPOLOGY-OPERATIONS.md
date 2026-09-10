@@ -71,3 +71,20 @@ checkpoint verification, serial fallback under memory pressure, a real second
 process blocked by the OS lease, lock release, exact command settings and
 rejection of unverified resume state. The existing numerical/resume/selection
 tests remain applicable because their implementations are unchanged.
+
+The transition was executed at the first control's verified update-5,000 save.
+Its old queue, child and finalizer were identified by command and stopped.
+The new scheduler resumed graph 101/seed 42 and started graph 103/seed 42 from
+scratch. The two 100-update windows ending at 5,100 and 5,200 exactly reproduce
+their earlier logged loss, gradient norm, learning rate and exposure fields.
+This is evidence about those fields, not an independent comparison of old
+5,100/5,200 parameter tensors, which were not saved. The transition report
+retains both original/resumed rows, checkpoint hashes, actual live process
+commands, scheduler identity and the one-time verification source hash.
+
+After both workers began, observed aggregate interval throughput was about
+3,000 input tokens/second, compared with approximately 2,400–2,700 in the prior
+single-worker intervals. The recorded resource check saw 53% total CPU usage,
+3,003 MiB available RAM and no page reads. These are operational observations
+with different overlapping windows on a shared laptop, not a controlled
+hardware benchmark or a change to the matched language training budget.

@@ -233,3 +233,21 @@ difference +0.0016; that is partial validation, not a test conclusion. The
 graph JSON, graph ZIP, node CSV, PNG/SVG figures and progress snapshot all match
 local bytes; `reports/language-topology/structure-release.json` records their
 verified SHA-256 hashes and deployment identity.
+
+## Bounded training scheduler and preserved-state handoff
+
+Six new scheduler tests pass, including a real competing process rejected by
+the OS lease, release of that lease, the two-child bound, stopping new launches
+after a failed child, verification-failure cleanup, memory-based serial fallback
+and verified command/resume settings. Existing numerical sources are unchanged
+and pass the frozen identity check. This addition does not change frontend code.
+
+The legacy queue, child and finalizer were stopped after verifying the complete
+5,000-update last/best checkpoint pair. The replacement queue owns two live
+training processes with distinct registered outputs and four threads each.
+Two replayed 100-update windows match the old loss, gradient norm, rate and
+exposure fields exactly. `reports/language-topology/scheduler-transition.json`
+records the checkpoint hashes, both old/new rows, new scheduler source hash,
+actual process commands and resource observation. It does not claim an old
+parameter-tensor comparison at unsaved intermediate updates. The dated public
+snapshot is still gated on saved checkpoints, and no new control test was read.

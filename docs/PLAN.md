@@ -77,7 +77,7 @@ its controls. Three null graphs are crossed with both original WikiText seeds;
 two further measured-graph models retrain without slow state. Every condition
 uses the original 6,000-update exposure. The historical/current trainers match
 exactly on initialization, ten updates, sampling and validation replay for both
-seeds. The new serial queue is running. Test evaluation refuses to begin until
+seeds. The bounded two-worker queue is running. Test evaluation refuses to begin until
 all eight new runs finish and all ten checkpoint selections are frozen. Only
 then resume the larger BabyLM queue, saved at FLM 12,000 and GRU 6,500 updates.
 
