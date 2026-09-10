@@ -100,7 +100,8 @@ readouts. At each cycle record sampled pose/error, target, chosen action,
 probabilities, decision time, motor command and whether the deadband applied.
 
 Primary diagnostic: time-mean absolute true bearing error across the complete
-two-second trajectory. Also report final absolute error, final target distance,
+two-second trajectory, using trapezoidal integration of the 1 ms records divided
+by two seconds. Also report final absolute error, final target distance,
 change in distance to the current target within each scenario phase, heading,
 minimum thorax height and up-axis component, contact count and command switches.
 Treat orientation/height as diagnostics, not a validated fall detector. Report

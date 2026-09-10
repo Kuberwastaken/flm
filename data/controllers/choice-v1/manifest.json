@@ -1,0 +1,66 @@
+{
+  "format": "flm-choice-inference-v1",
+  "models": [
+    {
+      "id": "initial",
+      "method": "bptt",
+      "training_seed": 17,
+      "checkpoint_step": 0,
+      "file": "initial.npz",
+      "sha256": "56098c1834b604fe6115ba2e152d8e33dbd8fd702d2cb313f73cee0eda11af9e",
+      "source_checkpoint_sha256": "82d569f6ef13725fb57464289a805638a7cfbd89bfa0270718f76a570e963daf",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "bptt",
+      "method": "bptt",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "bptt.npz",
+      "sha256": "44b5b93166cc6075d2730e781f49731d9b1caedcb481a461d6ffa4574bd4052b",
+      "source_checkpoint_sha256": "d6caf16be84e342b06754af1c1aecedb588deb9fbb3bbbc84696b0738651bf28",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "reservoir",
+      "method": "reservoir",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "reservoir.npz",
+      "sha256": "a31df5566a8e4e64ccf92c5fcc2f2535fa5e2ceb1514d98a0fe7da798602a7df",
+      "source_checkpoint_sha256": "1ed298373359ffda490f07261b7d58b62e2a144a0b1d16a8b2d0b4e8f93862b8",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    },
+    {
+      "id": "eligibility",
+      "method": "eligibility",
+      "training_seed": 17,
+      "checkpoint_step": 900,
+      "file": "eligibility.npz",
+      "sha256": "078dc6e8bfbcd90338e099d6a5e56416434c6add7324e5f1ba571e2f3e5d8065",
+      "source_checkpoint_sha256": "4bc56f4187a10d1f56ecbeaa7ad4504b2054f748baca5a2409d29ac2a07ded22",
+      "graph_sha256": "0813d767bf6d7f8b6ef3a22a6df3bf0b1713e63c92a8a90be432bc7d2921306c",
+      "parameters": 8729
+    }
+  ],
+  "fixture": {
+    "file": "parity.npz",
+    "sha256": "858aaf9aaf1e80c058a840984ac25f52ab32ce52b6d1a2df99f16c06261613bb",
+    "random_seed": 8911,
+    "frames": 128,
+    "tolerance": {
+      "atol": 2e-06,
+      "rtol": 2e-05
+    },
+    "includes_original_zero_distractor_cues": true
+  },
+  "runtime_source_sha256": "e961b98ca0d2fd9a99fa46e7b70081569092a6ab62f8e501952b3c1d822c5c2d",
+  "exporter_sha256": "69995f73015785c01e56e7d0c2846f6f352ad869bed5d7373ba37ffb1674f8ee",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "initial_tensors_identical_across_methods": true,
+  "scope": "Fixed sensory-choice models; no language weights, new training or learned gait."
+}

@@ -1,0 +1,45 @@
+{
+  "environment": "Original PyTorch training environment",
+  "models": [
+    {
+      "model": "initial",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 3.725290298461914e-08,
+        "slow": 1.4901161193847656e-08,
+        "logits": 8.940696716308594e-08
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "bptt",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 8.940696716308594e-08,
+        "logits": 7.152557373046875e-07
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "reservoir",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 3.725290298461914e-08,
+        "slow": 1.4901161193847656e-08,
+        "logits": 2.384185791015625e-06
+      },
+      "argmax_exact": true
+    },
+    {
+      "model": "eligibility",
+      "frames": 128,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 8.940696716308594e-08,
+        "logits": 2.980232238769531e-07
+      },
+      "argmax_exact": true
+    }
+  ]
+}
