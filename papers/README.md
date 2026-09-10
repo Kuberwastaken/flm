@@ -1,7 +1,8 @@
 # Research papers and generated figures
 
-`flm.tex` contains the methods, completed two-seed WikiText test comparison,
-isolated CPU measurements and acute mechanism/physical controls.
+`flm.tex` contains the audited language topology and retrained slow-state
+comparisons, subset losses, completed two-seed WikiText baseline comparison,
+isolated CPU measurements and acute mechanism controls.
 `data-and-reproduction.tex` records source transformations, completed BabyLM
 preparation and reproduction boundaries. `local-learning.tex` reports fifteen
 learning-rule runs and forty physical choice replays, including negative results.
@@ -37,7 +38,7 @@ build intermediates to ignored `work/papers/`.
 
 Render every PDF page and inspect it before copying reviewed PDFs into
 `public/research/`. Check compiler logs for missing citations and overflow. The
-completed-WikiText revision has eight methods pages and five data pages. Preserve
+completed-topology revision has eight methods pages and five data pages. Preserve
 the working-report label while the larger program continues.
 
 The local-learning note has four reviewed pages. Its tables are generated from
@@ -49,7 +50,7 @@ generating scripts and published figure CSVs; raw corpora and checkpoints are
 excluded. Re-running numerical studies requires the repository and environments
 described in the main README.
 
-The source archive also includes the repository README, all six of its embedded
+The source archive also includes the repository README, all seven of its embedded
 figures, available SVG versions, component notices, and the completed WikiText
 test report used by `docs/figures/readme_figures.py`. That chart can be regenerated
 with NumPy and Matplotlib without loading a checkpoint. The README is a project
@@ -78,10 +79,16 @@ python scripts/wiring_paper_data.py
 python scripts/build_papers.py --only wiring-controls
 ```
 
-The language topology comparison remains pending. This note does not present
-toy-task outcomes as answers to the language-prior question. The separate
-language test view is implemented behind the complete-study gate and will be
-reviewed with actual test data after the eight new controls finish.
+The language topology comparison is complete and appears in the main FLM paper;
+the sensory note does not substitute toy-task outcomes for language evidence.
+After reproducing the complete study, generate its figure and numerical include
+with `python scripts/language_topology_report.py`, then rebuild with
+`python scripts/build_papers.py --only flm`. The generator verifies all ten
+selected checkpoints and scores before writing `language-topology-measured.tex`
+and its figure. The generated include, summary and `paper-inputs.json` retain
+their provenance in the source archive. Rebuilding the PDF from these included
+artifacts needs no checkpoints. The separate score ZIP supplies a NumPy-only
+arithmetic audit, and the separate ten-model ZIP supports local generation.
 
 The closed-loop note has four reviewed pages. Its measurements and figures are
 generated only from the complete physical cohort after independent causal replay:

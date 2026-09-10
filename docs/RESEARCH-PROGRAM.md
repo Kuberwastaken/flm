@@ -3,20 +3,31 @@
 This extends the compact WikiText release. WikiText is a calibration experiment,
 not the endpoint. Preserve its frozen protocol and report before moving on.
 
-## Current priority: isolate the language wiring effect
+## Current priority: isolate the language computation
 
-On 10 September, the larger-data queue was paused at saved checkpoints to
-prioritize the missing language topology comparison. The first BabyLM FLM run
-completed 12,000 updates; the GRU is saved at 6,500. Resume those runs after the
-control study rather than expanding the corpus or model first.
+The language topology study completed on 10 September. All eight new fits
+finished before all ten checkpoint selections were frozen and the new controls
+were test scored. The [complete report](../public/research/language-topology-results.json)
+shows lower loss for all six rewired fits: measured minus rewired averages
++0.001559 bits/byte, with three of six conditional article intervals including
+zero. No measured-wiring advantage is demonstrated in this subset and setup.
+The retrained slow-state comparison separately favors retaining slow state by
+0.010999 bits/byte on average. Six wiring contrasts share two measured references;
+the design does not estimate a topology-by-slow-state interaction.
 
-The [declared language protocol](LANGUAGE-TOPOLOGY-PROTOCOL.md) adds three
-independent degree/sign/self-edge-preserving graphs crossed with both WikiText
-training seeds, and two controls retrained without slow state. Original measured
-references are frozen and reused. Numerical replay checks match their historical
-initialization, optimizer updates, sampling and evaluation. All new runs must
-complete before control test scores are read. The result may favor measured
-wiring, favor rewiring or demonstrate no useful advantage under this protocol.
+The [declared protocol](LANGUAGE-TOPOLOGY-PROTOCOL.md), source identities and
+checkpoint selections remain frozen. The standalone score archive reproduces
+all arithmetic without training-code imports. The ten-model inference archive
+matches its selected tensors and buffers, all forty source continuations, and
+one fresh-archive CLI replay per condition. These checks establish the published
+record's reproducibility boundaries, not independent retraining.
+
+Next, implement the training/evaluation harness and fit the prospective
+fixed-dynamics, no-lateral-recurrence and no-temporal-state language controls.
+The larger-data queue stays paused: the first BabyLM FLM run completed 12,000
+updates and the GRU is saved at 6,500. Resume its registered comparison after
+the language computation controls; do not replace the broader data/domain study
+with this small-corpus result.
 
 The [completed 60-run cue/context study](WIRING-RESULTS.md) gives mixed results
 and cannot answer the language claim. Keep its evidence separate from language,
@@ -27,8 +38,9 @@ The [subset audit](SUBSET-AUDIT.md) explains the computational selection of
 73.96% of outgoing raw contacts. No intact learning circuit is established.
 Interpret the topology result in that restricted setting. The next language
 causality questions are [fixed recurrent dynamics, no lateral recurrence and
-no temporal state](LANGUAGE-CORE-CONTROLS.md); these are prospective controls,
-not changes to the active experiment. SCAN remains prepared and deferred.
+no temporal state](LANGUAGE-CORE-CONTROLS.md); these are prospective controls
+with tested definitions but no language fits. They must not alter the completed
+topology study. SCAN remains prepared and deferred.
 
 ## 1. Preserve the completed shared language reference
 
@@ -41,9 +53,9 @@ lower is better. Keep that negative comparison visible. The
 continuations without the training corpus or private repository.
 
 Acute recurrence and slow-state diagnostics remain separate from retrained
-ablations. Finish the degree/sign-matched rewiring experiment before attributing
-a benefit to anatomical topology. The [dated progress record](../public/research/language-topology-progress.json)
-tracks completed controls without opening the final test gate early.
+ablations. The completed degree/sign-matched rewiring experiment demonstrates
+no anatomical advantage here. Preserve its [dated snapshot](../public/research/language-topology-progress.json)
+and full score records when moving to the next study.
 
 ## 2. Scale data and measure domain differences
 
@@ -51,7 +63,7 @@ The official BabyLM 2026 Strict-Small and Strict corpora have been acquired at
 immutable revisions with their common development and test partitions. Their
 source-indexed caches, train-fitted shared tokenizer and overlap audit are ready;
 see [data status](DATA-STATUS.md) and the [evaluation declaration](BABYLM-EVALUATION.md).
-Resume the registered training comparison after the language topology study.
+Resume the registered training comparison after the language computation controls.
 The six components
 cover spoken language, child-directed speech, books, subtitles and simple
 encyclopedic text. Audit actual words, UTF-8 bytes, line/document boundaries and

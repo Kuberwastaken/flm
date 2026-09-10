@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-09-10T18:19:55.310001+00:00",
+  "pdf": "public/research/flm.pdf",
+  "pdf_sha256": "d1d88dfad5a408617394e5a48284052c51a3c5af1698a2feb190ec1a553d7f85",
+  "pdf_bytes": 735880,
+  "pages": 8,
+  "all_pages_visually_reviewed": true,
+  "rendered_page_sha256": {
+    "page-1": "8686ee3a5d8eb12b11e661abc080e77a08ae67c963316005d4473d8d7957f3a4",
+    "page-2": "6faea9b61e0f3720c950da4b5995b2e216de88166cb08e9f0b82af7367bdd4de",
+    "page-3": "e5e13691e7c87333980bd804b906f174cc35e1b0f6843926d283aeb0583889c1",
+    "page-4": "bf018837b8157c53cda83bed4411aac0a3644ba1c614f58ecfff7678bb5c7c5b",
+    "page-5": "dc4836d02349e0bebc06dcd440d2649dad17399bb44171c6da37c21c6374d55a",
+    "page-6": "f51b87de9f49251a21439c6be5e3ec4111fe66abbacf039b73b65b8b7b664da5",
+    "page-7": "acd84b9f47ae0e332809ef5ead8a8448bfec9ea17ae582bba3da5e0d2a5fe5ee",
+    "page-8": "895c75c8ba1a941c3fec7e3402865d3134b7aabac710346fba60250cf88f03bd"
+  },
+  "compiler_has_no_overflow_missing_citation_or_undefined_warnings": true,
+  "all_ten_six_decimal_test_scores_present": true,
+  "both_primary_mean_effects_present": true,
+  "author": "Kuber Mehta",
+  "paper_source_sha256": "1d5c5406292cfeea2cbc8d6bb7bd8755d0575bd7b71b70876eeabf731f51d519",
+  "generated_input_record": "reports/language-topology/paper-inputs.json",
+  "selection_sha256": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5"
+}
