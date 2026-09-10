@@ -58,11 +58,6 @@ Layer normalization uses $\epsilon=10^{-5}$. Learned bounds are $g=0.05+2.95\ope
 
 The state is causal and bounded by the leaky $\tanh$ dynamics from zero initialization. Bounded values do not guarantee long-context retention, a stable local Jacobian or a useful attractor. The slow filter adds a timescale, but its effective memory depends on recurrence, input and the learned readout. An isolated scalar filter with rate $r$ has half-life $\log(0.5)/\log(1-r)$; this is a descriptive filter property rather than a measured language-memory horizon.
 
-\begin{figure}[ht]
-\centering\includegraphics[width=.77\linewidth]{time-scales.png}
-\caption{Learned isolated-filter half-lives at browser checkpoint \BrowserUpdate. Recurrent coupling and readout can change the effective task-level memory.}
-\end{figure}
-
 At this scale PyTorch uses a dense matrix containing the sparse pattern because it was faster on the available CPU. The browser uses destination-major compressed sparse rows and stores the tied embedding once, yielding a 2,713,236-byte inference-weight package. It computes input drives on demand instead of expanding all 4,096 tokens into 1,024-dimensional cached drives. Independent PyTorch fixtures verify logits, fast state, slow state and readout features.
 
 \section{Data and matched evaluation}
@@ -102,17 +97,7 @@ All eight fits completed before all ten selected checkpoint identities were froz
 The primary effect is measured minus control test BPB; negative values favor the measured fast/slow model. All six graph/initialization contrasts and both slow-state contrasts are retained, along with per-graph, per-training-seed and grand means. Paired article bootstrap intervals use 10,000 draws with seed 31415. They condition on each fitted pair and do not include graph, initialization or dataset uncertainty. Six topology contrasts share two measured references, rather than constituting six independent replications. Full control test evaluation is underway at this source revision; no completed topology result is asserted here.
 
 \section{Language architecture comparison}
-All six registered runs completed 6,000 updates. The first table reports matched seed-42 validation prefixes; the following test comparison uses the separately frozen validation-selected checkpoints. Every selected checkpoint came from update 6,000. Graph-specific superiority cannot be inferred without matched, retrained topology controls.
-
-\begin{table}[ht]\centering
-\begin{tabular}{lrrr}\toprule
-Model & Parameters & Bits/byte & Token perplexity\\\midrule
-\MatchedRows
-\bottomrule\end{tabular}
-\caption{Matched validation at \MatchedUpdate\ updates, seed 42. Lower is better. Values are generated directly from versioned evaluation artifacts.}
-\end{table}
-\begin{figure}[ht]\centering\includegraphics[width=\linewidth]{validation.png}
-\caption{Completed seed-42 validation trajectories under the same update budget. The focused panel makes differences after early vocabulary acquisition visible.}\end{figure}
+All six registered baseline runs completed 6,000 updates. Every validation-selected checkpoint came from update 6,000. The \href{https://flm.kuber.studio/research/validation.json}{published validation trajectories} retain every saved comparison; this section focuses on full test scores. These architecture comparisons answer a different question from the controlled graph experiment above.
 
 After freezing all six checkpoint hashes and the validation-selected n-gram smoothing, the complete 60-article test partition was scored: 367,981 text tokens and 1,287,656 UTF-8 bytes. Neither test loss nor generated samples determined checkpoint selection.
 \begin{table}[ht]\centering
@@ -137,9 +122,6 @@ The earlier AMI byte experiment provides a separate negative result: at 6,000 up
 
 \section{Memory, adaptation and visible behavior}
 FLM stores 2,048 float32 state values, or 8,192 bytes per sequence. The GRU's hidden state is smaller at 800 bytes. The declared transformer's two-layer cache retains up to 95 past positions per layer and stores 164,160 float32 key/value bytes, excluding its scalar position counter. These calculations exclude weights, temporary activations, allocator overhead and adaptation. They are memory accounting, not speed or energy benchmarks.
-
-\begin{figure}[ht]\centering\includegraphics[width=.83\linewidth]{state-memory.png}
-\caption{Persistent sequence-state storage derived from the implemented dimensions. The transformer's cache is bounded; FLM is not the smallest-state comparator.}\end{figure}
 
 After training and preprocessing processes exited, an isolated four-thread float32 CPU measurement used the same 128-token prefix and 128 forced continuation tokens, one warmup and five repeats. Median prefill/decode rates were 4,060/200 tokens/s for FLM, 10,718/3,491 for GRU and 30,857/724 for transformer. Tokenization was excluded. The eager FLM path prepares recurrent weights at each forward call, including each one-token decode call; these timings describe this implementation and are not optimal-kernel, energy or hardware-independent comparisons. Measured owned state storage agrees with the dimensional accounting above.
 
