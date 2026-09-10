@@ -3,14 +3,23 @@
 `flm.tex` contains the methods, completed two-seed WikiText test comparison,
 isolated CPU measurements and acute mechanism/physical controls.
 `data-and-reproduction.tex` records source transformations, completed BabyLM
-preparation and reproduction boundaries. Both remain working reports for a
-continuing research program; larger-data training and learned motor policies are
-separate stages.
+preparation and reproduction boundaries. `local-learning.tex` reports fifteen
+learning-rule runs and forty physical choice replays, including negative results.
+All three remain working reports for a continuing research program; larger-data
+training, closed-loop neural control and learned gait policies are separate stages.
 
 ```sh
 python -m pip install -e ".[language,research]"
 python scripts/research_figures.py
 python scripts/build_papers.py
+```
+
+To update only the local-learning note after reproducing its numerical reports:
+
+```sh
+python scripts/behavior_figures.py
+python scripts/choice_paper_data.py
+python scripts/build_papers.py --only local-learning
 ```
 
 The build needs a LaTeX distribution with `pdflatex`, `bibtex`, Latin Modern, geometry, amsmath, booktabs, graphicx, xcolor, hyperref and microtype. On Windows the builder also checks the standard per-user MiKTeX location. On other systems put the tools on PATH.
@@ -27,3 +36,12 @@ Render every PDF page and inspect it before copying reviewed PDFs into
 `public/research/`. Check compiler logs for missing citations and overflow. The
 completed-WikiText revision has eight methods pages and five data pages. Preserve
 the working-report label while the larger program continues.
+
+The local-learning note has four reviewed pages. Its tables are generated from
+the checked choice summaries, and its figures show all three seeds' mean and
+observed range. After updating reviewed sources, run
+`python scripts/package_papers.py` to create the public source ZIP with a SHA-256
+manifest. The archive includes all three LaTeX sources, their included figures,
+generating scripts and published figure CSVs; raw corpora and checkpoints are
+excluded. Re-running numerical studies requires the repository and environments
+described in the main README.

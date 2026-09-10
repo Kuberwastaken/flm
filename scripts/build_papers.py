@@ -1,4 +1,5 @@
-"""Build the two LaTeX reports; retain logs for mandatory rendered-page review."""
+"""Build the LaTeX reports; retain logs for mandatory rendered-page review."""
+import argparse
 from pathlib import Path
 import shutil
 import subprocess
@@ -8,7 +9,10 @@ latex = shutil.which('pdflatex') or str(Path.home() / 'AppData/Local/Programs/Mi
 bibtex = shutil.which('bibtex') or str(Path(latex).with_name('bibtex.exe'))
 output = root / 'output/pdf'; output.mkdir(parents=True, exist_ok=True)
 work = root / 'work/papers'; work.mkdir(parents=True, exist_ok=True)
-for name in ('flm', 'data-and-reproduction'):
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--only', nargs='+', choices=('flm', 'data-and-reproduction', 'local-learning'), default=['flm', 'data-and-reproduction', 'local-learning'])
+args = parser.parse_args()
+for name in args.only:
     commands = [
         [latex, '-interaction=nonstopmode', '-halt-on-error', f'-output-directory={work}', f'{name}.tex'],
         [bibtex, str(work / name)],
