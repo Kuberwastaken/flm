@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-09-10T18:26:09.888298+00:00",
+  "archive": "public/research/paper-source.zip",
+  "archive_sha256": "ed137fa7587de1932a5c87018de522b13d18907c1998f9cef916d54a591c12ed",
+  "archive_bytes": 6673567,
+  "source_payloads": 171,
+  "all_payloads_match_current_sources": true,
+  "frozen_training_and_scoring_sources_exact": true,
+  "fresh_extraction_outside_repository": true,
+  "repository_pythonpath_removed": true,
+  "paper_rebuild_exit_code": 0,
+  "rebuilt_pdf_pages": 8,
+  "all_eight_rendered_pages_byte_identical": true,
+  "standalone_arithmetic_audit_exact": true,
+  "scope": "Paper/source snapshot, not a complete runnable application or independent retraining"
+}

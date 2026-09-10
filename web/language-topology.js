@@ -1,7 +1,7 @@
 import { loadLanguageStructure } from './language-structure.js';
 
 const $ = id => document.getElementById(id);
-const signed = value => `${value > 0 ? '+' : ''}${value.toFixed(4)}`;
+const signed = (value, digits = 4) => `${value > 0 ? '+' : ''}${value.toFixed(digits)}`;
 const conditionName = run => run.reference ? 'Measured · fast and slow' : run.variant === 'no_slow' ? 'Retrained without slow state' : `Rewired · graph ${run.graph_seed}`;
 const digest = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 
@@ -123,18 +123,18 @@ async function loadFinalDownloads(report) {
 function renderFinalResults(report, expectedIdentity) {
   validateFinalResults(report, expectedIdentity);
   const runs = report.runs.map(run => tableRow([conditionName(run), run.seed,
-    run.checkpoint_step.toLocaleString(), run.score.bits_per_byte.toFixed(4), run.score.token_perplexity.toFixed(2)]));
+    run.checkpoint_step.toLocaleString(), run.score.bits_per_byte.toFixed(6), run.score.token_perplexity.toFixed(2)]));
   const contrasts = [...report.topology_contrasts, ...report.slow_state_contrasts].map(point => tableRow([
     point.graph_seed ? `Measured − graph ${point.graph_seed}` : 'Measured − retrained no slow',
-    point.training_seed, signed(point.difference_bpb), `${signed(point.lower_95)} to ${signed(point.upper_95)}`]));
+    point.training_seed, signed(point.difference_bpb, 6), `${signed(point.lower_95, 6)} to ${signed(point.upper_95, 6)}`]));
   const graphMeans = [101, 103, 107].map(seed => {
     const rows = report.topology_contrasts.filter(row => row.graph_seed === seed);
-    return tableRow([seed, signed(rows.reduce((sum, row) => sum + row.difference_bpb, 0) / rows.length)]);
+    return tableRow([seed, signed(rows.reduce((sum, row) => sum + row.difference_bpb, 0) / rows.length, 6)]);
   });
   $('language-topology-test-rows').replaceChildren(...runs);
   $('language-topology-intervals').replaceChildren(...contrasts);
   $('language-topology-graph-means').replaceChildren(...graphMeans);
-  $('language-topology-mean').textContent = `Mean measured minus rewired loss: ${signed(report.topology_mean_difference_bpb)} bits/byte across the six graph/training-seed combinations. Mean measured minus retrained no-slow loss: ${signed(report.slow_state_mean_difference_bpb)} bits/byte across two training seeds. Negative differences favor the measured model with fast and slow state.`;
+  $('language-topology-mean').textContent = `Mean measured minus rewired loss: ${signed(report.topology_mean_difference_bpb, 6)} bits/byte across the six graph/training-seed combinations. Mean measured minus retrained no-slow loss: ${signed(report.slow_state_mean_difference_bpb, 6)} bits/byte across two training seeds. Negative differences favor the measured model with fast and slow state.`;
   $('language-topology-final').hidden = false;
 }
 
