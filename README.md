@@ -112,9 +112,48 @@ The physics environment uses Python 3.12 with `requirements-embodied.txt`; the
 exact measured environment is recorded in `requirements-embodied-lock.txt`.
 Run `experiments/embodiment/calibrate.py` inside that isolated environment to
 reproduce the designed walking controls. See its [README](experiments/embodiment/README.md).
-The research page includes the actual simulated video and trajectory data. This
-calibration has no FLM connection or learned motor head; the browser body view
-remains a separate illustrative state-to-pose mapping.
+The research page includes actual simulated videos and trajectory data. The
+initial calibration has no FLM connection. A subsequent 40-case assay connects
+recorded choices from a trained sensory network to the calibrated controller;
+the browser body view remains a separate illustrative state-to-pose mapping.
+
+## Forward learning and learned physical choices
+
+A separate 256-neuron network compares BPTT, fixed-core readout learning,
+supervised forward eligibility, a no-history control and reward-modulated
+eligibility. All five receive the same initialization and sensory stream within
+each of three seeds. The task learns, reverses and restores a delayed cue rule
+over 900 updates. This is a controlled rate-network experiment, with engineered
+inputs and outputs; it is not language-to-motor transfer or a biophysical model.
+
+```sh
+python -m flm.behavior_study
+python -m flm.behavior_report
+python scripts/behavior_figures.py
+```
+
+The committed [protocol](docs/LOCAL-LEARNING-PROTOCOL.md) precedes fitting. All
+15 completed runs retain diagnostic predictions, neural states, checkpoints and
+stimulus hashes. On the final 48-frame delay probe, mean accuracy is 100% for
+BPTT, 86.46% for the fixed core, 83.33% for supervised eligibility and 50% for
+both no-history and reward eligibility. Three seeds and one simple task do not
+establish a general ranking. The strong fixed-core result means this task alone
+does not demonstrate a benefit from learning recurrent wiring.
+
+Using the isolated physical environment, run
+`python experiments/embodiment/learned_choice.py --video`. Then run
+`python scripts/physical_choice_report.py` in the research environment. The
+assay independently simulates both cues at four predetermined checkpoints for
+all five methods, using seed 17. All 40 physical headings follow their chosen
+command; 33 neural choices match the task rule, including untrained checkpoints.
+These are two repeatable motor commands, not 40 independent skills. The network
+chooses before replay; the designed gait controller handles leg motion and
+contact feedback. Online proprioception, learned balance and transfer from a
+language-trained core remain future experiments.
+
+The [four-page working note](public/research/local-learning.pdf) derives the
+normalized-edge eligibility approximation and reports failures, storage costs
+and reproduction details. See [paper build instructions](papers/README.md).
 
 ## Verification and layout
 

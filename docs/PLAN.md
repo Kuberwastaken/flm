@@ -39,9 +39,9 @@ All six WikiText runs completed 6,000 updates. Frozen validation-selected checkp
 
 Remaining work centers on the continuing program: complete the twelve BabyLM
 runs and component-level held-out evaluation; train matched rewired and disabled
-mechanism controls before attributing benefits to anatomy; compare forward-time
-local learning with BPTT on controlled tasks; connect documented sensory inputs
-and learned actions to the calibrated physics environment; and profile larger
+mechanism controls before attributing benefits to anatomy; strengthen the
+completed forward-learning comparison with harder memory tasks; extend the
+learned-choice physics interface to online sensory feedback; and profile larger
 configurations before committing long runs. Extend grammar diagnostics and
 generation analysis without tuning on their evaluation scores. Updated model
 cards, figures, papers, browser checks and deployment evidence accompany each
@@ -57,3 +57,14 @@ block intervals. Twelve original prompts and two sampling seeds fix 288 unedited
 continuations. A dated Research-page snapshot exposes progress and permits only
 common-update comparisons. `flm.babylm_pipeline` chains the stages when the current
 training writer has stopped; it must not be launched alongside that writer.
+
+The first forward-learning comparison is complete: five rules, three seeds,
+7,200 episodes per run, with shared initialization and sensory streams. Full
+BPTT wins the final long-delay diagnostic; supervised eligibility exceeds its
+no-history control but does not beat the fixed-core mean. Forty separately
+simulated physical replays verify that learned high-level choices drive the
+expected turning command, retaining wrong task choices. The four-page research
+note, all panel predictions, neural states and trajectories are published with
+the protocol. This establishes neither an anatomical advantage nor learned gait
+or language-to-motor transfer. Rewired controls, stronger context-dependent
+tasks, learning-signal diagnostics and closed-loop sensory coupling remain open.

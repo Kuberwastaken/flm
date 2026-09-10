@@ -81,3 +81,35 @@ tables stay within their horizontal scroll containers. All four controls remain
 usable, and the browser still loads the completed WikiText checkpoint. Pending
 BabyLM measurements are never rendered as zero scores or ranked against finished
 runs. The new snapshot/protocol/prompt links resolve in the production build.
+
+## Forward learning and physical-choice publication
+
+The five-rule, three-seed study adds six Python checks for the normalized edge
+derivative, exact gradients when omitted cross-neuron routes are absent, forward
+state parity, fixed trace storage with episode length, reservoir isolation,
+reward reproducibility and the shared task stream. The complete suite passes
+52 Python tests. The 27 JavaScript tests pass after adding the new results view,
+and the production build succeeds.
+
+At 1280 pixels the two learning figures and two neural/physical figures load in
+paired columns. Both five-row tables match their checked JSON records, including
+the reward condition's failed reversal. There are no duplicate DOM IDs. At a
+390-pixel viewport, client and document scroll widths both measure 375 pixels;
+the learning figures stack at 335.2 pixels wide and the wider physical action
+table scrolls inside its own container. The normal viewport was restored after
+inspection. The language workspace still reports checkpoint 6,000 ready and
+contains both 3D canvases.
+
+The initial recorded MP4 stalled in this browser. Moving metadata to the start
+with FFmpeg stream copy fixed playback; all 100 decoded frame checksums match
+the original recording exactly. The published clip then played to completion
+on the phone layout: duration 4 seconds, currentTime 4, ended true, readyState 4,
+no media error. Original and published file hashes and the FFmpeg version are
+recorded in the physical summary. It represents one simulated second at quarter
+speed, with a learned high-level choice and a designed gait controller.
+
+All four pages of the local-learning note were rendered and visually reviewed;
+the final compiler log has no overflow or unresolved-reference warnings. The
+source ZIP contains 43 files with a verified SHA-256 manifest. The BabyLM
+validation snapshot now includes 9,500 measured updates in its first run; the
+other eleven runs remain pending and no BabyLM test result is published.

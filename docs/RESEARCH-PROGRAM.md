@@ -55,6 +55,15 @@ and rate formulations should remain distinct and receive explicit time units.
 
 ## 4. Situations and embodied behavior
 
+The first local-learning study is complete: five rules across three seeds, with
+identical starting weights and stimuli within each seed. The final 48-frame
+diagnostic gives BPTT 100%, fixed core 86.46%, supervised eligibility 83.33%, and
+no-history/reward eligibility 50%. These are repeated diagnostics from one
+simple task, not a general ranking. The fixed core's strong result motivates
+harder context and memory tasks and a matched rewired control. See
+[the declared protocol](LOCAL-LEARNING-PROTOCOL.md) and the
+[working research note](../public/research/local-learning.pdf).
+
 Establish a real NeuroMechFly physics simulation with a pinned FlyGym version in
 an isolated environment. Start with reproducible open-loop and closed-loop walking
 controls, then train a documented sensor-to-action interface for cue following,
@@ -67,6 +76,14 @@ dynamics. A rendered pose change is not a learned skill. A language-trained core
 controlling an artificial body is not evidence that a biological fly knows words.
 Rhythm/cue timing can become a controlled game-like task after the motor interface
 works; a real game's integration and score must not be implied by a toy task.
+
+A first learned-choice assay now connects the smaller sensory network to the
+calibrated physical command interface. All forty predetermined cases were
+simulated independently; recorded heading follows the selected command in every
+case, including wrong neural choices. This is an offline high-level decision
+followed by physical replay. The two commands yield two reproducible paths;
+learning joint control, online neural feedback and transfer from language
+training remain separate experiments.
 
 ## 5. Capacity and implementation scaling
 

@@ -23,6 +23,23 @@ async function verifiedArtifact(record) {
 
 export async function loadFinalStudy() {
   try {
+    const response = await fetch(`${import.meta.env.BASE_URL}research/learned-choice.json`);
+    if (!response.ok) throw new Error('Physical choice records unavailable.');
+    const report = await response.json();
+    const methods = { bptt: 'BPTT', reservoir: 'Fixed core', eligibility: 'Eligibility', instantaneous: 'No trace history', reward: 'Reward + eligibility' };
+    $('physical-choice-rows').replaceChildren(...Object.entries(methods).map(([method, label]) => row([label,
+      ...[0, 300, 600, 900].map(step => [0, 1].map(cue => report.cases.find(record => record.method === method && record.step === step && record.cue === cue).chosen_action).join(' / '))])));
+  } catch (error) { $('physical-choice-rows').replaceChildren(row([error.message])); }
+  try {
+    const response = await fetch(`${import.meta.env.BASE_URL}research/choice-learning.json`);
+    if (!response.ok) throw new Error('Choice-learning results unavailable.');
+    const report = await response.json();
+    const score = (method, delay) => report.curves.find(point => point.method === method && point.step === 900 && point.delay === delay).current_mean;
+    $('choice-rows').replaceChildren(...Object.entries(report.methods).map(([method, label]) =>
+      row([label, ...[8, 12, 48].map(delay => `${(score(method, delay) * 100).toFixed(2)}%`)])));
+    $('choice-interpretation').textContent = `On the final 48-frame probe, BPTT averages ${(score('bptt', 48) * 100).toFixed(2)}%, the fixed-core control ${(score('reservoir', 48) * 100).toFixed(2)}%, and supervised eligibility ${(score('eligibility', 48) * 100).toFixed(2)}%. This experiment does not show a local-learning advantage over BPTT. Chance accuracy is 50%.`;
+  } catch (error) { $('choice-rows').replaceChildren(row([error.message])); }
+  try {
     const response = await fetch(`${import.meta.env.BASE_URL}research/grammar-results.json`);
     if (!response.ok) throw new Error('Grammar results unavailable.');
     const report = await response.json();
