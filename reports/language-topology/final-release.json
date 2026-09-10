@@ -1,0 +1,114 @@
+{
+  "verified_utc": "2026-09-10T18:38:45.625577+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "4b43c71b4d02f56e436d7fdb1fa67f2814eb8e4d",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34515123498"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 62650,
+      "sha256": "e52adc32548ddce83c287d46a5409d08ba5ff13a9cbaa6b69437cd828f4f3d97"
+    },
+    {
+      "path": "assets/index-zOmsdPQY.js",
+      "bytes": 568404,
+      "sha256": "d7633dcef132b72d3d63ee4ca13711bc7ae5c13799c129eab0816f4144db6be9"
+    },
+    {
+      "path": "research/language-topology-results.json",
+      "bytes": 151185,
+      "sha256": "2bcfb603f79465da0327c134303f177b443ffa72d4e45965459dbf7dee402c98"
+    },
+    {
+      "path": "research/language-topology-progress.json",
+      "bytes": 21562,
+      "sha256": "c2a86c91c86046f3a6f17487062d7091acba81fd5043c30d71e6455908898801"
+    },
+    {
+      "path": "research/language-topology-records.zip",
+      "bytes": 271441,
+      "sha256": "31d9b13264dcc377f0d7ad486c38eeb362d5cbd3c41c3d7c49515466891a24a0"
+    },
+    {
+      "path": "research/language-topology-release.json",
+      "bytes": 2635,
+      "sha256": "bc345f1840f7c92ca90851dfc75f7ea7a52689c77185f9edf4a5ec73eedf32bb"
+    },
+    {
+      "path": "research/language-topology-inference.zip",
+      "bytes": 26888868,
+      "sha256": "9763928b7b778a3b10409fc683b6d90ff9b29c5a81210496130eb4bb4cbb24a2"
+    },
+    {
+      "path": "research/language-topology-inference-release.json",
+      "bytes": 11957,
+      "sha256": "368f1b58e06c5b68958f4a6c6b35aee7504c2e550e5690bd32fd132bad13cbd4"
+    },
+    {
+      "path": "research/language-topology-samples.json",
+      "bytes": 110432,
+      "sha256": "37f84bd91f9306f42294bfa259bb5ae7c3e936e5730b4f433c28152e1e9ab4dd"
+    },
+    {
+      "path": "research/flm.pdf",
+      "bytes": 735880,
+      "sha256": "d1d88dfad5a408617394e5a48284052c51a3c5af1698a2feb190ec1a553d7f85"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 6673567,
+      "sha256": "ed137fa7587de1932a5c87018de522b13d18907c1998f9cef916d54a591c12ed"
+    },
+    {
+      "path": "research/figures/language-topology-test.svg",
+      "bytes": 91104,
+      "sha256": "2262ee37092d06ee77f6efbd3b4b1be12407257485cc93b243d75004ab3cc204"
+    },
+    {
+      "path": "research/figures/language-topology-test.png",
+      "bytes": 146703,
+      "sha256": "18e77274a5d81f43f5465d8faed50583ed9cf7564214e9a405e6afc548c67499"
+    },
+    {
+      "path": "research/figures/language-topology-test.csv",
+      "bytes": 1280,
+      "sha256": "1fac2f86300461e81135c64c71fe4c7371814443edbbd2896b6ab88e2a26bead"
+    }
+  ],
+  "ci_tests_passed": 53,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "final_test_result_published": true,
+  "frozen_study_identity_sha256": "0d6b619342f16c1ae416bc65d543e29f9dfd2156fd33fed2d32cb93e81880c38",
+  "frozen_selection_sha256": "d097ca9520c73da6265f690841f37226b30bc2a092fb7916272338f5c86efea5",
+  "source_archive_check": "reports/language-topology/final-source-release.json",
+  "paper_review": "reports/language-topology/paper-review.json",
+  "completed_new_controls": 8,
+  "browser_verification": {
+    "verified_utc": "2026-09-10T18:40:56.624Z",
+    "url": "https://flm.kuber.studio/#research",
+    "test_status": "Published",
+    "test_rows": 10,
+    "interval_rows": 8,
+    "graph_mean_rows": 3,
+    "final_and_download_panels_visible": true,
+    "download_hrefs": [
+      "/research/language-topology-records.zip",
+      "/research/language-topology-inference.zip"
+    ],
+    "download_status_empty": true,
+    "figure_src": "/research/figures/language-topology-test.svg",
+    "svg_font_paths_visually_reviewed": true,
+    "validation_details_closed_by_default": true,
+    "test_details_closed_by_default": true,
+    "test_details_keyboard_opened": true,
+    "near_zero_interval_lower_display": "+0.000017",
+    "mean_topology_display": "+0.001559",
+    "mean_slow_state_display": "-0.010999",
+    "page_width": 598,
+    "viewport_width": 614
+  }
+}
