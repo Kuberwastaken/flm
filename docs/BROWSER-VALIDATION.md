@@ -260,3 +260,32 @@ and reports one of eight new controls complete. The first row shows update
 saved checkpoint. All four structural rows remain present and the completed
 test block remains hidden. This verifies a training-progress release, not a
 completed topology test comparison.
+
+## Six-model inference release and author credits
+
+The new Python inference path passes nine focused tests: path confinement,
+corruption rejected before checkpoint deserialization, complete model inventory,
+matching runtime source, generation filtering, end-of-document stopping, full
+prompt/state carry, independent seeded sampling, invalid settings and state-hash
+coverage. The six exported checkpoints have exactly matching tensors and fixed
+buffers and reproduce all 24 published final-checkpoint continuations. Six
+further CLI invocations from a fresh archive extraction reproduce the first
+published prompt for every model and seed with repository `PYTHONPATH` removed.
+The release record preserves each original selected-checkpoint identity and
+separate hashes for the exported files. No training/test selections changed.
+
+All 46 JavaScript tests pass and the production build succeeds. The existing
+557 kB JavaScript chunk warning remains. The Research download section was
+visually reviewed in the attached panel, a separate 1,280 px desktop viewport
+and a 390 px mobile viewport. Document scroll/client widths match at 1,265 px
+and 375 px respectively. All three download/help links wrap without page
+overflow; the mobile footer and full author name remain readable. The temporary
+viewport was reset and its review tab closed.
+
+All four PDFs now display Kuber Mehta and use that name in their author metadata.
+Text comparisons permit only the byline substitution. All remaining pages are
+pixel-identical to the preceding reviewed release; the four changed first pages
+were individually inspected. The paper source archive was regenerated and its
+entry hashes verified. The two other research archives containing an original
+MIT notice received the same author correction, with every non-notice payload
+verified byte-identical. `reports/authorship-release.json` records these changes.
