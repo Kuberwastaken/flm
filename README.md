@@ -8,6 +8,42 @@
 
 ChatFLM runs inference in your browser, with token probabilities, actual neural state in 3D, neuron interventions and a separate readout adapter. The models generate continuations with limited coherence; they have no instruction-following training.
 
+## Completed wiring test
+
+**No anatomical language advantage was demonstrated for this selected subset and setup.** All six measured-minus-rewired test effects are positive: mean **+0.001559 BPB**, range **+0.000911 to +0.002809**. The implemented slow-state branch helps against retrained no-slow models: mean **−0.010999 BPB**.
+
+![All six rewired comparisons have positive measured-minus-control loss; both retrained no-slow comparisons are negative.](public/research/figures/language-topology-test.png)
+
+*Differences are measured fast/slow FLM minus the control; negative favors measured fast/slow. Lines show 95% paired-article bootstrap intervals, conditional on each fitted pair.*
+
+| Control | Training seed 42: Δ BPB | Training seed 43: Δ BPB |
+|---|---:|---:|
+| Rewired graph 101 | +0.001830 | +0.001523 |
+| Rewired graph 103 | +0.000981 | +0.002809 |
+| Rewired graph 107 | +0.000911 | +0.001298 |
+| Retrained no-slow state | −0.011836 | −0.010163 |
+
+Three of six topology intervals include zero. The three graphs × two training seeds share two measured references; these are not six independent replications. This exploratory extension follows inspection of the original test scores. It does not establish that anatomy is generally harmful, and it does not estimate a topology-by-slow-state interaction.
+
+All ten [checkpoint selections](reports/language-topology/selection.json) were frozen before new control test scoring, after 6,000 updates per run. Every run was scored on all 60 test articles. Inspect the [complete scores](public/research/language-topology-results.json), [records archive](https://flm.kuber.studio/research/language-topology-records.zip) and [release audit](reports/language-topology/records-release.json).
+
+<details>
+<summary>Matching, graph matrices and allocated versus effective slow-state parameters</summary>
+
+![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
+
+*Orange and green denote modeled edge signs; blank entries have no edge. These are graph matrices, not neural activity. Every panel contains 1,024 neurons and 76,130 edges.*
+
+The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest of the language machinery fixed and trained three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling were preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
+
+The eight new fits comprise six rewired models and two retrained no-slow models, alongside two reused measured references. Every model allocates 600,003 parameter entries. The no-slow variant disconnects its 1,024 beta entries from the objective; normalization can still make nominal slow-feature readout columns nonzero. Allocated parameters therefore do not establish equal effective capacity. This tests the implemented slow-state branch, not all memory alternatives. See the [frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md).
+
+The [follow-up language controls](docs/LANGUAGE-CORE-CONTROLS.md) now have separate [implementations](flm/language_core_controls.py) for fixed dynamics, no lateral recurrence and no temporal state, with nine passing fixture tests. Their training/evaluation harness and language fits remain pending; they are the next methodological priority. Removing lateral recurrence retains fast/slow memory; the no-temporal-state control resets both states for every token.
+
+</details>
+
+**Next methodological priority:** the [language computation controls](docs/LANGUAGE-CORE-CONTROLS.md), whose language fits remain pending. BabyLM remains paused while this release is finalized; new transfer and behavior experiments remain deferred.
+
 ## Language results
 
 **FLM trails both matched neural baselines on the completed WikiText comparison.** Lower test bits per byte (BPB) is better.
@@ -24,21 +60,7 @@ ChatFLM runs inference in your browser, with token probabilities, actual neural 
 
 All six runs share the official article partitions, tokenizer and 6,000-update budget. Within each seed, the three architectures receive identical sampled training windows. Each run receives 9,216,000 input-token presentations. The final score covers all 60 test articles and 1,287,656 target bytes. BPB measures next-token codelength divided by exact UTF-8 target bytes; it is not the word-token perplexity often quoted for WikiText.
 
-Both FLM seeds trail both baselines. The [article-level scores and paired bootstrap intervals](public/research/test-results.json) make the comparison inspectable; the intervals are conditional on the fitted checkpoints, not estimates over many independently trained models. The Research view also includes [fixed-prompt continuations](public/research/samples-index.json), [grammar diagnostics](public/research/grammar-results.json) and [measured inference costs](public/research/runtime.json). Attractive samples are not the selection criterion.
-
-## The critical control: change the wiring
-
-**Priority as of 10 September 2026: finish the language topology study.** All eight new controls have completed 6,000 updates, all ten checkpoint selections are frozen, and full test evaluation is underway. Complete test results are pending. BabyLM remains paused; new transfer and behavior experiments are deferred.
-
-![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
-
-*Orange and green denote modeled edge signs; blank entries have no edge. These are graph matrices, not neural activity. Every panel contains 1,024 neurons and 76,130 edges.*
-
-The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest of the language machinery fixed and trained three independently rewired graphs with both original initialization seeds. Directed degrees, source-sign constraints, incoming signed weights, self edges, node identities and pooling were preserved. The [structural audit](docs/LANGUAGE-STRUCTURE.md) reports what changes, including reciprocity and edge overlap. These finite rewiring chains do not preserve every graph property or prove uniform sampling.
-
-Two further models were retrained without slow state. This tests the mechanism after learning, beyond simply disabling it in an already-trained model. The eight new runs join two existing measured references. All ten [checkpoint selections](reports/language-topology/selection.json) were frozen before new control test scoring began. Because the original measured test results were already visible when this extension was designed, this is an exploratory extension rather than a pristine held-out study. Follow the [dated study snapshot](public/research/language-topology-progress.json); an anatomical language advantage is **not established**.
-
-The [follow-up language controls](docs/LANGUAGE-CORE-CONTROLS.md) now have separate [implementations](flm/language_core_controls.py) for fixed dynamics, no lateral recurrence and no temporal state, with nine passing fixture tests. Their training/evaluation harness and language fits remain pending; topology stays the priority. Removing lateral recurrence retains fast/slow memory; the no-temporal-state control resets both states for every token.
+The [article scores and paired intervals](public/research/test-results.json) are conditional on these fitted checkpoints. [Fixed-prompt continuations](public/research/samples-index.json), [grammar diagnostics](public/research/grammar-results.json) and [inference costs](public/research/runtime.json) accompany the comparison; attractive samples are not the selection criterion.
 
 ## How FLM predicts a token
 
@@ -91,7 +113,7 @@ The difference is the computation and structural prior; the primary language exp
 
 </details>
 
-FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The baseline comparison and control fits are complete; full control test evaluation is underway. The evidence currently supports a working experimental platform, while the anatomical language-prior hypothesis remains unresolved.
+FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The completed comparison finds no measured-topology advantage in this setup, while retaining slow state helps. Whether optimizing recurrent dynamics is necessary remains a separate language question.
 
 ## Run ChatFLM locally
 
@@ -129,6 +151,8 @@ python -X utf8 -m flm.inference --model transformer --prompt "The history of sci
 ```
 
 The [release record](public/research/inference-release.json) identifies all original selected checkpoints and the archive's SHA-256. Exported tensors and fixed buffers match their sources; all 24 published continuations replay under the tested CPU environment. ChatFLM's browser engine remains FLM-only. See [runtime and sampling details](docs/INFERENCE-BUNDLE.md).
+
+The separate [ten-model topology inference bundle](https://flm.kuber.studio/research/language-topology-inference.zip) contains two measured references, six rewired checkpoints and two retrained no-slow checkpoints. All ten model CLIs reproduced their reference continuation from a fresh extraction. The [release record](https://flm.kuber.studio/research/language-topology-inference-release.json) also verifies every exported tensor/buffer and all [40 fixed-prompt continuations](https://flm.kuber.studio/research/language-topology-samples.json) against their sources. The six-model FLM/GRU/transformer bundle above remains separate.
 
 ## Data and deferred work
 
@@ -195,7 +219,7 @@ All five papers are working reports for the continuing program. They include lim
 
 | Report | What it covers |
 |---|---|
-| [FLM methods and language results](public/research/flm.pdf) | Recurrent equations, completed WikiText comparison, inference costs and acute interventions |
+| [FLM methods and language results](public/research/flm.pdf) | Recurrent equations, completed WikiText baseline and topology comparisons, inference costs and acute interventions |
 | [Data and reproduction](public/research/data-and-reproduction.pdf) | Sources, transformations, tokenizer/split integrity and BabyLM preparation |
 | [Local learning and physical choices](public/research/local-learning.pdf) | Fifteen learning-rule runs and forty precomputed-choice physical replays |
 | [Wiring, context and learning controls](public/research/wiring-controls.pdf) | Complete 60-run study, rewired graphs and gradient diagnostics |
@@ -205,7 +229,7 @@ The [public LaTeX source archive](https://flm.kuber.studio/research/paper-source
 
 ## Reproduce and verify
 
-The [matched language protocol](docs/WIKITEXT-PROTOCOL.md) and [topology operations guide](docs/LANGUAGE-TOPOLOGY-OPERATIONS.md) define the active experiment. Preserve frozen inputs and completed observations; run only one writer per output directory. Training and full evaluation can take many hours on a laptop.
+The [matched language protocol](docs/WIKITEXT-PROTOCOL.md) and [topology operations guide](docs/LANGUAGE-TOPOLOGY-OPERATIONS.md) describe the completed studies and their reproduction. Preserve frozen inputs and completed observations; run only one writer per output directory. Training and full evaluation can take many hours on a laptop.
 
 <details>
 <summary>Training commands, acquisition, study entry points and physics environments</summary>
@@ -258,6 +282,6 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 
 </details>
 
-Finish and interpret the topology comparison before resuming BabyLM. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
+The next methodological step is to test whether learning recurrent dynamics is necessary for language prediction. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).
