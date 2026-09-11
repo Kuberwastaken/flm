@@ -85,6 +85,8 @@ def main():
         'experiments/embodiment/verify_food_episode_store.py', 'scripts/package_food_episode_store.py',
         'reports/food-episode/restart-verification.json', 'reports/food-episode/restart-tests.json',
         'reports/food-episode/restart-repack.json',
+        'docs/FOOD-ADAPTATION-SCHEDULE.md', 'flm/food_schedule.py',
+        'tests/test_food_schedule.py', 'reports/food-schedule/preparation.json',
         'docs/FOOD-SENSOR-INTERFACE.md', 'flm/food_sensors.py',
         'experiments/embodiment/food_sensor_probe.py', 'experiments/embodiment/calibrate.py',
         'requirements-embodied-lock.txt', 'scripts/audit_food_sensor_probe.py',

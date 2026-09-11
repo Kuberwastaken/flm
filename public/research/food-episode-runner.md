@@ -108,11 +108,16 @@ pass in both Python environments, including an actual child-process exit,
 exclusive writers, interrupted writes, failed outcomes, damaged records and
 single application of terminal updates. See the [test record](food-episode/restart-tests.json).
 
+The [paired schedule executor](food-adaptation-schedule.md) now connects these
+boundaries to complete training inventories and evaluation at fixed readout
+checkpoints. Its checks use toy transitions; no official physical adaptation
+schedule or budget is registered.
+
 These checks establish short-run restart behavior. They do not establish
 long-horizon reproducibility, navigation, food adaptation, or an advantage from
-language training. A full study still needs immutable condition membership,
-ordered episode/readout chaining, complete training/evaluation schedules and
-its declared statistical comparisons.
+language training. A full study still needs its official condition membership,
+cost/prerequisite checks, physical training/evaluation schedules and declared
+statistical comparisons.
 
 ## Physical integration checked
 

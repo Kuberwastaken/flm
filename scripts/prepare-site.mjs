@@ -147,6 +147,7 @@ for (const [source, target] of [
   ['FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md'],
   ['FOOD-READOUT-LEARNING.md', 'food-readout-learning.md'],
   ['FOOD-EPISODE-RUNNER.md', 'food-episode-runner.md'],
+  ['FOOD-ADAPTATION-SCHEDULE.md', 'food-adaptation-schedule.md'],
   ['PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
@@ -157,6 +158,7 @@ await writeFile('public/research/food-readout-learning.md', (await readFile('doc
   .replaceAll('FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md')
   .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
   .replaceAll('FOOD-EPISODE-RUNNER.md', 'food-episode-runner.md')
+  .replaceAll('FOOD-ADAPTATION-SCHEDULE.md', 'food-adaptation-schedule.md')
   .replaceAll('../flm/food_readout_learning.py', 'food-readout/food_readout_learning.py')
   .replaceAll('../tests/test_food_readout_learning.py', 'food-readout/test_food_readout_learning.py'));
 await mkdir('public/research/food-episode', { recursive: true });
@@ -170,6 +172,7 @@ for (const source of ['flm/food_episode.py', 'tests/test_food_episode.py',
   'reports/food-episode/preparation.json', 'reports/food-episode/archive-audit.json'])
   await copyFile(source, `public/research/food-episode/${source.split('/').at(-1)}`);
 await writeFile('public/research/food-episode-runner.md', (await readFile('docs/FOOD-EPISODE-RUNNER.md', 'utf8'))
+  .replaceAll('FOOD-ADAPTATION-SCHEDULE.md', 'food-adaptation-schedule.md')
   .replaceAll('FOOD-READOUT-LEARNING.md', 'food-readout-learning.md')
   .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
   .replaceAll('PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md')
@@ -181,6 +184,15 @@ await writeFile('public/research/food-episode-runner.md', (await readFile('docs/
   .replaceAll('../scripts/package_food_episode_store.py', 'food-episode/package_food_episode_store.py')
   .replaceAll('../reports/food-episode/', 'food-episode/')
   .replaceAll('../public/research/', ''));
+await mkdir('public/research/food-schedule', { recursive: true });
+for (const source of ['flm/food_schedule.py', 'tests/test_food_schedule.py', 'reports/food-schedule/preparation.json'])
+  await copyFile(source, `public/research/food-schedule/${source.split('/').at(-1)}`);
+await writeFile('public/research/food-adaptation-schedule.md', (await readFile('docs/FOOD-ADAPTATION-SCHEDULE.md', 'utf8'))
+  .replaceAll('FOOD-EPISODE-RUNNER.md', 'food-episode-runner.md')
+  .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('../flm/food_schedule.py', 'food-schedule/food_schedule.py')
+  .replaceAll('../tests/test_food_schedule.py', 'food-schedule/test_food_schedule.py')
+  .replaceAll('../reports/food-schedule/preparation.json', 'food-schedule/preparation.json'));
 await mkdir('public/research/food-sensors', { recursive: true });
 for (const name of ['physical-probe.json', 'geometry-audit.json', 'visible-odor-probe.json', 'visible-odor-audit.json', 'figure.json'])
   await copyFile(`reports/food-sensors/${name}`, `public/research/food-sensors/${name}`);
