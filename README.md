@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs plus FLM and GRU seed 43 have finished; transformer seed 43 is training. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All six 10M fits have finished; the 100M queue has begun with FLM seed 42. Official held-out comparisons remain pending. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -114,7 +114,7 @@ The [operational KC-centered rules](docs/CIRCUIT-SELECTION.md) define eight cand
 
 The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and [export note](docs/SELECTION-GRAPH-EXPORTS.md) provide all 64 untrained graphs, without trained weights or a tokenizer. Under the declared interface, they span **487–1,385 neurons and 470,945–766,693 allocated parameters**. The exporter exactly reproduces all nine frozen-reference arrays. [Timing preparation](docs/SELECTION-TIMING-PILOT.md) verifies two synthetic-token updates per full-size graph through the shared BPTT/AdamW update function used by selection-language fitting (batch 1, three tokens, one CPU thread). Separately, 3,351 BabyLM `train-10m` cache blocks were verified; the official 64-condition timing runner has not run. These are compatibility checks, with no selection language fits or throughput results.
 
-**All 192 structural controls completed, with zero failures.** The [complete archive](https://flm.kuber.studio/research/selection-rewiring.zip) contains 64 originals and 192 rewires, all untrained. The [results note](docs/SELECTION-REWIRING-RESULTS.md) and [standalone audit](reports/selection-rewiring/standalone-audit.json) document the verified graph constraints. A [language-training adapter](docs/SELECTION-LANGUAGE-TRAINING.md) binds these graphs to fresh models and shared BPTT fit/resume. The [coordinator](docs/SELECTION-LANGUAGE-COORDINATOR.md) requires all eight selections per candidate, each measured plus three rewires at seeds 42/43: **64 fits per chosen group**. No group or budget is chosen; the corpus cost pilot and official fits remain pending.
+**All 192 structural controls completed, with zero failures.** The [complete archive](https://flm.kuber.studio/research/selection-rewiring.zip) contains 64 originals and 192 rewires, all untrained. The [results note](docs/SELECTION-REWIRING-RESULTS.md) and [standalone audit](reports/selection-rewiring/standalone-audit.json) document the verified graph constraints. A [language-training adapter](docs/SELECTION-LANGUAGE-TRAINING.md) binds these graphs to fresh models and shared BPTT fit/resume. The [coordinator](docs/SELECTION-LANGUAGE-COORDINATOR.md) requires all eight selections per candidate, each measured plus three rewires at seeds 42/43: **64 fits per chosen group**. The [held-out scorer](docs/SELECTION-LANGUAGE-TEST.md) requires all registered fits and selections before test access, retaining family means and individual selection/topology contrasts. No group or budget is chosen; the corpus cost pilot, official fits and results remain pending.
 
 ![Original-edge overlap and largest strongly connected components for 64 original selections and their three rewired controls each.](public/research/figures/selection-rewiring.png)
 
@@ -211,7 +211,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 5 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 6 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 
