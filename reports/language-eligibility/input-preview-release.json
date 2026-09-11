@@ -1,0 +1,108 @@
+{
+  "verified_utc": "2026-09-11T10:18:20.695264+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/language-learning/input-preflight.json",
+      "status": 200,
+      "bytes": 14618,
+      "sha256": "d61a4ac6ab6d71d7b8e23cbfd5a625d5d40c5be11fe30c1dc063836a08f3d722"
+    },
+    {
+      "path": "research/language-learning/trainer-preflight.json",
+      "status": 200,
+      "bytes": 1626,
+      "sha256": "041a57fefb9b784c7428028c35de083200df0737fb4aa636549e4dc5605b2e60"
+    },
+    {
+      "path": "research/language-learning/window-preflight.json",
+      "status": 200,
+      "bytes": 2639,
+      "sha256": "39728f5236cf3831cf955107d493b0119177c0a5a22a1258161754c46ceec94f"
+    },
+    {
+      "path": "research/language-learning/language_learning_inputs.py",
+      "status": 200,
+      "bytes": 9734,
+      "sha256": "976359f9a8c1efe08d47f1bc14487e348de686a9c4b992b7fda123156fccfc9d"
+    },
+    {
+      "path": "research/language-learning/language_learning_train.py",
+      "status": 200,
+      "bytes": 18245,
+      "sha256": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4"
+    },
+    {
+      "path": "research/language-learning/language_eligibility.py",
+      "status": 200,
+      "bytes": 9721,
+      "sha256": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485"
+    },
+    {
+      "path": "research/language-learning/embedding_eligibility.py",
+      "status": 200,
+      "bytes": 5742,
+      "sha256": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1"
+    },
+    {
+      "path": "research/language-learning/language_learning_input_preflight.py",
+      "status": 200,
+      "bytes": 5541,
+      "sha256": "bc86d2039032af2aaaba82f332eebdcd0620176665f32a7e3561f4f827648026"
+    },
+    {
+      "path": "research/language-learning-inputs.md",
+      "status": 200,
+      "bytes": 4598,
+      "sha256": "05be4ff60a596723d0c5e427be836d7f738309421d4a71c58f718bde52357e8d"
+    },
+    {
+      "path": "research/language-learning-runner.md",
+      "status": 200,
+      "bytes": 5465,
+      "sha256": "37c09bab2814b7d9b715fc35b6e38c98b71052cc73a497ceb82fda32dee04620"
+    },
+    {
+      "path": "research/language-eligibility-kernel.md",
+      "status": 200,
+      "bytes": 6449,
+      "sha256": "f23170175d06c639c660b7a2961d873b80d1ecbda368ef40eb12eace40145dfa"
+    },
+    {
+      "path": "research/language-eligibility-preparation.md",
+      "status": 200,
+      "bytes": 6913,
+      "sha256": "64245cce1020948c1469ba447dec7c93776266bc9489e46381a7681148c295a1"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7943637,
+      "sha256": "4a1e94808be9645db044d7a490eeb34bab63f6dd0572baf2fd6b0eeb8ae15914"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "language-learning/language_learning_inputs.py",
+    "language-learning-runner.md",
+    "language-learning/input-preflight.json",
+    "language-eligibility-kernel.md",
+    "language-learning/language_learning_input_preflight.py",
+    "language-learning/language_learning_train.py",
+    "language-learning-inputs.md",
+    "language-eligibility-kernel.md",
+    "language-learning/language_eligibility.py",
+    "language-eligibility-preparation.md",
+    "language-learning-runner.md",
+    "local-learning-protocol.md",
+    "language-learning/embedding_eligibility.py",
+    "language-eligibility-kernel.md",
+    "language-learning-runner.md"
+  ],
+  "paper_source_files_verified": 309,
+  "raw_or_processed_corpus_payloads_archived": false,
+  "source_and_preflight_bindings_verified": true,
+  "prepared_conditions_verified": 8,
+  "input_fixture_tests_observed_passed": 6,
+  "scope": "Training-input audit and separate synthetic update preparation; no official corpus fit or language score"
+}

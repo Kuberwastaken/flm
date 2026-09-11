@@ -61,6 +61,21 @@ await writeFile('public/research/selection-timing-pilot.md', (await readFile('do
   .replaceAll('../flm/selection_pilot.py', 'selection-pilot/selection_pilot.py')
   .replaceAll('../scripts/selection_pilot_preflight.py', 'selection-pilot/selection_pilot_preflight.py')
   .replaceAll('../reports/selection-pilot/', 'selection-pilot/'));
+await mkdir('public/research/language-learning', { recursive: true });
+for (const name of ['language_learning_inputs.py', 'language_learning_train.py', 'language_eligibility.py', 'embedding_eligibility.py'])
+  await copyFile(`flm/${name}`, `public/research/language-learning/${name}`);
+await copyFile('scripts/language_learning_input_preflight.py', 'public/research/language-learning/language_learning_input_preflight.py');
+for (const name of ['input-preflight.json', 'trainer-preflight.json', 'window-preflight.json'])
+  await copyFile(`reports/language-eligibility/${name}`, `public/research/language-learning/${name}`);
+const learningNotes = ['LANGUAGE-LEARNING-INPUTS', 'LANGUAGE-LEARNING-RUNNER', 'LANGUAGE-ELIGIBILITY-KERNEL', 'LANGUAGE-ELIGIBILITY-PREPARATION'];
+for (const name of learningNotes) {
+  let note = await readFile(`docs/${name}.md`, 'utf8');
+  for (const linked of learningNotes) note = note.replaceAll(`${linked}.md`, `${linked.toLowerCase()}.md`);
+  note = note.replaceAll('LOCAL-LEARNING-PROTOCOL.md', 'local-learning-protocol.md')
+    .replaceAll('../flm/', 'language-learning/').replaceAll('../scripts/', 'language-learning/')
+    .replaceAll('../reports/language-eligibility/', 'language-learning/');
+  await writeFile(`public/research/${name.toLowerCase()}.md`, note);
+}
 for (const name of ['summary.json', 'directed-groups.csv', 'external-partners.csv', 'kenyon-coverage.csv', 'figures.json'])
   await copyFile(`reports/selection-pathways/${name}`, `public/research/selection-pathways/${name}`);
 await copyFile('flm/selection_pathways.py', 'public/research/selection-pathways/selection_pathways.py');

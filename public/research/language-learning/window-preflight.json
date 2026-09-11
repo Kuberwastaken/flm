@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-09-11T07:16:38.013029+00:00",
+  "command": [
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*eligibility.py",
+    "-v"
+  ],
+  "scope": "Eleven tiny numerical implementation fixtures; no corpus, full-size timing, official training or held-out scoring.",
+  "tests_passed": 11,
+  "tests_failed": 0,
+  "cpu_threads_in_fixtures": 1,
+  "numerical_dtype": "float64",
+  "source_sha256": {
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "tests/test_language_eligibility.py": "f1e284e8d24db8340d56079e0d93c769b06789ccd4423951c564fdcfd66feeea",
+    "tests/test_embedding_eligibility.py": "9eea192083a5f8d9612d6cf4125af78a5e3c038e6ebad1cc7a00d2b9825ffc4a"
+  },
+  "output": "test_coupled_network_retains_approximation_error (test_embedding_eligibility.EmbeddingEligibilityTests) ... ok\ntest_occurrences_match_dense_local_traces_with_repeated_tokens (test_embedding_eligibility.EmbeddingEligibilityTests) ... ok\ntest_tied_output_and_input_gradients_sum_to_bptt_without_cross_neuron_paths (test_embedding_eligibility.EmbeddingEligibilityTests) ... ok\ntest_window_contract_and_accounting (test_embedding_eligibility.EmbeddingEligibilityTests) ... ok\ntest_all_self_only_parameters_match_masked_bptt_tied_and_untied (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_coupled_gradients_match_independent_diagonal_autograd_and_differ_from_bptt (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_history_removal_preserves_states_but_changes_temporal_credit (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_invalid_or_unsupported_windows_are_rejected_without_grad_mutation (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_normalization_floor_and_gain_clamps_match_instantaneous_autograd (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_readonly_call_and_optimizer_checkpoint_resume (test_language_eligibility.LanguageEligibilityTests) ... ok\ntest_unscored_prefix_still_contributes_input_credit (test_language_eligibility.LanguageEligibilityTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 1.123s\n\nOK\n",
+  "full_language_fit": false,
+  "full_trainer_resume_verified": false
+}

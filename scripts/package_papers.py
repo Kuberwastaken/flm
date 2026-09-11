@@ -114,7 +114,13 @@ def main():
         'tests/test_selection_rewiring_archive.py',
         'reports/selection-rewiring/preflight.json', 'reports/selection-rewiring/preparation-checks.json',
         'docs/SELECTION-TIMING-PILOT.md', 'flm/selection_pilot.py', 'scripts/selection_pilot_preflight.py',
-        'tests/test_selection_pilot.py', 'reports/selection-pilot/preflight.json')]
+        'tests/test_selection_pilot.py', 'reports/selection-pilot/preflight.json',
+        'docs/LANGUAGE-LEARNING-INPUTS.md', 'flm/language_learning_inputs.py',
+        'scripts/language_learning_input_preflight.py', 'tests/test_language_learning_inputs.py',
+        'reports/language-eligibility/input-preflight.json', 'flm/babylm.py',
+        'data/sources/babylm-2026.json', 'data/cards/babylm-2026-acquisition.json',
+        'data/tokenizers/babylm-2026-4096/tokenizer-card.json',
+        'data/tokenizers/babylm-2026-4096/tokenizer.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
