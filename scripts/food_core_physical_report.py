@@ -78,7 +78,7 @@ def figures(summary, declared, trajectories, output):
             if row==0 and col==0: ax.legend(loc='lower left', fontsize=9, frameon=False)
     for col, seed in enumerate((42,43)):
         ax = fig.add_subplot(grid[2,col])
-        for origin, offset in (('initial',-.12), ('language',.12)):
+        for origin, offset in (('initial',-.18), ('language',.18)):
             trials = [r for r in summary['trials'] if r['model_id']==f'{origin}-s{seed}']
             for i, trial in enumerate(trials):
                 m = trial['metrics']; y = i+offset; color=colors[origin]
