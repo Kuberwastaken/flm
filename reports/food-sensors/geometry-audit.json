@@ -1,0 +1,10 @@
+{
+  "observations_recomputed": 9,
+  "physical_frames": 3,
+  "counterfactuals": 6,
+  "implementation": "Independent scalar math; no NumPy, FLM or FlyGym imports",
+  "scope": "Replays supplied positions and fields. Does not independently rerun physics or the reported exact physical repetition, and is not evidence of learned food behavior.",
+  "verified_utc": "2026-09-11T13:18:49.511418+00:00",
+  "record_sha256": "855e35ba586b08dddd2e101845153aefaf7c31ab1e99cde20ed9efa1d80df680",
+  "auditor_sha256": "73e822864219043ae72793a722ea37bdcd5566da89a742bb2b707d6e80e817ed"
+}
