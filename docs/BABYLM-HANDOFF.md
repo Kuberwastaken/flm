@@ -130,3 +130,20 @@ checks the eleventh completed fit with the same 24-record and checkpoint checks.
 Update 12,000 is selected at 1.8563063670 validation bits per byte after
 18,432,000 presented tokens. The final transformer fit and complete-study
 held-out evaluation remain pending.
+
+## All fits complete; held-out scoring started
+
+The [final 100M transformer seed-43 audit](../reports/babylm/completion-transformer-100m-s43.json)
+checks the twelfth completed fit. Update 12,000 is selected at 1.8462591591
+validation bits per byte after 18,432,000 presented tokens.
+
+The supervisor observed the trainer and all observed children exit and started
+held-out scoring at 2026-09-11 21:54:10 UTC. The [twelve-run selection](../reports/babylm/selection.json)
+was frozen before scoring. A subsequent [verification](../reports/babylm/selection-verification.json)
+reproduces it exactly with the frozen verifier, restoring selected/final
+checkpoints and checking all 288 validation records. This verification did not
+run model inference or read test tokens.
+
+This is a dated operational milestone, not a completed held-out comparison.
+Fixed continuations and selection timing remain later stages of the same
+supervised queue; the earlier arming and single-fit records above are historical.

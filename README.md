@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** Eleven of twelve BabyLM fits have finished: all six 10M fits, all three 100M seed-42 fits and 100M FLM and GRU seed 43. The 100M transformer seed-43 run is active. The [latest completion audit](reports/babylm/completion-gru-100m-s43.json) restores selected/final checkpoints and checks all 24 validation records. The [public snapshot](public/research/babylm-validation.json) is dated validation evidence, not a live process monitor or test result. Official held-out comparisons remain pending. A [supervisor bound to the live trainer](docs/BABYLM-HANDOFF.md) is armed to run held-out evaluation, fixed continuations and selection timing serially once the trainer exits and completion gates pass. New transfer and behavior experiments remain deferred.
+**Current evaluation:** All twelve BabyLM fits have finished: FLM, GRU and transformer at both 10M/100M budgets and seeds 42/43. The [final completion audit](reports/babylm/completion-transformer-100m-s43.json) restores selected/final checkpoints and checks all 24 validation records. All twelve [checkpoint selections](reports/babylm/selection.json) were frozen before held-out scoring, which is now underway; complete results remain pending. The [public snapshot](public/research/babylm-validation.json) is dated validation evidence, not a live process monitor or test result. The [supervisor](docs/BABYLM-HANDOFF.md) is running held-out evaluation, with fixed continuations and selection timing to follow serially once each stage passes. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -211,7 +211,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 11 of 12 runs complete as of 12 September 2026; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. All 12 runs complete as of 12 September 2026; held-out scoring underway; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark with a [36-condition coordinator and terminal-checkpoint gate](docs/SCAN-STUDY-COORDINATOR.md) and [implemented whole-partition scorer](docs/SCAN-EVALUATION.md). Official timing, protocol, budget, fits and results remain pending. |
 
