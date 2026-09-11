@@ -1,0 +1,93 @@
+{
+  "verified_utc": "2026-09-11T08:06:27.339113+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/selection-study.md",
+      "status": 200,
+      "bytes": 9497,
+      "sha256": "4b35970a08b8ec5abb0e4cdf32776d488146d6ea8766d59c5d0e2fa7478203b4"
+    },
+    {
+      "path": "research/publisher-annotations.md",
+      "status": 200,
+      "bytes": 6059,
+      "sha256": "9a5af6dcaef5dadaca9262998bfaa472a7c324b315da465bf66f38eaf1296072"
+    },
+    {
+      "path": "research/publisher-annotations/summary.json",
+      "status": 200,
+      "bytes": 6264,
+      "sha256": "846667b5aa3e097722d0b961452045abcf5f26c57820c6bc9e378f7e243cc53b"
+    },
+    {
+      "path": "research/publisher-annotations/candidate-annotations.csv",
+      "status": 200,
+      "bytes": 806749,
+      "sha256": "5176535c4e11511f068e55eb63b36c43f2baeb3d7acb75a41a538e57a5692194"
+    },
+    {
+      "path": "research/publisher-annotations/missing-transmitter-rows.csv",
+      "status": 200,
+      "bytes": 14047,
+      "sha256": "47991325680c7b15f6e7bdf3e79f7f4dc329ea5b05696727d4fc3e93d603ac7a"
+    },
+    {
+      "path": "research/publisher-annotations/source-card.json",
+      "status": 200,
+      "bytes": 1507,
+      "sha256": "eb3807693c9b2889f728048ec1f5f0658240fa433fbcc250d6688a0b06a7ee37"
+    },
+    {
+      "path": "research/publisher-annotations/publisher_annotations.py",
+      "status": 200,
+      "bytes": 11464,
+      "sha256": "ca2029c0f7f00d74ffa9b76c230faefce632999cba8b355aaa0f6f74cb66b19e"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7264538,
+      "sha256": "de3b732d93fc98229bf211daed980db2146b3dedfb53699a6ce3f0de2d3588c4"
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "status": 200,
+      "bytes": 138018,
+      "sha256": "86d108688a1bc255251e01c7cc91788baaa35a0d2e367bdaae85dd72d85b7017"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "candidate_csv_unique_rows": 5293,
+  "missing_transmitter_csv_rows": 178,
+  "local_markdown_links_verified": [
+    "selection-feasibility/selection_feasibility.py",
+    "selection-feasibility/summary.json",
+    "figures/selection-feasibility.svg",
+    "publisher-annotations.md",
+    "selection-feasibility/candidate-body-ids.json",
+    "figures/selection-feasibility.csv",
+    "selection-study.md",
+    "publisher-annotations/source-card.json",
+    "publisher-annotations/summary.json",
+    "publisher-annotations/candidate-annotations.csv",
+    "publisher-annotations/missing-transmitter-rows.csv"
+  ],
+  "fixture_tests_passed": 3,
+  "scope": "Publisher annotation release and dated validation snapshot; no new language test scores or functional circuit validation",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "7902e7a6bc0b755d4be96ed5c9ed2547e5c82ca8",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34577370869"
+  },
+  "browser_review": {
+    "verified_utc": "2026-09-11T08:07:27.530220+00:00",
+    "url": "https://flm.kuber.studio/#research",
+    "completed_runs_displayed": 3,
+    "registered_runs_displayed": 12,
+    "validation_only_label_visible": true,
+    "console_errors": [],
+    "scope": "Actual in-app browser training snapshot; annotation note and evidence bytes verified over HTTP"
+  }
+}
