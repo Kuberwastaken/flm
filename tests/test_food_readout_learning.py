@@ -134,5 +134,11 @@ class ReadoutLearningTests(unittest.TestCase):
         learner.begin(); result=learner.act([1.,0.],0.)
         self.assertEqual(result['action'],2); np.testing.assert_array_equal(result['probabilities'],[0,0,1])
 
+    def test_overflowing_reward_update_is_atomic(self):
+        learner=EpisodicReadout(np.zeros((3,2)),np.zeros(3),Rule(1e308,1.,.1,1))
+        learner.begin(); learner.act([10.,0.],.1); before=copy.deepcopy(learner.state())
+        with self.assertRaises(FloatingPointError): learner.finish(1.)
+        self.assertEqual(learner.state(),before)
+
 
 if __name__=='__main__': unittest.main()
