@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-09-11T10:29:28.280991+00:00",
+  "auditor_copied_outside_repository": true,
+  "subprocess_exit_code": 0,
+  "auditor_source_sha256": "eb2b59f26b856113279cfc40295a09dc094e84becec19c0063fccaf9fdcc3754",
+  "archive_sha256": "1b849f068ab1c0bd7e8331e2aa7ddb573ed6173f79e739727b86ac7d176aebd3",
+  "archive_bytes": 26622579,
+  "release_sha256": "34bbf69185f2b1c1517c6a6bc09738533d51ddb4dc80039a4a62bffaddf079d3",
+  "original_graphs": 64,
+  "planned": 192,
+  "complete": 192,
+  "failed": 0,
+  "arrays_degrees_signs_weights_self_edges_and_diagnostics_verified": true,
+  "failures_not_reexecuted": 0,
+  "scope": "Supplied untrained graph and receipt audit; no replay of swap trajectories, mixing claim or language evaluation"
+}

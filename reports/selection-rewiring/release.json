@@ -1,0 +1,15 @@
+{
+  "verified_utc": "2026-09-11T10:26:44.077171+00:00",
+  "archive_sha256": "1b849f068ab1c0bd7e8331e2aa7ddb573ed6173f79e739727b86ac7d176aebd3",
+  "archive_bytes": 26622579,
+  "packager_source_sha256": "40a4d491b18766399e01a15cf32fd7ee105d1c33df004443aeb3a9f29fa5260a",
+  "independent_auditor_source_sha256": "eb2b59f26b856113279cfc40295a09dc094e84becec19c0063fccaf9fdcc3754",
+  "rewiring_manifest_sha256": "fe8f67b0c6eff5c364cdfcc14b633bb2650a950289c7953eb188dfa8135bceee",
+  "original_graphs": 64,
+  "planned": 192,
+  "complete": 192,
+  "failed": 0,
+  "arrays_degrees_signs_weights_self_edges_and_diagnostics_verified": true,
+  "failures_not_reexecuted": 0,
+  "scope": "Supplied untrained graph and receipt audit; no replay of swap trajectories, mixing claim or language evaluation"
+}
