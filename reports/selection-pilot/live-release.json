@@ -1,0 +1,68 @@
+{
+  "verified_utc": "2026-09-11T10:04:09.136425+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/selection-pilot/preflight.json",
+      "status": 200,
+      "bytes": 29729,
+      "sha256": "dd1850c9b206323bbe2a325c229fcbd413b830d37a41b7562882c546cc657520"
+    },
+    {
+      "path": "research/selection-pilot/selection_pilot.py",
+      "status": 200,
+      "bytes": 12939,
+      "sha256": "101f2b7764510e80e1e22de6d2aa7fae2426a9af8b6d326de70dfae3e8bf3fc7"
+    },
+    {
+      "path": "research/selection-pilot/selection_pilot_preflight.py",
+      "status": 200,
+      "bytes": 4662,
+      "sha256": "305beccddf04c65b1961dbd407c98ee4529381bb12c329c67fff68ed7cecfec5"
+    },
+    {
+      "path": "research/selection-timing-pilot.md",
+      "status": 200,
+      "bytes": 5743,
+      "sha256": "0374d6520481ebad9a7e5d71d3e669d588afb79b98f8c3bdfab498f580944570"
+    },
+    {
+      "path": "research/selection-graph-exports.md",
+      "status": 200,
+      "bytes": 7466,
+      "sha256": "c8eccb0be0f324b921a45548a8cd62d16f206b7861271f8ff0cf410cd54aa601"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7876424,
+      "sha256": "8b4ed70f01d141572f06cc7dd55438415796c9f6ca14dcd2d4e8101f21f7a964"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "circuit-selection.md",
+    "selection-pilot/selection_pilot.py",
+    "selection-pilot/preflight.json",
+    "selection-pilot/selection_pilot_preflight.py",
+    "selection-rewiring-audit.md",
+    "selection-timing-pilot.md",
+    "circuit-selection.md",
+    "selection-graphs.zip",
+    "selection-graph-manifest.json",
+    "selection_rewiring.py",
+    "selection-rewiring-started.json",
+    "selection-graph-release.json"
+  ],
+  "paper_source_files_verified": 299,
+  "source_and_preflight_bindings_verified": true,
+  "gradient_fixture_graphs_verified": 64,
+  "fixture_tests_observed_passed": 7,
+  "content_commit": "299fd753df1ee32218acedb789d0c4b47aaf1135",
+  "github_actions_run": 34587221841,
+  "github_actions_conclusion": "success",
+  "node_tests_passed": 69,
+  "node_tests_failed": 0,
+  "official_timing_run_started": false,
+  "scope": "Synthetic gradient readiness and timing-tool preparation; no corpus fit or throughput result"
+}
