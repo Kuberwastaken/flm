@@ -35,12 +35,13 @@ sampled rows and exposure after resumption. These tests use six-update artificia
 examples, not official SCAN training or a multithreaded reproduction guarantee.
 
 The [train-only timing pilot](SCAN-TIMING-PILOT.md) now has a tested command,
-but its full-size measurements await the priority queues. Remaining work is that
-measurement, the fixed optimizer/exposure budget,
-immutable whole-study declaration, serial execution and an all-condition gate
-before official test generation. The preparation API intentionally sets no
-training budget and runs no scheduler. Keep the language computation queue and
-registered BabyLM comparison ahead of these new fits. See the
+but its full-size measurements await the priority queues. A separate
+[whole-study coordinator](SCAN-STUDY-COORDINATOR.md) now implements immutable
+declaration, serial execution and the all-36 terminal-checkpoint gate. Actual
+cost measurement, the fixed optimizer/exposure budget and the whole-partition
+test harness remain pending. This preparation API itself intentionally sets no
+training budget and runs no scheduler. Keep the registered BabyLM comparison
+and chosen neuron-selection study ahead of these new fits. See the
 [experimental design](INSTRUCTION-TRANSFER.md) for interpretation and limits.
 
 ```sh

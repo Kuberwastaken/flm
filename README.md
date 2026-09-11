@@ -213,7 +213,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
 | **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 7 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
-| **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
+| **SCAN** | Prepared command-composition benchmark with a [36-condition coordinator and terminal-checkpoint gate](docs/SCAN-STUDY-COORDINATOR.md). Official costs, budget, fits and whole-partition evaluation remain pending. No model results. |
 
 Training uses text, without pretrained embeddings, synthetic teacher corpora or private conversations. [Dataset cards](data/cards/) record revisions, hashes and transformations; raw corpora stay local. See [BabyLM's protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md), [acquisition status](docs/DATA-STATUS.md) and [SCAN's data audit](docs/INSTRUCTION-TRANSFER.md).
 

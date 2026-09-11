@@ -5,11 +5,12 @@ full-size pilot has run and no downstream benchmark budget has been selected.
 The [preflight record](../reports/scan-runtime/pilot-preflight.json) distinguishes
 software tests from an observed timing result.
 
-Run it only after the language computation and registered BabyLM training
-queues finish, and after checking their live process handles have exited. The
-command refuses missing completion records and uses an OS-held lease to exclude
-another pilot writer. Completion files alone cannot establish that no other
-training process is active.
+Run it only after the registered BabyLM and chosen neuron-selection comparisons
+finish, and after checking their live process handles have exited. The pilot
+command checks the earlier language-computation and BabyLM completion markers;
+the [study coordinator](SCAN-STUDY-COORDINATOR.md) also verifies the completed
+selection comparison. An OS-held lease excludes another pilot writer.
+Completion files alone cannot establish that no other training process is active.
 
 The pilot includes all three SCAN splits, all three architectures, and both
 original and WikiText initializations at seed 42: eighteen conditions. It loads
@@ -37,7 +38,7 @@ are not silently relabeled successful or omitted from the local record.
 
 ```sh
 python -m unittest discover -s tests -p test_scan_pilot.py -v
-# Only after both priority queues and other trainers have exited:
+# Only after the priority comparisons finish and their trainers have exited:
 python -m flm.scan_pilot
 ```
 

@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-09-11T16:46:46.575083+00:00",
+  "source_commit": "2a44a681d801047e51d369e441913a335757e07d",
+  "source_sha256": {
+    "flm/scan_study.py": "e769e46117df21a0a202481485f532ad27187e87dbea4390d6ce2d9d44a8f28f",
+    "tests/test_scan_study.py": "ce91650ca87bb5cc4a271cc5af781ca4cf79e4aa9030f5ba85e5830b66479ada"
+  },
+  "python": "Python 3.10.11",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "tests": {
+    "command": "python -m unittest discover -s tests -p test_scan_study.py -v",
+    "passed": 12,
+    "failed": 0,
+    "seconds": 81.711,
+    "log_sha256": "eb1231629ebba31154bca06435cea5dbd7a64235b413e88654c248cd4ec952d0"
+  },
+  "fixture_scope": {
+    "conditions": 36,
+    "updates_per_fit": 6,
+    "batch_size": 2,
+    "threads": 1,
+    "models": "Small synthetic FLM, GRU and transformer; deterministically perturbed source tensors, not pretrained language checkpoints",
+    "data": "Four artificial rows including one deliberate repeat; no official SCAN train/test payloads",
+    "pilot": "Eighteen disposable synthetic conditions; their measured times are not retained in this report",
+    "resume": "Injected failure after condition two at update three; all 36 final model tensors, histories, sampled rows and exposure match uninterrupted fixtures"
+  },
+  "actual_repository_guard": {
+    "refusal": "Finish the fixed BabyLM queue before instruction-study work",
+    "study_paths_before_and_after": {
+      "reports/scan-runtime/timing-pilot.json": false,
+      "docs/SCAN-PROTOCOL.md": false,
+      "reports/scan-runtime/study-identity.json": false,
+      "reports/scan-runtime/study-selection.json": false,
+      "runs/scan-study-v1": false
+    },
+    "official_artifacts_created": false
+  },
+  "official_scan_fits": 0,
+  "official_scan_test_generations": 0,
+  "pending": [
+    "Actual train-only cost measurements",
+    "Explicit protocol and budget",
+    "Whole-partition test loader and resumable evaluation coordinator",
+    "Official fits and all-condition held-out evaluation"
+  ],
+  "priority": "Finish fixed BabyLM comparison, then complete chosen neuron-selection comparison before SCAN"
+}

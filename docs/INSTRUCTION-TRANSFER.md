@@ -230,11 +230,13 @@ implementation retained views. These one-thread forward probes verify the
 observed cases, not all inputs, backward trajectories or multithreaded replay.
 No corpus, SCAN prediction or fitting is involved in this source audit.
 
-The train-only timing pilot, actual optimizer/budget declaration, whole-study
-condition inventory, source binding at fit/resume and complete-test gate remain
-before any of the planned 36 benchmark fits begin. The helpers choose no research
-training budget. The downstream declaration must bind these verified partitions
-and source models before fitting; preparation records are not a frozen study.
+The [condition layer](SCAN-CONDITION-PREPARATION.md) now binds original sources
+at fit/resume. A [whole-study coordinator](SCAN-STUDY-COORDINATOR.md) implements
+immutable declaration, serial fitting and an all-36 terminal-checkpoint audit.
+The actual train-only timing pilot, optimizer/budget declaration and integrated
+whole-partition test harness remain pending before any official benchmark fits
+begin. Preparation records are not a frozen study or a transfer result. The
+fixed BabyLM comparison and chosen neuron-selection study retain priority.
 
 ## Reproduction and current boundary
 
