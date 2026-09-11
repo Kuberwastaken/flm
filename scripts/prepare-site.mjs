@@ -7,6 +7,8 @@ for (const name of ['summary.json', 'candidate-body-ids.json', 'figures.json'])
   await copyFile(`reports/selection-feasibility/${name}`, `public/research/selection-feasibility/${name}`);
 await copyFile('flm/selection_feasibility.py', 'public/research/selection-feasibility/selection_feasibility.py');
 await writeFile('public/research/selection-study.md', (await readFile('docs/SELECTION-STUDY.md', 'utf8'))
+  .replaceAll('SELECTION-GRAPH-EXPORTS.md', 'selection-graph-exports.md')
+  .replaceAll('SELECTION-REWIRING-RESULTS.md', 'selection-rewiring-results.md')
   .replaceAll('../flm/selection_feasibility.py', 'selection-feasibility/selection_feasibility.py')
   .replaceAll('../reports/selection-feasibility/', 'selection-feasibility/')
   .replaceAll('PUBLISHER-ANNOTATIONS.md', 'publisher-annotations.md')

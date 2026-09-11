@@ -122,14 +122,15 @@ matched degrees, weights, signs, function or language performance.
 ## Decisions before fitting
 
 The operational rule makes candidate membership inspectable; it does not finish
-the functional-subcircuit question. Next work must:
+the functional-subcircuit question. Export and rewiring are complete; the
+remaining decisions and their structural prerequisites are:
 
-1. Export the chosen inventories into model graphs with exact source identities,
-   common ordering/pooling and the same input/readout policy. Profile their actual
-   cost before selecting a tractable training matrix.
-2. Generate and audit independently rewired versions within each selected set,
-   preserving the specified directed degrees, source signs, incoming magnitudes,
-   self edges and pools. Keep selector contrasts separate from topology contrasts.
+1. Use the [64 exported graphs](selection-graph-exports.md), with their recorded
+   source identities, common ordering/pooling and input/readout policy. Actual
+   cost profiling remains necessary before choosing complete training groups.
+2. Preserve the [192 audited rewires](selection-rewiring-results.md), with their
+   specified directed degrees, source signs, incoming magnitudes, self edges
+   and pools. Keep selector contrasts separate from topology contrasts.
 3. Declare how biological boundary truncation limits the hypothesis. If a more
    compartment-specific selector replaces this rule, retain these inventories and
    state the anatomical reason before any language comparison.

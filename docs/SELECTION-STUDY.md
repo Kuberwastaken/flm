@@ -7,8 +7,9 @@ from retaining the highest-contact neurons or increasing their number.
 
 The next selection study will compare a biologically motivated subcircuit,
 connectivity-ranked selection and independently sampled random subsets at a
-common neuron budget. This document records the anatomy-only feasibility work
-and decisions still needed before freezing that language experiment. No new
+common neuron budget within each candidate group. This document records the
+anatomy-only feasibility work and decisions still needed before freezing that
+language experiment. No new
 selection has been trained or substituted into the current browser model.
 
 ## What the acquired source actually supports
@@ -100,9 +101,10 @@ not certification of synaptic compartment coverage or functional preservation.
    the justified unit and move *all* comparison selectors to that same larger
    budget. Keep the current 1,024 model as a historical reference, not a matched
    comparator. Record every rejected candidate and anatomical reason.
-3. **Compare selectors with clear matching.** Use the functional rule, the same
-   central-contact ranking at that budget, multiple uniform random subsets, and
-   random subsets stratified on declared source class, side and fast-sign counts.
+3. **Compare selectors with clear matching.** Use the operational candidate rule,
+   contact ranking within the same declared eligible population at that budget,
+   multiple uniform random subsets, and random subsets stratified on declared
+   source class, side and fast-sign counts.
    Keep input width, tokenizer, pooling policy, state equations, initialization
    distribution, text windows, optimizer and exposure fixed. Report edge counts,
    trainable parameters and compute rather than calling node matching parameter
@@ -138,8 +140,11 @@ a size cap. Their large partner-boundary losses remain explicit. The shared
 comparison population expands beyond central intrinsic cells to include all
 six superclasses appearing in the candidates; that is a new ranking population,
 not a claim of equivalence with the historic 1,024-node reference. These 64
-inventories are untrained, and do not replace the still-required within-subset
-rewiring controls or the final language protocol.
+inventories are untrained. All 64 model graphs have since been
+[exported](SELECTION-GRAPH-EXPORTS.md), and all 192 within-subset rewires are
+[complete and independently audited](SELECTION-REWIRING-RESULTS.md). Actual cost
+profiling, complete-group selection, the final language protocol and language
+fits remain pending. Structural completion is not a language result.
 
 ## Reproduce the anatomy audit
 
