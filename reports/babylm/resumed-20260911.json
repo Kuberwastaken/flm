@@ -1,0 +1,23 @@
+{
+  "verified_utc": "2026-09-11T00:30:04.852286+00:00",
+  "queue_session_id": 25715,
+  "resumed_from_step": 6500,
+  "resumed_checkpoint_sha256": "6709defb5331729815318a2c37c6bf5912b56a873f04316f6974ded3ccd67a25",
+  "readiness_audit_sha256": "2fbe05b3c59e6735bbce57cd8680e63d6a49be37b062761e1288a0500ef6a169",
+  "subsequent_immutable_checkpoint": "runs/babylm-10m/gru-s42/checkpoint-007000.pt",
+  "checkpoint_step": 7000,
+  "checkpoint_sha256": "a58514001635ff9c9e11c083f6e71aaa178fe41ae84a39b65a72a92913522b7b",
+  "exposure": {
+    "presented_tokens": 10752000,
+    "presented_bytes": 31457790,
+    "scored_bytes": 26214620
+  },
+  "optimizer_parameter_states": 8,
+  "source_protocol_model_optimizer_rng_verified": true,
+  "original_unsaved_history_retained": true,
+  "compact_computation_training_and_test_scoring_completed_before_resume": true,
+  "all_eight_compact_inference_exports_verified_before_resume": true,
+  "language_core_summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "test_data_opened": false,
+  "scope": "Dated resume and subsequent saved-state check; not a process monitor or a BabyLM test result"
+}

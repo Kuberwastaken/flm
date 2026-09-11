@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Next:** BabyLM remains paused while this release is packaged; its registered comparison resumes next. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed from its audited checkpoint after completing the compact computation study. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -317,6 +317,6 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 
 </details>
 
-The next stage resumes the registered BabyLM comparison; larger-data, capacity-scaling and language-to-action research remain open. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
+The registered BabyLM comparison is training again; larger-data, capacity-scaling and language-to-action research remain open. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).

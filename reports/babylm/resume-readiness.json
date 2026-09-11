@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-10T22:39:21.757843+00:00",
+  "checked_at": "2026-09-11T00:23:06.682189+00:00",
   "scope": "Paused BabyLM 10M GRU seed 42; read-only readiness audit",
   "audit_source_sha256": "cbb1a838ef7b25d10d7a696914ffc7dd5e1e9ef55b9ba4788f6853943eebf4d4",
   "checkpoint_step": 6500,
