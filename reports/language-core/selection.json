@@ -1,22 +1,21 @@
 {
-  "verified_utc": "2026-09-11T00:01:17.365495+00:00",
   "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
-  "condition": "no_temporal_state-s43",
-  "saved_step": 6000,
-  "committed_checkpoints": 12,
-  "checkpoint_sha256": "ce23a528ca3e7b8adbe31df3e2a35a4d9669b217204913e740cc0d057418c065",
-  "frozen_tensors_match_initialization": null,
-  "graph_pooling_optimizer_rng_and_exposure_verified": true,
-  "source_identity_verified": true,
-  "queue_session_id": 20410,
-  "queue_live_confirmed_by_session_poll": false,
-  "new_language_test_results_available": false,
-  "runtime_preflight": "reports/language-core/inference-runtime-preflight.json",
-  "release_gate_preflight": "reports/language-core/report-gate-preflight.json",
-  "export_preflight": "reports/language-core/inference-export-preflight.json",
-  "arithmetic_preflight": "reports/language-core/arithmetic-preflight.json",
-  "records_preflight": "reports/language-core/records-preflight.json",
-  "completed_new_fits": [
+  "runs": [
+    {
+      "label": "full-s42",
+      "control": "full",
+      "seed": 42,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s42",
+      "checkpoint": "runs/wikitext2/flm-s42/best.pt",
+      "checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.9096990391099853,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0
+    },
     {
       "label": "fixed_dynamics-s42",
       "control": "fixed_dynamics",
@@ -58,6 +57,21 @@
       "checkpoint_sha256": "b18c4c4b4491c3eede278501642fe0797651bb67be8fb0fa4eaaf1f9c00781f1",
       "checkpoint_step": 6000,
       "selection_validation_bpb": 2.0303651813713115,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0
+    },
+    {
+      "label": "full-s43",
+      "control": "full",
+      "seed": 43,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "output": "runs/wikitext2/flm-s43",
+      "checkpoint": "runs/wikitext2/flm-s43/best.pt",
+      "checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+      "checkpoint_step": 6000,
+      "selection_validation_bpb": 1.9107256505795487,
       "allocated_parameters": 600003,
       "trainable_parameters": 600003,
       "frozen_parameters": 0
@@ -108,12 +122,8 @@
       "frozen_parameters": 0
     }
   ],
-  "completed_new_fit_count": 6,
-  "planned_new_fit_count": 6,
-  "fixed_core_completed_all_12_checkpoints_verified": true,
-  "figure_preflight": "reports/language-core/figure-preflight.json",
-  "active_checkpoint_note": "All six new fits completed. No active computation-control trainer.",
-  "trained_no_temporal_probe": "reports/language-core/first-no_temporal_state-s43.json",
-  "browser_preflight": "reports/language-core/browser-preflight.json",
-  "queue_completed": true
+  "test_cache_sha256": "e6da687ff04fb44b538384e60ef70719d1e5dc39885befe715a230bda912992f",
+  "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+  "selection": "Lowest validation BPB at updates 500..6000; earliest exact tie",
+  "prior_test_access": "WikiText baseline and topology test results already inspected; exploratory extension"
 }
