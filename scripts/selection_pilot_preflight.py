@@ -10,7 +10,7 @@ import numpy as np
 
 from flm.model import Config,load_graph
 from flm.provenance import sha256
-from flm.selection_pilot import Pilot,measure,ordered_selections,prepare_inputs,prerequisites
+from flm.selection_pilot import SOURCES,Pilot,measure,ordered_selections,prepare_inputs,prerequisites
 
 
 def preflight(root):
@@ -53,9 +53,10 @@ def preflight(root):
         training_blocks_verified=blocks,training_cache_tokens_including_boundaries=cache_tokens,
         fixture=dict(synthetic_token_cycle=[17,29,43,59,71],updates_per_graph=2,batch=1,sequence=3,
             context_warmup=1,threads=1,initialization_and_sampling_seed=42),
-        source_sha256={name:sha256(root/name) for name in (
-            'flm/selection_pilot.py','flm/model.py','flm/train.py','flm/corpus_cache.py','flm/tokenizer.py',
-            'flm/scan_train.py','flm/inference.py','scripts/selection_pilot_preflight.py','tests/test_selection_pilot.py')},
+        source_sha256={**{'flm/'+name:sha256(root/'flm'/name) for name in SOURCES},
+            **{name:sha256(root/name) for name in ('scripts/selection_pilot_preflight.py','tests/test_selection_pilot.py')}},
+        update_implementation=result['update_implementation'],shared_update_training_settings=result['training_settings'],
+        timing_scope=result['timing_scope'],synthetic_gradient_updates=2*len(results),
         official_timing_prerequisites=gate,official_timing_run_started=False,conditions=results,
         scope='Full-size graph gradient compatibility on tiny synthetic fixtures. Training cache verified separately; no corpus fit, throughput estimate, validation/test access or saved model.')
 

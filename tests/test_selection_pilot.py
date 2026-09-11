@@ -12,7 +12,7 @@ import numpy as np
 import torch
 
 from flm.model import Config
-from flm.selection_pilot import Pilot,graph_digest,measure,ordered_selections,prepare_inputs,prerequisites,run
+from flm.selection_pilot import SOURCES,Pilot,graph_digest,measure,ordered_selections,prepare_inputs,prerequisites,run
 from flm.train import Sampler
 
 
@@ -53,14 +53,49 @@ class SelectionPilotTests(unittest.TestCase):
         self.assertEqual(second['sampled_windows_sha256'],result['sampled_windows_sha256'])
         self.assertNotEqual(second['graph_arrays_sha256'],result['graph_arrays_sha256'])
 
+    def test_shared_update_matches_saved_fit_tensors_optimizer_and_sampled_windows(self):
+        from flm.language_learning_train import fit,update
+        from flm.model import FLM
+        graph,config,docs,lengths=fixture()
+        docs=[(name,np.tile(np.array([0,2,1,3],dtype=np.int32),12)) for name,_ in docs]
+        pilot=Pilot(1,2,2,5,1,1,42); captured=[]
+        def observed(model,optimizer,x,y,settings,method,step):
+            result=update(model,optimizer,x,y,settings,method,step)
+            captured.append(dict(step=step,settings=settings,method=method,model=copy.deepcopy(model.state_dict()),
+                                 optimizer=copy.deepcopy(optimizer.state_dict()),boundary_scored=bool((y[:,1:]<2).any())))
+            return result
+        with patch('flm.selection_pilot.update',side_effect=observed):
+            measured=measure(graph,config,docs,lengths,pilot)
+        self.assertEqual([r['step'] for r in captured],[1,2,3])
+        self.assertTrue(all(r['method']=='bptt' and r['settings']==pilot.training_settings() for r in captured))
+        self.assertTrue(any(r['boundary_scored'] for r in captured))
+        self.assertEqual(measured['update_implementation'],'flm.language_learning_train.update:bptt')
+        self.assertEqual(measured['training_settings'],vars(pilot.training_settings()))
+        previous_threads=torch.get_num_threads()
+        try:
+            with tempfile.TemporaryDirectory() as directory,torch.random.fork_rng(devices=[]):
+                torch.manual_seed(42); model=FLM(graph,config).float()
+                lexicon=SimpleNamespace(vocabulary=config.vocabulary,lengths=lengths,sha256='a'*64)
+                fit(model,docs,lexicon,pilot.training_settings(),'bptt',dict(fixture=True),Path(directory))
+                saved=torch.load(Path(directory)/'checkpoint-000003.pt',weights_only=True)
+        finally: torch.set_num_threads(previous_threads)
+        final=captured[-1]
+        for name,tensor in saved['model'].items(): self.assertTrue(torch.equal(tensor,final['model'][name]),name)
+        self.assertEqual(saved['optimizer']['param_groups'],final['optimizer']['param_groups'])
+        self.assertEqual(saved['optimizer']['state'].keys(),final['optimizer']['state'].keys())
+        for index,state in saved['optimizer']['state'].items():
+            for name,tensor in state.items():
+                self.assertTrue(torch.equal(tensor,final['optimizer']['state'][index][name]),(index,name))
+        self.assertEqual(saved['sampled_token_sha256'],measured['sampled_windows_sha256'])
+
     def test_invalid_dimensions_lengths_tokens_and_nonfinite_loss_fail_cleanly(self):
         graph,config,docs,lengths=fixture(); pilot=Pilot(1,1,2,5,1,1,42)
         for bad in (replace(pilot,batch=0),replace(pilot,context_warmup=5),replace(pilot,seed=-1),replace(pilot,threads=True)):
             with self.assertRaises(ValueError): measure(graph,config,docs,lengths,bad)
         with self.assertRaisesRegex(ValueError,'byte lengths'): measure(graph,config,docs,lengths[:-1],pilot)
         before=graph_digest(graph); rng=torch.get_rng_state().clone(); threads=torch.get_num_threads()
-        with patch('flm.selection_pilot.F.cross_entropy',return_value=torch.tensor(float('nan'))):
-            with self.assertRaisesRegex(FloatingPointError,'pilot loss'): measure(graph,config,docs,lengths,pilot)
+        with patch('flm.language_learning_train.F.cross_entropy',return_value=torch.full((pilot.batch*pilot.sequence,),float('nan'))):
+            with self.assertRaisesRegex(FloatingPointError,'training loss'): measure(graph,config,docs,lengths,pilot)
         self.assertEqual(graph_digest(graph),before); self.assertTrue(torch.equal(rng,torch.get_rng_state()))
         self.assertEqual(torch.get_num_threads(),threads)
         with self.assertRaisesRegex(ValueError,'invalid token IDs'):
@@ -125,7 +160,7 @@ class SelectionPilotTests(unittest.TestCase):
             root=Path(folder); graph,config,docs,lengths=fixture()
             graph_root=root/'work/selection-graphs-v1'; graph_root.mkdir(parents=True)
             np.savez_compressed(graph_root/'fixture.npz',**graph)
-            for name in ('selection_pilot.py','model.py','train.py','corpus_cache.py','tokenizer.py','scan_train.py','inference.py'):
+            for name in SOURCES:
                 path=root/'flm'/name; path.parent.mkdir(exist_ok=True); path.write_bytes((repository/'flm'/name).read_bytes())
             from dataclasses import asdict
             entry=dict(path='fixture.npz',graph_sha256=hashlib.sha256((graph_root/'fixture.npz').read_bytes()).hexdigest(),
