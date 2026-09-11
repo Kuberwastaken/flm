@@ -89,6 +89,11 @@ The [verification record](../reports/food-episode/preparation.json) and
 [complete smoke records](../public/research/food-episode-smoke.zip) preserve the
 checks and trajectories. The archive's `-1` terminal action and uniform values
 mean no action/draw; they are not invalid samples produced by the policy.
+The [record auditor](../scripts/audit_food_episode_smoke.py) reproduced sensor
+geometry, controller states and decisions for all 24 saved observations, and
+checked the four exact paired repeats. Its [audit record](../reports/food-episode/archive-audit.json)
+adds no physics or learning. It uses the same declared numerical routines,
+rather than an independently implemented simulator or controller.
 
 ## Reproduction and remaining work
 
@@ -105,6 +110,10 @@ python -m unittest discover -s tests -p test_food_readout_learning.py -v
 # Pinned embodiment environment; fresh output directory, learning disabled:
 .venv-embodied/Scripts/python.exe experiments/embodiment/verify_food_episode.py `
   --bundle work/food-core-interface-v1 --output work/new-food-episode-smoke
+# Numerical audit only, using the recorded NumPy version and source files:
+.venv-embodied/Scripts/python.exe scripts/audit_food_episode_smoke.py `
+  --archive public/research/food-episode-smoke.zip --bundle work/food-core-interface-v1 `
+  --output work/new-food-episode-audit.json
 ```
 
 Use the [released core interface package](https://flm.kuber.studio/research/food-core-interface.zip)
