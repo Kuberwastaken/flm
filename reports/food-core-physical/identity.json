@@ -1,0 +1,700 @@
+{
+  "study": "unadapted-food-core-physical-v1",
+  "cases": [
+    {
+      "label": "odor-a-left",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-right",
+      "a_side": -1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-reversed",
+      "a_side": 1,
+      "a_sugar": 0.0,
+      "b_sugar": 1.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-neutral",
+      "a_side": 1,
+      "a_sugar": 0.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-missing",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": true,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-repeat",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": "odor-a-left"
+    }
+  ],
+  "fields": {
+    "odor-a-left": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-right": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-reversed": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-neutral": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-missing": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-repeat": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    }
+  },
+  "policy": {
+    "action_order": [
+      "turn_right",
+      "straight",
+      "turn_left"
+    ],
+    "base_drive": 0.8,
+    "maximum_turn": 0.4,
+    "formula": "turn=0.4*(p_left-p_right); drive=[0.8-turn,0.8+turn]",
+    "stop": "Latch source_contact >= 0.5; thereafter both drives are zero",
+    "core_after_contact": "Continue one recurrent transition per sample, even after the motor stop latches",
+    "probability_sampling": false,
+    "location_or_reward_identity_input": false,
+    "scope": "Engineered continuous motor mapping and contact stop, not learned walking or feeding."
+  },
+  "sources": {
+    "flm/food_sensors.py": "055ef60491c2ea93c879e271b91efef2c3348899305aa8d59d34733bc4ff6176",
+    "flm/food_approach.py": "68c9dee1ce4ac36820582dd6541097e52ada9ec3808331fb120ec42f12f7c1ad",
+    "tests/test_food_approach.py": "49b6c6bac936d80eb11b104f85808a8455ef1be67dd55469cde2c7f3c691ebab",
+    "experiments/embodiment/food_approach.py": "3704839dee1a1525c0d910ae5fe4707871fdbc4d97f5ab17d0699b18f66b1a2b",
+    "experiments/embodiment/calibrate.py": "fd42f6fa46c83658c81f09f38881dc2c985124406603aad8d27c3010e52b5154",
+    "requirements-embodied-lock.txt": "8441fc299dac61d014782872ed8dbf60634a588a55723a2288ce4abba879a93f",
+    "docs/FOOD-APPROACH-REFERENCE.md": "a30df73810d72811aaa21816bd98a958915e156c4b1643eb4477f971470d3ecf",
+    "experiments/embodiment/food_core_physical.py": "4fb3dfe4dda0031cd609d7c6d642f3e580ad96fc19256af66717b2e647799cb7",
+    "experiments/embodiment/food_core_runtime.py": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb",
+    "flm/food_motor.py": "4c27cd9ba1161db7176c58af46a4d4e531338de4ab5eaa0d48458e367fe51f5a",
+    "tests/test_food_motor.py": "0ee7f04a821625b1b09fcb62be3072b6f90b7d487fb817c61542180eac79f567",
+    "docs/FOOD-CORE-PHYSICAL-REFERENCE.md": "567a2a70180d7cab8dc98d863500bdd8aed8375b8fc9b3d36375bd513ce29402"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "flygym": "2.1.0",
+      "mujoco": "3.9.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "numba": "0.67.0"
+    },
+    "numerical_threads": 1,
+    "windows_priority": "BELOW_NORMAL_PRIORITY_CLASS"
+  },
+  "installed_sources": {
+    "flygym.simulation": "c2a6fded0ccedb2124c1ac421e1b52cb2c087bfa40fcb38f8a32722d21c012d2",
+    "flygym.anatomy": "64ac2cb6239d26ff872e34f2b59e6e35c9182b4b05e21e151e7e7d2c129c0e87",
+    "flygym.compose.fly.base_fly": "9f7ec2c3786972467085cf6a92363cc72a95551226151ff1941fd96800ec677f",
+    "flygym_demo.complex_terrain.turning_controller": "385f1b0169c60f0f241a63e0b4f4112aa1c4e65e4b9aec7e5b38cee8cdc6b1b7",
+    "flygym_demo.complex_terrain.preprogrammed": "ad945cee5af607e24f1a17ada0b8becd622c1fabebbb9f4f35e49dc7fd69e97f",
+    "flygym_demo.complex_terrain.common": "306b5a287de6aa26a3de110dbe16f706b9df8c592386b6fdc770d6724d38ffd8"
+  },
+  "channels": [
+    "odor_a_left",
+    "odor_a_right",
+    "odor_b_left",
+    "odor_b_right",
+    "sugar_contact",
+    "source_contact"
+  ],
+  "odor_body_origins": [
+    "l_funiculus",
+    "r_funiculus"
+  ],
+  "contact_body_origins": [
+    "lf_tarsus5",
+    "lm_tarsus5",
+    "lh_tarsus5",
+    "rf_tarsus5",
+    "rm_tarsus5",
+    "rh_tarsus5"
+  ],
+  "physics_seed": 17,
+  "physics_timestep_s": 0.0001,
+  "duration_s": 2.0,
+  "control_step_s": 0.01,
+  "expected_physics_steps": 20000,
+  "expected_observations": 201,
+  "language_model_loaded": true,
+  "neural_policy_used": true,
+  "training_updates": 0,
+  "scope": "Actual closed-loop physics with initial and language-trained cores behind identical unadapted adapters. No food-task learning, feeding or demonstrated transfer benefit.",
+  "model_ids": [
+    "initial-s42",
+    "language-s42",
+    "initial-s43",
+    "language-s43"
+  ],
+  "expected_trials": 24,
+  "bundle_manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+  "models": [
+    {
+      "id": "initial-s42",
+      "file": "initial-s42.npz",
+      "bytes": 658420,
+      "sha256": "7e92392af302569d5687c2e95d96bf8485f6501784756efa888e16d1e869d7a2",
+      "training_seed": 42,
+      "core_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+      "source_selected_language_model": {
+        "id": "flm-s42",
+        "variant": "flm",
+        "training_seed": 42,
+        "file": "checkpoints/flm-s42.pt",
+        "checkpoint_step": 6000,
+        "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+        "state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+        "parameters": 600003,
+        "published_test_bits_per_byte": 1.973182456549952
+      },
+      "origin": "reconstructed initialization using released constructor and original seed",
+      "parameter_card": {
+        "original_language_parameter_entries": 600003,
+        "frozen_core_parameter_entries_used": 178019,
+        "frozen_core_parameter_names_used": [
+          "input.weight",
+          "input.bias",
+          "edge_log_gain",
+          "alpha_logit",
+          "beta_logit",
+          "recurrent_logit",
+          "norm.weight",
+          "norm.bias"
+        ],
+        "unused_language_parameter_names": [
+          "output_bias",
+          "embedding.weight",
+          "readout.weight",
+          "readout.bias"
+        ],
+        "trainable_adapter_parameter_entries": 1443,
+        "adapter_seed": 711,
+        "action_names": [
+          "turn_right",
+          "straight",
+          "turn_left"
+        ],
+        "state_entries_per_sequence": 2048,
+        "core_frozen": true,
+        "scope": "Fresh untrained interfaces. Lexical embedding/readout are retained in the copied Python object but unused by sensory inference. Core updates have no intrinsic biological time unit."
+      }
+    },
+    {
+      "id": "language-s42",
+      "file": "language-s42.npz",
+      "bytes": 780016,
+      "sha256": "d57d4c48044fb09428758f593775c1b66d2823a0d0c5b9cb1ce5b19dd7a73923",
+      "training_seed": 42,
+      "core_state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+      "source_selected_language_model": {
+        "id": "flm-s42",
+        "variant": "flm",
+        "training_seed": 42,
+        "file": "checkpoints/flm-s42.pt",
+        "checkpoint_step": 6000,
+        "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+        "state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+        "parameters": 600003,
+        "published_test_bits_per_byte": 1.973182456549952
+      },
+      "origin": "released validation-selected WikiText checkpoint",
+      "parameter_card": {
+        "original_language_parameter_entries": 600003,
+        "frozen_core_parameter_entries_used": 178019,
+        "frozen_core_parameter_names_used": [
+          "input.weight",
+          "input.bias",
+          "edge_log_gain",
+          "alpha_logit",
+          "beta_logit",
+          "recurrent_logit",
+          "norm.weight",
+          "norm.bias"
+        ],
+        "unused_language_parameter_names": [
+          "output_bias",
+          "embedding.weight",
+          "readout.weight",
+          "readout.bias"
+        ],
+        "trainable_adapter_parameter_entries": 1443,
+        "adapter_seed": 711,
+        "action_names": [
+          "turn_right",
+          "straight",
+          "turn_left"
+        ],
+        "state_entries_per_sequence": 2048,
+        "core_frozen": true,
+        "scope": "Fresh untrained interfaces. Lexical embedding/readout are retained in the copied Python object but unused by sensory inference. Core updates have no intrinsic biological time unit."
+      }
+    },
+    {
+      "id": "initial-s43",
+      "file": "initial-s43.npz",
+      "bytes": 658282,
+      "sha256": "1597b1a5e48a96c86e033a477534825b8fab3263e72e8cf921f704b22eb892cc",
+      "training_seed": 43,
+      "core_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+      "source_selected_language_model": {
+        "id": "flm-s43",
+        "variant": "flm",
+        "training_seed": 43,
+        "file": "checkpoints/flm-s43.pt",
+        "checkpoint_step": 6000,
+        "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+        "state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+        "parameters": 600003,
+        "published_test_bits_per_byte": 1.9755826116531785
+      },
+      "origin": "reconstructed initialization using released constructor and original seed",
+      "parameter_card": {
+        "original_language_parameter_entries": 600003,
+        "frozen_core_parameter_entries_used": 178019,
+        "frozen_core_parameter_names_used": [
+          "input.weight",
+          "input.bias",
+          "edge_log_gain",
+          "alpha_logit",
+          "beta_logit",
+          "recurrent_logit",
+          "norm.weight",
+          "norm.bias"
+        ],
+        "unused_language_parameter_names": [
+          "output_bias",
+          "embedding.weight",
+          "readout.weight",
+          "readout.bias"
+        ],
+        "trainable_adapter_parameter_entries": 1443,
+        "adapter_seed": 711,
+        "action_names": [
+          "turn_right",
+          "straight",
+          "turn_left"
+        ],
+        "state_entries_per_sequence": 2048,
+        "core_frozen": true,
+        "scope": "Fresh untrained interfaces. Lexical embedding/readout are retained in the copied Python object but unused by sensory inference. Core updates have no intrinsic biological time unit."
+      }
+    },
+    {
+      "id": "language-s43",
+      "file": "language-s43.npz",
+      "bytes": 780212,
+      "sha256": "7b7b756af8bf97edef786ecd0d7ad3994b352c59c54feb3714081c0988c7fe80",
+      "training_seed": 43,
+      "core_state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+      "source_selected_language_model": {
+        "id": "flm-s43",
+        "variant": "flm",
+        "training_seed": 43,
+        "file": "checkpoints/flm-s43.pt",
+        "checkpoint_step": 6000,
+        "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+        "state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+        "parameters": 600003,
+        "published_test_bits_per_byte": 1.9755826116531785
+      },
+      "origin": "released validation-selected WikiText checkpoint",
+      "parameter_card": {
+        "original_language_parameter_entries": 600003,
+        "frozen_core_parameter_entries_used": 178019,
+        "frozen_core_parameter_names_used": [
+          "input.weight",
+          "input.bias",
+          "edge_log_gain",
+          "alpha_logit",
+          "beta_logit",
+          "recurrent_logit",
+          "norm.weight",
+          "norm.bias"
+        ],
+        "unused_language_parameter_names": [
+          "output_bias",
+          "embedding.weight",
+          "readout.weight",
+          "readout.bias"
+        ],
+        "trainable_adapter_parameter_entries": 1443,
+        "adapter_seed": 711,
+        "action_names": [
+          "turn_right",
+          "straight",
+          "turn_left"
+        ],
+        "state_entries_per_sequence": 2048,
+        "core_frozen": true,
+        "scope": "Fresh untrained interfaces. Lexical embedding/readout are retained in the copied Python object but unused by sensory inference. Core updates have no intrinsic biological time unit."
+      }
+    }
+  ],
+  "physical_reference_identity_sha256": "b4af11df71760f25ebee77c05c66f7eedf0751e6b5ab0e56a2f31b30acbd682c"
+}
