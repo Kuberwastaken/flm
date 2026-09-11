@@ -1,0 +1,69 @@
+{
+  "verified_utc": "2026-09-11T11:13:19.925414+00:00",
+  "scope": "Completed resumed 10M FLM seed 43; checkpoint restoration and every selection observation, no test inference.",
+  "completed_run": {
+    "scale": "10m",
+    "seed": 43,
+    "variant": "flm",
+    "checkpoint": "runs/babylm-10m/flm-s43/best.pt",
+    "checkpoint_sha256": "4b82db3a4d5e3fa205f9e0e06a2175bbac70320a59bebf5f4eb251cbf4e24e33",
+    "selection_validation_bpb": 1.974309237359898,
+    "training_source_commit": "2855cc224ba86a84db7e501ad15bb12afc036381",
+    "checkpoint_step": 12000,
+    "final_checkpoint_sha256": "c289de65da15caebf1d02e386a3afbff880d8c1303fffa24f90e8ecaf714b5b3",
+    "validation_record_sha256": {
+      "validation-000500.json": "030620480045849d8275172d4bc1b9e6384b5bacae60d507da68f604a0bb8e38",
+      "validation-001000.json": "26972372f43a9a4b3d8902a7f16b831bbb44a4bf3afa0ea05bf0244118b84e2a",
+      "validation-001500.json": "971a8d25f4842206a0d60d1af59bcddf652b011765c27451b58e23cac832c141",
+      "validation-002000.json": "17d257a3e58eefa7ad718481a0ac2c65c6331169ad7fd6dd63fa0a79e962ccaa",
+      "validation-002500.json": "fe9ce6fe8e88d2295823c2f4da9a955d917f3d6bf3489f07aa2df7378eb23b9f",
+      "validation-003000.json": "f4d37933ff9d2b033c5a369ee0222b2264988e59931ae88da974938b2addda12",
+      "validation-003500.json": "8304c63fde14bbb68dfb7fef9353ffb2156248b197973b1114c2d31b59f2b4e0",
+      "validation-004000.json": "8f71e6bf08128419d2d29665b164c0c513c88f39d8ebab5041861724f33072ac",
+      "validation-004500.json": "81d959b2d1a11235f244c63bf627c4a51abe3deb718ee9609546360ad83512d9",
+      "validation-005000.json": "0bf5302f972ce265b212eda165b9fcfbcdb330a63cc3a1453591b18c73c34c2a",
+      "validation-005500.json": "7532f6c06f1bf78194d63688941e107ae2d9b44a485a3543317284c0f1977b3b",
+      "validation-006000.json": "8aebcba8c279eee920d3628fc72f06086d57738e03af70cd8c88a6deac335a64",
+      "validation-006500.json": "ce1b36beba738f9a485f7609ef4935c69443ccdcd0ce4a6aba4cf76e89a5b8f9",
+      "validation-007000.json": "819e9e0b1f4392179f4f144e6ccbef04491fba0de27a4da8b1a92fd4f0eaa2c0",
+      "validation-007500.json": "f3213bfba41a00bc8b8164d8969f197b08a953775a7cedc9407ee5215cc52e59",
+      "validation-008000.json": "8232251b8d4e2225a89cfdb079cd3d38ea859ea36d5041684bf5e99883739d79",
+      "validation-008500.json": "8f039f2288f8c806843dc1b86438d7acf05e29b6cdecdc5aadde66bbaea7afe8",
+      "validation-009000.json": "9d41a462619cbdcf45fb91898e4683f2621f2e0f36f6e7a1bc8ac2e456434267",
+      "validation-009500.json": "7da8983972d722b956ea68c03bdbe7a30a3a63e59d032e850681b177d1af38c7",
+      "validation-010000.json": "c34ac3788d3a5a1b4b36320a692f805079da4b6abaaa008c74a62098875e6625",
+      "validation-010500.json": "6a4ea319b66ed1ffa748a2e08754635bf9e72933960a58f12a50b16a22570b89",
+      "validation-011000.json": "00ad739ea6823d9f651f532d80e30b32b745f692e4261232e504d8f634c3546b",
+      "validation-011500.json": "f9da064abfab6a51182fd49486e69e01f158e0e798cfd39b7e4386fe0cc44392",
+      "validation-012000.json": "4dbcc30e87beb92d2898bca9a212ca0ee569e15c9db5f7ed4ad62df8bce25c1e"
+    },
+    "final_exposure": {
+      "presented_tokens": 18432000,
+      "presented_bytes": 53915010,
+      "scored_bytes": 44930336
+    }
+  },
+  "validation_records_checked": 24,
+  "validation_panel_blocks": 48,
+  "completed_metadata_sha256": "03f3e69ccdab222141eec71f2b4035183915ca512964d5d0b9face43898e0095",
+  "validation_cache_manifest_sha256": "ea3bd0f2625e78723baf6300dca2ffdae91deebdcb21ae748ffd0cc4ba2ef859",
+  "verifier_sha256": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
+  "all_twelve_selection_frozen": false,
+  "test_inference_performed": false,
+  "numerical_source_comparison": {
+    "reference_commit": "f7f7b192949bca2e98246e8bdb45633c3940a56c",
+    "run_commit": "2855cc224ba86a84db7e501ad15bb12afc036381",
+    "git_blob_bytes_equal": true,
+    "files_sha256": {
+      "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+      "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+      "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+      "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+      "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+      "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+      "flm/graph.py": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99",
+      "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59"
+    },
+    "scope": "Exact source bytes for eight training/evaluation/model/data modules; commit IDs differ because other project work continued."
+  }
+}
