@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-09-11T19:41:49.509328+00:00",
+  "content_commit": "14d232057f6e1add8f0c333054722bd3f678aa87",
+  "ci_run": 34640063257,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-result-tables.md": {
+      "bytes": 5788,
+      "sha256": "63efb01e1eb1568d59b7d7e3c0607cadf03d6b51acbe329ceccc9683e973a46d"
+    },
+    "research/babylm-result-tables/babylm_result_figures.py": {
+      "bytes": 9181,
+      "sha256": "a821303d18572d107789ad25784055c20f364e5bd15f0da4ce660af746924682"
+    },
+    "research/babylm-result-tables/figures-preparation.json": {
+      "bytes": 2344,
+      "sha256": "6609cc3cf1a1f32396c64e1a737d809ba4613363402d8845c596f96c3a2d9ef5"
+    },
+    "research/babylm-result-tables/test_babylm_result_figures.py": {
+      "bytes": 5141,
+      "sha256": "593070949a14e5890c25de2e4239f9383baf1636b1db7edd3a0a13dcd8f65b76"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9393496,
+      "sha256": "b03489bb63b9d0723c1ef752858041e6f19d6b50fe257ed9c73646bbeba0ee44"
+    }
+  },
+  "public_relative_links_checked": 8,
+  "source_archive_files": 489,
+  "software_tests": "7 figure tests passed with artificial measurements and renderer stubs. Two synthetic PNG layouts were inspected and final-source renders matched their bytes. All 74 JavaScript tests passed in publishing. No official BabyLM plot, model inference or bootstrap executed by this preparation."
+}
