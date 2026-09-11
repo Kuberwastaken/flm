@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-09-11T00:33:11.334828+00:00",
+  "url": "http://127.0.0.1:5181/?model=babylm&review=inference-release#research",
+  "presentation_sha256": "35b39f9fd52c3c665acec274578642e7d39eed1ab77f82f873cbb09c28459243",
+  "summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "full_node_suite_passed": 69,
+  "table_body_rows": [
+    8,
+    6,
+    2
+  ],
+  "keyboard_enter_expands_details": true,
+  "mobile_keyboard_scroll_left": 40,
+  "mobile_viewport": 375,
+  "mobile_page_width": 360,
+  "desktop_viewport": 1280,
+  "desktop_page_width": 1265,
+  "viewport_override_reset": true,
+  "figure_natural_width": 1152,
+  "svg_normalization_preserved_tokens": true,
+  "final_console_errors": [],
+  "babylm_in_progress_copy_visible": true,
+  "all_17_preview_assets_match_dist": true,
+  "scope": "Actual in-app browser, desktop/mobile layout and supplied release data; no independent inference benchmark"
+}
