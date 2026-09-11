@@ -9,7 +9,17 @@ await copyFile('flm/selection_feasibility.py', 'public/research/selection-feasib
 await writeFile('public/research/selection-study.md', (await readFile('docs/SELECTION-STUDY.md', 'utf8'))
   .replaceAll('../flm/selection_feasibility.py', 'selection-feasibility/selection_feasibility.py')
   .replaceAll('../reports/selection-feasibility/', 'selection-feasibility/')
+  .replaceAll('PUBLISHER-ANNOTATIONS.md', 'publisher-annotations.md')
   .replaceAll('../public/research/', ''));
+await mkdir('public/research/publisher-annotations', { recursive: true });
+for (const name of ['summary.json', 'candidate-annotations.csv', 'missing-transmitter-rows.csv'])
+  await copyFile(`reports/publisher-annotations/${name}`, `public/research/publisher-annotations/${name}`);
+await copyFile('data/cards/malecns-annotations.json', 'public/research/publisher-annotations/source-card.json');
+await copyFile('flm/publisher_annotations.py', 'public/research/publisher-annotations/publisher_annotations.py');
+await writeFile('public/research/publisher-annotations.md', (await readFile('docs/PUBLISHER-ANNOTATIONS.md', 'utf8'))
+  .replaceAll('SELECTION-STUDY.md', 'selection-study.md')
+  .replaceAll('../data/cards/malecns-annotations.json', 'publisher-annotations/source-card.json')
+  .replaceAll('../reports/publisher-annotations/', 'publisher-annotations/'));
 await copyFile('scripts/choice_replay.py', 'public/research/choice_replay.py');
 let foodNote = await readFile('docs/FOOD-RESPONSE-PLAN.md', 'utf8');
 for (const [source, target] of [

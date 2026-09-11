@@ -89,7 +89,12 @@ def main():
         'docs/SELECTION-STUDY.md', 'flm/selection_feasibility.py',
         'tests/test_selection_feasibility.py', 'scripts/selection_feasibility_figures.py',
         'reports/selection-feasibility/summary.json', 'reports/selection-feasibility/candidate-body-ids.json',
-        'reports/selection-feasibility/figures.json')]
+        'reports/selection-feasibility/figures.json',
+        'docs/PUBLISHER-ANNOTATIONS.md', 'data/cards/malecns-annotations.json',
+        'flm/publisher_annotations.py', 'tests/test_publisher_annotations.py',
+        'reports/publisher-annotations/summary.json',
+        'reports/publisher-annotations/candidate-annotations.csv',
+        'reports/publisher-annotations/missing-transmitter-rows.csv')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
