@@ -1,0 +1,112 @@
+{
+  "verified_utc": "2026-09-11T14:39:43.313690+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 78106,
+      "sha256": "210c8c4f5989521fae0a824a40fc6dd92a48dac2b6a876288143fd833f80c1ad"
+    },
+    {
+      "path": "research/food-core-interface.md",
+      "status": 200,
+      "bytes": 6516,
+      "sha256": "ae4922c18c65bf749e6f81447ca816ca910c56361dfbb50c24f172e8b34ebb6d"
+    },
+    {
+      "path": "research/food-response-plan.md",
+      "status": 200,
+      "bytes": 6869,
+      "sha256": "bc5597aede7e032e591d4a017eca1d98cdde3a03caf3f352587ccaa8a117a64a"
+    },
+    {
+      "path": "research/food-core-interface.zip",
+      "status": 200,
+      "bytes": 18830471,
+      "sha256": "43e43f9711c3b9a51aa07cc2fbabd272c3194284af0b0c29312f2bfb88eca142"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8926228,
+      "sha256": "8c06205757680be64e63aeb25489f54e225cd41c568af7e96b3246d40bdaf99d"
+    },
+    {
+      "path": "research/food-core/food_core.py",
+      "status": 200,
+      "bytes": 5063,
+      "sha256": "3feb5cf934405e19049601765bbc340402b44e5636ec3ee23f11447ccd6ddcf4"
+    },
+    {
+      "path": "research/food-core/food_core_export.py",
+      "status": 200,
+      "bytes": 1604,
+      "sha256": "86676b81e101539eeeb3c7c5e28b2ae6523bfa960ba601ee2341c83be8391d61"
+    },
+    {
+      "path": "research/food-core/food_core_runtime.py",
+      "status": 200,
+      "bytes": 4871,
+      "sha256": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb"
+    },
+    {
+      "path": "research/food-core/isolated-parity.json",
+      "status": 200,
+      "bytes": 2086,
+      "sha256": "c637667ba4358c738fbd597f7f1dfd4b78474c6e14107644f5662886e135edf7"
+    },
+    {
+      "path": "research/food-core/package_food_core.py",
+      "status": 200,
+      "bytes": 5553,
+      "sha256": "401989ccecbcadd71ea3abff2a0534fe5b68348be9f50c30b6a401dfca57f3ab"
+    },
+    {
+      "path": "research/food-core/preparation.json",
+      "status": 200,
+      "bytes": 12459,
+      "sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b"
+    },
+    {
+      "path": "research/food-core/prepare_food_core.py",
+      "status": 200,
+      "bytes": 9614,
+      "sha256": "b6bbafe9e936c26c1c4bcc3bc1ba77fbf8ba51afc1cdc51b6b28b52ba4dac1d9"
+    },
+    {
+      "path": "research/food-core/release.json",
+      "status": 200,
+      "bytes": 5199,
+      "sha256": "0b56e5c04859b6530bb6361a66728d9c2d4ced6296b9e24b87f1ca89bb9fcd8f"
+    },
+    {
+      "path": "research/food-core/verify_food_core.py",
+      "status": 200,
+      "bytes": 4143,
+      "sha256": "4ee838462b9465e2f65cf9c5e60fad57a80d45fceab751bf05dcdce570730112"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "archive_files_verified": 32,
+  "paper_source_files_verified": 404,
+  "local_markdown_links_verified": [
+    "food-response-plan.md",
+    "food-core/preparation.json",
+    "food-core/food_core.py",
+    "food-core/prepare_food_core.py",
+    "food-core/verify_food_core.py",
+    "food-core/isolated-parity.json",
+    "food-core/release.json",
+    "food-sensor-interface.md",
+    "food-approach-results.md",
+    "food-core-interface.md",
+    "choice_replay.py",
+    "choice-replay.json",
+    "learned-choice-records.json",
+    "subset-audit.md"
+  ],
+  "release_sha256": "0b56e5c04859b6530bb6361a66728d9c2d4ced6296b9e24b87f1ca89bb9fcd8f",
+  "verification_source_sha256": "79a3c84322d4954be5772f326f732e76f76c16091cda8028693517333dd1a342",
+  "scope": "Publication and exact archive/source/proof correspondence. This check performs no model inference, training or physics; numerical replay is preserved in the separately bound isolated proof."
+}
