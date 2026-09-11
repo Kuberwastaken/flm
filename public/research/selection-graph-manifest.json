@@ -1,0 +1,3124 @@
+{
+  "verified_utc": "2026-09-11T09:05:52.075653+00:00",
+  "status": "Untrained graph exports; no tokenizer, learned weights, language scores or frozen fit matrix",
+  "export_source_sha256": "b50db1360f934a05c0c9456571401b6754b08340e31c7715a91f1b51bf5d6fd4",
+  "model_source_sha256": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+  "source_file_sha256": {
+    "offsets.npy": "0b9ed4362d420e879fe608c330dbd9ac7f52964036352fdcae1a0755d686fdc7",
+    "sources.npy": "62c82e082bcdbbc778139539dbd52df698ad84a720c36b7255f1a1ba3c8416f0",
+    "counts.npy": "d9f1eb2922ff05470312ae3ba6a92932ec6c1e60f12166f2ea240c73ce1426c0",
+    "fast_sign.npy": "8761a283602b74d66bc7cbe910fbfbcc06da5810e58e306881533eb1fb23b3c4",
+    "body_ids.npy": "ddfa789213c8c5066400c026b65c112c267781c2e3ab380a39dd437866e704d6",
+    "neurons.json.gz": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864"
+  },
+  "selection_summary_sha256": "cc0ef54bccccc439558807cdee194ef10c5b418f50b0db8c029cdcda5bca0bb3",
+  "source_revision": "776d115ee5aa934578a87fd6d260d138084f59c1",
+  "runtime_source_url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation/resolve/776d115ee5aa934578a87fd6d260d138084f59c1/public/data/",
+  "anatomical_source_url": "https://male-cns.janelia.org/download/",
+  "source_license": "CC-BY-4.0",
+  "selection_body_ids_sha256": "a4fd73083ab19f77925aed38e0f0a6361797e1648a707505d7041b28af374bda",
+  "graphs": {
+    "KCg-d-L-t1/candidate": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 527162,
+      "parameter_groups": {
+        "edge_log_gain": 27049,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 27049,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/candidate.npz",
+      "graph_sha256": "0a44d289c07bf43d50d6e4e7389deabb6aea37619c7b1c4fd07679c2b3d604db",
+      "graph_bytes": 100497,
+      "selection": "KCg-d-L-t1/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 318,
+      "empty_fast_incoming_nodes": 4,
+      "single_fast_incoming_nodes": 10,
+      "empty_fast_outgoing_nodes": 318
+    },
+    "KCg-d-L-t1/contact_ranked": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 538084,
+      "parameter_groups": {
+        "edge_log_gain": 37971,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 37971,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/contact_ranked.npz",
+      "graph_sha256": "5982cbb75b0fdfa0535a3db68890e62cd32ca3cbb6dd7de22038808c64b19593",
+      "graph_bytes": 175146,
+      "selection": "KCg-d-L-t1/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 69,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 69
+    },
+    "KCg-d-L-t1/uniform_s201": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 500933,
+      "parameter_groups": {
+        "edge_log_gain": 820,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 820,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/uniform_s201.npz",
+      "graph_sha256": "3537e24814aa5a727e4baaf287e4a093d11a8d6853d13003feb6e15a31ca6fb3",
+      "graph_bytes": 17854,
+      "selection": "KCg-d-L-t1/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 15,
+      "empty_fast_incoming_nodes": 387,
+      "single_fast_incoming_nodes": 199,
+      "empty_fast_outgoing_nodes": 350
+    },
+    "KCg-d-L-t1/stratified_s201": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 502734,
+      "parameter_groups": {
+        "edge_log_gain": 2621,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2621,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/stratified_s201.npz",
+      "graph_sha256": "4506e545116c8d2be686ae3c1e16841294ff1debed67a3e7d2b376540a62d54a",
+      "graph_bytes": 25855,
+      "selection": "KCg-d-L-t1/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 318,
+      "empty_fast_incoming_nodes": 151,
+      "single_fast_incoming_nodes": 171,
+      "empty_fast_outgoing_nodes": 360
+    },
+    "KCg-d-L-t1/uniform_s203": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 500967,
+      "parameter_groups": {
+        "edge_log_gain": 854,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 854,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/uniform_s203.npz",
+      "graph_sha256": "82ef286d82a8505777d4944e32f0ce929979a038097929f3378c3821718efee8",
+      "graph_bytes": 18016,
+      "selection": "KCg-d-L-t1/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 22,
+      "empty_fast_incoming_nodes": 338,
+      "single_fast_incoming_nodes": 262,
+      "empty_fast_outgoing_nodes": 331
+    },
+    "KCg-d-L-t1/stratified_s203": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 502654,
+      "parameter_groups": {
+        "edge_log_gain": 2541,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2541,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/stratified_s203.npz",
+      "graph_sha256": "ede76161406bc85919692c1a208785ae039cc8f30b16ee74e5afbb8cfcf55333",
+      "graph_bytes": 25525,
+      "selection": "KCg-d-L-t1/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 318,
+      "empty_fast_incoming_nodes": 136,
+      "single_fast_incoming_nodes": 172,
+      "empty_fast_outgoing_nodes": 360
+    },
+    "KCg-d-L-t1/uniform_s207": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 500894,
+      "parameter_groups": {
+        "edge_log_gain": 781,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 781,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/uniform_s207.npz",
+      "graph_sha256": "88dd444972e28e5563cd0aca861e666f3df3183ff45f62f5c534fe091b6ecebe",
+      "graph_bytes": 17640,
+      "selection": "KCg-d-L-t1/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 18,
+      "empty_fast_incoming_nodes": 395,
+      "single_fast_incoming_nodes": 216,
+      "empty_fast_outgoing_nodes": 399
+    },
+    "KCg-d-L-t1/stratified_s207": {
+      "config": {
+        "neurons": 784,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 502935,
+      "parameter_groups": {
+        "edge_log_gain": 2822,
+        "alpha_logit": 784,
+        "beta_logit": 784,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 75264,
+        "input.bias": 784,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2822,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6272,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t1/stratified_s207.npz",
+      "graph_sha256": "03c1175eae3aa54d01cdf45e3936022fa173d391a489f8fde38e5fcb2c5c0d2b",
+      "graph_bytes": 26983,
+      "selection": "KCg-d-L-t1/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 318,
+      "empty_fast_incoming_nodes": 140,
+      "single_fast_incoming_nodes": 157,
+      "empty_fast_outgoing_nodes": 352
+    },
+    "KCg-d-L-t5/candidate": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 486384,
+      "parameter_groups": {
+        "edge_log_gain": 15674,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 15674,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/candidate.npz",
+      "graph_sha256": "bcbd79db72a94f16e522b40b66a6e0d9d922efb1eed977ea5f5d41a245f38297",
+      "graph_bytes": 50120,
+      "selection": "KCg-d-L-t5/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 299,
+      "empty_fast_incoming_nodes": 3,
+      "single_fast_incoming_nodes": 23,
+      "empty_fast_outgoing_nodes": 299
+    },
+    "KCg-d-L-t5/contact_ranked": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 485948,
+      "parameter_groups": {
+        "edge_log_gain": 15238,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 15238,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/contact_ranked.npz",
+      "graph_sha256": "3b243c9112a56ef946500530f89c55767b87b5628936ca60d90c4be3400ea1ea",
+      "graph_bytes": 76975,
+      "selection": "KCg-d-L-t5/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 42,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 42
+    },
+    "KCg-d-L-t5/uniform_s201": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 470989,
+      "parameter_groups": {
+        "edge_log_gain": 279,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 279,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/uniform_s201.npz",
+      "graph_sha256": "c270a084d052d5d89a5589a192b60947d54d9570b2c732be8930a66ad838b3a0",
+      "graph_bytes": 10775,
+      "selection": "KCg-d-L-t5/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 15,
+      "empty_fast_incoming_nodes": 310,
+      "single_fast_incoming_nodes": 123,
+      "empty_fast_outgoing_nodes": 295
+    },
+    "KCg-d-L-t5/stratified_s201": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 471563,
+      "parameter_groups": {
+        "edge_log_gain": 853,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 853,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/stratified_s201.npz",
+      "graph_sha256": "d9af4ef026b031063123615766c7a11b88421f390e2157b3e1b929e1e751e91c",
+      "graph_bytes": 13435,
+      "selection": "KCg-d-L-t5/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 299,
+      "empty_fast_incoming_nodes": 171,
+      "single_fast_incoming_nodes": 128,
+      "empty_fast_outgoing_nodes": 326
+    },
+    "KCg-d-L-t5/uniform_s203": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 470945,
+      "parameter_groups": {
+        "edge_log_gain": 235,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 235,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/uniform_s203.npz",
+      "graph_sha256": "010043faabe3517254e64f6ab41c37ee3b8bb1ce370c2db4f2eb866b87c1747b",
+      "graph_bytes": 10575,
+      "selection": "KCg-d-L-t5/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 9,
+      "empty_fast_incoming_nodes": 331,
+      "single_fast_incoming_nodes": 109,
+      "empty_fast_outgoing_nodes": 328
+    },
+    "KCg-d-L-t5/stratified_s203": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 471494,
+      "parameter_groups": {
+        "edge_log_gain": 784,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 784,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/stratified_s203.npz",
+      "graph_sha256": "3392244534b843db86219036f940f8b8cb898b6b1ba8a38c37ff7fad8d006dd8",
+      "graph_bytes": 13150,
+      "selection": "KCg-d-L-t5/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 299,
+      "empty_fast_incoming_nodes": 177,
+      "single_fast_incoming_nodes": 125,
+      "empty_fast_outgoing_nodes": 328
+    },
+    "KCg-d-L-t5/uniform_s207": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 470964,
+      "parameter_groups": {
+        "edge_log_gain": 254,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 254,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/uniform_s207.npz",
+      "graph_sha256": "bae48fa749dce509b2140a2bfb4db9b529f5a9f53a28761b83de81aa0c5df94b",
+      "graph_bytes": 10570,
+      "selection": "KCg-d-L-t5/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 11,
+      "empty_fast_incoming_nodes": 325,
+      "single_fast_incoming_nodes": 117,
+      "empty_fast_outgoing_nodes": 322
+    },
+    "KCg-d-L-t5/stratified_s207": {
+      "config": {
+        "neurons": 487,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 471710,
+      "parameter_groups": {
+        "edge_log_gain": 1000,
+        "alpha_logit": 487,
+        "beta_logit": 487,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 46752,
+        "input.bias": 487,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1000,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 3896,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-L-t5/stratified_s207.npz",
+      "graph_sha256": "eec67213d0d6be690cfaae45c1f45841ae372df1c2b7086fc85fc69629f7c7ee",
+      "graph_bytes": 13583,
+      "selection": "KCg-d-L-t5/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 299,
+      "empty_fast_incoming_nodes": 179,
+      "single_fast_incoming_nodes": 118,
+      "empty_fast_outgoing_nodes": 327
+    },
+    "KCg-d-R-t1/candidate": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 541091,
+      "parameter_groups": {
+        "edge_log_gain": 33652,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 33652,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/candidate.npz",
+      "graph_sha256": "cd161c7c82e9df7c2247ee012725f70530a5f1b5fb142136c0f5f1b0b67833ac",
+      "graph_bytes": 122687,
+      "selection": "KCg-d-R-t1/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 2,
+      "single_fast_incoming_nodes": 6,
+      "empty_fast_outgoing_nodes": 334
+    },
+    "KCg-d-R-t1/contact_ranked": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 551825,
+      "parameter_groups": {
+        "edge_log_gain": 44386,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 44386,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/contact_ranked.npz",
+      "graph_sha256": "b4b3d95d45eef96da0b112d92cdf68c59177a78fa7070c4d50214d82becef6cc",
+      "graph_bytes": 202423,
+      "selection": "KCg-d-R-t1/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 78,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 78
+    },
+    "KCg-d-R-t1/uniform_s201": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 508382,
+      "parameter_groups": {
+        "edge_log_gain": 943,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 943,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/uniform_s201.npz",
+      "graph_sha256": "c92b5b7485754c72780b6627b176d67df01b4adc5f03315e131888004b624e76",
+      "graph_bytes": 19548,
+      "selection": "KCg-d-R-t1/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 24,
+      "empty_fast_incoming_nodes": 382,
+      "single_fast_incoming_nodes": 271,
+      "empty_fast_outgoing_nodes": 388
+    },
+    "KCg-d-R-t1/stratified_s201": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 510641,
+      "parameter_groups": {
+        "edge_log_gain": 3202,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 3202,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/stratified_s201.npz",
+      "graph_sha256": "bef646d5a50491fa8eec3abc1dc616edd7614487e8e2f69098d116bc414b6117",
+      "graph_bytes": 29616,
+      "selection": "KCg-d-R-t1/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 149,
+      "single_fast_incoming_nodes": 172,
+      "empty_fast_outgoing_nodes": 371
+    },
+    "KCg-d-R-t1/uniform_s203": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 508403,
+      "parameter_groups": {
+        "edge_log_gain": 964,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 964,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/uniform_s203.npz",
+      "graph_sha256": "19f1b72c6a5859d59751f67bf19ab04e5c41636e078c7c198f92d2b9a04286e3",
+      "graph_bytes": 19619,
+      "selection": "KCg-d-R-t1/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 27,
+      "empty_fast_incoming_nodes": 388,
+      "single_fast_incoming_nodes": 269,
+      "empty_fast_outgoing_nodes": 339
+    },
+    "KCg-d-R-t1/stratified_s203": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 510524,
+      "parameter_groups": {
+        "edge_log_gain": 3085,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 3085,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/stratified_s203.npz",
+      "graph_sha256": "3e9f2bc567f751b5890b8798e5fac9967936cdff605ef1b053754b63a9d4cf2b",
+      "graph_bytes": 29309,
+      "selection": "KCg-d-R-t1/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 152,
+      "single_fast_incoming_nodes": 140,
+      "empty_fast_outgoing_nodes": 370
+    },
+    "KCg-d-R-t1/uniform_s207": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 508239,
+      "parameter_groups": {
+        "edge_log_gain": 800,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 800,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/uniform_s207.npz",
+      "graph_sha256": "ff37cd14fd5985ad3e4e84594a73ce8e86b9815d918f516fdc0f6ba40f101680",
+      "graph_bytes": 18737,
+      "selection": "KCg-d-R-t1/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 20,
+      "empty_fast_incoming_nodes": 464,
+      "single_fast_incoming_nodes": 219,
+      "empty_fast_outgoing_nodes": 409
+    },
+    "KCg-d-R-t1/stratified_s207": {
+      "config": {
+        "neurons": 858,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 510260,
+      "parameter_groups": {
+        "edge_log_gain": 2821,
+        "alpha_logit": 858,
+        "beta_logit": 858,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 82368,
+        "input.bias": 858,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2821,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 6864,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t1/stratified_s207.npz",
+      "graph_sha256": "405f356cdb03e748c1f9277e19c9e3e77afa81ea6c7fd355120c4d9822d4d293",
+      "graph_bytes": 28294,
+      "selection": "KCg-d-R-t1/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 153,
+      "single_fast_incoming_nodes": 169,
+      "empty_fast_outgoing_nodes": 389
+    },
+    "KCg-d-R-t5/candidate": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 494456,
+      "parameter_groups": {
+        "edge_log_gain": 18499,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 18499,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/candidate.npz",
+      "graph_sha256": "b3fe5c21d1134711f81112bea88e4dcce2152146cf3ea4b802d602e681a06c3b",
+      "graph_bytes": 59352,
+      "selection": "KCg-d-R-t5/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 324,
+      "empty_fast_incoming_nodes": 3,
+      "single_fast_incoming_nodes": 18,
+      "empty_fast_outgoing_nodes": 324
+    },
+    "KCg-d-R-t5/contact_ranked": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 494388,
+      "parameter_groups": {
+        "edge_log_gain": 18431,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 18431,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/contact_ranked.npz",
+      "graph_sha256": "d4e91ccb1b560ed54a29370d2daa99502a9a1d7e9328b977571e3f905eb310fb",
+      "graph_bytes": 91560,
+      "selection": "KCg-d-R-t5/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 49,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 49
+    },
+    "KCg-d-R-t5/uniform_s201": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 476291,
+      "parameter_groups": {
+        "edge_log_gain": 334,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 334,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/uniform_s201.npz",
+      "graph_sha256": "d90188286dd922436da94b12854f2b878850565ec6f675593af235770246dca6",
+      "graph_bytes": 11858,
+      "selection": "KCg-d-R-t5/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 12,
+      "empty_fast_incoming_nodes": 326,
+      "single_fast_incoming_nodes": 140,
+      "empty_fast_outgoing_nodes": 314
+    },
+    "KCg-d-R-t5/stratified_s201": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 476907,
+      "parameter_groups": {
+        "edge_log_gain": 950,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 950,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/stratified_s201.npz",
+      "graph_sha256": "8912406aa70f61381e32ce706bcf5e41e5d9736d79afeb2146f278b0dc2dce2e",
+      "graph_bytes": 14481,
+      "selection": "KCg-d-R-t5/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 324,
+      "empty_fast_incoming_nodes": 204,
+      "single_fast_incoming_nodes": 123,
+      "empty_fast_outgoing_nodes": 362
+    },
+    "KCg-d-R-t5/uniform_s203": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 476271,
+      "parameter_groups": {
+        "edge_log_gain": 314,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 314,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/uniform_s203.npz",
+      "graph_sha256": "a6028580914b2ba3d10d831465cb028973af4874e710ace31ce45f6c3d658d8d",
+      "graph_bytes": 11531,
+      "selection": "KCg-d-R-t5/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 19,
+      "empty_fast_incoming_nodes": 340,
+      "single_fast_incoming_nodes": 127,
+      "empty_fast_outgoing_nodes": 337
+    },
+    "KCg-d-R-t5/stratified_s203": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 477010,
+      "parameter_groups": {
+        "edge_log_gain": 1053,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1053,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/stratified_s203.npz",
+      "graph_sha256": "47393b07c86cfd79b2ea6c4919b05bb3bf8808edd4fb76b730bc125317f7ca65",
+      "graph_bytes": 15118,
+      "selection": "KCg-d-R-t5/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 324,
+      "empty_fast_incoming_nodes": 173,
+      "single_fast_incoming_nodes": 134,
+      "empty_fast_outgoing_nodes": 352
+    },
+    "KCg-d-R-t5/uniform_s207": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 476312,
+      "parameter_groups": {
+        "edge_log_gain": 355,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 355,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/uniform_s207.npz",
+      "graph_sha256": "2627f50fd48471dbf8314a2eefca55c2a8eac6140454b6567c06cdb35337937e",
+      "graph_bytes": 11871,
+      "selection": "KCg-d-R-t5/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 16,
+      "empty_fast_incoming_nodes": 336,
+      "single_fast_incoming_nodes": 127,
+      "empty_fast_outgoing_nodes": 310
+    },
+    "KCg-d-R-t5/stratified_s207": {
+      "config": {
+        "neurons": 540,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 476969,
+      "parameter_groups": {
+        "edge_log_gain": 1012,
+        "alpha_logit": 540,
+        "beta_logit": 540,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 51840,
+        "input.bias": 540,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1012,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 4320,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-d-R-t5/stratified_s207.npz",
+      "graph_sha256": "1c555c2ebdc9413c444865465f8e0fdbfa8850afc0fba2daa124d7ef00c1ed2a",
+      "graph_bytes": 14621,
+      "selection": "KCg-d-R-t5/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 324,
+      "empty_fast_incoming_nodes": 191,
+      "single_fast_incoming_nodes": 129,
+      "empty_fast_outgoing_nodes": 353
+    },
+    "KCg-m-L-t1/candidate": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 766693,
+      "parameter_groups": {
+        "edge_log_gain": 207081,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 207081,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/candidate.npz",
+      "graph_sha256": "ca9107148b3d522f62227f5517ac82d63bdf8036ece445037594b681ad387ded",
+      "graph_bytes": 501734,
+      "selection": "KCg-m-L-t1/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 1,
+      "single_fast_incoming_nodes": 5,
+      "empty_fast_outgoing_nodes": 334
+    },
+    "KCg-m-L-t1/contact_ranked": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 660860,
+      "parameter_groups": {
+        "edge_log_gain": 101248,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 101248,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/contact_ranked.npz",
+      "graph_sha256": "280d0825937a4df7fe329dae06e537e9c128a122512049daf37c37be43ec9bce",
+      "graph_bytes": 437276,
+      "selection": "KCg-m-L-t1/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 98,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 98
+    },
+    "KCg-m-L-t1/uniform_s201": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 561902,
+      "parameter_groups": {
+        "edge_log_gain": 2290,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2290,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/uniform_s201.npz",
+      "graph_sha256": "201347c90462eb09714aeaa3969f868cbb511bb1505d4ded65d2966e7acde5f3",
+      "graph_bytes": 33990,
+      "selection": "KCg-m-L-t1/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 32,
+      "empty_fast_incoming_nodes": 486,
+      "single_fast_incoming_nodes": 370,
+      "empty_fast_outgoing_nodes": 430
+    },
+    "KCg-m-L-t1/stratified_s201": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 574100,
+      "parameter_groups": {
+        "edge_log_gain": 14488,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 14488,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/stratified_s201.npz",
+      "graph_sha256": "b4599e106083e6c105c4d8a2e7bb1df34ba028c1122ff40f3cac745500cba928",
+      "graph_bytes": 78555,
+      "selection": "KCg-m-L-t1/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 89,
+      "single_fast_incoming_nodes": 88,
+      "empty_fast_outgoing_nodes": 347
+    },
+    "KCg-m-L-t1/uniform_s203": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 561758,
+      "parameter_groups": {
+        "edge_log_gain": 2146,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2146,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/uniform_s203.npz",
+      "graph_sha256": "e28783a5765e9172a5e56c90989d6d67faf45c99a3035dcc0bf2644067157c87",
+      "graph_bytes": 33157,
+      "selection": "KCg-m-L-t1/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 48,
+      "empty_fast_incoming_nodes": 554,
+      "single_fast_incoming_nodes": 347,
+      "empty_fast_outgoing_nodes": 489
+    },
+    "KCg-m-L-t1/stratified_s203": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 574751,
+      "parameter_groups": {
+        "edge_log_gain": 15139,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 15139,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/stratified_s203.npz",
+      "graph_sha256": "dfef6fd532d79900d7e3107268b43944ddfd69445ab9678cbe416d7a6a0b3bf6",
+      "graph_bytes": 80361,
+      "selection": "KCg-m-L-t1/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 69,
+      "single_fast_incoming_nodes": 79,
+      "empty_fast_outgoing_nodes": 356
+    },
+    "KCg-m-L-t1/uniform_s207": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 561841,
+      "parameter_groups": {
+        "edge_log_gain": 2229,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2229,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/uniform_s207.npz",
+      "graph_sha256": "4ea634a47b424cc5f7897059bba99cc3541955c0ad9b496d54a1f49dc5eaf2ce",
+      "graph_bytes": 33636,
+      "selection": "KCg-m-L-t1/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 41,
+      "empty_fast_incoming_nodes": 491,
+      "single_fast_incoming_nodes": 395,
+      "empty_fast_outgoing_nodes": 451
+    },
+    "KCg-m-L-t1/stratified_s207": {
+      "config": {
+        "neurons": 1385,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 573963,
+      "parameter_groups": {
+        "edge_log_gain": 14351,
+        "alpha_logit": 1385,
+        "beta_logit": 1385,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 132960,
+        "input.bias": 1385,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 14351,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 11080,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t1/stratified_s207.npz",
+      "graph_sha256": "404bb676483c308b416aa1e7ea743ff89a82c92a5eb47446da7dc2ca628b1451",
+      "graph_bytes": 79084,
+      "selection": "KCg-m-L-t1/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 70,
+      "single_fast_incoming_nodes": 87,
+      "empty_fast_outgoing_nodes": 356
+    },
+    "KCg-m-L-t5/candidate": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 736502,
+      "parameter_groups": {
+        "edge_log_gain": 195007,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 195007,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/candidate.npz",
+      "graph_sha256": "58be443c867af0c71e127c3be116058a0a150cce69cf8bed11cc692d1ea0ff5b",
+      "graph_bytes": 449372,
+      "selection": "KCg-m-L-t5/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 330,
+      "empty_fast_incoming_nodes": 3,
+      "single_fast_incoming_nodes": 15,
+      "empty_fast_outgoing_nodes": 330
+    },
+    "KCg-m-L-t5/contact_ranked": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 620804,
+      "parameter_groups": {
+        "edge_log_gain": 79309,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 79309,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/contact_ranked.npz",
+      "graph_sha256": "9e58ef7813a89cd75e5bc768f8a4555b8c6b0075b45b1c775988f31fd8feb366",
+      "graph_bytes": 348157,
+      "selection": "KCg-m-L-t5/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 95,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 95
+    },
+    "KCg-m-L-t5/uniform_s201": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 543189,
+      "parameter_groups": {
+        "edge_log_gain": 1694,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1694,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/uniform_s201.npz",
+      "graph_sha256": "202370f936fe187d217260d78f2b7ac8d4fecbc1da4fac1820903ba40911f751",
+      "graph_bytes": 28242,
+      "selection": "KCg-m-L-t5/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 37,
+      "empty_fast_incoming_nodes": 462,
+      "single_fast_incoming_nodes": 339,
+      "empty_fast_outgoing_nodes": 450
+    },
+    "KCg-m-L-t5/stratified_s201": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 552447,
+      "parameter_groups": {
+        "edge_log_gain": 10952,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 10952,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/stratified_s201.npz",
+      "graph_sha256": "cf869078ff8c0f6d96dafe713695f41a9a2e28a4cca744843e567a355cac7a40",
+      "graph_bytes": 62623,
+      "selection": "KCg-m-L-t5/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 330,
+      "empty_fast_incoming_nodes": 76,
+      "single_fast_incoming_nodes": 84,
+      "empty_fast_outgoing_nodes": 346
+    },
+    "KCg-m-L-t5/uniform_s203": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 542975,
+      "parameter_groups": {
+        "edge_log_gain": 1480,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1480,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/uniform_s203.npz",
+      "graph_sha256": "03c5db1e940b5c31ff9d38c2fc1fe36bb3525270278d0291fdec05eb97355822",
+      "graph_bytes": 27121,
+      "selection": "KCg-m-L-t5/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 43,
+      "empty_fast_incoming_nodes": 507,
+      "single_fast_incoming_nodes": 349,
+      "empty_fast_outgoing_nodes": 467
+    },
+    "KCg-m-L-t5/stratified_s203": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 553254,
+      "parameter_groups": {
+        "edge_log_gain": 11759,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 11759,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/stratified_s203.npz",
+      "graph_sha256": "e9521fa380c515a740f17235407f67370f2ce9082d9061b6633cfe3a227550c3",
+      "graph_bytes": 63985,
+      "selection": "KCg-m-L-t5/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 330,
+      "empty_fast_incoming_nodes": 68,
+      "single_fast_incoming_nodes": 97,
+      "empty_fast_outgoing_nodes": 344
+    },
+    "KCg-m-L-t5/uniform_s207": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 543143,
+      "parameter_groups": {
+        "edge_log_gain": 1648,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1648,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/uniform_s207.npz",
+      "graph_sha256": "f8fcbca4b96b09a1421a1d2ef14a2bc3681d41a4351632b6d8d0e154d06e36af",
+      "graph_bytes": 28122,
+      "selection": "KCg-m-L-t5/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 30,
+      "empty_fast_incoming_nodes": 503,
+      "single_fast_incoming_nodes": 305,
+      "empty_fast_outgoing_nodes": 439
+    },
+    "KCg-m-L-t5/stratified_s207": {
+      "config": {
+        "neurons": 1202,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 552875,
+      "parameter_groups": {
+        "edge_log_gain": 11380,
+        "alpha_logit": 1202,
+        "beta_logit": 1202,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 115392,
+        "input.bias": 1202,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 11380,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9616,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-L-t5/stratified_s207.npz",
+      "graph_sha256": "ee3291ac6c8f3b066020a283e5add4886cc23dea0fa1565eb6fcbea1572824b5",
+      "graph_bytes": 64797,
+      "selection": "KCg-m-L-t5/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 330,
+      "empty_fast_incoming_nodes": 66,
+      "single_fast_incoming_nodes": 71,
+      "empty_fast_outgoing_nodes": 349
+    },
+    "KCg-m-R-t1/candidate": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 748743,
+      "parameter_groups": {
+        "edge_log_gain": 195764,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 195764,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/candidate.npz",
+      "graph_sha256": "a9ee304c171c2f9eca006efe3834e9d60fd8e630edebba9ca7bb720b041af45f",
+      "graph_bytes": 474620,
+      "selection": "KCg-m-R-t1/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 5,
+      "single_fast_incoming_nodes": 7,
+      "empty_fast_outgoing_nodes": 334
+    },
+    "KCg-m-R-t1/contact_ranked": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 646344,
+      "parameter_groups": {
+        "edge_log_gain": 93365,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 93365,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/contact_ranked.npz",
+      "graph_sha256": "8a96e69dea61788aa2bfed134eaf46f1a38cb6615a092987ea946a1416db4ddd",
+      "graph_bytes": 405313,
+      "selection": "KCg-m-R-t1/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 97,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 97
+    },
+    "KCg-m-R-t1/uniform_s201": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 555108,
+      "parameter_groups": {
+        "edge_log_gain": 2129,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 2129,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/uniform_s201.npz",
+      "graph_sha256": "5623bd329c8c1b3ed4a0d41d57476da16cf10730065b9eaaacc6de3da42c4bdd",
+      "graph_bytes": 32038,
+      "selection": "KCg-m-R-t1/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 33,
+      "empty_fast_incoming_nodes": 483,
+      "single_fast_incoming_nodes": 338,
+      "empty_fast_outgoing_nodes": 452
+    },
+    "KCg-m-R-t1/stratified_s201": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 565789,
+      "parameter_groups": {
+        "edge_log_gain": 12810,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 12810,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/stratified_s201.npz",
+      "graph_sha256": "d2d99e25b26b7444a97ca6bf06c8718c44e65bed98e531078f075c670380654b",
+      "graph_bytes": 74190,
+      "selection": "KCg-m-R-t1/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 66,
+      "single_fast_incoming_nodes": 88,
+      "empty_fast_outgoing_nodes": 355
+    },
+    "KCg-m-R-t1/uniform_s203": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 554977,
+      "parameter_groups": {
+        "edge_log_gain": 1998,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1998,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/uniform_s203.npz",
+      "graph_sha256": "a8513ba35923169f1414f57d61b8ca97264c48f577b0e423cb67eccc66d31393",
+      "graph_bytes": 31314,
+      "selection": "KCg-m-R-t1/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 36,
+      "empty_fast_incoming_nodes": 505,
+      "single_fast_incoming_nodes": 343,
+      "empty_fast_outgoing_nodes": 449
+    },
+    "KCg-m-R-t1/stratified_s203": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 565305,
+      "parameter_groups": {
+        "edge_log_gain": 12326,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 12326,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/stratified_s203.npz",
+      "graph_sha256": "81c23d3c2139d6050b677b3a7fd636ec82ae4782d7fe796f7b3c08fddb99f3c6",
+      "graph_bytes": 71234,
+      "selection": "KCg-m-R-t1/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 67,
+      "single_fast_incoming_nodes": 79,
+      "empty_fast_outgoing_nodes": 353
+    },
+    "KCg-m-R-t1/uniform_s207": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 554964,
+      "parameter_groups": {
+        "edge_log_gain": 1985,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1985,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/uniform_s207.npz",
+      "graph_sha256": "5812b87af68b6990691b40a1b8ff37a9a7d679eb5a4dda89c614d96e82fa8c36",
+      "graph_bytes": 31445,
+      "selection": "KCg-m-R-t1/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 43,
+      "empty_fast_incoming_nodes": 508,
+      "single_fast_incoming_nodes": 396,
+      "empty_fast_outgoing_nodes": 459
+    },
+    "KCg-m-R-t1/stratified_s207": {
+      "config": {
+        "neurons": 1318,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 566464,
+      "parameter_groups": {
+        "edge_log_gain": 13485,
+        "alpha_logit": 1318,
+        "beta_logit": 1318,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 126528,
+        "input.bias": 1318,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 13485,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 10544,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t1/stratified_s207.npz",
+      "graph_sha256": "6e56cdee408432ed1d2360fe1e4ddb1dc37fd53956011e639cef6537f5dadec9",
+      "graph_bytes": 74733,
+      "selection": "KCg-m-R-t1/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 334,
+      "empty_fast_incoming_nodes": 75,
+      "single_fast_incoming_nodes": 76,
+      "empty_fast_outgoing_nodes": 353
+    },
+    "KCg-m-R-t5/candidate": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 720963,
+      "parameter_groups": {
+        "edge_log_gain": 184616,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 184616,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/candidate.npz",
+      "graph_sha256": "74eb9656b6202c7fdff50e705ed50fda481b4567be6d2f1896c033c7f11ed793",
+      "graph_bytes": 429112,
+      "selection": "KCg-m-R-t5/candidate",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 327,
+      "empty_fast_incoming_nodes": 4,
+      "single_fast_incoming_nodes": 18,
+      "empty_fast_outgoing_nodes": 327
+    },
+    "KCg-m-R-t5/contact_ranked": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 609910,
+      "parameter_groups": {
+        "edge_log_gain": 73563,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 73563,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/contact_ranked.npz",
+      "graph_sha256": "251e531da971e6e4d2fc85964f14d56e43dae7608cff427cd2e1b9720ee08724",
+      "graph_bytes": 324545,
+      "selection": "KCg-m-R-t5/contact_ranked",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 92,
+      "empty_fast_incoming_nodes": 0,
+      "single_fast_incoming_nodes": 0,
+      "empty_fast_outgoing_nodes": 92
+    },
+    "KCg-m-R-t5/uniform_s201": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 537897,
+      "parameter_groups": {
+        "edge_log_gain": 1550,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1550,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/uniform_s201.npz",
+      "graph_sha256": "3a499eedce116ffba2abbd762fb5882296c5a981546415cafe4019af5603b244",
+      "graph_bytes": 26888,
+      "selection": "KCg-m-R-t5/uniform_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 34,
+      "empty_fast_incoming_nodes": 491,
+      "single_fast_incoming_nodes": 301,
+      "empty_fast_outgoing_nodes": 432
+    },
+    "KCg-m-R-t5/stratified_s201": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 547082,
+      "parameter_groups": {
+        "edge_log_gain": 10735,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 10735,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/stratified_s201.npz",
+      "graph_sha256": "b714d96f7bc878b43d8143b4d83c960d70b6c8c81cfd45c756d3e9328f894814",
+      "graph_bytes": 59860,
+      "selection": "KCg-m-R-t5/stratified_s201",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 327,
+      "empty_fast_incoming_nodes": 74,
+      "single_fast_incoming_nodes": 89,
+      "empty_fast_outgoing_nodes": 335
+    },
+    "KCg-m-R-t5/uniform_s203": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 537873,
+      "parameter_groups": {
+        "edge_log_gain": 1526,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1526,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/uniform_s203.npz",
+      "graph_sha256": "dbffbff536555e2dccf464fa1586b619ce443119d303c172a1ec7488276c97a0",
+      "graph_bytes": 26553,
+      "selection": "KCg-m-R-t5/uniform_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 34,
+      "empty_fast_incoming_nodes": 482,
+      "single_fast_incoming_nodes": 300,
+      "empty_fast_outgoing_nodes": 448
+    },
+    "KCg-m-R-t5/stratified_s203": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 546555,
+      "parameter_groups": {
+        "edge_log_gain": 10208,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 10208,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/stratified_s203.npz",
+      "graph_sha256": "a3fe7d0b3208d5e2d6be44290b7ad9fdcf6681944d47827ce7b6d43110d3b9e1",
+      "graph_bytes": 59033,
+      "selection": "KCg-m-R-t5/stratified_s203",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 327,
+      "empty_fast_incoming_nodes": 72,
+      "single_fast_incoming_nodes": 82,
+      "empty_fast_outgoing_nodes": 347
+    },
+    "KCg-m-R-t5/uniform_s207": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 537843,
+      "parameter_groups": {
+        "edge_log_gain": 1496,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 1496,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/uniform_s207.npz",
+      "graph_sha256": "df76a64ecf7251d9ff0f1256f903eddbf6815d5e619a1793e93fc70127e4ef72",
+      "graph_bytes": 26378,
+      "selection": "KCg-m-R-t5/uniform_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 34,
+      "empty_fast_incoming_nodes": 480,
+      "single_fast_incoming_nodes": 332,
+      "empty_fast_outgoing_nodes": 449
+    },
+    "KCg-m-R-t5/stratified_s207": {
+      "config": {
+        "neurons": 1150,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 546864,
+      "parameter_groups": {
+        "edge_log_gain": 10517,
+        "alpha_logit": 1150,
+        "beta_logit": 1150,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 110400,
+        "input.bias": 1150,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 10517,
+      "vocabulary": 4096,
+      "sequence_state_bytes_batch1_float32": 9200,
+      "forward_fixture": {
+        "seed": 42,
+        "token_ids": [
+          17,
+          29,
+          43
+        ],
+        "finite_logits_and_states": true,
+        "interpretation": "Synthetic interface check, not trained generation or measured throughput"
+      },
+      "path": "graphs/KCg-m-R-t5/stratified_s207.npz",
+      "graph_sha256": "2dce5229bc379ddeeb48c8e4b7ea1241f4e2206b5399a99fdc15217db35b7d7e",
+      "graph_bytes": 59443,
+      "selection": "KCg-m-R-t5/stratified_s207",
+      "graph_type": "Measured induced body-pair subset, untrained",
+      "zero_fast_sign_nodes": 327,
+      "empty_fast_incoming_nodes": 62,
+      "single_fast_incoming_nodes": 89,
+      "empty_fast_outgoing_nodes": 344
+    }
+  },
+  "compatibility": {
+    "reference_graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+    "arrays_exact": [
+      "row",
+      "col",
+      "weight",
+      "contacts",
+      "source_sign",
+      "body_ids",
+      "source_indices",
+      "positions",
+      "pool"
+    ],
+    "dtype_exact": true
+  },
+  "rules": {
+    "ordering": "Cell type then body ID",
+    "pools": "128 contiguous balanced pools with the same index rule in every selection",
+    "weight": "log1p raw contacts, float32 absolute incoming normalization, then source sign",
+    "sign": "Current fast-sign rule; zero-sign outgoing edges excluded",
+    "interface": "Same learned input to every node and tied readout over pooled fast/slow state; no role-specific privilege"
+  },
+  "limitations": [
+    "All 64 graphs are exported for inspection, not declared as 64 future language fits.",
+    "Biological boundaries and model sign assumptions remain; these are not intact biological circuits.",
+    "Contiguous type-based pools are consistent across selections but do not match their composition.",
+    "Parameter counts include zero-initialized edge gains and all allocated trainable entries, not equal effective capacity.",
+    "Single-input rows normalize to the source sign; their sole edge-gain entries do not control relative incoming magnitude.",
+    "Forward fixtures verify compatibility only; no speed, learning or topology advantage is demonstrated."
+  ]
+}

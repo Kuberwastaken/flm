@@ -104,7 +104,11 @@ def main():
         'tests/test_circuit_selection.py', 'tests/test_selection_controls.py',
         'reports/circuit-selection/summary.json', 'reports/circuit-selection/candidate-body-ids.json',
         'reports/circuit-selection/members.csv', 'reports/selection-controls/summary.json',
-        'reports/selection-controls/control-body-ids.json')]
+        'reports/selection-controls/control-body-ids.json',
+        'docs/SELECTION-GRAPH-EXPORTS.md', 'flm/selection_graphs.py', 'flm/selection_rewiring.py',
+        'tests/test_selection_graphs.py', 'tests/test_selection_rewiring.py',
+        'reports/selection-graphs/manifest.json', 'reports/selection-graphs/export-release.json',
+        'reports/selection-graphs/rewiring-started.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
