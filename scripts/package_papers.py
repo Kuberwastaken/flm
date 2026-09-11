@@ -105,7 +105,7 @@ def main():
         'experiments/embodiment/inspect_food_body_semantics.py',
         'experiments/embodiment/export_food_replay.py',
         'scripts/audit_food_core_physical.py', 'scripts/food_core_physical_report.py',
-        'scripts/verify_food_core_physical_archive.py',
+        'scripts/verify_food_core_physical_archive.py', 'scripts/verify_food_physical_release.py',
         'tests/test_food_motor.py', 'tests/test_food_core_physical_audit.py',
         'tests/test_food_core_physical_report.py', 'tests/food-replay.test.js',
         'reports/food-core-physical/identity.json', 'reports/food-core-physical/summary.json',

@@ -37,6 +37,7 @@
 #food-replay-details[data-loading] .food-replay-views { visibility:hidden; }
 .food-replay-views figcaption, #food-replay-values, #food-replay-position, #food-replay-neuron { font-size:12px; line-height:1.6; }
 @media (max-width:650px) { .food-replay-controls { grid-template-columns:1fr 1fr; } .food-replay-views { grid-template-columns:1fr; } }
+@media (max-width:420px) { .food-replay-controls { grid-template-columns:1fr; } }
 .choice-replay-pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .choice-replay-pair figure { margin:0; min-width:0; }
 .choice-replay-pair h3 { font-size:13px; color:#292820; }
