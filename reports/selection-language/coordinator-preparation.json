@@ -1,0 +1,241 @@
+{
+  "verified_utc": "2026-09-11T12:40:57.609033+00:00",
+  "catalog_binding": {
+    "archive_sha256": "1b849f068ab1c0bd7e8331e2aa7ddb573ed6173f79e739727b86ac7d176aebd3",
+    "model_source_sha256": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "original_graphs": 64,
+    "rewired_graphs": 192,
+    "rewiring_manifest_sha256": "fe8f67b0c6eff5c364cdfcc14b633bb2650a950289c7953eb188dfa8135bceee",
+    "source_manifest_sha256": "51b5c52c3b068c39be70a2c01bcff6ff5ea785fdf7e65cf4f2ebd0a63ef95923"
+  },
+  "available_groups": [
+    {
+      "candidate": "KCg-d-L-t1",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 784,
+      "allocated_parameters_min": 500894,
+      "allocated_parameters_max": 538084,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-d-L-t5",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 487,
+      "allocated_parameters_min": 470945,
+      "allocated_parameters_max": 486384,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-d-R-t1",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 858,
+      "allocated_parameters_min": 508239,
+      "allocated_parameters_max": 551825,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-d-R-t5",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 540,
+      "allocated_parameters_min": 476271,
+      "allocated_parameters_max": 494456,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-m-L-t1",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 1385,
+      "allocated_parameters_min": 561758,
+      "allocated_parameters_max": 766693,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-m-L-t5",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 1202,
+      "allocated_parameters_min": 542975,
+      "allocated_parameters_max": 736502,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-m-R-t1",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 1318,
+      "allocated_parameters_min": 554964,
+      "allocated_parameters_max": 748743,
+      "selected_for_training": false
+    },
+    {
+      "candidate": "KCg-m-R-t5",
+      "possible_fits": 64,
+      "graph_definitions": 32,
+      "selectors": [
+        "candidate",
+        "contact_ranked",
+        "stratified_s201",
+        "stratified_s203",
+        "stratified_s207",
+        "uniform_s201",
+        "uniform_s203",
+        "uniform_s207"
+      ],
+      "training_seeds": [
+        42,
+        43
+      ],
+      "neurons": 1150,
+      "allocated_parameters_min": 537843,
+      "allocated_parameters_max": 720963,
+      "selected_for_training": false
+    }
+  ],
+  "possible_fit_count": 512,
+  "source_sha256": {
+    "flm/babylm.py": "9df985cf68662b12e4cb60e3492bf809dc4aaa21ce679a82910be4f3bae7cfee",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/graph.py": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/language_learning_inputs.py": "923a4213c39fa5f4e1d914d3df6833759bc1d083b8486e9a3b57f6cec7d38576",
+    "flm/language_learning_study.py": "5b4f8f4b36ea647ce5cafd09f227ba14effa0d3292d018bee89ab8aa5cf1b035",
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_learning_validation.py": "9633a796afe0e369682f9571dcc4485c68e6f896959f957413d27f0d0468edaa",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "flm/scan_train.py": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c",
+    "flm/selection_language.py": "736e213d1e71ef782a99dc9d8e7442eb6a6589226e3953407ad33674b37ab7b4",
+    "flm/selection_language_study.py": "9ae4e2d6aa421d371bea7f6a0a9abcdd905cb770618296d451c922c352ac38a5",
+    "flm/selection_pilot.py": "10c0522b9e3e2a2fb3c46fdab6bf19cc0a2fd4b2a5fe7fde183d8f3701877bd8",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/wiring_controls.py": "854c3a3005b685fe385c5c5e97ab8211733efe4b49bb87aea66d9349813ee6d6",
+    "scripts/selection_language_study_preflight.py": "a5586c76240557615057fef55bbb7fa4bfe1842a6a568869b3734add6849cefb",
+    "tests/test_selection_language_study.py": "c807783a1d1641f119320b96df30eb312b68adc737371d64f7b14916a30045b8"
+  },
+  "priority_gate": {
+    "ready": false,
+    "reason": "Priority BabyLM training must finish before selection timing"
+  },
+  "official_files_present": {
+    "measured_cost_pilot": false,
+    "official_protocol": false,
+    "frozen_identity": false,
+    "frozen_selection": false
+  },
+  "coordinator_implemented": true,
+  "official_held_out_scorer_implemented": false,
+  "model_initializations": 0,
+  "model_forward_calls": 0,
+  "gradient_updates": 0,
+  "corpus_payloads_opened": false,
+  "scope": "Catalog and coordinator readiness only. No group selected, budget frozen, cost measured or language model fitted. Synthetic coordinator tests are separate from this record."
+}
