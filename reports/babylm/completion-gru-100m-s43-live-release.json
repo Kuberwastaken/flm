@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-09-11T21:30:11.597767+00:00",
+  "content_commit": "9c5afbc857048cbd3ab9a9b1a578ceae051f0f05",
+  "ci_run": 34649543656,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-handoff.md": {
+      "bytes": 7484,
+      "sha256": "8b4cd6c815ca16b02fe9afab97c91745ed76f380af67b509d6b80ff430ad4f36"
+    },
+    "research/babylm-handoff/completion-gru-100m-s43.json": {
+      "bytes": 9561,
+      "sha256": "b5c15b399b6a4725a215a75893ce84bd44b2d9379b81233ee069e261318d193f"
+    },
+    "research/babylm-validation.json": {
+      "bytes": 487156,
+      "sha256": "fff00649e846275526ba6100414b3ee49c265fa4a845d9a7294448092f26fb69"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9409018,
+      "sha256": "8a682c70f7cfac63f76c3f79cd12c55d03e8dd5349632544586679eecd0a63a3"
+    }
+  },
+  "public_relative_links_checked": 12,
+  "source_archive_files": 495,
+  "software_tests": "The completed 100M GRU seed-43 audit restored selected/final checkpoints and verified all 24 validation records, declared exposure and numerical sources against the original training commit. No additional fitting or test inference was performed by the auditor. All 74 JavaScript tests passed in publishing."
+}
