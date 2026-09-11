@@ -10,7 +10,7 @@ The central question is whether measured neural wiring or its associated computa
 
 ## Current order of work
 
-1. **Finish the fixed BabyLM comparison and its declared evaluation.** Seven of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus 100M FLM seed 42. The 100M GRU seed-42 run is active. Preserve the registered inventory and common test gate.
+1. **Finish the fixed BabyLM comparison and its declared evaluation.** Eight of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus 100M FLM and GRU seed 42. The 100M transformer seed-42 run is active. Preserve the registered inventory and common test gate.
 2. **Test selection before further dataset or model scaling.** After that queue finishes and its trainer exits, measure selection costs, choose complete comparison groups for anatomical and computational reasons, freeze the protocol and run every registered control. No selection-language result exists yet.
 3. **Keep later studies separate.** Alternative language learning, symbolic instruction transfer and food-task adaptation have distinct preparation, budgets and inferential questions. They do not replace the selection comparison. Broader datasets and capacity scaling remain part of the eventual objective.
 
@@ -58,7 +58,7 @@ Proceed in this order:
 | Area | Ready now | Still required before a result |
 |---|---|---|
 | Alternative language learning | [Verified BabyLM inputs](LANGUAGE-LEARNING-INPUTS.md), BPTT/fixed-core/eligibility/no-history updates, a [coordinator](LANGUAGE-LEARNING-STUDY.md), validation selection and [all-eight-gated scorer](LANGUAGE-LEARNING-TEST.md). | Actual [cost pilot](LANGUAGE-LEARNING-TIMING.md), official protocol/budget/identity, eight corpus fits and complete evaluation. No official learning-rule language scores exist. |
-| Symbolic instruction transfer | [SCAN data/codec/scoring primitives](INSTRUCTION-TRANSFER.md), [36 prepared source conditions](SCAN-CONDITION-PREPARATION.md), a [timing command](SCAN-TIMING-PILOT.md), and a [coordinator with all-36 terminal-checkpoint gate](SCAN-STUDY-COORDINATOR.md). | Actual pilot, downstream protocol/budget and whole-partition evaluation harness, then official fits and strict held-out generation. No neural SCAN transfer result or physical instruction execution exists. |
+| Symbolic instruction transfer | [SCAN data/codec/scoring primitives](INSTRUCTION-TRANSFER.md), [36 prepared source conditions](SCAN-CONDITION-PREPARATION.md), a [timing command](SCAN-TIMING-PILOT.md), a [coordinator with all-36 terminal-checkpoint gate](SCAN-STUDY-COORDINATOR.md), and a [resumable whole-partition evaluator](SCAN-EVALUATION.md). | Actual pilot, downstream protocol/budget, official fits and strict held-out generation. No neural SCAN transfer result or physical instruction execution exists. |
 | Food-task adaptation | Audited sensors, scripted and unadapted core references, and [fixture-tested action-readout updates](FOOD-READOUT-LEARNING.md) with frozen sensory/core parameters. | A declared matched adaptation study, episode/action budget, untouched evaluation layouts and reversal/retention phases. No physical adaptation fit or learned food result exists. |
 
 These preparations do not displace selection. The later program still includes:
