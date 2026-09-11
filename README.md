@@ -219,13 +219,14 @@ Training uses text, without pretrained embeddings, synthetic teacher corpora or 
 
 ## Additional dynamics and behavior studies
 
-The core diagnostic examines language-trained weights directly. The sensory and physical studies use separate networks and engineered motor interfaces; none tests whether language knowledge changes a fly's behavior.
+The core diagnostic examines language-trained weights directly. Earlier sensory and physical studies use separate networks; the unadapted food reference compares initial and language-trained cores but demonstrates no transfer benefit.
 
 | Study | Main finding |
 |---|---|
 | [Seven recurrent-core conditions](docs/LANGUAGE-DYNAMICS-FINDINGS.md) | Zero-drive dynamics change after language training; this is not a language or behavior benchmark. |
 | [60 cue/context runs](docs/WIRING-RESULTS.md) | Anatomy and learning-rule effects vary by task; rewired graphs win in some conditions. |
 | [27 physical feedback conditions + repeat](docs/CLOSED-LOOP-REPRODUCTION.md) | Live pose feedback helps; all three trained methods match the scripted reference's physical paths. |
+| [24 unadapted food-reference trials](docs/FOOD-CORE-PHYSICAL-RESULTS.md) | Both core types retain wrong-source contacts; no food learning or transfer benefit is demonstrated. |
 
 <details>
 <summary>Recurrent pulse responses, learning curves, simulated fly video and full findings</summary>
@@ -274,11 +275,19 @@ The language weights are not used in this assay, and no motor learning occurs du
 
 The [Research view's before/after replay](https://flm.kuber.studio/#research) revisits the earlier [40 sensory-choice trials](public/research/learned-choice.json): five methods, both cues and checkpoints 0/300/600/900 from seed 17. A time scrubber shows recorded position and yaw on two exactly repeated physical paths, retaining wrong choices. Decisions precede simulation; this is a view of existing evidence, not new fitting, food sensing or language-to-action transfer. Inspect the [replay frames and checkpoint identities](public/research/choice-replay.json). The separate [six-channel food-sensor interface](docs/FOOD-SENSOR-INTERFACE.md) was checked on repeated 0.02-second prescribed FlyGym motion and scalar sensor replay.
 
-A [declared scripted odor-A reference](docs/FOOD-APPROACH-REFERENCE.md) then completed all seven physical cases, retaining reversal, neutral, missing-odor and straight controls plus the exact repeat. The [findings](docs/FOOD-APPROACH-RESULTS.md) and [complete records](https://flm.kuber.studio/research/food-approach-records.zip) include a scalar replay of **1,407 observations**. No neural learning, feeding or language transfer is involved. Separately, four [initial and WikiText-trained core interfaces](docs/FOOD-CORE-INTERFACE.md) pass numerical sensory replay with fresh adapters; no food adaptation or transfer result exists. The [physical-state note](docs/PHYSICAL-STATE-SEMANTICS.md) documents an invalid `c_head` row aliasing `rh_tarsus5`; food sensing and outcomes use correctly resolved antenna, foot and thorax IDs.
+A [declared scripted odor-A reference](docs/FOOD-APPROACH-REFERENCE.md) then completed all seven physical cases, retaining reversal, neutral, missing-odor and straight controls plus the exact repeat. The [findings](docs/FOOD-APPROACH-RESULTS.md) and [complete records](https://flm.kuber.studio/research/food-approach-records.zip) include a scalar replay of **1,407 observations**. No neural learning, feeding or language transfer is involved.
 
 ![Scripted odor-A approach trajectories and all seven first-contact outcomes, including two no-contact controls.](public/research/figures/food-approach.png)
 
 *First sampled A contact: 0.65 s on the left, 0.68 s when mirrored. Reversal and neutral cases still contact A at 0.65 s without sugar; missing odor and straight drive make no contact by 2 s. The repeat matches the original physical arrays exactly.*
+
+Four [initial and WikiText-trained core interfaces](docs/FOOD-CORE-INTERFACE.md) completed a separate [24-case physical reference](docs/FOOD-CORE-PHYSICAL-RESULTS.md): two core seeds, six conditions and identical fresh adapters, with **zero food-task updates**. The [complete archive](https://flm.kuber.studio/research/food-core-physical-records.zip) passed numerical replay of all **4,824 observations**. The [browser replay](https://flm.kuber.studio/#research) exposes every condition with saved neural states and body geometry reconstructed from recorded coordinates.
+
+![All 24 unadapted core outcomes and mirrored trajectories retain wrong-source contacts and missing-odor timeouts.](public/research/figures/food-core-physical.png)
+
+*All four cores contact the upper patch even when odor A is on the right. Language seed 43 also contacts sugar with odor removed; the other three time out. These outcomes establish neither food learning, feeding nor beneficial transfer.*
+
+The [physical-state note](docs/PHYSICAL-STATE-SEMANTICS.md) documents the invalid `c_head` row aliasing `rh_tarsus5`; replay geometry avoids that row. Food sensing and outcomes use correctly resolved antenna, foot and thorax IDs, with cached sensor poses distinguished from reconstructed display geometry.
 
 ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
 
