@@ -1,0 +1,52 @@
+{
+  "verified_utc": "2026-09-11T22:37:29.012463+00:00",
+  "content_commit": "6e684d9d6c0e6f81607afe9d458e57b6da42d26c",
+  "ci_run": 34654694751,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-handoff.md": {
+      "bytes": 10912,
+      "sha256": "f94759dc154affb51dad553d4302095b59a4ba85049ffc27863165cf9a3683f7"
+    },
+    "research/babylm-handoff/completion-transformer-100m-s43.json": {
+      "bytes": 9801,
+      "sha256": "b66f5d3638d61f0d3d73069289cb0371ced4b2ebad9e6487e2fcee92f89cfa17"
+    },
+    "research/babylm-handoff/continue_babylm_research.py": {
+      "bytes": 12604,
+      "sha256": "623b61db2e6f994b690d8a527b4140fe434220438e480c66d3e1da632ec0a3b0"
+    },
+    "research/babylm-handoff/evaluation-recovery.json": {
+      "bytes": 3095,
+      "sha256": "d4a3042261236c4b1ae7361b9a17b861ac0c71e086d570dbb64cc264b3304d7e"
+    },
+    "research/babylm-handoff/selection-verification.json": {
+      "bytes": 967,
+      "sha256": "ba0d5f59e482ef6ad6f5a96d527e2a4c99af4e36d0e8049a6680325b6c91eba7"
+    },
+    "research/babylm-handoff/selection.json": {
+      "bytes": 41160,
+      "sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313"
+    },
+    "research/babylm-handoff/test_babylm_handoff.py": {
+      "bytes": 12369,
+      "sha256": "e9e60760857df8abe06feda832638bcf241ccfb0aa70554bf8fd5c37b8a4aac1"
+    },
+    "research/babylm-handoff/test_babylm_result_writing.py": {
+      "bytes": 2522,
+      "sha256": "14da097f2bca0fd43412c91fea186e05db9cbe922707abbd17575afe43bcc8e0"
+    },
+    "research/babylm-validation.json": {
+      "bytes": 526400,
+      "sha256": "51797956969ecdca8d6256efebc0a146a9679b8a44d6dff0441935c7ed8ba353"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9432766,
+      "sha256": "f7d9dcf0d670795ca56f53c7920b8187d386fb63fadb12f6c332e8cb48cd53cd"
+    }
+  },
+  "public_relative_links_checked": 16,
+  "source_archive_files": 500,
+  "software_tests": "The completed 100M transformer seed-43 audit restored selected/final checkpoints and verified all 24 validation records, declared exposure and numerical sources against the original training commit. The existing twelve-model selection was reproduced exactly with the frozen verifier across all 288 validation records. No additional fitting or test inference was performed by the auditor. 26 evaluation/selection/supervisor tests passed, including the result-writer regression and completed-training mode. Original result serialization defect reproduced in the regression. All 74 JavaScript tests passed in publishing."
+}
