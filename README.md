@@ -95,7 +95,7 @@ The boundary cuts **79.42% of incoming and 73.96% of outgoing raw contacts**, us
 
 The core is a differentiable rate network. Contact counts and neurotransmitter annotations inform versioned modeling choices, rather than recovering measured synaptic strengths or pretrained knowledge.
 
-**Next graph question: selection, not just size.** The [selection-study plan](docs/SELECTION-STUDY.md) calls for functional-subcircuit, connectivity-ranked and matched random selections, with rewiring controls inside each subset. A new anatomy-only audit finds 4,497 neurons in the named mushroom-body families; even unilateral inventories exceed 1,024. Three uniform 1,024-node draws retain only 6,248–6,475 fast edges, so matching node count alone leaves a large density and parameter-count difference. No candidate has been trained, and family labels do not certify an intact circuit.
+**Next graph question: compare selection rules.** The negative result concerns the ranked 1,024-neuron subset, which contains no KCs. The [selection plan](docs/SELECTION-STUDY.md) compares operational KC-centered candidates, contact ranking and size-matched random subsets, including annotation-stratified draws; rewiring within each subset tests topology separately. At 487/540 cells, the [KCg-d candidates](docs/CIRCUIT-SELECTION.md) retain 81–85% of seed-KC incoming/outgoing raw contacts but cut about 89% of whole-subset incoming contacts. These remain untrained hypotheses, not certified circuits; matching nodes or annotations does not match density or parameter count.
 
 <details>
 <summary>Selection feasibility, cut contacts and pathway coverage</summary>
