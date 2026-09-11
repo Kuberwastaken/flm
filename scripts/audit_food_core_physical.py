@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import sys
 import numpy as np
 try:
     from .audit_food_approach import same, CASES
@@ -119,6 +120,11 @@ def audit(folder, bundle):
     if (sha(bundle/'manifest.json') != declared['bundle_manifest_sha256'] or manifest['models'] != declared['models']
             or manifest['adaptation_updates'] != 0 or summary['identity_sha256'] != identity_hash):
         raise ValueError('Bundle or summary identity changed')
+    runtime_source = 'experiments/embodiment/food_core_runtime.py'
+    runtime_hash = sha(sys.modules[FoodCoreRuntime.__module__].__file__)
+    if (runtime_hash != declared['sources'][runtime_source]
+            or runtime_hash != manifest['sources'][runtime_source]):
+        raise ValueError('Neural replay implementation differs from the verified interface')
     expected_labels = [(model_id, case) for model_id in MODEL_IDS for case in expected_cases]
     if [(r['model_id'], r['case']) for r in summary['trials']] != expected_labels: raise ValueError('Incomplete result inventory')
     arrays_by_label = {}; checks = []
