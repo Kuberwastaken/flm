@@ -28,7 +28,7 @@ Three of six topology intervals include zero. The three graphs × two training s
 All ten [checkpoint selections](reports/language-topology/selection.json) were frozen before new control test scoring, after 6,000 updates per run. Every run was scored on all 60 test articles. Inspect the [complete scores](public/research/language-topology-results.json), [records archive](https://flm.kuber.studio/research/language-topology-records.zip) and [release audit](reports/language-topology/records-release.json).
 
 <details>
-<summary>Matching, graph matrices and allocated versus effective slow-state parameters</summary>
+<summary>Graph matching, parameter limits and completed computation controls</summary>
 
 ![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
 
@@ -38,11 +38,32 @@ The [language topology study](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md) held the rest 
 
 The eight new fits comprise six rewired models and two retrained no-slow models, alongside two reused measured references. Every model allocates 600,003 parameter entries. The no-slow variant disconnects its 1,024 beta entries from the objective; normalization can still make nominal slow-feature readout columns nonzero. Allocated parameters therefore do not establish equal effective capacity. This tests the implemented slow-state branch, not all memory alternatives. See the [frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md).
 
-The [follow-up protocol](docs/LANGUAGE-CORE-PROTOCOL.md) tests fixed dynamics, no lateral recurrence and no temporal state with seeds 42/43. [Fixed dynamics](docs/LANGUAGE-CORE-CONTROLS.md) freezes recurrent parameters; the lexical interface learns through time. This is not a readout-only reservoir or matched in trainable parameter count. No lateral recurrence retains fast/slow memory; no temporal state resets both states per token. The [separate harness](flm/language_core_study.py) passed fixture tests and exact single-thread/bounded four-thread reference checks. Test results remain pending.
+### Retrained language computation controls
+
+The [separate study](docs/LANGUAGE-CORE-PROTOCOL.md) completed six new fits at 6,000 updates each, with seeds 42/43. All eight selections, including the two full-FLM references, were frozen before new-control test scoring. The [complete report](reports/language-core/summary.json) retains every article and contrast.
+
+![Full FLM has lower test loss than fixed dynamics, no lateral recurrence and no temporal state for both training seeds.](public/research/figures/language-core-test.svg)
+
+*Each panel uses its own horizontal scale.*
+
+| Contrast: first minus second | Seed 42: Δ BPB | Seed 43: Δ BPB |
+|---|---:|---:|
+| Full − fixed dynamics | −0.005663 | −0.005931 |
+| Full − no lateral recurrence | −0.006230 | −0.006551 |
+| Full − no temporal state | −0.125647 | −0.123375 |
+| No lateral − no temporal state (secondary) | −0.119416 | −0.116824 |
+
+Negative favors the first model. All eight 95% paired-article intervals lie below zero, conditional on each fitted pair; shared references and two seeds do not establish general training uncertainty. The secondary mean of **−0.118120 BPB** favors retaining independent temporal units when graph communication is absent. This exploratory study does not cross topology with trainability, so it cannot establish an anatomical advantage.
+
+[Fixed dynamics](docs/LANGUAGE-CORE-CONTROLS.md) freezes 78,179 recurrent parameters and trains 521,824 lexical-interface parameters through time. It is not a readout-only reservoir or matched in trainable parameter count. No lateral recurrence retains fast/slow memory; no temporal state resets both states per token. Both allocate 600,003 entries marked trainable but disconnect 76,131 edge/gain entries from the objective. These counts are not effective-capacity estimates. The [separate harness](flm/language_core_study.py) passed fixture tests and exact single-thread/bounded four-thread reference checks.
+
+The [score-record archive](https://flm.kuber.studio/research/language-core-records.zip) passed [fresh NumPy arithmetic verification](reports/language-core/records-release.json) outside the repository, with FLM and PyTorch imports disabled. The [eight-model inference bundle](https://flm.kuber.studio/research/language-core-inference.zip) has [32 unedited continuations](public/research/language-core-samples.json); its [fresh CLI audit](public/research/language-core-inference-release.json) reproduced one reference prompt per model outside the repository. These checks do not independently retrain models or rescore held-out text.
 
 </details>
 
-**Current study:** the six-fit [language computation study](docs/LANGUAGE-CORE-PROTOCOL.md) is [frozen](reports/language-core/identity.json) and training is underway. New test scores remain gated until all six fits finish and all eight selections, including two reused full-model references, are frozen. BabyLM remains paused during this study; new transfer and behavior experiments remain deferred.
+**Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
+
+**Next:** BabyLM remains paused while this release is packaged; its registered comparison resumes next. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -113,7 +134,7 @@ The difference is the computation and structural prior; the primary language exp
 
 </details>
 
-FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and a controlled test of whether measured wiring and slow state improve held-out prediction. The completed comparison finds no measured-topology advantage in this setup, while retaining slow state helps. Whether optimizing recurrent dynamics improves prediction under this budget remains open.
+FLM builds on earlier work in [task-optimized connectome models](https://www.nature.com/articles/s41586-024-07939-3) and [fly-derived reservoir computing](https://arxiv.org/abs/2306.01885). Its specific contribution is a reproducible next-token prediction experiment using a declared anatomical subset: matched language baselines, inspectable inference, and controlled tests of wiring, slow state and recurrent computation. The completed comparison finds no measured-topology advantage in this setup, while retaining slow state helps. Retrained controls also favor learned recurrent dynamics here.
 
 ## Run ChatFLM locally
 
@@ -232,7 +253,7 @@ All five papers are working reports for the continuing program. They include lim
 
 | Report | What it covers |
 |---|---|
-| [FLM methods and language results](public/research/flm.pdf) | Recurrent equations, completed WikiText baseline and topology comparisons, inference costs and acute interventions |
+| [FLM methods and language results](public/research/flm.pdf) | Recurrent equations, completed WikiText baseline, topology and computation controls, inference costs and acute interventions |
 | [Data and reproduction](public/research/data-and-reproduction.pdf) | Sources, transformations, tokenizer/split integrity and BabyLM preparation |
 | [Local learning and physical choices](public/research/local-learning.pdf) | Fifteen learning-rule runs and forty precomputed-choice physical replays |
 | [Wiring, context and learning controls](public/research/wiring-controls.pdf) | Complete 60-run study, rewired graphs and gradient diagnostics |
@@ -263,6 +284,7 @@ Acquisition verifies pinned revisions, sizes and SHA-256 hashes. Article groupin
 | WikiText training, scoring and export | [Matched protocol](docs/WIKITEXT-PROTOCOL.md), [inference/export guide](docs/INFERENCE-BUNDLE.md) |
 | Anatomical graph reconstruction | `python -m flm.acquire_graph`, then `python -m flm.graph --source data/processed/connectome --output work/reproduced-graph` |
 | Language topology and slow-state controls | [Frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md), [scheduler and recovery](docs/LANGUAGE-TOPOLOGY-OPERATIONS.md) |
+| Retrained language computation controls | [Frozen protocol](docs/LANGUAGE-CORE-PROTOCOL.md), [findings and parameter limits](docs/LANGUAGE-CORE-RESULTS.md) |
 | BabyLM acquisition, audit and 12-run pipeline | [Training protocol](docs/BABYLM-PROTOCOL.md), [complete-study evaluation](docs/BABYLM-EVALUATION.md) |
 | Learning-rule and topology diagnostics | [Original learning protocol](docs/LOCAL-LEARNING-PROTOCOL.md), [60-run extension](docs/WIRING-LEARNING-PROTOCOL.md) |
 | Recorded feedback audit or fresh MuJoCo simulation | [Standalone instructions](docs/CLOSED-LOOP-REPRODUCTION.md), [physical environment](experiments/embodiment/README.md) |
@@ -295,6 +317,6 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 
 </details>
 
-The active computation study tests whether learning recurrent dynamics is necessary for language prediction. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
+The next stage resumes the registered BabyLM comparison; larger-data, capacity-scaling and language-to-action research remain open. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).
