@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs have finished; FLM seed 43 is training. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs and FLM seed 43 have finished; GRU seed 43 is training. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -211,7 +211,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 3 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 4 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 
@@ -246,7 +246,7 @@ A separate 256-neuron, 6,678-edge core learns a delayed cue rule that reverses a
 
 The long-delay cue panel favors measured wiring under BPTT: **100.00% versus 66.67%**. The delay-8 context panel reverses that ordering: **63.02% versus 76.04%**. Supervised eligibility also does not consistently improve on a fixed core or no-history control. These are simple artificial tasks, and three seeds cannot support a universal ranking. The [findings](docs/WIRING-RESULTS.md), [protocol](docs/WIRING-LEARNING-PROTOCOL.md) and [complete records](https://flm.kuber.studio/research/wiring-learning-records.zip) include prediction panels and exact-versus-approximate gradient diagnostics.
 
-Separate [language-rule input preparation](docs/LANGUAGE-LEARNING-INPUTS.md) binds all six BabyLM `train-10m` sources: **3,351 blocks, 54,399,840 UTF-8 bytes and 18,591,514 text tokens**, excluding inserted boundaries. BPTT, fixed core, forward eligibility and no-history eligibility share initial tensors within each seed (42/43) on the original 1,024-neuron graph. All eight preparations passed two separate tiny synthetic updates each; fixed-core parameters stayed unchanged. This fixed-core rule also freezes the input projection, unlike the completed fixed-dynamics control. Corpus fits and timing have not run; the evaluation protocol remains unfrozen. The [cost-pilot preflight](docs/LANGUAGE-LEARNING-TIMING.md) verifies all eight full-window declarations and shared training-only sampling within each seed, with **zero gradient updates or timings**; the official run still waits for BabyLM.
+Separate [language-rule input preparation](docs/LANGUAGE-LEARNING-INPUTS.md) binds all six BabyLM `train-10m` sources: **3,351 blocks, 54,399,840 UTF-8 bytes and 18,591,514 text tokens**, excluding inserted boundaries. BPTT, fixed core, forward eligibility and no-history eligibility share initial tensors within each seed (42/43) on the original 1,024-neuron graph. All eight preparations passed two separate tiny synthetic updates each; fixed-core parameters stayed unchanged. This fixed-core rule also freezes the input projection, unlike the completed fixed-dynamics control. Corpus fits and timing have not run. The [cost-pilot](docs/LANGUAGE-LEARNING-TIMING.md) and [per-run selection](docs/LANGUAGE-LEARNING-VALIDATION.md) components have input preflights covering eight full-window declarations and 48 validation prefixes (49,152 text targets), with **no model scoring, updates or selected checkpoint**; the study-wide identity, budget and test gate remain pending.
 
 ### A body that responds to current pose
 
