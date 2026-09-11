@@ -1,0 +1,30 @@
+{
+  "identity_sha256": "03a2725de34c8785a9714fb9a6d55940d926a2d2e91ca8eb71668cf425660f1e",
+  "summary_sha256": "2f982324b8eac4f38e50b055dab4f6861ab8c4dca0ccd559091514a36363f1a5",
+  "report_source_sha256": "d0e13733da9c64562ff7aa1089b4f82150670948c96f65eaeb843171bed119e0",
+  "audit_sha256": "42eb1ad0ee4464db8360b8ef99254405164f89b51239079ca75e8da6d2e9da28",
+  "archive_manifest_files": 98,
+  "files": {
+    "public/research/food-core-physical-records.zip": {
+      "bytes": 50832026,
+      "sha256": "921d6a1e6bb2e70cce37d275fd35d88ae34b1844bbaf9790488118eb0b1577ac"
+    },
+    "public/research/figures/food-core-physical.csv": {
+      "bytes": 3750,
+      "sha256": "8339621735bf1d10dddd9321154f44db4e055da8c2cf2efa63ccae81b948f72c"
+    },
+    "public/research/figures/food-core-physical.png": {
+      "bytes": 234446,
+      "sha256": "3632500c9a9f1385b8b549fb2276d2385e7be403a2b963e944bccf5bf8499fff"
+    },
+    "public/research/figures/food-core-physical.svg": {
+      "bytes": 181734,
+      "sha256": "cdba2e0f636239594aa066b9d1faf31bac18505ec381c71431834e0146c67778"
+    }
+  },
+  "complete_cases": 24,
+  "failed_cases": 0,
+  "observations_audited": 4824,
+  "training_updates": 0,
+  "scope": "Actual closed-loop physics with initial and language-trained cores behind identical unadapted adapters. No food-task learning, feeding or demonstrated transfer benefit."
+}

@@ -1,0 +1,555 @@
+{
+  "verified_utc": "2026-09-11T15:30:47.283672+00:00",
+  "archive_sha256": "921d6a1e6bb2e70cce37d275fd35d88ae34b1844bbaf9790488118eb0b1577ac",
+  "archive_manifest_files": 98,
+  "bound_source_files_verified": 26,
+  "isolated_extraction_cli_returncode": 0,
+  "python_executable": "X:\\Bigger-Projects\\fruit fly\\flm\\.venv-embodied\\Scripts\\python.exe",
+  "extraction_directory": "X:\\Bigger-Projects\\fruit fly\\flm\\work\\food-physical-fresh-v1",
+  "audit": {
+    "verified_utc": "2026-09-11T15:30:47.167177+00:00",
+    "identity_sha256": "03a2725de34c8785a9714fb9a6d55940d926a2d2e91ca8eb71668cf425660f1e",
+    "summary_sha256": "2f982324b8eac4f38e50b055dab4f6861ab8c4dca0ccd559091514a36363f1a5",
+    "auditor_sha256": "b6352b1a609784a13a11ff5baf3a4169d00a004229428ea715ad814ced394eda",
+    "complete_cases": 24,
+    "failed_cases": 0,
+    "observations_replayed": 4824,
+    "trials": [
+      {
+        "label": "initial-s42--odor-a-left",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s42--odor-a-right",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s42--odor-a-left-reversed",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s42--odor-a-left-neutral",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s42--odor-a-left-missing",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s42--odor-a-left-repeat",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-left",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-right",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-left-reversed",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-left-neutral",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-left-missing",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s42--odor-a-left-repeat",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-left",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-right",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-left-reversed",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-left-neutral",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-left-missing",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "initial-s43--odor-a-left-repeat",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-left",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-right",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-left-reversed",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-left-neutral",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-left-missing",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      },
+      {
+        "label": "language-s43--odor-a-left-repeat",
+        "observations": 201,
+        "maximum_core_error": {
+          "fast": 0.0,
+          "slow": 0.0,
+          "features": 0.0,
+          "logits": 0.0,
+          "probabilities": 0.0
+        },
+        "invalid_head_alias_observations": 201
+      }
+    ],
+    "paired_replays": [
+      {
+        "first": "initial-s42--odor-a-left",
+        "second": "initial-s42--odor-a-left-repeat",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "logits": true,
+          "probabilities": true
+        }
+      },
+      {
+        "first": "initial-s42--odor-a-left",
+        "second": "initial-s42--odor-a-left-reversed",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "initial-s42--odor-a-left",
+        "second": "initial-s42--odor-a-left-neutral",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "language-s42--odor-a-left",
+        "second": "language-s42--odor-a-left-repeat",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "logits": true,
+          "probabilities": true
+        }
+      },
+      {
+        "first": "language-s42--odor-a-left",
+        "second": "language-s42--odor-a-left-reversed",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "language-s42--odor-a-left",
+        "second": "language-s42--odor-a-left-neutral",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "initial-s43--odor-a-left",
+        "second": "initial-s43--odor-a-left-repeat",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "logits": true,
+          "probabilities": true
+        }
+      },
+      {
+        "first": "initial-s43--odor-a-left",
+        "second": "initial-s43--odor-a-left-reversed",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "initial-s43--odor-a-left",
+        "second": "initial-s43--odor-a-left-neutral",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "language-s43--odor-a-left",
+        "second": "language-s43--odor-a-left-repeat",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "logits": true,
+          "probabilities": true
+        }
+      },
+      {
+        "first": "language-s43--odor-a-left",
+        "second": "language-s43--odor-a-left-reversed",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      },
+      {
+        "first": "language-s43--odor-a-left",
+        "second": "language-s43--odor-a-left-neutral",
+        "both_complete": true,
+        "exact_array_equal": {
+          "time_s": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "qpos": true,
+          "sensory": false,
+          "raw_odor": true,
+          "contact_mask": true,
+          "descending_signal": true,
+          "fast": false,
+          "slow": false,
+          "features": false,
+          "logits": false,
+          "probabilities": false
+        }
+      }
+    ],
+    "physics_rerun": false,
+    "training_updates": 0,
+    "scope": "Scalar geometry and motor-command audit plus full NumPy neural-state replay from stored physical observations; no independent physics rerun or food-transfer conclusion."
+  },
+  "verification_source_sha256": "1045f40db6c3178a3af840038c3c84b74fa28c4ce22ab7e75b86e0f02db06d43",
+  "scope": "Fresh-extraction NumPy audit of all archived physical records and core traces. Body physics and learning are not rerun."
+}
