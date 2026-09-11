@@ -77,7 +77,16 @@ await mkdir('public/research/selection-language', { recursive: true });
 await copyFile('flm/selection_language.py', 'public/research/selection-language/selection_language.py');
 await copyFile('scripts/selection_language_preflight.py', 'public/research/selection-language/selection_language_preflight.py');
 await copyFile('reports/selection-language/preparation.json', 'public/research/selection-language/preparation.json');
+await copyFile('flm/selection_language_study.py', 'public/research/selection-language/selection_language_study.py');
+await copyFile('scripts/selection_language_study_preflight.py', 'public/research/selection-language/selection_language_study_preflight.py');
+await copyFile('reports/selection-language/coordinator-preparation.json', 'public/research/selection-language/coordinator-preparation.json');
+await writeFile('public/research/selection-language-coordinator.md', (await readFile('docs/SELECTION-LANGUAGE-COORDINATOR.md', 'utf8'))
+  .replaceAll('../flm/selection_language_study.py', 'selection-language/selection_language_study.py')
+  .replaceAll('../reports/selection-language/', 'selection-language/')
+  .replaceAll('SELECTION-LANGUAGE-TRAINING.md', 'selection-language-training.md')
+  .replaceAll('SELECTION-TIMING-PILOT.md', 'selection-timing-pilot.md'));
 await writeFile('public/research/selection-language-training.md', (await readFile('docs/SELECTION-LANGUAGE-TRAINING.md', 'utf8'))
+  .replaceAll('SELECTION-LANGUAGE-COORDINATOR.md', 'selection-language-coordinator.md')
   .replaceAll('../flm/selection_language.py', 'selection-language/selection_language.py')
   .replaceAll('../reports/selection-language/', 'selection-language/')
   .replaceAll('LANGUAGE-LEARNING-RUNNER.md', 'language-learning-runner.md')

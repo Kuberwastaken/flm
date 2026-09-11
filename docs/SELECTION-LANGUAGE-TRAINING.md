@@ -76,8 +76,10 @@ rule, and changing a learning rule belongs in its separate experiment.
 
 This is a low-level fitting component. It does not itself register a complete
 study, choose an affordable matrix, enforce all-condition completion or select
-validation checkpoints. A future official coordinator must freeze those choices
-before calling it. There is deliberately no command that launches an unfrozen
+validation checkpoints. The [complete-group coordinator](SELECTION-LANGUAGE-COORDINATOR.md)
+now implements registration, serial resume and whole-inventory validation selection;
+its synthetic tests pass. Actual groups, budget, protocol and held-out evaluator
+remain pending. There is deliberately no command that launches an unfrozen
 corpus experiment through this module.
 
 ## Verification and next step
