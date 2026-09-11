@@ -61,6 +61,26 @@ class HandoffTests(unittest.TestCase):
         self.assertTrue(all(handoff.sha(self.root/row['path'])==row['sha256'] for row in complete['results']))
         self.assertFalse((self.root/'reports/selection-language/study-identity.json').exists())
 
+    def test_completed_training_mode_runs_without_a_live_trainer(self):
+        self.waited=True
+        with patch.object(handoff,'capture_trainer') as capture, patch.object(handoff,'wait_for_exit') as wait:
+            handoff.run(self.root,None,self.output,runner=self.runner,waiter=wait,idle=lambda *args:None)
+        capture.assert_not_called();wait.assert_not_called()
+        self.assertEqual(self.executed,['babylm-test','babylm-samples','selection-pilot'])
+        self.assertIsNone(handoff.read(self.output/'identity.json')['trainer'])
+
+    def test_completed_training_mode_rejects_missing_fit_before_creating_output(self):
+        (self.root/'runs/babylm-100m/transformer-s43/complete.json').unlink()
+        with self.assertRaisesRegex(ValueError,'all twelve'):
+            handoff.run(self.root,None,self.output,runner=self.runner,idle=lambda *args:None)
+        self.assertFalse(self.output.exists());self.assertEqual(self.executed,[])
+
+    def test_completed_training_mode_does_not_bypass_idle_gate(self):
+        def busy(*args): raise RuntimeError('Fixture busy job')
+        with self.assertRaisesRegex(RuntimeError,'busy job'):
+            handoff.run(self.root,None,self.output,runner=self.runner,idle=busy)
+        self.assertEqual(self.executed,[]);self.assertFalse((self.output/'complete.json').exists())
+
     def test_incomplete_trainer_exit_does_not_launch_a_stage(self):
         path=self.root/'runs/babylm-100m/transformer-s43/complete.json';path.rename(path.with_suffix('.missing'))
         with self.assertRaisesRegex(ValueError,'before all twelve'):self.run_fixture()
