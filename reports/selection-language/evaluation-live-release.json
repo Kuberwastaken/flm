@@ -1,0 +1,88 @@
+{
+  "verified_utc": "2026-09-11T13:05:16.254708+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/selection-language-test.md",
+      "status": 200,
+      "bytes": 6687,
+      "sha256": "c6514e6bf3cc745a04a3ddefe6774993a0939aa37f411ddab7f790efdb919896"
+    },
+    {
+      "path": "research/selection-language-coordinator.md",
+      "status": 200,
+      "bytes": 8376,
+      "sha256": "5aa2a690f1e1c13fdcb33453c2c21dd555e6f1fa98d931ea086cb93f96f4a29f"
+    },
+    {
+      "path": "research/selection-language-training.md",
+      "status": 200,
+      "bytes": 6892,
+      "sha256": "a5f16029d44ec15668129bd951f6ed163d535d5d6ce9c24ead678e6265f92469"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8383767,
+      "sha256": "5f405eef1bd641492b9e161189b25a63d9493189444d52f8f54e505fb928aab9"
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "status": 200,
+      "bytes": 267236,
+      "sha256": "2eec4e0b25137ffdaf01625146bc94be36a4cec3f2f9ea4c895c9a0b24a30d1d"
+    },
+    {
+      "path": "research/selection-language/selection_language_study.py",
+      "status": 200,
+      "bytes": 19444,
+      "sha256": "5b7a7d5fd1e468b790457c504053daf5270ed4fd09726c3dbd801c9672e75eb4"
+    },
+    {
+      "path": "research/selection-language/selection_language_test.py",
+      "status": 200,
+      "bytes": 14181,
+      "sha256": "2c73b200fe29f5a635e9b25a1472474d8d36c643d05422e4829aaa66caabf4c1"
+    },
+    {
+      "path": "research/selection-language/selection_language_study_preflight.py",
+      "status": 200,
+      "bytes": 3347,
+      "sha256": "d858fcb4d21d43f346d2e264198f028619b918e94dacb02e3a1005e87a42185e"
+    },
+    {
+      "path": "research/selection-language/evaluation-verified-preparation.json",
+      "status": 200,
+      "bytes": 9797,
+      "sha256": "6bf5e473b65e471e9862229fc97d86be742c0bd73a534dd34846321555c77c1f"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-language/selection_language_test.py",
+    "selection-language-coordinator.md",
+    "selection-language/evaluation-verified-preparation.json",
+    "selection-language/selection_language_study.py",
+    "selection-language-test.md",
+    "selection-language/coordinator-preparation.json",
+    "selection-language/evaluation-verified-preparation.json",
+    "selection-timing-pilot.md",
+    "selection-language-training.md",
+    "selection-language/selection_language.py",
+    "selection-language/preparation.json",
+    "language-learning-runner.md",
+    "selection-timing-pilot.md",
+    "selection-language-coordinator.md",
+    "selection-language-test.md"
+  ],
+  "paper_source_files_verified": 358,
+  "source_bindings_verified": 29,
+  "available_complete_groups": 8,
+  "selection_evaluator_tests_observed_passed": 5,
+  "coordinator_regression_tests_observed_passed": 7,
+  "synthetic_complete_group_fits": 64,
+  "synthetic_test_blocks_per_fit": 4,
+  "completed_babylm_fits": 6,
+  "actual_selection_language_test_scoring": false,
+  "scope": "Publication, source identity and synthetic evaluator verification. Six BabyLM fits are complete; all-twelve held-out comparison remains pending. No official selection matrix, budget or corpus result is frozen."
+}
