@@ -120,7 +120,11 @@ def main():
         'reports/language-eligibility/input-preflight.json', 'flm/babylm.py',
         'data/sources/babylm-2026.json', 'data/cards/babylm-2026-acquisition.json',
         'data/tokenizers/babylm-2026-4096/tokenizer-card.json',
-        'data/tokenizers/babylm-2026-4096/tokenizer.json')]
+        'data/tokenizers/babylm-2026-4096/tokenizer.json',
+        'docs/SELECTION-REWIRING-RESULTS.md', 'scripts/selection_rewiring_report.py',
+        'tests/test_selection_rewiring_report.py', 'reports/selection-rewiring/manifest.json',
+        'reports/selection-rewiring/release.json', 'reports/selection-rewiring/standalone-audit.json',
+        'reports/selection-rewiring/summary.json', 'reports/selection-rewiring/figures.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.

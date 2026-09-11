@@ -1,9 +1,8 @@
 # Untrained graph exports for the selection study
 
-The subsequent [independent rewiring audit](selection-rewiring-audit.md) now
-verifies a dated 101-control snapshot and provides a tested final-archive gate.
-Generation remains incomplete at that checkpoint; no selection language fits
-have been run.
+The subsequent [complete structural release](selection-rewiring-results.md)
+contains all 192 successful rewires and all 64 originals. The complete archive
+passes the independent audit. No selection language fits have been run.
 
 The [training-cost pilot](selection-timing-pilot.md) is also prepared. All 64
 full-size graph configurations pass tiny synthetic backward/update checks;
@@ -73,11 +72,11 @@ useful degrees of freedom would therefore be misleading. The manifest records
 zero-sign nodes, zero incoming/outgoing degree and single incoming degree for
 every selection.
 
-## Rewiring preparation has started
+## Rewiring preparation is complete
 
 The [resumable runner](selection_rewiring.py) uses the existing tested
 directed-swap implementation to prepare seeds 101, 103 and 107 for each graph:
-192 planned untrained controls. Each case targets ten accepted swaps per edge,
+192 untrained controls, all completed. Each case targets ten accepted swaps per edge,
 with a limit of 100 proposals per edge. It preserves directed degrees, source
 sign constraints, incoming signed weight magnitudes, original self edges,
 node identities, positions and pools. Transferred contacts/weights are input-slot
@@ -88,13 +87,13 @@ runner code, seed and swap budgets. Resumption validates the receipt, graph hash
 and structural invariants before reuse. An interrupted payload without a receipt
 is recreated; an infeasible generation is recorded as a failure and is not
 silently retried or omitted. The directory has an OS-held writer lock. The
-generator is running separately from BabyLM; neither operation changes the
+generator has exited; BabyLM training continues. Neither operation changes the
 other's data, source graph or training protocol.
 
-The complete 192-graph inventory is **not yet finished**. Finite swap chains do
-not establish uniform sampling or adequate mixing. Once generation finishes,
-audit and publish every success/failure, overlap and structural diagnostic before
-choosing the actual fit matrix. Cost measurements must use a controlled compute
+The complete 192-control inventory and its structural diagnostics are now
+[audited and available](selection-rewiring-results.md), with no failures. Finite
+swap chains do not establish uniform sampling or adequate mixing. The actual
+fit matrix remains undecided. Cost measurements must use a controlled compute
 window; the synthetic export checks provide no performance benchmark.
 
 A [dated initial receipt audit](selection-rewiring-started.json)

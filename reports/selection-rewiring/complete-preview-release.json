@@ -1,0 +1,156 @@
+{
+  "verified_utc": "2026-09-11T10:45:24.727300+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/selection-rewiring-results.md",
+      "status": 200,
+      "bytes": 5270,
+      "sha256": "a7145f18ce3f70cfc3b37abdf236bd4201b7213940aa950fc62e52aa596d7d24"
+    },
+    {
+      "path": "research/selection-rewiring-audit.md",
+      "status": 200,
+      "bytes": 5810,
+      "sha256": "e2f4dfaabf1118f3beddeb7bcdb65306896505079b48f5cdac3e6527a45bb721"
+    },
+    {
+      "path": "research/selection-graph-exports.md",
+      "status": 200,
+      "bytes": 7446,
+      "sha256": "7a52b854f997e70e7f473ccb3c1aa7c7164b20a756241355fd50635d21a016eb"
+    },
+    {
+      "path": "research/circuit-selection.md",
+      "status": 200,
+      "bytes": 10228,
+      "sha256": "57a4a0f2ee841bfc96dd3041815d0af4b638ce74837dc6993ff54ac7195b5fae"
+    },
+    {
+      "path": "research/selection-rewiring.zip",
+      "status": 200,
+      "bytes": 26622579,
+      "sha256": "1b849f068ab1c0bd7e8331e2aa7ddb573ed6173f79e739727b86ac7d176aebd3"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8214380,
+      "sha256": "00521622e7f684f6191bcd789d60386c70f76414b5b59506b16154f303e24abc"
+    },
+    {
+      "path": "research/selection-rewiring/manifest.json",
+      "status": 200,
+      "bytes": 3283169,
+      "sha256": "e631beec9ed62172dc7e0b77e66047a988e778199a6254eac2e52178dfe42c29"
+    },
+    {
+      "path": "research/selection-rewiring/release.json",
+      "status": 200,
+      "bytes": 801,
+      "sha256": "34bbf69185f2b1c1517c6a6bc09738533d51ddb4dc80039a4a62bffaddf079d3"
+    },
+    {
+      "path": "research/selection-rewiring/standalone-audit.json",
+      "status": 200,
+      "bytes": 758,
+      "sha256": "7acfa425afe4904be7d9e0af130f5c6eceb70e6d27db12bdaec0fc17705bcd9f"
+    },
+    {
+      "path": "research/selection-rewiring/summary.json",
+      "status": 200,
+      "bytes": 185537,
+      "sha256": "e08c8ccb45ee02639cc17fe9f1ac20eec45d4fc5188c1a2b50313aa0aba88a3c"
+    },
+    {
+      "path": "research/selection-rewiring/figures.json",
+      "status": 200,
+      "bytes": 824,
+      "sha256": "43fbc744a87945e693d197eb8854355d6460a4947b40d1ac97201047a2618853"
+    },
+    {
+      "path": "research/selection-rewiring/selection_rewiring_report.py",
+      "status": 200,
+      "bytes": 11230,
+      "sha256": "bfeef0ccf907904667cf824511a4e67305690c19f9cf48c25e358b92ac72121a"
+    },
+    {
+      "path": "research/selection-rewiring/audit_selection_rewiring.py",
+      "status": 200,
+      "bytes": 8850,
+      "sha256": "eb2b59f26b856113279cfc40295a09dc094e84becec19c0063fccaf9fdcc3754"
+    },
+    {
+      "path": "research/figures/selection-rewiring.csv",
+      "status": 200,
+      "bytes": 42291,
+      "sha256": "d937728c17a8a8d37d4f4aafe0b1bb40eda51fb6a6c546ace8ef49f6a629d6b1"
+    },
+    {
+      "path": "research/figures/selection-rewiring.svg",
+      "status": 200,
+      "bytes": 186156,
+      "sha256": "04c3b0b608535e238238c56e6c6a1859c2e917769a59233ca9a846c048e909be"
+    },
+    {
+      "path": "research/figures/selection-rewiring.png",
+      "status": 200,
+      "bytes": 173620,
+      "sha256": "d3c51d38b20c1c16e8b950b68a63f98d2c7d0d28889181f50729560b2a4ab3c6"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 75396,
+      "sha256": "4db76bdf10516e2b002644116e3e19df1937b11f48166967d37b3792257903af"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-rewiring.zip",
+    "selection-rewiring/release.json",
+    "selection-rewiring/standalone-audit.json",
+    "selection-rewiring-audit.md",
+    "figures/selection-rewiring.png",
+    "figures/selection-rewiring.csv",
+    "selection-rewiring/summary.json",
+    "circuit-selection.md",
+    "selection-rewiring/selection_rewiring_report.py",
+    "selection-rewiring/figures.json",
+    "selection-timing-pilot.md",
+    "selection-graph-exports.md",
+    "selection-rewiring/preflight.json",
+    "selection-rewiring-results.md",
+    "selection-rewiring/audit_selection_rewiring.py",
+    "selection-rewiring/package_selection_rewiring.py",
+    "selection-rewiring-results.md",
+    "selection-rewiring-results.md",
+    "selection-timing-pilot.md",
+    "circuit-selection.md",
+    "selection-graphs.zip",
+    "selection-graph-manifest.json",
+    "selection_rewiring.py",
+    "selection-rewiring-results.md",
+    "selection-rewiring-started.json",
+    "selection-graph-release.json",
+    "selection-pathways.md",
+    "circuit-selection/circuit_selection.py",
+    "selection-controls/selection_controls.py",
+    "selection-controls/summary.json",
+    "selection-graph-exports.md",
+    "selection-rewiring-results.md",
+    "circuit-selection/summary.json",
+    "circuit-selection/candidate-body-ids.json",
+    "circuit-selection/members.csv",
+    "selection-controls/control-body-ids.json"
+  ],
+  "paper_source_files_verified": 320,
+  "raw_or_processed_corpus_payloads_archived": false,
+  "original_graphs": 64,
+  "successful_controls": 192,
+  "failed_controls": 0,
+  "independently_recomputed_csv_rows": 192,
+  "independently_recomputed_plot_points": 64,
+  "source_archive_and_standalone_audit_bindings_verified": true,
+  "scope": "Publication and descriptive arithmetic checks against independently audited untrained graphs; no language fit or mixing result"
+}

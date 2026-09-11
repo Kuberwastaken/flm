@@ -146,8 +146,8 @@ computation, sensory and physical studies are unchanged.
 The [graph export stage](selection-graph-exports.md) has since completed all 64
 model-ready graphs, exact frozen-format compatibility and synthetic forward
 checks. The graph archive and full parameter/degree cards are available there.
-Three rewires per selection are now being generated; cost profiling and the
-actual language-fit matrix remain pending. These exports do not certify that
+Three rewires per selection are now [complete and independently audited](selection-rewiring-results.md);
+cost profiling and the actual language-fit matrix remain pending. These exports do not certify that
 the biological boundaries above have been repaired.
 
 ## Reproduction

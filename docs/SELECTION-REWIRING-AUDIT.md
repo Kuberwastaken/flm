@@ -10,6 +10,10 @@ The dated [preflight record](../reports/selection-rewiring/preflight.json) check
 at 09:38:25 UTC on 11 September 2026. This is an immutable partial snapshot, not
 a live completion counter. The final archive gate correctly rejects it.
 
+The subsequent [completed release](SELECTION-REWIRING-RESULTS.md) now contains
+all 192 successful controls and no failures. Its full standalone audit passes.
+The earlier partial snapshots remain available as historical records.
+
 ## What is checked independently
 
 [audit_selection_rewiring.py](../scripts/audit_selection_rewiring.py) uses NumPy
@@ -51,7 +55,7 @@ totals, altered diagnostics and altered graph payloads. Failed cases are
 reported, not independently rerun. A failed check preserves an existing final
 archive.
 
-The eventual bundle contains all original graphs, every successful rewire and
+The released bundle contains all original graphs, every successful rewire and
 all terminal receipts. It contains no tokenizer, trained weights or language
 scores. A terminal preparation record may include failures; it is not a claim
 that all controls succeeded or that a training protocol has been frozen.
@@ -82,8 +86,8 @@ python scripts/audit_selection_rewiring.py public/research/selection-rewiring.zi
 
 The standalone auditor also accepts `--sha256` with the value from the final
 release record. It can be copied outside the repository and run with NumPy and
-SciPy against the archive. The final archive is **not available at this partial
-checkpoint**.
+SciPy against the archive. The final archive and its exact checksum are now
+available in the [completed structural release](SELECTION-REWIRING-RESULTS.md).
 
 ## What this enables, and what it cannot establish
 

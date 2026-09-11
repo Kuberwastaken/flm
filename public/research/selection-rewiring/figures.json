@@ -1,0 +1,11 @@
+{
+  "summary_sha256": "e08c8ccb45ee02639cc17fe9f1ac20eec45d4fc5188c1a2b50313aa0aba88a3c",
+  "plot_source_sha256": "bfeef0ccf907904667cf824511a4e67305690c19f9cf48c25e358b92ac72121a",
+  "artifacts": {
+    "public/research/figures/selection-rewiring.csv": "d937728c17a8a8d37d4f4aafe0b1bb40eda51fb6a6c546ace8ef49f6a629d6b1",
+    "public/research/figures/selection-rewiring.png": "d3c51d38b20c1c16e8b950b68a63f98d2c7d0d28889181f50729560b2a4ab3c6",
+    "public/research/figures/selection-rewiring.svg": "04c3b0b608535e238238c56e6c6a1859c2e917769a59233ca9a846c048e909be"
+  },
+  "plotted_selections": 64,
+  "scope": "Descriptive structural diagnostics. One plotted point per original selection, mean and range across three graph seeds; no independent biological replications, mixing guarantee or language performance."
+}
