@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-09-11T13:00:17.794662+00:00",
+  "url": "http://127.0.0.1:5181/?model=babylm&review=inference-release#research",
+  "snapshot_sha256": "2eec4e0b25137ffdaf01625146bc94be36a4cec3f2f9ea4c895c9a0b24a30d1d",
+  "observed_completed_runs": 6,
+  "registered_runs": 12,
+  "seed43": {
+    "flm_updates": 12000,
+    "gru_updates": 12000,
+    "transformer_updates": 12000,
+    "flm_bpb": "1.9743",
+    "gru_bpb": "1.8992",
+    "transformer_bpb": "1.8878"
+  },
+  "scale100m_seed42": {
+    "flm_measured_updates": 0,
+    "gru": "awaiting measurements",
+    "transformer": "awaiting measurements",
+    "table": "All three awaiting shared update"
+  },
+  "seed42_restored": {
+    "flm_bpb": "1.9811",
+    "gru_bpb": "1.9086",
+    "transformer_bpb": "1.8826"
+  },
+  "console_errors": [],
+  "scope": "Observed the rebuilt dated snapshot through browser controls. All10Mseed43 models are complete;100Mhas no common measured update yet. No layout or generation change."
+}
