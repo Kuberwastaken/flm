@@ -27,6 +27,12 @@ state and reconstructed body geometry in the browser, with the
 food adaptation; the downstream learning and transfer experiment below remains
 unrun.
 
+An [episodic reward-modulated action readout](food-readout-learning.md) is now
+implemented with mathematical and resume checks. Its first scope freezes both
+the sensory projection and recurrent core, learning only the 771-entry action
+head. This narrows the trainable interface explicitly; it supplies no physical
+adaptation result and does not freeze the pending experimental budget.
+
 ## What can be compared now
 
 The browser's physical-choice replay compares the original untrained sensory

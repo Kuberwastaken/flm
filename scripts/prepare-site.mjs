@@ -145,9 +145,18 @@ for (const [source, target] of [
   ['FOOD-APPROACH-RESULTS.md', 'food-approach-results.md'],
   ['FOOD-CORE-INTERFACE.md', 'food-core-interface.md'],
   ['FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md'],
+  ['FOOD-READOUT-LEARNING.md', 'food-readout-learning.md'],
   ['PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
+await mkdir('public/research/food-readout', { recursive: true });
+for (const source of ['flm/food_readout_learning.py', 'tests/test_food_readout_learning.py'])
+  await copyFile(source, `public/research/food-readout/${source.split('/').at(-1)}`);
+await writeFile('public/research/food-readout-learning.md', (await readFile('docs/FOOD-READOUT-LEARNING.md', 'utf8'))
+  .replaceAll('FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md')
+  .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('../flm/food_readout_learning.py', 'food-readout/food_readout_learning.py')
+  .replaceAll('../tests/test_food_readout_learning.py', 'food-readout/test_food_readout_learning.py'));
 await mkdir('public/research/food-sensors', { recursive: true });
 for (const name of ['physical-probe.json', 'geometry-audit.json', 'visible-odor-probe.json', 'visible-odor-audit.json', 'figure.json'])
   await copyFile(`reports/food-sensors/${name}`, `public/research/food-sensors/${name}`);

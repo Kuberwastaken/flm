@@ -188,7 +188,7 @@ GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.
 
 Text inference runs in a CPU worker; optional 3D views require WebGL. Conversations and adaptation stay in the browser. A separate output adapter can be reset, saved and exported; it does not modify the bundled checkpoint and is bound to a checkpoint hash. Save session learning before switching models. Adapter changes cannot alter recurrent activity for a fixed input sequence, though they can change generated tokens and therefore later activity. These browser updates are distinct from training the language core or the sensory networks.
 
-A decorative fly types beside the composer during streamed generation. Its motion toggle and reduced-motion support affect only the illustration; it is separate from the 3D anatomy, inference state and physical recordings.
+A 3D fly types on a keyboard beside the composer during streamed generation, using the same articulated NeuroMechFly meshes as the body view. Its front legs press the keys while four support feet stay planted. Animation follows generation and Stop automatically, pauses offscreen, and respects reduced-motion preferences. This is an authored illustration, separate from inference state and physical recordings.
 
 </details>
 

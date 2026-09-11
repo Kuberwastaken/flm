@@ -26,6 +26,8 @@ def verify(base, output):
         'research/food-core-physical-records.zip','research/paper-source.zip',
         'research/food-core-physical-results.md','research/food-core-physical-reference.md',
         'research/physical-state-semantics.md','research/food-response-plan.md','licenses/BODY-PROVENANCE.md',
+        'research/food-readout-learning.md','research/food-readout/food_readout_learning.py',
+        'research/food-readout/test_food_readout_learning.py', 'research/babylm-validation.json',
         'research/figures/food-core-physical.png','research/figures/food-core-physical.svg','research/figures/food-core-physical.csv']
     files += [p.relative_to(ROOT/'public').as_posix() for p in (ROOT/'public/research/food-core-physical').iterdir() if p.is_file()]
     for entry in manifest['trials']:
