@@ -79,7 +79,8 @@ def run(root,output):
     antennae=np.asarray(frames[0]['antennae_mm']); contacts=np.asarray(frames[0]['contact_points_mm'])
     anchor=contacts[0].copy(); anchor[2]-=.01
     touch=Source('contact-probe',tuple(map(float,anchor)),(2.,2.,2.),(.4,.2),1.,.1,.02)
-    far=replace(touch,position_mm=(float(anchor[0]+100.),float(anchor[1]),float(anchor[2])))
+    # Keep odor detectable while every foot is outside the source volume.
+    far=replace(touch,position_mm=(float(anchor[0]+4.),float(anchor[1]),float(anchor[2])))
     cases=[]
     for label,source,missing in (('distant-sweet',far,False),('distant-neutral',replace(far,sugar=0.),False),
             ('touched-sweet',touch,False),('touched-neutral',replace(touch,sugar=0.),False),
@@ -88,6 +89,8 @@ def run(root,output):
         cases.append(dict(label=label,field=stimulus.card(),missing_odor=missing,
             observation=observation(stimulus,antennae,contacts,missing)))
     lookup={row['label']:row['observation']['sensory'] for row in cases}
+    if not all(v>0 for v in lookup['distant-sweet'][:4]) or lookup['distant-sweet'][4:]!=[0.,0.]:
+        raise ValueError('Distant-reward calibration requires visible odor without contact')
     if lookup['distant-sweet']!=lookup['distant-neutral']: raise ValueError('Sugar identity leaked at a distance')
     if lookup['touched-sweet'][:4]!=lookup['touched-neutral'][:4] or lookup['touched-sweet'][4:]!=[1.,1.] or lookup['touched-neutral'][4:]!=[0.,1.]:
         raise ValueError('Taste/contact separation failed')
