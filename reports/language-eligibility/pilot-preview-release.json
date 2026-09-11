@@ -1,0 +1,91 @@
+{
+  "verified_utc": "2026-09-11T11:00:26.940608+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/language-learning-timing.md",
+      "status": 200,
+      "bytes": 6220,
+      "sha256": "170189aba437bfb022fb105ca45632dc4d5a2888a2aa3dbc4fc603b715ee06f8"
+    },
+    {
+      "path": "research/language-learning-inputs.md",
+      "status": 200,
+      "bytes": 4812,
+      "sha256": "c43ad97b79c0aac4fdf7a5c6741c8ea9b5e3e1bb92e32e38aa6641907571c12c"
+    },
+    {
+      "path": "research/language-learning-runner.md",
+      "status": 200,
+      "bytes": 5698,
+      "sha256": "5dab8642cffa95f72aa768872531c7092de62022ad3fb7e783d1d9453165bb53"
+    },
+    {
+      "path": "research/language-eligibility-kernel.md",
+      "status": 200,
+      "bytes": 6449,
+      "sha256": "f23170175d06c639c660b7a2961d873b80d1ecbda368ef40eb12eace40145dfa"
+    },
+    {
+      "path": "research/language-eligibility-preparation.md",
+      "status": 200,
+      "bytes": 6913,
+      "sha256": "64245cce1020948c1469ba447dec7c93776266bc9489e46381a7681148c295a1"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8230367,
+      "sha256": "1c40170e39c88e49a6fdb222b1fe12b333259af382907b47799754312f1f7269"
+    },
+    {
+      "path": "research/language-learning/language_learning_pilot.py",
+      "status": 200,
+      "bytes": 10637,
+      "sha256": "5dbc0d78c6eddb692b7a06ee5baa916a0cf4ea71a957f3ae4c430e2b048f505c"
+    },
+    {
+      "path": "research/language-learning/language_learning_pilot_preflight.py",
+      "status": 200,
+      "bytes": 4929,
+      "sha256": "b339008d9b54f1d971b0624854cbebeca44f8085656e3174709ec44ecfc6bf69"
+    },
+    {
+      "path": "research/language-learning/pilot-preflight.json",
+      "status": 200,
+      "bytes": 21518,
+      "sha256": "e28cd17c3dba69629bf41ccd9f76828de77eb547ad897adf8b9b48fa643fd202"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "language-learning-inputs.md",
+    "language-learning-runner.md",
+    "language-learning/pilot-preflight.json",
+    "language-learning/language_learning_pilot.py",
+    "language-learning/language_learning_inputs.py",
+    "language-learning-runner.md",
+    "language-learning/input-preflight.json",
+    "language-eligibility-kernel.md",
+    "language-learning/language_learning_input_preflight.py",
+    "language-learning-timing.md",
+    "language-learning/language_learning_train.py",
+    "language-learning-inputs.md",
+    "language-eligibility-kernel.md",
+    "language-learning-timing.md",
+    "language-learning/language_eligibility.py",
+    "language-eligibility-preparation.md",
+    "language-learning-runner.md",
+    "local-learning-protocol.md",
+    "language-learning/embedding_eligibility.py",
+    "language-eligibility-kernel.md",
+    "language-learning-runner.md"
+  ],
+  "paper_source_files_verified": 325,
+  "raw_or_processed_corpus_payloads_archived": false,
+  "prepared_conditions": 8,
+  "source_bindings_verified": true,
+  "full_window_declarations_and_exposure_totals_verified": true,
+  "tiny_pilot_fixture_tests_observed_passed": 6,
+  "scope": "Publication, preflight identities and exposure arithmetic. Full-window preflight performed zero gradient updates; no official timing, training or held-out score."
+}

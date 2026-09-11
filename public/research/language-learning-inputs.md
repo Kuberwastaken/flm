@@ -69,6 +69,10 @@ held-out payloads, initialization matching, graph-storage isolation and invalid
 conditions. The [preflight script](language-learning/language_learning_input_preflight.py)
 uses the actual acquired inputs and refuses to overwrite its output.
 
+The [full-window cost pilot](language-learning-timing.md) is now implemented;
+its declarations and actual sampling pass for all eight conditions, with no
+gradient updates or timing observations in that preflight.
+
 Before official fits, finish the priority queue, measure full-window costs for
 each rule, freeze a common budget and all-condition validation/test protocol,
 then train fresh matched BPTT controls. The runner's default training mask

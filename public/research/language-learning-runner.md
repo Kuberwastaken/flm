@@ -82,6 +82,10 @@ tampering even with an updated file checksum, empty masks and live writer locks.
 python -m unittest discover -s tests -p test_language_learning_train.py -v
 ```
 
+The [cost pilot](language-learning-timing.md) now calls this exact update path
+and is prepared for full batch/sequence measurements after the priority queue.
+Its current full-window evidence covers initialization and sampling only.
+
 These are tiny one-thread fixtures, not training throughput or four-thread
 reproducibility measurements. Before official fits, finish the current BabyLM
 queue, use the verified training-only adapter, measure disposable full-window costs,
