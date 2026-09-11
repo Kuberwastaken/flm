@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-09-11T19:15:02.909085+00:00",
+  "source_commit": "7073942e52288ea33bbc764deba2242a917b32dc",
+  "source_sha256": {
+    "scripts/babylm_result_tables.py": "3481ed8a355b00784a9415893dfcca7298732266997e246f4ad9de04c6a32f24",
+    "tests/test_babylm_result_tables.py": "cfca50f4ab8a883886adcbf094dd5666122b33473b2a795527b933e30477cea6"
+  },
+  "tests": {
+    "passed": 10,
+    "failed": 0,
+    "seconds": 0.931,
+    "log_sha256": "4a9a44fb861895b68525d0ab5a6bfe2f7a07759018cae04d7fcd0763a97d0246",
+    "scope": "Artificial twelve-run measurements and text-free block metadata. No real model or bootstrap executed."
+  },
+  "fixture_output": {
+    "score_rows": 168,
+    "seed_aggregate_rows": 78,
+    "paired_comparison_rows": 16,
+    "unavailable_filtered_rows": 12
+  },
+  "real_gate": {
+    "refusal": "Complete BabyLM evaluation artifacts are required",
+    "output_created": false,
+    "bound_babylm_trainer_live": true,
+    "handoff_sources_and_packages_unchanged": true
+  },
+  "limitations": [
+    "No official BabyLM result tables exist yet.",
+    "Checks saved likelihood arithmetic and artifact consistency, not independent model inference or checkpoint restoration.",
+    "Bootstrap endpoint values are retained with provenance, not independently resampled."
+  ]
+}
