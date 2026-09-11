@@ -3,14 +3,15 @@
 \input{measured}
 \input{test-measured}
 \input{language-topology-measured}
+\input{language-core-measured}
 \hypersetup{pdftitle={FLM: A Fly-Wired Recurrent Language Model},pdfauthor={Kuber Mehta},pdfsubject={Working methods and controlled language test report},pdflang={en}}
 \title{\textbf{FLM: A Fly-Wired Recurrent Language Model}\\[6pt]\large A controlled test of measured wiring for next-token prediction}
 \author{Kuber Mehta\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
-\date{10 September 2026 --- working research report}
+\date{11 September 2026 --- working research report}
 \begin{document}
 \maketitle
 \begin{abstract}
-Can measured neural wiring improve language prediction under matched training conditions? FLM combines a selected 1,024-neuron fruit-fly graph with learned text input, fast and slow recurrent state, pooling and a lexical readout. We compare the measured graph with three degree- and sign-constrained rewired graphs, each trained from scratch with the same two initialization seeds and 6,000-update budget on WikiText-2. All six rewired fits have slightly lower test loss than their paired measured references: the mean measured-minus-rewired effect is \TopologyMeanDifference\ bits per byte. Three of six conditional article intervals include zero. This study therefore demonstrates no advantage from measured wiring in this subset and setup. Separately, retraining without slow state worsens prediction in both seeds, with mean measured-minus-control effect \SlowStateMeanDifference\ bits per byte. The original matched architecture comparison also favors the GRU and transformer over FLM. The contribution is a controlled language experiment and inspectable browser implementation, with explicit subset losses and reproducible score records. The extension is exploratory because original measured test scores were visible before its design; neither these results nor the browser's neural display establish biological language processing.
+Can measured neural wiring improve language prediction under matched training conditions? FLM combines a selected 1,024-neuron fruit-fly graph with learned text input, fast and slow recurrent state, pooling and a lexical readout. We compare the measured graph with three degree- and sign-constrained rewired graphs, each trained from scratch with the same two initialization seeds and 6,000-update budget on WikiText-2. All six rewired fits have slightly lower test loss than their paired measured references: the mean measured-minus-rewired effect is \TopologyMeanDifference\ bits per byte. Three of six conditional article intervals include zero. This study therefore demonstrates no advantage from measured wiring in this subset and setup. Separately, retraining without slow state worsens prediction in both seeds, with mean measured-minus-control effect \SlowStateMeanDifference\ bits per byte. The original matched architecture comparison also favors the GRU and transformer over FLM. Separate retrained controls favor full FLM over fixed dynamics and disabled lateral communication, with a substantially larger loss when temporal state is removed. These mechanism effects do not establish a topology advantage. The contribution is a controlled language experiment and inspectable browser implementation, with explicit subset losses and reproducible score records. The extension is exploratory because original measured test scores were visible before its design; neither these results nor the browser's neural display establish biological language processing.
 \end{abstract}
 
 \section{Question and scope}
@@ -107,7 +108,7 @@ Condition & Seed 42 & Seed 43 & Mean\\\midrule
 
 Every rewired fit scores below its paired measured reference. Measured-minus-rewired effects range from \TopologyMinimumDifference\ to \TopologyMaximumDifference\ BPB, with mean \TopologyMeanDifference. Three of the six 95\% article intervals include zero. The small, consistently directed point differences favor these rewired fits, but do not establish a broad anatomical disadvantage. The supported conclusion is that retained measured wiring provides no demonstrated benefit under this subset, parameterization, corpus and budget.
 
-Removing slow state throughout training raises test loss in both seeds. The mean measured-minus-no-slow effect is \SlowStateMeanDifference\ BPB, and both conditional article intervals lie below zero. This supports the implemented slow-state mechanism in the measured-graph model after retraining. It does not show that the mechanism requires anatomical topology, and it does not answer the pending fixed-dynamics or memoryless language comparisons.
+Removing slow state throughout training raises test loss in both seeds. The mean measured-minus-no-slow effect is \SlowStateMeanDifference\ BPB, and both conditional article intervals lie below zero. This supports the implemented slow-state mechanism in the measured-graph model after retraining. It does not show that the mechanism requires anatomical topology. The following computation study addresses distinct fixed-dynamics and memoryless comparisons.
 
 \begin{figure}[ht]\centering\includegraphics[width=\linewidth]{language-topology-test.png}
 \caption{Every paired wiring and retrained slow-state effect, with a shared horizontal scale. Positive values favor the control; negative values favor the measured fast/slow model. Intervals condition on each fitted pair. The source table, figure and public report use the same verified complete-study records.}\end{figure}
@@ -115,6 +116,28 @@ Removing slow state throughout training raises test loss in both seeds. The mean
 \begin{samepage}
 The \href{https://flm.kuber.studio/research/language-topology-records.zip}{standalone score archive} includes every article score, frozen identities, protocols and a NumPy-only arithmetic checker. Fresh extraction reproduces the losses, means and intervals without importing the training code. This verifies supplied arithmetic, not independent retraining or test inference. A separate \href{https://flm.kuber.studio/research/language-topology-inference.zip}{ten-model inference bundle} preserves all selected model tensors and fixed buffers, reproduces 40 source continuations, and passes one fresh-archive CLI replay for every condition.\par
 \end{samepage}
+
+\section{Retrained language computation controls}
+The learned lexical interface may explain substantial predictive ability even when anatomy contributes no demonstrated advantage. A second exploratory extension retains the measured subset and trains three controls at seeds 42 and 43 under the same 6,000-update protocol, identical initial parameter tensors and sampled input windows. All six fits completed before all eight checkpoint selections, including the two full-model references, were frozen. Every selection came from update 6,000. New controls use the complete 60-article test split; the two previously published full-model scores are reused after identity checks. Prior access to those scores makes this a follow-up study rather than an untouched confirmatory test.
+
+\textbf{Fixed recurrent dynamics} freezes 78,179 edge-gain, recurrent-gain and time-constant entries at their shared initialization. The remaining 521,824 lexical parameters still learn through time. This is not a readout-only reservoir or a match in trainable parameter count. \textbf{No lateral recurrence} removes $Wh$ while retaining independent fast and slow temporal states. \textbf{No temporal state} additionally resets both states before every individual token, including within training chunks. It is a learned current-token predictor with the same per-token nonlinear and lexical interfaces. Both disabled-lateral controls allocate 600,003 entries, but 76,131 edge/gain entries are disconnected from the loss. These distinctions prevent interpreting lateral recurrence as all memory, or allocated parameters as effective trainable capacity.
+
+\begin{table}[ht]\centering
+\begin{tabular}{lrrr}\toprule
+Condition & Seed 42 & Seed 43 & Mean\\\midrule
+\CoreLossRows
+\bottomrule\end{tabular}
+\caption{All eight selected computation conditions. Complete-test bits per UTF-8 byte; lower is better. The mean is descriptive across two initialization seeds.}
+\end{table}
+
+The three primary comparisons are full FLM minus each control, separately for both seeds. The secondary comparison is no lateral recurrence minus no temporal state, isolating retained independent-unit history within that pair. All eight 95\% intervals use 10,000 paired article resamples with seed 31415. They condition on the fitted pairs and share references and articles; two seeds do not estimate general training uncertainty. No mean confidence interval, equivalence margin or topology-by-trainability interaction was declared.
+
+Full FLM has lower test loss in all six primary pairs, with mean full-minus-control effects of $-0.005797$ BPB for fixed dynamics, $-0.006391$ for no lateral recurrence and $-0.124511$ for no temporal state. All six conditional intervals lie below zero. The secondary independent-unit-memory comparison also favors retained history in both seeds, with mean $-0.118120$ BPB and both intervals below zero. Thus temporal state has a substantially larger measured contrast here than optimizing the recurrent dynamics or retaining lateral communication. These effects are not additive causal components or fractions of language ability. The fixed-dynamics comparison changes trainable capacity, and none of these measured-graph comparisons reverses the absence of a demonstrated topology benefit.
+
+\begin{figure}[ht]\centering\includegraphics[width=\linewidth]{language-core-test.png}
+\caption{All six primary and two secondary computation contrasts. Each panel has its own explicitly labeled horizontal scale. Negative favors the first named model. Intervals are conditional on fitted pairs, not independent training replications.}\end{figure}
+
+The \href{https://flm.kuber.studio/research/language-core-records.zip}{complete computation score archive} contains the frozen declaration, selections, every article score and an independent NumPy arithmetic audit. The separate \href{https://flm.kuber.studio/research/language-core-inference.zip}{eight-model inference archive} retains all selected weights and mechanism definitions. These are separate releases from the completed topology study.
 
 \section{Language architecture comparison}
 All six registered baseline runs completed 6,000 updates. Every validation-selected checkpoint came from update 6,000. The \href{https://flm.kuber.studio/research/validation.json}{published validation trajectories} retain every saved comparison; this section focuses on full test scores. These architecture comparisons answer a different question from the controlled graph experiment above.
@@ -149,19 +172,19 @@ Browser learning updates a separate $4096\times96$ output correction and bias by
 
 The 3D brain displays actual fast or slow state for modeled neurons. Gray points are anatomical context without simulated activity. Silencing a neuron zeroes both its states, and controls replay the same input from zero for an interpretable intervention. The body uses 39 attributed NeuroMechFly meshes and verified articulated kinematics \cite{neuromechfly}. It is a female body paired with a male brain graph. Head and wing offsets are designed summaries of state, not trained motor outputs, physics, reward learning or animal behavior.
 
-\section{Mechanism interventions and remaining controls}
+\section{Acute mechanism diagnostics and separate behavior studies}
 Acute validation interventions remove recurrent inter-neuron communication or the slow-state feature without retraining. For seed 42, loss rises from 1.9097 to 2.0631 and 1.9952 respectively; for seed 43, it rises from 1.9107 to 2.0294 and 1.9899. Leak memory remains in the recurrence-off condition. Both trained models use these mechanisms, but disrupting a learned computation is not a matched architectural comparison. Replaying an original 77-token paragraph from zero state before and after training also gives different fast and slow trajectories.
 \begin{figure}[ht]\centering\includegraphics[width=\linewidth]{mechanism-s42.png}
 \caption{Seed-42 validation interventions and responses to identical input. State magnitudes are measured, not animation signals. The diagnostic uses no test text.}\end{figure}
 
-Language-specific fixed-dynamics, no-lateral-recurrence and no-temporal-state controls have separate implementations and fixture tests; their training/evaluation harness and fitted language results remain pending. The fixed-dynamics control freezes recurrent gains and time constants while allowing the lexical interface to learn. Removing lateral communication retains leaky fast and slow memory; resetting both states at every token is the distinct memoryless condition. These retrained comparisons are needed to distinguish the contributions of recurrent computation from learned input, pooling and readout machinery.
+The retrained computation comparisons above address the distinction between disrupting a fitted mechanism and fitting a model without it. Acute interventions remain useful diagnostics but must not substitute for those trained controls.
 
 Separate sensory and physical studies are reported in the \href{https://flm.kuber.studio/research/local-learning.pdf}{learning}, \href{https://flm.kuber.studio/research/wiring-controls.pdf}{sensory wiring} and \href{https://flm.kuber.studio/research/closed-loop.pdf}{pose-feedback} notes. Their controllers do not use language-trained weights. They neither establish a language-specific topology benefit nor demonstrate transfer of learned text to animal behavior.
 
 \section{Limits and next experiments}
 The inference concerns one heavily truncated anatomical subset, simplified signs and rate dynamics, one corpus and a short training schedule. Three null graphs and two initializations do not establish a general advantage or disadvantage of anatomical topology. Article intervals omit variation across fitted models, graph families, subsets and datasets. Replication and alternative selection rules remain necessary.
 
-Language-specific fixed-dynamics and recurrence controls take priority next; the registered BabyLM 10M/100M comparison remains paused. A fixed 6,700-pair BLiMP panel \cite{blimp} places FLM and transformer near 54\% accuracy, with their ordering changing between seeds and no reliable FLM advantage. Later command-transfer, adaptation and local-learning studies remain separate. Whole-graph capacity and kernel design also require new experiments.
+The registered BabyLM 10M/100M comparison is the next training priority after the completed compact computation study. A fixed 6,700-pair BLiMP panel \cite{blimp} places FLM and transformer near 54\% accuracy, with their ordering changing between seeds and no reliable FLM advantage. Later command-transfer, adaptation and local-learning studies remain separate. Whole-graph capacity and kernel design also require new experiments.
 
 \begingroup\raggedright
 \bibliographystyle{plain}

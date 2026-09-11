@@ -1,0 +1,116 @@
+{
+  "verified_utc": "2026-09-11T00:14:52.133081+00:00",
+  "archive": "public/research/language-core-records.zip",
+  "archive_sha256": "5b0c82eeb488298eff1e2fbe6aa1b634b633c90993e70b9293dc795035c8b120",
+  "bytes": 160473,
+  "payloads": 53,
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+  "full_checkpoint_and_score_gate_passed": true,
+  "arithmetic_audit": {
+    "verified_runs": 8,
+    "unique_test_articles": 60,
+    "scored_bytes_per_run": 1287656,
+    "scored_tokens_per_run": 367981,
+    "primary_contrasts": [
+      {
+        "first": "full",
+        "second": "fixed_dynamics",
+        "training_seed": 42,
+        "difference_bpb": -0.005662866076447464,
+        "lower_95": -0.0070420838726589895,
+        "upper_95": -0.004066661408881803
+      },
+      {
+        "first": "full",
+        "second": "no_lateral",
+        "training_seed": 42,
+        "difference_bpb": -0.006230496310986751,
+        "lower_95": -0.008773238807463876,
+        "upper_95": -0.0030568743295442545
+      },
+      {
+        "first": "full",
+        "second": "no_temporal_state",
+        "training_seed": 42,
+        "difference_bpb": -0.12564678436777527,
+        "lower_95": -0.13391701913778822,
+        "upper_95": -0.11787783094018137
+      },
+      {
+        "first": "full",
+        "second": "fixed_dynamics",
+        "training_seed": 43,
+        "difference_bpb": -0.005931428940688687,
+        "lower_95": -0.0066291039363671,
+        "upper_95": -0.005194680874386602
+      },
+      {
+        "first": "full",
+        "second": "no_lateral",
+        "training_seed": 43,
+        "difference_bpb": -0.006551181349258811,
+        "lower_95": -0.008918374320981784,
+        "upper_95": -0.003656224383411618
+      },
+      {
+        "first": "full",
+        "second": "no_temporal_state",
+        "training_seed": 43,
+        "difference_bpb": -0.1233747801231965,
+        "lower_95": -0.13151778493519037,
+        "upper_95": -0.11555115335134808
+      }
+    ],
+    "primary_means": [
+      {
+        "control": "fixed_dynamics",
+        "mean_difference_bpb": -0.0057971475085680756
+      },
+      {
+        "control": "no_lateral",
+        "mean_difference_bpb": -0.006390838830122781
+      },
+      {
+        "control": "no_temporal_state",
+        "mean_difference_bpb": -0.12451078224548588
+      }
+    ],
+    "independent_unit_memory_contrasts": [
+      {
+        "first": "no_lateral",
+        "second": "no_temporal_state",
+        "training_seed": 42,
+        "difference_bpb": -0.1194162880567885,
+        "lower_95": -0.1277075392531084,
+        "upper_95": -0.1115683356692629
+      },
+      {
+        "first": "no_lateral",
+        "second": "no_temporal_state",
+        "training_seed": 43,
+        "difference_bpb": -0.11682359877393769,
+        "lower_95": -0.12471287802547772,
+        "upper_95": -0.10893036358592022
+      }
+    ],
+    "independent_unit_memory_mean_difference_bpb": -0.1181199434153631,
+    "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+    "selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+    "comparison_tolerance": {
+      "relative": 1e-09,
+      "absolute": 1e-12
+    },
+    "scope": "Arithmetic audit of supplied scores; not independent training, test inference or source authentication",
+    "uncertainty": "Eight conditional fitted-pair intervals; shared references/articles and two initializations; no mean confidence interval or topology-by-trainability factorial"
+  },
+  "manifest_sha256": "27af8dda0d25db6ddc75e9ab201b6684b5ab619cdcff53c4a318b48dd899eed2",
+  "summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "fresh_archive_arithmetic_verified": true,
+  "extraction_outside_repository": true,
+  "repository_pythonpath_removed": true,
+  "flm_and_torch_imports_disabled": true,
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "exporter_sha256": "e8b6c796d15e1004adbd4934d83aa6347c58bd4b2d064c77928b2cde4aad20a8"
+}

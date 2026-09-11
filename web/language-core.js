@@ -1,4 +1,4 @@
-// Complete-study presentation. Not loaded by the live page until the study is released.
+// Complete-study presentation, mounted only after both release records verify.
 export const CORE_IDENTITY = '57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee';
 export const CORE_NAMES = Object.freeze({full:'Full FLM', fixed_dynamics:'Fixed recurrent dynamics', no_lateral:'No lateral recurrence', no_temporal_state:'No temporal state'});
 const controls = Object.keys(CORE_NAMES);
@@ -137,6 +137,13 @@ export function coreResultsView(report, release, base = '/') {
   const title = element('h3', 'Completed language computation controls'); title.id = 'core-results-title'; section.append(title);
   section.append(element('p', 'Six control fits were trained from scratch and selected on validation, alongside two reused full-FLM references. All eight scores cover the same 60 complete test articles. These comparisons test computation within the measured subset, separately from whether its topology helps.'));
   const details = element('details'); details.className = 'method-note'; details.append(element('summary', 'All eight selected checkpoints and every paired contrast'));
+  const figure = element('figure'); figure.className = 'measured-figure';
+  const figureLink = element('a'); figureLink.href = `${base}research/figures/language-core-test.svg`;
+  figureLink.setAttribute('aria-label', 'Open every computation contrast at full size');
+  const plot = element('img'); plot.loading = 'lazy'; plot.src = figureLink.href;
+  plot.alt = 'Four panels show all six primary and two secondary paired differences in test loss, with separately labeled horizontal scales and conditional article intervals.';
+  figureLink.append(plot); figure.append(figureLink, element('figcaption', 'Each panel has its own horizontal scale. Negative favors the first named model; intervals condition on the fitted pair.'));
+  details.append(figure);
   details.append(table('Complete test split · lower bits per UTF-8 byte is better', ['Condition', 'Training seed', 'Selected update', 'Test BPB', 'Trainable / allocated parameters'],
     controls.flatMap(control => [42, 43].map(seed => {
       const run = report.runs.find(row => row.control === control && row.seed === seed);
@@ -152,7 +159,7 @@ export function coreResultsView(report, release, base = '/') {
   details.append(element('p', 'The eight intervals condition on the fitted pairs; shared references and articles are not independent replications. Two initializations do not establish training uncertainty. The means are descriptive, without mean confidence intervals. This is not an equivalence test or a topology-by-trainability factorial.'));
   details.append(element('p', 'Fixed dynamics still trains the lexical interface through time; it is not readout-only or matched in trainable count. No lateral recurrence retains fast and slow memory. No temporal state resets both states every token; 76,131 allocated edge/gain entries in both disabled-lateral controls are disconnected from the loss.'));
   const links = element('div'); links.className = 'document-links';
-  for (const [path, label] of [['language-core-results.json', 'All article scores and checkpoint identities'], ['language-core-records.zip', `Complete score records and NumPy audit · ${(release.bytes / 2**20).toFixed(1)} MiB ZIP`], ['language-core-protocol.md', 'Frozen computation protocol']]) {
+  for (const [path, label] of [['language-core-results.json', 'All article scores and checkpoint identities'], ['language-core-records.zip', `Complete score records and NumPy audit · ${(release.bytes / 2**20).toFixed(1)} MiB ZIP`], ['language-core-inference.zip', 'Eight selected models and standalone inference · ZIP'], ['language-core-samples.json', 'All 32 unedited example continuations'], ['language-core-protocol.md', 'Frozen computation protocol']]) {
     const anchor = element('a', label); anchor.href = `${base}research/${path}`; links.append(anchor);
   }
   section.append(links); return section;

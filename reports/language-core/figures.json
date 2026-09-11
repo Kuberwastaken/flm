@@ -1,0 +1,18 @@
+{
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+  "summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "source_sha256": "1b1cd90926aae9892cb7600408f4d7e803d80ffad7d5bc6eed9157f2cb22acdf",
+  "complete_conditions": 8,
+  "primary_contrasts": 6,
+  "secondary_contrasts": 2,
+  "horizontal_scales": "Independent panel limits, labeled explicitly; each includes zero and both complete intervals",
+  "files": {
+    "public/research/figures/language-core-test.png": "b984a0da367b0bab5209df6a6f4db116f0519dc2eede9b5daa7a1d378dc40380",
+    "public/research/figures/language-core-test.svg": "c55bbd3a8c9b432de28e37a635af374e2d41fe2915bcdb61926b320d169cffd4",
+    "public/research/figures/language-core-test.csv": "d90c6a0e3a99c979071460716ce91fd0b7c06d19202e6aac55ca492d2647b96f",
+    "papers/language-core-measured.tex": "bd8c28d6a813616aee999c1202b6d7f1b24fc71495f4b6335abb8755734487ce",
+    "papers/figures/language-core-test.png": "b984a0da367b0bab5209df6a6f4db116f0519dc2eede9b5daa7a1d378dc40380",
+    "docs/LANGUAGE-CORE-RESULTS.md": "e8caf0ce281d4e574ca99b3248d30e89b6e2a9dbd1fd6156e1b3279a3cce612d"
+  }
+}

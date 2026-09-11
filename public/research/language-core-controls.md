@@ -3,8 +3,8 @@
 The separate [language computation protocol](language-core-protocol.md) declares
 six new fits and two existing full-FLM references. This document explains their
 mechanisms and limits. The completed [topology study](language-topology-protocol.md)
-and its source identities remain unchanged. No computation-control language
-results are reported here.
+and its source identities remain unchanged. All six new fits and their complete
+test evaluation have finished; see the [measured findings](language-core-findings.md).
 
 The [study identity](language-core-identity.json) binds sources,
 initializations and sampled exposure. The
@@ -15,7 +15,7 @@ the checks and their limits.
 Learned embeddings, input projection, normalization and readout can predict
 text without useful anatomical computation. The separate sensory fixed-core
 experiment cannot establish their contribution in language. Three retrained
-language comparisons would distinguish different claims:
+language comparisons distinguish different claims:
 
 | Control | Change from language FLM | Question |
 |---|---|---|

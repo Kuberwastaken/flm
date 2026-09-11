@@ -52,12 +52,17 @@ for (const [source, target] of [
   ['../flm/language_dynamics_study.py', 'language_dynamics_study.py'],
 ]) dynamicsNote = dynamicsNote.replaceAll(source, target);
 await writeFile('public/research/language-dynamics-findings.md', dynamicsNote);
-for (const name of ['identity', 'software-preflight', 'replay-diagnostic'])
+for (const name of ['identity', 'software-preflight', 'replay-diagnostic', 'selection'])
   await copyFile(`reports/language-core/${name}.json`, `public/research/language-core-${name}.json`);
+await writeFile('public/research/language-core-findings.md', (await readFile('docs/LANGUAGE-CORE-RESULTS.md', 'utf8'))
+  .replaceAll('../public/research/', '')
+  .replaceAll('../reports/language-core/selection.json', 'language-core-selection.json')
+  .replaceAll('LANGUAGE-CORE-PROTOCOL.md', 'language-core-protocol.md'));
 await writeFile('public/research/language-core-controls.md',
   (await readFile('docs/LANGUAGE-CORE-CONTROLS.md', 'utf8'))
     .replaceAll('LANGUAGE-TOPOLOGY-PROTOCOL.md', 'language-topology-protocol.md')
     .replaceAll('LANGUAGE-CORE-PROTOCOL.md', 'language-core-protocol.md')
+    .replaceAll('LANGUAGE-CORE-RESULTS.md', 'language-core-findings.md')
     .replaceAll('../reports/language-core/identity.json', 'language-core-identity.json')
     .replaceAll('../reports/language-core/software-preflight.json', 'language-core-software-preflight.json')
     .replaceAll('../reports/language-core/replay-diagnostic.json', 'language-core-replay-diagnostic.json')

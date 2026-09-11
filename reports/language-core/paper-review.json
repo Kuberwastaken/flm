@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-09-11T00:19:45.015801+00:00",
+  "pages": 10,
+  "paper": "public/research/flm.pdf",
+  "paper_sha256": "782d23280ad276c7879f056dde8c688de76f132e8f64b2801f47bcd4ad84c9e2",
+  "bytes": 866963,
+  "source_sha256": "52b9b54c97bf5e99ace8bcb0d1db9f78a33e27f342d9ea4a1e745840fde06f30",
+  "generated_measurements_sha256": "bd8c28d6a813616aee999c1202b6d7f1b24fc71495f4b6335abb8755734487ce",
+  "summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "all_pages_visually_reviewed": true,
+  "renderer": "Poppler pdftoppm -scale-to 1200 -png",
+  "rendered_pages": {
+    "final-01.png": "3760c3c9a28220f5acfd63347448e83cdb38bcc972622a684e32ee3e04d72439",
+    "final-02.png": "1655f6ed25ec5158a1808aa84245971c7cfd94f22613edc4be904ef577512748",
+    "final-03.png": "d95e14a68745c28fce1c4dfd61b8f69b462828af1316955795e7542689d8d196",
+    "final-04.png": "5c577ffe2e8e2d78ec95e90aa64d91219d0fafa6b0eb45d2b4a0464b51eff0da",
+    "final-05.png": "cc2e3775a30e0178da6d8b2fda2cdb782c7018057207f61ee98393998ac3fcc3",
+    "final-06.png": "2e02925c574b148c0f962456cbf7166e768b732eea1b61980b8357b48225d127",
+    "final-07.png": "67b7381372634fe92c869a9a5405c12e0e3555cbf9cdaa2da49a48642dff9077",
+    "final-08.png": "534be8131d3748f73bc068645445e9c99e5f37e14f93187c0f57f47fad70ddd6",
+    "final-09.png": "c88609245066cb259d583a067d73dc60d392fe91f2c211263af480cd8ea304d3",
+    "final-10.png": "f80e503391eb2f0c66424984c23cf1d5d8aa0f87ddf6b86d588e523f38e85311"
+  },
+  "no_overfull_boxes_or_undefined_references": true,
+  "all_extracted_words_inside_pages": true,
+  "all_control_test_losses_present": true,
+  "prior_topology_conclusion_retained": true,
+  "scope": "Rendered layout and source/report agreement; no independent fitting or held-out inference"
+}

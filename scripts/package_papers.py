@@ -57,6 +57,32 @@ def main():
         'docs/WIKITEXT-PROTOCOL.md', 'docs/LANGUAGE-TOPOLOGY-OPERATIONS.md', 'data/cards/wikitext2.json',
         'data/tokenizers/wikitext2-4096/tokenizer-card.json',
         'data/graphs/central-1024/graph-card.json')]
+    files += [ROOT / name for name in (
+        'docs/LANGUAGE-CORE-PROTOCOL.md', 'docs/LANGUAGE-CORE-RESULTS.md',
+        'reports/language-core/identity.json', 'reports/language-core/selection.json',
+        'reports/language-core/summary.json', 'reports/language-core/figures.json',
+        'reports/language-core/paper-review.json',
+        'public/research/language-core-results.json', 'public/research/language-core-release.json',
+        'public/research/language-core-inference-release.json', 'public/research/language-core-samples.json',
+        'flm/language_core_train.py', 'flm/language_core_study.py', 'flm/language_core_test.py',
+        'flm/core_inference.py', 'scripts/language_core_report.py',
+        'scripts/audit_language_core_report.py', 'scripts/package_language_core.py',
+        'scripts/package_core_inference.py', 'scripts/verify_core_inference_release.py',
+        'scripts/language_core_figures.py', 'web/language-core.js',
+        'tests/test_language_core_training.py', 'tests/test_language_core_report.py',
+        'tests/test_language_core_records.py', 'tests/test_language_core_figures.py',
+        'tests/test_language_core_audit.py', 'tests/test_core_inference_release.py',
+        'tests/test_core_inference.py', 'tests/language-core.test.js',
+        'tests/language-core-loading.test.js', 'tests/helpers/core-results-fixture.js',
+        'docs/FOOD-RESPONSE-PLAN.md', 'scripts/choice_replay.py',
+        'docs/SCAN-CONDITION-PREPARATION.md', 'docs/SCAN-TIMING-PILOT.md',
+        'flm/scan_inputs.py', 'flm/scan_runtime.py', 'flm/scan_train.py',
+        'flm/scan_conditions.py', 'flm/scan_pilot.py', 'scripts/scan_source_audit.py',
+        'reports/scan-runtime/input-preflight.json', 'reports/scan-runtime/source-preflight.json',
+        'reports/scan-runtime/condition-preflight.json', 'reports/scan-runtime/pilot-preflight.json',
+        'docs/LANGUAGE-ELIGIBILITY-PREPARATION.md', 'flm/embedding_eligibility.py',
+        'flm/local_learning.py', 'tests/test_embedding_eligibility.py')]
+    files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

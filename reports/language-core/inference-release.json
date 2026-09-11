@@ -1,0 +1,270 @@
+{
+  "verified_utc": "2026-09-11T00:16:22.906088+00:00",
+  "archive": "public/research/language-core-inference.zip",
+  "archive_sha256": "ce9368fd97e13837a0eb96a17c6cb30cea5a4efbfbab9224f7028ba42bb38b4a",
+  "bytes": 18597482,
+  "payloads": 38,
+  "selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+  "study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "summary_sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501",
+  "models": [
+    {
+      "id": "full-s42",
+      "file": "checkpoints/full-s42.pt",
+      "control": "full",
+      "training_seed": 42,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "88a53a8f128c9f09cc053dc461ffab24ecdc008074ace4042ff212d14069c6db",
+      "state_sha256": "01ca6682a0e122416f45245d8cc6977253d526cba1bea882f3e29fbc2f0c58e4",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 1.973182456549952
+    },
+    {
+      "id": "fixed_dynamics-s42",
+      "file": "checkpoints/fixed_dynamics-s42.pt",
+      "control": "fixed_dynamics",
+      "training_seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "663f8088c78754db8163c1342a9f80546bcfe4e9966be43ee846e7f1b58f560d",
+      "state_sha256": "516fbd886711a462bc1315172abc0e07012f81d5e5a8b1521c456a9b0d25dd82",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 521824,
+      "frozen_parameters": 78179,
+      "published_test_bits_per_byte": 1.9788453226263993
+    },
+    {
+      "id": "no_lateral-s42",
+      "file": "checkpoints/no_lateral-s42.pt",
+      "control": "no_lateral",
+      "training_seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "467f15e082c3780dc1984b7512348b51875470fe61f420672eba6aea72b3d623",
+      "state_sha256": "5d65893b5cc9c1be8a19e3b33fc6be1dd8b66106729242f9040fdfcdfbd2d4a3",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 1.979412952860939
+    },
+    {
+      "id": "no_temporal_state-s42",
+      "file": "checkpoints/no_temporal_state-s42.pt",
+      "control": "no_temporal_state",
+      "training_seed": 42,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "b18c4c4b4491c3eede278501642fe0797651bb67be8fb0fa4eaaf1f9c00781f1",
+      "state_sha256": "de3d99110539458ffc92e1bc7220696d79c8f7850b581a4e2b74f9120e7cbd45",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 2.0988292409177274
+    },
+    {
+      "id": "full-s43",
+      "file": "checkpoints/full-s43.pt",
+      "control": "full",
+      "training_seed": 43,
+      "reference": true,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "8d97ae9dd4ef655a18731c88e1bb5fd6764b1310e581cdb73da8b06fb116296f",
+      "state_sha256": "c79a87938c1bdf105b6cc27506ee74b6a9dc8ac3693db2ac1e181b92f66da965",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 1.9755826116531785
+    },
+    {
+      "id": "fixed_dynamics-s43",
+      "file": "checkpoints/fixed_dynamics-s43.pt",
+      "control": "fixed_dynamics",
+      "training_seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "a486c80b6e641facc0e1a16ed7cd311098ded1fd831684a8f0438b519770b6f5",
+      "state_sha256": "233b018800cadec9fdb58d5b04b9708acd86c7cff62a7c59318a9a4a6f4445a7",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 521824,
+      "frozen_parameters": 78179,
+      "published_test_bits_per_byte": 1.9815140405938672
+    },
+    {
+      "id": "no_lateral-s43",
+      "file": "checkpoints/no_lateral-s43.pt",
+      "control": "no_lateral",
+      "training_seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "583497fc466f844bf8358d9407d2821d815fb3c4f08015a055ee566331cf2dc1",
+      "state_sha256": "3d68e78de73f40228e7475fcd804bca15c9160cc8a7b68d92de11fa6a8bce4d9",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 1.9821337930024374
+    },
+    {
+      "id": "no_temporal_state-s43",
+      "file": "checkpoints/no_temporal_state-s43.pt",
+      "control": "no_temporal_state",
+      "training_seed": 43,
+      "reference": false,
+      "graph": "data/graphs/central-1024/graph.npz",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "source_checkpoint_sha256": "ce23a528ca3e7b8adbe31df3e2a35a4d9669b217204913e740cc0d057418c065",
+      "state_sha256": "34f53bfc16f5a3f8042e49c74962dd894cd84dcdf54ef431ebc0a7f5487f905e",
+      "checkpoint_step": 6000,
+      "allocated_parameters": 600003,
+      "trainable_parameters": 600003,
+      "frozen_parameters": 0,
+      "published_test_bits_per_byte": 2.0989573917763753
+    }
+  ],
+  "parity": [
+    {
+      "condition": "full-s42",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "fixed_dynamics-s42",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "no_lateral-s42",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "no_temporal_state-s42",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "full-s43",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "fixed_dynamics-s43",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "no_lateral-s43",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    },
+    {
+      "condition": "no_temporal_state-s43",
+      "tensors_and_buffers_exact": true,
+      "state_probe_prompt": "The history of science",
+      "state_probe_tokens": 7,
+      "logits_and_states_exact_at_probe": true,
+      "fixed_prompt_continuations_exact": 4
+    }
+  ],
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "torch": "2.8.0+cpu",
+  "exporter_sha256": "eed60c8421f960fd3520ab0ae420b751cf90d20c2c4cc210d6c71fc93684f5db",
+  "manifest_sha256": "2002af0dcfe3b961f7219b2d44cb95208abe8602aecd8cb39c48ddd250a8f59a",
+  "fresh_archive_cli_verified": true,
+  "standalone_cli_verification": {
+    "fresh_archive_extraction": true,
+    "extraction_outside_repository": true,
+    "repository_pythonpath_removed": true,
+    "extracted_runtime_import_path_verified": true,
+    "cases": [
+      {
+        "condition": "full-s42",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "fixed_dynamics-s42",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "no_lateral-s42",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "no_temporal_state-s42",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "full-s43",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "fixed_dynamics-s43",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "no_lateral-s43",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      },
+      {
+        "condition": "no_temporal_state-s43",
+        "source_prompt_reproduced": true,
+        "output_tokens": 128,
+        "cli_exit_code": 0
+      }
+    ],
+    "verified_utc": "2026-09-11T00:18:06.595195+00:00",
+    "verifier_sha256": "dceb3bfba96bc7550319910d87fe3fbb30c4b2dcc0be4d542a5f901264584b2c",
+    "scope": "One fixed-prompt continuation per condition; no independent held-out likelihood evaluation"
+  }
+}
