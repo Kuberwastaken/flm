@@ -64,6 +64,7 @@ await writeFile('public/research/selection-rewiring-results.md', (await readFile
   .replaceAll('../public/research/', ''));
 await mkdir('public/research/selection-pilot', { recursive: true });
 await copyFile('reports/selection-pilot/preflight.json', 'public/research/selection-pilot/preflight.json');
+await copyFile('reports/selection-pilot/shared-update-preflight.json', 'public/research/selection-pilot/shared-update-preflight.json');
 await copyFile('flm/selection_pilot.py', 'public/research/selection-pilot/selection_pilot.py');
 await copyFile('scripts/selection_pilot_preflight.py', 'public/research/selection-pilot/selection_pilot_preflight.py');
 await writeFile('public/research/selection-timing-pilot.md', (await readFile('docs/SELECTION-TIMING-PILOT.md', 'utf8'))

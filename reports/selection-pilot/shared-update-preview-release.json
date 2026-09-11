@@ -1,0 +1,62 @@
+{
+  "verified_utc": "2026-09-11T12:25:19.847142+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/selection-timing-pilot.md",
+      "status": 200,
+      "bytes": 6801,
+      "sha256": "47b683c3b1178a99e84e509ab72f346f12b87ec226b629bec98e24b699488da4"
+    },
+    {
+      "path": "research/selection-language-training.md",
+      "status": 200,
+      "bytes": 6611,
+      "sha256": "af81ad478e61608a070f69a04e0f3e748c549955c0c92a41de0f7eb5c01e145b"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8345561,
+      "sha256": "6bab25e023c1a5d3d96cf6093039304002eca28672dfa715c99b22ca12fd412f"
+    },
+    {
+      "path": "research/selection-pilot/selection_pilot.py",
+      "status": 200,
+      "bytes": 13101,
+      "sha256": "10c0522b9e3e2a2fb3c46fdab6bf19cc0a2fd4b2a5fe7fde183d8f3701877bd8"
+    },
+    {
+      "path": "research/selection-pilot/selection_pilot_preflight.py",
+      "status": 200,
+      "bytes": 4796,
+      "sha256": "71e6f22459556ff35b761969be5c97b00ec66aa9492fd3079a51ccaa514b5113"
+    },
+    {
+      "path": "research/selection-pilot/shared-update-preflight.json",
+      "status": 200,
+      "bytes": 31028,
+      "sha256": "58e58686ce9ee0bc941235b913fd975a0709f1264f9833640e798c0cfbb72934"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "circuit-selection.md",
+    "selection-pilot/selection_pilot.py",
+    "selection-pilot/shared-update-preflight.json",
+    "selection-pilot/selection_pilot_preflight.py",
+    "selection-language-training.md",
+    "selection-pilot/preflight.json",
+    "selection-language/selection_language.py",
+    "selection-language/preparation.json",
+    "language-learning-runner.md",
+    "selection-timing-pilot.md"
+  ],
+  "paper_source_files_verified": 347,
+  "source_bindings_verified": 14,
+  "original_graphs": 64,
+  "synthetic_gradient_updates": 128,
+  "pilot_tests_observed_passed": 8,
+  "official_corpus_timing_started": false,
+  "scope": "Publication, source identity and complete synthetic compatibility records. No official corpus timing, fit budget, language result or wall-time guarantee."
+}

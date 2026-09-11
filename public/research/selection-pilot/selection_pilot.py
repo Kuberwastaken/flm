@@ -16,15 +16,20 @@ import time
 
 import numpy as np
 import torch
-from torch.nn import functional as F
 
 from .corpus_cache import read_mmap
 from .inference import state_hash
+from .language_learning_train import Settings,configure,optimizer_for,update
 from .model import Config,FLM,load_graph
 from .provenance import sha256,write_json
 from .scan_train import training_lease
 from .tokenizer import Lexicon
 from .train import Sampler
+
+
+SOURCES = ('selection_pilot.py','model.py','train.py','corpus_cache.py','tokenizer.py',
+    'scan_train.py','inference.py','language_learning_train.py','language_eligibility.py',
+    'embedding_eligibility.py','local_learning.py','provenance.py')
 
 
 @dataclass(frozen=True)
@@ -45,6 +50,13 @@ class Pilot:
                 or type(self.seed) is not int or not 0 <= self.seed < 2**32):
             raise ValueError('Invalid context warmup or pilot seed')
 
+    def training_settings(self):
+        self.validate()
+        total=self.warmup_updates+self.measured_updates
+        return Settings(steps=total,batch=self.batch,sequence=self.sequence,warmup=self.context_warmup,
+            learning_rate=.002,final_learning_rate=.002,lr_warmup_updates=0,weight_decay=.01,
+            gradient_clip=1.,checkpoint_interval=total,seed=self.seed,threads=self.threads,score_boundaries=True)
+
 
 def graph_digest(graph):
     result=hashlib.sha256()
@@ -56,7 +68,7 @@ def graph_digest(graph):
 
 def measure(graph,config,documents,lengths,pilot=Pilot()):
     """Measure real FLM gradient updates; return no weights, text or loss values."""
-    pilot.validate()
+    settings=pilot.training_settings()
     lengths=np.asarray(lengths)
     if (lengths.shape != (config.vocabulary,) or not np.issubdtype(lengths.dtype,np.integer)
             or np.any(lengths < 0)):
@@ -69,26 +81,17 @@ def measure(graph,config,documents,lengths,pilot=Pilot()):
         with torch.random.fork_rng(devices=[]):
             torch.manual_seed(pilot.seed)
             model=FLM(graph,config).float().train()
+            configure(model,'bptt')
             initial=state_hash(model)
-            optimizer=torch.optim.AdamW(model.parameters(),lr=.002,weight_decay=.01)
+            optimizer=optimizer_for(model,settings)
             for step in range(1,pilot.warmup_updates+pilot.measured_updates+1):
                 started=time.perf_counter()
                 x,y=sampler.sample(pilot.batch,'cpu')
                 if torch.any(x < 0) or torch.any(y < 0) or torch.any(x >= config.vocabulary) or torch.any(y >= config.vocabulary):
                     raise ValueError('Training window contains invalid token IDs')
-                optimizer.zero_grad(set_to_none=True)
-                logits,_=model(x)
-                # Match the existing language trainer: exclude warmup positions,
-                # but do not introduce a new boundary-target mask for this pilot.
-                loss=F.cross_entropy(logits[:,pilot.context_warmup:].reshape(-1,config.vocabulary),
-                                     y[:,pilot.context_warmup:].reshape(-1))
-                if not torch.isfinite(loss): raise FloatingPointError('Nonfinite pilot loss')
-                loss.backward()
-                gradient=torch.nn.utils.clip_grad_norm_(model.parameters(),1.)
-                if not torch.isfinite(gradient): raise FloatingPointError('Nonfinite pilot gradient')
-                optimizer.step()
+                update(model,optimizer,x,y,settings,'bptt',step)
                 seconds=time.perf_counter()-started
-                # Integrity checks and exposure bookkeeping are outside timing.
+                # Additional full-state/optimizer checks and exposure bookkeeping are outside timing.
                 tensors=list(model.state_dict().values())
                 tensors += [v for state in optimizer.state.values() for v in state.values() if isinstance(v,torch.Tensor)]
                 if any(not torch.isfinite(v).all() for v in tensors): raise FloatingPointError('Nonfinite pilot update')
@@ -107,7 +110,8 @@ def measure(graph,config,documents,lengths,pilot=Pilot()):
     if any(not np.isfinite(r['seconds']) or r['seconds'] <= 0 for r in observations):
         raise ValueError('Invalid update timing')
     timed=[r for r in observations if not r['warmup']]; elapsed=sum(r['seconds'] for r in timed)
-    return dict(pilot=asdict(pilot),parameter_card=card,graph_arrays_sha256=before,
+    return dict(pilot=asdict(pilot),training_settings=asdict(settings),
+        update_implementation='flm.language_learning_train.update:bptt',parameter_card=card,graph_arrays_sha256=before,
         initial_state_sha256=initial,graph_unchanged=True,disposable_parameters_updated=True,
         sampled_windows_sha256=sampled.hexdigest(),observations=observations,
         measured_seconds=elapsed,median_update_seconds=float(np.median([r['seconds'] for r in timed])),
@@ -119,7 +123,7 @@ def measure(graph,config,documents,lengths,pilot=Pilot()):
         optimizer=dict(name='AdamW',learning_rate=.002,weight_decay=.01,gradient_clip=1.),
         effective_backend='dense' if config.backend=='dense' or (config.backend=='auto' and config.neurons <= 2048) else 'sparse',
         dtype='torch.float32',checkpoint_written=False,language_scores_reported=False,
-        timing_scope='Sampling, token checks, forward/backward, gradient clipping and AdamW. Excludes graph/corpus loading, initialization, integrity bookkeeping, checkpoint I/O and validation.',
+        timing_scope='Sampling, pilot token guards, and the shared BPTT update including parameter inventory, masks, loss/gradient checks, gradient clipping, AdamW and finite-parameter checks. Excludes loading, initialization, additional full-state/optimizer audits, exposure bookkeeping, checkpoint I/O and validation.',
         scope='Short disposable timing, not convergence, held-out quality, peak memory or biological performance')
 
 
@@ -198,8 +202,7 @@ def run(root):
             print('Measured disposable selection pilot: '+name,flush=True)
         report=dict(verified_utc=datetime.now(timezone.utc).isoformat(),platform=platform.platform(),
             torch=str(torch.__version__),numpy=str(np.__version__),binding=binding,
-            source_sha256={name:sha256(root/'flm'/name) for name in
-                          ('selection_pilot.py','model.py','train.py','corpus_cache.py','tokenizer.py','scan_train.py','inference.py')},
+            source_sha256={name:sha256(root/'flm'/name) for name in SOURCES},
             graph_manifest_sha256=sha256(manifest_path),graph_order_seed=519,
             attempt=attempt.relative_to(root).as_posix(),conditions=results,
             benchmark_budget_selected=False,training_matrix_frozen=False,

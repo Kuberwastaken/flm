@@ -1,0 +1,716 @@
+{
+  "verified_utc": "2026-09-11T12:21:21.505480+00:00",
+  "graphs_verified": 64,
+  "graph_manifest_sha256": "51b5c52c3b068c39be70a2c01bcff6ff5ea785fdf7e65cf4f2ebd0a63ef95923",
+  "training_input_binding": {
+    "partition": "train-10m",
+    "study_sha256": "55ee399c77c37661e0d20ba70fb6869a84bc64262589a2e4c1686a0551f9a8eb",
+    "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+    "cache_manifest_sha256": "4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd",
+    "cache_files_sha256": {
+      "tokens.u16": "65323ab539fb4289dc29ffbbff1197152bf046d3a6040cde9e2616271b484350",
+      "offsets.npy": "fecddeccabf8499b778187478706ddbd7cf624c7f8f8c6b4a5fb8a55539a6288",
+      "blocks.jsonl": "adf4718e6abd5f91c821853dafe8f7e2a4fbcfe31b7fd30a531a3dd0e802e8ed"
+    },
+    "validation_or_test_opened": false
+  },
+  "training_blocks_verified": 3351,
+  "training_cache_tokens_including_boundaries": 18598216,
+  "fixture": {
+    "synthetic_token_cycle": [
+      17,
+      29,
+      43,
+      59,
+      71
+    ],
+    "updates_per_graph": 2,
+    "batch": 1,
+    "sequence": 3,
+    "context_warmup": 1,
+    "threads": 1,
+    "initialization_and_sampling_seed": 42
+  },
+  "source_sha256": {
+    "flm/selection_pilot.py": "10c0522b9e3e2a2fb3c46fdab6bf19cc0a2fd4b2a5fe7fde183d8f3701877bd8",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/scan_train.py": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "scripts/selection_pilot_preflight.py": "71e6f22459556ff35b761969be5c97b00ec66aa9492fd3079a51ccaa514b5113",
+    "tests/test_selection_pilot.py": "d3fcbe1e4241f1cf2a067d288a8fe99c733d659fb639fafdedebf7b8035ede95"
+  },
+  "update_implementation": "flm.language_learning_train.update:bptt",
+  "shared_update_training_settings": {
+    "steps": 2,
+    "batch": 1,
+    "sequence": 3,
+    "warmup": 1,
+    "learning_rate": 0.002,
+    "final_learning_rate": 0.002,
+    "lr_warmup_updates": 0,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "checkpoint_interval": 2,
+    "seed": 42,
+    "threads": 1,
+    "score_boundaries": true
+  },
+  "timing_scope": "Sampling, pilot token guards, and the shared BPTT update including parameter inventory, masks, loss/gradient checks, gradient clipping, AdamW and finite-parameter checks. Excludes loading, initialization, additional full-state/optimizer audits, exposure bookkeeping, checkpoint I/O and validation.",
+  "synthetic_gradient_updates": 128,
+  "official_timing_prerequisites": {
+    "ready": false,
+    "reason": "Priority BabyLM training must finish before selection timing"
+  },
+  "official_timing_run_started": false,
+  "conditions": [
+    {
+      "selection": "KCg-m-R-t1/stratified_s207",
+      "graph_sha256": "6e56cdee408432ed1d2360fe1e4ddb1dc37fd53956011e639cef6537f5dadec9",
+      "neurons": 1318,
+      "edges": 13485,
+      "trainable_parameters": 566464,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/contact_ranked",
+      "graph_sha256": "d4e91ccb1b560ed54a29370d2daa99502a9a1d7e9328b977571e3f905eb310fb",
+      "neurons": 540,
+      "edges": 18431,
+      "trainable_parameters": 494388,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/candidate",
+      "graph_sha256": "a9ee304c171c2f9eca006efe3834e9d60fd8e630edebba9ca7bb720b041af45f",
+      "neurons": 1318,
+      "edges": 195764,
+      "trainable_parameters": 748743,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/stratified_s201",
+      "graph_sha256": "4506e545116c8d2be686ae3c1e16841294ff1debed67a3e7d2b376540a62d54a",
+      "neurons": 784,
+      "edges": 2621,
+      "trainable_parameters": 502734,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/stratified_s201",
+      "graph_sha256": "bef646d5a50491fa8eec3abc1dc616edd7614487e8e2f69098d116bc414b6117",
+      "neurons": 858,
+      "edges": 3202,
+      "trainable_parameters": 510641,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/uniform_s203",
+      "graph_sha256": "19f1b72c6a5859d59751f67bf19ab04e5c41636e078c7c198f92d2b9a04286e3",
+      "neurons": 858,
+      "edges": 964,
+      "trainable_parameters": 508403,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/uniform_s207",
+      "graph_sha256": "4ea634a47b424cc5f7897059bba99cc3541955c0ad9b496d54a1f49dc5eaf2ce",
+      "neurons": 1385,
+      "edges": 2229,
+      "trainable_parameters": 561841,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/uniform_s207",
+      "graph_sha256": "bae48fa749dce509b2140a2bfb4db9b529f5a9f53a28761b83de81aa0c5df94b",
+      "neurons": 487,
+      "edges": 254,
+      "trainable_parameters": 470964,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/uniform_s201",
+      "graph_sha256": "5623bd329c8c1b3ed4a0d41d57476da16cf10730065b9eaaacc6de3da42c4bdd",
+      "neurons": 1318,
+      "edges": 2129,
+      "trainable_parameters": 555108,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/uniform_s201",
+      "graph_sha256": "3a499eedce116ffba2abbd762fb5882296c5a981546415cafe4019af5603b244",
+      "neurons": 1150,
+      "edges": 1550,
+      "trainable_parameters": 537897,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/contact_ranked",
+      "graph_sha256": "251e531da971e6e4d2fc85964f14d56e43dae7608cff427cd2e1b9720ee08724",
+      "neurons": 1150,
+      "edges": 73563,
+      "trainable_parameters": 609910,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/contact_ranked",
+      "graph_sha256": "b4b3d95d45eef96da0b112d92cdf68c59177a78fa7070c4d50214d82becef6cc",
+      "neurons": 858,
+      "edges": 44386,
+      "trainable_parameters": 551825,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/candidate",
+      "graph_sha256": "74eb9656b6202c7fdff50e705ed50fda481b4567be6d2f1896c033c7f11ed793",
+      "neurons": 1150,
+      "edges": 184616,
+      "trainable_parameters": 720963,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/candidate",
+      "graph_sha256": "cd161c7c82e9df7c2247ee012725f70530a5f1b5fb142136c0f5f1b0b67833ac",
+      "neurons": 858,
+      "edges": 33652,
+      "trainable_parameters": 541091,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/stratified_s203",
+      "graph_sha256": "a3fe7d0b3208d5e2d6be44290b7ad9fdcf6681944d47827ce7b6d43110d3b9e1",
+      "neurons": 1150,
+      "edges": 10208,
+      "trainable_parameters": 546555,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/stratified_s203",
+      "graph_sha256": "dfef6fd532d79900d7e3107268b43944ddfd69445ab9678cbe416d7a6a0b3bf6",
+      "neurons": 1385,
+      "edges": 15139,
+      "trainable_parameters": 574751,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/uniform_s203",
+      "graph_sha256": "dbffbff536555e2dccf464fa1586b619ce443119d303c172a1ec7488276c97a0",
+      "neurons": 1150,
+      "edges": 1526,
+      "trainable_parameters": 537873,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/uniform_s201",
+      "graph_sha256": "202370f936fe187d217260d78f2b7ac8d4fecbc1da4fac1820903ba40911f751",
+      "neurons": 1202,
+      "edges": 1694,
+      "trainable_parameters": 543189,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/stratified_s203",
+      "graph_sha256": "3e9f2bc567f751b5890b8798e5fac9967936cdff605ef1b053754b63a9d4cf2b",
+      "neurons": 858,
+      "edges": 3085,
+      "trainable_parameters": 510524,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/stratified_s207",
+      "graph_sha256": "eec67213d0d6be690cfaae45c1f45841ae372df1c2b7086fc85fc69629f7c7ee",
+      "neurons": 487,
+      "edges": 1000,
+      "trainable_parameters": 471710,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/candidate",
+      "graph_sha256": "0a44d289c07bf43d50d6e4e7389deabb6aea37619c7b1c4fd07679c2b3d604db",
+      "neurons": 784,
+      "edges": 27049,
+      "trainable_parameters": 527162,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/uniform_s203",
+      "graph_sha256": "e28783a5765e9172a5e56c90989d6d67faf45c99a3035dcc0bf2644067157c87",
+      "neurons": 1385,
+      "edges": 2146,
+      "trainable_parameters": 561758,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/contact_ranked",
+      "graph_sha256": "8a96e69dea61788aa2bfed134eaf46f1a38cb6615a092987ea946a1416db4ddd",
+      "neurons": 1318,
+      "edges": 93365,
+      "trainable_parameters": 646344,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/stratified_s201",
+      "graph_sha256": "8912406aa70f61381e32ce706bcf5e41e5d9736d79afeb2146f278b0dc2dce2e",
+      "neurons": 540,
+      "edges": 950,
+      "trainable_parameters": 476907,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/stratified_s201",
+      "graph_sha256": "d2d99e25b26b7444a97ca6bf06c8718c44e65bed98e531078f075c670380654b",
+      "neurons": 1318,
+      "edges": 12810,
+      "trainable_parameters": 565789,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/uniform_s207",
+      "graph_sha256": "ff37cd14fd5985ad3e4e84594a73ce8e86b9815d918f516fdc0f6ba40f101680",
+      "neurons": 858,
+      "edges": 800,
+      "trainable_parameters": 508239,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/uniform_s203",
+      "graph_sha256": "03c5db1e940b5c31ff9d38c2fc1fe36bb3525270278d0291fdec05eb97355822",
+      "neurons": 1202,
+      "edges": 1480,
+      "trainable_parameters": 542975,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/uniform_s201",
+      "graph_sha256": "201347c90462eb09714aeaa3969f868cbb511bb1505d4ded65d2966e7acde5f3",
+      "neurons": 1385,
+      "edges": 2290,
+      "trainable_parameters": 561902,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/stratified_s201",
+      "graph_sha256": "b4599e106083e6c105c4d8a2e7bb1df34ba028c1122ff40f3cac745500cba928",
+      "neurons": 1385,
+      "edges": 14488,
+      "trainable_parameters": 574100,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/uniform_s207",
+      "graph_sha256": "f8fcbca4b96b09a1421a1d2ef14a2bc3681d41a4351632b6d8d0e154d06e36af",
+      "neurons": 1202,
+      "edges": 1648,
+      "trainable_parameters": 543143,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/stratified_s201",
+      "graph_sha256": "d9af4ef026b031063123615766c7a11b88421f390e2157b3e1b929e1e751e91c",
+      "neurons": 487,
+      "edges": 853,
+      "trainable_parameters": 471563,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/uniform_s201",
+      "graph_sha256": "3537e24814aa5a727e4baaf287e4a093d11a8d6853d13003feb6e15a31ca6fb3",
+      "neurons": 784,
+      "edges": 820,
+      "trainable_parameters": 500933,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/stratified_s207",
+      "graph_sha256": "404bb676483c308b416aa1e7ea743ff89a82c92a5eb47446da7dc2ca628b1451",
+      "neurons": 1385,
+      "edges": 14351,
+      "trainable_parameters": 573963,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/uniform_s201",
+      "graph_sha256": "c92b5b7485754c72780b6627b176d67df01b4adc5f03315e131888004b624e76",
+      "neurons": 858,
+      "edges": 943,
+      "trainable_parameters": 508382,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/stratified_s203",
+      "graph_sha256": "e9521fa380c515a740f17235407f67370f2ce9082d9061b6633cfe3a227550c3",
+      "neurons": 1202,
+      "edges": 11759,
+      "trainable_parameters": 553254,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/stratified_s203",
+      "graph_sha256": "81c23d3c2139d6050b677b3a7fd636ec82ae4782d7fe796f7b3c08fddb99f3c6",
+      "neurons": 1318,
+      "edges": 12326,
+      "trainable_parameters": 565305,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/uniform_s203",
+      "graph_sha256": "010043faabe3517254e64f6ab41c37ee3b8bb1ce370c2db4f2eb866b87c1747b",
+      "neurons": 487,
+      "edges": 235,
+      "trainable_parameters": 470945,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/uniform_s207",
+      "graph_sha256": "df76a64ecf7251d9ff0f1256f903eddbf6815d5e619a1793e93fc70127e4ef72",
+      "neurons": 1150,
+      "edges": 1496,
+      "trainable_parameters": 537843,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/contact_ranked",
+      "graph_sha256": "9e58ef7813a89cd75e5bc768f8a4555b8c6b0075b45b1c775988f31fd8feb366",
+      "neurons": 1202,
+      "edges": 79309,
+      "trainable_parameters": 620804,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/uniform_s201",
+      "graph_sha256": "c270a084d052d5d89a5589a192b60947d54d9570b2c732be8930a66ad838b3a0",
+      "neurons": 487,
+      "edges": 279,
+      "trainable_parameters": 470989,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/contact_ranked",
+      "graph_sha256": "280d0825937a4df7fe329dae06e537e9c128a122512049daf37c37be43ec9bce",
+      "neurons": 1385,
+      "edges": 101248,
+      "trainable_parameters": 660860,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/uniform_s207",
+      "graph_sha256": "88dd444972e28e5563cd0aca861e666f3df3183ff45f62f5c534fe091b6ecebe",
+      "neurons": 784,
+      "edges": 781,
+      "trainable_parameters": 500894,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/stratified_s207",
+      "graph_sha256": "1c555c2ebdc9413c444865465f8e0fdbfa8850afc0fba2daa124d7ef00c1ed2a",
+      "neurons": 540,
+      "edges": 1012,
+      "trainable_parameters": 476969,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/stratified_s201",
+      "graph_sha256": "b714d96f7bc878b43d8143b4d83c960d70b6c8c81cfd45c756d3e9328f894814",
+      "neurons": 1150,
+      "edges": 10735,
+      "trainable_parameters": 547082,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/contact_ranked",
+      "graph_sha256": "3b243c9112a56ef946500530f89c55767b87b5628936ca60d90c4be3400ea1ea",
+      "neurons": 487,
+      "edges": 15238,
+      "trainable_parameters": 485948,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/stratified_s201",
+      "graph_sha256": "cf869078ff8c0f6d96dafe713695f41a9a2e28a4cca744843e567a355cac7a40",
+      "neurons": 1202,
+      "edges": 10952,
+      "trainable_parameters": 552447,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/uniform_s203",
+      "graph_sha256": "a8513ba35923169f1414f57d61b8ca97264c48f577b0e423cb67eccc66d31393",
+      "neurons": 1318,
+      "edges": 1998,
+      "trainable_parameters": 554977,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/stratified_s203",
+      "graph_sha256": "ede76161406bc85919692c1a208785ae039cc8f30b16ee74e5afbb8cfcf55333",
+      "neurons": 784,
+      "edges": 2541,
+      "trainable_parameters": 502654,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t5/stratified_s207",
+      "graph_sha256": "2dce5229bc379ddeeb48c8e4b7ea1241f4e2206b5399a99fdc15217db35b7d7e",
+      "neurons": 1150,
+      "edges": 10517,
+      "trainable_parameters": 546864,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/uniform_s201",
+      "graph_sha256": "d90188286dd922436da94b12854f2b878850565ec6f675593af235770246dca6",
+      "neurons": 540,
+      "edges": 334,
+      "trainable_parameters": 476291,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/stratified_s207",
+      "graph_sha256": "03c1175eae3aa54d01cdf45e3936022fa173d391a489f8fde38e5fcb2c5c0d2b",
+      "neurons": 784,
+      "edges": 2822,
+      "trainable_parameters": 502935,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/contact_ranked",
+      "graph_sha256": "5982cbb75b0fdfa0535a3db68890e62cd32ca3cbb6dd7de22038808c64b19593",
+      "neurons": 784,
+      "edges": 37971,
+      "trainable_parameters": 538084,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-R-t1/uniform_s207",
+      "graph_sha256": "5812b87af68b6990691b40a1b8ff37a9a7d679eb5a4dda89c614d96e82fa8c36",
+      "neurons": 1318,
+      "edges": 1985,
+      "trainable_parameters": 554964,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/candidate",
+      "graph_sha256": "bcbd79db72a94f16e522b40b66a6e0d9d922efb1eed977ea5f5d41a245f38297",
+      "neurons": 487,
+      "edges": 15674,
+      "trainable_parameters": 486384,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/candidate",
+      "graph_sha256": "58be443c867af0c71e127c3be116058a0a150cce69cf8bed11cc692d1ea0ff5b",
+      "neurons": 1202,
+      "edges": 195007,
+      "trainable_parameters": 736502,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t5/stratified_s207",
+      "graph_sha256": "ee3291ac6c8f3b066020a283e5add4886cc23dea0fa1565eb6fcbea1572824b5",
+      "neurons": 1202,
+      "edges": 11380,
+      "trainable_parameters": 552875,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-m-L-t1/candidate",
+      "graph_sha256": "ca9107148b3d522f62227f5517ac82d63bdf8036ece445037594b681ad387ded",
+      "neurons": 1385,
+      "edges": 207081,
+      "trainable_parameters": 766693,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t1/stratified_s207",
+      "graph_sha256": "405f356cdb03e748c1f9277e19c9e3e77afa81ea6c7fd355120c4d9822d4d293",
+      "neurons": 858,
+      "edges": 2821,
+      "trainable_parameters": 510260,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/candidate",
+      "graph_sha256": "b3fe5c21d1134711f81112bea88e4dcce2152146cf3ea4b802d602e681a06c3b",
+      "neurons": 540,
+      "edges": 18499,
+      "trainable_parameters": 494456,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/uniform_s207",
+      "graph_sha256": "2627f50fd48471dbf8314a2eefca55c2a8eac6140454b6567c06cdb35337937e",
+      "neurons": 540,
+      "edges": 355,
+      "trainable_parameters": 476312,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t5/stratified_s203",
+      "graph_sha256": "3392244534b843db86219036f940f8b8cb898b6b1ba8a38c37ff7fad8d006dd8",
+      "neurons": 487,
+      "edges": 784,
+      "trainable_parameters": 471494,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/stratified_s203",
+      "graph_sha256": "47393b07c86cfd79b2ea6c4919b05bb3bf8808edd4fb76b730bc125317f7ca65",
+      "neurons": 540,
+      "edges": 1053,
+      "trainable_parameters": 477010,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-L-t1/uniform_s203",
+      "graph_sha256": "82ef286d82a8505777d4944e32f0ce929979a038097929f3378c3821718efee8",
+      "neurons": 784,
+      "edges": 854,
+      "trainable_parameters": 500967,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    },
+    {
+      "selection": "KCg-d-R-t5/uniform_s203",
+      "graph_sha256": "a6028580914b2ba3d10d831465cb028973af4874e710ace31ce45f6c3d658d8d",
+      "neurons": 540,
+      "edges": 314,
+      "trainable_parameters": 476271,
+      "graph_unchanged": true,
+      "disposable_parameters_updated": true,
+      "sampled_fixture_windows_sha256": "53f2b9f4df873736c1d2628818c58fdaf1b162fe7084c5cd121db9d71002a674"
+    }
+  ],
+  "scope": "Full-size graph gradient compatibility on tiny synthetic fixtures. Training cache verified separately; no corpus fit, throughput estimate, validation/test access or saved model."
+}

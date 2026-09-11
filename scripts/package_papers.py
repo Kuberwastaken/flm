@@ -118,6 +118,7 @@ def main():
         'reports/selection-language/preparation.json',
         'docs/SELECTION-TIMING-PILOT.md', 'flm/selection_pilot.py', 'scripts/selection_pilot_preflight.py',
         'tests/test_selection_pilot.py', 'reports/selection-pilot/preflight.json',
+        'reports/selection-pilot/shared-update-preflight.json',
         'docs/LANGUAGE-LEARNING-INPUTS.md', 'flm/language_learning_inputs.py',
         'docs/LANGUAGE-LEARNING-TIMING.md', 'flm/language_learning_pilot.py',
         'docs/LANGUAGE-LEARNING-VALIDATION.md', 'flm/language_learning_validation.py',

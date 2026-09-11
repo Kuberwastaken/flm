@@ -8,7 +8,7 @@ training data. **The official timing pilot has not run.**
 
 ## Readiness evidence
 
-The [dated preflight](selection-pilot/preflight.json) verifies all
+The [dated preflight](selection-pilot/shared-update-preflight.json) verifies all
 64 full-size original graph configurations through two disposable optimizer
 updates each, using a tiny synthetic token fixture: batch 1, three input tokens,
 one context-warmup position and one CPU thread. Every graph remains unchanged,
@@ -25,10 +25,14 @@ word budget. The actual corpus is not passed to the synthetic gradient checks.
 No validation or test cache is opened. No model, loss values or fixture throughput
 estimates are saved.
 
-Seven unit tests cover exact sampled token/byte exposure, matching windows
+Eight unit tests cover exact sampled token/byte exposure, matching windows
 between graphs, preserved source arrays and global Torch state, malformed inputs,
 nonfinite updates, complete shuffled inventory, input fingerprints, priority
-gates, retained failed attempts and refusal to overwrite a completed pilot.
+gates, retained failed attempts and refusal to overwrite a completed pilot. The
+shared-update test compares a complete tiny pilot with a saved fit: final model
+tensors, AdamW moments and steps, parameter groups and sampled-window digest
+match exactly. It includes boundary targets after warmup. These are artificial
+fixtures, not throughput observations.
 
 ## The eventual timing run
 
@@ -55,9 +59,12 @@ not assessed, and this constant rate does not define the future study schedule.
 
 The twelve measured updates present 18,432 input tokens and supervise 15,360
 target positions per graph, plus separately recorded warmup exposure. Timing
-includes sampling, token-range checks, forward and backward computation,
-gradient clipping and the optimizer update. Loading, initialization, integrity
-bookkeeping, validation and checkpoint I/O are excluded. Token and byte counts
+includes sampling, pilot token-range guards and the exact
+`flm.language_learning_train.update` BPTT call used by the selection adapter. That
+call includes parameter-inventory checks, warmup masking, learning-rate handling,
+forward/backward computation, finite loss/gradient checks, clipping, AdamW and
+finite-parameter checks. Loading, initialization, additional full-state/optimizer
+audits, exposure bookkeeping, validation and checkpoint I/O are excluded. Token and byte counts
 are exact; median update time and aggregate throughput are short-run observations.
 Neither is a peak-memory measurement or a guaranteed full-training wall time.
 
@@ -97,6 +104,9 @@ The current BabyLM, language topology, core-computation, sensory and physical
 experiments remain unchanged.
 
 The [selection-language adapter](selection-language-training.md) now supplies a
-common resumable fitting path. Its objective agrees with this pilot, but its
-update includes extra inventory and finite-parameter checks. Align or measure
-that exact update path before treating pilot times as official fit-budget estimates.
+common resumable fitting path. Both now call the same update function, and the
+pilot records its complete constant-rate settings and twelve source-module
+checksums. This aligns the update computation; the excluded I/O, validation and
+bookkeeping costs still need allowance in an eventual wall-time budget. The
+[earlier preflight](selection-pilot/preflight.json) is retained as a
+dated record of the prior direct-update implementation.

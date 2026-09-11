@@ -60,10 +60,11 @@ the caller's Torch random state. Sampler seeds remain independent of graph seeds
 The adapter calls the existing [resumable training runner](LANGUAGE-LEARNING-RUNNER.md)
 with BPTT and an explicit settings object and study binding. It uses the
 [selection pilot's](SELECTION-TIMING-PILOT.md) convention: exclude context-warmup
-positions but include any inserted boundary targets afterward. Agreement of the objective does not establish timing parity: the current pilot
-times its direct update, while the shared runner also performs inventory and
-finite-parameter checks. Align or measure the actual fitting update path before
-choosing the final budget. The separate
+positions but include any inserted boundary targets afterward. The pilot now calls
+the exact shared BPTT update, including inventory and finite-parameter checks.
+Eight pilot tests include exact final model/optimizer and sampled-window parity
+with a saved tiny fit. Pilot times will still exclude loading, checkpoint I/O,
+validation and extra bookkeeping; those costs need allowance in the final budget. The separate
 learning-rule experiment excludes boundary targets; the two studies must not be
 silently pooled as though their objectives were identical.
 
@@ -100,8 +101,7 @@ python -m unittest discover -s tests -p test_language_learning_inputs.py -v
 python -m scripts.selection_language_preflight --output reports/selection-language/another-dated-preparation.json
 ```
 
-After the priority BabyLM jobs exit, align the cost pilot with the actual fitting
-update path and measure it. Use those costs and the anatomical rationale to freeze the selected
+After the priority BabyLM jobs exit, measure the aligned cost pilot. Use those costs and the anatomical rationale to freeze the selected
 candidate/control matrix, common exposure, optimizer schedule, validation rule
 and held-out gate. Keep cross-selector comparisons distinct from within-subset
 rewiring comparisons. Language results will still concern truncated operational
