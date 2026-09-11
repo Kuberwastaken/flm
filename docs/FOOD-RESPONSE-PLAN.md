@@ -1,9 +1,15 @@
 # Before and after training: food-response extension
 
 Kuber Mehta · 11 September 2026. Proposed extension, not a frozen experimental
-protocol or a completed result. The active language computation controls and
-then the registered BabyLM comparison keep their priority. Existing studies,
+protocol or a completed result. The registered BabyLM comparison keeps its
+training priority after the completed language computation controls. Existing studies,
 conditions and tests are unchanged.
+
+The [six-channel sensory interface](FOOD-SENSOR-INTERFACE.md) is now implemented
+and calibrated against actual body positions in two short prescribed-motion
+FlyGym repetitions. It separates bilateral odor, sugar contact and source
+contact, with an independent scalar geometry audit. This is preparation;
+no food-task policy, language transfer, approach or feeding result exists.
 
 ## What can be compared now
 

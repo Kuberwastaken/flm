@@ -11,6 +11,10 @@ official registration; actual execution remains pending.
 This is preparation for the reviewer's selection question. It does not establish
 that a circuit-based subset helps language learning. The anatomical candidates
 remain truncated operational selections with substantial missing boundary input.
+After the current registered BabyLM comparison finishes and its trainer exits,
+this complete-group selection comparison takes priority over further dataset
+or model scaling. It tests the implemented selection rules; it cannot establish
+the performance of an intact functional circuit that those rules do not retain.
 
 ## Choose groups, not favorable individual controls
 

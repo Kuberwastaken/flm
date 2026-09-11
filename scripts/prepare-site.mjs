@@ -141,8 +141,21 @@ for (const [source, target] of [
   ['../scripts/choice_replay.py', 'choice_replay.py'],
   ['../public/research/', ''],
   ['SUBSET-AUDIT.md', 'subset-audit.md'],
+  ['FOOD-SENSOR-INTERFACE.md', 'food-sensor-interface.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
+await mkdir('public/research/food-sensors', { recursive: true });
+for (const name of ['physical-probe.json', 'geometry-audit.json', 'visible-odor-probe.json', 'visible-odor-audit.json', 'figure.json'])
+  await copyFile(`reports/food-sensors/${name}`, `public/research/food-sensors/${name}`);
+for (const source of ['flm/food_sensors.py', 'experiments/embodiment/food_sensor_probe.py', 'scripts/audit_food_sensor_probe.py', 'scripts/food_sensor_figure.py'])
+  await copyFile(source, `public/research/food-sensors/${source.split('/').at(-1)}`);
+await writeFile('public/research/food-sensor-interface.md', (await readFile('docs/FOOD-SENSOR-INTERFACE.md', 'utf8'))
+  .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('../public/research/', '')
+  .replaceAll('../reports/food-sensors/', 'food-sensors/')
+  .replaceAll('../flm/food_sensors.py', 'food-sensors/food_sensors.py')
+  .replaceAll('../experiments/embodiment/food_sensor_probe.py', 'food-sensors/food_sensor_probe.py')
+  .replaceAll('../scripts/audit_food_sensor_probe.py', 'food-sensors/audit_food_sensor_probe.py'));
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');
