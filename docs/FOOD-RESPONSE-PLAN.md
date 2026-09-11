@@ -18,6 +18,15 @@ untested. Four paired initial/language-trained WikiText cores now pass
 adapters, with no food adaptation or physical feedback. The complete-group
 selection comparison remains next after the fixed BabyLM queue.
 
+The subsequent [24-case physical reference](FOOD-CORE-PHYSICAL-RESULTS.md) is
+complete and independently replay-audited across 4,824 observations. Both initial
+and language-trained cores contact the upper patch in mirrored cases, including
+wrong-source contacts. All conditions now have synchronized recorded neural
+state and reconstructed body geometry in the browser, with the
+[body-state limitations](PHYSICAL-STATE-SEMANTICS.md) explicit. This is before
+food adaptation; the downstream learning and transfer experiment below remains
+unrun.
+
 ## What can be compared now
 
 The browser's physical-choice replay compares the original untrained sensory
@@ -108,5 +117,6 @@ Add synchronized before/after physical recordings beside measured action
 probabilities, task outcomes and actual recurrent activity. Identify whether
 the displayed difference follows language pretraining, food-task adaptation,
 both or neither. Keep the complete condition selector and downloadable records,
-including cases where the fly does not improve. Until then, the page displays
-the existing cue-learning recordings and this clearly labeled plan.
+including cases where the fly does not improve. The page now displays the
+existing cue-learning recordings and the unadapted physical reference; no
+post-food-adaptation result is available yet.
