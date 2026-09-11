@@ -1,0 +1,59 @@
+{
+  "verified_utc": "2026-09-11T16:56:15.316589+00:00",
+  "content_commit": "7ead2254c762a7568588f980ff397a5d1e165977",
+  "ci_run": 34624200714,
+  "scope": "Exact HTTP/local bytes for instruction-coordinator methods, sources and preparation records; ZIP inventory and every archived source checked against the current working tree. No training or test generation.",
+  "http_files": {
+    "research/instruction-transfer.md": {
+      "bytes": 16262,
+      "sha256": "e682b8ddcccd891595a0146481986a14f4064d874dad576b9abcc2b1c02b5bdc"
+    },
+    "research/scan-study-coordinator.md": {
+      "bytes": 6306,
+      "sha256": "1accb0d8406da0e4a9a54963fe5a0ae62806903e8ddeca261d41565d7c6df6db"
+    },
+    "research/scan-condition-preparation.md": {
+      "bytes": 2959,
+      "sha256": "2b8f2cf028da0e3797ffcfc84cdd248785a53b41b8cd2583354cc293d846df6a"
+    },
+    "research/scan-timing-pilot.md": {
+      "bytes": 2804,
+      "sha256": "56005a0700cecb3dca42ba58e3a9250f537008ea092bdfcba24f90d0be9f81a3"
+    },
+    "research/scan_study.py": {
+      "bytes": 20412,
+      "sha256": "e769e46117df21a0a202481485f532ad27187e87dbea4390d6ce2d9d44a8f28f"
+    },
+    "research/scan_conditions.py": {
+      "bytes": 6568,
+      "sha256": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a"
+    },
+    "research/scan_pilot.py": {
+      "bytes": 8138,
+      "sha256": "3462654e5d227c01b2b039d0a4517643961b06df98c091db4046af5d664de3fb"
+    },
+    "research/test_scan_study.py": {
+      "bytes": 13566,
+      "sha256": "ce91650ca87bb5cc4a271cc5af781ca4cf79e4aa9030f5ba85e5830b66479ada"
+    },
+    "research/scan-study-preparation.json": {
+      "bytes": 2180,
+      "sha256": "8d94368600af978635a2650205fa2898d25ad8e025b11e8860ee1ed14c162151"
+    },
+    "research/scan-condition-preflight.json": {
+      "bytes": 101230,
+      "sha256": "0fa7391c6d8b04cf84e3e8f6f6e45e78cda1ab56e02cf472ffcaa7426ef776f8"
+    },
+    "research/scan-pilot-preflight.json": {
+      "bytes": 1593,
+      "sha256": "71d8437c65e552419f4fe85e4d61ca7d4ec49b0ffa9bdc67b0ef8f7b99336f8b"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9278701,
+      "sha256": "6a93586df01d1dab6a67e5849f3adaf62a628ec6afd303a6ff2e265abfd7996f"
+    }
+  },
+  "public_relative_links_checked": 29,
+  "source_archive_files": 448,
+  "software_tests": "Twelve focused Python coordinator checks passed locally; 74 existing JavaScript tests passed in the publishing workflow."
+}
