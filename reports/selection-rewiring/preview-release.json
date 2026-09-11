@@ -1,0 +1,73 @@
+{
+  "verified_utc": "2026-09-11T09:45:52.650591+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/selection-rewiring/preflight.json",
+      "status": 200,
+      "bytes": 1329679,
+      "sha256": "ec060c3a6c0fee0986954d73b3111209fb19076901c84d9c0861eb3732ebf10b"
+    },
+    {
+      "path": "research/selection-rewiring/preparation-checks.json",
+      "status": 200,
+      "bytes": 652,
+      "sha256": "7aa5e0574429a45f40eede21f5666d7e4b0ec33c95f089203930c49117e45d81"
+    },
+    {
+      "path": "research/selection-rewiring/audit_selection_rewiring.py",
+      "status": 200,
+      "bytes": 8850,
+      "sha256": "eb2b59f26b856113279cfc40295a09dc094e84becec19c0063fccaf9fdcc3754"
+    },
+    {
+      "path": "research/selection-rewiring/package_selection_rewiring.py",
+      "status": 200,
+      "bytes": 7013,
+      "sha256": "40a4d491b18766399e01a15cf32fd7ee105d1c33df004443aeb3a9f29fa5260a"
+    },
+    {
+      "path": "research/selection-rewiring/preflight_selection_rewiring.py",
+      "status": 200,
+      "bytes": 5265,
+      "sha256": "5e551806b55333d73cdf0c4cb0b0c8f1eeb709304c017a3f786cb5af13d38917"
+    },
+    {
+      "path": "research/selection-rewiring-audit.md",
+      "status": 200,
+      "bytes": 5519,
+      "sha256": "cfc75bd4bfd2682f798dac35b296552666aab51b7a3ef08816dc95119ff09241"
+    },
+    {
+      "path": "research/selection-graph-exports.md",
+      "status": 200,
+      "bytes": 7248,
+      "sha256": "f156887b978cb302011e1bb72ba80e3ac5c58224f961af8bb42f0867a1579cad"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7857767,
+      "sha256": "96ba19c03356a62e23a06c032eec89231c7d7bd34b4e5764e5dec16a0a49ecf8"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-graph-exports.md",
+    "selection-rewiring/preflight.json",
+    "selection-rewiring/audit_selection_rewiring.py",
+    "selection-rewiring/package_selection_rewiring.py",
+    "selection-rewiring-audit.md",
+    "circuit-selection.md",
+    "selection-graphs.zip",
+    "selection-graph-manifest.json",
+    "selection_rewiring.py",
+    "selection-rewiring-started.json",
+    "selection-graph-release.json"
+  ],
+  "paper_source_files_verified": 294,
+  "source_and_preflight_bindings_verified": true,
+  "snapshot_controls_independently_verified": 101,
+  "fixture_tests_passed": 7,
+  "scope": "Dated partial structural audit and packaging-tool release, not final graph inventory or language results"
+}

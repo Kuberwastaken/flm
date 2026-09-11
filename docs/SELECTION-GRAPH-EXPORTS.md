@@ -1,5 +1,10 @@
 # Untrained graph exports for the selection study
 
+The subsequent [independent rewiring audit](SELECTION-REWIRING-AUDIT.md) now
+verifies a dated 101-control snapshot and provides a tested final-archive gate.
+Generation remains incomplete at that checkpoint; no selection language fits
+have been run.
+
 The [KC-centered candidates and comparison selections](CIRCUIT-SELECTION.md)
 are now exported into the existing FLM graph format. The
 [5.6 MiB graph archive](../public/research/selection-graphs.zip) contains all

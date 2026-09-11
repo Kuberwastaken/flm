@@ -35,12 +35,22 @@ await copyFile('reports/selection-graphs/rewiring-started.json', 'public/researc
 for (const name of ['selection_graphs.py', 'selection_rewiring.py'])
   await copyFile(`flm/${name}`, `public/research/${name}`);
 await writeFile('public/research/selection-graph-exports.md', (await readFile('docs/SELECTION-GRAPH-EXPORTS.md', 'utf8'))
+  .replaceAll('SELECTION-REWIRING-AUDIT.md', 'selection-rewiring-audit.md')
   .replaceAll('CIRCUIT-SELECTION.md', 'circuit-selection.md')
   .replaceAll('../reports/selection-graphs/manifest.json', 'selection-graph-manifest.json')
   .replaceAll('../reports/selection-graphs/export-release.json', 'selection-graph-release.json')
   .replaceAll('../reports/selection-graphs/rewiring-started.json', 'selection-rewiring-started.json')
   .replaceAll('../flm/selection_rewiring.py', 'selection_rewiring.py')
   .replaceAll('../public/research/', ''));
+await mkdir('public/research/selection-rewiring', { recursive: true });
+for (const name of ['preflight.json', 'preparation-checks.json'])
+  await copyFile(`reports/selection-rewiring/${name}`, `public/research/selection-rewiring/${name}`);
+for (const name of ['audit_selection_rewiring.py', 'package_selection_rewiring.py', 'preflight_selection_rewiring.py'])
+  await copyFile(`scripts/${name}`, `public/research/selection-rewiring/${name}`);
+await writeFile('public/research/selection-rewiring-audit.md', (await readFile('docs/SELECTION-REWIRING-AUDIT.md', 'utf8'))
+  .replaceAll('SELECTION-GRAPH-EXPORTS.md', 'selection-graph-exports.md')
+  .replaceAll('../reports/selection-rewiring/', 'selection-rewiring/')
+  .replaceAll('../scripts/', 'selection-rewiring/'));
 for (const name of ['summary.json', 'directed-groups.csv', 'external-partners.csv', 'kenyon-coverage.csv', 'figures.json'])
   await copyFile(`reports/selection-pathways/${name}`, `public/research/selection-pathways/${name}`);
 await copyFile('flm/selection_pathways.py', 'public/research/selection-pathways/selection_pathways.py');

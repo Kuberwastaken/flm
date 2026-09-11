@@ -108,7 +108,11 @@ def main():
         'docs/SELECTION-GRAPH-EXPORTS.md', 'flm/selection_graphs.py', 'flm/selection_rewiring.py',
         'tests/test_selection_graphs.py', 'tests/test_selection_rewiring.py',
         'reports/selection-graphs/manifest.json', 'reports/selection-graphs/export-release.json',
-        'reports/selection-graphs/rewiring-started.json')]
+        'reports/selection-graphs/rewiring-started.json',
+        'docs/SELECTION-REWIRING-AUDIT.md', 'scripts/audit_selection_rewiring.py',
+        'scripts/package_selection_rewiring.py', 'scripts/preflight_selection_rewiring.py',
+        'tests/test_selection_rewiring_archive.py',
+        'reports/selection-rewiring/preflight.json', 'reports/selection-rewiring/preparation-checks.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
