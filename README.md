@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs and FLM seed 43 have finished; GRU seed 43 is training. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs plus FLM and GRU seed 43 have finished; transformer seed 43 is training. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -211,7 +211,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 4 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 5 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 
