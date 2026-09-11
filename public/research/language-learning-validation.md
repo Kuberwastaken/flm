@@ -8,7 +8,9 @@ evaluation to BPTT, fixed-core, eligibility and no-history training.
 
 **This is a tested per-run component, not a frozen official experiment.**
 The cost pilot has not run, the training budget remains undecided, and the
-study-wide identity and all-condition test gate remain to be implemented.
+official study-wide identity has not been frozen. The
+[coordinator and all-condition selection gate](language-learning-study.md) are
+now implemented and tested; the official test scorer remains to be implemented.
 No official alternative-learning checkpoint has been trained or selected.
 
 ## The validation panel
@@ -89,7 +91,7 @@ python -m scripts.language_learning_validation_preflight --output reports/langua
 ```
 
 The [cost preparation](language-learning-timing.md) remains separate. After actual
-costs are measured, freeze the complete eight-condition identity and exposure
-budget before fitting. Add the all-condition completion/selection gate before
-official test evaluation. Existing BabyLM, selection, sensory and physical
+costs are measured, use the coordinator to freeze the complete eight-condition
+identity and exposure budget before fitting. The future test scorer must call
+the all-condition gate before official test evaluation. Existing BabyLM, selection, sensory and physical
 protocols remain unchanged.

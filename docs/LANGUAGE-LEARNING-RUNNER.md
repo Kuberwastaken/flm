@@ -67,11 +67,13 @@ and need not persist across saved window boundaries.
 
 The [per-run validation selector](LANGUAGE-LEARNING-VALIDATION.md) now audits a
 complete checkpoint inventory and chooses its earliest minimum validation BPB.
-It remains separate from the future frozen study and all-condition test gate.
+The [study coordinator](LANGUAGE-LEARNING-STUDY.md) now binds the complete
+condition inventory and provides its selection gate; no official study has
+been initialized, and the held-out scoring command remains unfinished.
 
 The endpoint record means only that all requested training updates completed.
 It is explicitly not validation selection or permission for official test
-evaluation. A future all-condition selection gate must precede that evaluation.
+evaluation. The coordinator's all-condition selection gate must precede that evaluation.
 
 ## Verification and next steps
 
@@ -93,6 +95,6 @@ Its current full-window evidence covers initialization and sampling only.
 These are tiny one-thread fixtures, not training throughput or four-thread
 reproducibility measurements. Before official fits, finish the current BabyLM
 queue, use the verified training-only adapter, measure disposable full-window costs,
-freeze a common budget and selection protocol, and implement the all-condition
-evaluation gate. The new selection-method study is a separate experimental axis;
+freeze a common budget and selection protocol, and integrate held-out scoring
+with the all-condition selection gate. The new selection-method study is a separate experimental axis;
 do not silently change graphs while comparing learning rules.

@@ -72,14 +72,15 @@ await writeFile('public/research/selection-timing-pilot.md', (await readFile('do
   .replaceAll('../scripts/selection_pilot_preflight.py', 'selection-pilot/selection_pilot_preflight.py')
   .replaceAll('../reports/selection-pilot/', 'selection-pilot/'));
 await mkdir('public/research/language-learning', { recursive: true });
-for (const name of ['language_learning_validation.py', 'language_learning_pilot.py', 'language_learning_inputs.py', 'language_learning_train.py', 'language_eligibility.py', 'embedding_eligibility.py'])
+for (const name of ['language_learning_study.py', 'language_learning_validation.py', 'language_learning_pilot.py', 'language_learning_inputs.py', 'language_learning_train.py', 'language_eligibility.py', 'embedding_eligibility.py'])
   await copyFile(`flm/${name}`, `public/research/language-learning/${name}`);
 await copyFile('scripts/language_learning_input_preflight.py', 'public/research/language-learning/language_learning_input_preflight.py');
 await copyFile('scripts/language_learning_pilot_preflight.py', 'public/research/language-learning/language_learning_pilot_preflight.py');
 await copyFile('scripts/language_learning_validation_preflight.py', 'public/research/language-learning/language_learning_validation_preflight.py');
-for (const name of ['validation-preflight.json', 'pilot-preflight.json', 'input-preflight.json', 'trainer-preflight.json', 'window-preflight.json'])
+await copyFile('scripts/language_learning_study_preflight.py', 'public/research/language-learning/language_learning_study_preflight.py');
+for (const name of ['study-preparation.json', 'validation-preflight.json', 'pilot-preflight.json', 'input-preflight.json', 'trainer-preflight.json', 'window-preflight.json'])
   await copyFile(`reports/language-eligibility/${name}`, `public/research/language-learning/${name}`);
-const learningNotes = ['LANGUAGE-LEARNING-VALIDATION', 'LANGUAGE-LEARNING-TIMING', 'LANGUAGE-LEARNING-INPUTS', 'LANGUAGE-LEARNING-RUNNER', 'LANGUAGE-ELIGIBILITY-KERNEL', 'LANGUAGE-ELIGIBILITY-PREPARATION'];
+const learningNotes = ['LANGUAGE-LEARNING-STUDY', 'LANGUAGE-LEARNING-VALIDATION', 'LANGUAGE-LEARNING-TIMING', 'LANGUAGE-LEARNING-INPUTS', 'LANGUAGE-LEARNING-RUNNER', 'LANGUAGE-ELIGIBILITY-KERNEL', 'LANGUAGE-ELIGIBILITY-PREPARATION'];
 for (const name of learningNotes) {
   let note = await readFile(`docs/${name}.md`, 'utf8');
   for (const linked of learningNotes) note = note.replaceAll(`${linked}.md`, `${linked.toLowerCase()}.md`);
