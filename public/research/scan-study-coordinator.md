@@ -80,9 +80,10 @@ The bound policy requires greedy generation over the full existing vocabulary,
 a 49-token output cap including EOS, a common 96-token context and exact complete
 action-sequence success with EOS. Invalid tokens, omissions, extra actions and
 cap exhaustion remain errors. The shared [generation/scoring runtime](scan_runtime.py)
-implements those primitives. **The official whole-partition test loader and
-resumable evaluation coordinator still need integration and testing** before
-official fits are launched. A passed completion gate alone is not a test result.
+implements those primitives. The [whole-partition evaluator](scan-evaluation.md)
+now integrates the provenance-checked loader, this completion gate, resumable
+generation and complete-condition comparisons. Its source is bound by the
+pre-training study identity. A passed completion gate alone is not a test result.
 
 ## Verification and use
 
@@ -98,7 +99,7 @@ are present in those fixture directories.
 ```powershell
 python -m unittest discover -s tests -p test_scan_study.py -v
 # Only after measured costs, a written protocol, completed priority studies,
-# verified process exit and the complete evaluation harness:
+# verified process exit and evaluation preparation checks:
 python -m flm.scan_study initialize --settings path/to/declared-settings.json
 python -m flm.scan_study train
 python -m flm.scan_study select

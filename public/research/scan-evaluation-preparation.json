@@ -1,0 +1,86 @@
+{
+  "verified_utc": "2026-09-11T17:10:58.478219+00:00",
+  "source_commit": "3c7acaacc404f4a57c6ece2e93f116ade5b41e86",
+  "scope": "Synthetic software verification and an actual-repository pre-test refusal; no official instruction training or generation.",
+  "python": "3.10.11",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "source_sha256": {
+    "flm/scan_evaluate.py": "fef48768aad0d4230237a46d8cc9ac70de09ab85f95ed24631f5018c25b9eb05",
+    "flm/scan_test_inputs.py": "407aeef3b02853ec7385a30936559ef9801d1a8b88e8a4c7882cefc3ef18a142",
+    "flm/scan_study.py": "81a5f37c632f69e181d1fb8f224ff7777b47b789dc7a41e132fe3114564bff70",
+    "tests/test_scan_evaluate.py": "19945b7a09b3f65fbf197a3e0a36759523cad2b130230eac62949f2b8479c4e5",
+    "tests/test_scan_test_inputs.py": "cc8b2efa66c3b7d23eac40c9c8c41493e9b6b264c35a889b31dc0226a9e07e72",
+    "tests/test_scan_study.py": "ce91650ca87bb5cc4a271cc5af781ca4cf79e4aa9030f5ba85e5830b66479ada"
+  },
+  "focused_tests": {
+    "passed": 31,
+    "failed": 0,
+    "seconds": 212.452,
+    "loader_tests": 6,
+    "evaluation_tests": 13,
+    "study_tests": 12,
+    "log_sha256": "67649e718f308e04693a14f1f74c602467f2c25dd01af4b69fec0828d3a7905a"
+  },
+  "fixtures": {
+    "official_corpora_used": false,
+    "whole_study_conditions": 36,
+    "training_steps": 6,
+    "training_rows": 4,
+    "test_rows": 3,
+    "architectures": [
+      "small FLM",
+      "small GRU",
+      "small transformer"
+    ],
+    "dtype": "float64",
+    "threads": 1,
+    "generation_cap": 4,
+    "generation_batch_size": 2,
+    "pretrained_fixture": "Deterministic parameter offset, not a pretrained model",
+    "separate_full_cap_check": "49 generated tokens in a scripted runtime fixture; never an exported model result"
+  },
+  "observed_checks": [
+    "Full publisher-row order, multiplicity, raw bytes, source metadata and card identities",
+    "All 36 actual fixture checkpoints restore before fixture test loading",
+    "Incomplete final condition prevents test loader access and all evaluation artifacts",
+    "Invalid tokens, empty sequences and cap exhaustion retained in the denominator",
+    "Interrupted batches resume with identical tokens; complete evaluation resumes without new generation",
+    "Cached identity, row, cap, decoded-action, time and inventory corruption refused",
+    "Model mutation during generation refused before batch save",
+    "Sealed batch changes and late mutation prevent whole-study summary",
+    "Known artificial paired comparison signs and full 36-condition inventory",
+    "Caller Torch RNG and thread count restored after complete evaluation"
+  ],
+  "actual_repository_guard": {
+    "refused": true,
+    "reason": "No frozen SCAN study identity",
+    "test_loader_calls": 0,
+    "paths_before": {
+      "runs/scan-study-v1": false,
+      "reports/scan-runtime/study-identity.json": false,
+      "reports/scan-runtime/study-selection.json": false,
+      "docs/SCAN-PROTOCOL.md": false,
+      "reports/scan-runtime/timing-pilot.json": false,
+      "runs/scan-evaluation-v1": false,
+      "reports/scan-runtime/test-summary.json": false
+    },
+    "paths_after": {
+      "runs/scan-study-v1": false,
+      "reports/scan-runtime/study-identity.json": false,
+      "reports/scan-runtime/study-selection.json": false,
+      "docs/SCAN-PROTOCOL.md": false,
+      "reports/scan-runtime/timing-pilot.json": false,
+      "runs/scan-evaluation-v1": false,
+      "reports/scan-runtime/test-summary.json": false
+    }
+  },
+  "official_fits": 0,
+  "official_test_generation": 0,
+  "remaining": [
+    "Actual train-only timing after priority studies",
+    "Explicit downstream protocol and optimizer/exposure budget",
+    "Initialize and fit all 36 official conditions",
+    "Strict whole-partition test generation and publication of all outcomes"
+  ]
+}

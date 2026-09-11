@@ -28,7 +28,7 @@ IDENTITY = REPORTS/'study-identity.json'
 SELECTION = REPORTS/'study-selection.json'
 PROTOCOL = Path('docs/SCAN-PROTOCOL.md')
 PILOT = REPORTS/'timing-pilot.json'
-SOURCES = ('scan_study.py', 'scan_conditions.py', 'scan_train.py', 'scan_runtime.py',
+SOURCES = ('scan_study.py', 'scan_evaluate.py', 'scan_test_inputs.py', 'scan_conditions.py', 'scan_train.py', 'scan_runtime.py',
     'scan_task.py', 'scan_inputs.py', 'scan_pilot.py', 'scan.py', 'language_train.py',
     'model.py', 'baselines.py', 'graph.py', 'inference.py', 'tokenizer.py',
     'provenance.py', 'train.py', 'corpus_cache.py')

@@ -38,8 +38,9 @@ The [train-only timing pilot](scan-timing-pilot.md) now has a tested command,
 but its full-size measurements await the priority queues. A separate
 [whole-study coordinator](scan-study-coordinator.md) now implements immutable
 declaration, serial execution and the all-36 terminal-checkpoint gate. Actual
-cost measurement, the fixed optimizer/exposure budget and the whole-partition
-test harness remain pending. This preparation API itself intentionally sets no
+cost measurement and the fixed optimizer/exposure budget remain pending. The
+[whole-partition evaluator](scan-evaluation.md) now implements the later test
+workflow; no official instruction generation has run. This preparation API itself sets no
 training budget and runs no scheduler. Keep the registered BabyLM comparison
 and chosen neuron-selection study ahead of these new fits. See the
 [experimental design](instruction-transfer.md) for interpretation and limits.

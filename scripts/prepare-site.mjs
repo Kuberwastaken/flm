@@ -282,19 +282,21 @@ await copyFile('flm/scan_inputs.py', 'public/research/scan_inputs.py');
 await copyFile('scripts/scan_source_audit.py', 'public/research/scan_source_audit.py');
 await copyFile('reports/scan-runtime/input-preflight.json', 'public/research/scan-input-preflight.json');
 await copyFile('reports/scan-runtime/source-preflight.json', 'public/research/scan-source-preflight.json');
-for (const name of ['scan_study.py', 'scan_conditions.py', 'scan_pilot.py'])
+for (const name of ['scan_study.py', 'scan_evaluate.py', 'scan_test_inputs.py', 'scan_conditions.py', 'scan_pilot.py'])
   await copyFile(`flm/${name}`, `public/research/${name}`);
-await copyFile('tests/test_scan_study.py', 'public/research/test_scan_study.py');
-for (const name of ['condition-preflight', 'pilot-preflight', 'study-preparation'])
+for (const name of ['test_scan_study.py', 'test_scan_evaluate.py', 'test_scan_test_inputs.py'])
+  await copyFile(`tests/${name}`, `public/research/${name}`);
+for (const name of ['condition-preflight', 'pilot-preflight', 'study-preparation', 'evaluation-preparation'])
   await copyFile(`reports/scan-runtime/${name}.json`, `public/research/scan-${name}.json`);
-for (const name of ['SCAN-STUDY-COORDINATOR', 'SCAN-CONDITION-PREPARATION', 'SCAN-TIMING-PILOT']) {
+for (const name of ['SCAN-STUDY-COORDINATOR', 'SCAN-EVALUATION', 'SCAN-CONDITION-PREPARATION', 'SCAN-TIMING-PILOT']) {
   let note = await readFile(`docs/${name}.md`, 'utf8');
   for (const [source, target] of [
     ['INSTRUCTION-TRANSFER.md', 'instruction-transfer.md'],
     ['SCAN-STUDY-COORDINATOR.md', 'scan-study-coordinator.md'],
+    ['SCAN-EVALUATION.md', 'scan-evaluation.md'],
     ['SCAN-CONDITION-PREPARATION.md', 'scan-condition-preparation.md'],
     ['SCAN-TIMING-PILOT.md', 'scan-timing-pilot.md'],
-    ['../flm/', ''], ['../tests/test_scan_study.py', 'test_scan_study.py'],
+    ['../flm/', ''], ['../tests/', ''],
     ['../reports/scan-runtime/', 'scan-'],
   ]) note = note.replaceAll(source, target);
   await writeFile(`public/research/${name.toLowerCase()}.md`, note);
@@ -303,6 +305,7 @@ let instructionNote = await readFile('docs/INSTRUCTION-TRANSFER.md', 'utf8');
 for (const [source, target] of [
   ['SCAN-CONDITION-PREPARATION.md', 'scan-condition-preparation.md'],
   ['SCAN-STUDY-COORDINATOR.md', 'scan-study-coordinator.md'],
+  ['SCAN-EVALUATION.md', 'scan-evaluation.md'],
   ['../data/cards/scan.json', 'scan-data-card.json'],
   ['../public/research/', ''],
   ['../scripts/scan_data_report.py', 'scan_data_report.py'],
