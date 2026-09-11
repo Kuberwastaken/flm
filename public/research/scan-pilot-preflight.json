@@ -1,0 +1,27 @@
+{
+  "verified_utc": "2026-09-10T23:18:09.897994+00:00",
+  "source_sha256": {
+    "flm/scan_pilot.py": "3462654e5d227c01b2b039d0a4517643961b06df98c091db4046af5d664de3fb",
+    "tests/test_scan_pilot.py": "77b494fb9477d8d65b0ffcfa34f59e7c088135d8b3802bee12f1e62a7bd7f148",
+    "flm/scan_conditions.py": "319c4796bca42ab02708bf8742b80d914b5817691df3125d12d33f56310a486a",
+    "flm/scan_train.py": "b850d7b87a00dc7cf5e91d91ca2b25ddf09cf59c2b6a2d8828c1f5d645c8b31c",
+    "flm/scan_runtime.py": "e814c3fcf5acc28e7be5dbc7a5f0856f0b9d984c3177198f6bac4d65611f3c3f"
+  },
+  "focused_tests_passed": 5,
+  "test_command": "python -X utf8 -m unittest discover -s tests -p test_scan_pilot.py -v",
+  "fixture_scope": "Three-update tiny FLM/GRU/transformer models and synthetic attempt records, not actual SCAN fits or timing results.",
+  "checks": [
+    "Original weights, mode, gradients and RNG remain unchanged",
+    "Warmup excluded from measured exposure; row-stream hash and total counts match the fitting sampler",
+    "Nonfinite loss restores RNG and thread count",
+    "Incomplete real priority queues refuse before data/model preparation",
+    "Failed attempts retain completed cases and failure records; completed reports refuse overwrite"
+  ],
+  "planned_conditions": 18,
+  "planned_warmup_updates": 3,
+  "planned_measured_updates": 12,
+  "real_priority_refusal": "Priority language-control and BabyLM training queues must finish before the SCAN timing pilot",
+  "actual_pilot_started": false,
+  "test_partitions_opened": false,
+  "active_core_identity_unchanged": true
+}
