@@ -1,0 +1,36 @@
+{
+  "verified_utc": "2026-09-11T20:16:06.501573+00:00",
+  "content_commit": "de9276827393bcc239c6bee4706af9d870bd9e4f",
+  "ci_run": 34643110451,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-handoff.md": {
+      "bytes": 6752,
+      "sha256": "f36fcb09a344e540aabfec8cc826291a4621146e88a91d3b79d4c300027eef51"
+    },
+    "research/babylm-handoff/audit_babylm_completion.py": {
+      "bytes": 7249,
+      "sha256": "65dc3c62e8a10b608ae42b3185488598cb9884a52d34b0f0fc83ddbb19d58732"
+    },
+    "research/babylm-handoff/completion-preparation.json": {
+      "bytes": 1560,
+      "sha256": "15113bb6b4f5bd7012b13ae559a7660182215ce73166cdc43b45b98814ebcaaa"
+    },
+    "research/babylm-handoff/completion-transformer-100m-s42.json": {
+      "bytes": 9801,
+      "sha256": "1a47449cac409c0ff1c777f3102f08892f861dda13a02ce247fc5c4b88248ab1"
+    },
+    "research/babylm-handoff/test_babylm_completion_command.py": {
+      "bytes": 4290,
+      "sha256": "18ec79d389eeb19f7567d4afe4539ab15bdc4d4cd3c62d8e4497fcc288fa3787"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9402600,
+      "sha256": "b668c706e55689c6ff8a4c6a39e7487027f996a0f96f64f29e2806fc36c7ca90"
+    }
+  },
+  "public_relative_links_checked": 10,
+  "source_archive_files": 493,
+  "software_tests": "4 completion-command tests passed on artificial declarations. The actual 100M transformer seed-42 audit exactly reproduced the previous checkpoint and validation record, with numerical sources checked against its training commit. All 74 JavaScript tests passed in publishing. No new training or inference."
+}
