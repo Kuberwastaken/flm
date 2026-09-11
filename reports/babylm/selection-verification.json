@@ -3,8 +3,9 @@
   "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
   "registered_runs": 12,
   "validation_records_checked": 288,
-  "scope": "Reproduced the existing twelve-run selection exactly with the frozen selection verifier; restored selected/final checkpoints, checked fixed protocol and all validation observations. No new selection file, model forward pass or test-token access by this verification.",
+  "scope": "Reproduced the existing twelve-run selection exactly with the frozen selection verifier; restored selected/final checkpoints, checked fixed protocol and all validation observations. This verifier hashes and maps all prepared caches, including test data, to verify cache identity and block boundaries. It performs no model forward pass or test likelihood calculation.",
   "verifier_sha256": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
   "handoff_source_and_package_bindings_unchanged": true,
-  "test_results_complete": false
+  "test_results_complete": false,
+  "scope_correction": "The original wording incorrectly said no test-token access. Cache verification does access those bytes; no model test scoring was performed by this selection verification."
 }

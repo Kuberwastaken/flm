@@ -213,6 +213,7 @@ def main():
         'reports/babylm/completion-gru-100m-s43.json',
         'reports/babylm/completion-transformer-100m-s43.json',
         'reports/babylm/selection.json', 'reports/babylm/selection-verification.json',
+        'reports/babylm/evaluation-recovery.json', 'tests/test_babylm_result_writing.py',
         'scripts/language_learning_pilot_preflight.py', 'tests/test_language_learning_pilot.py',
         'reports/language-eligibility/pilot-preflight.json',
         'scripts/language_learning_input_preflight.py', 'tests/test_language_learning_inputs.py',

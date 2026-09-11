@@ -141,9 +141,50 @@ The supervisor observed the trainer and all observed children exit and started
 held-out scoring at 2026-09-11 21:54:10 UTC. The [twelve-run selection](../reports/babylm/selection.json)
 was frozen before scoring. A subsequent [verification](../reports/babylm/selection-verification.json)
 reproduces it exactly with the frozen verifier, restoring selected/final
-checkpoints and checking all 288 validation records. This verification did not
-run model inference or read test tokens.
+checkpoints and checking all 288 validation records. It hashes and maps all
+prepared caches, including test data, for identity and boundary checks; it does
+not run model inference or calculate test likelihoods. The verification record
+corrects the original overly broad claim that it did not access test tokens.
 
 This is a dated operational milestone, not a completed held-out comparison.
 Fixed continuations and selection timing remain later stages of the same
 supervised queue; the earlier arming and single-fit records above are historical.
+
+## Evaluation recovery
+
+The first held-out attempt stopped on 11 September at 22:25:55 UTC after scoring
+all 3,187 blocks for its first model. Result assembly supplied `checkpoint_step`
+both through the frozen selection and as a separate keyword, causing a
+`TypeError`. No completed model result or study summary was written. Training,
+checkpoint selection and numerical scoring were not changed by the repair.
+
+The duplicate keyword was removed. A regression exercises the actual main
+result-writing path for twelve artificial selections containing this field,
+with toy scored blocks; it writes and checks all results and the summary. The
+same test reproduces the error with the original statement. Together with
+selection, cache and supervisor checks, 26 tests pass. These are software
+checks, not additional scientific results.
+
+The stopped supervisor and evaluator were confirmed absent. All 400 files from
+the failed cache (399 batch records and one identity) are preserved locally at
+`runs/babylm-evaluation-failed-20260911-v1`, with every byte hash checked before
+and after moving. They cover 18,177,107 tokens and 51,722,871 bytes. The old
+supervisor directory and log remain intact. Because evaluator source identity
+changed, the corrected attempt scores afresh instead of relabeling old batches.
+The frozen twelve-model selection remains byte-identical.
+
+An explicit completed-training mode permits a new supervised attempt without
+inventing a live trainer PID. It verifies all twelve completed fits, takes the
+same exclusive lease, binds current source/package identities, waits for known
+jobs to exit, and preserves the existing-output and full-inventory gates.
+Missing-fit and busy-job tests verify that it cannot bypass these prerequisites.
+It does not automatically retry a failure.
+
+```powershell
+python -u -X utf8 scripts/continue_babylm_research.py --completed-training --output work/babylm-post-training-v2
+```
+
+The [recovery record](../reports/babylm/evaluation-recovery.json) retains the
+failed attempt, cache preservation, software tests and corrected source hashes.
+The corrected queue retains the original order: complete held-out evaluation,
+fixed continuations, then selection timing. Complete-study results remain pending.
