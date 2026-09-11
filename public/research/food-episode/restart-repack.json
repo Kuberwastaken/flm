@@ -1,0 +1,54 @@
+{
+  "verified_utc": "2026-09-11T18:11:15.031177+00:00",
+  "checks": {
+    "observations": 24,
+    "complete_episodes": 8,
+    "interrupted_attempts": 4,
+    "matched_physical_restarts": 4,
+    "new_physics_steps": 0,
+    "task_training_updates": 0
+  },
+  "records": 46,
+  "archive_members": 58,
+  "bytes": 1062133,
+  "sha256": "c94cbd73d40051d8ffd1fce79c9983ccfcbb3c24333189be19dc0a5eb6739cb4",
+  "bundle_manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+  "auditor_sha256": "bdb81e068c6dccacd3f508e473c9690756ffee54fc44d25d54372c6aa51733e8",
+  "numpy": "2.5.3",
+  "source_identity": {
+    "scope": "Short physical restart checks, with every food-learning update disabled.\n\nFour cores each run a direct 20-ms episode, an interrupted 10-ms attempt, and\na fresh 20-ms restart. Exact agreement tests restarting initial conditions;\nthis does not checkpoint/resume a running simulator or demonstrate navigation.\n",
+    "source_sha256": {
+      "flm/food_episode_store.py": "f9303147bc6997638640411f47b0c4f5700758eeef5746f235c929736b98e7eb",
+      "tests/test_food_episode_store.py": "2124c8013d4eb5ed4fbb987ea5d2944210c6ba8e0ba1326b3cd137367285054b",
+      "experiments/embodiment/verify_food_episode_store.py": "f1b19bbc43896344d4bc5aacff0b07300a9ee5b85f31632aee92b924cb33fc3b",
+      "flm/food_episode.py": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c",
+      "experiments/embodiment/food_learning_environment.py": "37ece79ef7929d2fe66675b58f693a5ccf90f1e99fd41453174af9757051e18b"
+    },
+    "bundle_manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+    "model_ids": [
+      "initial-s42",
+      "language-s42",
+      "initial-s43",
+      "language-s43"
+    ],
+    "clock": {
+      "physics_timestep_s": 0.0001,
+      "steps_per_action": 100,
+      "maximum_physics_steps": 200
+    },
+    "rewards": {
+      "sugar_scale": 2.0,
+      "contact_offset": -1.0,
+      "timeout": 0.0
+    },
+    "action_seed": 29,
+    "gait_seed": 17,
+    "learning": false,
+    "complete_episodes_expected": 8,
+    "interrupted_attempts_expected": 4,
+    "task_training_updates": 0
+  },
+  "scope": "Fresh extraction of all original records, complete controller and sensor replay, and byte-identical archive reproduction. Same numerical routines; no new physics or learning.",
+  "repacked_bytes_equal_to_published_archive": true,
+  "extracted_archive_sha256": "c94cbd73d40051d8ffd1fce79c9983ccfcbb3c24333189be19dc0a5eb6739cb4"
+}

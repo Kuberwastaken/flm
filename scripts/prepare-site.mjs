@@ -163,6 +163,10 @@ await mkdir('public/research/food-episode', { recursive: true });
 for (const source of ['flm/food_episode.py', 'tests/test_food_episode.py',
   'experiments/embodiment/food_learning_environment.py', 'experiments/embodiment/verify_food_episode.py',
   'scripts/package_food_episode_smoke.py', 'scripts/audit_food_episode_smoke.py',
+  'flm/food_episode_store.py', 'tests/test_food_episode_store.py',
+  'experiments/embodiment/verify_food_episode_store.py', 'scripts/package_food_episode_store.py',
+  'reports/food-episode/restart-verification.json', 'reports/food-episode/restart-tests.json',
+  'reports/food-episode/restart-repack.json',
   'reports/food-episode/preparation.json', 'reports/food-episode/archive-audit.json'])
   await copyFile(source, `public/research/food-episode/${source.split('/').at(-1)}`);
 await writeFile('public/research/food-episode-runner.md', (await readFile('docs/FOOD-EPISODE-RUNNER.md', 'utf8'))
@@ -170,8 +174,11 @@ await writeFile('public/research/food-episode-runner.md', (await readFile('docs/
   .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
   .replaceAll('PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md')
   .replaceAll('../flm/food_episode.py', 'food-episode/food_episode.py')
+  .replaceAll('../flm/food_episode_store.py', 'food-episode/food_episode_store.py')
+  .replaceAll('../tests/test_food_episode_store.py', 'food-episode/test_food_episode_store.py')
   .replaceAll('../experiments/embodiment/', 'food-episode/')
   .replaceAll('../scripts/audit_food_episode_smoke.py', 'food-episode/audit_food_episode_smoke.py')
+  .replaceAll('../scripts/package_food_episode_store.py', 'food-episode/package_food_episode_store.py')
   .replaceAll('../reports/food-episode/', 'food-episode/')
   .replaceAll('../public/research/', ''));
 await mkdir('public/research/food-sensors', { recursive: true });
