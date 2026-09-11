@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. The 10M FLM and GRU seed-42 runs have finished; the serial queue continues. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. All three 10M seed-42 runs have finished; FLM seed 43 is training. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -103,6 +103,8 @@ The core is a differentiable rate network. Contact counts and neurotransmitter a
 ![Raw-contact boundary cuts for all eight candidate inventories, with their differing neuron counts.](public/research/figures/selection-feasibility.svg)
 
 The named family inventories retain more internal raw contacts but use different numbers of neurons and edges. This is not a matched performance comparison. All 316 PAM and 16 PPL1 cells have fast sign zero in the acquired runtime: selecting them alone would not restore their outgoing modulatory pathways. The [complete records](reports/selection-feasibility/summary.json), [candidate body IDs](reports/selection-feasibility/candidate-body-ids.json) and [planned controls](docs/SELECTION-STUDY.md) keep selection, dynamics and learning-rule questions distinct.
+
+The [publisher reconciliation](docs/PUBLISHER-ANNOTATIONS.md) verifies every runtime type and superclass against curated body annotations. Transmitter consensus matches all 166,522 bodies with records; 178 missing records stay explicit. Its 5,293-row candidate export adds ALPN-class upstream candidates and richer instance labels, without claiming that a functional subcircuit has been established.
 
 </details>
 
@@ -193,7 +195,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 2 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 3 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 

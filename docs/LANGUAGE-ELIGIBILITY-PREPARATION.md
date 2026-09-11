@@ -91,8 +91,9 @@ The [complete window-gradient kernel](LANGUAGE-ELIGIBILITY-KERNEL.md) now
 integrates the primitive with all six core trace groups and instantaneous lexical
 gradients. Seven additional fixture tests cover full-model state/gradient parity
 under the declared approximation, masked loss reduction and an optimizer update
-after restoring a tiny checkpoint. A full provenance-aware language trainer and
-its resumption checks are still required. Then measure actual memory and time on
+after restoring a tiny checkpoint. The [four-condition runner](LANGUAGE-LEARNING-RUNNER.md)
+also verifies resumption on supplied artificial data. Official input binding is
+still required. Then measure actual memory and time on
 disposable training-only pilots. Declare a matched BPTT, fixed-core, eligibility and history-removal
 protocol before fitting, using common data, initialization, exposure and
 selection rules. Keep all failed and inferior results. Existing priority queues
