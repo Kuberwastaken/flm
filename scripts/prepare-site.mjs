@@ -253,6 +253,18 @@ for (const name of ['PHYSICAL-STATE-SEMANTICS', 'FOOD-CORE-PHYSICAL-RESULTS', 'F
 }
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
+await mkdir('public/research/babylm-result-tables', { recursive: true });
+for (const [source, target] of [
+  ['scripts/babylm_result_tables.py', 'babylm_result_tables.py'],
+  ['tests/test_babylm_result_tables.py', 'test_babylm_result_tables.py'],
+  ['reports/babylm/result-tables-preparation.json', 'preparation.json'],
+]) await copyFile(source, `public/research/babylm-result-tables/${target}`);
+await writeFile('public/research/babylm-result-tables.md', (await readFile('docs/BABYLM-RESULT-TABLES.md', 'utf8'))
+  .replaceAll('../scripts/babylm_result_tables.py', 'babylm-result-tables/babylm_result_tables.py')
+  .replaceAll('../tests/test_babylm_result_tables.py', 'babylm-result-tables/test_babylm_result_tables.py')
+  .replaceAll('../reports/babylm/result-tables-preparation.json', 'babylm-result-tables/preparation.json')
+  .replaceAll('BABYLM-HANDOFF.md', 'babylm-handoff.md')
+  .replaceAll('BABYLM-EVALUATION.md', 'babylm-evaluation.md'));
 await mkdir('public/research/babylm-handoff', { recursive: true });
 for (const [source, target] of [
   ['scripts/continue_babylm_research.py', 'continue_babylm_research.py'],
