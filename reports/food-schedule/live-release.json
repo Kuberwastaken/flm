@@ -1,0 +1,44 @@
+{
+  "verified_utc": "2026-09-11T18:39:26.281834+00:00",
+  "content_commit": "eeff568d8ddee61bbe43c2ea442142d84452ba12",
+  "ci_run": 34634269110,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/food-adaptation-schedule.md": {
+      "bytes": 7376,
+      "sha256": "ae33c59228aca9217543bfbabdad156e254e0f1dd02ad5765dfdd5c7e3677441"
+    },
+    "research/food-episode-runner.md": {
+      "bytes": 12173,
+      "sha256": "12d12dfe44600e0e7da2eb0f635fccf904e5df1ee9a669030a834dc77decb2ce"
+    },
+    "research/food-readout-learning.md": {
+      "bytes": 6793,
+      "sha256": "a101bccdbb63d82b029670ca8b3ddae1481c9e3ed24ebcf628dc366a926cd4aa"
+    },
+    "research/food-response-plan.md": {
+      "bytes": 8469,
+      "sha256": "d5dfe1ed2df826425d60ed3cef2fbcd6f2888c568342d879a347b3b0dd625b96"
+    },
+    "research/food-schedule/food_schedule.py": {
+      "bytes": 16890,
+      "sha256": "8d4da00c9ba9f7cf49f8b2c8217458f30b0f8aa09b23e0dedc86f37d5d24b90f"
+    },
+    "research/food-schedule/preparation.json": {
+      "bytes": 4963,
+      "sha256": "c21dc95822c054c9ce6ebafac5bbb45ca49ca4be5bac2487c65930ba0d554d14"
+    },
+    "research/food-schedule/test_food_schedule.py": {
+      "bytes": 16753,
+      "sha256": "8ca23657ee0e967a37ffe16fc83921cbe02df511f52c3c1f9e056bf7f06cbb7f"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9361304,
+      "sha256": "654a7a8b1d3397df9d6595854588660e44bbc17f47149cbdb7cfd015bb5a3257"
+    }
+  },
+  "public_relative_links_checked": 42,
+  "source_archive_files": 477,
+  "software_tests": "17 schedule execution tests passed in each of two Python environments; all 74 JavaScript tests passed in the publishing workflow. Four-neuron toy fixtures are not physical adaptation or language-transfer evidence."
+}
