@@ -10,7 +10,7 @@ The central question is whether measured neural wiring or its associated computa
 
 ## Current order of work
 
-1. **Finish the fixed BabyLM comparison and its declared evaluation.** Nine of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus all three 100M architectures at seed 42. The 100M FLM seed-43 run is active. Preserve the registered inventory and common test gate.
+1. **Finish the fixed BabyLM comparison and its declared evaluation.** Nine of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus all three 100M architectures at seed 42. The 100M FLM seed-43 run is active. Preserve the registered inventory and common test gate. The [armed process supervisor](BABYLM-HANDOFF.md) waits for the bound trainer and its observed children to exit, then runs the declared evaluation, fixed continuations and selection cost pilot serially after completion checks. It chooses no groups or budget.
 2. **Test selection before further dataset or model scaling.** After that queue finishes and its trainer exits, measure selection costs, choose complete comparison groups for anatomical and computational reasons, freeze the protocol and run every registered control. No selection-language result exists yet.
 3. **Keep later studies separate.** Alternative language learning, symbolic instruction transfer and food-task adaptation have distinct preparation, budgets and inferential questions. They do not replace the selection comparison. Broader datasets and capacity scaling remain part of the eventual objective.
 
