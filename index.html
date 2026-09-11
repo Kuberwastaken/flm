@@ -314,7 +314,7 @@
                 <figure><h3 id="choice-replay-after-title">After training</h3><svg id="choice-replay-after" viewBox="0 0 360 360" role="img" aria-label="Trained fly's recorded path and heading"></svg><figcaption id="choice-replay-after-note"></figcaption></figure>
               </div>
               <p>Orange shows the path up to the selected frame; gray shows the complete recording. The first saved frame is at 0.0001 s. Every tenth recorded frame is shown without interpolation. All 40 trials reduce to two motor commands and two exactly repeated paths, not 40 independent motor skills.</p>
-              <p>This model learned abstract cues, not text or food sensing. Fruit attraction and sugar contact are separate proposed tests; <a href="/research/food-response-plan.md">the before/after study outline</a> keeps them distinct from these results.</p>
+              <p>This model learned abstract cues, not text or food sensing. Food sensors and a scripted odor-approach reference are separate engineering tests; <a href="/research/food-response-plan.md">the before/after study outline</a> distinguishes them from the proposed food-learning comparison.</p>
               <div class="document-links"><a href="/research/choice-replay.json">Replay frames and all checkpoint identities · JSON</a><a href="/research/choice_replay.py">Frame export and verification · Python</a></div>
             </div>
           </details>
@@ -337,6 +337,22 @@
             <details><summary>Recorded neural state in the video trial</summary><figure class="measured-figure"><a href="/research/figures/closed-loop-neural.png"><img src="/research/figures/closed-loop-neural.svg" loading="lazy" width="1600" height="800" alt="Actual fast and slow state for all 256 neurons over the two-second eligibility feedback trial."></a><figcaption>Each column holds the actual state for its following 5 ms control interval. The network resets every 55 ms to match its episodic training. Fast and slow panels have separate signed color scales. These are recorded inference states from the MaleCNS subset; the physical body comes from a different, female specimen.</figcaption></figure></details>
             <div class="document-links"><a href="/research/closed-loop.pdf">Physical feedback note · PDF</a><a href="/research/closed-loop.json">All conditions and paired differences</a><a href="/research/closed-loop.csv">Summary measurements · CSV</a><a href="/research/closed-loop-records.zip">Controllers, every trace and standalone audit · ZIP</a><a href="/research/closed-loop-protocol.md">Declared feedback protocol</a><a href="/research/closed-loop-reproduction.md">Reproduction instructions · Markdown</a></div>
           </div>
+        </section>
+        <section id="food-approach-study" aria-labelledby="food-approach-title">
+          <h2 id="food-approach-title">Following odor with a scripted controller</h2>
+          <p>A fixed rule now steers the physical fly using the difference between odor A at its left and right antenna origins. It receives no source coordinates and stops when a foot-origin contact sensor fires. All seven declared cases completed; no neural model or training is used.</p>
+          <figure class="measured-figure"><a href="/research/figures/food-approach.png"><img src="/research/figures/food-approach.svg" loading="lazy" width="2380" height="756" alt="Actual scripted odor-approach paths and all seven outcomes: contact with A at 0.65 or 0.68 seconds, unchanged neutral contact after sugar reversal, and two no-contact trials."></a><figcaption>Every declared case is retained. The repeat, sugar-reversed and neutral cases share the same verified physical path. Missing odor matches straight walking exactly. These are thorax paths; the virtual contact sensor uses foot origins.</figcaption></figure>
+          <div class="table-scroll"><table><caption>First sampled source contact · 100 Hz observations · one gait seed</caption><thead><tr><th>Condition</th><th>Contact time</th><th>Outcome</th></tr></thead><tbody>
+            <tr><td>Odor A on the left</td><td>0.65 s</td><td>A · sugar</td></tr>
+            <tr><td>Odor A on the right</td><td>0.68 s</td><td>A · sugar</td></tr>
+            <tr><td>Sugar identities reversed</td><td>0.65 s</td><td>A · neutral; sugar remains at B</td></tr>
+            <tr><td>Both sources neutral</td><td>0.65 s</td><td>A · neutral</td></tr>
+            <tr><td>Odor removed</td><td>No contact by 2 s</td><td>Censored at the full time budget</td></tr>
+            <tr><td>Straight reference</td><td>No contact by 2 s</td><td>Censored at the full time budget</td></tr>
+            <tr><td>Exact-seed repeat</td><td>0.65 s</td><td>A · sugar</td></tr>
+          </tbody></table></div>
+          <p>The rule follows an odor even after the sugar assignment changes. It has no learned association to reverse. This supplies a physical reference for later learning tests; it establishes neither language transfer nor a feeding response. A standalone audit replays all 1,407 recorded sensor and command observations without rerunning physics.</p>
+          <div class="document-links"><a href="/research/food-approach-results.md">Findings and limitations</a><a href="/research/food-approach-reference.md">Prior physical declaration</a><a href="/research/food-approach-records.zip">All trajectories, source and standalone audit · ZIP</a><a href="/research/figures/food-approach.csv">Every contact outcome · CSV</a></div>
         </section>
         <section aria-labelledby="physics-title">
           <h2 id="physics-title">A physical body, with reproducible controls</h2>

@@ -1,0 +1,67 @@
+{
+  "verified_utc": "2026-09-11T13:54:53.910652+00:00",
+  "identity_sha256": "b4af11df71760f25ebee77c05c66f7eedf0751e6b5ab0e56a2f31b30acbd682c",
+  "summary_sha256": "6ddf5c8658fe0b6e67bf4c56a0e40d4cee2d81f3eb5bdd5e5ca5994108500612",
+  "auditor_sha256": "a740b95458611977553ee984244ef4e0fc95934232768740438425ac476de21f",
+  "sensor_auditor_sha256": "73e822864219043ae72793a722ea37bdcd5566da89a742bb2b707d6e80e817ed",
+  "trials": 7,
+  "complete_cases": 7,
+  "failed_cases": 0,
+  "observations_replayed": 1407,
+  "paired_replays": [
+    {
+      "first": "odor-a-left",
+      "second": "odor-a-left-repeat",
+      "both_complete": true,
+      "exact_array_equal": {
+        "time_s": true,
+        "body_positions_mm": true,
+        "thorax_quaternion_wxyz": true,
+        "qpos": true,
+        "sensory": true,
+        "raw_odor": true,
+        "contact_mask": true,
+        "descending_signal": true
+      }
+    },
+    {
+      "first": "odor-a-left",
+      "second": "odor-a-left-reversed",
+      "both_complete": true,
+      "exact_array_equal": {
+        "time_s": true,
+        "body_positions_mm": true,
+        "thorax_quaternion_wxyz": true,
+        "qpos": true,
+        "descending_signal": true
+      }
+    },
+    {
+      "first": "odor-a-left",
+      "second": "odor-a-left-neutral",
+      "both_complete": true,
+      "exact_array_equal": {
+        "time_s": true,
+        "body_positions_mm": true,
+        "thorax_quaternion_wxyz": true,
+        "qpos": true,
+        "descending_signal": true
+      }
+    },
+    {
+      "first": "odor-a-left-missing",
+      "second": "straight-a-left",
+      "both_complete": true,
+      "exact_array_equal": {
+        "time_s": true,
+        "body_positions_mm": true,
+        "thorax_quaternion_wxyz": true,
+        "qpos": true,
+        "descending_signal": true
+      }
+    }
+  ],
+  "physical_simulation_rerun": false,
+  "language_or_learning_result": false,
+  "scope": "Independent scalar sensor and policy replay plus outcome arithmetic from supplied physical arrays. No independent physics rerun or learned behavior validation."
+}

@@ -8,8 +8,12 @@ conditions and tests are unchanged.
 The [six-channel sensory interface](FOOD-SENSOR-INTERFACE.md) is now implemented
 and calibrated against actual body positions in two short prescribed-motion
 FlyGym repetitions. It separates bilateral odor, sugar contact and source
-contact, with an independent scalar geometry audit. This is preparation;
-no food-task policy, language transfer, approach or feeding result exists.
+contact, with an independent scalar geometry audit. A separate
+[scripted odor-approach reference](FOOD-APPROACH-RESULTS.md) now reaches the
+odor-A patch in the two declared mirrored situations, ignores sugar reversal,
+and times out when odor is removed. Its seven physical trials use no neural
+policy or training. Learned food behavior, language transfer and feeding remain
+untested.
 
 ## What can be compared now
 

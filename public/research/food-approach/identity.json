@@ -1,0 +1,556 @@
+{
+  "study": "scripted-food-approach-v1",
+  "cases": [
+    {
+      "label": "odor-a-left",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-right",
+      "a_side": -1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-reversed",
+      "a_side": 1,
+      "a_sugar": 0.0,
+      "b_sugar": 1.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-neutral",
+      "a_side": 1,
+      "a_sugar": 0.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-missing",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": true,
+      "mode": "odor",
+      "repeat_of": null
+    },
+    {
+      "label": "straight-a-left",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "straight",
+      "repeat_of": null
+    },
+    {
+      "label": "odor-a-left-repeat",
+      "a_side": 1,
+      "a_sugar": 1.0,
+      "b_sugar": 0.0,
+      "missing_odor": false,
+      "mode": "odor",
+      "repeat_of": "odor-a-left"
+    }
+  ],
+  "fields": {
+    "odor-a-left": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-right": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-reversed": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-neutral": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-missing": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "straight-a-left": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    },
+    "odor-a-left-repeat": {
+      "format": "flm-engineered-food-field-v1",
+      "sources": [
+        {
+          "name": "a",
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "sugar": 1.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        },
+        {
+          "name": "b",
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "sugar": 0.0,
+          "contact_radius_mm": 0.75,
+          "contact_height_mm": 0.25
+        }
+      ],
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior."
+    }
+  },
+  "policy": {
+    "name": "Scripted bilateral odor-A approach with latched source-contact stop",
+    "used_channels": [
+      "odor_a_left",
+      "odor_a_right",
+      "source_contact"
+    ],
+    "unused_channels": [
+      "odor_b_left",
+      "odor_b_right",
+      "sugar_contact"
+    ],
+    "control_step_s": 0.01,
+    "base_drive": 0.8,
+    "steering_gain": 24.0,
+    "maximum_turn": 0.4,
+    "contrast_epsilon": 1e-12,
+    "formula": "contrast=(A_left-A_right)/(A_left+A_right+epsilon); turn=clip(gain*contrast,-maximum_turn,maximum_turn); drive=[base-turn,base+turn]",
+    "stop": "Latch any-source contact >= 0.5; thereafter both descending drives are zero",
+    "missing_odor": "Equal zero odor yields equal drives until any-source contact",
+    "coordinates_or_reward_identity_input": false,
+    "training_updates": 0
+  },
+  "sources": {
+    "flm/food_sensors.py": "055ef60491c2ea93c879e271b91efef2c3348899305aa8d59d34733bc4ff6176",
+    "flm/food_approach.py": "68c9dee1ce4ac36820582dd6541097e52ada9ec3808331fb120ec42f12f7c1ad",
+    "tests/test_food_approach.py": "49b6c6bac936d80eb11b104f85808a8455ef1be67dd55469cde2c7f3c691ebab",
+    "experiments/embodiment/food_approach.py": "3704839dee1a1525c0d910ae5fe4707871fdbc4d97f5ab17d0699b18f66b1a2b",
+    "experiments/embodiment/calibrate.py": "fd42f6fa46c83658c81f09f38881dc2c985124406603aad8d27c3010e52b5154",
+    "requirements-embodied-lock.txt": "8441fc299dac61d014782872ed8dbf60634a588a55723a2288ce4abba879a93f",
+    "docs/FOOD-APPROACH-REFERENCE.md": "a30df73810d72811aaa21816bd98a958915e156c4b1643eb4477f971470d3ecf"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "flygym": "2.1.0",
+      "mujoco": "3.9.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "numba": "0.67.0"
+    },
+    "numerical_threads": 1,
+    "windows_priority": "BELOW_NORMAL_PRIORITY_CLASS"
+  },
+  "installed_sources": {
+    "flygym.simulation": "c2a6fded0ccedb2124c1ac421e1b52cb2c087bfa40fcb38f8a32722d21c012d2",
+    "flygym.anatomy": "64ac2cb6239d26ff872e34f2b59e6e35c9182b4b05e21e151e7e7d2c129c0e87",
+    "flygym.compose.fly.base_fly": "9f7ec2c3786972467085cf6a92363cc72a95551226151ff1941fd96800ec677f"
+  },
+  "channels": [
+    "odor_a_left",
+    "odor_a_right",
+    "odor_b_left",
+    "odor_b_right",
+    "sugar_contact",
+    "source_contact"
+  ],
+  "odor_body_origins": [
+    "l_funiculus",
+    "r_funiculus"
+  ],
+  "contact_body_origins": [
+    "lf_tarsus5",
+    "lm_tarsus5",
+    "lh_tarsus5",
+    "rf_tarsus5",
+    "rm_tarsus5",
+    "rh_tarsus5"
+  ],
+  "physics_seed": 17,
+  "physics_timestep_s": 0.0001,
+  "duration_s": 2.0,
+  "control_step_s": 0.01,
+  "expected_physics_steps": 20000,
+  "expected_observations": 201,
+  "language_model_loaded": false,
+  "neural_policy_used": false,
+  "training_updates": 0,
+  "scope": "Scripted sensor-to-action physical reference. No neural learning, language transfer, feeding or ingestion."
+}

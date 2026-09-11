@@ -142,6 +142,7 @@ for (const [source, target] of [
   ['../public/research/', ''],
   ['SUBSET-AUDIT.md', 'subset-audit.md'],
   ['FOOD-SENSOR-INTERFACE.md', 'food-sensor-interface.md'],
+  ['FOOD-APPROACH-RESULTS.md', 'food-approach-results.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
 await mkdir('public/research/food-sensors', { recursive: true });
@@ -156,6 +157,20 @@ await writeFile('public/research/food-sensor-interface.md', (await readFile('doc
   .replaceAll('../flm/food_sensors.py', 'food-sensors/food_sensors.py')
   .replaceAll('../experiments/embodiment/food_sensor_probe.py', 'food-sensors/food_sensor_probe.py')
   .replaceAll('../scripts/audit_food_sensor_probe.py', 'food-sensors/audit_food_sensor_probe.py'));
+await mkdir('public/research/food-approach', { recursive: true });
+for (const name of ['identity.json', 'summary.json', 'audit.json', 'release.json', 'standalone-archive-verification.json'])
+  await copyFile(`reports/food-approach/${name}`, `public/research/food-approach/${name}`);
+for (const source of ['flm/food_approach.py', 'scripts/audit_food_approach.py', 'scripts/audit_food_sensor_probe.py', 'scripts/food_approach_report.py'])
+  await copyFile(source, `public/research/food-approach/${source.split('/').at(-1)}`);
+for (const name of ['FOOD-APPROACH-REFERENCE', 'FOOD-APPROACH-RESULTS'])
+  await writeFile(`public/research/${name.toLowerCase()}.md`, (await readFile(`docs/${name}.md`, 'utf8'))
+    .replaceAll('FOOD-APPROACH-REFERENCE.md', 'food-approach-reference.md')
+    .replaceAll('FOOD-SENSOR-INTERFACE.md', 'food-sensor-interface.md')
+    .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+    .replaceAll('../public/research/', '')
+    .replaceAll('../reports/food-approach/', 'food-approach/')
+    .replaceAll('../scripts/audit_food_approach.py', 'food-approach/audit_food_approach.py')
+    .replaceAll('../flm/food_approach.py', 'food-approach/food_approach.py'));
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');
