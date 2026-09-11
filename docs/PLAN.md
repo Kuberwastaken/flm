@@ -1,6 +1,6 @@
 # FLM implementation and research plan
 
-Started 10 September 2026; status consolidated 11 September 2026 (Asia/Kolkata).
+Started 10 September 2026; status consolidated 12 September 2026 (Asia/Kolkata).
 
 ## Objective and scope
 
@@ -59,7 +59,7 @@ Proceed in this order:
 |---|---|---|
 | Alternative language learning | [Verified BabyLM inputs](LANGUAGE-LEARNING-INPUTS.md), BPTT/fixed-core/eligibility/no-history updates, a [coordinator](LANGUAGE-LEARNING-STUDY.md), validation selection and [all-eight-gated scorer](LANGUAGE-LEARNING-TEST.md). | Actual [cost pilot](LANGUAGE-LEARNING-TIMING.md), official protocol/budget/identity, eight corpus fits and complete evaluation. No official learning-rule language scores exist. |
 | Symbolic instruction transfer | [SCAN data/codec/scoring primitives](INSTRUCTION-TRANSFER.md), [36 prepared source conditions](SCAN-CONDITION-PREPARATION.md), a [timing command](SCAN-TIMING-PILOT.md), a [coordinator with all-36 terminal-checkpoint gate](SCAN-STUDY-COORDINATOR.md), and a [resumable whole-partition evaluator](SCAN-EVALUATION.md). | Actual pilot, downstream protocol/budget, official fits and strict held-out generation. No neural SCAN transfer result or physical instruction execution exists. |
-| Food-task adaptation | Audited sensors, scripted and unadapted core references, [fixture-tested action-readout updates](FOOD-READOUT-LEARNING.md), and a [sampled-action episode runner with durable outcomes and checked physical restarts](FOOD-EPISODE-RUNNER.md). | A declared matched adaptation study and coordinator, episode/action budget, full-horizon sampled-policy baseline, untouched evaluation layouts and reversal/retention phases. No physical adaptation fit or learned food result exists. |
+| Food-task adaptation | Audited sensors, scripted and unadapted core references, [fixture-tested action-readout updates](FOOD-READOUT-LEARNING.md), a [durable episode runner with checked physical restarts](FOOD-EPISODE-RUNNER.md), and a [paired schedule executor with fixed-checkpoint evaluation](FOOD-ADAPTATION-SCHEDULE.md). | Official registration and cost/prerequisite checks, a matched physical adaptation declaration and episode/action budget, full-horizon sampled-policy baseline, untouched evaluation layouts and reversal/retention phases. No physical adaptation fit or learned food result exists. |
 
 These preparations do not displace selection. The later program still includes:
 

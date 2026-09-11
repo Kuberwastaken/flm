@@ -37,7 +37,10 @@ The [episode runner](FOOD-EPISODE-RUNNER.md) now connects sampled readout action
 to the existing physical environment. Eight short, repeated integration checks
 ran with learning disabled; body and neural arrays repeated exactly. This
 supplies no navigation, adaptation or language-benefit result. Full-horizon
-sampled-policy references and the training/evaluation coordinator remain pending.
+sampled-policy references remain pending. A [paired schedule executor](FOOD-ADAPTATION-SCHEDULE.md)
+now checks complete training inventories, readout chaining and evaluation
+isolation with toy transitions. Its official registration, cost/prerequisite
+checks, physical schedule and analysis remain undeclared.
 
 ## What can be compared now
 

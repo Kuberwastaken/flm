@@ -27,8 +27,11 @@ coordinates or read reward identity before the caller supplies terminal reward.
 It copies its initial weight/bias arrays. Its episode state and complete trace
 can be serialized and resumed exactly. The [episode runner](FOOD-EPISODE-RUNNER.md)
 now binds it to the frozen core, action stream and physical environment interface.
-The official study coordinator and complete simulator/gait checkpoint resumption
-remain pending.
+The [paired schedule executor](FOOD-ADAPTATION-SCHEDULE.md) now checks complete
+training inventories and fixed-checkpoint evaluation. Official study
+registration and cost/prerequisite checks remain pending. Interrupted episodes
+restart original conditions; live simulator/gait checkpoint resumption remains
+unimplemented.
 
 ## Learning rule
 
