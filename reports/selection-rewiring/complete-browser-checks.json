@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-09-11T10:47:57.186847+00:00",
+  "url": "http://127.0.0.1:5181/?model=babylm&review=inference-release#research",
+  "content_commit": "373417f8193fdda61c030551704c9704fe3bda06",
+  "method": "Codex browser UI: expand existing selection disclosure, inspect rendered text and screenshots, keyboard-focus download links, read DOM image readiness and captured console errors",
+  "viewport_checks": [
+    {
+      "width": 390,
+      "height": 844,
+      "figure_loaded": true,
+      "caption_readable": true,
+      "download_links_wrap": true,
+      "horizontal_page_overflow": false
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "figure_loaded": true,
+      "caption_readable": true,
+      "download_links_separated": true
+    }
+  ],
+  "errors_observed": [],
+  "temporary_viewport_override_reset": true,
+  "local_node_tests": {
+    "passed": 69,
+    "failed": 0
+  },
+  "source_index_sha256": "092abc172e46bd2d4df126f6bb12444c11ed1bb0c596d30a1cabe0c05d999d78",
+  "publication_note": "The first preview used normalized HTML line endings. The final source preserves pre-existing mixed line endings; complete-final-preview-release.json records exact final build bytes. Visible content is unchanged.",
+  "scope": "Static selection section and existing runtime suite; no new language fit or biological behavior claim"
+}
