@@ -1,0 +1,43 @@
+{
+  "verified_utc": "2026-09-11 15:59:21 UTC",
+  "content_commit": "b504ec53a614d75aa3fc0546ad6249933f7fe825",
+  "ci_run": 34618839626,
+  "ci_conclusion": "success",
+  "javascript_tests": {
+    "passed": 72,
+    "failed": 0
+  },
+  "targeted_python_tests": {
+    "passed": 9,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests -p test_food_core_physical*.py -v"
+  },
+  "browser": "Codex in-app browser",
+  "local_url": "http://127.0.0.1:5181/",
+  "live_url": "https://flm.kuber.studio/#research",
+  "checked_viewports": [
+    {
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "temporary_viewport_override_reset": true,
+  "observed_checks": [
+    "Initial seed 42 recording loads and reports all 201 verified samples.",
+    "Switching from initial to language-trained seed 42 preserves sample 81 at 0.80 seconds; reported first contact changes from 0.80 to 0.72 seconds.",
+    "Mirrored language-trained seed 42 recording retains B neutral contact at 0.72 seconds.",
+    "Language-trained seed 43 missing-odor recording retains A sugar contact at 0.72 seconds.",
+    "Quarter-speed playback advances exact stored samples; time slider permits direct sample selection.",
+    "Keyboard neuron index 1023 updates body-ID and fast/slow numerical readout at the selected time; slow-state display is selectable.",
+    "Desktop renders body and brain side by side; phone stacks the views and fully displays core labels.",
+    "Published initial seed 42 body, contact outcome and neuron readout render at sample 81 (0.80 seconds)."
+  ],
+  "observed_browser_errors": [],
+  "reviewed_figure": "public/research/figures/food-core-physical.png",
+  "figure_correction": "Increased left margin after initial inspection found clipped condition labels; reviewed corrected full figure.",
+  "scope": "UI and release verification only. No new physics, model training, downstream adaptation or transfer conclusion."
+}
