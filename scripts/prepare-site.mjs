@@ -143,6 +143,7 @@ for (const [source, target] of [
   ['SUBSET-AUDIT.md', 'subset-audit.md'],
   ['FOOD-SENSOR-INTERFACE.md', 'food-sensor-interface.md'],
   ['FOOD-APPROACH-RESULTS.md', 'food-approach-results.md'],
+  ['FOOD-CORE-INTERFACE.md', 'food-core-interface.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
 await mkdir('public/research/food-sensors', { recursive: true });
@@ -171,6 +172,17 @@ for (const name of ['FOOD-APPROACH-REFERENCE', 'FOOD-APPROACH-RESULTS'])
     .replaceAll('../reports/food-approach/', 'food-approach/')
     .replaceAll('../scripts/audit_food_approach.py', 'food-approach/audit_food_approach.py')
     .replaceAll('../flm/food_approach.py', 'food-approach/food_approach.py'));
+await mkdir('public/research/food-core', { recursive: true });
+for (const name of ['preparation.json', 'isolated-parity.json', 'release.json'])
+  await copyFile(`reports/food-core/${name}`, `public/research/food-core/${name}`);
+for (const source of ['flm/food_core.py', 'flm/food_core_export.py', 'experiments/embodiment/food_core_runtime.py', 'experiments/embodiment/verify_food_core.py', 'scripts/prepare_food_core.py', 'scripts/package_food_core.py'])
+  await copyFile(source, `public/research/food-core/${source.split('/').at(-1)}`);
+await writeFile('public/research/food-core-interface.md', (await readFile('docs/FOOD-CORE-INTERFACE.md', 'utf8'))
+  .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('../reports/food-core/', 'food-core/')
+  .replaceAll('../flm/food_core.py', 'food-core/food_core.py')
+  .replaceAll('../scripts/prepare_food_core.py', 'food-core/prepare_food_core.py')
+  .replaceAll('../experiments/embodiment/verify_food_core.py', 'food-core/verify_food_core.py'));
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');

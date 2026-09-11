@@ -13,7 +13,10 @@ contact, with an independent scalar geometry audit. A separate
 odor-A patch in the two declared mirrored situations, ignores sugar reversal,
 and times out when odor is removed. Its seven physical trials use no neural
 policy or training. Learned food behavior, language transfer and feeding remain
-untested.
+untested. Four paired initial/language-trained WikiText cores now pass
+[numerical sensory replay](food-core-interface.md) through identical fresh
+adapters, with no food adaptation or physical feedback. The complete-group
+selection comparison remains next after the fixed BabyLM queue.
 
 ## What can be compared now
 
