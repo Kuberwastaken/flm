@@ -1,0 +1,52 @@
+{
+  "verified_utc": "2026-09-11T18:15:51.746258+00:00",
+  "content_commit": "52a737fad2e22f37db7201eba3c5d7656c90819b",
+  "ci_run": 34632055783,
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Complete research-source ZIP checked against current source bytes; restart archive inventory, CRC and hashes verified. No new physics, fitting or test inference.",
+  "http_files": {
+    "research/food-episode-restart-records.zip": {
+      "bytes": 1062133,
+      "sha256": "c94cbd73d40051d8ffd1fce79c9983ccfcbb3c24333189be19dc0a5eb6739cb4"
+    },
+    "research/food-episode-runner.md": {
+      "bytes": 11915,
+      "sha256": "1e7c5a4a047ebc4cd69f7b3305cbb6379bbe02ee660e2c8728c17c9e5703a77e"
+    },
+    "research/food-episode/food_episode_store.py": {
+      "bytes": 11586,
+      "sha256": "f9303147bc6997638640411f47b0c4f5700758eeef5746f235c929736b98e7eb"
+    },
+    "research/food-episode/package_food_episode_store.py": {
+      "bytes": 9196,
+      "sha256": "bdb81e068c6dccacd3f508e473c9690756ffee54fc44d25d54372c6aa51733e8"
+    },
+    "research/food-episode/restart-repack.json": {
+      "bytes": 2503,
+      "sha256": "1662d6ba2d2edb162d5fe233a517dedb185b490ac32b97e615fcba0e75936928"
+    },
+    "research/food-episode/restart-tests.json": {
+      "bytes": 1997,
+      "sha256": "d6d296c81a024c2e4cb893a41bc219de24093b5c749991fefbf450bda461173e"
+    },
+    "research/food-episode/restart-verification.json": {
+      "bytes": 2351,
+      "sha256": "5a00ed8af6adcc06ba5c8a805074a8fd45f9a16572d8bcb49ae8c3e9f249c518"
+    },
+    "research/food-episode/test_food_episode_store.py": {
+      "bytes": 12196,
+      "sha256": "2124c8013d4eb5ed4fbb987ea5d2944210c6ba8e0ba1326b3cd137367285054b"
+    },
+    "research/food-episode/verify_food_episode_store.py": {
+      "bytes": 7269,
+      "sha256": "f1b19bbc43896344d4bc5aacff0b07300a9ee5b85f31632aee92b924cb33fc3b"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9347003,
+      "sha256": "cd25942dc8a1cc3acc5a9db25880bb9226222334230972fe084af192fededfd9"
+    }
+  },
+  "public_relative_links_checked": 18,
+  "source_archive_files": 473,
+  "software_tests": "14 new episode-durability tests passed in each of two Python environments; 74 JavaScript tests passed in the publishing workflow. Four short physical restart comparisons, eight complete episodes and four retained interruptions, all learning disabled, have separate records. Repacking the extracted originals produced byte-identical archive bytes.",
+  "restart_archive_members": 58
+}
