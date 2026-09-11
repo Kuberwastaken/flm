@@ -2,6 +2,7 @@ import { loadFinalStudy } from './final-study.js';
 import { loadBabyLMStudy } from './babylm-study.js';
 import { loadWiringStudy } from './wiring-study.js';
 import { loadLanguageTopology } from './language-topology.js';
+import { loadLanguageCore } from './language-core.js';
 import { loadFeedbackStudy } from './closed-loop.js';
 import { loadChoiceReplay } from './choice-replay.js';
 const names = {flm: 'FLM', gru: 'GRU', transformer: 'Transformer'};
@@ -23,6 +24,7 @@ export async function loadResearch() {
   void loadBabyLMStudy();
   void loadWiringStudy();
   void loadLanguageTopology();
+  void loadLanguageCore();
   void loadFeedbackStudy();
   void loadChoiceReplay();
   try {

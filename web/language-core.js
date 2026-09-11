@@ -114,6 +114,20 @@ export async function fetchCoreRecords(base = '/', {fetcher = fetch, signal} = {
   return {report, release, base:prefix};
 }
 
+export async function loadLanguageCore() {
+  const container = document.getElementById('language-core-results');
+  if (!container) return;
+  try {
+    const {report, release, base} = await fetchCoreRecords(import.meta.env.BASE_URL);
+    container.replaceChildren(coreResultsView(report, release, base));
+  } catch {
+    const status = element('p', 'The completed computation comparison could not be verified. Reload to try again, or open the published score records.');
+    const link = element('a', 'Download computation score records');
+    link.href = `${import.meta.env.BASE_URL}research/language-core-records.zip`;
+    container.replaceChildren(status, link);
+  }
+}
+
 // The caller uses decodeCoreResults before mounting a fetched report.
 // Python publication gates verify real checkpoints and recompute bootstrap CIs;
 // this browser component checks the supplied data, not independent model inference.
