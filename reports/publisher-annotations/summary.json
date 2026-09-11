@@ -1,0 +1,240 @@
+{
+  "verified_utc": "2026-09-11T08:00:35.911040+00:00",
+  "scope": "Body-ID reconciliation; no graph replacement or circuit validation",
+  "counts": {
+    "runtime_neurons": 166700,
+    "annotation_present": 166700,
+    "transmitter_present": 166522,
+    "type_exact_matches": 166700,
+    "superclass_exact_matches": 166700,
+    "soma_side_exact_matches": 148833,
+    "soma_then_root_side_matches": 166700,
+    "consensus_nt_matches": 166522,
+    "body_predicted_nt_matches": 146396,
+    "consensus_fast_sign_rule_matches": 166522,
+    "ground_truth_field_nonempty": 85484,
+    "ground_truth_matches_when_present": 85484,
+    "missing_transmitter_with_zero_fast_sign": 178
+  },
+  "publisher_annotations": {
+    "rows": 211577,
+    "columns": [
+      "assignedOlHex1",
+      "assignedOlHex2",
+      "bodyId",
+      "flywireType",
+      "group",
+      "instance",
+      "somaSide",
+      "statusLabel",
+      "superclass",
+      "type",
+      "vfbId",
+      "hemibrainType",
+      "itoleeHl",
+      "supertype",
+      "birthtime",
+      "mancBodyid",
+      "mancGroup",
+      "mancType",
+      "subclass",
+      "synonyms",
+      "class",
+      "rootSide",
+      "somaNeuromere",
+      "trumanHl",
+      "dimorphism",
+      "matchingNotes",
+      "entryNerve",
+      "mancSerial",
+      "mcnsSerial",
+      "serialMotif",
+      "fruDsx",
+      "exitNerve",
+      "receptorType",
+      "somaLocation",
+      "tosomaLocation",
+      "status"
+    ],
+    "matched_runtime_rows": 166700
+  },
+  "publisher_transmitters": {
+    "rows": 1835518,
+    "columns": [
+      "body",
+      "cell_type",
+      "total_nt_predictions",
+      "predicted_nt_confidence",
+      "predicted_nt",
+      "ground_truth",
+      "celltype_total_nt_predictions",
+      "celltype_predicted_nt",
+      "celltype_predicted_nt_confidence",
+      "consensus_nt"
+    ],
+    "matched_runtime_rows": 166522
+  },
+  "family_inventory": {
+    "KC": {
+      "neurons": 4064,
+      "ground_truth_field_nonempty": 0,
+      "runtime_nt": {
+        "acetylcholine": 4064
+      },
+      "consensus_nt": {
+        "acetylcholine": 4064
+      },
+      "curated_classes": {
+        "Kenyon_Cell": 4064
+      },
+      "instances_nonempty": 4064
+    },
+    "MBON": {
+      "neurons": 97,
+      "ground_truth_field_nonempty": 65,
+      "runtime_nt": {
+        "glutamate": 26,
+        "acetylcholine": 50,
+        "gaba": 21
+      },
+      "consensus_nt": {
+        "glutamate": 26,
+        "acetylcholine": 50,
+        "gaba": 21
+      },
+      "curated_classes": {
+        "MBON": 97
+      },
+      "instances_nonempty": 97
+    },
+    "PAM": {
+      "neurons": 316,
+      "ground_truth_field_nonempty": 316,
+      "runtime_nt": {
+        "dopamine": 316
+      },
+      "consensus_nt": {
+        "dopamine": 316
+      },
+      "curated_classes": {
+        "DAN": 316
+      },
+      "instances_nonempty": 316
+    },
+    "PPL1": {
+      "neurons": 16,
+      "ground_truth_field_nonempty": 16,
+      "runtime_nt": {
+        "dopamine": 16
+      },
+      "consensus_nt": {
+        "dopamine": 16
+      },
+      "curated_classes": {
+        "DAN": 16
+      },
+      "instances_nonempty": 16
+    },
+    "APL": {
+      "neurons": 2,
+      "ground_truth_field_nonempty": 2,
+      "runtime_nt": {
+        "gaba": 2
+      },
+      "consensus_nt": {
+        "gaba": 2
+      },
+      "curated_classes": {
+        "": 2
+      },
+      "instances_nonempty": 2
+    },
+    "DPM": {
+      "neurons": 2,
+      "ground_truth_field_nonempty": 0,
+      "runtime_nt": {
+        "dopamine": 2
+      },
+      "consensus_nt": {
+        "dopamine": 2
+      },
+      "curated_classes": {
+        "": 2
+      },
+      "instances_nonempty": 2
+    },
+    "EPG": {
+      "neurons": 50,
+      "ground_truth_field_nonempty": 50,
+      "runtime_nt": {
+        "acetylcholine": 50
+      },
+      "consensus_nt": {
+        "acetylcholine": 50
+      },
+      "curated_classes": {
+        "CX": 50
+      },
+      "instances_nonempty": 50
+    },
+    "PEN": {
+      "neurons": 42,
+      "ground_truth_field_nonempty": 42,
+      "runtime_nt": {
+        "acetylcholine": 42
+      },
+      "consensus_nt": {
+        "acetylcholine": 42
+      },
+      "curated_classes": {
+        "CX": 42
+      },
+      "instances_nonempty": 42
+    },
+    "PEG": {
+      "neurons": 18,
+      "ground_truth_field_nonempty": 18,
+      "runtime_nt": {
+        "acetylcholine": 18
+      },
+      "consensus_nt": {
+        "acetylcholine": 18
+      },
+      "curated_classes": {
+        "CX": 18
+      },
+      "instances_nonempty": 18
+    }
+  },
+  "candidate_rows": 5293,
+  "alpn_inventory": {
+    "neurons": 686,
+    "superclasses": {
+      "cb_intrinsic": 686
+    },
+    "subclasses": {
+      "": 619,
+      "BI": 67
+    }
+  },
+  "missing_transmitter_runtime_labels": {
+    "nan": 178
+  },
+  "acquisition_card_sha256": "eb3807693c9b2889f728048ec1f5f0658240fa433fbcc250d6688a0b06a7ee37",
+  "audit_source_sha256": "ca2029c0f7f00d74ffa9b76c230faefce632999cba8b355aaa0f6f74cb66b19e",
+  "runtime_source_sha256": {
+    "neurons.json.gz": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864",
+    "body_ids.npy": "ddfa789213c8c5066400c026b65c112c267781c2e3ab380a39dd437866e704d6",
+    "fast_sign.npy": "8761a283602b74d66bc7cbe910fbfbcc06da5810e58e306881533eb1fb23b3c4"
+  },
+  "tables": {
+    "candidate-annotations.csv": "5176535c4e11511f068e55eb63b36c43f2baeb3d7acb75a41a538e57a5692194",
+    "missing-transmitter-rows.csv": "47991325680c7b15f6e7bdf3e79f7f4dc329ea5b05696727d4fc3e93d603ac7a"
+  },
+  "limitations": [
+    "The publisher ground_truth column is preserved as source annotation, not independently established here.",
+    "Consensus, per-body predictions and cell-type predictions are different fields; none is silently substituted for another.",
+    "Soma/root side and instance text do not specify every synaptic compartment or prove functional circuit membership.",
+    "The larger publisher tables include segments outside the acquired runtime; row counts are not comparable whole-neuron population estimates."
+  ]
+}

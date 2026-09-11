@@ -81,6 +81,13 @@ and programmatic-access documentation](https://male-cns.janelia.org/download/).
 Those records must be reconciled by body ID with the acquired runtime before
 using them to assert circuit membership. A type-name prefix alone is insufficient.
 
+That [publisher reconciliation](PUBLISHER-ANNOTATIONS.md) is now complete for the
+two body-level tables. Every runtime type and superclass matches; the transmitter
+consensus matches all 166,522 bodies with a publisher record, and 178 missing
+records remain explicit. It also identifies 686 ALPN-class candidates and
+preserves richer instance labels. This is progress toward role-based selection,
+not certification of synaptic compartment coverage or functional preservation.
+
 ## Proposed matched experiment
 
 1. **Validate circuit membership without language feedback.** Choose the circuit

@@ -1,0 +1,27 @@
+{
+  "acquired_utc": "2026-09-11T07:52:26.266273+00:00",
+  "dataset": "MaleCNS v1.0 publisher body annotations and transmitter predictions",
+  "source": "https://male-cns.janelia.org/download/",
+  "license": "CC-BY-4.0",
+  "files": [
+    {
+      "filename": "body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "generation": "1780494878811468",
+      "pinned_url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather?generation=1780494878811468",
+      "bytes": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "gcs_md5_base64": "UKdxh3DFciDxYLpPQxq4ng=="
+    },
+    {
+      "filename": "body-neurotransmitters-male-cns-v1.0.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+      "generation": "1780894899156750",
+      "pinned_url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather?generation=1780894899156750",
+      "bytes": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "gcs_md5_base64": "PYQrEv5cSe763lKNfdJKHw=="
+    }
+  ],
+  "complete": true
+}

@@ -62,6 +62,8 @@ The historical [selection-payload preflight](../reports/babylm/selection-payload
 
 The [food-response extension outline](FOOD-RESPONSE-PLAN.md) separates fruit-like odor navigation, sugar contact and language-to-behavior transfer. It is proposed work, without new fits or food-response results; the browser's before/after replay uses only the existing sensory-choice recordings.
 
+The [publisher annotation reconciliation](PUBLISHER-ANNOTATIONS.md) now binds two generation-pinned body-level tables to the acquired runtime. All types/superclasses agree; transmitter consensus, individual predictions and source `ground_truth` fields remain distinct. The candidate export adds 686 ALPN-class cells to the previously named families. Circuit roles, compartment connectivity and a final functional inclusion rule still need validation before the selection comparison is frozen.
+
 The [SCAN condition preparation](SCAN-CONDITION-PREPARATION.md) now binds all 36 planned combinations to their exact official training rows and verified initial/pretrained source tensors. All combinations passed preparation, and six focused tests cover input changes and fixture resumption. The timing pilot, downstream budget, immutable study declaration, scheduler and whole-study test gate still precede any official transfer fits.
 
 The [train-only timing pilot command](SCAN-TIMING-PILOT.md) is also fixture-tested and refuses unfinished priority queues. Its eighteen disposable seed-42 cases will inform the common downstream budget after the language controls and BabyLM training finish. No full-size pilot measurements exist yet, and pilot weights cannot warm-start the eventual benchmark.
