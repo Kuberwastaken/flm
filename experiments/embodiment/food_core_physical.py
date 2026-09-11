@@ -39,6 +39,11 @@ def conditions(): return tuple(case for case in cases() if case.mode != 'straigh
 
 def identity(bundle):
     inherited = reference_identity()
+    if inherited['environment']['versions']['flygym'] != '2.1.0':
+        raise ValueError('Use pinned FlyGym 2.1.0')
+    for implementation in (HybridTurningController, PreprogrammedSteps, apply_locomotion_action):
+        module = sys.modules[implementation.__module__]
+        inherited['installed_sources'][module.__name__] = sha(module.__file__)
     manifest_path = bundle/'manifest.json'; manifest = json.loads(manifest_path.read_bytes())
     released = json.loads((ROOT/'reports/food-core/preparation.json').read_bytes())
     if manifest != released or tuple(r['id'] for r in manifest['models']) != MODEL_IDS:
@@ -54,7 +59,8 @@ def identity(bundle):
         physical_reference_identity_sha256=sha(ROOT/'runs/embodiment/food-approach-v1/identity.json'),
         scope='Actual closed-loop physics with initial and language-trained cores behind identical unadapted adapters. No food-task learning, feeding or demonstrated transfer benefit.')
     inherited['sources'].update({name: sha(ROOT/name) for name in SOURCES})
-    return inherited
+    # Canonical JSON types make the in-memory identity equal to a resumed file.
+    return json.loads(json.dumps(inherited, allow_nan=False))
 
 
 def metrics(arrays, names, field):
