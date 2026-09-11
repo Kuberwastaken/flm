@@ -1,0 +1,114 @@
+{
+  "verified_utc": "2026-09-11T08:33:37.869027+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/selection-study.md",
+      "status": 200,
+      "bytes": 10131,
+      "sha256": "fab8738b4973ea9621835b6af726fa09576fb57469873aeee4d20cfa905026e3"
+    },
+    {
+      "path": "research/selection-pathways.md",
+      "status": 200,
+      "bytes": 7750,
+      "sha256": "8d2ee1f255d81c10a631386590110191a9fe76e93bdddd87a493598e5aaeab96"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7504065,
+      "sha256": "b797c8053d10329bd58f3cc4eebcd18ec95f188ed478f96741305947a308f5b4"
+    },
+    {
+      "path": "research/selection-pathways/summary.json",
+      "status": 200,
+      "bytes": 4595,
+      "sha256": "564d429011143f81fa5d748d7ee4ad0d0479a35dc89fea78afa553955d4c1b4e"
+    },
+    {
+      "path": "research/selection-pathways/directed-groups.csv",
+      "status": 200,
+      "bytes": 2659,
+      "sha256": "610c8e87e5a8c63e86040cdc72cf3f9bdf2305d1113495aa4d5ef1707208db5f"
+    },
+    {
+      "path": "research/selection-pathways/external-partners.csv",
+      "status": 200,
+      "bytes": 1593624,
+      "sha256": "1eaf2b7284563cf6382a03c1601d416eeeced5460fe019125cba7f521a95d127"
+    },
+    {
+      "path": "research/selection-pathways/kenyon-coverage.csv",
+      "status": 200,
+      "bytes": 1577,
+      "sha256": "8cfa1ab3bc3b79aebe0e39ec6180e5b6373249273b3fc15a3812a2caf062a9f4"
+    },
+    {
+      "path": "research/selection-pathways/figures.json",
+      "status": 200,
+      "bytes": 709,
+      "sha256": "8b34a9b1a7ead642f8c011edf0cb2cf213678e3297f9d6d634010eb527a42f80"
+    },
+    {
+      "path": "research/selection-pathways/selection_pathways.py",
+      "status": 200,
+      "bytes": 12192,
+      "sha256": "fb13eeb2e473087be3c6f12bc2f7b5a40d0ad36457585f1a14c2225eb666df24"
+    },
+    {
+      "path": "research/figures/selection-pathways.svg",
+      "status": 200,
+      "bytes": 102297,
+      "sha256": "3bbd64a5c0bf4d8f71d3293906dd60ddec56bc51f6ff34b67f4237863825f3bd"
+    },
+    {
+      "path": "research/figures/selection-pathways.png",
+      "status": 200,
+      "bytes": 146456,
+      "sha256": "4ed8c8c6ebbea96a146999fd4d7698e75f4386cf196631f6a02c53359e1bcc39"
+    },
+    {
+      "path": "research/figures/selection-pathways.csv",
+      "status": 200,
+      "bytes": 818,
+      "sha256": "e16bc9a25125e6567e001336ef0619d6e43d7f5086cbafa5e8a6c9e24b7d5d27"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-feasibility/selection_feasibility.py",
+    "selection-feasibility/summary.json",
+    "figures/selection-feasibility.svg",
+    "publisher-annotations.md",
+    "selection-pathways.md",
+    "selection-feasibility/candidate-body-ids.json",
+    "figures/selection-feasibility.csv",
+    "selection-study.md",
+    "publisher-annotations.md",
+    "figures/selection-pathways.svg",
+    "selection-pathways/kenyon-coverage.csv",
+    "selection-pathways/external-partners.csv",
+    "selection-pathways/summary.json",
+    "selection-pathways/directed-groups.csv",
+    "selection-pathways/selection_pathways.py"
+  ],
+  "fixture_tests_passed": 3,
+  "independent_prior_scan_group_cells_verified": 98,
+  "external_strata": 32799,
+  "external_totals_reproduce_all_14_directions": true,
+  "kc_type_side_threshold_rows": 58,
+  "paper_source_files_verified": 269,
+  "figure_review": "PNG visually inspected: all 15 types, labels, two thresholds and caveats readable without overlap",
+  "scope": "Body-level anatomical pathway audit; no new graph selection, language fits or test scores",
+  "deployed_commit": "246b2b4c73705c713279e633460255133372e456",
+  "github_pages_run": 34579650108,
+  "deployment_conclusion": "success",
+  "node_tests_passed": 69,
+  "node_tests_failed": 0,
+  "browser_review": {
+    "url": "https://flm.kuber.studio/#research",
+    "reloaded_after_deployment": true,
+    "console_errors": []
+  }
+}
