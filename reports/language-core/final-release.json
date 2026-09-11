@@ -1,0 +1,164 @@
+{
+  "verified_utc": "2026-09-11T00:40:59.794787+00:00",
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "d054ab81196ea733f9cf6f6890e9d4ae57419e93",
+    "status": "completed",
+    "url": "https://github.com/Kuberwastaken/flm/actions/runs/34547011773"
+  },
+  "artifacts": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 71257,
+      "sha256": "2b81304909a0765654e0db08e10580c0e564c36c170ac2dcbed6ae732e7abe0f"
+    },
+    {
+      "path": "research/language-core-results.json",
+      "status": 200,
+      "bytes": 122670,
+      "sha256": "5ed1c3758fa9a162cb427dc8662795ada6b157b01fe47788c6c6780b7a169501"
+    },
+    {
+      "path": "research/language-core-release.json",
+      "status": 200,
+      "bytes": 4191,
+      "sha256": "6b94e0e07bb892b9666bd28d78ba0c937ad99b5d0d5edffc9d656bf7f106c1fb"
+    },
+    {
+      "path": "research/language-core-records.zip",
+      "status": 200,
+      "bytes": 160473,
+      "sha256": "5b0c82eeb488298eff1e2fbe6aa1b634b633c90993e70b9293dc795035c8b120"
+    },
+    {
+      "path": "research/language-core-inference.zip",
+      "status": 200,
+      "bytes": 18597482,
+      "sha256": "ce9368fd97e13837a0eb96a17c6cb30cea5a4efbfbab9224f7028ba42bb38b4a"
+    },
+    {
+      "path": "research/language-core-inference-release.json",
+      "status": 200,
+      "bytes": 10443,
+      "sha256": "57c3edb7a7d4c5cf93c65361ff37f4e0ffeed563dda2444ccc46cb4a2dce395c"
+    },
+    {
+      "path": "research/language-core-samples.json",
+      "status": 200,
+      "bytes": 89249,
+      "sha256": "e8629c722aeeba08dfe43f9ad59d94f54db96e453a624989b087ad7c70cd078f"
+    },
+    {
+      "path": "research/language-core-selection.json",
+      "status": 200,
+      "bytes": 5369,
+      "sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530"
+    },
+    {
+      "path": "research/language-core-findings.md",
+      "status": 200,
+      "bytes": 3785,
+      "sha256": "6bdcb2e2c40ef885b9ca0994c2744ab7d8a02f0ac2932e82a25884cc3fdfcdc4"
+    },
+    {
+      "path": "research/language-core-controls.md",
+      "status": 200,
+      "bytes": 6362,
+      "sha256": "ef20bf932227c4aa4e3f1b0f04a750e7bef5f5f292c45f4ae05001f627ec2de5"
+    },
+    {
+      "path": "research/language-core-protocol.md",
+      "status": 200,
+      "bytes": 10567,
+      "sha256": "22b8af7692588d163433c18c21c5744f6fde510d237ec9a5df6a326b67c50b1d"
+    },
+    {
+      "path": "research/flm.pdf",
+      "status": 200,
+      "bytes": 866963,
+      "sha256": "782d23280ad276c7879f056dde8c688de76f132e8f64b2801f47bcd4ad84c9e2"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7057746,
+      "sha256": "536eb7862e5a4ddb37124abee12c2571d7e2d2cf53a3157b82f0ff6f84fd8467"
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "status": 200,
+      "bytes": 76344,
+      "sha256": "671592c62693c9cb56aa14b653c85c2a51b06f712cb08b127cd8ffbcd36b8d33"
+    },
+    {
+      "path": "research/figures/language-core-test.svg",
+      "status": 200,
+      "bytes": 113467,
+      "sha256": "af71ed31f4c258f07f70c3cac8a665557c31a933d3d62ec813532f3b6fb86b07"
+    },
+    {
+      "path": "research/figures/language-core-test.png",
+      "status": 200,
+      "bytes": 142354,
+      "sha256": "b984a0da367b0bab5209df6a6f4db116f0519dc2eede9b5daa7a1d378dc40380"
+    },
+    {
+      "path": "research/figures/language-core-test.csv",
+      "status": 200,
+      "bytes": 1294,
+      "sha256": "d90c6a0e3a99c979071460716ce91fd0b7c06d19202e6aac55ca492d2647b96f"
+    }
+  ],
+  "ci_tests_passed": 69,
+  "ci_tests_failed": 0,
+  "build_passed": true,
+  "final_test_result_published": true,
+  "frozen_study_identity_sha256": "57dcbe9b8242cc0bb897486a54139553b8093192697830993a3a76085830aaee",
+  "frozen_selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+  "completed_new_controls": 6,
+  "reused_full_references": 2,
+  "browser_verification": {
+    "url": "https://flm.kuber.studio/#research",
+    "table_body_rows": [
+      8,
+      6,
+      2
+    ],
+    "details_keyboard_enter_expanded": true,
+    "figure_complete": true,
+    "figure_natural_width": 1152,
+    "babylm_summary": "BabyLM study: 10M and 100M words (in progress)",
+    "page_width": 598,
+    "viewport_width": 614,
+    "console_errors": [],
+    "observed_in": "Actual in-app browser after reloading the completed deployment"
+  },
+  "proofs": [
+    {
+      "path": "reports/language-core/live-assets.json",
+      "sha256": "9c0bbee9814395c47f106bc32fd380244b86ef2a313fff671266b8c716a43cff"
+    },
+    {
+      "path": "reports/language-core/preview-assets.json",
+      "sha256": "22eb4e503379d601f5a2c93c90dff96e3c4dec545eae343a46212428fb312365"
+    },
+    {
+      "path": "reports/language-core/browser-review.json",
+      "sha256": "299b47ed2137994d5c2fd7e9b53c10338becea17c6fc5e19609889d336eb6413"
+    },
+    {
+      "path": "reports/language-core/paper-review.json",
+      "sha256": "89c2653177b5762a646ba514e70abb4031fae9cfb8f43300f9422f9c4dbf3339"
+    },
+    {
+      "path": "reports/language-core/records-release.json",
+      "sha256": "6b94e0e07bb892b9666bd28d78ba0c937ad99b5d0d5edffc9d656bf7f106c1fb"
+    },
+    {
+      "path": "reports/language-core/inference-release.json",
+      "sha256": "57c3edb7a7d4c5cf93c65361ff37f4e0ffeed563dda2444ccc46cb4a2dce395c"
+    }
+  ],
+  "scope": "Published computation-control release; BabyLM training and future food-response experiments are not completed by this release."
+}
