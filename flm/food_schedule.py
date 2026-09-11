@@ -151,7 +151,19 @@ def terminal(path, template, factory, *, allow_new):
     result = stored_episode(path,template,(lambda:factory()) if allow_new else forbidden)
     number = result['attempt']; record_path = path/f'attempt-{number:06d}'/'result.json.gz'
     return result,dict(terminal_sha256=sha(record_path),attempt=number,
-        outcome=result['rollout']['outcome'],cleanup_error=result['cleanup_error'],readout_sha256=digest(result['readout']))
+        outcome=result['rollout']['outcome'],cleanup_error=result['cleanup_error'],readout_sha256=digest(result['readout']),
+        artifact_sha256={item.relative_to(path).as_posix():sha(item) for item in sorted(path.rglob('*')) if item.is_file()})
+
+
+def verify_artifacts(path, row):
+    files = {item.relative_to(path).as_posix():sha(item) for item in path.rglob('*') if item.is_file()}
+    if files != row['artifact_sha256']: raise ValueError('A food episode artifact changed during execution')
+
+
+def verify_training_artifacts(directory, records):
+    for condition in records['conditions']:
+        for episode in condition['episodes']:
+            verify_artifacts(Path(directory)/'training'/condition['condition']['id']/f"episode-{episode['index']:06d}",episode)
 
 
 def inventory(directory, identity, phase):
@@ -206,6 +218,7 @@ def train(directory, request, weights, factory, *, max_new=None):
             max_new=max_new,verify_only=complete.exists())
         context(directory,request,weights)
         if result is None: return dict(status='partial',new_episodes=new)
+        verify_training_artifacts(directory,result)
         if complete.exists():
             if read(complete)['records'] != result: raise ValueError('Frozen food training completion changed')
         else: write_new(complete,dict(completed_utc=utc(),records=result))
@@ -238,10 +251,13 @@ def evaluate(directory, request, weights, factory, *, max_new=None):
                     result,row = terminal(path,template,lambda:factory(episode['environment']),allow_new=not final.exists())
                     if result['readout'] != readout: raise ValueError('An evaluation probe changed its starting readout')
                     if not complete: new += 1
-                    rows.append(dict(condition=condition,checkpoint=checkpoint,episode=episode['id'],**row))
+                    rows.append(dict(condition=condition,position=position,checkpoint=checkpoint,episode=episode['id'],**row))
         inventory(directory,identity,'evaluation')
         context(directory,request,weights)
         if sha(completion) != training_hash: raise ValueError('Food training completion changed during evaluation')
+        verify_training_artifacts(directory,training)
+        for row in rows:
+            verify_artifacts(directory/'evaluation'/row['condition']['id']/f"episode-{row['position']:06d}",row)
         record = dict(schedule_sha256=digest(identity),training_complete_sha256=training_hash,episodes=rows)
         if final.exists():
             if read(final)['records'] != record: raise ValueError('Frozen food evaluation completion changed')

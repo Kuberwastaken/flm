@@ -248,5 +248,32 @@ class FoodScheduleTests(unittest.TestCase):
             train(self.path,self.request,self.weights,mutated,max_new=1)
         self.assertFalse((self.path/'training-complete.json').exists())
 
+    def test_earlier_artifact_changed_in_last_episode_blocks_completion(self):
+        self.frozen(); count=0; original=None
+        target=self.path/'training/condition-000001/episode-000001/attempt-000001/start.json'
+        def mutate_last_training(name):
+            nonlocal count
+            count+=1
+            def on_close():
+                nonlocal original
+                if count==16:
+                    original=target.read_bytes(); target.write_bytes(original+b' ')
+            return ScheduledEnvironment(self.request['environments'][name],on_close=on_close)
+        with self.assertRaisesRegex(ValueError,'artifact changed during execution'):
+            train(self.path,self.request,self.weights,mutate_last_training)
+        self.assertFalse((self.path/'training-complete.json').exists())
+        target.write_bytes(original)
+        train(self.path,self.request,self.weights,self.factory)
+        count=0
+        def mutate_last_probe(name):
+            nonlocal count
+            count+=1
+            def on_close():
+                if count==48: target.write_bytes(original+b' ')
+            return ScheduledEnvironment(self.request['environments'][name],on_close=on_close)
+        with self.assertRaisesRegex(ValueError,'artifact changed during execution'):
+            evaluate(self.path,self.request,self.weights,mutate_last_probe)
+        self.assertFalse((self.path/'evaluation-complete.json').exists())
+
 
 if __name__=='__main__': unittest.main()
