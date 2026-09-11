@@ -91,6 +91,7 @@ def main():
     for name in ('audit_food_approach.py', 'audit_food_sensor_probe.py'):
         contents[name] = (ROOT/'scripts'/name).read_bytes()
     contents['audit.json'] = audit_path.read_bytes()
+    contents['LICENSE'] = (ROOT/'LICENSE').read_bytes()
     for name in declared['sources']: contents[name] = (ROOT/name).read_bytes()
     contents['README.txt'] = ('Scripted physical food-approach reference v1\n\n'
         'Install NumPy, then audit the extracted complete directory:\n'

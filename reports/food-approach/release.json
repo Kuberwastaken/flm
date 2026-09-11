@@ -1,11 +1,11 @@
 {
   "summary_sha256": "6ddf5c8658fe0b6e67bf4c56a0e40d4cee2d81f3eb5bdd5e5ca5994108500612",
   "identity_sha256": "b4af11df71760f25ebee77c05c66f7eedf0751e6b5ab0e56a2f31b30acbd682c",
-  "report_script_sha256": "2ba9249269389d9216f059f798d5e27ea4a0c4577480287186926f857e490891",
+  "report_script_sha256": "7febc0e212aa8e9b899efca3ccf416c222ad622d59b793bc155263ded29564f3",
   "files": {
     "public/research/food-approach-records.zip": {
-      "bytes": 3105034,
-      "sha256": "36be2cc23e6b0ca77bae6f3a8732737c5cf81a8fefe7c4dcf72c25afd6e7e7fb"
+      "bytes": 3105894,
+      "sha256": "fda3e90e699afd9e394d414b1aefb24e94e04fb89d0f29f6139acb7669ad1338"
     },
     "public/research/figures/food-approach.csv": {
       "bytes": 823,
@@ -20,7 +20,7 @@
       "sha256": "789e925bad57efeb0639ec15db88e3e7cde35774ed1866ab71dced4ad5eade85"
     }
   },
-  "physical_archive_manifest_files": 27,
+  "physical_archive_manifest_files": 28,
   "observations_audited": 1407,
   "complete_cases": 7,
   "failed_cases": 0,

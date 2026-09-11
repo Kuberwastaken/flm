@@ -1,7 +1,7 @@
 {
-  "verified_utc": "2026-09-11T14:04:18.278425+00:00",
-  "archive_sha256": "fda3e90e699afd9e394d414b1aefb24e94e04fb89d0f29f6139acb7669ad1338",
-  "archive_manifest_files": 28,
+  "verified_utc": "2026-09-11T13:56:43.096473+00:00",
+  "archive_sha256": "36be2cc23e6b0ca77bae6f3a8732737c5cf81a8fefe7c4dcf72c25afd6e7e7fb",
+  "archive_manifest_files": 27,
   "isolated_extraction_cli_returncode": 0,
   "observations_replayed": 1407,
   "complete_cases": 7,
