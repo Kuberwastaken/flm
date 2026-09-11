@@ -10,7 +10,7 @@ The central question is whether measured neural wiring or its associated computa
 
 ## Current order of work
 
-1. **Finish the fixed BabyLM comparison and its declared evaluation.** Eight of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus 100M FLM and GRU seed 42. The 100M transformer seed-42 run is active. Preserve the registered inventory and common test gate.
+1. **Finish the fixed BabyLM comparison and its declared evaluation.** Nine of twelve fits are complete: all FLM, GRU and transformer runs at 10M, across seeds 42/43, plus all three 100M architectures at seed 42. The 100M FLM seed-43 run is active. Preserve the registered inventory and common test gate.
 2. **Test selection before further dataset or model scaling.** After that queue finishes and its trainer exits, measure selection costs, choose complete comparison groups for anatomical and computational reasons, freeze the protocol and run every registered control. No selection-language result exists yet.
 3. **Keep later studies separate.** Alternative language learning, symbolic instruction transfer and food-task adaptation have distinct preparation, budgets and inferential questions. They do not replace the selection comparison. Broader datasets and capacity scaling remain part of the eventual objective.
 
@@ -36,7 +36,7 @@ Physical records also preserve a concrete [body-state limitation](PHYSICAL-STATE
 
 ## Complete the registered BabyLM comparison
 
-Continue the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), without changing sources, exposure or the twelve-condition inventory. All six 10M fits and 100M FLM/GRU seed 42 have completion audits; the remaining four 100M fits and complete-study evaluation are pending. Validation losses choose checkpoints and are not substitutes for held-out comparisons.
+Continue the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), without changing sources, exposure or the twelve-condition inventory. All six 10M fits and all three 100M architectures at seed 42 have completion audits; the remaining three 100M fits and complete-study evaluation are pending. Validation losses choose checkpoints and are not substitutes for held-out comparisons.
 
 After all twelve fits complete, audit and freeze every checkpoint selection before test inference. Report source-component codelength and the declared overlap-filtered analyses with exact text denominators. Retain fixed-prompt continuations, repetition and failed outputs. Compare FLM, GRU and transformer under the declared exposure; separate data-volume effects from architecture and capacity changes. Publish updated model/data cards, figures, papers and standalone artifacts. Historical [resume verification](../reports/babylm/resume-readiness.json) records restoration and exposure checks, not a promise of bitwise multithreaded retraining.
 
