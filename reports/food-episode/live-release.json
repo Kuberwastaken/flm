@@ -1,0 +1,68 @@
+{
+  "verified_utc": "2026-09-11T18:02:58.260143+00:00",
+  "content_commit": "e45e7ed32dc3102e6a8fb105eb447099a63b16d4",
+  "ci_run": 34630572551,
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Complete research-source ZIP checked against current source bytes; smoke archive inventory, CRC and hashes verified. No new physics, fitting or test inference.",
+  "http_files": {
+    "research/babylm-validation.json": {
+      "bytes": 398170,
+      "sha256": "189a7f1075784b8b5d0f41c37791e227c173d626b6af8a2625243e24258dce03"
+    },
+    "research/food-episode-runner.md": {
+      "bytes": 7881,
+      "sha256": "c868544b2a02ec8d5c7e1a35dcc3b2eecee800b6e6a8556bd36d838677d3ac95"
+    },
+    "research/food-episode-smoke.zip": {
+      "bytes": 639576,
+      "sha256": "3ae9166ebd3be93c76c015ecf7074fbba51dd4b1ae3e934dc303b2673f80558d"
+    },
+    "research/food-episode/archive-audit.json": {
+      "bytes": 2157,
+      "sha256": "409fe6a7b6e8bbd9cfa348c3c1cf9dfb6d3868eb28d0ab77de395b24cf623daa"
+    },
+    "research/food-episode/audit_food_episode_smoke.py": {
+      "bytes": 7206,
+      "sha256": "1e4ef03b1aa234b3cca6d8cf9fe08dae9d73c413c2bbcb6aeb6fd56a5cc84d8a"
+    },
+    "research/food-episode/food_episode.py": {
+      "bytes": 12608,
+      "sha256": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c"
+    },
+    "research/food-episode/food_learning_environment.py": {
+      "bytes": 6385,
+      "sha256": "37ece79ef7929d2fe66675b58f693a5ccf90f1e99fd41453174af9757051e18b"
+    },
+    "research/food-episode/package_food_episode_smoke.py": {
+      "bytes": 4935,
+      "sha256": "a36df1fc64cf6d8b120a903c832d22be2acb5915dbd94bfbc88fa297faa2cc14"
+    },
+    "research/food-episode/preparation.json": {
+      "bytes": 13915,
+      "sha256": "376fb2a25c79fb6a65cf37df1695a48f69002c9064f7518baf66df201ff92ad3"
+    },
+    "research/food-episode/test_food_episode.py": {
+      "bytes": 13292,
+      "sha256": "273e549ff6aa60c1b996c37e4e3e7043a99c85b37cfd9d2ac00eab6099cec2bb"
+    },
+    "research/food-episode/verify_food_episode.py": {
+      "bytes": 7942,
+      "sha256": "88bf732a9ca9ed1bd0becbf4c1feb1141a088167d03d41e26f779005ed4a7e39"
+    },
+    "research/food-readout-learning.md": {
+      "bytes": 6568,
+      "sha256": "b3a78d9a69d9ee6efc045621879af4a119a8c56cb84c862d8fb4a5969493db19"
+    },
+    "research/food-response-plan.md": {
+      "bytes": 8242,
+      "sha256": "f379eda11580bfa1257f8f82df1dfa42a1565fabfdfcae67124c8a28a0bac502"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9328340,
+      "sha256": "1a2e30e4d1d80a515e7c81da5d42f2d7069f035517463e72097e461121b28afd"
+    }
+  },
+  "public_relative_links_checked": 27,
+  "source_archive_files": 466,
+  "smoke_archive_members": 38,
+  "software_tests": "24 controller/readout unit checks passed in each of two Python environments; 74 JavaScript tests passed in the publishing workflow. Eight short physical connection checks and separate numerical archive replay retain their own scope and records."
+}
