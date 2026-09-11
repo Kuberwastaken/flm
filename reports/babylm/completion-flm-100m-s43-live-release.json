@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-09-11T20:39:09.819458+00:00",
+  "content_commit": "ca1bd376adb4f14f302be292cf204fbec51d05ef",
+  "ci_run": 34645192025,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-handoff.md": {
+      "bytes": 7134,
+      "sha256": "f842d321f3622fc37ef8a720c6d9e43fa1f17cae985307ac46087a0d12f35d82"
+    },
+    "research/babylm-handoff/completion-flm-100m-s43.json": {
+      "bytes": 9561,
+      "sha256": "1ece73a18cea2ba3983a3c8bc65e6476c2356773777f910b964bd31ca5343586"
+    },
+    "research/babylm-validation.json": {
+      "bytes": 441822,
+      "sha256": "2f0b7250bb55320b24b0e919798f01e2888ac5430158a2fc079b40ae2f22cf45"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9405865,
+      "sha256": "7e2da13d340a44e1bc3800cc522359618b59e416032277b0fe7fd1ff9344ff89"
+    }
+  },
+  "public_relative_links_checked": 11,
+  "source_archive_files": 494,
+  "software_tests": "The completed 100M FLM seed-43 audit restored selected/final checkpoints and verified all 24 validation records, declared exposure and numerical sources against the original training commit. No additional fitting or test inference was performed by the auditor. All 74 JavaScript tests passed in publishing."
+}
