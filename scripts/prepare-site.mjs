@@ -280,6 +280,7 @@ for (const [source, target] of [
   ['tests/test_babylm_completion_command.py', 'test_babylm_completion_command.py'],
   ['reports/babylm/completion-command-preparation.json', 'completion-preparation.json'],
   ['reports/babylm/completion-command-transformer-100m-s42.json', 'completion-transformer-100m-s42.json'],
+  ['reports/babylm/completion-flm-100m-s43.json', 'completion-flm-100m-s43.json'],
   ['tests/test_babylm_handoff.py', 'test_babylm_handoff.py'],
   ['requirements-operations.txt', 'requirements-operations.txt'],
   ['reports/babylm/handoff-preparation.json', 'preparation.json'],
@@ -289,6 +290,7 @@ await writeFile('public/research/babylm-handoff.md', (await readFile('docs/BABYL
   .replaceAll('../tests/test_babylm_completion_command.py', 'babylm-handoff/test_babylm_completion_command.py')
   .replaceAll('../reports/babylm/completion-command-preparation.json', 'babylm-handoff/completion-preparation.json')
   .replaceAll('../reports/babylm/completion-command-transformer-100m-s42.json', 'babylm-handoff/completion-transformer-100m-s42.json')
+  .replaceAll('../reports/babylm/completion-flm-100m-s43.json', 'babylm-handoff/completion-flm-100m-s43.json')
   .replaceAll('../scripts/continue_babylm_research.py', 'babylm-handoff/continue_babylm_research.py')
   .replaceAll('../tests/test_babylm_handoff.py', 'babylm-handoff/test_babylm_handoff.py')
   .replaceAll('../reports/babylm/handoff-preparation.json', 'babylm-handoff/preparation.json')

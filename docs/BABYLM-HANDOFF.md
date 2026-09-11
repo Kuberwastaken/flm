@@ -118,3 +118,9 @@ The [verification record](../reports/babylm/completion-command-preparation.json)
 also distinguishes those artificial fixtures from an
 [actual completed-fit audit](../reports/babylm/completion-command-transformer-100m-s42.json)
 that reproduces the previous 100M transformer seed-42 record exactly.
+
+The [100M FLM seed-43 completion audit](../reports/babylm/completion-flm-100m-s43.json)
+checks the tenth completed fit: all 24 validation records and the selected/final
+checkpoints pass. Update 12,000 is selected at 1.9318626804 validation bits per
+byte after 18,432,000 presented tokens. This is checkpoint-selection evidence;
+the complete-study held-out evaluation remains pending.
