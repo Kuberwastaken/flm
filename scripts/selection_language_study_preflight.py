@@ -7,6 +7,7 @@ from pathlib import Path
 from flm.provenance import sha256
 from flm.selection_language import load_catalog
 from flm.selection_language_study import IDENTITY, PILOT, PROTOCOL, SELECTION, SOURCES, matrix
+from flm.selection_language_test import POLICY, SUMMARY, comparison_plan
 from flm.selection_pilot import prerequisites
 
 
@@ -23,14 +24,15 @@ def preflight(root):
     except ValueError as error: gate = dict(ready=False, reason=str(error))
     else: gate = dict(ready=True, process_handles_still_require_inspection=True)
     pending = {name:(root/path).exists() for name,path in
-        (('measured_cost_pilot',PILOT),('official_protocol',PROTOCOL),('frozen_identity',IDENTITY),('frozen_selection',SELECTION))}
+        (('measured_cost_pilot',PILOT),('official_protocol',PROTOCOL),('frozen_identity',IDENTITY),('frozen_selection',SELECTION),('held_out_summary',SUMMARY))}
     if any(pending.values()): raise ValueError('This preparation record is only for the unregistered, pre-pilot stage')
     sources = ['flm/'+name for name in SOURCES]
-    sources += ['scripts/selection_language_study_preflight.py','tests/test_selection_language_study.py']
+    sources += ['scripts/selection_language_study_preflight.py','tests/test_selection_language_study.py','tests/test_selection_language_test.py']
     return dict(verified_utc=datetime.now(timezone.utc).isoformat(), catalog_binding=catalog.binding,
         available_groups=rows, possible_fit_count=sum(r['possible_fits'] for r in rows),
         source_sha256={name:sha256(root/name) for name in sources}, priority_gate=gate, official_files_present=pending,
-        coordinator_implemented=True, official_held_out_scorer_implemented=False,
+        coordinator_implemented=True, official_held_out_scorer_implemented=True, evaluation_policy=POLICY,
+        per_group_comparisons_per_seed_and_subset=len(comparison_plan(rows[0]['candidate'])),
         model_initializations=0, model_forward_calls=0, gradient_updates=0, corpus_payloads_opened=False,
         scope='Catalog and coordinator readiness only. No group selected, budget frozen, cost measured or language model fitted. Synthetic coordinator tests are separate from this record.')
 

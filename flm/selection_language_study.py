@@ -2,7 +2,7 @@
 
 No default group or training budget is supplied. Official initialization requires
 the completed priority queue, measured original-graph costs and a written protocol.
-This coordinator never opens held-out token payloads; its test scorer is pending.
+This coordinator never opens held-out token payloads; the separate scorer does.
 """
 from __future__ import annotations
 
@@ -33,7 +33,8 @@ SELECTORS = ('candidate', 'contact_ranked', 'uniform_s201', 'uniform_s203', 'uni
 SOURCES = tuple(sorted(set(PILOT_SOURCES) | {
     'selection_language_study.py', 'selection_language.py', 'language_learning_inputs.py',
     'language_learning_study.py', 'language_learning_validation.py', 'wiring_controls.py',
-    'language_train.py', 'baselines.py', 'graph.py', 'babylm.py'}))
+    'language_train.py', 'baselines.py', 'graph.py', 'babylm.py',
+    'selection_language_test.py', 'language_learning_test.py', 'corpus_evaluation.py', 'babylm_test.py'}))
 
 
 def read(path): return json.loads(path.read_text(encoding='utf8'))
@@ -151,6 +152,7 @@ def identity_for(root, catalog, corpus, panel, request, pilot):
     if len({r['training_documents_sha256'] for r in rows}) != 1: raise ValueError('Training documents differ across conditions')
     planned_seconds = update_seconds*request['cost_allowance_multiplier']
     if planned_seconds > request['wall_time_budget_seconds']: raise ValueError('Complete matrix exceeds the stated planning budget')
+    from .selection_language_test import POLICY
     return dict(format='flm-selection-language-study-v1', request=request, conditions=rows,
         catalog_binding=catalog.binding, corpus_binding=corpus.binding, validation_panel_binding=panel.binding,
         test_metadata=test_metadata(root, corpus.lexicon), protocol_sha256=sha256(root/PROTOCOL),
@@ -158,8 +160,8 @@ def identity_for(root, catalog, corpus, panel, request, pilot):
         torch=str(torch.__version__), numpy=str(np.__version__), validation_chunk_size=96,
         cost=dict(update_seconds_using_original_proxies=update_seconds, planned_seconds_with_allowance=planned_seconds,
             limitation='Only original graphs were timed, at seed 42. Rewires and seed 43 use original-graph cost proxies. Loading, validation, checkpoint I/O and long-run effects are unmeasured; the allowance is a planning assumption, not a wall-time guarantee.'),
-        selection='Earliest exact minimum validation BPB over every declared checkpoint',
-        test_policy='Require every registered condition complete and selected before any held-out token access; official test scorer and inference policy still pending',
+        selection='Earliest exact minimum validation BPB over every declared checkpoint', evaluation_policy=POLICY,
+        test_policy='Require every registered condition complete and selected before any held-out token access; use the source-bound inference and comparison policy',
         scope='Selection methods differ in edge/parameter counts; within-subset rewires control topology at fixed allocation. Operational truncated candidates, not intact functional circuits or animal behavior.')
 
 
@@ -256,7 +258,7 @@ def freeze_selection(root):
                 if sha256(path) != expected: raise ValueError('Selected run changed during inventory selection')
         if verified_context(root)[0] != identity: raise ValueError('Study inputs changed during selection')
         result = dict(study_identity_sha256=identity_hash, conditions=records, validation_panel_binding=panel.binding,
-            test_payloads_opened=False, scope='Complete inventory and validation selection only; official held-out scorer pending')
+            test_payloads_opened=False, scope='Complete inventory and validation selection only; held-out likelihoods require the separate scorer')
         if (root/SELECTION).exists():
             if read(root/SELECTION) != result: raise ValueError('Existing selection-study checkpoint choices changed')
         else: write_json(root/SELECTION, result)
