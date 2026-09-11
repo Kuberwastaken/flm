@@ -25,8 +25,10 @@ The code lives in [food_readout_learning.py](../flm/food_readout_learning.py).
 It accepts feature vectors; it cannot change the recurrent core, inspect source
 coordinates or read reward identity before the caller supplies terminal reward.
 It copies its initial weight/bias arrays. Its episode state and complete trace
-can be serialized and resumed exactly. A coordinator still needs to bind that
-state to the core, physical environment, sampled random numbers and full record.
+can be serialized and resumed exactly. The [episode runner](FOOD-EPISODE-RUNNER.md)
+now binds it to the frozen core, action stream and physical environment interface.
+The official study coordinator and complete simulator/gait checkpoint resumption
+remain pending.
 
 ## Learning rule
 

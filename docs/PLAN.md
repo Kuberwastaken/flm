@@ -36,7 +36,7 @@ Physical records also preserve a concrete [body-state limitation](PHYSICAL-STATE
 
 ## Complete the registered BabyLM comparison
 
-Continue the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), without changing sources, exposure or the twelve-condition inventory. All six 10M fits and 100M FLM seed 42 have completion audits; the remaining five 100M fits and complete-study evaluation are pending. Validation losses choose checkpoints and are not substitutes for held-out comparisons.
+Continue the existing [training protocol](BABYLM-PROTOCOL.md) and [evaluation declaration](BABYLM-EVALUATION.md), without changing sources, exposure or the twelve-condition inventory. All six 10M fits and 100M FLM/GRU seed 42 have completion audits; the remaining four 100M fits and complete-study evaluation are pending. Validation losses choose checkpoints and are not substitutes for held-out comparisons.
 
 After all twelve fits complete, audit and freeze every checkpoint selection before test inference. Report source-component codelength and the declared overlap-filtered analyses with exact text denominators. Retain fixed-prompt continuations, repetition and failed outputs. Compare FLM, GRU and transformer under the declared exposure; separate data-volume effects from architecture and capacity changes. Publish updated model/data cards, figures, papers and standalone artifacts. Historical [resume verification](../reports/babylm/resume-readiness.json) records restoration and exposure checks, not a promise of bitwise multithreaded retraining.
 
@@ -59,7 +59,7 @@ Proceed in this order:
 |---|---|---|
 | Alternative language learning | [Verified BabyLM inputs](LANGUAGE-LEARNING-INPUTS.md), BPTT/fixed-core/eligibility/no-history updates, a [coordinator](LANGUAGE-LEARNING-STUDY.md), validation selection and [all-eight-gated scorer](LANGUAGE-LEARNING-TEST.md). | Actual [cost pilot](LANGUAGE-LEARNING-TIMING.md), official protocol/budget/identity, eight corpus fits and complete evaluation. No official learning-rule language scores exist. |
 | Symbolic instruction transfer | [SCAN data/codec/scoring primitives](INSTRUCTION-TRANSFER.md), [36 prepared source conditions](SCAN-CONDITION-PREPARATION.md), a [timing command](SCAN-TIMING-PILOT.md), a [coordinator with all-36 terminal-checkpoint gate](SCAN-STUDY-COORDINATOR.md), and a [resumable whole-partition evaluator](SCAN-EVALUATION.md). | Actual pilot, downstream protocol/budget, official fits and strict held-out generation. No neural SCAN transfer result or physical instruction execution exists. |
-| Food-task adaptation | Audited sensors, scripted and unadapted core references, and [fixture-tested action-readout updates](FOOD-READOUT-LEARNING.md) with frozen sensory/core parameters. | A declared matched adaptation study, episode/action budget, untouched evaluation layouts and reversal/retention phases. No physical adaptation fit or learned food result exists. |
+| Food-task adaptation | Audited sensors, scripted and unadapted core references, [fixture-tested action-readout updates](FOOD-READOUT-LEARNING.md), and a [sampled-action episode runner with short physical integration checks](FOOD-EPISODE-RUNNER.md). | A declared matched adaptation study and coordinator, episode/action budget, full-horizon sampled-policy baseline, untouched evaluation layouts and reversal/retention phases. No physical adaptation fit or learned food result exists. |
 
 These preparations do not displace selection. The later program still includes:
 

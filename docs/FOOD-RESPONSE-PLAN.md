@@ -33,6 +33,12 @@ the sensory projection and recurrent core, learning only the 771-entry action
 head. This narrows the trainable interface explicitly; it supplies no physical
 adaptation result and does not freeze the pending experimental budget.
 
+The [episode runner](FOOD-EPISODE-RUNNER.md) now connects sampled readout actions
+to the existing physical environment. Eight short, repeated integration checks
+ran with learning disabled; body and neural arrays repeated exactly. This
+supplies no navigation, adaptation or language-benefit result. Full-horizon
+sampled-policy references and the training/evaluation coordinator remain pending.
+
 ## What can be compared now
 
 The browser's physical-choice replay compares the original untrained sensory
