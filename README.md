@@ -98,13 +98,17 @@ The core is a differentiable rate network. Contact counts and neurotransmitter a
 **Next graph question: selection, not just size.** The [selection-study plan](docs/SELECTION-STUDY.md) calls for functional-subcircuit, connectivity-ranked and matched random selections, with rewiring controls inside each subset. A new anatomy-only audit finds 4,497 neurons in the named mushroom-body families; even unilateral inventories exceed 1,024. Three uniform 1,024-node draws retain only 6,248–6,475 fast edges, so matching node count alone leaves a large density and parameter-count difference. No candidate has been trained, and family labels do not certify an intact circuit.
 
 <details>
-<summary>Selection feasibility: all candidate inventories and cut contacts</summary>
+<summary>Selection feasibility, cut contacts and pathway coverage</summary>
 
 ![Raw-contact boundary cuts for all eight candidate inventories, with their differing neuron counts.](public/research/figures/selection-feasibility.svg)
 
 The named family inventories retain more internal raw contacts but use different numbers of neurons and edges. This is not a matched performance comparison. All 316 PAM and 16 PPL1 cells have fast sign zero in the acquired runtime: selecting them alone would not restore their outgoing modulatory pathways. The [complete records](reports/selection-feasibility/summary.json), [candidate body IDs](reports/selection-feasibility/candidate-body-ids.json) and [planned controls](docs/SELECTION-STUDY.md) keep selection, dynamics and learning-rule questions distinct.
 
 The [publisher reconciliation](docs/PUBLISHER-ANNOTATIONS.md) verifies every runtime type and superclass against curated body annotations. Transmitter consensus matches all 166,522 bodies with records; 178 missing records stay explicit. Its 5,293-row candidate export adds ALPN-class upstream candidates and richer instance labels, without claiming that a functional subcircuit has been established.
+
+The [pathway audit](docs/SELECTION-PATHWAYS.md) measures the full acquired graph: **314 of 686 ALPNs** have contacts to **3,812 of 4,064 KCs**, totaling 390,928 ALPN→KC contacts. **3,811 KCs** have both ALPN input and MBON output at ≥1 contact per directed pair; **3,726** do at ≥5. Applying the current fast-sign rule would drop all **262,661 PAM/PPL1→KC/MBON contacts**. Missing ALPN input does not establish missing sensory input. These body-pair counts certify neither functional signal transmission nor learning; no new selector or model fits result from this audit.
+
+![Kenyon-cell pathway coverage at one-contact and five-contact thresholds in the acquired graph.](public/research/figures/selection-pathways.svg)
 
 </details>
 
