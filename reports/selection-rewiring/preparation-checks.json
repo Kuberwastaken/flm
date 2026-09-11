@@ -1,0 +1,11 @@
+{
+  "verified_utc": "2026-09-11T09:43:47.598527+00:00",
+  "partial_snapshot_sha256": "ec060c3a6c0fee0986954d73b3111209fb19076901c84d9c0861eb3732ebf10b",
+  "incomplete_real_queue_rejected": true,
+  "no_archive_or_temporary_archive_written": true,
+  "auditor_imported_outside_repository_without_flm_or_torch": true,
+  "fixture_command": "python -m unittest discover -s tests -p test_selection_rewiring_archive.py -v",
+  "fixture_tests_observed_passed": 7,
+  "fixture_source_sha256": "39498b926f8b2f70a298c83dca838fcffb02fb1e6261aa63fe7bed312612f1e8",
+  "scope": "Publication preflight only; no final archive, training run or language score"
+}
