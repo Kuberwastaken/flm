@@ -1,0 +1,217 @@
+{
+  "verified_utc": "2026-09-11T11:51:41.880120+00:00",
+  "conditions": [
+    {
+      "method": "bptt",
+      "seed": 42,
+      "label": "bptt-s42"
+    },
+    {
+      "method": "fixed_core",
+      "seed": 42,
+      "label": "fixed_core-s42"
+    },
+    {
+      "method": "eligibility",
+      "seed": 42,
+      "label": "eligibility-s42"
+    },
+    {
+      "method": "no_history",
+      "seed": 42,
+      "label": "no_history-s42"
+    },
+    {
+      "method": "bptt",
+      "seed": 43,
+      "label": "bptt-s43"
+    },
+    {
+      "method": "fixed_core",
+      "seed": 43,
+      "label": "fixed_core-s43"
+    },
+    {
+      "method": "eligibility",
+      "seed": 43,
+      "label": "eligibility-s43"
+    },
+    {
+      "method": "no_history",
+      "seed": 43,
+      "label": "no_history-s43"
+    }
+  ],
+  "gates": {
+    "priority_completion": {
+      "accepted": false,
+      "reason": "Priority BabyLM training must finish before learning-rule timing"
+    },
+    "measured_cost_pilot": {
+      "accepted": false,
+      "reason": "Measure the full-window learning-rule pilot before freezing a budget"
+    }
+  },
+  "test_metadata": {
+    "manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+    "tokenization_card_sha256": "9afcabd97267be7925816514a2ee71b062acf6d02aeb3028e746e7c8af7eb113",
+    "manifest": {
+      "format": "flm-mmap-tokens-v1",
+      "dtype": "<u2",
+      "identity": {
+        "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+        "sources": {
+          "bnc_spoken": "bdfc15bb70e1bd5f66d6a6113ef47995b7fe7fac247bd8afddfac87b86627b4b",
+          "childes": "c6b9e5d5479d003381a9a5ea8905ed82ac9c418cbc53395d4234bbb218ee8424",
+          "gutenberg": "df309abec59a9143cb5220d81438297d24526024608e6bb795ca8c1a7069c9bd",
+          "open_subtitles": "59cf3e496921fb89f2581cae4f91ce5d2009513ad10778eb4181381d7ea44066",
+          "simple_wiki": "e3b1dec6f381115c82630b229ba427edd0f79553ccb9b40fdfc965e31bc7da70",
+          "switchboard": "f30501f856a0f63571f81716b2e7f7420cfc9ca4b4705671111063065792e713"
+        },
+        "block_target_bytes": 16384,
+        "overlap_audit_sha256": "cee4b8bd60623c153c2db58b8dd4dac11c49a8ec335fb82dfed8eacfe7d19a54"
+      },
+      "blocks": 3187,
+      "text_tokens": 18177107,
+      "utf8_bytes": 51722871,
+      "components": {
+        "bnc_spoken": {
+          "blocks": 300,
+          "text_tokens": 1460188,
+          "utf8_bytes": 4889225,
+          "overlapping_blocks": 4,
+          "overlapping_block_bytes": 64708,
+          "overlapping_lines": 23
+        },
+        "childes": {
+          "blocks": 899,
+          "text_tokens": 6349354,
+          "utf8_bytes": 14707424,
+          "overlapping_blocks": 408,
+          "overlapping_block_bytes": 6677120,
+          "overlapping_lines": 4848
+        },
+        "gutenberg": {
+          "blocks": 830,
+          "text_tokens": 3896256,
+          "utf8_bytes": 13296106,
+          "overlapping_blocks": 53,
+          "overlapping_block_bytes": 858794,
+          "overlapping_lines": 818
+        },
+        "open_subtitles": {
+          "blocks": 635,
+          "text_tokens": 3621022,
+          "utf8_bytes": 10388196,
+          "overlapping_blocks": 90,
+          "overlapping_block_bytes": 1472280,
+          "overlapping_lines": 1421
+        },
+        "simple_wiki": {
+          "blocks": 472,
+          "text_tokens": 2549987,
+          "utf8_bytes": 7618762,
+          "overlapping_blocks": 104,
+          "overlapping_block_bytes": 1686255,
+          "overlapping_lines": 349
+        },
+        "switchboard": {
+          "blocks": 51,
+          "text_tokens": 300300,
+          "utf8_bytes": 823158,
+          "overlapping_blocks": 0,
+          "overlapping_block_bytes": 0,
+          "overlapping_lines": 0
+        }
+      },
+      "files": {
+        "tokens.u16": "a11c4667b470e4dd974ce9ac640360a7b40829ad54abef4efae64112fc4abd01",
+        "offsets.npy": "952395b79223628278b868f120cd104015eb5bad7d629f6c4cbf09ff4defcba8",
+        "blocks.jsonl": "efb9d4bca04acd10e1683ea14d9354a608eb8cb6a3d1fd9466c89345207de739"
+      },
+      "boundary_semantics": "Artificial whole-line blocks within a component file; true document and speaker boundaries unknown.",
+      "roundtrip": "Every block reconstructs its exact source bytes; every source byte is retained once."
+    },
+    "payloads_opened": false
+  },
+  "official_protocol_exists": false,
+  "official_timing_exists": false,
+  "official_identity_exists": false,
+  "official_selection_exists": false,
+  "source_sha256": {
+    "flm/language_learning_study.py": "5b4f8f4b36ea647ce5cafd09f227ba14effa0d3292d018bee89ab8aa5cf1b035",
+    "flm/language_learning_inputs.py": "976359f9a8c1efe08d47f1bc14487e348de686a9c4b992b7fda123156fccfc9d",
+    "flm/language_learning_pilot.py": "5dbc0d78c6eddb692b7a06ee5baa916a0cf4ea71a957f3ae4c430e2b048f505c",
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_learning_validation.py": "9633a796afe0e369682f9571dcc4485c68e6f896959f957413d27f0d0468edaa",
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646",
+    "flm/graph.py": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "flm/babylm.py": "9df985cf68662b12e4cb60e3492bf809dc4aaa21ce679a82910be4f3bae7cfee",
+    "flm/language_learning_test.py": "bf80ea0e04cc6427dd4317c5c32a2fe4f053538af4c96146a0e5029e99e58ddd",
+    "flm/corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+    "flm/babylm_test.py": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
+    "scripts/language_learning_study_preflight.py": "e89fac5cb92ece0a65c964dd1009db20e04fbcaa269e22bb798b7e4fd7ac5e46",
+    "tests/test_language_learning_study.py": "4a58622cbad673028715572f259f068906a92cd9859735a90cac03fd0278d895",
+    "tests/test_language_learning_test.py": "9768d3ff0350cd760f8c6a6a63c71479f72365974dfa0d27b8f4242b19a7f183"
+  },
+  "model_forward_calls": 0,
+  "gradient_updates": 0,
+  "test_payloads_opened": false,
+  "official_study_initialized": false,
+  "official_condition_trained": false,
+  "all_condition_selection_gate_implemented": true,
+  "official_test_scorer_implemented": true,
+  "evaluation_policy": {
+    "batch_size": 8,
+    "chunk_size": 96,
+    "threads": 4,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 31415,
+    "subsets": [
+      "official",
+      "overlap_filtered"
+    ],
+    "comparisons": [
+      [
+        "bptt",
+        "fixed_core"
+      ],
+      [
+        "bptt",
+        "eligibility"
+      ],
+      [
+        "bptt",
+        "no_history"
+      ],
+      [
+        "fixed_core",
+        "eligibility"
+      ],
+      [
+        "fixed_core",
+        "no_history"
+      ],
+      [
+        "eligibility",
+        "no_history"
+      ]
+    ],
+    "boundary_targets_scored": false,
+    "evaluation_warmup": 0,
+    "state": "Reset at each block; carry across chunks within that block",
+    "uncertainty": "Paired block bootstrap within source, conditional on each seed/checkpoint; unadjusted descriptive intervals"
+  },
+  "official_test_summary_exists": false,
+  "scope": "Code readiness, prerequisite status and existing test metadata only. No budget chosen, study identity frozen, corpus fit, model likelihood or test payload read. Completion metadata is not a live process lock."
+}
