@@ -1,0 +1,63 @@
+{
+  "verified_utc": "2026-09-11T17:23:29.731317+00:00",
+  "content_commit": "9cff7ca9b079261c763ac5f09c4c4cb671f1ab82",
+  "ci_run": 34627180246,
+  "scope": "Exact HTTP/local bytes for instruction evaluation methods, sources, preparation records and eight-run BabyLM validation snapshot; ZIP inventory and every archived source checked against the current working tree. No training or test generation.",
+  "http_files": {
+    "research/instruction-transfer.md": {
+      "bytes": 16353,
+      "sha256": "ddfe30d0066b195e8ad8529149ef46e59d134e6fb6f1a122f6cb935bc62732f0"
+    },
+    "research/scan-study-coordinator.md": {
+      "bytes": 6385,
+      "sha256": "d8a5f5893282bbf033843ead7731a256b6ec8700785da9d1fab3d5c6ce4b032b"
+    },
+    "research/scan-condition-preparation.md": {
+      "bytes": 3047,
+      "sha256": "8f44790f3b62a7f91460d1fae72bd3939a499f975f0787534c5d30f0c8ef59df"
+    },
+    "research/scan_study.py": {
+      "bytes": 20455,
+      "sha256": "81a5f37c632f69e181d1fb8f224ff7777b47b789dc7a41e132fe3114564bff70"
+    },
+    "research/scan-evaluation.md": {
+      "bytes": 7036,
+      "sha256": "7d48393bc9b9f6f6b5fdcc43a0b1983f2f26896b7b0ae232279f2369d05bacf3"
+    },
+    "research/scan-evaluation-preparation.json": {
+      "bytes": 3885,
+      "sha256": "896716a1f576d6792864ad726221c70c8421a6aee2240b206e72ee197427ce51"
+    },
+    "research/scan-evaluation-inventory-verification.json": {
+      "bytes": 1819,
+      "sha256": "bfcc81afd489971e061b7fe28b15a64ab00a723f6a0c6d7bf6c7247f4acf35cb"
+    },
+    "research/scan_evaluate.py": {
+      "bytes": 15628,
+      "sha256": "e46cf949b843fa4e9c88d55f21a5e03a423b2aa2da4586959198672b4e0cc02a"
+    },
+    "research/scan_test_inputs.py": {
+      "bytes": 3735,
+      "sha256": "407aeef3b02853ec7385a30936559ef9801d1a8b88e8a4c7882cefc3ef18a142"
+    },
+    "research/test_scan_evaluate.py": {
+      "bytes": 13003,
+      "sha256": "448f65a05771b64fcddffd640c90fa1fe2933665bcd12aedcfffcaf91593ec92"
+    },
+    "research/test_scan_test_inputs.py": {
+      "bytes": 5573,
+      "sha256": "cc8b2efa66c3b7d23eac40c9c8c41493e9b6b264c35a889b31dc0226a9e07e72"
+    },
+    "research/babylm-validation.json": {
+      "bytes": 354544,
+      "sha256": "88cfc0d75b237aeefdace5edf6f141e90a040367663968c9b89574344d865e86"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9298988,
+      "sha256": "534f8bda9bde793fce62a1b99ca6b8c656187c1683d747420add5d9c22d2b458"
+    }
+  },
+  "public_relative_links_checked": 37,
+  "source_archive_files": 456,
+  "software_tests": "Initial evaluator: 31 focused Python loader/evaluation/coordinator checks passed. Final inventory guard: two targeted whole-study integration checks passed, including full completion/resume. Publishing workflow: 74 JavaScript tests passed."
+}
