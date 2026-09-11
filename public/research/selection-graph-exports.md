@@ -5,6 +5,10 @@ verifies a dated 101-control snapshot and provides a tested final-archive gate.
 Generation remains incomplete at that checkpoint; no selection language fits
 have been run.
 
+The [training-cost pilot](selection-timing-pilot.md) is also prepared. All 64
+full-size graph configurations pass tiny synthetic backward/update checks;
+official corpus timing waits for the priority queues to finish.
+
 The [KC-centered candidates and comparison selections](circuit-selection.md)
 are now exported into the existing FLM graph format. The
 [5.6 MiB graph archive](selection-graphs.zip) contains all

@@ -35,6 +35,7 @@ await copyFile('reports/selection-graphs/rewiring-started.json', 'public/researc
 for (const name of ['selection_graphs.py', 'selection_rewiring.py'])
   await copyFile(`flm/${name}`, `public/research/${name}`);
 await writeFile('public/research/selection-graph-exports.md', (await readFile('docs/SELECTION-GRAPH-EXPORTS.md', 'utf8'))
+  .replaceAll('SELECTION-TIMING-PILOT.md', 'selection-timing-pilot.md')
   .replaceAll('SELECTION-REWIRING-AUDIT.md', 'selection-rewiring-audit.md')
   .replaceAll('CIRCUIT-SELECTION.md', 'circuit-selection.md')
   .replaceAll('../reports/selection-graphs/manifest.json', 'selection-graph-manifest.json')
@@ -51,6 +52,15 @@ await writeFile('public/research/selection-rewiring-audit.md', (await readFile('
   .replaceAll('SELECTION-GRAPH-EXPORTS.md', 'selection-graph-exports.md')
   .replaceAll('../reports/selection-rewiring/', 'selection-rewiring/')
   .replaceAll('../scripts/', 'selection-rewiring/'));
+await mkdir('public/research/selection-pilot', { recursive: true });
+await copyFile('reports/selection-pilot/preflight.json', 'public/research/selection-pilot/preflight.json');
+await copyFile('flm/selection_pilot.py', 'public/research/selection-pilot/selection_pilot.py');
+await copyFile('scripts/selection_pilot_preflight.py', 'public/research/selection-pilot/selection_pilot_preflight.py');
+await writeFile('public/research/selection-timing-pilot.md', (await readFile('docs/SELECTION-TIMING-PILOT.md', 'utf8'))
+  .replaceAll('CIRCUIT-SELECTION.md', 'circuit-selection.md')
+  .replaceAll('../flm/selection_pilot.py', 'selection-pilot/selection_pilot.py')
+  .replaceAll('../scripts/selection_pilot_preflight.py', 'selection-pilot/selection_pilot_preflight.py')
+  .replaceAll('../reports/selection-pilot/', 'selection-pilot/'));
 for (const name of ['summary.json', 'directed-groups.csv', 'external-partners.csv', 'kenyon-coverage.csv', 'figures.json'])
   await copyFile(`reports/selection-pathways/${name}`, `public/research/selection-pathways/${name}`);
 await copyFile('flm/selection_pathways.py', 'public/research/selection-pathways/selection_pathways.py');

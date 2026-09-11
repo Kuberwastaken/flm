@@ -112,7 +112,9 @@ def main():
         'docs/SELECTION-REWIRING-AUDIT.md', 'scripts/audit_selection_rewiring.py',
         'scripts/package_selection_rewiring.py', 'scripts/preflight_selection_rewiring.py',
         'tests/test_selection_rewiring_archive.py',
-        'reports/selection-rewiring/preflight.json', 'reports/selection-rewiring/preparation-checks.json')]
+        'reports/selection-rewiring/preflight.json', 'reports/selection-rewiring/preparation-checks.json',
+        'docs/SELECTION-TIMING-PILOT.md', 'flm/selection_pilot.py', 'scripts/selection_pilot_preflight.py',
+        'tests/test_selection_pilot.py', 'reports/selection-pilot/preflight.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
