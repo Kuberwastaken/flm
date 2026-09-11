@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-09-11T11:17:20.667298+00:00",
+  "source_snapshot_sha256": "eaf596676c866222b275e72dffa1ddb0f8716aaec991915c0a6726f73794c687",
+  "browser_url": "http://127.0.0.1:5181/?model=babylm&review=inference-release#research",
+  "observed_completed_runs": 4,
+  "seed43_observed": {
+    "flm": "12000 complete",
+    "gru": "0 measured",
+    "transformer": "awaiting measurements"
+  },
+  "seed43_all_three_table_rows": "Awaiting shared update",
+  "restored_seed42_all_three_complete": true,
+  "captured_console_errors": [],
+  "method": "Expanded BabyLM section using browser UI, selected seed43 and inspected displayed status/table, restored seed42.",
+  "scope": "Rendered dated validation snapshot and unavailable-comparison behavior; not a live training monitor or test result"
+}

@@ -1,0 +1,78 @@
+{
+  "verified_utc": "2026-09-11T11:17:54.987616+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/language-learning-validation.md",
+      "status": 200,
+      "bytes": 5307,
+      "sha256": "a9a664701060ee64014a2f480174253f29c391e7fc3a4a2853bc0ea309edbbb4"
+    },
+    {
+      "path": "research/language-learning-runner.md",
+      "status": 200,
+      "bytes": 5936,
+      "sha256": "e60068f281c5ccee11ef013d56bec0c160a91f8990af39704abe80ddc140b0ce"
+    },
+    {
+      "path": "research/language-learning-timing.md",
+      "status": 200,
+      "bytes": 6220,
+      "sha256": "170189aba437bfb022fb105ca45632dc4d5a2888a2aa3dbc4fc603b715ee06f8"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8246546,
+      "sha256": "97a7c0b3464803d078aa3ea9ae331146d554ba2c802edeb57a063736de0cd6ad"
+    },
+    {
+      "path": "research/language-learning/language_learning_validation.py",
+      "status": 200,
+      "bytes": 12883,
+      "sha256": "9633a796afe0e369682f9571dcc4485c68e6f896959f957413d27f0d0468edaa"
+    },
+    {
+      "path": "research/language-learning/language_learning_validation_preflight.py",
+      "status": 200,
+      "bytes": 2482,
+      "sha256": "4508d4e648328cd4832abb1e75013ca9a0eec155244f0ac9c63344b706b6b1f3"
+    },
+    {
+      "path": "research/language-learning/validation-preflight.json",
+      "status": 200,
+      "bytes": 10964,
+      "sha256": "d3d41d3592e321a939383cdf158c98ba48a46019358c6deb4e8aee1b8d1d0d06"
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "status": 200,
+      "bytes": 179955,
+      "sha256": "eaf596676c866222b275e72dffa1ddb0f8716aaec991915c0a6726f73794c687"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "language-learning-runner.md",
+    "language-learning/language_learning_validation.py",
+    "language-learning/validation-preflight.json",
+    "language-learning-timing.md",
+    "language-learning/language_learning_train.py",
+    "language-learning-inputs.md",
+    "language-eligibility-kernel.md",
+    "language-learning-validation.md",
+    "language-learning-timing.md",
+    "language-learning-inputs.md",
+    "language-learning-runner.md",
+    "language-learning/pilot-preflight.json",
+    "language-learning/language_learning_pilot.py"
+  ],
+  "paper_source_files_verified": 331,
+  "raw_or_processed_corpus_payloads_archived": false,
+  "validation_blocks_verified": 48,
+  "validation_scored_tokens": 49152,
+  "validation_scored_bytes": 145775,
+  "source_bindings_and_denominator_arithmetic_verified": true,
+  "tiny_validation_fixture_tests_observed_passed": 8,
+  "scope": "Publication and real-panel identity/denominator verification. No alternative-learning checkpoint was selected or scored on the real panel; no official test evaluation."
+}

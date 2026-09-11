@@ -65,6 +65,10 @@ to verify its digest, NumPy RNG and exact presented/scored token and UTF-8 byte
 exposure. Torch RNG is also restored. Eligibility starts fresh after each update
 and need not persist across saved window boundaries.
 
+The [per-run validation selector](language-learning-validation.md) now audits a
+complete checkpoint inventory and chooses its earliest minimum validation BPB.
+It remains separate from the future frozen study and all-condition test gate.
+
 The endpoint record means only that all requested training updates completed.
 It is explicitly not validation selection or permission for official test
 evaluation. A future all-condition selection gate must precede that evaluation.

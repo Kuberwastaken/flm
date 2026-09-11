@@ -1,0 +1,318 @@
+{
+  "verified_utc": "2026-09-11T11:09:16.328866+00:00",
+  "panel_binding": {
+    "partition": "validation",
+    "cache_manifest_sha256": "ea3bd0f2625e78723baf6300dca2ffdae91deebdcb21ae748ffd0cc4ba2ef859",
+    "cache_files_sha256": {
+      "tokens.u16": "371f2a7614f6b22aaf8204f3db090a10718dfbde29658dba772403b6d1269bb7",
+      "offsets.npy": "d7383f14c040d27b0abc4a2428243b63a24e0a1b7acbf32a21ebf1ca7afc7991",
+      "blocks.jsonl": "97f62f31a457de8186c2dd4baed69f2fc83d8b1861b2130554e81cabad7e4f6b"
+    },
+    "panel_sha256": "9a0c030150fee1821246dd54f045fc36c437bab3061e3010740d2942900de3ae",
+    "prefix_target_positions_per_block": 1024,
+    "coverage": {
+      "ordered_documents_sha256": "0741f8b75a27db62abd39753c5df095035a65318c26896b00dad397be1f1d679",
+      "documents": [
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/343016-359248",
+          "tokens": 1024,
+          "bytes": 3555
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/130616-146883",
+          "tokens": 1024,
+          "bytes": 3197
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/1743527-1759905",
+          "tokens": 1024,
+          "bytes": 3189
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/2231552-2247753",
+          "tokens": 1024,
+          "bytes": 3725
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/4219218-4235591",
+          "tokens": 1024,
+          "bytes": 3818
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/895860-911991",
+          "tokens": 1024,
+          "bytes": 3868
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/4448093-4464299",
+          "tokens": 1024,
+          "bytes": 3198
+        },
+        {
+          "document": "validation/bnc_spoken/2c546720837b059d/3958571-3974942",
+          "tokens": 1024,
+          "bytes": 3161
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/5760124-5776502",
+          "tokens": 1024,
+          "bytes": 2570
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/2323886-2340232",
+          "tokens": 1024,
+          "bytes": 2539
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/10325319-10341637",
+          "tokens": 1024,
+          "bytes": 2148
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/13565593-13581977",
+          "tokens": 1024,
+          "bytes": 2627
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/5858341-5874713",
+          "tokens": 1024,
+          "bytes": 2438
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/6087461-6103828",
+          "tokens": 1024,
+          "bytes": 2705
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/8672961-8689283",
+          "tokens": 1024,
+          "bytes": 2400
+        },
+        {
+          "document": "validation/childes/5823392e65a6da33/13173027-13189402",
+          "tokens": 1024,
+          "bytes": 2216
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/15150823-15167132",
+          "tokens": 1024,
+          "bytes": 3561
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/3283210-3299531",
+          "tokens": 1024,
+          "bytes": 3526
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/950433-966764",
+          "tokens": 1024,
+          "bytes": 3759
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/6798856-6815052",
+          "tokens": 1024,
+          "bytes": 3422
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/5169179-5185540",
+          "tokens": 1024,
+          "bytes": 3244
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/15134461-15150823",
+          "tokens": 1024,
+          "bytes": 3443
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/11201820-11218186",
+          "tokens": 1024,
+          "bytes": 3613
+        },
+        {
+          "document": "validation/gutenberg/760ebc4c697b9130/12661483-12677538",
+          "tokens": 1024,
+          "bytes": 3091
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/5038486-5054863",
+          "tokens": 1024,
+          "bytes": 2436
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/507221-523568",
+          "tokens": 1024,
+          "bytes": 3151
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/9799681-9816060",
+          "tokens": 1024,
+          "bytes": 2908
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/1537684-1554045",
+          "tokens": 1024,
+          "bytes": 3067
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/9374238-9390609",
+          "tokens": 1024,
+          "bytes": 2841
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/7148925-7165265",
+          "tokens": 1024,
+          "bytes": 3050
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/6478341-6494707",
+          "tokens": 1024,
+          "bytes": 2959
+        },
+        {
+          "document": "validation/open_subtitles/2e8038d3216c28d7/7361699-7377970",
+          "tokens": 1024,
+          "bytes": 2883
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/1038590-1054973",
+          "tokens": 1024,
+          "bytes": 3004
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/324599-340551",
+          "tokens": 1024,
+          "bytes": 3182
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/2025873-2042175",
+          "tokens": 1024,
+          "bytes": 3400
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/2445014-2461190",
+          "tokens": 1024,
+          "bytes": 3168
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/2818853-2835158",
+          "tokens": 1024,
+          "bytes": 2984
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/5844020-5859942",
+          "tokens": 1024,
+          "bytes": 3056
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/2493893-2510256",
+          "tokens": 1024,
+          "bytes": 3182
+        },
+        {
+          "document": "validation/simple_wiki/0ca18973a91069bf/4729383-4745297",
+          "tokens": 1024,
+          "bytes": 3476
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/294376-310688",
+          "tokens": 1024,
+          "bytes": 2678
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/506939-523317",
+          "tokens": 1024,
+          "bytes": 2809
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/326997-343381",
+          "tokens": 1024,
+          "bytes": 2967
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/457867-474189",
+          "tokens": 1024,
+          "bytes": 3135
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/604952-621294",
+          "tokens": 1024,
+          "bytes": 2726
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/670358-686628",
+          "tokens": 1024,
+          "bytes": 2480
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/0-16336",
+          "tokens": 1024,
+          "bytes": 2658
+        },
+        {
+          "document": "validation/switchboard/3dcd2a40051f8e90/98116-114441",
+          "tokens": 1024,
+          "bytes": 2562
+        }
+      ],
+      "tokens": 49152,
+      "bytes": 145775,
+      "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+      "byte_lengths_sha256": "7a734e0c4976345f2cbdb2a7d521230a39e8dfd0d0a17d0fbf1bca7f57cbe8ba"
+    },
+    "selection": "Existing score-independent BabyLM panel: eight hashed-ID blocks per component",
+    "test_payloads_opened": false
+  },
+  "components": {
+    "bnc_spoken": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 27711
+    },
+    "childes": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 19643
+    },
+    "gutenberg": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 27659
+    },
+    "open_subtitles": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 23295
+    },
+    "simple_wiki": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 25452
+    },
+    "switchboard": {
+      "blocks": 8,
+      "scored_tokens": 8192,
+      "scored_bytes": 22015
+    }
+  },
+  "source_sha256": {
+    "flm/language_learning_validation.py": "9633a796afe0e369682f9571dcc4485c68e6f896959f957413d27f0d0468edaa",
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+    "flm/language_learning_inputs.py": "976359f9a8c1efe08d47f1bc14487e348de686a9c4b992b7fda123156fccfc9d",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "scripts/language_learning_validation_preflight.py": "4508d4e648328cd4832abb1e75013ca9a0eec155244f0ac9c63344b706b6b1f3",
+    "tests/test_language_learning_validation.py": "7737eb646121b85bf460860a06972c7ac99631d59688cb59913a16cab7706169"
+  },
+  "model_forward_calls": 0,
+  "gradient_updates": 0,
+  "checkpoint_selected": false,
+  "test_payloads_opened": false,
+  "study_identity_frozen": false,
+  "all_condition_test_gate_implemented": false,
+  "scope": "Verified existing validation panel and exact scoring denominators; no model likelihoods, official checkpoint selection or test evaluation."
+}
