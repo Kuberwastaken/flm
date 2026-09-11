@@ -54,7 +54,7 @@ def figures(summary, declared, trajectories, output):
     points = np.concatenate([np.array([[0.,0.,0.],[8.,3.,0.],[8.,-3.,0.]]), *nonempty])
     lower, upper = points[:,:2].min(axis=0)-1., points[:,:2].max(axis=0)+1.
     fig = plt.figure(figsize=(13, 11))
-    grid = fig.add_gridspec(3, 2, height_ratios=[1,1,1.4], left=.075, right=.96, top=.88, bottom=.12, hspace=.55, wspace=.32)
+    grid = fig.add_gridspec(3, 2, height_ratios=[1,1,1.4], left=.14, right=.96, top=.88, bottom=.12, hspace=.55, wspace=.42)
     for row, seed in enumerate((42,43)):
         for col, case in enumerate(('odor-a-left','odor-a-right')):
             ax = fig.add_subplot(grid[row,col])
