@@ -1,0 +1,12 @@
+{
+  "summary_sha256": "564d429011143f81fa5d748d7ee4ad0d0479a35dc89fea78afa553955d4c1b4e",
+  "plot_source_sha256": "42461eb800f3eb02ba3b00425d5702c0e735559747808476848ad8dce8fbbe05",
+  "types": 15,
+  "rows": 30,
+  "artifacts": {
+    "public/research/figures/selection-pathways.csv": "e16bc9a25125e6567e001336ef0619d6e43d7f5086cbafa5e8a6c9e24b7d5d27",
+    "public/research/figures/selection-pathways.png": "4ed8c8c6ebbea96a146999fd4d7698e75f4386cf196631f6a02c53359e1bcc39",
+    "public/research/figures/selection-pathways.svg": "3bbd64a5c0bf4d8f71d3293906dd60ddec56bc51f6ff34b67f4237863825f3bd"
+  },
+  "scope": "Every literal KC type; sides combined, two prespecified descriptive edge thresholds"
+}

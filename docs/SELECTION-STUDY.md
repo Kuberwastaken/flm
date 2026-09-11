@@ -133,6 +133,15 @@ protocol remain unresolved, rather than being hidden behind this audit.
 
 ## Reproduce the anatomy audit
 
+The subsequent [pathway coverage audit](SELECTION-PATHWAYS.md) now measures all
+directed group pairs, every KC type/side stratum and external partners. It finds
+3,811 of 4,064 KCs with both an ALPN input and an MBON output at the one-contact
+threshold, and 3,726 at five contacts per edge. It also identifies 262,661
+PAM/PPL1 contacts onto KCs/MBONs that the current fast-sign rule would remove.
+These body-level pathways narrow the selection work without establishing intact
+compartments or choosing a trained candidate. Missing ALPN input must not be
+confused with missing sensory input: non-ALPN pathways require separate checks.
+
 ```powershell
 python -m unittest discover -s tests -p test_selection_feasibility.py -v
 python -m flm.selection_feasibility
