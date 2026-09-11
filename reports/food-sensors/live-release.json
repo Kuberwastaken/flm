@@ -1,0 +1,142 @@
+{
+  "verified_utc": "2026-09-11T13:40:18.166109+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/food-sensor-interface.md",
+      "status": 200,
+      "bytes": 8640,
+      "sha256": "bd7801eeb00956f217a29457cdc428af8ea0e4ae3d3d5bc5f73af6aefea050b5"
+    },
+    {
+      "path": "research/food-response-plan.md",
+      "status": 200,
+      "bytes": 6358,
+      "sha256": "6ff7095299292794e9e65e1c57a515bbf9a4fb00635d8ad975d3f39f751cd3a2"
+    },
+    {
+      "path": "research/selection-language-coordinator.md",
+      "status": 200,
+      "bytes": 8692,
+      "sha256": "38651385014edbf9813e068f97c864cd461795a67f5712040b3fc0ca34819d32"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8696178,
+      "sha256": "fb9254d975e5c5331cea5bdfd6a08cba55f8c2931a06f86b11f5e6bf89abb99a"
+    },
+    {
+      "path": "research/food-sensors/physical-probe.json",
+      "status": 200,
+      "bytes": 57072,
+      "sha256": "855e35ba586b08dddd2e101845153aefaf7c31ab1e99cde20ed9efa1d80df680"
+    },
+    {
+      "path": "research/food-sensors/geometry-audit.json",
+      "status": 200,
+      "bytes": 581,
+      "sha256": "c6e9717a5d9e09d37bf2281e52a1fefb32ec578fab759b815496f41ca926bbfb"
+    },
+    {
+      "path": "research/food-sensors/visible-odor-probe.json",
+      "status": 200,
+      "bytes": 57336,
+      "sha256": "adc27d50c072a92b7c79ab6805fcd1d5a4c4bb9dfc07f45627b774f97d48009d"
+    },
+    {
+      "path": "research/food-sensors/visible-odor-audit.json",
+      "status": 200,
+      "bytes": 581,
+      "sha256": "ffe878b72f20b8d84da6d6bd3681082328be1ac0b45393058b30a9e0ea7164f1"
+    },
+    {
+      "path": "research/food-sensors/figure.json",
+      "status": 200,
+      "bytes": 708,
+      "sha256": "3cb4a48bcb547ae1e8257dd3837f2970716a83e76ff48e40a58712c3d45d241e"
+    },
+    {
+      "path": "research/food-sensors/food_sensors.py",
+      "status": 200,
+      "bytes": 5945,
+      "sha256": "055ef60491c2ea93c879e271b91efef2c3348899305aa8d59d34733bc4ff6176"
+    },
+    {
+      "path": "research/food-sensors/food_sensor_probe.py",
+      "status": 200,
+      "bytes": 7762,
+      "sha256": "b7ee965e037d7c537bc19514bc5739fe994e2b8c69ddd8280a9b9d509e63329e"
+    },
+    {
+      "path": "research/food-sensors/audit_food_sensor_probe.py",
+      "status": 200,
+      "bytes": 6068,
+      "sha256": "73e822864219043ae72793a722ea37bdcd5566da89a742bb2b707d6e80e817ed"
+    },
+    {
+      "path": "research/food-sensors/food_sensor_figure.py",
+      "status": 200,
+      "bytes": 5188,
+      "sha256": "822d2a685507350fbeb320ecd27594011c940a101ec99fdb89a33faed5fee352"
+    },
+    {
+      "path": "research/figures/food-sensors.png",
+      "status": 200,
+      "bytes": 175955,
+      "sha256": "f689ad0e2436bd605b334dda13d4b89caeac10f3c6088268b60dcd85b11caea5"
+    },
+    {
+      "path": "research/figures/food-sensors.svg",
+      "status": 200,
+      "bytes": 444254,
+      "sha256": "fba6bc524c23fe490d23ec4d43a55cd8c519561fd5725422128d50721d1c511e"
+    },
+    {
+      "path": "research/figures/food-sensors.csv",
+      "status": 200,
+      "bytes": 597,
+      "sha256": "03449ac35eddeadab37f106e51bc1a19d7ec3f654b975ca0d7685c15851b4c26"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "food-response-plan.md",
+    "figures/food-sensors.png",
+    "food-sensors/visible-odor-probe.json",
+    "food-sensors/visible-odor-audit.json",
+    "figures/food-sensors.csv",
+    "food-sensors/food_sensors.py",
+    "food-sensors/food_sensor_probe.py",
+    "food-sensors/physical-probe.json",
+    "food-sensors/geometry-audit.json",
+    "food-sensors/audit_food_sensor_probe.py",
+    "food-sensor-interface.md",
+    "choice_replay.py",
+    "choice-replay.json",
+    "learned-choice-records.json",
+    "subset-audit.md",
+    "selection-language/selection_language_study.py",
+    "selection-language-test.md",
+    "selection-language/coordinator-preparation.json",
+    "selection-language/evaluation-verified-preparation.json",
+    "selection-timing-pilot.md",
+    "selection-language-training.md"
+  ],
+  "paper_source_files_verified": 375,
+  "scalar_replay_observations": 9,
+  "calibration_source_bindings_verified": 5,
+  "figure_artifact_hashes_verified": 3,
+  "physical_simulation_rerun_by_this_check": false,
+  "neural_policy_used": false,
+  "food_learning_result": false,
+  "selection_language_result": false,
+  "scope": "Publication and supplied-record replay. The producer records repeated prescribed motion; this release check does not rerun physics, train a policy or establish learned behavior. Selection costs and language fits remain pending.",
+  "deployment": {
+    "workflow_run_id": 34605457335,
+    "content_commit": "e594cb7e97aff022aadd91fd68ffee3929e9ddc1",
+    "npm_test": "passed",
+    "build": "passed",
+    "pages": "passed"
+  }
+}
