@@ -10,7 +10,7 @@ async function get(path, binary = false) {
   return binary ? response.arrayBuffer() : response.json();
 }
 
-class View {
+export class View {
   constructor(element, background) {
     this.element = element;
     this.scene = new THREE.Scene(); this.scene.background = new THREE.Color(background);

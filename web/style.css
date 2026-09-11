@@ -27,6 +27,16 @@
 .choice-replay-timeline label { display:flex; justify-content:space-between; gap:16px; }
 .choice-replay-timeline input { width:100%; padding:0; accent-color:var(--accent); }
 .choice-replay-timeline output { font-variant-numeric:tabular-nums; }
+.food-replay-controls { display:grid; grid-template-columns:1.5fr 1fr 1.5fr 1fr; gap:12px; }
+.food-replay-actions { display:flex; gap:8px; }
+.food-replay-views { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.food-replay-views figure { margin:0; min-width:0; }
+.food-replay-canvas { height:300px; border:1px solid var(--border); overflow:hidden; }
+.food-replay-canvas canvas { display:block; }
+.food-replay-neuron-control { max-width:220px; margin-top:16px; }
+#food-replay-details[data-loading] .food-replay-views { visibility:hidden; }
+.food-replay-views figcaption, #food-replay-values, #food-replay-position, #food-replay-neuron { font-size:12px; line-height:1.6; }
+@media (max-width:650px) { .food-replay-controls { grid-template-columns:1fr 1fr; } .food-replay-views { grid-template-columns:1fr; } }
 .choice-replay-pair { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .choice-replay-pair figure { margin:0; min-width:0; }
 .choice-replay-pair h3 { font-size:13px; color:#292820; }

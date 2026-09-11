@@ -5,6 +5,7 @@ import { loadLanguageTopology } from './language-topology.js';
 import { loadLanguageCore } from './language-core.js';
 import { loadFeedbackStudy } from './closed-loop.js';
 import { loadChoiceReplay } from './choice-replay.js';
+import { loadFoodReplay } from './food-replay.js';
 const names = {flm: 'FLM', gru: 'GRU', transformer: 'Transformer'};
 const colors = {flm: '#a74c20', gru: '#497569', transformer: '#666277'};
 const $ = id => document.getElementById(id);
@@ -27,6 +28,7 @@ export async function loadResearch() {
   void loadLanguageCore();
   void loadFeedbackStudy();
   void loadChoiceReplay();
+  loadFoodReplay();
   try {
     const [report, samples] = await Promise.all([get('validation.json'), get('samples-index.json')]);
     const runs = report.runs.filter(x => names[x.variant]);

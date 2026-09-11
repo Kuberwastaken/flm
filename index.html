@@ -354,6 +354,33 @@
           <p>The rule follows an odor even after the sugar assignment changes. It has no learned association to reverse. This supplies a physical reference for later learning tests; it establishes neither language transfer nor a feeding response. A standalone audit replays all 1,407 recorded sensor and command observations without rerunning physics.</p>
           <div class="document-links"><a href="/research/food-approach-results.md">Findings and limitations</a><a href="/research/food-approach-reference.md">Prior physical declaration</a><a href="/research/food-approach-records.zip">All trajectories, source and standalone audit · ZIP</a><a href="/research/figures/food-approach.csv">Every contact outcome · CSV</a></div>
         </section>
+        <section aria-labelledby="food-core-title">
+          <h2 id="food-core-title">Language-trained cores before food-task adaptation</h2>
+          <p>All 24 declared physical trials completed: two initialization seeds, each before and after WikiText training, across six conditions with identical fresh sensory/action adapters. Both core types contacted the upper patch in the mirrored cases, including the neutral patch when odor A was on the right. These contacts do not establish an odor association or a benefit from language training.</p>
+          <figure class="measured-figure"><a href="/research/figures/food-core-physical.png"><img src="/research/figures/food-core-physical.svg" loading="lazy" width="2080" height="1760" alt="All 24 initial and language-trained physical outcomes; mirrored paths retain wrong-source contacts and missing-odor cases retain timeouts."></a><figcaption>Two core seeds, one adapter seed and one gait seed. The exact repeat is a reproducibility check. No food-task adaptation has occurred.</figcaption></figure>
+          <details id="food-replay-details">
+            <summary>Replay recorded motion and neural state · all 24 conditions</summary>
+            <p id="food-replay-status" role="status">Open to load the 3D replay. Each selected recording downloads about 2.4 MB.</p>
+            <div class="food-replay-controls">
+              <label>Core<select id="food-replay-origin"><option value="initial">Before language training</option><option value="language">After language training</option></select></label>
+              <label>Initialization seed<select id="food-replay-seed"><option>42</option><option>43</option></select></label>
+              <label>Condition<select id="food-replay-case"><option value="odor-a-left">Odor A on the left</option><option value="odor-a-right">Odor A on the right</option><option value="odor-a-left-reversed">Sugar identities reversed</option><option value="odor-a-left-neutral">Both sources neutral</option><option value="odor-a-left-missing">Odor removed</option><option value="odor-a-left-repeat">Exact-seed repeat</option></select></label>
+              <label>Neural state<select id="food-replay-state"><option value="h">Fast state</option><option value="a">Slow state</option></select></label>
+            </div>
+            <div class="food-replay-actions"><button id="food-replay-play" type="button" disabled>Play at ¼ speed</button><button id="food-replay-home" type="button" disabled>Reset cameras</button></div>
+            <div class="choice-replay-timeline"><label for="food-replay-frame">Recorded time <output id="food-replay-time" for="food-replay-frame">0.00 s · sample 1/201</output></label><input id="food-replay-frame" type="range" min="0" max="200" step="1" value="0" disabled></div>
+            <div class="food-replay-views">
+              <figure><h3>Recorded body motion</h3><div id="food-replay-body" class="food-replay-canvas" role="img" aria-label="3D body reconstructed from recorded generalized coordinates"></div><figcaption id="food-replay-position">Body coordinates are in millimetres.</figcaption></figure>
+              <figure><h3>Actual 1,024-neuron model state</h3><div id="food-replay-brain" class="food-replay-canvas" role="img" aria-label="Recorded recurrent state on the selected MaleCNS neurons"></div><figcaption>Teal: negative. Orange: positive. Gray anatomy is context. Click a retained neuron to inspect it.</figcaption></figure>
+            </div>
+            <label class="food-replay-neuron-control">Inspect neuron index (0–1,023)<input id="food-replay-neuron-index" type="number" min="0" max="1023" step="1" value="0" disabled></label>
+            <p id="food-replay-neuron"></p>
+            <p id="food-replay-values"></p><p id="food-replay-outcome"></p>
+            <p>Switch the core at the same time sample to compare before and after language training. The physical body and male brain graph come from different specimens. Joint geometry is reconstructed from saved <code>qpos</code>; sensor and contact values use the original cached positions. The <a href="/research/physical-state-semantics.md">body-state note</a> explains the integration-stage difference and invalid saved head row. This viewer uses the valid head mesh transform.</p>
+            <p><a id="food-replay-record" href="/research/food-core-replay/manifest.json">Selected recording and outcome · JSON</a></p>
+          </details>
+          <div class="document-links"><a href="/research/food-core-physical-results.md">Findings and limitations</a><a href="/research/food-core-physical-reference.md">Prior declaration</a><a href="/research/food-core-physical-records.zip">All 24 records and standalone audit · ZIP</a><a href="/research/figures/food-core-physical.csv">Every outcome · CSV</a></div>
+        </section>
         <section aria-labelledby="physics-title">
           <h2 id="physics-title">A physical body, with reproducible controls</h2>
           <p>A separate <a href="https://neuromechfly.org/">NeuroMechFly / FlyGym</a> experiment establishes walking and turning in MuJoCo physics. Symmetric drive moves the thorax 13.46 mm along the x axis in one simulated second. Opposite drive asymmetries produce opposite turns. Repeating the symmetric trial with the same initial state reproduces the recorded trajectory exactly.</p>
