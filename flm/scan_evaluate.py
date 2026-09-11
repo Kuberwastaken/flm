@@ -215,6 +215,7 @@ def score_study(root):
                         label = row['condition']['label']; directory = root/EVALUATION/label
                         if (sha256(root/REPORTS/'test'/label/'result.json') != hashes[label]
                                 or sha256(directory/'identity.json') != row['run_identity_sha256']
+                                or sorted(path.name for path in directory.glob('batch-*.json')) != sorted(row['batch_record_sha256'])
                                 or any(sha256(directory/name) != value for name,value in row['batch_record_sha256'].items())):
                             raise ValueError('Instruction result or batch changed before summary')
                     summary = dict(evaluation_identity_sha256=evaluation_hash,

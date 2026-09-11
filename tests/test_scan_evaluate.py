@@ -210,5 +210,18 @@ class ScanWholeEvaluationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'before summary'): self.score()
         self.assertFalse((self.root/evaluate.SUMMARY).exists())
 
+    def test_late_extra_batch_prevents_whole_study_summary(self):
+        original = evaluate.generate_partition; calls = 0
+        def add_after_last(*args, **kwargs):
+            nonlocal calls
+            result = original(*args, **kwargs); calls += 1
+            if calls == 36:
+                folder = self.root/evaluate.EVALUATION/conditions()[0]['label']
+                (folder/'batch-99999.json').write_bytes((folder/'batch-00000.json').read_bytes())
+            return result
+        with patch.object(evaluate,'generate_partition',side_effect=add_after_last):
+            with self.assertRaisesRegex(ValueError,'before summary'): self.score()
+        self.assertFalse((self.root/evaluate.SUMMARY).exists())
+
 
 if __name__ == '__main__': unittest.main()
