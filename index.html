@@ -40,46 +40,8 @@
         <p class="capability" id="capability">Trained on meeting transcripts. It continues dialogue; it has not been trained to follow instructions or give reliable answers.</p>
         <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="off"></div>
         <div id="typing-fly" class="typing-fly" data-state="idle" data-motion="off">
-          <svg viewBox="0 0 208 112" aria-hidden="true" focusable="false">
-            <!-- A drawn companion, separate from the anatomical and physical views. -->
-            <path d="M8 101H201" fill="none" stroke="#d9d3c8"/>
-            <path d="M105 77H187L199 94V99H104L96 87Z" fill="#d9d3c8" stroke="#716b60" stroke-width="1.2" stroke-linejoin="round"/>
-            <path d="M105 77H187L199 94H104L96 87Z" fill="#ede8de" stroke="#716b60" stroke-width="1.2" stroke-linejoin="round"/>
-            <g fill="#fffefa" stroke="#b7afa1" stroke-width=".8" stroke-linejoin="round">
-              <path d="M109 80H119L121 83H110Z M122 80H132L134 83H123Z M135 80H145L147 83H136Z M148 80H158L160 83H149Z M161 80H171L173 83H162Z M174 80H184L186 83H175Z"/>
-              <path d="M112 85H122L124 88H113Z M125 85H135L137 88H126Z M138 85H148L150 88H139Z M151 85H161L163 88H152Z M164 85H174L176 88H165Z M177 85H187L189 88H178Z"/>
-              <path d="M109 90H121L123 93H110Z M126 90H168L170 93H127Z M175 90H190L192 93H176Z"/>
-            </g>
-            <path class="typing-key-far" d="M135 80H145L147 83H136Z" fill="#b78c62" stroke="#9b744e" stroke-width=".8"/>
-            <path class="typing-key-near" d="M125 85H135L137 88H126Z" fill="#b78c62" stroke="#9b744e" stroke-width=".8"/>
-            <g fill="none" stroke="#77634c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M83 55L59 75L47 96L40 98 M87 57L86 77L98 96L106 97 M96 55L109 67L122 78"/>
-              <path class="typing-leg-far" d="M108 49L122 57L134 77L141 80"/>
-            </g>
-            <path d="M34 52C38 40 57 36 75 40L91 48C83 62 48 68 34 52Z" fill="#9f723c" stroke="#624b35" stroke-width="1.4"/>
-            <g fill="none" stroke="#624b35" stroke-width="2.5">
-              <path d="M44 43Q46 54 51 61 M57 40Q58 52 64 60 M70 40Q73 50 76 57"/>
-            </g>
-            <ellipse cx="91" cy="46" rx="17" ry="14" fill="#b08855" stroke="#624b35" stroke-width="1.4" transform="rotate(-18 91 46)"/>
-            <g fill="#f5f1e6" fill-opacity=".85" stroke="#a39883" stroke-width="1">
-              <path d="M89 42C69 22 37 9 27 17C22 28 50 46 89 42Z"/>
-              <path d="M89 43C71 29 36 24 28 34C31 46 65 53 89 43Z"/>
-            </g>
-            <g fill="none" stroke="#b8ae9b" stroke-width=".8">
-              <path d="M85 40L35 19 M66 31L52 22 M65 32L48 33 M84 44L36 36 M65 41L50 45"/>
-            </g>
-            <path d="M106 29C122 26 131 40 125 52L112 58L103 51L100 38Z" fill="#b38a57" stroke="#624b35" stroke-width="1.3"/>
-            <ellipse cx="119" cy="40" rx="10" ry="12" fill="#913c2b" transform="rotate(-16 119 40)"/>
-            <path d="M116 32L120 31 M122 34L125 37 M113 39L116 41 M120 44L122 47" fill="none" stroke="#c48265" stroke-width="1.1" stroke-linecap="round"/>
-            <g fill="none" stroke="#624b35" stroke-width="1.4" stroke-linecap="round">
-              <path d="M126 31L132 25L138 24 M125 28L127 21 M127 46L134 51L130 56 M83 35L82 30 M90 32L91 27 M98 33L101 29"/>
-            </g>
-            <g fill="none" stroke="#624b35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M81 57L63 75L61 98L54 99 M93 58L89 81L104 98L113 99"/>
-              <path class="typing-leg-near" d="M103 52L115 66L125 82L131 85"/>
-            </g>
-          </svg>
-          <div class="typing-fly-copy"><p data-typing-caption>Ready to continue</p><p class="typing-scope">Illustration · not learned motion.</p><label class="check"><input type="checkbox" checked aria-label="Animate typing fly">Animate fly</label></div>
+          <div class="typing-fly-scene" aria-hidden="true"><span data-typing-loading>Loading 3D fly…</span></div>
+          <div class="typing-fly-copy"><p data-typing-caption>Ready to continue</p><p class="typing-scope">Illustration · not learned motion.</p></div>
         </div>
         <form id="composer">
           <label for="prompt" id="prompt-label">Your turn</label>

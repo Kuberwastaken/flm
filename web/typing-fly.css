@@ -1,25 +1,11 @@
-.typing-fly { display:flex; align-items:center; gap:16px; margin:8px 0; }
-.typing-fly svg { width:156px; height:88px; flex:none; overflow:visible; }
+.typing-fly { display:flex; align-items:center; gap:12px; margin:8px 0; }
+.typing-fly-scene { position:relative; width:224px; height:160px; flex:none; overflow:hidden; }
+.typing-fly-scene canvas { display:block; width:100%; height:100%; }
+.typing-fly-scene [data-typing-loading] { position:absolute; inset:0; display:grid; place-content:center; color:var(--muted); font-size:11px; text-align:center; }
 .typing-fly-copy { min-width:0; }
-.typing-fly-copy p { font-size:12px; margin:0 0 3px; }
+.typing-fly-copy p { font-size:12px; margin:0 0 4px; }
 .typing-fly-copy .typing-scope { font-size:10px; color:var(--muted); line-height:1.5; }
-.typing-fly-copy .check { font-size:11px; margin-top:8px; }
-.typing-fly-copy input { width:13px; height:13px; }
-.typing-leg-near { transform-origin:103px 52px; }
-.typing-leg-far { transform-origin:108px 49px; }
-.typing-fly[data-state="typing"][data-motion="on"] .typing-leg-near {
-  animation:fly-keystroke .7s ease-in-out infinite;
-}
-.typing-fly[data-state="typing"][data-motion="on"] .typing-leg-far {
-  animation:fly-keystroke .7s ease-in-out -.35s infinite;
-}
-.typing-fly[data-state="typing"][data-motion="on"] .typing-key-near {
-  animation:fly-key .7s ease-in-out infinite;
-}
-.typing-fly[data-state="typing"][data-motion="on"] .typing-key-far {
-  animation:fly-key .7s ease-in-out -.35s infinite;
-}
-@keyframes fly-keystroke { 0%, 100% { transform:rotate(-7deg); } 35% { transform:rotate(0); } 65% { transform:rotate(2.5deg); } }
-@keyframes fly-key { 0%, 35%, 100% { transform:translateY(0); } 65% { transform:translateY(1.2px); } }
-@media (prefers-reduced-motion:reduce) { .typing-fly svg * { animation:none!important; } }
-@media (max-width:380px) { .typing-fly { gap:8px; } .typing-fly svg { width:132px; height:80px; } }
+@media (max-width:1100px) { .typing-fly-scene { width:180px; height:140px; } }
+@media (max-width:760px) { .typing-fly-scene { width:216px; height:156px; } }
+@media (max-width:420px) { .typing-fly { gap:8px; } .typing-fly-scene { width:176px; height:136px; } }
+@media (max-width:350px) { .typing-fly-scene { width:148px; height:120px; } }
