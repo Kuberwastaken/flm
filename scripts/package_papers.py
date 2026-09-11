@@ -24,6 +24,8 @@ def main():
         'reports/babylm/handoff-preparation.json',
         'scripts/babylm_result_tables.py', 'tests/test_babylm_result_tables.py',
         'docs/BABYLM-RESULT-TABLES.md', 'reports/babylm/result-tables-preparation.json',
+        'scripts/babylm_result_figures.py', 'tests/test_babylm_result_figures.py',
+        'reports/babylm/result-figures-preparation.json',
         'docs/figures/readme_figures.py', 'public/research/test-results.json',
         'public/brand/provenance.json', 'docs/RESEARCH-PROGRAM.md', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',

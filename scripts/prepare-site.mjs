@@ -258,10 +258,16 @@ await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.m
 await mkdir('public/research/babylm-result-tables', { recursive: true });
 for (const [source, target] of [
   ['scripts/babylm_result_tables.py', 'babylm_result_tables.py'],
+  ['scripts/babylm_result_figures.py', 'babylm_result_figures.py'],
+  ['tests/test_babylm_result_figures.py', 'test_babylm_result_figures.py'],
+  ['reports/babylm/result-figures-preparation.json', 'figures-preparation.json'],
   ['tests/test_babylm_result_tables.py', 'test_babylm_result_tables.py'],
   ['reports/babylm/result-tables-preparation.json', 'preparation.json'],
 ]) await copyFile(source, `public/research/babylm-result-tables/${target}`);
 await writeFile('public/research/babylm-result-tables.md', (await readFile('docs/BABYLM-RESULT-TABLES.md', 'utf8'))
+  .replaceAll('../scripts/babylm_result_figures.py', 'babylm-result-tables/babylm_result_figures.py')
+  .replaceAll('../tests/test_babylm_result_figures.py', 'babylm-result-tables/test_babylm_result_figures.py')
+  .replaceAll('../reports/babylm/result-figures-preparation.json', 'babylm-result-tables/figures-preparation.json')
   .replaceAll('../scripts/babylm_result_tables.py', 'babylm-result-tables/babylm_result_tables.py')
   .replaceAll('../tests/test_babylm_result_tables.py', 'babylm-result-tables/test_babylm_result_tables.py')
   .replaceAll('../reports/babylm/result-tables-preparation.json', 'babylm-result-tables/preparation.json')
