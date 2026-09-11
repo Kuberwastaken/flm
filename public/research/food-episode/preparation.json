@@ -1,0 +1,350 @@
+{
+  "verified_utc": "2026-09-11T17:43:36.365265+00:00",
+  "source_commit": "a64c03d432aa0f74e3b9f2b2bd4111c3759b33fe",
+  "scope": "Controller/learning-rule unit tests and eight short no-learning physical integration checks; no official adaptation fits or navigation comparison.",
+  "sources": {
+    "flm/food_episode.py": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c",
+    "flm/food_readout_learning.py": "b1cdc545ed45da254ecaf3a0579a8d5a1dbbb748baf32e305d8d4a2086b6c3c6",
+    "experiments/embodiment/food_learning_environment.py": "37ece79ef7929d2fe66675b58f693a5ccf90f1e99fd41453174af9757051e18b",
+    "experiments/embodiment/verify_food_episode.py": "88bf732a9ca9ed1bd0becbf4c1feb1141a088167d03d41e26f779005ed4a7e39",
+    "experiments/embodiment/food_core_runtime.py": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb",
+    "tests/test_food_episode.py": "273e549ff6aa60c1b996c37e4e3e7043a99c85b37cfd9d2ac00eab6099cec2bb"
+  },
+  "unit_checks": [
+    {
+      "python": "3.10.11",
+      "numpy": "2.2.6",
+      "passed": 24,
+      "failed": 0,
+      "seconds": 0.643,
+      "log_sha256": "db7f0db0236e46f58ac7facb91f43e09fdab01f79ce4af56b95aea791b18a573"
+    },
+    {
+      "python": "3.12.14",
+      "numpy": "2.5.3",
+      "passed": 24,
+      "failed": 0,
+      "seconds": 0.629,
+      "log_sha256": "8b3477ee7f694ec646b41bd23ae3504492c6166b87a0f92f230c5eb78c597fc7"
+    }
+  ],
+  "unit_scope": "15 controller/rollout checks plus nine existing learning-rule checks in each environment",
+  "physical_identity": {
+    "scope": "Short no-learning physical integration checks, not a food-adaptation study.\n\nEight 20-ms rollouts (four exported cores, each repeated) follow the unchanged\nfactory's warmup. Only two descending commands are applied per rollout. This\nchecks executable wiring and reproducibility, not navigation or task learning.\n",
+    "source_sha256": {
+      "flm/food_episode.py": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c",
+      "flm/food_readout_learning.py": "b1cdc545ed45da254ecaf3a0579a8d5a1dbbb748baf32e305d8d4a2086b6c3c6",
+      "experiments/embodiment/food_learning_environment.py": "37ece79ef7929d2fe66675b58f693a5ccf90f1e99fd41453174af9757051e18b",
+      "experiments/embodiment/verify_food_episode.py": "88bf732a9ca9ed1bd0becbf4c1feb1141a088167d03d41e26f779005ed4a7e39",
+      "experiments/embodiment/food_core_runtime.py": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb",
+      "tests/test_food_episode.py": "273e549ff6aa60c1b996c37e4e3e7043a99c85b37cfd9d2ac00eab6099cec2bb"
+    },
+    "bundle_manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+    "model_ids": [
+      "initial-s42",
+      "language-s42",
+      "initial-s43",
+      "language-s43"
+    ],
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "clock": {
+      "physics_timestep_s": 0.0001,
+      "steps_per_action": 100,
+      "maximum_physics_steps": 200
+    },
+    "rewards": {
+      "sugar_scale": 2.0,
+      "contact_offset": -1.0,
+      "timeout": 0.0
+    },
+    "sampling_seed": 29,
+    "gait_seed": 17,
+    "learning": false,
+    "expected_trials": 8,
+    "steps_per_trial": 200,
+    "task_training_updates": 0
+  },
+  "environment": {
+    "body_record": "Unmodified cached body origins plus qpos and thorax quaternion. The known invalid c_head row aliases a hind foot; the six feet and two antennae used for sensors are the calibrated body origins.",
+    "clock": {
+      "maximum_physics_steps": 200,
+      "physics_timestep_s": 0.0001,
+      "steps_per_action": 100
+    },
+    "field": {
+      "channels": [
+        "odor_a_left",
+        "odor_a_right",
+        "odor_b_left",
+        "odor_b_right",
+        "sugar_contact",
+        "source_contact"
+      ],
+      "coordinate_units": "mm",
+      "format": "flm-engineered-food-field-v1",
+      "geometry": "Virtual upright closed cylinders from source z to z+height; contact uses six tarsus5 body-frame origins, not collision manifolds",
+      "odor_units": "dimensionless, summed Gaussian fields; fixed c/(1+c) observation transform",
+      "scope": "Synthetic sensor/task interface. No fluid dynamics, identified receptor neurons, ingestion, reward update or learned behavior.",
+      "sources": [
+        {
+          "contact_height_mm": 0.25,
+          "contact_radius_mm": 0.75,
+          "name": "a",
+          "odor": [
+            1.0,
+            0.0
+          ],
+          "position_mm": [
+            8.0,
+            3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "sugar": 1.0
+        },
+        {
+          "contact_height_mm": 0.25,
+          "contact_radius_mm": 0.75,
+          "name": "b",
+          "odor": [
+            0.0,
+            1.0
+          ],
+          "position_mm": [
+            8.0,
+            -3.0,
+            0.0
+          ],
+          "spread_mm": [
+            5.0,
+            4.0,
+            2.0
+          ],
+          "sugar": 0.0
+        }
+      ],
+      "sugar_units": "dimensionless contact intensity in [0,1]; maximum over touched sources"
+    },
+    "format": "flm-sampled-food-environment-v1",
+    "gait_seed": 17,
+    "installed_sources": {
+      "flygym_demo.complex_terrain.common": "306b5a287de6aa26a3de110dbe16f706b9df8c592386b6fdc770d6724d38ffd8",
+      "flygym_demo.complex_terrain.preprogrammed": "ad945cee5af607e24f1a17ada0b8becd622c1fabebbb9f4f35e49dc7fd69e97f",
+      "flygym_demo.complex_terrain.turning_controller": "385f1b0169c60f0f241a63e0b4f4112aa1c4e65e4b9aec7e5b38cee8cdc6b1b7"
+    },
+    "missing_odor": false,
+    "scope": "Sampled descending commands through the existing designed gait; no learned walking or feeding",
+    "sources": {
+      "experiments/embodiment/calibrate.py": "fd42f6fa46c83658c81f09f38881dc2c985124406603aad8d27c3010e52b5154",
+      "experiments/embodiment/food_approach.py": "3704839dee1a1525c0d910ae5fe4707871fdbc4d97f5ab17d0699b18f66b1a2b",
+      "experiments/embodiment/food_learning_environment.py": "37ece79ef7929d2fe66675b58f693a5ccf90f1e99fd41453174af9757051e18b",
+      "flm/food_episode.py": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c",
+      "flm/food_sensors.py": "055ef60491c2ea93c879e271b91efef2c3348899305aa8d59d34733bc4ff6176",
+      "requirements-embodied-lock.txt": "8441fc299dac61d014782872ed8dbf60634a588a55723a2288ce4abba879a93f"
+    },
+    "versions": {
+      "flygym": "2.1.0",
+      "mujoco": "3.9.0",
+      "numba": "0.67.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    }
+  },
+  "physical_checks": {
+    "complete": 8,
+    "failed": 0,
+    "physics_steps_excluding_warmup": 1600,
+    "per_trial_seconds_after_warmup": 0.02,
+    "observations_per_trial": 3,
+    "applied_decisions_per_trial": 2,
+    "all_outcomes": "Timeout without contact at the short horizon",
+    "task_training_updates": 0,
+    "all_cores_unchanged": true,
+    "all_readouts_unchanged": true,
+    "all_controller_replays_exact": true,
+    "paired_repeats": [
+      {
+        "model_id": "initial-s42",
+        "exact_array_equal": {
+          "time_s": true,
+          "sensory": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "probabilities": true,
+          "descending_signal": true,
+          "qpos": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "simulation_time_s": true,
+          "action": true,
+          "uniform": true
+        }
+      },
+      {
+        "model_id": "language-s42",
+        "exact_array_equal": {
+          "time_s": true,
+          "sensory": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "probabilities": true,
+          "descending_signal": true,
+          "qpos": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "simulation_time_s": true,
+          "action": true,
+          "uniform": true
+        }
+      },
+      {
+        "model_id": "initial-s43",
+        "exact_array_equal": {
+          "time_s": true,
+          "sensory": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "probabilities": true,
+          "descending_signal": true,
+          "qpos": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "simulation_time_s": true,
+          "action": true,
+          "uniform": true
+        }
+      },
+      {
+        "model_id": "language-s43",
+        "exact_array_equal": {
+          "time_s": true,
+          "sensory": true,
+          "fast": true,
+          "slow": true,
+          "features": true,
+          "probabilities": true,
+          "descending_signal": true,
+          "qpos": true,
+          "body_positions_mm": true,
+          "thorax_quaternion_wxyz": true,
+          "raw_odor": true,
+          "contact_mask": true,
+          "simulation_time_s": true,
+          "action": true,
+          "uniform": true
+        }
+      }
+    ],
+    "trials": [
+      {
+        "label": "initial-s42-repeat0",
+        "model_id": "initial-s42",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "7ecef662a40360a72d8b4ca7dd64d02fe569ee09d918c3f798954de3b99c9b56",
+        "controller_sha256": "7a295282cfcb71dab8a5491642caed6ebb84faad3d3fc866f3942ff272660983",
+        "arrays_sha256": "53e3aeb6ec86e422526a326beb093073e45686871bcb2fcfa6cb019027f42a06"
+      },
+      {
+        "label": "initial-s42-repeat1",
+        "model_id": "initial-s42",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "7ecef662a40360a72d8b4ca7dd64d02fe569ee09d918c3f798954de3b99c9b56",
+        "controller_sha256": "7a295282cfcb71dab8a5491642caed6ebb84faad3d3fc866f3942ff272660983",
+        "arrays_sha256": "53e3aeb6ec86e422526a326beb093073e45686871bcb2fcfa6cb019027f42a06"
+      },
+      {
+        "label": "language-s42-repeat0",
+        "model_id": "language-s42",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "860bc7dcdbd8c762a561d5579c8c7dce31d24db5ba693cb1fe35cd7d288587ca",
+        "controller_sha256": "d666cbc4eaf850b42dd42fe8871896249bcc3b64205f05c75f344983f3d6d9eb",
+        "arrays_sha256": "e654f99d9475bcc8b4adfe57a1a0710d5368e2a6745de7bd45718378a4c3e99e"
+      },
+      {
+        "label": "language-s42-repeat1",
+        "model_id": "language-s42",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "860bc7dcdbd8c762a561d5579c8c7dce31d24db5ba693cb1fe35cd7d288587ca",
+        "controller_sha256": "d666cbc4eaf850b42dd42fe8871896249bcc3b64205f05c75f344983f3d6d9eb",
+        "arrays_sha256": "e654f99d9475bcc8b4adfe57a1a0710d5368e2a6745de7bd45718378a4c3e99e"
+      },
+      {
+        "label": "initial-s43-repeat0",
+        "model_id": "initial-s43",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "356dfae4af74ed6101c76a769a75df914f59dc7af53f6e8dd4646cba492297a3",
+        "controller_sha256": "0d20d3eb8f4c59b42673840961609f67e0e85cd53fee4aec3a3c8740cf8390bd",
+        "arrays_sha256": "e843c46071c923d6110ccb83c366f7577ce1052ad656038a9640c86b50cff999"
+      },
+      {
+        "label": "initial-s43-repeat1",
+        "model_id": "initial-s43",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "356dfae4af74ed6101c76a769a75df914f59dc7af53f6e8dd4646cba492297a3",
+        "controller_sha256": "0d20d3eb8f4c59b42673840961609f67e0e85cd53fee4aec3a3c8740cf8390bd",
+        "arrays_sha256": "e843c46071c923d6110ccb83c366f7577ce1052ad656038a9640c86b50cff999"
+      },
+      {
+        "label": "language-s43-repeat0",
+        "model_id": "language-s43",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "dd0aaf3ce8e5792350f535a24acc99355af274917a635a5882631493b2d05783",
+        "controller_sha256": "52c2a66350dbf1842ca69de140df5f4d3479ed86c908ecb94e4cbc50b66b2d85",
+        "arrays_sha256": "6379ce6d0e07f009bdad46ec1a05400569644b2234f5b7ee3a3d4a9f9f71be79"
+      },
+      {
+        "label": "language-s43-repeat1",
+        "model_id": "language-s43",
+        "status": "complete",
+        "physics_steps": 200,
+        "observations": 3,
+        "trajectory_sha256": "dd0aaf3ce8e5792350f535a24acc99355af274917a635a5882631493b2d05783",
+        "controller_sha256": "52c2a66350dbf1842ca69de140df5f4d3479ed86c908ecb94e4cbc50b66b2d85",
+        "arrays_sha256": "6379ce6d0e07f009bdad46ec1a05400569644b2234f5b7ee3a3d4a9f9f71be79"
+      }
+    ]
+  },
+  "archive": {
+    "path": "public/research/food-episode-smoke.zip",
+    "bytes": 639576,
+    "sha256": "3ae9166ebd3be93c76c015ecf7074fbba51dd4b1ae3e934dc303b2673f80558d",
+    "members": 38,
+    "original_records": 26,
+    "validation": "Exact bytes, complete inventory and ZIP CRC; numerical/physical repeat checks are those recorded by the probe, not new physics performed by the packager"
+  },
+  "limits": [
+    "Learning was disabled in all physical checks; synthetic unit-test updates are not a food result",
+    "Twenty milliseconds after warmup is too short for navigation/arrival claims and is not a training-cost pilot",
+    "Controller replay does not restore or independently rerun a physical simulator/gait",
+    "Known cached body-origin semantics, including the invalid head alias, are preserved",
+    "Official adaptation inventory, coordinator, cost pilot, budget, full-horizon baseline and evaluation remain pending"
+  ]
+}

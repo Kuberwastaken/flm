@@ -146,6 +146,7 @@ for (const [source, target] of [
   ['FOOD-CORE-INTERFACE.md', 'food-core-interface.md'],
   ['FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md'],
   ['FOOD-READOUT-LEARNING.md', 'food-readout-learning.md'],
+  ['FOOD-EPISODE-RUNNER.md', 'food-episode-runner.md'],
   ['PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
@@ -155,8 +156,24 @@ for (const source of ['flm/food_readout_learning.py', 'tests/test_food_readout_l
 await writeFile('public/research/food-readout-learning.md', (await readFile('docs/FOOD-READOUT-LEARNING.md', 'utf8'))
   .replaceAll('FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md')
   .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('FOOD-EPISODE-RUNNER.md', 'food-episode-runner.md')
   .replaceAll('../flm/food_readout_learning.py', 'food-readout/food_readout_learning.py')
   .replaceAll('../tests/test_food_readout_learning.py', 'food-readout/test_food_readout_learning.py'));
+await mkdir('public/research/food-episode', { recursive: true });
+for (const source of ['flm/food_episode.py', 'tests/test_food_episode.py',
+  'experiments/embodiment/food_learning_environment.py', 'experiments/embodiment/verify_food_episode.py',
+  'scripts/package_food_episode_smoke.py', 'scripts/audit_food_episode_smoke.py',
+  'reports/food-episode/preparation.json', 'reports/food-episode/archive-audit.json'])
+  await copyFile(source, `public/research/food-episode/${source.split('/').at(-1)}`);
+await writeFile('public/research/food-episode-runner.md', (await readFile('docs/FOOD-EPISODE-RUNNER.md', 'utf8'))
+  .replaceAll('FOOD-READOUT-LEARNING.md', 'food-readout-learning.md')
+  .replaceAll('FOOD-RESPONSE-PLAN.md', 'food-response-plan.md')
+  .replaceAll('PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md')
+  .replaceAll('../flm/food_episode.py', 'food-episode/food_episode.py')
+  .replaceAll('../experiments/embodiment/', 'food-episode/')
+  .replaceAll('../scripts/audit_food_episode_smoke.py', 'food-episode/audit_food_episode_smoke.py')
+  .replaceAll('../reports/food-episode/', 'food-episode/')
+  .replaceAll('../public/research/', ''));
 await mkdir('public/research/food-sensors', { recursive: true });
 for (const name of ['physical-probe.json', 'geometry-audit.json', 'visible-odor-probe.json', 'visible-odor-audit.json', 'figure.json'])
   await copyFile(`reports/food-sensors/${name}`, `public/research/food-sensors/${name}`);

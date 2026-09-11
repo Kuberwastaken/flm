@@ -1,0 +1,71 @@
+{
+  "verified_utc": "2026-09-11T17:47:48.660356+00:00",
+  "archive_sha256": "3ae9166ebd3be93c76c015ecf7074fbba51dd4b1ae3e934dc303b2673f80558d",
+  "bundle_manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+  "auditor_sha256": "1e4ef03b1aa234b3cca6d8cf9fe08dae9d73c413c2bbcb6aeb6fd56a5cc84d8a",
+  "numpy": "2.5.3",
+  "archive_members": 38,
+  "trials": [
+    {
+      "label": "initial-s42-repeat0",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "initial-s42-repeat1",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "language-s42-repeat0",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "language-s42-repeat1",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "initial-s43-repeat0",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "initial-s43-repeat1",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "language-s43-repeat0",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    },
+    {
+      "label": "language-s43-repeat1",
+      "observations": 3,
+      "sensor_replay_exact": true,
+      "controller_replay_exact": true,
+      "readout_unchanged": true
+    }
+  ],
+  "observations": 24,
+  "paired_repeats_exact": 4,
+  "new_physics_steps": 0,
+  "task_training_updates": 0,
+  "scope": "Exact archive bytes, recorded sensor geometry, core/readout event replay and paired arrays. Same declared numerical routines, no new physical simulation or independent implementation."
+}
