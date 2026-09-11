@@ -125,6 +125,7 @@ def main():
         'docs/SCAN-EVALUATION.md', 'flm/scan_evaluate.py', 'flm/scan_test_inputs.py',
         'tests/test_scan_evaluate.py', 'tests/test_scan_test_inputs.py',
         'reports/scan-runtime/evaluation-preparation.json',
+        'reports/scan-runtime/evaluation-inventory-verification.json',
         'flm/scan_inputs.py', 'flm/scan_runtime.py', 'flm/scan_train.py',
         'flm/scan_conditions.py', 'flm/scan_pilot.py', 'scripts/scan_source_audit.py',
         'reports/scan-runtime/input-preflight.json', 'reports/scan-runtime/source-preflight.json',

@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-09-11T17:20:25.262192+00:00",
+  "source_commit": "c3b88469081c6b65bd018952588736626e58e242",
+  "scope": "Narrow follow-up to the original 31-check evaluation verification, after adding the final exact batch-inventory recheck.",
+  "original_preparation_sha256": "896716a1f576d6792864ad726221c70c8421a6aee2240b206e72ee197427ce51",
+  "source_sha256": {
+    "flm/scan_evaluate.py": "e46cf949b843fa4e9c88d55f21a5e03a423b2aa2da4586959198672b4e0cc02a",
+    "tests/test_scan_evaluate.py": "448f65a05771b64fcddffd640c90fa1fe2933665bcd12aedcfffcaf91593ec92"
+  },
+  "focused_tests": {
+    "passed": 2,
+    "failed": 0,
+    "seconds": 95.134,
+    "log_sha256": "b6508e02663c06d9242956eae8a06de69dbbbbfa2aa1b2d4f1137627be84cf8b",
+    "names": [
+      "ScanWholeEvaluationTests.test_late_extra_batch_prevents_whole_study_summary",
+      "ScanWholeEvaluationTests.test_all_36_actual_fixture_checkpoints_generate_and_resume_with_identical_summary"
+    ]
+  },
+  "observations": [
+    "A new extra batch added after the last condition finishes is rejected before summary creation",
+    "The revised evaluator completes all 36 actual small fixture checkpoints and resumes with identical summaries without regenerating cached predictions",
+    "Caller Torch RNG and thread count are restored"
+  ],
+  "fixture_scope": "Same six-update/four-training-row, three-test-row, small float64 FLM/GRU/transformer conditions as the original preparation; output cap four, batch two, one thread; no actual pretraining.",
+  "official_fits": 0,
+  "official_test_generation": 0,
+  "limits": "These are two targeted checks of the revised version, not a claim that the original full suite was repeated on this revision. The original 31-check record keeps its original code hashes and source commit."
+}

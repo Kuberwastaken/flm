@@ -286,7 +286,7 @@ for (const name of ['scan_study.py', 'scan_evaluate.py', 'scan_test_inputs.py', 
   await copyFile(`flm/${name}`, `public/research/${name}`);
 for (const name of ['test_scan_study.py', 'test_scan_evaluate.py', 'test_scan_test_inputs.py'])
   await copyFile(`tests/${name}`, `public/research/${name}`);
-for (const name of ['condition-preflight', 'pilot-preflight', 'study-preparation', 'evaluation-preparation'])
+for (const name of ['condition-preflight', 'pilot-preflight', 'study-preparation', 'evaluation-preparation', 'evaluation-inventory-verification'])
   await copyFile(`reports/scan-runtime/${name}.json`, `public/research/scan-${name}.json`);
 for (const name of ['SCAN-STUDY-COORDINATOR', 'SCAN-EVALUATION', 'SCAN-CONDITION-PREPARATION', 'SCAN-TIMING-PILOT']) {
   let note = await readFile(`docs/${name}.md`, 'utf8');
