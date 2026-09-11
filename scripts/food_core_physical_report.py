@@ -147,6 +147,13 @@ def main(run, bundle):
         contents[name]=(ROOT/'scripts'/name).read_bytes()
     contents['food_core_runtime.py']=(ROOT/'experiments/embodiment/food_core_runtime.py').read_bytes()
     for name in sources: contents['sources/'+name]=(ROOT/name).read_bytes()
+    # Post-hoc method evidence is separate from the frozen source inventory.
+    for name in ('docs/PHYSICAL-STATE-SEMANTICS.md',
+                 'reports/food-core-physical/body-assets.json',
+                 'reports/food-core-physical/body-semantics.json',
+                 'experiments/embodiment/food_replay_assets.py',
+                 'experiments/embodiment/inspect_food_body_semantics.py'):
+        contents[name]=(ROOT/name).read_bytes()
     contents['LICENSE']=(ROOT/'LICENSE').read_bytes()
     for name in ('CC-BY-4.0.txt','DATA-ATTRIBUTION.md','BODY-PROVENANCE.md','Body-Apache-2.0.txt','Body-MIT.txt'):
         contents['licenses/'+name]=(ROOT/'licenses'/name).read_bytes()
@@ -161,6 +168,8 @@ def main(run, bundle):
         'open-loop fixture is supplied in the separate food-core-interface.zip release, not here.\n'
         'sources/ preserves all bound local sources, not a complete training repository.\n'
         'Read sources/docs/FOOD-CORE-PHYSICAL-REFERENCE.md for the prior declaration.\n'
+        'Read docs/PHYSICAL-STATE-SEMANTICS.md before reusing body poses: c_head aliases\n'
+        'rh_tarsus5, and cached sensor poses differ from kinematics of saved qpos.\n'
         'Keep the MIT code license and included graph/body provenance and component licenses.\n'
         'There are zero food-adaptation updates; do not treat contacts as proof of learning.\n').encode('utf8')
     inventory={name:dict(bytes=len(data),sha256=hashlib.sha256(data).hexdigest()) for name,data in sorted(contents.items())}

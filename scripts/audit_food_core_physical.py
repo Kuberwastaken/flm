@@ -47,6 +47,11 @@ def audit_trial(declared, record, arrays, core):
         raise ValueError('Invalid generalized coordinates')
     if arrays['contact_mask'].dtype != np.bool_ or any(not np.isfinite(a).all() for a in arrays.values()):
         raise ValueError('Nonfinite record or nonboolean contacts')
+    # Preserve the known v1 upstream lookup defect, rather than silently repairing
+    # archived poses. Neither of these rows is used as a head sensor.
+    if not np.array_equal(arrays['body_positions_mm'][:, names.index('c_head')],
+                          arrays['body_positions_mm'][:, names.index('rh_tarsus5')]):
+        raise ValueError('Original v1 head-row alias was changed')
     for name in ('sensory', 'fast', 'slow', 'features', 'logits', 'probabilities'):
         if arrays[name].dtype != np.float32: raise ValueError('Recorded neural dtype differs')
     if not np.allclose(arrays['time_s'], np.arange(n)*.01, atol=1e-14, rtol=0): raise ValueError('Control clock differs')
@@ -83,7 +88,7 @@ def audit_trial(declared, record, arrays, core):
         final_thorax_position_mm=body[-1].tolist(), minimum_thorax_height_mm=float(body[:, 2].min()),
         minimum_thorax_up_z=float((1-2*(quat[:, 1]**2+quat[:, 2]**2)).min()))
     same(record['metrics'], expected_metrics)
-    return dict(observations=n, maximum_core_error=maxima)
+    return dict(observations=n, maximum_core_error=maxima, invalid_head_alias_observations=n)
 
 
 def audit(folder, bundle):

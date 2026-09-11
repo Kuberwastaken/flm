@@ -59,6 +59,7 @@ class PhysicalCoreAuditTests(unittest.TestCase):
     def test_all_neural_states_and_latched_command_replay(self):
         checked = audit_trial(self.declared, self.record, self.arrays, tiny_core())
         self.assertEqual(checked['observations'], 201)
+        self.assertEqual(checked['invalid_head_alias_observations'], 201)
         self.assertTrue(all(value == 0 for value in checked['maximum_core_error'].values()))
         self.assertTrue(np.any(self.arrays['fast'][100] != self.arrays['fast'][101]))
         np.testing.assert_array_equal(self.arrays['descending_signal'][101], [0,0])
@@ -78,6 +79,12 @@ class PhysicalCoreAuditTests(unittest.TestCase):
             with self.assertRaises(ValueError): audit_trial(self.declared, record, self.arrays, tiny_core())
         arrays = dict(self.arrays); arrays['fast'] = arrays['fast'].astype(np.float64)
         with self.assertRaises(ValueError): audit_trial(self.declared, self.record, arrays, tiny_core())
+
+    def test_silently_repaired_head_row_fails(self):
+        arrays = {key:value.copy() for key,value in self.arrays.items()}
+        arrays['body_positions_mm'][0, self.record['body_names'].index('c_head'), 0] += .1
+        with self.assertRaisesRegex(ValueError, 'head-row alias'):
+            audit_trial(self.declared, self.record, arrays, tiny_core())
 
     def test_empty_simulation_failure_is_retained(self):
         record = dict(case=self.record['case'], observations=0, body_names=[], status='failed',
