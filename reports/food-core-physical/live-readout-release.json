@@ -1,0 +1,321 @@
+{
+  "verified_utc": "2026-09-11T16:29:28.890302+00:00",
+  "content_commit": "e5effed2b02d6c290019d3964032d5a36a0f9796",
+  "base_url": "https://flm.kuber.studio",
+  "verifier_sha256": "4d7cc5955299de75663633c852393b0b2f243322bc1a012604c94a5f8ec5391b",
+  "http_files": {
+    "body/recorded-food/geometry.bin": {
+      "bytes": 2040756,
+      "sha256": "0bd79fb2f5608c36a149f77631ded404b392b5fafde8d51a871bc5badea61851"
+    },
+    "body/recorded-food/model.json": {
+      "bytes": 58780,
+      "sha256": "e557702ce66e37e0315f918dbf1de75b8c0c352ee6e635b178b418334c70d4a7"
+    },
+    "licenses/BODY-PROVENANCE.md": {
+      "bytes": 2086,
+      "sha256": "b02233647241188231055fc2d0f2317a21c061558c8dc383de22002dbf291430"
+    },
+    "models/flm-wikitext/anatomy.json": {
+      "bytes": 1589376,
+      "sha256": "92f2d5eef9ba4f880e2ee077cc27022ad8440d865c89816b3b1110f0a6b6dedb"
+    },
+    "research/babylm-validation.json": {
+      "bytes": 310902,
+      "sha256": "00ef47c4235aaca855c053e51bd947f9a2f8266ec92e9559ea98a6cca300154b"
+    },
+    "research/figures/food-core-physical.csv": {
+      "bytes": 3750,
+      "sha256": "8339621735bf1d10dddd9321154f44db4e055da8c2cf2efa63ccae81b948f72c"
+    },
+    "research/figures/food-core-physical.png": {
+      "bytes": 234446,
+      "sha256": "3632500c9a9f1385b8b549fb2276d2385e7be403a2b963e944bccf5bf8499fff"
+    },
+    "research/figures/food-core-physical.svg": {
+      "bytes": 181734,
+      "sha256": "cdba2e0f636239594aa066b9d1faf31bac18505ec381c71431834e0146c67778"
+    },
+    "research/food-core-physical-records.zip": {
+      "bytes": 50832026,
+      "sha256": "921d6a1e6bb2e70cce37d275fd35d88ae34b1844bbaf9790488118eb0b1577ac"
+    },
+    "research/food-core-physical-reference.md": {
+      "bytes": 5972,
+      "sha256": "9271a850d84574863ea8d1d375a58856a4249b0ac391445c287172a5a0b9a3d2"
+    },
+    "research/food-core-physical-results.md": {
+      "bytes": 5028,
+      "sha256": "5f6c9621251c0236f4389c34d91ab5e360091f371b02c39af0907ef355c0dabd"
+    },
+    "research/food-core-physical/audit.json": {
+      "bytes": 14166,
+      "sha256": "42eb1ad0ee4464db8360b8ef99254405164f89b51239079ca75e8da6d2e9da28"
+    },
+    "research/food-core-physical/body-assets.json": {
+      "bytes": 58780,
+      "sha256": "e557702ce66e37e0315f918dbf1de75b8c0c352ee6e635b178b418334c70d4a7"
+    },
+    "research/food-core-physical/body-semantics.json": {
+      "bytes": 16691,
+      "sha256": "cb196fc3248fb419d481d57e53925b7cb064667a375659f30379f86e7d88c3e5"
+    },
+    "research/food-core-physical/export_food_replay.py": {
+      "bytes": 7533,
+      "sha256": "54964d3c512d48639b52dbdf37a9769d431c83c583e39a811d4133fc8f6ce36f"
+    },
+    "research/food-core-physical/food_replay_assets.py": {
+      "bytes": 6537,
+      "sha256": "1817e791215f4d84de2e32c7dbbb37fbc31933da1dc59e3e869d0aa1760d66d4"
+    },
+    "research/food-core-physical/identity.json": {
+      "bytes": 22250,
+      "sha256": "03a2725de34c8785a9714fb9a6d55940d926a2d2e91ca8eb71668cf425660f1e"
+    },
+    "research/food-core-physical/inspect_food_body_semantics.py": {
+      "bytes": 5919,
+      "sha256": "8db39cb9e7a7db2838d6ef9eb2ba1c8436c26ffb3d0a4030f443f8def01e3569"
+    },
+    "research/food-core-physical/release.json": {
+      "bytes": 1370,
+      "sha256": "cf304975139de47833355073b6ba681bfb194a4172e7d736b6384aa7ca74d427"
+    },
+    "research/food-core-physical/replay.json": {
+      "bytes": 11077,
+      "sha256": "971b87bcf4c7bde44e0e1eb0929cba7a80d352fd1918efabdb5fd05d4b8ac1dc"
+    },
+    "research/food-core-physical/standalone-archive-verification.json": {
+      "bytes": 15949,
+      "sha256": "84ab036a2e04438909b2a3701a55f8f975c3e117706dd0814fa76bfc1edddc34"
+    },
+    "research/food-core-physical/summary.json": {
+      "bytes": 77568,
+      "sha256": "2f982324b8eac4f38e50b055dab4f6861ab8c4dca0ccd559091514a36363f1a5"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-missing.bin": {
+      "bytes": 2312304,
+      "sha256": "b44911980c37d5f58c22464953fd441e0733306124a4426514c3d56b9733802a"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-missing.json": {
+      "bytes": 64634,
+      "sha256": "2c07cbe650b0f1082eb520a6c43782c97d8dc7943e5ec64c8d7808fb01f299a5"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-neutral.bin": {
+      "bytes": 2312304,
+      "sha256": "42b5363e59ce7e4c3b2ec79c6cc5cd3cfa198aa2fd9a9b33b29b112374ab17b7"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-neutral.json": {
+      "bytes": 79610,
+      "sha256": "eddee32938509487aa45c6ae64a917c57077d8896289673872a454d2d7ca6225"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-repeat.bin": {
+      "bytes": 2312304,
+      "sha256": "be010a9914c7cb44aa4e770ed9cf046f940b4888bd9140b328275881ae5e1988"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-repeat.json": {
+      "bytes": 79612,
+      "sha256": "c2f69d5d9ffbde802ca39143f676acbc5a4f4bfe37f5cd9f5b49ce86fc48387d"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-reversed.bin": {
+      "bytes": 2312304,
+      "sha256": "42b5363e59ce7e4c3b2ec79c6cc5cd3cfa198aa2fd9a9b33b29b112374ab17b7"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left-reversed.json": {
+      "bytes": 79613,
+      "sha256": "70d8bc5c0d0f43889de7f28e1fd734421a3872bdf20939b7b9b9d962cc3780d8"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left.bin": {
+      "bytes": 2312304,
+      "sha256": "be010a9914c7cb44aa4e770ed9cf046f940b4888bd9140b328275881ae5e1988"
+    },
+    "research/food-core-replay/initial-s42--odor-a-left.json": {
+      "bytes": 79582,
+      "sha256": "b2409149c663d220041da5be3b2a2c6dd04f469efe9f51e54890f4ec5d13d564"
+    },
+    "research/food-core-replay/initial-s42--odor-a-right.bin": {
+      "bytes": 2312304,
+      "sha256": "19603343b71446560351d78eba7abd0b0ff2a7a7b873007831e826dee4b9b91b"
+    },
+    "research/food-core-replay/initial-s42--odor-a-right.json": {
+      "bytes": 79526,
+      "sha256": "4d2104011aafaa9b1c98ddcf2729897fac5afb4a590b3f705f7121553bafa54b"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-missing.bin": {
+      "bytes": 2312304,
+      "sha256": "b44911980c37d5f58c22464953fd441e0733306124a4426514c3d56b9733802a"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-missing.json": {
+      "bytes": 64634,
+      "sha256": "1a2352105dbbe09ec2bee08ca214129cccd00290bab03f060bb6ac9c8f74b5fa"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-neutral.bin": {
+      "bytes": 2312304,
+      "sha256": "39d52aa86cb24e90e166479876ec1cd9cd0f6019bf1248845dea618f3796c343"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-neutral.json": {
+      "bytes": 79388,
+      "sha256": "9f341e7bc0224dba9ccd4c36e8d5030aea093abcacc9718d2d3dcaf5ba198b05"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-repeat.bin": {
+      "bytes": 2312304,
+      "sha256": "80d780d5fb134fe6d92bb6acf00372069c21b4085d903f35830dc58b1e2cc4c1"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-repeat.json": {
+      "bytes": 79382,
+      "sha256": "cec46bba0b9bf026546a0b749bd78f4f501ea5ce2ee6d5853bf01d7a47fbee82"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-reversed.bin": {
+      "bytes": 2312304,
+      "sha256": "39d52aa86cb24e90e166479876ec1cd9cd0f6019bf1248845dea618f3796c343"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left-reversed.json": {
+      "bytes": 79391,
+      "sha256": "1e2c7d748fb627a7a4299a9fb5098792b1b622720128d7d94f84b8f2f6e1a9d6"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left.bin": {
+      "bytes": 2312304,
+      "sha256": "80d780d5fb134fe6d92bb6acf00372069c21b4085d903f35830dc58b1e2cc4c1"
+    },
+    "research/food-core-replay/initial-s43--odor-a-left.json": {
+      "bytes": 79352,
+      "sha256": "ab48e671d24862e770431f2b5a245213d0ec64ab86810817e9bda28cd9048491"
+    },
+    "research/food-core-replay/initial-s43--odor-a-right.bin": {
+      "bytes": 2312304,
+      "sha256": "715d204ca3089dc34980e296b5d81e86695b8f772c5de7466489ec2bf558a975"
+    },
+    "research/food-core-replay/initial-s43--odor-a-right.json": {
+      "bytes": 79349,
+      "sha256": "9c31c8d8cf95bafa93aac8abbc9ae99a9b99e863ec5ab0bdab1ddad3da2e1716"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-missing.bin": {
+      "bytes": 2312304,
+      "sha256": "fa92cc503bf306f8b54b14f9fc905305b10c07feee6ab2652924def367cf0d20"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-missing.json": {
+      "bytes": 70849,
+      "sha256": "5daf951bf6e8ce1320fc5d883ee26c336b574688d13d14a8861fb4d606c75f8e"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-neutral.bin": {
+      "bytes": 2312304,
+      "sha256": "55d0a0923424920170f26e6383edf70d525f5b60a213b3c4b9a871cffc2d4a2d"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-neutral.json": {
+      "bytes": 79279,
+      "sha256": "a2696062bf8e84a708327b9cbe54da388a73426ae24156d36406a6c3453bd4b0"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-repeat.bin": {
+      "bytes": 2312304,
+      "sha256": "bbe82292f20f904b03ef9500450f2c31a7b6f8b0e4eebe7446bcc47fe16c4685"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-repeat.json": {
+      "bytes": 79290,
+      "sha256": "eb8536d89f52ef4c87713dfdeabf4e51d84be790717ecb975d9b5a290c16269f"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-reversed.bin": {
+      "bytes": 2312304,
+      "sha256": "55d0a0923424920170f26e6383edf70d525f5b60a213b3c4b9a871cffc2d4a2d"
+    },
+    "research/food-core-replay/language-s42--odor-a-left-reversed.json": {
+      "bytes": 79282,
+      "sha256": "b93f8d366e96572924d66d1657c8fa443d76e602c7eb4c37623c6ac9c1547730"
+    },
+    "research/food-core-replay/language-s42--odor-a-left.bin": {
+      "bytes": 2312304,
+      "sha256": "bbe82292f20f904b03ef9500450f2c31a7b6f8b0e4eebe7446bcc47fe16c4685"
+    },
+    "research/food-core-replay/language-s42--odor-a-left.json": {
+      "bytes": 79260,
+      "sha256": "8a2c951e5dc3b4cd3f494305e79e732bb0f9b78f63318a2675a48b6a36b4022a"
+    },
+    "research/food-core-replay/language-s42--odor-a-right.bin": {
+      "bytes": 2312304,
+      "sha256": "943da29c2e4016ae32fe6e260b91a03482b95d54a707330790b73e17fd024440"
+    },
+    "research/food-core-replay/language-s42--odor-a-right.json": {
+      "bytes": 79312,
+      "sha256": "a8a76c08531b04caf14dd466d022619721ebcc4021e1fff9a483e6bc2c46e2a3"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-missing.bin": {
+      "bytes": 2312304,
+      "sha256": "3605dcbcee0272a12e7d5de1b8fd6c0bc3c56481057cb2a5933d46dc8ca54da1"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-missing.json": {
+      "bytes": 66923,
+      "sha256": "1bd7d87cd130e303d65b68a740df2bf985919e9af7b3049a23fa4c915276cdca"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-neutral.bin": {
+      "bytes": 2312304,
+      "sha256": "9faa099a5651fcb29b48e9a2bfc411565f294ce9040591c89ed97ec0eaaeb50d"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-neutral.json": {
+      "bytes": 79323,
+      "sha256": "7d2a022a535eb4a76ed221c186301720e46f12cee3c7c2538af2ecde7b8e0f53"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-repeat.bin": {
+      "bytes": 2312304,
+      "sha256": "c8f5533d17135fa252da361670b39dcf3cdaaf6fa55c9f02998e90a3185e3d04"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-repeat.json": {
+      "bytes": 79322,
+      "sha256": "e9607448f93a241c08164cf9fcff94d225ffda0cde56c5570714429505c92be6"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-reversed.bin": {
+      "bytes": 2312304,
+      "sha256": "9faa099a5651fcb29b48e9a2bfc411565f294ce9040591c89ed97ec0eaaeb50d"
+    },
+    "research/food-core-replay/language-s43--odor-a-left-reversed.json": {
+      "bytes": 79326,
+      "sha256": "2227b8bcf9d341abfc0d081dfce8da60e92dae3fd7ef41a4e4df3902ab23dbe8"
+    },
+    "research/food-core-replay/language-s43--odor-a-left.bin": {
+      "bytes": 2312304,
+      "sha256": "c8f5533d17135fa252da361670b39dcf3cdaaf6fa55c9f02998e90a3185e3d04"
+    },
+    "research/food-core-replay/language-s43--odor-a-left.json": {
+      "bytes": 79292,
+      "sha256": "263b3f5a8676d27d21dcb8ede7c0d2dc048829620e73f4fd921aa7aa008a167e"
+    },
+    "research/food-core-replay/language-s43--odor-a-right.bin": {
+      "bytes": 2312304,
+      "sha256": "5fbe99654641b8adcdc65a60e5acd099bda171904119e01686e750c1156875d0"
+    },
+    "research/food-core-replay/language-s43--odor-a-right.json": {
+      "bytes": 79289,
+      "sha256": "5e335c6103592230a5cc8b94cb46a2ca380d7d33058ea5389094dc1a4d03c93c"
+    },
+    "research/food-core-replay/manifest.json": {
+      "bytes": 11077,
+      "sha256": "971b87bcf4c7bde44e0e1eb0929cba7a80d352fd1918efabdb5fd05d4b8ac1dc"
+    },
+    "research/food-readout-learning.md": {
+      "bytes": 6463,
+      "sha256": "989230f72a05d61e170a9d2aed92296986a5227f034ed8989ef0786e9cf1ea67"
+    },
+    "research/food-readout/food_readout_learning.py": {
+      "bytes": 8351,
+      "sha256": "b1cdc545ed45da254ecaf3a0579a8d5a1dbbb748baf32e305d8d4a2086b6c3c6"
+    },
+    "research/food-readout/test_food_readout_learning.py": {
+      "bytes": 7878,
+      "sha256": "a879091a166b79b90b451d3009f0013115dc9fa84f11daa80a87b109c15c410c"
+    },
+    "research/food-response-plan.md": {
+      "bytes": 7848,
+      "sha256": "b8394db1b943248ba933fab26e6bca64da0091528298b40175266467d1f2e0d8"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9251981,
+      "sha256": "a01ea0e54db6a00970ceba586cc9978c14011e4d2125699302292c75d2e61dd6"
+    },
+    "research/physical-state-semantics.md": {
+      "bytes": 4144,
+      "sha256": "84e7bf137ec8b13450a580f9aab90bdb2d4a3dbbf127ed517987d4bf63c36ae7"
+    }
+  },
+  "public_relative_links_checked": 31,
+  "current_source_archive_files": 439,
+  "all_24_replays_verified": true,
+  "physical_observations": 4824,
+  "scope": "HTTP byte verification of every physical replay payload and current public research artifacts; no new physics, training or transfer claim."
+}

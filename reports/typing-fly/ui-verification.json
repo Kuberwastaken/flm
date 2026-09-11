@@ -1,0 +1,57 @@
+{
+  "verified_utc": "2026-09-11T16:30:32.089163+00:00",
+  "content_commit": "e5effed2b02d6c290019d3964032d5a36a0f9796",
+  "ci_run": 34621954152,
+  "ci_status": "success",
+  "javascript_tests": {
+    "passed": 74,
+    "failed": 0
+  },
+  "public_assets": {
+    "/assets/index-B0LcjmTN.js": {
+      "bytes": 605920,
+      "sha256": "5273415de3291254272fb51b75083250fcd3a2642937146a4cae00e8b3d52d40"
+    },
+    "/assets/index-DBNZJS95.css": {
+      "bytes": 22284,
+      "sha256": "c4cd4b49d1dd41658dd0049d52c73960ccf812f2a8948590c3aa09d23979b5fc"
+    },
+    "/assets/typing-fly-view-tbtybPCn.js": {
+      "bytes": 6080,
+      "sha256": "6ca1ebbed8fc6c93fc64ddf8a5f388188683dc14f3390710ddcd339b2ac73fc5"
+    }
+  },
+  "source_model": "public/body/model.json",
+  "source_model_sha256": "6ad88360fdd0264a8a71b5a077b0c72293eaf66c2ae68aa5fc29ffd323e28cc2",
+  "body_source": "Same model descriptor, STL meshes and forward-kinematics hierarchy as FlyView; authored typing rig only.",
+  "local_browser_checks": {
+    "model": "BabyLM 10M",
+    "desktop": [
+      1280,
+      900
+    ],
+    "phone": [
+      390,
+      844
+    ],
+    "visible_3d_fly_and_keyboard": true,
+    "front_leg_key_animation_observed": true,
+    "streamed_generation_motion_on": true,
+    "natural_completion_motion_off": true,
+    "stop_button_motion_off": true,
+    "hidden_chat_motion_off": true,
+    "typing_checkboxes": 0,
+    "browser_error_or_warning_logs": []
+  },
+  "live_browser_checks": {
+    "url": "https://flm.kuber.studio/#chat",
+    "model": "WikiText-2",
+    "visible_3d_fly_and_keyboard": true,
+    "streamed_generation_motion_on": true,
+    "natural_completion_motion_off": true,
+    "typing_checkboxes": 0,
+    "browser_error_or_warning_logs": []
+  },
+  "reduced_motion": "OS prefers-reduced-motion is enforced in the animation gate; inspected in source, not emulated in browser verification.",
+  "limitations": "Decorative display animation, not learned typing or a physical simulation. No language or physical experiment was changed."
+}
