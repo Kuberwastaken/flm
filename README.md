@@ -238,6 +238,8 @@ A separate 256-neuron, 6,678-edge core learns a delayed cue rule that reverses a
 
 The long-delay cue panel favors measured wiring under BPTT: **100.00% versus 66.67%**. The delay-8 context panel reverses that ordering: **63.02% versus 76.04%**. Supervised eligibility also does not consistently improve on a fixed core or no-history control. These are simple artificial tasks, and three seeds cannot support a universal ranking. The [findings](docs/WIRING-RESULTS.md), [protocol](docs/WIRING-LEARNING-PROTOCOL.md) and [complete records](https://flm.kuber.studio/research/wiring-learning-records.zip) include prediction panels and exact-versus-approximate gradient diagnostics.
 
+Separate [language-rule input preparation](docs/LANGUAGE-LEARNING-INPUTS.md) binds all six BabyLM `train-10m` sources: **3,351 blocks, 54,399,840 UTF-8 bytes and 18,591,514 text tokens**, excluding inserted boundaries. BPTT, fixed core, forward eligibility and no-history eligibility share initial tensors within each seed (42/43) on the original 1,024-neuron graph. All eight preparations passed two separate tiny synthetic updates each; fixed-core parameters stayed unchanged. This fixed-core rule also freezes the input projection, unlike the completed fixed-dynamics control. Corpus fits and timing have not run; the evaluation protocol remains unfrozen.
+
 ### A body that responds to current pose
 
 [![Recorded NeuroMechFly simulation from the declared live-feedback switching-target case. Click to view the actual simulated video.](public/research/closed-loop-poster.png)](https://flm.kuber.studio/research/closed-loop.mp4)
