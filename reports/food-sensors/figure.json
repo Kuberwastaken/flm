@@ -1,0 +1,11 @@
+{
+  "source_record_sha256": "adc27d50c072a92b7c79ab6805fcd1d5a4c4bb9dfc07f45627b774f97d48009d",
+  "script_sha256": "822d2a685507350fbeb320ecd27594011c940a101ec99fdb89a33faed5fee352",
+  "coordinate_slice_z_mm": 1.1893316978781656,
+  "artifacts": {
+    "public/research/figures/food-sensors.png": "f689ad0e2436bd605b334dda13d4b89caeac10f3c6088268b60dcd85b11caea5",
+    "public/research/figures/food-sensors.svg": "fba6bc524c23fe490d23ec4d43a55cd8c519561fd5725422128d50721d1c511e",
+    "public/research/figures/food-sensors.csv": "03449ac35eddeadab37f106e51bc1a19d7ec3f654b975ca0d7685c15851b4c26"
+  },
+  "scope": "Field functions and recorded body-position geometry; no language or behavior-training result."
+}
