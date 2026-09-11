@@ -10,6 +10,17 @@ await writeFile('public/research/selection-study.md', (await readFile('docs/SELE
   .replaceAll('../flm/selection_feasibility.py', 'selection-feasibility/selection_feasibility.py')
   .replaceAll('../reports/selection-feasibility/', 'selection-feasibility/')
   .replaceAll('PUBLISHER-ANNOTATIONS.md', 'publisher-annotations.md')
+  .replaceAll('SELECTION-PATHWAYS.md', 'selection-pathways.md')
+  .replaceAll('../public/research/', ''));
+await mkdir('public/research/selection-pathways', { recursive: true });
+for (const name of ['summary.json', 'directed-groups.csv', 'external-partners.csv', 'kenyon-coverage.csv', 'figures.json'])
+  await copyFile(`reports/selection-pathways/${name}`, `public/research/selection-pathways/${name}`);
+await copyFile('flm/selection_pathways.py', 'public/research/selection-pathways/selection_pathways.py');
+await writeFile('public/research/selection-pathways.md', (await readFile('docs/SELECTION-PATHWAYS.md', 'utf8'))
+  .replaceAll('SELECTION-STUDY.md', 'selection-study.md')
+  .replaceAll('PUBLISHER-ANNOTATIONS.md', 'publisher-annotations.md')
+  .replaceAll('../reports/selection-pathways/', 'selection-pathways/')
+  .replaceAll('../flm/selection_pathways.py', 'selection-pathways/selection_pathways.py')
   .replaceAll('../public/research/', ''));
 await mkdir('public/research/publisher-annotations', { recursive: true });
 for (const name of ['summary.json', 'candidate-annotations.csv', 'missing-transmitter-rows.csv'])

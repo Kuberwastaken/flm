@@ -94,7 +94,12 @@ def main():
         'flm/publisher_annotations.py', 'tests/test_publisher_annotations.py',
         'reports/publisher-annotations/summary.json',
         'reports/publisher-annotations/candidate-annotations.csv',
-        'reports/publisher-annotations/missing-transmitter-rows.csv')]
+        'reports/publisher-annotations/missing-transmitter-rows.csv',
+        'docs/SELECTION-PATHWAYS.md', 'flm/selection_pathways.py',
+        'tests/test_selection_pathways.py', 'scripts/selection_pathway_figures.py',
+        'reports/selection-pathways/summary.json', 'reports/selection-pathways/directed-groups.csv',
+        'reports/selection-pathways/external-partners.csv', 'reports/selection-pathways/kenyon-coverage.csv',
+        'reports/selection-pathways/figures.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
