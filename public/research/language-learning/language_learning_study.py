@@ -28,7 +28,8 @@ SELECTION = REPORTS/'study-selection.json'
 SOURCES = ('language_learning_study.py', 'language_learning_inputs.py', 'language_learning_pilot.py',
     'language_learning_train.py', 'language_learning_validation.py', 'language_eligibility.py',
     'embedding_eligibility.py', 'local_learning.py', 'language_train.py', 'model.py', 'train.py',
-    'baselines.py', 'graph.py', 'corpus_cache.py', 'tokenizer.py', 'inference.py', 'provenance.py', 'babylm.py')
+    'baselines.py', 'graph.py', 'corpus_cache.py', 'tokenizer.py', 'inference.py', 'provenance.py', 'babylm.py',
+    'language_learning_test.py', 'corpus_evaluation.py', 'babylm_test.py')
 PILOT_SOURCES = ('language_learning_pilot.py', 'language_learning_inputs.py', 'language_learning_train.py',
     'language_eligibility.py', 'embedding_eligibility.py', 'local_learning.py', 'model.py', 'train.py',
     'inference.py', 'corpus_cache.py', 'tokenizer.py', 'provenance.py')
@@ -120,13 +121,14 @@ def identity_for(root, inputs, panel, settings, pilot):
         for key in ('initial_state_sha256', 'training_documents_sha256'):
             if len({row[key] for row in group}) != 1: raise ValueError('Learning rules have unmatched initial tensors or data')
     if pilot['input_binding'] != inputs.binding: raise ValueError('Training inputs differ from measured pilot')
+    from .language_learning_test import POLICY
     return dict(format='flm-language-learning-study-v1', settings=asdict(settings), conditions=rows,
         input_binding=inputs.binding, validation_panel_binding=panel.binding,
         test_metadata=test_metadata(root, inputs.lexicon),
         protocol_sha256=sha256(protocol), pilot_sha256=sha256(root/PILOT),
         sources={name:sha256(root/'flm'/name) for name in SOURCES},
         torch=str(torch.__version__), numpy=str(np.__version__),
-        validation_chunk_size=96, selection='Earliest exact minimum validation BPB over every declared checkpoint',
+        evaluation_policy=POLICY, validation_chunk_size=96, selection='Earliest exact minimum validation BPB over every declared checkpoint',
         test_policy='All eight complete runs and validation selections must be frozen before opening test payloads',
         scope='Four training rules on the original graph; no topology, selection-method or behavior result')
 

@@ -5,13 +5,14 @@ The [coordinator](../flm/language_learning_study.py) connects the existing
 [resumable trainer](LANGUAGE-LEARNING-RUNNER.md) and
 [per-run validation selector](LANGUAGE-LEARNING-VALIDATION.md). It registers four
 learning rules crossed with seeds 42 and 43, fits them serially, and freezes all
-eight validation selections together before a future test scorer may run.
+eight validation selections together before the held-out scorer may run.
 
 **The coordinator is implemented; the official study has not been initialized.**
 The [dated readiness record](../reports/language-eligibility/study-preparation.json)
 finds neither completed pilot costs nor an official protocol, identity or
 selection file. The priority BabyLM queue is unfinished. No official training
-budget has been chosen, and the held-out scoring command remains to be implemented.
+budget has been chosen. The [held-out scorer](LANGUAGE-LEARNING-TEST.md) is
+implemented and tested on artificial fixtures, but has not run on this official study.
 
 ## Freeze the experiment before fitting
 
@@ -39,8 +40,8 @@ study identity binding:
 - Exact training-source, tokenizer and graph bindings, plus the fixed validation
   panel and its scoring denominators.
 - Prepared test-cache metadata and the tokenization card, read without opening
-  test-token payloads. The later scorer must verify those bound payload hashes.
-- The protocol and measured cost report, eighteen source modules, Torch and
+  test-token payloads. The scorer verifies those bound payload hashes after selection.
+- The protocol and measured cost report, twenty-one source modules, the complete evaluation policy, Torch and
   NumPy versions, and the earliest-exact-minimum validation-selection rule.
 
 An existing identity cannot be changed in place. Initialization refuses if a
@@ -78,9 +79,9 @@ Before writing the study selection, it rechecks source files and every selected
 record and checkpoint. A later change causes selection verification to fail.
 
 This operation reads no test-token payloads and produces no test scores. The
-future held-out scorer must call this whole-inventory gate and verify the bound
-test metadata before reading the payloads. Implementing that scorer, completing
-the actual fits and publishing all paired results remain required work.
+held-out scorer calls this whole-inventory gate and verifies the bound test
+metadata before reading payloads. Completing the actual fits, running the scorer
+and publishing all paired results remain required work.
 
 ## Verification and eventual commands
 

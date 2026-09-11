@@ -1,0 +1,95 @@
+{
+  "verified_utc": "2026-09-11T11:53:35.993055+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/language-learning-test.md",
+      "status": 200,
+      "bytes": 6884,
+      "sha256": "a7ebeae3517775a7f0ba17d3223a51dff7fecea6ebf91477ef7a130cafde9a89"
+    },
+    {
+      "path": "research/language-learning-study.md",
+      "status": 200,
+      "bytes": 6552,
+      "sha256": "6a5e80c75179df68d5a879c25e3be828626af06e0ca6d7f1dc0d180ff4dc2aed"
+    },
+    {
+      "path": "research/language-learning-validation.md",
+      "status": 200,
+      "bytes": 5527,
+      "sha256": "a97cbc3f8a1f0da22910cd12f8dabfee962b2b503c635e10f7ff08b939f90bd4"
+    },
+    {
+      "path": "research/language-learning-runner.md",
+      "status": 200,
+      "bytes": 6290,
+      "sha256": "ddc8190d646178c9996f950616676e70057a1708599903162e7ddccb894bc73e"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8276626,
+      "sha256": "748abc8cfe7f6103f847d684d259ab656a51d47407d26d1b1966da178a2eec1e"
+    },
+    {
+      "path": "research/language-learning/language_learning_test.py",
+      "status": 200,
+      "bytes": 15199,
+      "sha256": "bf80ea0e04cc6427dd4317c5c32a2fe4f053538af4c96146a0e5029e99e58ddd"
+    },
+    {
+      "path": "research/language-learning/language_learning_study.py",
+      "status": 200,
+      "bytes": 16204,
+      "sha256": "5b4f8f4b36ea647ce5cafd09f227ba14effa0d3292d018bee89ab8aa5cf1b035"
+    },
+    {
+      "path": "research/language-learning/language_learning_study_preflight.py",
+      "status": 200,
+      "bytes": 2849,
+      "sha256": "e89fac5cb92ece0a65c964dd1009db20e04fbcaa269e22bb798b7e4fd7ac5e46"
+    },
+    {
+      "path": "research/language-learning/evaluation-preparation.json",
+      "status": 200,
+      "bytes": 8568,
+      "sha256": "bef3814243cc8e6b673a603db5fbf59697c53e28a42d3ddb2e6c112f5337c705"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "language-learning/language_learning_test.py",
+    "language-learning/evaluation-preparation.json",
+    "language-learning-study.md",
+    "language-learning/language_learning_study.py",
+    "language-learning-inputs.md",
+    "language-learning-timing.md",
+    "language-learning-runner.md",
+    "language-learning-validation.md",
+    "language-learning/study-preparation.json",
+    "language-learning-test.md",
+    "language-learning-runner.md",
+    "language-learning/language_learning_validation.py",
+    "language-learning-study.md",
+    "language-learning-test.md",
+    "language-learning/validation-preflight.json",
+    "language-learning-timing.md",
+    "language-learning/language_learning_train.py",
+    "language-learning-inputs.md",
+    "language-eligibility-kernel.md",
+    "language-learning-validation.md",
+    "language-learning-study.md",
+    "language-learning-test.md",
+    "language-learning-timing.md"
+  ],
+  "paper_source_files_verified": 340,
+  "source_bindings_verified": 24,
+  "condition_registry_verified": 8,
+  "readiness_and_metadata_verified": true,
+  "tiny_held_out_fixture_tests_observed_passed": 8,
+  "test_payloads_opened": false,
+  "official_study_initialized": false,
+  "official_condition_trained": false,
+  "scope": "Publication and evaluator preparation identity verification only. The prerequisite gates remain closed; no official timing, budget, fit, selection or test scoring was performed."
+}

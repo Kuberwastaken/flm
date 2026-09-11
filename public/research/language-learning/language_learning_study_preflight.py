@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from flm.language_learning_inputs import conditions
+from flm.language_learning_test import POLICY, SUMMARY
 from flm.language_learning_pilot import prerequisites
 from flm.language_learning_study import IDENTITY, PILOT, PROTOCOL, SELECTION, SOURCES, test_metadata, verify_pilot
 from flm.provenance import sha256
@@ -26,10 +27,11 @@ def preflight(root):
         official_identity_exists=(root/IDENTITY).exists(), official_selection_exists=(root/SELECTION).exists(),
         source_sha256={**{'flm/'+name:sha256(root/'flm'/name) for name in SOURCES},
             **{name:sha256(root/name) for name in ('scripts/language_learning_study_preflight.py',
-                                                 'tests/test_language_learning_study.py')}},
+                                                 'tests/test_language_learning_study.py', 'tests/test_language_learning_test.py')}},
         model_forward_calls=0, gradient_updates=0, test_payloads_opened=False,
         official_study_initialized=False, official_condition_trained=False,
-        all_condition_selection_gate_implemented=True, official_test_scorer_implemented=False,
+        all_condition_selection_gate_implemented=True, official_test_scorer_implemented=True,
+        evaluation_policy=POLICY, official_test_summary_exists=(root/SUMMARY).exists(),
         scope='Code readiness, prerequisite status and existing test metadata only. No budget chosen, study identity frozen, corpus fit, model likelihood or test payload read. Completion metadata is not a live process lock.')
 
 
