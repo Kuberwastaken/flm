@@ -133,7 +133,17 @@ class LanguageLearningInputTests(unittest.TestCase):
                     patch('flm.language_learning_inputs.Lexicon',return_value=lexicon), \
                     patch('flm.language_learning_inputs.read_mmap',return_value=(docs,records,manifest)) as read:
                 loaded=load_inputs(root)
-                read.assert_called_once_with(root/'data/processed/babylm-2026-bpe/train-10m',lexicon.sha256)
+                from flm.language_learning_inputs import load_corpus
+                # A corpus-only caller must not need even an existing graph file.
+                graph_path=root/'data/graphs/central-1024/graph.npz'
+                graph_path.write_bytes(b'graph deliberately unavailable')
+                with patch('flm.language_learning_inputs.load_graph',side_effect=AssertionError('No graph for corpus-only loading')):
+                    corpus=load_corpus(root)
+                self.assertFalse(hasattr(corpus,'graph'))
+                self.assertNotIn('graph_sha256',corpus.binding)
+                self.assertEqual(corpus.binding['coverage'],loaded.binding['coverage'])
+                self.assertEqual(read.call_count,2)
+                read.assert_called_with(root/'data/processed/babylm-2026-bpe/train-10m',lexicon.sha256)
                 self.assertEqual(loaded.binding['coverage']['utf8_bytes'],7)
                 self.assertFalse(loaded.binding['validation_or_test_payloads_opened'])
                 self.assertFalse(loaded.binding['trained_weights_loaded'])
