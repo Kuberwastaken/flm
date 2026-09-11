@@ -1,0 +1,61 @@
+{
+  "verified_utc": "2026-09-11T12:45:50.600642+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/selection-language-coordinator.md",
+      "status": 200,
+      "bytes": 8106,
+      "sha256": "22b6c66239f78819a9f70b61b9c37d2a36e08faf035fde022c9f2ba7a9953b31"
+    },
+    {
+      "path": "research/selection-language-training.md",
+      "status": 200,
+      "bytes": 6786,
+      "sha256": "d38a63b599f50e9face40a28273006cfd8379263143faf4a909978085d5748be"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8363439,
+      "sha256": "faed8d684fba27fb65088246e1c4a33ebf76ea31d54513b1d8cb9ab9b2a5b5d9"
+    },
+    {
+      "path": "research/selection-language/selection_language_study.py",
+      "status": 200,
+      "bytes": 19254,
+      "sha256": "9ae4e2d6aa421d371bea7f6a0a9abcdd905cb770618296d451c922c352ac38a5"
+    },
+    {
+      "path": "research/selection-language/selection_language_study_preflight.py",
+      "status": 200,
+      "bytes": 3086,
+      "sha256": "a5586c76240557615057fef55bbb7fa4bfe1842a6a568869b3734add6849cefb"
+    },
+    {
+      "path": "research/selection-language/coordinator-preparation.json",
+      "status": 200,
+      "bytes": 8173,
+      "sha256": "20cd1f9334ca4e8c81a41855f09a4a03cb0aca2c388362c4ead7bcd96c7f4152"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-language/selection_language_study.py",
+    "selection-language/coordinator-preparation.json",
+    "selection-timing-pilot.md",
+    "selection-language-training.md",
+    "selection-language/selection_language.py",
+    "selection-language/preparation.json",
+    "language-learning-runner.md",
+    "selection-timing-pilot.md",
+    "selection-language-coordinator.md"
+  ],
+  "paper_source_files_verified": 352,
+  "source_bindings_verified": 24,
+  "available_complete_groups": 8,
+  "coordinator_tests_observed_passed": 7,
+  "synthetic_complete_group_fits": 64,
+  "official_cost_or_language_fit_started": false,
+  "scope": "Publication, source identity and preparation records only. Synthetic test fits are not corpus results; no official matrix, budget or test inference policy is frozen."
+}
