@@ -79,6 +79,8 @@ def draw(rows, output, *, title='WikiText-2 · all language computation contrast
     output.parent.mkdir(parents=True, exist_ok=True)
     for suffix in ('.png', '.svg'):
         figure.savefig(output.with_suffix(suffix), dpi=160, metadata={'Date': None} if suffix == '.svg' else {})
+    svg = output.with_suffix('.svg')
+    svg.write_bytes(('\n'.join(line.rstrip() for line in svg.read_text(encoding='utf8').splitlines()) + '\n').encode('utf8'))
     plt.close(figure)
 
 
