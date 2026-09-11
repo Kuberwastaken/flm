@@ -1,0 +1,451 @@
+{
+  "label": "no_temporal_state-s43",
+  "control": "no_temporal_state",
+  "seed": 43,
+  "reference": false,
+  "graph": "data/graphs/central-1024/graph.npz",
+  "output": "runs/language-core-v1/no_temporal_state-s43",
+  "checkpoint": "runs/language-core-v1/no_temporal_state-s43/checkpoint-006000.pt",
+  "checkpoint_sha256": "ce23a528ca3e7b8adbe31df3e2a35a4d9669b217204913e740cc0d057418c065",
+  "checkpoint_step": 6000,
+  "selection_validation_bpb": 2.030835318076771,
+  "allocated_parameters": 600003,
+  "trainable_parameters": 600003,
+  "frozen_parameters": 0,
+  "selection_sha256": "94d77c1fdfe2be70c925c1b0ef1fababc666cddf5042f72bad54144b22be3530",
+  "test_cache_sha256": "e6da687ff04fb44b538384e60ef70719d1e5dc39885befe715a230bda912992f",
+  "score": {
+    "bits_per_byte": 2.0989573917763753,
+    "token_perplexity": 162.55318525533505,
+    "nll": 1873393.1999931335,
+    "tokens": 367981,
+    "bytes": 1287656,
+    "documents": [
+      {
+        "document": "wikitext2-test-0000",
+        "nll": 8466.75824546814,
+        "tokens": 1642,
+        "bytes": 5634,
+        "bits_per_byte": 2.168077765911009
+      },
+      {
+        "document": "wikitext2-test-0001",
+        "nll": 35834.37301635742,
+        "tokens": 6961,
+        "bytes": 24487,
+        "bits_per_byte": 2.1112456505110524
+      },
+      {
+        "document": "wikitext2-test-0002",
+        "nll": 17393.96890258789,
+        "tokens": 3484,
+        "bytes": 12255,
+        "bits_per_byte": 2.0476697410967275
+      },
+      {
+        "document": "wikitext2-test-0003",
+        "nll": 50459.09364318848,
+        "tokens": 10286,
+        "bytes": 35914,
+        "bits_per_byte": 2.0269834651328127
+      },
+      {
+        "document": "wikitext2-test-0004",
+        "nll": 15687.709197998047,
+        "tokens": 3109,
+        "bytes": 10616,
+        "bits_per_byte": 2.1319310722362435
+      },
+      {
+        "document": "wikitext2-test-0005",
+        "nll": 16698.909271240234,
+        "tokens": 3408,
+        "bytes": 12586,
+        "bits_per_byte": 1.914145367382252
+      },
+      {
+        "document": "wikitext2-test-0006",
+        "nll": 72930.60488891602,
+        "tokens": 14376,
+        "bytes": 54510,
+        "bits_per_byte": 1.930226050307678
+      },
+      {
+        "document": "wikitext2-test-0007",
+        "nll": 16954.316806793213,
+        "tokens": 3272,
+        "bytes": 11031,
+        "bits_per_byte": 2.2173790933569917
+      },
+      {
+        "document": "wikitext2-test-0008",
+        "nll": 81305.96127319336,
+        "tokens": 16378,
+        "bytes": 58522,
+        "bits_per_byte": 2.00436941874075
+      },
+      {
+        "document": "wikitext2-test-0009",
+        "nll": 12653.934783935547,
+        "tokens": 2541,
+        "bytes": 9286,
+        "bits_per_byte": 1.9659453974279744
+      },
+      {
+        "document": "wikitext2-test-0010",
+        "nll": 23821.93389892578,
+        "tokens": 4601,
+        "bytes": 15612,
+        "bits_per_byte": 2.2013698373280115
+      },
+      {
+        "document": "wikitext2-test-0011",
+        "nll": 79716.31185913086,
+        "tokens": 14053,
+        "bytes": 45837,
+        "bits_per_byte": 2.5090282478592876
+      },
+      {
+        "document": "wikitext2-test-0012",
+        "nll": 7671.102981567383,
+        "tokens": 1486,
+        "bytes": 4997,
+        "bits_per_byte": 2.2147412907055846
+      },
+      {
+        "document": "wikitext2-test-0013",
+        "nll": 17807.112915039062,
+        "tokens": 3492,
+        "bytes": 12445,
+        "bits_per_byte": 2.0643016066755058
+      },
+      {
+        "document": "wikitext2-test-0014",
+        "nll": 3330.0577087402344,
+        "tokens": 647,
+        "bytes": 2372,
+        "bits_per_byte": 2.0254037699298486
+      },
+      {
+        "document": "wikitext2-test-0015",
+        "nll": 11352.120080947876,
+        "tokens": 2308,
+        "bytes": 8588,
+        "bits_per_byte": 1.9070385822495948
+      },
+      {
+        "document": "wikitext2-test-0016",
+        "nll": 48260.13390159607,
+        "tokens": 9607,
+        "bytes": 33150,
+        "bits_per_byte": 2.100291277600905
+      },
+      {
+        "document": "wikitext2-test-0017",
+        "nll": 8208.06869506836,
+        "tokens": 1597,
+        "bytes": 5855,
+        "bits_per_byte": 2.022500427267475
+      },
+      {
+        "document": "wikitext2-test-0018",
+        "nll": 30147.080924987793,
+        "tokens": 5878,
+        "bytes": 20588,
+        "bits_per_byte": 2.1125434305303163
+      },
+      {
+        "document": "wikitext2-test-0019",
+        "nll": 28043.985290527344,
+        "tokens": 5528,
+        "bytes": 19332,
+        "bits_per_byte": 2.092847015591084
+      },
+      {
+        "document": "wikitext2-test-0020",
+        "nll": 33367.113708496094,
+        "tokens": 6717,
+        "bytes": 24199,
+        "bits_per_byte": 1.9892792874096228
+      },
+      {
+        "document": "wikitext2-test-0021",
+        "nll": 9099.59912109375,
+        "tokens": 1799,
+        "bytes": 7010,
+        "bits_per_byte": 1.8727455814664085
+      },
+      {
+        "document": "wikitext2-test-0022",
+        "nll": 27767.688598632812,
+        "tokens": 5488,
+        "bytes": 19451,
+        "bits_per_byte": 2.059549978828676
+      },
+      {
+        "document": "wikitext2-test-0023",
+        "nll": 75378.47686004639,
+        "tokens": 15760,
+        "bytes": 57555,
+        "bits_per_byte": 1.8894649423291185
+      },
+      {
+        "document": "wikitext2-test-0024",
+        "nll": 20916.298431396484,
+        "tokens": 3904,
+        "bytes": 11957,
+        "bits_per_byte": 2.523696581143206
+      },
+      {
+        "document": "wikitext2-test-0025",
+        "nll": 54564.498626708984,
+        "tokens": 10623,
+        "bytes": 36949,
+        "bits_per_byte": 2.1305023566901866
+      },
+      {
+        "document": "wikitext2-test-0026",
+        "nll": 87511.61193847656,
+        "tokens": 16742,
+        "bytes": 54718,
+        "bits_per_byte": 2.3073315648203434
+      },
+      {
+        "document": "wikitext2-test-0027",
+        "nll": 12678.180526733398,
+        "tokens": 2337,
+        "bytes": 8315,
+        "bits_per_byte": 2.1997291850166327
+      },
+      {
+        "document": "wikitext2-test-0028",
+        "nll": 33794.20706176758,
+        "tokens": 6751,
+        "bytes": 23333,
+        "bits_per_byte": 2.089518490497873
+      },
+      {
+        "document": "wikitext2-test-0029",
+        "nll": 10784.206451416016,
+        "tokens": 2197,
+        "bytes": 7940,
+        "bits_per_byte": 1.9594862931209889
+      },
+      {
+        "document": "wikitext2-test-0030",
+        "nll": 43506.320236206055,
+        "tokens": 8782,
+        "bytes": 32938,
+        "bits_per_byte": 1.9055908814166507
+      },
+      {
+        "document": "wikitext2-test-0031",
+        "nll": 13310.047592163086,
+        "tokens": 2629,
+        "bytes": 8850,
+        "bits_per_byte": 2.169755893244042
+      },
+      {
+        "document": "wikitext2-test-0032",
+        "nll": 68189.90684509277,
+        "tokens": 13275,
+        "bytes": 46349,
+        "bits_per_byte": 2.12253210304636
+      },
+      {
+        "document": "wikitext2-test-0033",
+        "nll": 52693.778259277344,
+        "tokens": 10348,
+        "bytes": 36669,
+        "bits_per_byte": 2.0731695050413728
+      },
+      {
+        "document": "wikitext2-test-0034",
+        "nll": 12424.316314697266,
+        "tokens": 2464,
+        "bytes": 8820,
+        "bits_per_byte": 2.0322561829534678
+      },
+      {
+        "document": "wikitext2-test-0035",
+        "nll": 109556.55019950867,
+        "tokens": 21222,
+        "bytes": 74854,
+        "bits_per_byte": 2.111533006515803
+      },
+      {
+        "document": "wikitext2-test-0036",
+        "nll": 31776.108184814453,
+        "tokens": 6521,
+        "bytes": 23368,
+        "bits_per_byte": 1.961795348210502
+      },
+      {
+        "document": "wikitext2-test-0037",
+        "nll": 76397.48272705078,
+        "tokens": 14749,
+        "bytes": 48924,
+        "bits_per_byte": 2.2528466492256642
+      },
+      {
+        "document": "wikitext2-test-0038",
+        "nll": 85937.34217834473,
+        "tokens": 16833,
+        "bytes": 58265,
+        "bits_per_byte": 2.127887709394592
+      },
+      {
+        "document": "wikitext2-test-0039",
+        "nll": 19561.756942749023,
+        "tokens": 3684,
+        "bytes": 12682,
+        "bits_per_byte": 2.2253311569452188
+      },
+      {
+        "document": "wikitext2-test-0040",
+        "nll": 8803.826446533203,
+        "tokens": 1685,
+        "bytes": 5847,
+        "bits_per_byte": 2.1722655644365583
+      },
+      {
+        "document": "wikitext2-test-0041",
+        "nll": 38540.86654663086,
+        "tokens": 7646,
+        "bytes": 28054,
+        "bits_per_byte": 1.981988915605179
+      },
+      {
+        "document": "wikitext2-test-0042",
+        "nll": 15705.03246307373,
+        "tokens": 3079,
+        "bytes": 11599,
+        "bits_per_byte": 1.9534074016274379
+      },
+      {
+        "document": "wikitext2-test-0043",
+        "nll": 8238.888702392578,
+        "tokens": 1605,
+        "bytes": 5451,
+        "bits_per_byte": 2.180554737365232
+      },
+      {
+        "document": "wikitext2-test-0044",
+        "nll": 9601.941986083984,
+        "tokens": 1978,
+        "bytes": 6978,
+        "bits_per_byte": 1.9851926176880035
+      },
+      {
+        "document": "wikitext2-test-0045",
+        "nll": 52948.80578613281,
+        "tokens": 10430,
+        "bytes": 33341,
+        "bits_per_byte": 2.2911424231020865
+      },
+      {
+        "document": "wikitext2-test-0046",
+        "nll": 10835.096130371094,
+        "tokens": 2081,
+        "bytes": 6903,
+        "bits_per_byte": 2.264484927544774
+      },
+      {
+        "document": "wikitext2-test-0047",
+        "nll": 12084.614959716797,
+        "tokens": 2300,
+        "bytes": 8026,
+        "bits_per_byte": 2.1722419727680045
+      },
+      {
+        "document": "wikitext2-test-0048",
+        "nll": 20878.066665649414,
+        "tokens": 4152,
+        "bytes": 14626,
+        "bits_per_byte": 2.0593930836784895
+      },
+      {
+        "document": "wikitext2-test-0049",
+        "nll": 19941.852966308594,
+        "tokens": 3926,
+        "bytes": 13618,
+        "bits_per_byte": 2.112645937775758
+      },
+      {
+        "document": "wikitext2-test-0050",
+        "nll": 8726.034286499023,
+        "tokens": 1676,
+        "bytes": 5503,
+        "bits_per_byte": 2.287662437172307
+      },
+      {
+        "document": "wikitext2-test-0051",
+        "nll": 7327.515167236328,
+        "tokens": 1519,
+        "bytes": 5401,
+        "bits_per_byte": 1.9572986102222762
+      },
+      {
+        "document": "wikitext2-test-0052",
+        "nll": 7916.470249176025,
+        "tokens": 1543,
+        "bytes": 5387,
+        "bits_per_byte": 2.120113675483807
+      },
+      {
+        "document": "wikitext2-test-0053",
+        "nll": 6604.501678466797,
+        "tokens": 1319,
+        "bytes": 4740,
+        "bits_per_byte": 2.0101860377778236
+      },
+      {
+        "document": "wikitext2-test-0054",
+        "nll": 51909.341888427734,
+        "tokens": 10455,
+        "bytes": 38763,
+        "bits_per_byte": 1.9319802419380447
+      },
+      {
+        "document": "wikitext2-test-0055",
+        "nll": 3752.8134765625,
+        "tokens": 758,
+        "bytes": 2547,
+        "bits_per_byte": 2.1257029415068667
+      },
+      {
+        "document": "wikitext2-test-0056",
+        "nll": 22480.390174865723,
+        "tokens": 4525,
+        "bytes": 14985,
+        "bits_per_byte": 2.1643208156508345
+      },
+      {
+        "document": "wikitext2-test-0057",
+        "nll": 41672.60356140137,
+        "tokens": 8202,
+        "bytes": 29470,
+        "bits_per_byte": 2.0400698506605197
+      },
+      {
+        "document": "wikitext2-test-0058",
+        "nll": 32514.750854492188,
+        "tokens": 6410,
+        "bytes": 21779,
+        "bits_per_byte": 2.1538578361502396
+      },
+      {
+        "document": "wikitext2-test-0059",
+        "nll": 26950.756912231445,
+        "tokens": 5213,
+        "bytes": 17875,
+        "bits_per_byte": 2.1752013060408535
+      }
+    ],
+    "seconds": 101.19618510000873,
+    "tokenizer_sha256": "ef7f54d89966a08485006e0f64eaf2b0b99217b65ad79f96979f12adbd9ca49d",
+    "subset": "entire supplied split",
+    "protocol": "Reset per article; carry native state within article; score IDs >=2; normalize by exact decoded UTF-8 byte lengths; boundary tokens excluded",
+    "mechanism": "Reset both states for every token, including within chunks"
+  }
+}
