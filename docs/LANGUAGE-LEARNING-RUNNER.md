@@ -6,6 +6,11 @@ without history. It does not acquire data, launch itself, choose an official
 budget, select a validation checkpoint or evaluate test data. Only small
 artificial software fixtures have been fitted with it.
 
+The subsequent [verified input adapter](LANGUAGE-LEARNING-INPUTS.md) now binds
+the actual BabyLM training sources, tokenizer, cache and original graph. It
+prepares all eight rule/seed conditions and passes separate full-size synthetic
+update checks. Official corpus fits and the evaluation protocol remain pending.
+
 All conditions share ordinary FLM forward dynamics. Eligibility changes the
 gradient using the [declared diagonal temporal approximation](LANGUAGE-ELIGIBILITY-KERNEL.md).
 History removal discards old derivatives while preserving forward state.
@@ -79,7 +84,7 @@ python -m unittest discover -s tests -p test_language_learning_train.py -v
 
 These are tiny one-thread fixtures, not training throughput or four-thread
 reproducibility measurements. Before official fits, finish the current BabyLM
-queue, bind verified training-only inputs, measure disposable full-size costs,
+queue, use the verified training-only adapter, measure disposable full-window costs,
 freeze a common budget and selection protocol, and implement the all-condition
 evaluation gate. The new selection-method study is a separate experimental axis;
 do not silently change graphs while comparing learning rules.

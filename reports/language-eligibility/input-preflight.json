@@ -1,0 +1,364 @@
+{
+  "verified_utc": "2026-09-11T10:13:21.560559+00:00",
+  "input_binding": {
+    "format": "flm-language-learning-inputs-v1",
+    "dataset": "BabyLM 2026 English",
+    "partition": "train-10m",
+    "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+    "source_manifest_sha256": "966660755d2d8bd9275956eb935fd5560291c6c9909993c15fa3e4029d07e0cb",
+    "acquisition_card_sha256": "b1e040fb0df288c5595341f1597f163c78f636a4a606c578525b2ac0e613c84a",
+    "licensing": "Training repository metadata says MIT. Component provenance and rights remain distinct; no raw corpus text is redistributed by FLM.",
+    "training_sources": [
+      {
+        "component": "bnc_spoken",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/bnc_spoken.train.txt",
+        "sha256": "8f3042f4104cf356052fda784682d8e8170fd1fd8c795a1c3e172f9eb2ebfa3c",
+        "bytes": 4064608
+      },
+      {
+        "component": "childes",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/childes.train.txt",
+        "sha256": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+        "bytes": 15159891
+      },
+      {
+        "component": "gutenberg",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/gutenberg.train.txt",
+        "sha256": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+        "bytes": 14031163
+      },
+      {
+        "component": "open_subtitles",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/open_subtitles.train.txt",
+        "sha256": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+        "bytes": 12159704
+      },
+      {
+        "component": "simple_wiki",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/simple_wiki.train.txt",
+        "sha256": "0ac614aa069ea3908c07c9755bf80bb500d4cee15cd972e9f93cccf89639e9a7",
+        "bytes": 8861946
+      },
+      {
+        "component": "switchboard",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/switchboard.train.txt",
+        "sha256": "89c99649777be2f76f5054e9f1aa364b7e1a62844e219fe810205be6d99399b5",
+        "bytes": 122528
+      }
+    ],
+    "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+    "tokenizer_card_sha256": "21a3f246ee7707c1808cb82aead6ebf96583e40db626e997e92188535fb37aff",
+    "cache_manifest_sha256": "4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd",
+    "cache_files_sha256": {
+      "tokens.u16": "65323ab539fb4289dc29ffbbff1197152bf046d3a6040cde9e2616271b484350",
+      "offsets.npy": "fecddeccabf8499b778187478706ddbd7cf624c7f8f8c6b4a5fb8a55539a6288",
+      "blocks.jsonl": "adf4718e6abd5f91c821853dafe8f7e2a4fbcfe31b7fd30a531a3dd0e802e8ed"
+    },
+    "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+    "graph_card_sha256": "eff916879b0d69897679c96197f21d764d9fd58eb7e2dec3cff52c410b812aab",
+    "graph_arrays_sha256": "c5faad5fa54e947c3c9caeacef4e9922d225b96783e0d9d345407ebb05ad6a50",
+    "graph_scope": "Original ranked 1024-neuron subset; this preparation varies learning rules, not neuron selection",
+    "loader_sha256": "976359f9a8c1efe08d47f1bc14487e348de686a9c4b992b7fda123156fccfc9d",
+    "coverage": {
+      "blocks": 3351,
+      "text_tokens": 18591514,
+      "utf8_bytes": 54399840,
+      "all_source_bytes_covered_once": true,
+      "all_blocks_decode_to_source_bytes": true
+    },
+    "validation_or_test_payloads_opened": false,
+    "trained_weights_loaded": false,
+    "limitation": "Shared inventories contain metadata about other partitions; only train-10m raw text and token payloads are opened. No official fit matrix, budget or evaluation gate is defined here."
+  },
+  "prepared_conditions": 8,
+  "conditions": [
+    {
+      "condition": {
+        "method": "bptt",
+        "seed": 42,
+        "label": "bptt-s42"
+      },
+      "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    },
+    {
+      "condition": {
+        "method": "fixed_core",
+        "seed": 42,
+        "label": "fixed_core-s42"
+      },
+      "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 422496,
+      "optimizer_parameter_names": [
+        "output_bias",
+        "embedding.weight",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "input.weight",
+        "input.bias"
+      ],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": true
+    },
+    {
+      "condition": {
+        "method": "eligibility",
+        "seed": 42,
+        "label": "eligibility-s42"
+      },
+      "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    },
+    {
+      "condition": {
+        "method": "no_history",
+        "seed": 42,
+        "label": "no_history-s42"
+      },
+      "initial_state_sha256": "3ebf40e9a6af1f1899f0a52fb254fb87b7b5b72fff5d09f34b14abd9bd744d02",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    },
+    {
+      "condition": {
+        "method": "bptt",
+        "seed": 43,
+        "label": "bptt-s43"
+      },
+      "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    },
+    {
+      "condition": {
+        "method": "fixed_core",
+        "seed": 43,
+        "label": "fixed_core-s43"
+      },
+      "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 422496,
+      "optimizer_parameter_names": [
+        "output_bias",
+        "embedding.weight",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "input.weight",
+        "input.bias"
+      ],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": true
+    },
+    {
+      "condition": {
+        "method": "eligibility",
+        "seed": 43,
+        "label": "eligibility-s43"
+      },
+      "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    },
+    {
+      "condition": {
+        "method": "no_history",
+        "seed": 43,
+        "label": "no_history-s43"
+      },
+      "initial_state_sha256": "7910ff5e849ae8e237f52b9e88cfa19f4fc3c426846a947ffa482f095fcbc2d8",
+      "ordered_training_documents_sha256": "a583bb33f4fda6b27d8d8a7d16ea80e133529985163c9a7f03c68cc01855ff0d",
+      "training_documents": 3351,
+      "eligible_training_documents_at_fixture_sequence": 3351,
+      "trainable_parameters": 600003,
+      "optimizer_parameter_names": [
+        "edge_log_gain",
+        "alpha_logit",
+        "beta_logit",
+        "recurrent_logit",
+        "output_bias",
+        "embedding.weight",
+        "input.weight",
+        "input.bias",
+        "norm.weight",
+        "norm.bias",
+        "readout.weight",
+        "readout.bias"
+      ],
+      "frozen_parameter_names": [],
+      "real_training_declaration_accepted": true,
+      "synthetic_updates_finite": true,
+      "disposable_parameters_changed": true,
+      "frozen_core_preserved": null
+    }
+  ],
+  "synthetic_fixture": {
+    "updates": 2,
+    "batch": 1,
+    "input_token_ids": [
+      17,
+      29,
+      43
+    ],
+    "target_token_ids": [
+      29,
+      43,
+      59
+    ],
+    "context_warmup": 1,
+    "score_boundaries": false,
+    "threads": 1
+  },
+  "source_sha256": {
+    "flm/language_learning_inputs.py": "976359f9a8c1efe08d47f1bc14487e348de686a9c4b992b7fda123156fccfc9d",
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/corpus_cache.py": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5",
+    "flm/tokenizer.py": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d",
+    "flm/babylm.py": "9df985cf68662b12e4cb60e3492bf809dc4aaa21ce679a82910be4f3bae7cfee",
+    "scripts/language_learning_input_preflight.py": "bc86d2039032af2aaaba82f332eebdcd0620176665f32a7e3561f4f827648026",
+    "tests/test_language_learning_inputs.py": "66fa62a679fab13234d141d527b725304b5e2a7441a7e7b23afa6b71ee620f0f"
+  },
+  "official_corpus_fit_started": false,
+  "checkpoint_written": false,
+  "validation_or_test_payloads_opened": false,
+  "full_size_timing_run_started": false,
+  "training_protocol_frozen": false,
+  "scope": "Actual training-source and declaration audit plus separate synthetic updates. No language performance, corpus fit, timing benchmark or official evaluation gate."
+}
