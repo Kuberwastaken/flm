@@ -272,7 +272,13 @@ The complete audit independently replays **10,800 control frames and 972 delayed
 
 The language weights are not used in this assay, and no motor learning occurs during it.
 
-The [Research view's before/after replay](https://flm.kuber.studio/#research) revisits the earlier [40 sensory-choice trials](public/research/learned-choice.json): five methods, both cues and checkpoints 0/300/600/900 from seed 17. A time scrubber shows recorded position and yaw on two exactly repeated physical paths, retaining wrong choices. Decisions precede simulation; this is a view of existing evidence, not new fitting, food sensing or language-to-action transfer. Inspect the [replay frames and checkpoint identities](public/research/choice-replay.json). A separate [six-channel food-sensor interface](docs/FOOD-SENSOR-INTERFACE.md) has repeated 0.02-second prescribed-motion checks in FlyGym and scalar sensor replay, with no FLM policy or measured food approach, feeding or language transfer.
+The [Research view's before/after replay](https://flm.kuber.studio/#research) revisits the earlier [40 sensory-choice trials](public/research/learned-choice.json): five methods, both cues and checkpoints 0/300/600/900 from seed 17. A time scrubber shows recorded position and yaw on two exactly repeated physical paths, retaining wrong choices. Decisions precede simulation; this is a view of existing evidence, not new fitting, food sensing or language-to-action transfer. Inspect the [replay frames and checkpoint identities](public/research/choice-replay.json). The separate [six-channel food-sensor interface](docs/FOOD-SENSOR-INTERFACE.md) was checked on repeated 0.02-second prescribed FlyGym motion and scalar sensor replay.
+
+A [declared scripted odor-A reference](docs/FOOD-APPROACH-REFERENCE.md) then completed all seven physical cases, retaining reversal, neutral, missing-odor and straight controls plus the exact repeat. The [findings](docs/FOOD-APPROACH-RESULTS.md) and [complete records](https://flm.kuber.studio/research/food-approach-records.zip) include a scalar replay of **1,407 observations**. No neural learning, feeding or language transfer is involved.
+
+![Scripted odor-A approach trajectories and all seven first-contact outcomes, including two no-contact controls.](public/research/figures/food-approach.png)
+
+*First sampled A contact: 0.65 s on the left, 0.68 s when mirrored. Reversal and neutral cases still contact A at 0.65 s without sugar; missing odor and straight drive make no contact by 2 s. The repeat matches the original physical arrays exactly.*
 
 ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
 
