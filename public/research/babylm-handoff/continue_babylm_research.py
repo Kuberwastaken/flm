@@ -200,7 +200,8 @@ def execute_stage(root,stage,output,event):
 
 def run(root,pid,output,*,runner=execute_stage,waiter=wait_for_exit,idle=wait_for_idle):
     root=Path(root).resolve(); output=Path(output).resolve()
-    target=capture_trainer(root,pid)  # Must actually be live at arming, not just a state file.
+    target=capture_trainer(root,pid) if pid is not None else None
+    if target is None: verify_training(root)  # Explicit completed-training mode; never fabricate a live trainer.
     identity=dict(format='flm-after-babylm-v1',armed_utc=utc(),trainer=target,stages=STAGES,
         source_sha256={name:sha(root/name) for name in SOURCES},python=sys.version,psutil=psutil.__version__,package_versions=package_versions(),
         scope='Serial operational handoff. No group/budget choice or automatic stage retry. Known project commands are observed; general OS idleness is not guaranteed.')
@@ -214,7 +215,8 @@ def run(root,pid,output,*,runner=execute_stage,waiter=wait_for_exit,idle=wait_fo
             print(json.dumps(record,allow_nan=False),flush=True)
         try:
             event('armed',trainer=target)
-            waiter(target,event)
+            if target is not None: waiter(target,event)
+            else: event('completed_training_verified',runs=len(RUNS))
             results=[]
             for stage in STAGES:
                 idle(root,event); verify_sources(root,identity); verify_training(root)
@@ -233,5 +235,8 @@ def run(root,pid,output,*,runner=execute_stage,waiter=wait_for_exit,idle=wait_fo
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--trainer-pid',type=int,required=True); parser.add_argument('--output',type=Path,required=True)
+    mode=parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--trainer-pid',type=int)
+    mode.add_argument('--completed-training',action='store_true',help='Start after verified complete training; use a fresh handoff directory after reviewing any failed attempt')
+    parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args(); run(Path(__file__).resolve().parents[1],args.trainer_pid,args.output)

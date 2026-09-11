@@ -1,0 +1,78 @@
+{
+  "recorded_utc": "2026-09-11T22:34:42.034085+00:00",
+  "failure": {
+    "stage": "babylm-test",
+    "attempt": "work/babylm-post-training-v1",
+    "error": "TypeError: dict() got multiple values for keyword argument 'checkpoint_step'",
+    "stopped_utc": "2026-09-11T22:25:55.658103+00:00",
+    "supervisor_exit_code": 1,
+    "recorded_processes_confirmed_absent_before_retry": [
+      21568,
+      30476,
+      29100
+    ],
+    "completed_result_files": 0
+  },
+  "preserved_cache": {
+    "path": "runs/babylm-evaluation-failed-20260911-v1",
+    "files": 400,
+    "batches": 399,
+    "blocks": 3187,
+    "tokens": 18177107,
+    "utf8_bytes": 51722871,
+    "bytes": 2330961,
+    "manifest_sha256": "97ee911fd356be83a8c0caa5b265b32fc43ddbe75d12fd69cb54f437f8c91128",
+    "all_file_hashes_equal_before_and_after_move": true,
+    "reused_by_corrected_attempt": false
+  },
+  "repair": {
+    "changed_bound_sources": [
+      "scripts/continue_babylm_research.py",
+      "flm/babylm_test.py"
+    ],
+    "old_source_sha256": {
+      "scripts/continue_babylm_research.py": "a87063bdc857709852adee60b456a6c8eacda7f03df4694e58b98f7652d98e2c",
+      "flm/babylm_test.py": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054"
+    },
+    "new_source_sha256": {
+      "scripts/continue_babylm_research.py": "623b61db2e6f994b690d8a527b4140fe434220438e480c66d3e1da632ec0a3b0",
+      "flm/babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba"
+    },
+    "numerical_scoring_and_training_sources_unchanged": true,
+    "package_versions_unchanged": true,
+    "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313"
+  },
+  "tests": {
+    "passed": 26,
+    "seconds": 3.409,
+    "log_sha256": "791d401effb992f20ddbd34cdd9f2bd4179872f4393a91ec62b48aaaf662bb21",
+    "original_defect_reproduced_by_regression": true,
+    "scope": "Artificial twelve-result writer, cache/selection checks and supervised handoff fixtures; no new official inference from tests.",
+    "initial_test_invocation": "Module import failed for tests.*; corrected invocation added tests to sys.path before loading the four modules."
+  },
+  "retry": {
+    "directory": "work/babylm-post-training-v2",
+    "identity_sha256": "55d4d7fa897e88c7554894673e843bce2cf95bdf12db9845b32e83ea0471cc1a",
+    "supervisor_pid": 29332,
+    "supervisor_created": 1789166018.33428,
+    "evaluator_pid": 436,
+    "evaluator_created": 1789166019.3370085,
+    "stage_start": {
+      "utc": "2026-09-11T22:33:39.348943+00:00",
+      "event": "stage_process_started",
+      "stage": "babylm-test",
+      "pid": 436,
+      "created": 1789166019.3370085,
+      "command": [
+        "C:\\Users\\yokub\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-m",
+        "flm.babylm_test"
+      ]
+    },
+    "observed_live": true,
+    "scope": "Fresh scoring with corrected source identity from the same frozen checkpoints. Complete comparisons, fixed samples and timing remain pending."
+  }
+}
