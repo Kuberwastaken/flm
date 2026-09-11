@@ -1,0 +1,532 @@
+{
+  "inspected_utc": "2026-09-11T15:16:26.068195+00:00",
+  "physical_identity_sha256": "03a2725de34c8785a9714fb9a6d55940d926a2d2e91ca8eb71668cf425660f1e",
+  "body_assets_manifest_sha256": "e557702ce66e37e0315f918dbf1de75b8c0c352ee6e635b178b418334c70d4a7",
+  "inspector_sha256": "8db39cb9e7a7db2838d6ef9eb2ba1c8436c26ffb3d0a4030f443f8def01e3569",
+  "body_lookup": [
+    {
+      "segment": "c_thorax",
+      "declared_body_name": "flm_body/c_thorax",
+      "compiled_body_id": 1,
+      "resolved_body_name": "flm_body/c_thorax"
+    },
+    {
+      "segment": "c_head",
+      "declared_body_name": "flm_body/c_head",
+      "compiled_body_id": -1,
+      "resolved_body_name": null
+    },
+    {
+      "segment": "c_rostrum",
+      "declared_body_name": "flm_body/c_rostrum",
+      "compiled_body_id": 2,
+      "resolved_body_name": "flm_body/c_rostrum"
+    },
+    {
+      "segment": "c_haustellum",
+      "declared_body_name": "flm_body/c_haustellum",
+      "compiled_body_id": 3,
+      "resolved_body_name": "flm_body/c_haustellum"
+    },
+    {
+      "segment": "l_eye",
+      "declared_body_name": "flm_body/l_eye",
+      "compiled_body_id": 4,
+      "resolved_body_name": "flm_body/l_eye"
+    },
+    {
+      "segment": "r_eye",
+      "declared_body_name": "flm_body/r_eye",
+      "compiled_body_id": 5,
+      "resolved_body_name": "flm_body/r_eye"
+    },
+    {
+      "segment": "l_pedicel",
+      "declared_body_name": "flm_body/l_pedicel",
+      "compiled_body_id": 6,
+      "resolved_body_name": "flm_body/l_pedicel"
+    },
+    {
+      "segment": "l_funiculus",
+      "declared_body_name": "flm_body/l_funiculus",
+      "compiled_body_id": 7,
+      "resolved_body_name": "flm_body/l_funiculus"
+    },
+    {
+      "segment": "l_arista",
+      "declared_body_name": "flm_body/l_arista",
+      "compiled_body_id": 8,
+      "resolved_body_name": "flm_body/l_arista"
+    },
+    {
+      "segment": "r_pedicel",
+      "declared_body_name": "flm_body/r_pedicel",
+      "compiled_body_id": 9,
+      "resolved_body_name": "flm_body/r_pedicel"
+    },
+    {
+      "segment": "r_funiculus",
+      "declared_body_name": "flm_body/r_funiculus",
+      "compiled_body_id": 10,
+      "resolved_body_name": "flm_body/r_funiculus"
+    },
+    {
+      "segment": "r_arista",
+      "declared_body_name": "flm_body/r_arista",
+      "compiled_body_id": 11,
+      "resolved_body_name": "flm_body/r_arista"
+    },
+    {
+      "segment": "c_abdomen12",
+      "declared_body_name": "flm_body/c_abdomen12",
+      "compiled_body_id": 12,
+      "resolved_body_name": "flm_body/c_abdomen12"
+    },
+    {
+      "segment": "c_abdomen3",
+      "declared_body_name": "flm_body/c_abdomen3",
+      "compiled_body_id": 13,
+      "resolved_body_name": "flm_body/c_abdomen3"
+    },
+    {
+      "segment": "c_abdomen4",
+      "declared_body_name": "flm_body/c_abdomen4",
+      "compiled_body_id": 14,
+      "resolved_body_name": "flm_body/c_abdomen4"
+    },
+    {
+      "segment": "c_abdomen5",
+      "declared_body_name": "flm_body/c_abdomen5",
+      "compiled_body_id": 15,
+      "resolved_body_name": "flm_body/c_abdomen5"
+    },
+    {
+      "segment": "c_abdomen6",
+      "declared_body_name": "flm_body/c_abdomen6",
+      "compiled_body_id": 16,
+      "resolved_body_name": "flm_body/c_abdomen6"
+    },
+    {
+      "segment": "l_wing",
+      "declared_body_name": "flm_body/l_wing",
+      "compiled_body_id": 17,
+      "resolved_body_name": "flm_body/l_wing"
+    },
+    {
+      "segment": "r_wing",
+      "declared_body_name": "flm_body/r_wing",
+      "compiled_body_id": 18,
+      "resolved_body_name": "flm_body/r_wing"
+    },
+    {
+      "segment": "l_haltere",
+      "declared_body_name": "flm_body/l_haltere",
+      "compiled_body_id": 19,
+      "resolved_body_name": "flm_body/l_haltere"
+    },
+    {
+      "segment": "r_haltere",
+      "declared_body_name": "flm_body/r_haltere",
+      "compiled_body_id": 20,
+      "resolved_body_name": "flm_body/r_haltere"
+    },
+    {
+      "segment": "lf_coxa",
+      "declared_body_name": "flm_body/lf_coxa",
+      "compiled_body_id": 21,
+      "resolved_body_name": "flm_body/lf_coxa"
+    },
+    {
+      "segment": "lf_trochanterfemur",
+      "declared_body_name": "flm_body/lf_trochanterfemur",
+      "compiled_body_id": 22,
+      "resolved_body_name": "flm_body/lf_trochanterfemur"
+    },
+    {
+      "segment": "lf_tibia",
+      "declared_body_name": "flm_body/lf_tibia",
+      "compiled_body_id": 23,
+      "resolved_body_name": "flm_body/lf_tibia"
+    },
+    {
+      "segment": "lf_tarsus1",
+      "declared_body_name": "flm_body/lf_tarsus1",
+      "compiled_body_id": 24,
+      "resolved_body_name": "flm_body/lf_tarsus1"
+    },
+    {
+      "segment": "lf_tarsus2",
+      "declared_body_name": "flm_body/lf_tarsus2",
+      "compiled_body_id": 25,
+      "resolved_body_name": "flm_body/lf_tarsus2"
+    },
+    {
+      "segment": "lf_tarsus3",
+      "declared_body_name": "flm_body/lf_tarsus3",
+      "compiled_body_id": 26,
+      "resolved_body_name": "flm_body/lf_tarsus3"
+    },
+    {
+      "segment": "lf_tarsus4",
+      "declared_body_name": "flm_body/lf_tarsus4",
+      "compiled_body_id": 27,
+      "resolved_body_name": "flm_body/lf_tarsus4"
+    },
+    {
+      "segment": "lf_tarsus5",
+      "declared_body_name": "flm_body/lf_tarsus5",
+      "compiled_body_id": 28,
+      "resolved_body_name": "flm_body/lf_tarsus5"
+    },
+    {
+      "segment": "lm_coxa",
+      "declared_body_name": "flm_body/lm_coxa",
+      "compiled_body_id": 29,
+      "resolved_body_name": "flm_body/lm_coxa"
+    },
+    {
+      "segment": "lm_trochanterfemur",
+      "declared_body_name": "flm_body/lm_trochanterfemur",
+      "compiled_body_id": 30,
+      "resolved_body_name": "flm_body/lm_trochanterfemur"
+    },
+    {
+      "segment": "lm_tibia",
+      "declared_body_name": "flm_body/lm_tibia",
+      "compiled_body_id": 31,
+      "resolved_body_name": "flm_body/lm_tibia"
+    },
+    {
+      "segment": "lm_tarsus1",
+      "declared_body_name": "flm_body/lm_tarsus1",
+      "compiled_body_id": 32,
+      "resolved_body_name": "flm_body/lm_tarsus1"
+    },
+    {
+      "segment": "lm_tarsus2",
+      "declared_body_name": "flm_body/lm_tarsus2",
+      "compiled_body_id": 33,
+      "resolved_body_name": "flm_body/lm_tarsus2"
+    },
+    {
+      "segment": "lm_tarsus3",
+      "declared_body_name": "flm_body/lm_tarsus3",
+      "compiled_body_id": 34,
+      "resolved_body_name": "flm_body/lm_tarsus3"
+    },
+    {
+      "segment": "lm_tarsus4",
+      "declared_body_name": "flm_body/lm_tarsus4",
+      "compiled_body_id": 35,
+      "resolved_body_name": "flm_body/lm_tarsus4"
+    },
+    {
+      "segment": "lm_tarsus5",
+      "declared_body_name": "flm_body/lm_tarsus5",
+      "compiled_body_id": 36,
+      "resolved_body_name": "flm_body/lm_tarsus5"
+    },
+    {
+      "segment": "lh_coxa",
+      "declared_body_name": "flm_body/lh_coxa",
+      "compiled_body_id": 37,
+      "resolved_body_name": "flm_body/lh_coxa"
+    },
+    {
+      "segment": "lh_trochanterfemur",
+      "declared_body_name": "flm_body/lh_trochanterfemur",
+      "compiled_body_id": 38,
+      "resolved_body_name": "flm_body/lh_trochanterfemur"
+    },
+    {
+      "segment": "lh_tibia",
+      "declared_body_name": "flm_body/lh_tibia",
+      "compiled_body_id": 39,
+      "resolved_body_name": "flm_body/lh_tibia"
+    },
+    {
+      "segment": "lh_tarsus1",
+      "declared_body_name": "flm_body/lh_tarsus1",
+      "compiled_body_id": 40,
+      "resolved_body_name": "flm_body/lh_tarsus1"
+    },
+    {
+      "segment": "lh_tarsus2",
+      "declared_body_name": "flm_body/lh_tarsus2",
+      "compiled_body_id": 41,
+      "resolved_body_name": "flm_body/lh_tarsus2"
+    },
+    {
+      "segment": "lh_tarsus3",
+      "declared_body_name": "flm_body/lh_tarsus3",
+      "compiled_body_id": 42,
+      "resolved_body_name": "flm_body/lh_tarsus3"
+    },
+    {
+      "segment": "lh_tarsus4",
+      "declared_body_name": "flm_body/lh_tarsus4",
+      "compiled_body_id": 43,
+      "resolved_body_name": "flm_body/lh_tarsus4"
+    },
+    {
+      "segment": "lh_tarsus5",
+      "declared_body_name": "flm_body/lh_tarsus5",
+      "compiled_body_id": 44,
+      "resolved_body_name": "flm_body/lh_tarsus5"
+    },
+    {
+      "segment": "rf_coxa",
+      "declared_body_name": "flm_body/rf_coxa",
+      "compiled_body_id": 45,
+      "resolved_body_name": "flm_body/rf_coxa"
+    },
+    {
+      "segment": "rf_trochanterfemur",
+      "declared_body_name": "flm_body/rf_trochanterfemur",
+      "compiled_body_id": 46,
+      "resolved_body_name": "flm_body/rf_trochanterfemur"
+    },
+    {
+      "segment": "rf_tibia",
+      "declared_body_name": "flm_body/rf_tibia",
+      "compiled_body_id": 47,
+      "resolved_body_name": "flm_body/rf_tibia"
+    },
+    {
+      "segment": "rf_tarsus1",
+      "declared_body_name": "flm_body/rf_tarsus1",
+      "compiled_body_id": 48,
+      "resolved_body_name": "flm_body/rf_tarsus1"
+    },
+    {
+      "segment": "rf_tarsus2",
+      "declared_body_name": "flm_body/rf_tarsus2",
+      "compiled_body_id": 49,
+      "resolved_body_name": "flm_body/rf_tarsus2"
+    },
+    {
+      "segment": "rf_tarsus3",
+      "declared_body_name": "flm_body/rf_tarsus3",
+      "compiled_body_id": 50,
+      "resolved_body_name": "flm_body/rf_tarsus3"
+    },
+    {
+      "segment": "rf_tarsus4",
+      "declared_body_name": "flm_body/rf_tarsus4",
+      "compiled_body_id": 51,
+      "resolved_body_name": "flm_body/rf_tarsus4"
+    },
+    {
+      "segment": "rf_tarsus5",
+      "declared_body_name": "flm_body/rf_tarsus5",
+      "compiled_body_id": 52,
+      "resolved_body_name": "flm_body/rf_tarsus5"
+    },
+    {
+      "segment": "rm_coxa",
+      "declared_body_name": "flm_body/rm_coxa",
+      "compiled_body_id": 53,
+      "resolved_body_name": "flm_body/rm_coxa"
+    },
+    {
+      "segment": "rm_trochanterfemur",
+      "declared_body_name": "flm_body/rm_trochanterfemur",
+      "compiled_body_id": 54,
+      "resolved_body_name": "flm_body/rm_trochanterfemur"
+    },
+    {
+      "segment": "rm_tibia",
+      "declared_body_name": "flm_body/rm_tibia",
+      "compiled_body_id": 55,
+      "resolved_body_name": "flm_body/rm_tibia"
+    },
+    {
+      "segment": "rm_tarsus1",
+      "declared_body_name": "flm_body/rm_tarsus1",
+      "compiled_body_id": 56,
+      "resolved_body_name": "flm_body/rm_tarsus1"
+    },
+    {
+      "segment": "rm_tarsus2",
+      "declared_body_name": "flm_body/rm_tarsus2",
+      "compiled_body_id": 57,
+      "resolved_body_name": "flm_body/rm_tarsus2"
+    },
+    {
+      "segment": "rm_tarsus3",
+      "declared_body_name": "flm_body/rm_tarsus3",
+      "compiled_body_id": 58,
+      "resolved_body_name": "flm_body/rm_tarsus3"
+    },
+    {
+      "segment": "rm_tarsus4",
+      "declared_body_name": "flm_body/rm_tarsus4",
+      "compiled_body_id": 59,
+      "resolved_body_name": "flm_body/rm_tarsus4"
+    },
+    {
+      "segment": "rm_tarsus5",
+      "declared_body_name": "flm_body/rm_tarsus5",
+      "compiled_body_id": 60,
+      "resolved_body_name": "flm_body/rm_tarsus5"
+    },
+    {
+      "segment": "rh_coxa",
+      "declared_body_name": "flm_body/rh_coxa",
+      "compiled_body_id": 61,
+      "resolved_body_name": "flm_body/rh_coxa"
+    },
+    {
+      "segment": "rh_trochanterfemur",
+      "declared_body_name": "flm_body/rh_trochanterfemur",
+      "compiled_body_id": 62,
+      "resolved_body_name": "flm_body/rh_trochanterfemur"
+    },
+    {
+      "segment": "rh_tibia",
+      "declared_body_name": "flm_body/rh_tibia",
+      "compiled_body_id": 63,
+      "resolved_body_name": "flm_body/rh_tibia"
+    },
+    {
+      "segment": "rh_tarsus1",
+      "declared_body_name": "flm_body/rh_tarsus1",
+      "compiled_body_id": 64,
+      "resolved_body_name": "flm_body/rh_tarsus1"
+    },
+    {
+      "segment": "rh_tarsus2",
+      "declared_body_name": "flm_body/rh_tarsus2",
+      "compiled_body_id": 65,
+      "resolved_body_name": "flm_body/rh_tarsus2"
+    },
+    {
+      "segment": "rh_tarsus3",
+      "declared_body_name": "flm_body/rh_tarsus3",
+      "compiled_body_id": 66,
+      "resolved_body_name": "flm_body/rh_tarsus3"
+    },
+    {
+      "segment": "rh_tarsus4",
+      "declared_body_name": "flm_body/rh_tarsus4",
+      "compiled_body_id": 67,
+      "resolved_body_name": "flm_body/rh_tarsus4"
+    },
+    {
+      "segment": "rh_tarsus5",
+      "declared_body_name": "flm_body/rh_tarsus5",
+      "compiled_body_id": 68,
+      "resolved_body_name": "flm_body/rh_tarsus5"
+    }
+  ],
+  "unresolved_body_segments": [
+    "c_head"
+  ],
+  "unresolved_numpy_alias": "flm_body/rh_tarsus5",
+  "all_sensor_and_outcome_body_ids_resolve": true,
+  "checked_trials": [
+    {
+      "label": "initial-s42--odor-a-left",
+      "trajectory_sha256": "cc373cc6d28662c0f2902c677a4c007de4503a9f968893790d0c273ebf971507",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009761768908497892,
+        "valid_body_distance_mm": 0.011727200214668573,
+        "thorax_quaternion_component": 0.0008578879120189013
+      },
+      "largest_distance": {
+        "frame": 66,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.011727200214668573
+      }
+    },
+    {
+      "label": "initial-s42--odor-a-right",
+      "trajectory_sha256": "376dd8b2be3a57058b75cb0366c18ccbed1cbe68a37b191e5d1a28fa34c28dc1",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009785323898274356,
+        "valid_body_distance_mm": 0.01171659296256056,
+        "thorax_quaternion_component": 0.0008551306731019899
+      },
+      "largest_distance": {
+        "frame": 66,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.01171659296256056
+      }
+    },
+    {
+      "label": "initial-s42--odor-a-left-reversed",
+      "trajectory_sha256": "35fa4f4dad458e7e303702c827c3b0961f2bfd19b7deaf002aa98003f88eb907",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009761768908497892,
+        "valid_body_distance_mm": 0.011727200214668573,
+        "thorax_quaternion_component": 0.0008578879120189013
+      },
+      "largest_distance": {
+        "frame": 66,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.011727200214668573
+      }
+    },
+    {
+      "label": "initial-s42--odor-a-left-neutral",
+      "trajectory_sha256": "35fa4f4dad458e7e303702c827c3b0961f2bfd19b7deaf002aa98003f88eb907",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009761768908497892,
+        "valid_body_distance_mm": 0.011727200214668573,
+        "thorax_quaternion_component": 0.0008578879120189013
+      },
+      "largest_distance": {
+        "frame": 66,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.011727200214668573
+      }
+    },
+    {
+      "label": "initial-s42--odor-a-left-missing",
+      "trajectory_sha256": "98eddd079a62cbbe1ab5c60ee01994ff28414bcc125d9d46d2317c2e778b8319",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009324836291025207,
+        "valid_body_distance_mm": 0.011175396115434397,
+        "thorax_quaternion_component": 0.0008690173797511747
+      },
+      "largest_distance": {
+        "frame": 166,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.011175396115434397
+      }
+    },
+    {
+      "label": "initial-s42--odor-a-left-repeat",
+      "trajectory_sha256": "cc373cc6d28662c0f2902c677a4c007de4503a9f968893790d0c273ebf971507",
+      "observations": 201,
+      "head_row_exactly_equals_rh_tarsus5": true,
+      "maximum_recomputed_minus_cached": {
+        "valid_body_coordinate_mm": 0.009761768908497892,
+        "valid_body_distance_mm": 0.011727200214668573,
+        "thorax_quaternion_component": 0.0008578879120189013
+      },
+      "largest_distance": {
+        "frame": 66,
+        "segment": "rm_tarsus5",
+        "distance_mm": 0.011727200214668573
+      }
+    }
+  ],
+  "observations": 1206,
+  "simulation_integrator": "Euler",
+  "physics_timestep_s": 0.0001,
+  "physics_steps_run": 0,
+  "training_updates": 0,
+  "documentation": "https://mujoco.readthedocs.io/en/stable/computation/index.html#consistency-in-mjdata",
+  "scope": "Post-hoc getter and kinematic inspection of all six initial-s42 physical cases. Original cached sensors, commands, poses and outcomes are preserved. Recomputed qpos geometry belongs to a different integration stage; the head body row aliases the last body and is not a valid head position."
+}

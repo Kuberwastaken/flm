@@ -5,3 +5,20 @@
 `web/body/fk.js` and `web/body/stl.js` preserve the upstream forward-kinematics and STL parsing implementation. Applicable upstream MIT and Apache-2.0 notices are included alongside this file. Three.js carries its own MIT notice. These imported files are distinct from original FLM code.
 
 The ChatFLM body view maps aggregate recurrent-state values to a few joint offsets for illustration. It does not implement a learned motor policy, physics, proprioception, flight, walking, or biological language learning. No connection to a living fly's behavior is claimed.
+
+## Compiled physical-replay assets
+
+`public/body/recorded-food/` is a separate export of all 69 visual meshes from the
+pinned FlyGym 2.1.0 / MuJoCo 3.9.0 model used by the physical food experiment.
+`experiments/embodiment/food_replay_assets.py` records the compiled geometry IDs,
+body IDs, local mesh transforms, source hashes and environment. Its packed
+vertices and triangles are verified exactly against the compiled arrays.
+These NeuroMechFly-derived assets retain the body-source attribution and
+component notices above. The different male neural graph and female body remain
+different specimens. The export adds no learned behavior or physical trials.
+
+The recorded-state viewer must use compiled geometry transforms rather than
+the API's unresolved head-body lookup. See
+[`PHYSICAL-STATE-SEMANTICS.md`](../research/physical-state-semantics.md) for the lookup
+defect and the distinction between cached sensor poses and reconstructed `qpos`
+geometry. The existing illustrative chat body remains separate.

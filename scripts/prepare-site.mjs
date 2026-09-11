@@ -144,6 +144,8 @@ for (const [source, target] of [
   ['FOOD-SENSOR-INTERFACE.md', 'food-sensor-interface.md'],
   ['FOOD-APPROACH-RESULTS.md', 'food-approach-results.md'],
   ['FOOD-CORE-INTERFACE.md', 'food-core-interface.md'],
+  ['FOOD-CORE-PHYSICAL-RESULTS.md', 'food-core-physical-results.md'],
+  ['PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md'],
 ]) foodNote = foodNote.replaceAll(source, target);
 await writeFile('public/research/food-response-plan.md', foodNote);
 await mkdir('public/research/food-sensors', { recursive: true });
@@ -183,6 +185,27 @@ await writeFile('public/research/food-core-interface.md', (await readFile('docs/
   .replaceAll('../flm/food_core.py', 'food-core/food_core.py')
   .replaceAll('../scripts/prepare_food_core.py', 'food-core/prepare_food_core.py')
   .replaceAll('../experiments/embodiment/verify_food_core.py', 'food-core/verify_food_core.py'));
+await mkdir('public/research/food-core-physical', { recursive: true });
+for (const name of ['identity.json', 'summary.json', 'audit.json', 'release.json', 'standalone-archive-verification.json', 'body-assets.json', 'body-semantics.json', 'replay.json'])
+  await copyFile(`reports/food-core-physical/${name}`, `public/research/food-core-physical/${name}`);
+for (const source of ['experiments/embodiment/food_replay_assets.py', 'experiments/embodiment/inspect_food_body_semantics.py', 'experiments/embodiment/export_food_replay.py'])
+  await copyFile(source, `public/research/food-core-physical/${source.split('/').at(-1)}`);
+for (const name of ['PHYSICAL-STATE-SEMANTICS', 'FOOD-CORE-PHYSICAL-RESULTS', 'FOOD-CORE-PHYSICAL-REFERENCE']) {
+  let note = await readFile(`docs/${name}.md`, 'utf8');
+  for (const [source, target] of [
+    ['PHYSICAL-STATE-SEMANTICS.md', 'physical-state-semantics.md'],
+    ['FOOD-CORE-PHYSICAL-REFERENCE.md', 'food-core-physical-reference.md'],
+    ['FOOD-CORE-INTERFACE.md', 'food-core-interface.md'],
+    ['FOOD-APPROACH-REFERENCE.md', 'food-approach-reference.md'],
+    ['FOOD-RESPONSE-PLAN.md', 'food-response-plan.md'],
+    ['../reports/food-core-physical/', 'food-core-physical/'],
+    ['../public/research/', ''],
+    ['../experiments/embodiment/food_replay_assets.py', 'food-core-physical/food_replay_assets.py'],
+    ['../experiments/embodiment/inspect_food_body_semantics.py', 'food-core-physical/inspect_food_body_semantics.py'],
+    ['../experiments/embodiment/export_food_replay.py', 'food-core-physical/export_food_replay.py'],
+  ]) note = note.replaceAll(source, target);
+  await writeFile(`public/research/${name.toLowerCase()}.md`, note);
+}
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');
@@ -269,6 +292,8 @@ for (const [source, target] of [['data/cards/ami.json', 'public/data/ami.json'],
   await copyFile(source, target);
 const files = (await readdir('licenses')).filter(name => /\.(txt|md)$/.test(name)).sort();
 for (const name of files) await copyFile(`licenses/${name}`, `public/licenses/${name}`);
+await writeFile('public/licenses/BODY-PROVENANCE.md', (await readFile('licenses/BODY-PROVENANCE.md', 'utf8'))
+  .replaceAll('../docs/PHYSICAL-STATE-SEMANTICS.md', '../research/physical-state-semantics.md'));
 await copyFile('LICENSE', 'public/licenses/FLM-MIT.txt');
 files.unshift('FLM-MIT.txt');
 const escape = text => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
