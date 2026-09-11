@@ -1,0 +1,89 @@
+{
+  "verified_utc": "2026-09-11T09:21:51.903526+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/circuit-selection.md",
+      "status": 200,
+      "bytes": 10176,
+      "sha256": "2ce1141eb480a1612838b36220b07c9e6da470c58f3e565a554e6989cc72e1bc"
+    },
+    {
+      "path": "research/selection-graph-exports.md",
+      "status": 200,
+      "bytes": 6998,
+      "sha256": "7d743a394cab68dd15662128aad8e62cbc30f10c4a94b0eb992dc3403cff0567"
+    },
+    {
+      "path": "research/selection-graphs.zip",
+      "status": 200,
+      "bytes": 5835934,
+      "sha256": "84ac28ea6bfd96a02071f45b4c9d1fa339ac1cce34735d3e4912841064dccad0"
+    },
+    {
+      "path": "research/selection-graph-manifest.json",
+      "status": 200,
+      "bytes": 101486,
+      "sha256": "51b5c52c3b068c39be70a2c01bcff6ff5ea785fdf7e65cf4f2ebd0a63ef95923"
+    },
+    {
+      "path": "research/selection-graph-release.json",
+      "status": 200,
+      "bytes": 588,
+      "sha256": "cdd83954e312fda46dc21b44421b3b9d43d54ceb05ffd1a88a0f9b8e3dc5f1af"
+    },
+    {
+      "path": "research/selection-rewiring-started.json",
+      "status": 200,
+      "bytes": 573637,
+      "sha256": "2da24baaf8412c4e425b32295222fb8c2af86aabccb78a5808a4026d24622d0d"
+    },
+    {
+      "path": "research/selection_graphs.py",
+      "status": 200,
+      "bytes": 12948,
+      "sha256": "b50db1360f934a05c0c9456571401b6754b08340e31c7715a91f1b51bf5d6fd4"
+    },
+    {
+      "path": "research/selection_rewiring.py",
+      "status": 200,
+      "bytes": 5739,
+      "sha256": "7e7f98a8a8eecc7c61942f75ced21ec3fbfbe4e27214c73f867775e9dcc4c593"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7820099,
+      "sha256": "fe91fdf04eb4c0a8db62a054ff6d1bdc1c2f1b4ca8cf557d6ded2bd2452a1528"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-pathways.md",
+    "circuit-selection/circuit_selection.py",
+    "selection-controls/selection_controls.py",
+    "selection-controls/summary.json",
+    "selection-graph-exports.md",
+    "circuit-selection/summary.json",
+    "circuit-selection/candidate-body-ids.json",
+    "circuit-selection/members.csv",
+    "selection-controls/control-body-ids.json",
+    "circuit-selection.md",
+    "selection-graphs.zip",
+    "selection-graph-manifest.json",
+    "selection_rewiring.py",
+    "selection-rewiring-started.json",
+    "selection-graph-release.json"
+  ],
+  "graph_exports_verified": 64,
+  "independent_numpy_weight_pool_membership_degree_and_parameter_checks_passed": true,
+  "export_fixture_tests_passed": 4,
+  "rewiring_runner_fixture_tests_passed": 2,
+  "paper_source_files_verified": 287,
+  "scope": "Untrained graph export release and arithmetic checks; no training, language scores or speed measurements",
+  "deployed_commit": "a6dcab99244e188cb46ec09b834b578b30e92dad",
+  "github_pages_run": 34583672513,
+  "deployment_conclusion": "success",
+  "node_tests_passed": 69,
+  "node_tests_failed": 0
+}
