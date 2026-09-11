@@ -1,0 +1,33 @@
+{
+  "verified_utc": "2026-09-11T20:11:34.154035+00:00",
+  "source_commit": "93014d482b71c69e4042f48b06aefc22a4bbf15b",
+  "source_sha256": {
+    "scripts/audit_babylm_completion.py": "65dc3c62e8a10b608ae42b3185488598cb9884a52d34b0f0fc83ddbb19d58732",
+    "tests/test_babylm_completion_command.py": "18ec79d389eeb19f7567d4afe4539ab15bdc4d4cd3c62d8e4497fcc288fa3787"
+  },
+  "tests": {
+    "passed": 4,
+    "failed": 0,
+    "seconds": 0.05,
+    "log_sha256": "978653dbffac29e929a9fe38e73697cc4470ade7d125d8d19f57f171039965ea",
+    "scope": "Artificial declarations; incomplete/overwrite/protocol/identity gates."
+  },
+  "actual_completed_fit": {
+    "condition": "100m/transformer-s42",
+    "result": "reports/babylm/completion-command-transformer-100m-s42.json",
+    "result_sha256": "1a47449cac409c0ff1c777f3102f08892f861dda13a02ce247fc5c4b88248ab1",
+    "matches_previous_completed_run_record": true,
+    "previous_record_sha256": "c6e8a50c8732c2f1435d67c36af8cc9dfe3bfc9ce3dd3acced8c388dfd7ba687",
+    "validation_records_checked": 24,
+    "validation_panel_blocks": 48,
+    "numerical_sources_match_training_commit": true
+  },
+  "active_fit_probe": {
+    "condition": "100m/flm-s43",
+    "refusal": "Completed fit and all 24 validation records are required",
+    "output_created": false,
+    "bound_trainer_live": true,
+    "handoff_sources_and_packages_unchanged": true
+  },
+  "limits": "Single-fit checkpoint restoration and saved-validation arithmetic/source audit; no model forward pass, new training, test-cache access or twelve-run selection freeze."
+}

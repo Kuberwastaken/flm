@@ -92,3 +92,29 @@ The [declared BabyLM evaluation](babylm-evaluation.md),
 [selection cost plan](selection-timing-pilot.md), and
 [complete-group coordinator](selection-language-coordinator.md) remain the
 authoritative scientific definitions.
+
+## Auditing one finished fit
+
+The [completion audit command](babylm-handoff/audit_babylm_completion.py) replaces
+per-condition one-off scripts with explicit scale, architecture and seed options.
+It requires a completed fit and all 24 validation records before loading model
+software or validation data. It checks the fixed protocol independently of other
+runs, the study inventory, the eight numerical sources against the training
+commit, and the installed Torch version. The existing payload verifier restores
+selected/final checkpoints and checks every recorded validation observation.
+Input and source hashes must remain unchanged through verification.
+
+```powershell
+python scripts/audit_babylm_completion.py --scale 100m --seed 42 --variant transformer `
+  --output work/another-completion-audit.json
+```
+
+Use a fresh output path and run the auditor from the target repository checkout.
+It performs no model forward pass or test-cache access and does not freeze the
+twelve-run selection. The supervisor still applies its own complete-study gate.
+The [four command tests](babylm-handoff/test_babylm_completion_command.py) cover
+incomplete fits, overwrite refusal, protocol drift and identity/inventory changes.
+The [verification record](babylm-handoff/completion-preparation.json)
+also distinguishes those artificial fixtures from an
+[actual completed-fit audit](babylm-handoff/completion-transformer-100m-s42.json)
+that reproduces the previous 100M transformer seed-42 record exactly.
