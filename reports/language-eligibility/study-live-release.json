@@ -1,0 +1,77 @@
+{
+  "verified_utc": "2026-09-11T11:41:58.705244+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "research/language-learning-study.md",
+      "status": 200,
+      "bytes": 6452,
+      "sha256": "202e022012bfcffc79a9677ff6cf5e578e38d81cd0892281c0b7a0c60a16ec5d"
+    },
+    {
+      "path": "research/language-learning-validation.md",
+      "status": 200,
+      "bytes": 5477,
+      "sha256": "5d13cd5b4e545a9c7d5a88aebfb8ef58be9931e96e2b3c24cf628e3d531d3f26"
+    },
+    {
+      "path": "research/language-learning-runner.md",
+      "status": 200,
+      "bytes": 6209,
+      "sha256": "9e864e08e322a6e0f17eeed75437f45ecc4c7842f268db8ee2dc3cf9a292b361"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8261797,
+      "sha256": "245a56628b25a7581cc3c5af06656b740966b56195a89a8b1a3c979300b5acb8"
+    },
+    {
+      "path": "research/language-learning/language_learning_study.py",
+      "status": 200,
+      "bytes": 16056,
+      "sha256": "bd12be0d668e57f9fa95a660beeb6177fd731af7bc369f3f56279bc68063a301"
+    },
+    {
+      "path": "research/language-learning/language_learning_study_preflight.py",
+      "status": 200,
+      "bytes": 2667,
+      "sha256": "0b613165f70596f190d55f9d4a88dea0f1917a47cd6606a8c50019957d586070"
+    },
+    {
+      "path": "research/language-learning/study-preparation.json",
+      "status": 200,
+      "bytes": 7207,
+      "sha256": "e4a17cae9eb28a3dc750226eb39f1effd61302df5855ff6bf27d6a468a1d4c77"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "language-learning/language_learning_study.py",
+    "language-learning-inputs.md",
+    "language-learning-timing.md",
+    "language-learning-runner.md",
+    "language-learning-validation.md",
+    "language-learning/study-preparation.json",
+    "language-learning-runner.md",
+    "language-learning/language_learning_validation.py",
+    "language-learning-study.md",
+    "language-learning/validation-preflight.json",
+    "language-learning-timing.md",
+    "language-learning/language_learning_train.py",
+    "language-learning-inputs.md",
+    "language-eligibility-kernel.md",
+    "language-learning-validation.md",
+    "language-learning-study.md",
+    "language-learning-timing.md"
+  ],
+  "paper_source_files_verified": 336,
+  "source_bindings_verified": 20,
+  "condition_registry_verified": 8,
+  "readiness_and_metadata_verified": true,
+  "tiny_coordinator_fixture_tests_observed_passed": 8,
+  "test_payloads_opened": false,
+  "official_study_initialized": false,
+  "official_condition_trained": false,
+  "scope": "Publication and coordinator preparation identity verification only. The prerequisite gates remain closed; no official timing, budget, fit, selection or test scoring was performed."
+}
