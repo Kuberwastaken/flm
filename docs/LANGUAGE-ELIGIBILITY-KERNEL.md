@@ -106,9 +106,10 @@ bitwise reproducibility of future multi-thread training.
 
 ## Remaining work before fitting
 
-Integrate a training-only runner with explicit data identities, exposure counts,
-optimizer/RNG restoration, a matched fixed-core definition and all-condition
-selection gates. Test its actual resumed windows, then measure disposable
+The [training-only runner](LANGUAGE-LEARNING-RUNNER.md) now binds supplied data,
+counts exposure, restores optimizer/RNG and defines all four conditions. Its
+resumed windows match uninterrupted small-fixture fits. Add verified official
+input loading and all-condition selection gates, then measure disposable
 full-size training-window costs after the priority queue finishes. Freeze the
 dataset, compute budget, seeds, masking, selection and comparison rules before
 fitting BPTT, fixed-core, eligibility and history-removal conditions. Keep failures

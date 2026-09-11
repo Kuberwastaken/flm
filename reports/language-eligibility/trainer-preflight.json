@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-09-11T07:33:01.593653+00:00",
+  "command": "python -m unittest discover -s tests -p test_language_learning_train.py -v",
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "scope": "Tiny artificial four-condition training fixtures; no acquired corpus or official fitting.",
+  "source_sha256": {
+    "flm/language_learning_train.py": "f602738b996f55f249332a14afd4e7bcc9f80ccdc1c83d5c012e2c11f732d0b4",
+    "flm/language_eligibility.py": "19681440bf756cbdec2b65becea0fe8d571c5445b9e061f2d9f58babae2df485",
+    "flm/embedding_eligibility.py": "dd398c2d18dc5aaaa33002bbbd0d0926ae9095dc074a6041ea399e6ac0ce1da1",
+    "flm/local_learning.py": "ee8b315789b0ad43e4a98038404d74439a40eb214e84e31aeb1dbb7efb171aa2",
+    "flm/model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+    "flm/train.py": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831",
+    "flm/inference.py": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b",
+    "flm/provenance.py": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59",
+    "tests/test_language_learning_train.py": "bf4647f741f8d49439d8ff8f288f02c69b86dc99765721ceb558abd6f26d3e56"
+  },
+  "conditions": [
+    "bptt",
+    "fixed_core",
+    "eligibility",
+    "no_history"
+  ],
+  "fixture_updates": 4,
+  "cpu_threads": 1,
+  "resumed_uninterrupted_payload_equality": true,
+  "crash_before_commit_recovery": true,
+  "optimizer_and_sampler_tampering_rejected": true,
+  "official_input_partition_verified": false,
+  "full_size_cost_pilot": false,
+  "official_test_evaluation": false
+}

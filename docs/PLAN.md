@@ -68,6 +68,8 @@ The [train-only timing pilot command](SCAN-TIMING-PILOT.md) is also fixture-test
 
 The [language embedding eligibility preparation](LANGUAGE-ELIGIBILITY-PREPARATION.md) verifies a window-bounded factorization against dense local derivatives and tied-output autograd fixtures. The [complete window-gradient kernel](LANGUAGE-ELIGIBILITY-KERNEL.md) now integrates all core and lexical derivatives, masking and history removal. Its coupled-graph gradients match an independent implementation of the stated approximation, and intentionally differ from full BPTT. These are numerical fixtures, not language fits. Provenance-aware trainer integration, resumption checks and training-only cost measurements precede any new learning-rule comparison.
 
+The [four-condition training runner](LANGUAGE-LEARNING-RUNNER.md) now binds supplied training content and initial tensors, counts exact exposure, and verifies saved optimizer/RNG and sampled windows on resumption. Seven fixture tests include complete resumed versus uninterrupted payload equality for all four methods. Official input preparation, full-size cost measurements, the immutable learning-rule protocol and whole-study selection gate remain before any corpus fits.
+
 The [continuing research program](RESEARCH-PROGRAM.md) records the wider questions and sources. New studies must follow existing compute priorities rather than competing with the active queue. Completion of the compact release, topology report or diagnostic does not complete the larger-data, scaling, alternative-learning or transfer work listed here.
 
 ## Delivery and verification at each stage
