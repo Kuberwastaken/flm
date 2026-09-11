@@ -11,8 +11,23 @@ await writeFile('public/research/selection-study.md', (await readFile('docs/SELE
   .replaceAll('../reports/selection-feasibility/', 'selection-feasibility/')
   .replaceAll('PUBLISHER-ANNOTATIONS.md', 'publisher-annotations.md')
   .replaceAll('SELECTION-PATHWAYS.md', 'selection-pathways.md')
+  .replaceAll('CIRCUIT-SELECTION.md', 'circuit-selection.md')
   .replaceAll('../public/research/', ''));
 await mkdir('public/research/selection-pathways', { recursive: true });
+for (const [folder, names, source] of [
+  ['circuit-selection', ['summary.json', 'candidate-body-ids.json', 'members.csv'], 'circuit_selection.py'],
+  ['selection-controls', ['summary.json', 'control-body-ids.json'], 'selection_controls.py'],
+]) {
+  await mkdir(`public/research/${folder}`, { recursive: true });
+  for (const name of names) await copyFile(`reports/${folder}/${name}`, `public/research/${folder}/${name}`);
+  await copyFile(`flm/${source}`, `public/research/${folder}/${source}`);
+}
+await writeFile('public/research/circuit-selection.md', (await readFile('docs/CIRCUIT-SELECTION.md', 'utf8'))
+  .replaceAll('SELECTION-PATHWAYS.md', 'selection-pathways.md')
+  .replaceAll('../reports/circuit-selection/', 'circuit-selection/')
+  .replaceAll('../reports/selection-controls/', 'selection-controls/')
+  .replaceAll('../flm/circuit_selection.py', 'circuit-selection/circuit_selection.py')
+  .replaceAll('../flm/selection_controls.py', 'selection-controls/selection_controls.py'));
 for (const name of ['summary.json', 'directed-groups.csv', 'external-partners.csv', 'kenyon-coverage.csv', 'figures.json'])
   await copyFile(`reports/selection-pathways/${name}`, `public/research/selection-pathways/${name}`);
 await copyFile('flm/selection_pathways.py', 'public/research/selection-pathways/selection_pathways.py');

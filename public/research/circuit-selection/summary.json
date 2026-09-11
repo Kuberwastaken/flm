@@ -1,0 +1,698 @@
+{
+  "verified_utc": "2026-09-11T08:40:08.907259+00:00",
+  "rule_version": "kc-centered-one-step-v1",
+  "status": "Candidate graphs measured; no final language condition selection or fits",
+  "audit_source_sha256": "b51efc983f1f491976717ced017dac4a64c736067c5fe9cccf1fdc72b6310600",
+  "runtime_source_sha256": {
+    "offsets.npy": "0b9ed4362d420e879fe608c330dbd9ac7f52964036352fdcae1a0755d686fdc7",
+    "sources.npy": "62c82e082bcdbbc778139539dbd52df698ad84a720c36b7255f1a1ba3c8416f0",
+    "counts.npy": "d9f1eb2922ff05470312ae3ba6a92932ec6c1e60f12166f2ea240c73ce1426c0",
+    "fast_sign.npy": "8761a283602b74d66bc7cbe910fbfbcc06da5810e58e306881533eb1fb23b3c4",
+    "body_ids.npy": "ddfa789213c8c5066400c026b65c112c267781c2e3ab380a39dd437866e704d6",
+    "neurons.json.gz": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864"
+  },
+  "boundary_audit_source_sha256": "7aee4e3954bc63968048feddde2404093e2116056c8856a177f6f51f0d44054f",
+  "seed_types": [
+    "KCg-d",
+    "KCg-m"
+  ],
+  "seed_sides": [
+    "L",
+    "R"
+  ],
+  "edge_thresholds": [
+    1,
+    5
+  ],
+  "rule": {
+    "seed": "All cells of the exact KC type and source side; no rank truncation",
+    "inputs": "All non-KC/non-MBON/non-auxiliary fast-sign-nonzero cells with a qualifying edge onto a seed KC",
+    "outputs": "All MBON-prefix cells receiving a qualifying edge from a seed KC",
+    "auxiliary": "All PAM/PPL1/APL/DPM-prefix cells connected in either direction to a seed KC or selected MBON, at any positive count",
+    "stopping": "One input/output expansion, then one auxiliary expansion; no recursion or size cap",
+    "side": "Only seeds are side-filtered; connected partners may have any side or superclass",
+    "edges": "Induced graph retains all acquired positive body pairs between selected cells, even below the membership threshold; fast calculation separately removes zero-sign sources"
+  },
+  "candidates": {
+    "KCg-d-L-t1": {
+      "inside_raw": {
+        "connections": 38865,
+        "contacts": 223983
+      },
+      "inside_fast": {
+        "connections": 27049,
+        "contacts": 167260
+      },
+      "incoming_boundary": {
+        "connections": 349331,
+        "contacts": 1588496
+      },
+      "outgoing_boundary": {
+        "connections": 285020,
+        "contacts": 1252170
+      },
+      "incoming_cut_fraction": 0.8764217406105119,
+      "outgoing_cut_fraction": 0.8482657285525281,
+      "inside_contacts_removed_by_fast_sign": 56723,
+      "inside_fast_fraction": 0.7467531017979043,
+      "neurons": 784,
+      "role_counts": {
+        "seed_kc": 99,
+        "input_partner": 338,
+        "output_mbon": 27,
+        "auxiliary_partner": 320
+      },
+      "superclasses": {
+        "visual_projection": 102,
+        "cb_intrinsic": 673,
+        "ol_intrinsic": 1,
+        "visual_centrifugal": 4,
+        "descending_neuron": 2,
+        "ascending_neuron": 2
+      },
+      "sides": {
+        "L": 572,
+        "R": 212
+      },
+      "fast_signs": {
+        "-1": 162,
+        "1": 304,
+        "0": 318
+      },
+      "seed_type": "KCg-d",
+      "seed_side": "L",
+      "membership_threshold": 1,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 52034,
+          "incoming_retained_raw": 42658,
+          "outgoing_contacts": 61581,
+          "outgoing_retained_raw": 50984,
+          "incoming_cut_fraction": 0.1801898758504055,
+          "outgoing_cut_fraction": 0.17208229811143047
+        },
+        "input_partner": {
+          "incoming_contacts": 672148,
+          "incoming_retained_raw": 69563,
+          "outgoing_contacts": 735252,
+          "outgoing_retained_raw": 85119,
+          "incoming_cut_fraction": 0.8965064241803888,
+          "outgoing_cut_fraction": 0.8842315287819686
+        },
+        "output_mbon": {
+          "incoming_contacts": 315406,
+          "incoming_retained_raw": 51532,
+          "outgoing_contacts": 116712,
+          "outgoing_retained_raw": 20169,
+          "incoming_cut_fraction": 0.8366169318275493,
+          "outgoing_cut_fraction": 0.8271900061690315
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 772891,
+          "incoming_retained_raw": 60230,
+          "outgoing_contacts": 562608,
+          "outgoing_retained_raw": 67711,
+          "incoming_cut_fraction": 0.9220718057268101,
+          "outgoing_cut_fraction": 0.879647996473566
+        }
+      }
+    },
+    "KCg-d-L-t5": {
+      "inside_raw": {
+        "connections": 25591,
+        "contacts": 125520
+      },
+      "inside_fast": {
+        "connections": 15674,
+        "contacts": 78775
+      },
+      "incoming_boundary": {
+        "connections": 239130,
+        "contacts": 1072742
+      },
+      "outgoing_boundary": {
+        "connections": 184791,
+        "contacts": 752763
+      },
+      "incoming_cut_fraction": 0.8952482845988606,
+      "outgoing_cut_fraction": 0.8570847892991211,
+      "inside_contacts_removed_by_fast_sign": 46745,
+      "inside_fast_fraction": 0.627589228808158,
+      "neurons": 487,
+      "role_counts": {
+        "seed_kc": 99,
+        "input_partner": 71,
+        "output_mbon": 16,
+        "auxiliary_partner": 301
+      },
+      "superclasses": {
+        "visual_projection": 35,
+        "cb_intrinsic": 450,
+        "ascending_neuron": 2
+      },
+      "sides": {
+        "L": 334,
+        "R": 153
+      },
+      "fast_signs": {
+        "1": 169,
+        "-1": 19,
+        "0": 299
+      },
+      "seed_type": "KCg-d",
+      "seed_side": "L",
+      "membership_threshold": 5,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 52034,
+          "incoming_retained_raw": 42027,
+          "outgoing_contacts": 61581,
+          "outgoing_retained_raw": 50194,
+          "incoming_cut_fraction": 0.19231656224776109,
+          "outgoing_cut_fraction": 0.18491093031941672
+        },
+        "input_partner": {
+          "incoming_contacts": 169228,
+          "incoming_retained_raw": 4438,
+          "outgoing_contacts": 188096,
+          "outgoing_retained_raw": 10812,
+          "incoming_cut_fraction": 0.9737750254095067,
+          "outgoing_cut_fraction": 0.9425187138482477
+        },
+        "output_mbon": {
+          "incoming_contacts": 216224,
+          "incoming_retained_raw": 31094,
+          "outgoing_contacts": 77834,
+          "outgoing_retained_raw": 7868,
+          "incoming_cut_fraction": 0.8561954269646292,
+          "outgoing_cut_fraction": 0.898913071408382
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 760776,
+          "incoming_retained_raw": 47961,
+          "outgoing_contacts": 550772,
+          "outgoing_retained_raw": 56646,
+          "incoming_cut_fraction": 0.9369577904665762,
+          "outgoing_cut_fraction": 0.897151634433123
+        }
+      }
+    },
+    "KCg-d-R-t1": {
+      "inside_raw": {
+        "connections": 46573,
+        "contacts": 280208
+      },
+      "inside_fast": {
+        "connections": 33652,
+        "contacts": 217408
+      },
+      "incoming_boundary": {
+        "connections": 403705,
+        "contacts": 1925226
+      },
+      "outgoing_boundary": {
+        "connections": 332250,
+        "contacts": 1539602
+      },
+      "incoming_cut_fraction": 0.8729465492959663,
+      "outgoing_cut_fraction": 0.8460234859683153,
+      "inside_contacts_removed_by_fast_sign": 62800,
+      "inside_fast_fraction": 0.775880774281962,
+      "neurons": 858,
+      "role_counts": {
+        "seed_kc": 107,
+        "input_partner": 383,
+        "output_mbon": 32,
+        "auxiliary_partner": 336
+      },
+      "superclasses": {
+        "cb_intrinsic": 736,
+        "ol_intrinsic": 1,
+        "descending_neuron": 1,
+        "visual_projection": 113,
+        "visual_centrifugal": 6,
+        "ascending_neuron": 1
+      },
+      "sides": {
+        "R": 630,
+        "L": 228
+      },
+      "fast_signs": {
+        "-1": 171,
+        "1": 353,
+        "0": 334
+      },
+      "seed_type": "KCg-d",
+      "seed_side": "R",
+      "membership_threshold": 1,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 60502,
+          "incoming_retained_raw": 51917,
+          "outgoing_contacts": 72974,
+          "outgoing_retained_raw": 63028,
+          "incoming_cut_fraction": 0.1418961356649367,
+          "outgoing_cut_fraction": 0.13629511880943898
+        },
+        "input_partner": {
+          "incoming_contacts": 987699,
+          "incoming_retained_raw": 104061,
+          "outgoing_contacts": 1047198,
+          "outgoing_retained_raw": 118915,
+          "incoming_cut_fraction": 0.8946430035871252,
+          "outgoing_cut_fraction": 0.8864445883204514
+        },
+        "output_mbon": {
+          "incoming_contacts": 371021,
+          "incoming_retained_raw": 59624,
+          "outgoing_contacts": 128554,
+          "outgoing_retained_raw": 23427,
+          "incoming_cut_fraction": 0.8392975060710849,
+          "outgoing_cut_fraction": 0.8177652970736033
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 786212,
+          "incoming_retained_raw": 64606,
+          "outgoing_contacts": 571084,
+          "outgoing_retained_raw": 74838,
+          "incoming_cut_fraction": 0.9178262351630349,
+          "outgoing_cut_fraction": 0.8689544795511693
+        }
+      }
+    },
+    "KCg-d-R-t5": {
+      "inside_raw": {
+        "connections": 29772,
+        "contacts": 151382
+      },
+      "inside_fast": {
+        "connections": 18499,
+        "contacts": 100857
+      },
+      "incoming_boundary": {
+        "connections": 266520,
+        "contacts": 1208599
+      },
+      "outgoing_boundary": {
+        "connections": 202290,
+        "contacts": 860807
+      },
+      "incoming_cut_fraction": 0.8886881507903419,
+      "outgoing_cut_fraction": 0.8504409749562581,
+      "inside_contacts_removed_by_fast_sign": 50525,
+      "inside_fast_fraction": 0.6662416931999842,
+      "neurons": 540,
+      "role_counts": {
+        "seed_kc": 107,
+        "input_partner": 90,
+        "output_mbon": 17,
+        "auxiliary_partner": 326
+      },
+      "superclasses": {
+        "cb_intrinsic": 497,
+        "visual_projection": 42,
+        "ascending_neuron": 1
+      },
+      "sides": {
+        "R": 367,
+        "L": 173
+      },
+      "fast_signs": {
+        "-1": 30,
+        "1": 186,
+        "0": 324
+      },
+      "seed_type": "KCg-d",
+      "seed_side": "R",
+      "membership_threshold": 5,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 60502,
+          "incoming_retained_raw": 51124,
+          "outgoing_contacts": 72974,
+          "outgoing_retained_raw": 62135,
+          "incoming_cut_fraction": 0.15500314039205315,
+          "outgoing_cut_fraction": 0.148532353989092
+        },
+        "input_partner": {
+          "incoming_contacts": 293172,
+          "incoming_retained_raw": 10798,
+          "outgoing_contacts": 293606,
+          "outgoing_retained_raw": 20653,
+          "incoming_cut_fraction": 0.963168378972071,
+          "outgoing_cut_fraction": 0.9296574320688269
+        },
+        "output_mbon": {
+          "incoming_contacts": 228229,
+          "incoming_retained_raw": 35934,
+          "outgoing_contacts": 79851,
+          "outgoing_retained_raw": 7473,
+          "incoming_cut_fraction": 0.8425528745251479,
+          "outgoing_cut_fraction": 0.9064131945748958
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 778078,
+          "incoming_retained_raw": 53526,
+          "outgoing_contacts": 565758,
+          "outgoing_retained_raw": 61121,
+          "incoming_cut_fraction": 0.9312074110821794,
+          "outgoing_cut_fraction": 0.8919661763510194
+        }
+      }
+    },
+    "KCg-m-L-t1": {
+      "inside_raw": {
+        "connections": 246082,
+        "contacts": 832182
+      },
+      "inside_fast": {
+        "connections": 207081,
+        "contacts": 714678
+      },
+      "incoming_boundary": {
+        "connections": 331855,
+        "contacts": 1909919
+      },
+      "outgoing_boundary": {
+        "connections": 290272,
+        "contacts": 1650977
+      },
+      "incoming_cut_fraction": 0.6965166490949822,
+      "outgoing_cut_fraction": 0.6648696277604454,
+      "inside_contacts_removed_by_fast_sign": 117504,
+      "inside_fast_fraction": 0.858800118243365,
+      "neurons": 1385,
+      "role_counts": {
+        "seed_kc": 689,
+        "input_partner": 315,
+        "output_mbon": 45,
+        "auxiliary_partner": 336
+      },
+      "superclasses": {
+        "ol_intrinsic": 1,
+        "cb_intrinsic": 1362,
+        "visual_projection": 21,
+        "descending_neuron": 1
+      },
+      "sides": {
+        "L": 1168,
+        "R": 217
+      },
+      "fast_signs": {
+        "-1": 124,
+        "1": 927,
+        "0": 334
+      },
+      "seed_type": "KCg-m",
+      "seed_side": "L",
+      "membership_threshold": 1,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 420945,
+          "incoming_retained_raw": 406033,
+          "outgoing_contacts": 438100,
+          "outgoing_retained_raw": 423354,
+          "incoming_cut_fraction": 0.03542505552981981,
+          "outgoing_cut_fraction": 0.033658981967587306
+        },
+        "input_partner": {
+          "incoming_contacts": 1065268,
+          "incoming_retained_raw": 95250,
+          "outgoing_contacts": 1313050,
+          "outgoing_retained_raw": 200277,
+          "incoming_cut_fraction": 0.9105858807361152,
+          "outgoing_cut_fraction": 0.8474719165302159
+        },
+        "output_mbon": {
+          "incoming_contacts": 469676,
+          "incoming_retained_raw": 160412,
+          "outgoing_contacts": 160925,
+          "outgoing_retained_raw": 40922,
+          "incoming_cut_fraction": 0.6584624294194296,
+          "outgoing_cut_fraction": 0.7457076277769147
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 786212,
+          "incoming_retained_raw": 170487,
+          "outgoing_contacts": 571084,
+          "outgoing_retained_raw": 167629,
+          "incoming_cut_fraction": 0.7831539075974419,
+          "outgoing_cut_fraction": 0.7064722527684194
+        }
+      }
+    },
+    "KCg-m-L-t5": {
+      "inside_raw": {
+        "connections": 232021,
+        "contacts": 697120
+      },
+      "inside_fast": {
+        "connections": 195007,
+        "contacts": 596921
+      },
+      "incoming_boundary": {
+        "connections": 236114,
+        "contacts": 1285893
+      },
+      "outgoing_boundary": {
+        "connections": 209207,
+        "contacts": 1139722
+      },
+      "incoming_cut_fraction": 0.6484541452829609,
+      "outgoing_cut_fraction": 0.6204790613455049,
+      "inside_contacts_removed_by_fast_sign": 100199,
+      "inside_fast_fraction": 0.856267213679137,
+      "neurons": 1202,
+      "role_counts": {
+        "seed_kc": 689,
+        "input_partner": 157,
+        "output_mbon": 24,
+        "auxiliary_partner": 332
+      },
+      "superclasses": {
+        "cb_intrinsic": 1190,
+        "visual_projection": 12
+      },
+      "sides": {
+        "L": 1027,
+        "R": 175
+      },
+      "fast_signs": {
+        "1": 852,
+        "-1": 20,
+        "0": 330
+      },
+      "seed_type": "KCg-m",
+      "seed_side": "L",
+      "membership_threshold": 5,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 420945,
+          "incoming_retained_raw": 405216,
+          "outgoing_contacts": 438100,
+          "outgoing_retained_raw": 421399,
+          "incoming_cut_fraction": 0.03736592666500374,
+          "outgoing_cut_fraction": 0.03812143346267975
+        },
+        "input_partner": {
+          "incoming_contacts": 489142,
+          "incoming_retained_raw": 18724,
+          "outgoing_contacts": 724754,
+          "outgoing_retained_raw": 112815,
+          "incoming_cut_fraction": 0.9617207273143586,
+          "outgoing_cut_fraction": 0.8443402864972115
+        },
+        "output_mbon": {
+          "incoming_contacts": 289946,
+          "incoming_retained_raw": 121654,
+          "outgoing_contacts": 105557,
+          "outgoing_retained_raw": 14425,
+          "incoming_cut_fraction": 0.580425320576935,
+          "outgoing_cut_fraction": 0.8633439752929697
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 782980,
+          "incoming_retained_raw": 151526,
+          "outgoing_contacts": 568431,
+          "outgoing_retained_raw": 148481,
+          "incoming_cut_fraction": 0.8064752611816394,
+          "outgoing_cut_fraction": 0.7387879971359761
+        }
+      }
+    },
+    "KCg-m-R-t1": {
+      "inside_raw": {
+        "connections": 232301,
+        "contacts": 790507
+      },
+      "inside_fast": {
+        "connections": 195764,
+        "contacts": 684915
+      },
+      "incoming_boundary": {
+        "connections": 308293,
+        "contacts": 1774631
+      },
+      "outgoing_boundary": {
+        "connections": 270783,
+        "contacts": 1522662
+      },
+      "incoming_cut_fraction": 0.6918267165353287,
+      "outgoing_cut_fraction": 0.6582580001720584,
+      "inside_contacts_removed_by_fast_sign": 105592,
+      "inside_fast_fraction": 0.8664249652438245,
+      "neurons": 1318,
+      "role_counts": {
+        "seed_kc": 653,
+        "input_partner": 286,
+        "output_mbon": 43,
+        "auxiliary_partner": 336
+      },
+      "superclasses": {
+        "cb_intrinsic": 1311,
+        "visual_projection": 5,
+        "ascending_neuron": 1,
+        "descending_neuron": 1
+      },
+      "sides": {
+        "R": 1108,
+        "L": 210
+      },
+      "fast_signs": {
+        "-1": 113,
+        "1": 871,
+        "0": 334
+      },
+      "seed_type": "KCg-m",
+      "seed_side": "R",
+      "membership_threshold": 1,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 408588,
+          "incoming_retained_raw": 394749,
+          "outgoing_contacts": 424302,
+          "outgoing_retained_raw": 411180,
+          "incoming_cut_fraction": 0.03387030456107375,
+          "outgoing_cut_fraction": 0.0309260856653987
+        },
+        "input_partner": {
+          "incoming_contacts": 950150,
+          "incoming_retained_raw": 86414,
+          "outgoing_contacts": 1168352,
+          "outgoing_retained_raw": 192091,
+          "incoming_cut_fraction": 0.9090522549071199,
+          "outgoing_cut_fraction": 0.8355880761962149
+        },
+        "output_mbon": {
+          "incoming_contacts": 420188,
+          "incoming_retained_raw": 144350,
+          "outgoing_contacts": 149431,
+          "outgoing_retained_raw": 34048,
+          "incoming_cut_fraction": 0.6564632973811723,
+          "outgoing_cut_fraction": 0.7721490186105961
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 786212,
+          "incoming_retained_raw": 164994,
+          "outgoing_contacts": 571084,
+          "outgoing_retained_raw": 153188,
+          "incoming_cut_fraction": 0.7901405727717206,
+          "outgoing_cut_fraction": 0.7317592508282494
+        }
+      }
+    },
+    "KCg-m-R-t5": {
+      "inside_raw": {
+        "connections": 219223,
+        "contacts": 677454
+      },
+      "inside_fast": {
+        "connections": 184616,
+        "contacts": 587046
+      },
+      "incoming_boundary": {
+        "connections": 229740,
+        "contacts": 1293845
+      },
+      "outgoing_boundary": {
+        "connections": 209294,
+        "contacts": 1188791
+      },
+      "incoming_cut_fraction": 0.6563413262016569,
+      "outgoing_cut_fraction": 0.6369962143234141,
+      "inside_contacts_removed_by_fast_sign": 90408,
+      "inside_fast_fraction": 0.8665473965760037,
+      "neurons": 1150,
+      "role_counts": {
+        "seed_kc": 653,
+        "input_partner": 146,
+        "output_mbon": 22,
+        "auxiliary_partner": 329
+      },
+      "superclasses": {
+        "cb_intrinsic": 1148,
+        "visual_projection": 2
+      },
+      "sides": {
+        "R": 974,
+        "L": 176
+      },
+      "fast_signs": {
+        "-1": 24,
+        "1": 799,
+        "0": 327
+      },
+      "seed_type": "KCg-m",
+      "seed_side": "R",
+      "membership_threshold": 5,
+      "role_boundaries": {
+        "seed_kc": {
+          "incoming_contacts": 408588,
+          "incoming_retained_raw": 393952,
+          "outgoing_contacts": 424302,
+          "outgoing_retained_raw": 408047,
+          "incoming_cut_fraction": 0.035820924745709616,
+          "outgoing_cut_fraction": 0.03830997732746959
+        },
+        "input_partner": {
+          "incoming_contacts": 546855,
+          "incoming_retained_raw": 22968,
+          "outgoing_contacts": 785925,
+          "outgoing_retained_raw": 119493,
+          "incoming_cut_fraction": 0.9579998354225526,
+          "outgoing_cut_fraction": 0.8479587746922417
+        },
+        "output_mbon": {
+          "incoming_contacts": 236040,
+          "incoming_retained_raw": 111498,
+          "outgoing_contacts": 88521,
+          "outgoing_retained_raw": 13414,
+          "incoming_cut_fraction": 0.5276309100152516,
+          "outgoing_cut_fraction": 0.8484653359089933
+        },
+        "auxiliary_partner": {
+          "incoming_contacts": 779816,
+          "incoming_retained_raw": 149036,
+          "outgoing_contacts": 567497,
+          "outgoing_retained_raw": 136500,
+          "incoming_cut_fraction": 0.8088831211465268,
+          "outgoing_cut_fraction": 0.759470094115035
+        }
+      }
+    }
+  },
+  "tables": {
+    "members.csv": "39ef90a1e89776b6e9ef017b63de98c6f05550a1ce7e8cd55c37b0fe1cc63f35",
+    "candidate-body-ids.json": "e6633bbea387fdc9345203dc9b482f49a57e8058fbe9f3f13daa88ac508843ab"
+  },
+  "limitations": [
+    "An operational literature-motivated body-level selector, not an intact visual/olfactory circuit certification.",
+    "The input-partner label describes a connection, not a verified sensory modality or calyx compartment.",
+    "DPM transmitter identity is unresolved in the acquired annotations; its auxiliary role is a hypothesis.",
+    "Large shared APL/DAN/MBON arbors can pull in cells with extensive external dependencies.",
+    "Other KC types and upstream input partners are excluded even when strongly connected.",
+    "Different candidate sizes require budget-matched comparator construction; current 1024 results are historical only.",
+    "Zero-sign auxiliary sources remain ineffective in the current fast recurrent model.",
+    "No selected node set is fitted, used for language selection or substituted into the browser."
+  ]
+}

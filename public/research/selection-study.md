@@ -131,6 +131,16 @@ for the next architectural study; size-only scaling is no longer the default
 next graph change. Exact circuit choice, final budget and official training
 protocol remain unresolved, rather than being hidden behind this audit.
 
+The subsequent [operational KC-centered selections](circuit-selection.md) now
+provide eight explicit candidates and seven size-matched comparison inventories
+for each. They retain entire seed subtypes and add connected partners without
+a size cap. Their large partner-boundary losses remain explicit. The shared
+comparison population expands beyond central intrinsic cells to include all
+six superclasses appearing in the candidates; that is a new ranking population,
+not a claim of equivalence with the historic 1,024-node reference. These 64
+inventories are untrained, and do not replace the still-required within-subset
+rewiring controls or the final language protocol.
+
 ## Reproduce the anatomy audit
 
 The subsequent [pathway coverage audit](selection-pathways.md) now measures all

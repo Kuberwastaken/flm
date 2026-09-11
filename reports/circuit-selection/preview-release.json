@@ -1,0 +1,93 @@
+{
+  "verified_utc": "2026-09-11T08:51:48.549251+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/selection-study.md",
+      "status": 200,
+      "bytes": 10805,
+      "sha256": "68a8757cb9e58e9fbf256632670125f60775d985b18ec98b15af71d3ae49db8d"
+    },
+    {
+      "path": "research/circuit-selection.md",
+      "status": 200,
+      "bytes": 9735,
+      "sha256": "417478a00b04cc2f78f5a0e4baa3b1dc716caaca4cf957af86bab71b77f2a09d"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 7786968,
+      "sha256": "82442c19573fa05bec23048e131801906eb2ba644db3b5d8c1aa25df9401111e"
+    },
+    {
+      "path": "research/circuit-selection/summary.json",
+      "status": 200,
+      "bytes": 23034,
+      "sha256": "a7d27b1cd78ea76a145e5ab96ea9dfe145ea013501390ce7bb903a7d76a6cc8a"
+    },
+    {
+      "path": "research/circuit-selection/candidate-body-ids.json",
+      "status": 200,
+      "bytes": 96672,
+      "sha256": "e6633bbea387fdc9345203dc9b482f49a57e8058fbe9f3f13daa88ac508843ab"
+    },
+    {
+      "path": "research/circuit-selection/members.csv",
+      "status": 200,
+      "bytes": 418460,
+      "sha256": "39ef90a1e89776b6e9ef017b63de98c6f05550a1ce7e8cd55c37b0fe1cc63f35"
+    },
+    {
+      "path": "research/circuit-selection/circuit_selection.py",
+      "status": 200,
+      "bytes": 9024,
+      "sha256": "b51efc983f1f491976717ced017dac4a64c736067c5fe9cccf1fdc72b6310600"
+    },
+    {
+      "path": "research/selection-controls/summary.json",
+      "status": 200,
+      "bytes": 225122,
+      "sha256": "cc0ef54bccccc439558807cdee194ef10c5b418f50b0db8c029cdcda5bca0bb3"
+    },
+    {
+      "path": "research/selection-controls/control-body-ids.json",
+      "status": 200,
+      "bytes": 768081,
+      "sha256": "a4fd73083ab19f77925aed38e0f0a6361797e1648a707505d7041b28af374bda"
+    },
+    {
+      "path": "research/selection-controls/selection_controls.py",
+      "status": 200,
+      "bytes": 9389,
+      "sha256": "9ba6d7ec1c7e683215970bd186fdc80eebda8bd7c8642a7cc27e3092484ae28a"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-feasibility/selection_feasibility.py",
+    "selection-feasibility/summary.json",
+    "figures/selection-feasibility.svg",
+    "publisher-annotations.md",
+    "circuit-selection.md",
+    "selection-pathways.md",
+    "selection-feasibility/candidate-body-ids.json",
+    "figures/selection-feasibility.csv",
+    "selection-pathways.md",
+    "circuit-selection/circuit_selection.py",
+    "selection-controls/selection_controls.py",
+    "selection-controls/summary.json",
+    "circuit-selection/summary.json",
+    "circuit-selection/candidate-body-ids.json",
+    "circuit-selection/members.csv",
+    "selection-controls/control-body-ids.json"
+  ],
+  "fixture_tests_passed": 6,
+  "independent_sparse_submatrix_candidate_checks_passed": 48,
+  "candidate_membership_rows": 7724,
+  "candidate_inventories": 8,
+  "selection_inventories": 64,
+  "node_counts_and_24_stratified_control_compositions_verified": true,
+  "paper_source_files_verified": 279,
+  "scope": "Untrained anatomical candidate and comparator inventories; no new model graph exports, fits or test scores"
+}
