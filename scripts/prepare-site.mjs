@@ -253,6 +253,21 @@ for (const name of ['PHYSICAL-STATE-SEMANTICS', 'FOOD-CORE-PHYSICAL-RESULTS', 'F
 }
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
+await mkdir('public/research/babylm-handoff', { recursive: true });
+for (const [source, target] of [
+  ['scripts/continue_babylm_research.py', 'continue_babylm_research.py'],
+  ['tests/test_babylm_handoff.py', 'test_babylm_handoff.py'],
+  ['requirements-operations.txt', 'requirements-operations.txt'],
+  ['reports/babylm/handoff-preparation.json', 'preparation.json'],
+]) await copyFile(source, `public/research/babylm-handoff/${target}`);
+await writeFile('public/research/babylm-handoff.md', (await readFile('docs/BABYLM-HANDOFF.md', 'utf8'))
+  .replaceAll('../scripts/continue_babylm_research.py', 'babylm-handoff/continue_babylm_research.py')
+  .replaceAll('../tests/test_babylm_handoff.py', 'babylm-handoff/test_babylm_handoff.py')
+  .replaceAll('../reports/babylm/handoff-preparation.json', 'babylm-handoff/preparation.json')
+  .replaceAll('BABYLM-EVALUATION.md', 'babylm-evaluation.md')
+  .replaceAll('SELECTION-TIMING-PILOT.md', 'selection-timing-pilot.md')
+  .replaceAll('SELECTION-LANGUAGE-COORDINATOR.md', 'selection-language-coordinator.md'));
+
 await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learning-protocol.md');
 await copyFile('docs/WIRING-LEARNING-PROTOCOL.md', 'public/research/wiring-learning-protocol.md');
 await copyFile('docs/LANGUAGE-TOPOLOGY-PROTOCOL.md', 'public/research/language-topology-protocol.md');

@@ -1,0 +1,2 @@
+# Optional local process supervision; tested with the existing Python 3.10 runtime.
+psutil==5.9.8

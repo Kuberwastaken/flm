@@ -1,0 +1,51 @@
+{
+  "verified_utc": "2026-09-11T18:55:38.441082+00:00",
+  "source_commit": "aa6073fb36310fa448894fb9319499a8b5f19782",
+  "source_sha256": {
+    "scripts/continue_babylm_research.py": "a87063bdc857709852adee60b456a6c8eacda7f03df4694e58b98f7652d98e2c",
+    "tests/test_babylm_handoff.py": "c8bc89248083996a31245c6123d74cdb5f6a21db87927ecc69413276627e65c0",
+    "requirements-operations.txt": "4ff7a4c855935b5268b1a682c39e7ec759526df73bd1103b752b00758ddf2950"
+  },
+  "python": "3.10.11",
+  "package_versions": {
+    "numpy": "2.2.6",
+    "torch": "2.8.0",
+    "scipy": "1.13.1",
+    "tokenizers": "0.22.2",
+    "psutil": "5.9.8"
+  },
+  "tests": {
+    "passed": 14,
+    "failed": 0,
+    "seconds": 3.494,
+    "log_sha256": "1eb0a12545f4d32774e58da33ce50ec04c5532551cb2e55ea845ffc60f1f6cca",
+    "scope": "Artificial process, completion and stage-output fixtures; no real scientific command invoked"
+  },
+  "observed_live_wait": {
+    "supervisor_armed": true,
+    "bound_suite_observed_live": true,
+    "identity_sha256": "4e3bae0814eafe9444948f6178267e491904adba0990da5acacaf1c3b88da0af",
+    "stage_outputs_present": false,
+    "preliminary_training_gate": "Closed: all twelve completion records were not present.",
+    "gate_probe_scope": "Read-only prerequisite probe while the bound suite was observed live. The raw exception describes the gate failure, not an observed trainer exit.",
+    "gate_probe_exception": "The trainer exited before all twelve BabyLM fits completed"
+  },
+  "stages": [
+    {
+      "name": "babylm-test",
+      "module": "flm.babylm_test",
+      "expected_output": "reports/babylm/summary.json"
+    },
+    {
+      "name": "babylm-samples",
+      "module": "flm.babylm_samples",
+      "expected_output": "reports/babylm/samples.json"
+    },
+    {
+      "name": "selection-pilot",
+      "module": "flm.selection_pilot",
+      "expected_output": "reports/selection-pilot/timing.json"
+    }
+  ],
+  "interpretation": "The supervisor is waiting, not a completed evaluation or cost result. It will invoke unchanged existing scientific commands only after actual process exit and completion gates. Official selection groups and budget remain unchosen."
+}

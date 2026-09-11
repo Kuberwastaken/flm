@@ -19,6 +19,9 @@ def main():
         'audit_language_topology_report.py', 'language_topology_report.py', 'package_language_topology.py',
         'package_topology_inference.py', 'verify_topology_inference_release.py')]
     files += [ROOT / name for name in ('README.md', 'LICENSE', 'pyproject.toml', 'package.json',
+        'scripts/continue_babylm_research.py', 'tests/test_babylm_handoff.py',
+        'requirements-operations.txt', 'docs/BABYLM-HANDOFF.md',
+        'reports/babylm/handoff-preparation.json',
         'docs/figures/readme_figures.py', 'public/research/test-results.json',
         'public/brand/provenance.json', 'docs/RESEARCH-PROGRAM.md', 'docs/INFERENCE-BUNDLE.md',
         'docs/LOCAL-LEARNING-PROTOCOL.md', 'reports/local-learning/summary.json',
