@@ -124,3 +124,9 @@ checks the tenth completed fit: all 24 validation records and the selected/final
 checkpoints pass. Update 12,000 is selected at 1.9318626804 validation bits per
 byte after 18,432,000 presented tokens. This is checkpoint-selection evidence;
 the complete-study held-out evaluation remains pending.
+
+The [100M GRU seed-43 completion audit](babylm-handoff/completion-gru-100m-s43.json)
+checks the eleventh completed fit with the same 24-record and checkpoint checks.
+Update 12,000 is selected at 1.8563063670 validation bits per byte after
+18,432,000 presented tokens. The final transformer fit and complete-study
+held-out evaluation remain pending.
