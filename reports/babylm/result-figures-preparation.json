@@ -1,0 +1,51 @@
+{
+  "verified_utc": "2026-09-11T19:38:08.386998+00:00",
+  "source_commit": "603fcb0a881955874af9a06f8cc5b4341c9f0145",
+  "source_sha256": {
+    "scripts/babylm_result_figures.py": "a821303d18572d107789ad25784055c20f364e5bd15f0da4ce660af746924682",
+    "tests/test_babylm_result_figures.py": "593070949a14e5890c25de2e4239f9383baf1636b1db7edd3a0a13dcd8f65b76",
+    "scripts/babylm_result_tables.py": "3481ed8a355b00784a9415893dfcca7298732266997e246f4ad9de04c6a32f24"
+  },
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "seconds": 0.378,
+    "log_sha256": "dbfe7dfc617ceb424b5142175919ad21266bcb71147ed88fcb29bc49f00318a6",
+    "scope": "Artificial scores and renderer stubs; no model inference or bootstrap."
+  },
+  "visual_review": {
+    "synthetic_fixture": true,
+    "rendered_files": {
+      "babylm-components.png": "1397a6cad1a90775a03f818d57b4548db2a26c62f4fc089e679990df133ed899",
+      "babylm-components.svg": "991d67e3fb28de5b4d7b9c76c96979a030c10529f6c711f8a79e925838ecd714",
+      "babylm-pooled.png": "3eeae315b093c4aa5a5b03b63e60f5f83688c46e52496e947eb799767b952e4a",
+      "babylm-pooled.svg": "d18674bb7114b9083b7a150627217a366826e56740efc486f3bf2625159bf94f"
+    },
+    "png_size": [
+      1920,
+      1440
+    ],
+    "viewed": [
+      "babylm-pooled.png",
+      "babylm-components.png"
+    ],
+    "final_render_bytes_match_viewed_images": true,
+    "observations": [
+      "Labels, legends and notes fit without overlap or clipping.",
+      "All four pooled panels share a horizontal scale; source contrasts share a symmetric scale around zero.",
+      "Both training seeds remain visible; empty filtered source has text and no zero-valued point.",
+      "Synthetic fixture warning is prominent. Fixture images remain private, outside public artifacts."
+    ]
+  },
+  "real_gate": {
+    "refusal": "Complete BabyLM evaluation artifacts are required",
+    "output_created": false,
+    "bound_babylm_trainer_live": true,
+    "handoff_sources_and_packages_unchanged": true
+  },
+  "limitations": [
+    "No official BabyLM result plot exists yet. Actual-value layouts must be visually reviewed after complete held-out evaluation.",
+    "Component differences are descriptive; no component confidence intervals are generated.",
+    "Renderer does not restore weights, compute new likelihoods, or rerun bootstrap intervals."
+  ]
+}

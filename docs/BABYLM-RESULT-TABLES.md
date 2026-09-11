@@ -62,3 +62,38 @@ source. They check correct weighting, nulls, two-seed SD, contrast direction,
 complete inventories, mutations and fresh-output behavior. The
 [preparation record](../reports/babylm/result-tables-preparation.json) retains
 their scope and the actual still-closed export gate. It is not a benchmark result.
+
+## Computational figures
+
+The [figure builder](../scripts/babylm_result_figures.py) calls the same complete
+artifact/arithmetic gate before importing Matplotlib or creating its output.
+It produces two PNG/SVG pairs:
+
+- Pooled held-out loss: four panels separate 10M/100M training corpora and
+  official/overlap-filtered analyses. Every panel uses the same horizontal
+  scale. The two training seeds and their descriptive mean have distinct
+  markers; no confidence interval is implied. Scored bytes and blocks are shown.
+- Source-specific differences: all six components, both corpus sizes and both
+  analyses, pairing FLM with each comparator at the same training seed. A shared
+  symmetric axis retains zero. Negative favors FLM; positive favors its
+  comparator. Both seeds are shown, without component confidence intervals.
+  A wholly excluded source is labeled, with no zero-valued point.
+
+```powershell
+python -m unittest discover -s tests -p test_babylm_result_figures.py -v
+python scripts/babylm_result_figures.py --output reports/babylm/figures-v1
+```
+
+The fresh destination contains the four images, the complete underlying checked
+tables and component differences in `figure-data.json`, and a manifest written
+only after all image files exist and the inputs still match their hashes.
+Inspect any partial destination after a rendering failure; it is not a completed
+figure release. The builder is not attached to the live training supervisor.
+
+The [seven figure tests](../tests/test_babylm_result_figures.py) cover pairing,
+missing data, denominators, incomplete-study gating, existing outputs, changed
+inputs and shortened rendering. The [layout review](../reports/babylm/result-figures-preparation.json)
+records two inspected synthetic PNGs and their matching SVGs. Those private
+fixtures visibly say they are not benchmarks and are not published as results.
+**No official plots have been generated.** Review the actual-value layouts again
+after evaluation, before adding the figures to the website, README or papers.
