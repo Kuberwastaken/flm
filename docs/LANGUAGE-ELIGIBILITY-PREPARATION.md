@@ -87,11 +87,13 @@ Four focused tests passed on tiny float64 fixtures:
 Run `python -m unittest discover -s tests -p test_embedding_eligibility.py -v`.
 These are numerical implementation checks, not language-learning results.
 
-Before a real comparison, integrate the primitive with the six existing core
-trace groups and instantaneous lexical gradients; check full-model state parity,
-masked loss reduction, shared parameters, checkpoint restoration and update
-boundaries. Then measure actual memory and time on disposable training-only
-pilots. Declare a matched BPTT, fixed-core, eligibility and history-removal
+The [complete window-gradient kernel](LANGUAGE-ELIGIBILITY-KERNEL.md) now
+integrates the primitive with all six core trace groups and instantaneous lexical
+gradients. Seven additional fixture tests cover full-model state/gradient parity
+under the declared approximation, masked loss reduction and an optimizer update
+after restoring a tiny checkpoint. A full provenance-aware language trainer and
+its resumption checks are still required. Then measure actual memory and time on
+disposable training-only pilots. Declare a matched BPTT, fixed-core, eligibility and history-removal
 protocol before fitting, using common data, initialization, exposure and
 selection rules. Keep all failed and inferior results. Existing priority queues
 finish first.
