@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-09-11T19:18:54.234168+00:00",
+  "content_commit": "0e7dca1870ddc8a36cc5fba4f433690d385db03c",
+  "ci_run": 34637962592,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-result-tables.md": {
+      "bytes": 3739,
+      "sha256": "84e0f0cc53f8f20e2c15c2c9615fbb135d93470304c898265156f83d7c8a3fdb"
+    },
+    "research/babylm-result-tables/babylm_result_tables.py": {
+      "bytes": 15015,
+      "sha256": "3481ed8a355b00784a9415893dfcca7298732266997e246f4ad9de04c6a32f24"
+    },
+    "research/babylm-result-tables/preparation.json": {
+      "bytes": 1293,
+      "sha256": "a7ea10d9434f2eebe8e4513fbe4a1c4fea1e041841d2b023d11c5637c8e5b0e4"
+    },
+    "research/babylm-result-tables/test_babylm_result_tables.py": {
+      "bytes": 12954,
+      "sha256": "cfca50f4ab8a883886adcbf094dd5666122b33473b2a795527b933e30477cea6"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9385568,
+      "sha256": "9cf84e7733c01dc5c492c7cde7f10710e6213f72c4e30a5b1dbb1029efd3dc38"
+    }
+  },
+  "public_relative_links_checked": 5,
+  "source_archive_files": 486,
+  "software_tests": "10 result-table tests passed with artificial twelve-run measurements; all 74 JavaScript tests passed in the publishing workflow. No real model or bootstrap executed by these tests. Official BabyLM likelihood tables remain pending."
+}
