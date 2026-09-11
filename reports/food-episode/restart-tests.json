@@ -1,0 +1,43 @@
+{
+  "verified_utc": "2026-09-11T18:10:21.655624+00:00",
+  "source_commit": "7926c24",
+  "source_sha256": {
+    "flm/food_episode_store.py": "f9303147bc6997638640411f47b0c4f5700758eeef5746f235c929736b98e7eb",
+    "tests/test_food_episode_store.py": "2124c8013d4eb5ed4fbb987ea5d2944210c6ba8e0ba1326b3cd137367285054b",
+    "tests/test_food_episode.py": "273e549ff6aa60c1b996c37e4e3e7043a99c85b37cfd9d2ac00eab6099cec2bb",
+    "flm/food_episode.py": "25b40b0b06fbe93e33c9820f71eed08732ba7caf789383317890a783a2f7923c",
+    "flm/food_readout_learning.py": "b1cdc545ed45da254ecaf3a0579a8d5a1dbbb748baf32e305d8d4a2086b6c3c6"
+  },
+  "command": "python -m unittest discover -s tests -p test_food_episode_store.py -v",
+  "primary": {
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "passed": 14,
+    "failed": 0,
+    "seconds": 3.416
+  },
+  "embodied": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "passed": 14,
+    "failed": 0,
+    "seconds": 3.01
+  },
+  "coverage": [
+    "unchanged caller state and equivalent terminal readout",
+    "completed result retries without physics or repeated learning",
+    "evaluation isolation and timeout credit",
+    "durable simulation failures and invalid starts",
+    "construction, identity and cleanup failures",
+    "cancellation restarts original state",
+    "actual child os._exit(29) releases OS lock",
+    "cancellation after atomic publication reuses committed result",
+    "interrupted staged result preserved without accepting it",
+    "exclusive OS writer and harmless stale lock file",
+    "changed episode identity refused",
+    "damaged neural samples, missing observations and wrong readout rejected",
+    "extra terminal attempts and inventory gaps refused",
+    "next distinct episode carries one readout update and resets neural state"
+  ],
+  "scope": "Four-node action-dependent synthetic environment; no physical dynamics or official food adaptation. Separate physical checks and numerical archive verification retain their own records."
+}

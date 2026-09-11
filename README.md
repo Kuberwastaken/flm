@@ -289,7 +289,7 @@ Four [initial and WikiText-trained core interfaces](docs/FOOD-CORE-INTERFACE.md)
 
 The [physical-state note](docs/PHYSICAL-STATE-SEMANTICS.md) documents the invalid `c_head` row aliasing `rh_tarsus5`; replay geometry avoids that row. Food sensing and outcomes use correctly resolved antenna, foot and thorax IDs, with cached sensor poses distinguished from reconstructed display geometry.
 
-The [sampled-action episode runner](docs/FOOD-EPISODE-RUNNER.md) passes eight 20-ms physical connection checks with learning disabled and exact repeats; these establish no navigation or transfer benefit, and official adaptation and simulator/gait checkpoint resume remain pending.
+The [sampled-action episode runner](docs/FOOD-EPISODE-RUNNER.md) passes eight 20-ms connection checks and four exact physical restart comparisons with learning disabled; interrupted attempts restart from original inputs, not live simulator/gait checkpoints, with no navigation or transfer benefit established and official adaptation pending.
 
 ChatFLM's interactive body animation is also separate: it illustrates aggregate language-model state through authentic articulated geometry. It is not the physics study or a learned gait. The body and brain derive from different-sex specimens.
 
