@@ -1,0 +1,8 @@
+case,status,first_contact_s,first_contact_sources,first_contact_sugar,latency_censored,censor_time_s,final_x_mm,final_y_mm,final_z_mm
+odor-a-left,complete,0.65,a,1.0,False,,7.070336420695646,2.873516693767838,1.025774488919416
+odor-a-right,complete,0.68,a,1.0,False,,7.5170295184277505,-3.015409680634496,1.0249915540174501
+odor-a-left-reversed,complete,0.65,a,0.0,False,,7.070336420695646,2.873516693767838,1.025774488919416
+odor-a-left-neutral,complete,0.65,a,0.0,False,,7.070336420695646,2.873516693767838,1.025774488919416
+odor-a-left-missing,complete,,,,True,2.0,23.179112783862003,1.606481337080343,1.098393635695019
+straight-a-left,complete,,,,True,2.0,23.179112783862003,1.606481337080343,1.098393635695019
+odor-a-left-repeat,complete,0.65,a,1.0,False,,7.070336420695646,2.873516693767838,1.025774488919416
