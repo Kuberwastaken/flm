@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-09-11T07:17:35.373194+00:00",
+  "scope": "Completed resumed 10M GRU seed 42; checkpoint restoration and every selection observation, no test inference.",
+  "completed_run": {
+    "scale": "10m",
+    "seed": 42,
+    "variant": "gru",
+    "checkpoint": "runs/babylm-10m/gru-s42/best.pt",
+    "checkpoint_sha256": "da189f114d7141f9ab143a0211de68e96f9ded9de14fe715e41b8a9efd6239d2",
+    "selection_validation_bpb": 1.9086214616394719,
+    "training_source_commit": "f7f7b192949bca2e98246e8bdb45633c3940a56c",
+    "checkpoint_step": 12000,
+    "final_checkpoint_sha256": "427d604626bbce7a373fe88aaeef293fa386e7b2c42a421b7724fdc6e2b9c3fe",
+    "validation_record_sha256": {
+      "validation-000500.json": "aeafa52fac06c1b0983bc8f2513e06b0548d68c76913b2f0a90c9b2e7c3b8222",
+      "validation-001000.json": "d616c45b5bc6d8eee341a722194cae230b338ef66098e937e9c2e3a3bbda4892",
+      "validation-001500.json": "17ddc715711e240468941d021dba8c04df4ecfead614ba3cec726d5441943d8c",
+      "validation-002000.json": "0a51cce09c5415e5cb68417ac1cfcb8f6f7a2c0578039fad86c6907112f9679e",
+      "validation-002500.json": "caf5e25a27c205c9c7848d908f5f4a956b758e456d90590b030d23789a9571d4",
+      "validation-003000.json": "f07f6ab77b71ceaa946d67da1b9fb828c3d474f4afc4574f6e2a1b8e7f629db1",
+      "validation-003500.json": "00db1566347dc730eff4851ddf2e4b79820bed5952200a14a53c467857a663a2",
+      "validation-004000.json": "2e1239f38b7322c6e93330c80d0a313fc28f00a3fa6243386c379193734b6580",
+      "validation-004500.json": "f4efea5ddafddc391fea09e6123d39cf430572fcd6a57a903b3ecf91bc450957",
+      "validation-005000.json": "58e0db8537b27de1f4bff507162f4a0fd7d2cb1cccb12b1338a619e474df26ab",
+      "validation-005500.json": "44bf1cee8d575803b479ad0c22780ac529ba32f0604d73073778a3110f65b9ea",
+      "validation-006000.json": "f3d2a75c3c430b58afa3e91a50559039e39b8c25cf6d53706186123273eb408e",
+      "validation-006500.json": "ca94b38a31ca8f7b516d88c1109d9f1221fd9c1640c15a4c7e8d78a402f62d0a",
+      "validation-007000.json": "0db577ef494a9ee5f36ffc7fd061b3ca1d2982d49fd47c927965886386c52e2f",
+      "validation-007500.json": "8ba9612cead87c30b4832e4d51a1fec131979003bf832cfadf46778bdc5773c0",
+      "validation-008000.json": "21138e7d03552dac42ac3a7c516f9b732eef61c7f14aef07e2b11ec5fabf50fd",
+      "validation-008500.json": "31945618a3f96ee6668cfe85f0b3267a3651c315803b8e5b3ea4744ca4646f3b",
+      "validation-009000.json": "7a2e61e60c8dee047a33a087bd86cdd8570f8bade1d8147e91430eeed98a3912",
+      "validation-009500.json": "6c78d811aef263a61db00df1b6ebab4d545e584b0196370d38d998efd152b196",
+      "validation-010000.json": "899111bd0a29216caf7a7304c9b604b680c193fb272cda1bd21a2a2e377372ad",
+      "validation-010500.json": "8b004adf2eca151da36081964f485df8e06c1d8c76f68bd82b0cfc394f505144",
+      "validation-011000.json": "6fe9003d916c517ad34ce0976c9ce7c8412eb1a5cbeec93206bd0c9ba77d01e9",
+      "validation-011500.json": "16d674a04a9857666076d6b4ca26cf2ababe09989b8a9b8db7e058a11119d664",
+      "validation-012000.json": "ecb1da92c942ae0e84f5deba5326333084f01e94ed6a9f50168fc9c879f85fa0"
+    },
+    "final_exposure": {
+      "presented_tokens": 18432000,
+      "presented_bytes": 53899201,
+      "scored_bytes": 44912041
+    }
+  },
+  "validation_records_checked": 24,
+  "validation_panel_blocks": 48,
+  "completed_metadata_sha256": "9d2eb6364ad10e794305b74f86b5e015c9e152ca7d15256ec846b0748bbdc395",
+  "validation_cache_manifest_sha256": "ea3bd0f2625e78723baf6300dca2ffdae91deebdcb21ae748ffd0cc4ba2ef859",
+  "verifier_sha256": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
+  "all_twelve_selection_frozen": false,
+  "test_inference_performed": false
+}

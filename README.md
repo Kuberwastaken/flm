@@ -63,7 +63,7 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current training:** the registered BabyLM comparison has resumed from its audited checkpoint after completing the compact computation study. New transfer and behavior experiments remain deferred.
+**Current training:** the registered BabyLM comparison has resumed after completing the compact computation study. The 10M FLM and GRU seed-42 runs have finished; the serial queue continues. New transfer and behavior experiments remain deferred.
 
 ## Language results
 
@@ -182,7 +182,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Prepared and paused after 1 of 12 training runs; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Training in progress: 2 of 12 runs complete as of 11 September 2026; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark; training and evaluation deferred. No model results. |
 
@@ -287,6 +287,7 @@ Acquisition verifies pinned revisions, sizes and SHA-256 hashes. Article groupin
 | Retrained language computation controls | [Frozen protocol](docs/LANGUAGE-CORE-PROTOCOL.md), [findings and parameter limits](docs/LANGUAGE-CORE-RESULTS.md) |
 | BabyLM acquisition, audit and 12-run pipeline | [Training protocol](docs/BABYLM-PROTOCOL.md), [complete-study evaluation](docs/BABYLM-EVALUATION.md) |
 | Learning-rule and topology diagnostics | [Original learning protocol](docs/LOCAL-LEARNING-PROTOCOL.md), [60-run extension](docs/WIRING-LEARNING-PROTOCOL.md) |
+| Language eligibility implementation, not fitted results | [Complete window-gradient kernel and numerical checks](docs/LANGUAGE-ELIGIBILITY-KERNEL.md) |
 | Recorded feedback audit or fresh MuJoCo simulation | [Standalone instructions](docs/CLOSED-LOOP-REPRODUCTION.md), [physical environment](experiments/embodiment/README.md) |
 | Papers and README comparison figure | [Paper builds](papers/README.md), `python docs/figures/readme_figures.py` |
 

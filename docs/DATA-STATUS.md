@@ -29,4 +29,5 @@ Its artificial instruction/action pairs are reserved for a separate transfer
 experiment, not mixed into the primary language corpus. A reversible action
 codec and causal loss masks have been checked on every command; no model has
 been fitted or scored on SCAN. See [the data audit and experimental design](INSTRUCTION-TRANSFER.md)
-and `data/cards/scan.json`. The language computation controls take priority; BabyLM resumes after that study.
+and `data/cards/scan.json`. The language computation controls are complete and
+BabyLM training has resumed; its serial queue takes priority over SCAN fitting.
