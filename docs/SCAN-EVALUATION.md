@@ -110,3 +110,9 @@ records **31 passed checks**: six loader, thirteen evaluation and twelve trainin
 coordinator checks. Running the evaluator against the actual repository refused
 the absent frozen study before calling the test loader or creating any official
 evaluation artifacts. All benchmark fits, costs and scores remain pending.
+
+A subsequent [inventory verification](../reports/scan-runtime/evaluation-inventory-verification.json)
+tightens the final check against a batch added after a condition has completed.
+It tests that failure and reruns the complete 36-condition fixture evaluation
+and cached resumption on the revised evaluator. The earlier 31-check record
+retains its original source commit; the addendum identifies the revised code.
