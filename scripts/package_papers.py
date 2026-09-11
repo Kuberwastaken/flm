@@ -81,7 +81,15 @@ def main():
         'reports/scan-runtime/input-preflight.json', 'reports/scan-runtime/source-preflight.json',
         'reports/scan-runtime/condition-preflight.json', 'reports/scan-runtime/pilot-preflight.json',
         'docs/LANGUAGE-ELIGIBILITY-PREPARATION.md', 'flm/embedding_eligibility.py',
-        'flm/local_learning.py', 'tests/test_embedding_eligibility.py')]
+        'flm/local_learning.py', 'tests/test_embedding_eligibility.py',
+        'docs/LANGUAGE-ELIGIBILITY-KERNEL.md', 'flm/language_eligibility.py',
+        'tests/test_language_eligibility.py', 'reports/language-eligibility/window-preflight.json',
+        'docs/LANGUAGE-LEARNING-RUNNER.md', 'flm/language_learning_train.py',
+        'tests/test_language_learning_train.py', 'reports/language-eligibility/trainer-preflight.json',
+        'docs/SELECTION-STUDY.md', 'flm/selection_feasibility.py',
+        'tests/test_selection_feasibility.py', 'scripts/selection_feasibility_figures.py',
+        'reports/selection-feasibility/summary.json', 'reports/selection-feasibility/candidate-body-ids.json',
+        'reports/selection-feasibility/figures.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.

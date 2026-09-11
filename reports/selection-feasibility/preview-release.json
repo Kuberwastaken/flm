@@ -1,0 +1,84 @@
+{
+  "verified_utc": "2026-09-11T07:42:28.946443+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 73675,
+      "sha256": "63f33ef78957bf005290d388971ef91c288b8b296da0e52c012896ea64543413",
+      "status": 200
+    },
+    {
+      "path": "research/selection-study.md",
+      "bytes": 9021,
+      "sha256": "35ea5fded6f8e5013c22b3cfc53acf41efd5d7941e78ad88b563f8c3ee82d112",
+      "status": 200
+    },
+    {
+      "path": "research/selection-feasibility/summary.json",
+      "bytes": 16403,
+      "sha256": "6ccc626fc418321fa9df51100672302ca0b005455632c92d006dcc0869872b0e",
+      "status": 200
+    },
+    {
+      "path": "research/selection-feasibility/candidate-body-ids.json",
+      "bytes": 164340,
+      "sha256": "7a27577038601b05816f1e9f3aad2628bbdb12d78f2148661ebd4a9b941c5a80",
+      "status": 200
+    },
+    {
+      "path": "research/selection-feasibility/figures.json",
+      "bytes": 706,
+      "sha256": "deb46125c5124f5eec3a865b5ea641bf41c58f9938dafd520421d55e58b0f43e",
+      "status": 200
+    },
+    {
+      "path": "research/selection-feasibility/selection_feasibility.py",
+      "bytes": 10256,
+      "sha256": "7aee4e3954bc63968048feddde2404093e2116056c8856a177f6f51f0d44054f",
+      "status": 200
+    },
+    {
+      "path": "research/figures/selection-feasibility.csv",
+      "bytes": 595,
+      "sha256": "ba132a18936ef576c49779e02ddfb0488bfc0d468b004e2fe9bd45c661ba5343",
+      "status": 200
+    },
+    {
+      "path": "research/figures/selection-feasibility.svg",
+      "bytes": 95079,
+      "sha256": "e47ecdc193a88dbf9a0c238598d70fd31948bcbe23a0cf50748faf0fccedd279",
+      "status": 200
+    },
+    {
+      "path": "research/figures/selection-feasibility.png",
+      "bytes": 130852,
+      "sha256": "c3702d023889cf79b667b6a7626b35f0d459fe456b32fb66e0a432bb065ac742",
+      "status": 200
+    },
+    {
+      "path": "research/paper-source.zip",
+      "bytes": 7155668,
+      "sha256": "305b9d187d8fcc2b4d61b1b2134c4a86d5eaec96f0f5e5eafd654d50f130a359",
+      "status": 200
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "bytes": 123386,
+      "sha256": "55d4168a832dc0ce0d4213d93f1288c22822ae22f0cf9ad2b956e8b35d2c884e",
+      "status": 200
+    }
+  ],
+  "reference_matches_previous_independent_audit": true,
+  "all_eight_csv_rows_match_audit": true,
+  "local_markdown_links_verified": [
+    "selection-feasibility/selection_feasibility.py",
+    "selection-feasibility/summary.json",
+    "figures/selection-feasibility.svg",
+    "selection-feasibility/candidate-body-ids.json",
+    "figures/selection-feasibility.csv"
+  ],
+  "selection_fixture_tests_passed": 3,
+  "audit_sha256": "6ccc626fc418321fa9df51100672302ca0b005455632c92d006dcc0869872b0e",
+  "all_http_bytes_match_build": true
+}

@@ -1,0 +1,11 @@
+{
+  "audit_sha256": "6ccc626fc418321fa9df51100672302ca0b005455632c92d006dcc0869872b0e",
+  "plot_source_sha256": "3cca8e56247f0a5c97f9e71dd7b18494f063ec267c578bce29ac1dab89f65e91",
+  "candidates": 8,
+  "artifacts": {
+    "public/research/figures/selection-feasibility.csv": "ba132a18936ef576c49779e02ddfb0488bfc0d468b004e2fe9bd45c661ba5343",
+    "public/research/figures/selection-feasibility.svg": "e47ecdc193a88dbf9a0c238598d70fd31948bcbe23a0cf50748faf0fccedd279",
+    "public/research/figures/selection-feasibility.png": "c3702d023889cf79b667b6a7626b35f0d459fe456b32fb66e0a432bb065ac742"
+  },
+  "scope": "All eight anatomy-only candidate inventories; unequal node counts, no trained scores"
+}

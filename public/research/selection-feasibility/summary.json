@@ -1,0 +1,786 @@
+{
+  "verified_utc": "2026-09-11T07:31:39.319905+00:00",
+  "scope": "Anatomy-only descriptive feasibility; named cell families are not validated functional circuits. No trained comparison.",
+  "source_neurons": 166700,
+  "source_connections": 25582938,
+  "source_file_sha256": {
+    "offsets.npy": "0b9ed4362d420e879fe608c330dbd9ac7f52964036352fdcae1a0755d686fdc7",
+    "sources.npy": "62c82e082bcdbbc778139539dbd52df698ad84a720c36b7255f1a1ba3c8416f0",
+    "counts.npy": "d9f1eb2922ff05470312ae3ba6a92932ec6c1e60f12166f2ea240c73ce1426c0",
+    "fast_sign.npy": "8761a283602b74d66bc7cbe910fbfbcc06da5810e58e306881533eb1fb23b3c4",
+    "body_ids.npy": "ddfa789213c8c5066400c026b65c112c267781c2e3ab380a39dd437866e704d6",
+    "neurons.json.gz": "e77e031a79293316cece9a27e88f18968b4bb93112842ab91fc45f84d737d864"
+  },
+  "source_graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+  "audit_source_sha256": "7aee4e3954bc63968048feddde2404093e2116056c8856a177f6f51f0d44054f",
+  "candidates": {
+    "frozen_connectivity_1024": {
+      "inside_raw": {
+        "connections": 88457,
+        "contacts": 1967664
+      },
+      "inside_fast": {
+        "connections": 76130,
+        "contacts": 1760995
+      },
+      "incoming_boundary": {
+        "connections": 847059,
+        "contacts": 7595687
+      },
+      "outgoing_boundary": {
+        "connections": 799007,
+        "contacts": 5588715
+      },
+      "incoming_cut_fraction": 0.7942495261336743,
+      "outgoing_cut_fraction": 0.739602261877018,
+      "inside_contacts_removed_by_fast_sign": 206669,
+      "inside_fast_fraction": 0.89496733182088,
+      "neurons": 1024,
+      "families": {
+        "other": 953,
+        "MBON": 48,
+        "APL": 2,
+        "PPL1": 13,
+        "DPM": 2,
+        "EPG": 6
+      },
+      "sides": {
+        "R": 527,
+        "L": 477,
+        "M": 20
+      },
+      "classes": {
+        "cb_intrinsic": 1024
+      },
+      "fast_signs": {
+        "-1": 449,
+        "0": 85,
+        "1": 490
+      },
+      "exceeds_1024_budget": false
+    },
+    "named_mb_bilateral": {
+      "inside_raw": {
+        "connections": 1016618,
+        "contacts": 2791611
+      },
+      "inside_fast": {
+        "connections": 874617,
+        "contacts": 2459944
+      },
+      "incoming_boundary": {
+        "connections": 103486,
+        "contacts": 784113
+      },
+      "outgoing_boundary": {
+        "connections": 68050,
+        "contacts": 289509
+      },
+      "incoming_cut_fraction": 0.21928789805924617,
+      "outgoing_cut_fraction": 0.09396226047670977,
+      "inside_contacts_removed_by_fast_sign": 331667,
+      "inside_fast_fraction": 0.8811915413716309,
+      "neurons": 4497,
+      "families": {
+        "MBON": 97,
+        "APL": 2,
+        "PPL1": 16,
+        "DPM": 2,
+        "KC": 4064,
+        "PAM": 316
+      },
+      "sides": {
+        "R": 2262,
+        "L": 2235
+      },
+      "classes": {
+        "cb_intrinsic": 4497
+      },
+      "fast_signs": {
+        "-1": 49,
+        "0": 334,
+        "1": 4114
+      },
+      "exceeds_1024_budget": true
+    },
+    "named_mb_left": {
+      "inside_raw": {
+        "connections": 440775,
+        "contacts": 1199647
+      },
+      "inside_fast": {
+        "connections": 396816,
+        "contacts": 1090169
+      },
+      "incoming_boundary": {
+        "connections": 119403,
+        "contacts": 585292
+      },
+      "outgoing_boundary": {
+        "connections": 100513,
+        "contacts": 342683
+      },
+      "incoming_cut_fraction": 0.32790588361843176,
+      "outgoing_cut_fraction": 0.22218526515077835,
+      "inside_contacts_removed_by_fast_sign": 109478,
+      "inside_fast_fraction": 0.9087414881210889,
+      "neurons": 2235,
+      "families": {
+        "MBON": 48,
+        "APL": 1,
+        "PPL1": 8,
+        "DPM": 1,
+        "KC": 2019,
+        "PAM": 158
+      },
+      "sides": {
+        "L": 2235
+      },
+      "classes": {
+        "cb_intrinsic": 2235
+      },
+      "fast_signs": {
+        "-1": 24,
+        "0": 167,
+        "1": 2044
+      },
+      "exceeds_1024_budget": true
+    },
+    "named_mb_right": {
+      "inside_raw": {
+        "connections": 441076,
+        "contacts": 1203500
+      },
+      "inside_fast": {
+        "connections": 399473,
+        "contacts": 1103985
+      },
+      "incoming_boundary": {
+        "connections": 118850,
+        "contacts": 587285
+      },
+      "outgoing_boundary": {
+        "connections": 102304,
+        "contacts": 335290
+      },
+      "incoming_cut_fraction": 0.3279483578430688,
+      "outgoing_cut_fraction": 0.2178919800622567,
+      "inside_contacts_removed_by_fast_sign": 99515,
+      "inside_fast_fraction": 0.9173120066472787,
+      "neurons": 2262,
+      "families": {
+        "MBON": 49,
+        "APL": 1,
+        "PPL1": 8,
+        "DPM": 1,
+        "KC": 2045,
+        "PAM": 158
+      },
+      "sides": {
+        "R": 2262
+      },
+      "classes": {
+        "cb_intrinsic": 2262
+      },
+      "fast_signs": {
+        "-1": 25,
+        "0": 167,
+        "1": 2070
+      },
+      "exceeds_1024_budget": true
+    },
+    "named_compass_families": {
+      "inside_raw": {
+        "connections": 4503,
+        "contacts": 77424
+      },
+      "inside_fast": {
+        "connections": 4503,
+        "contacts": 77424
+      },
+      "incoming_boundary": {
+        "connections": 20097,
+        "contacts": 231720
+      },
+      "outgoing_boundary": {
+        "connections": 17199,
+        "contacts": 136010
+      },
+      "incoming_cut_fraction": 0.7495536060864839,
+      "outgoing_cut_fraction": 0.6372461744614261,
+      "inside_contacts_removed_by_fast_sign": 0,
+      "inside_fast_fraction": 1.0,
+      "neurons": 110,
+      "families": {
+        "EPG": 50,
+        "PEN": 42,
+        "PEG": 18
+      },
+      "sides": {
+        "R": 55,
+        "L": 55
+      },
+      "classes": {
+        "cb_intrinsic": 110
+      },
+      "fast_signs": {
+        "1": 110
+      },
+      "exceeds_1024_budget": false
+    },
+    "uniform_1024_s201": {
+      "inside_raw": {
+        "connections": 6924,
+        "contacts": 34725
+      },
+      "inside_fast": {
+        "connections": 6475,
+        "contacts": 33632
+      },
+      "incoming_boundary": {
+        "connections": 248634,
+        "contacts": 1309836
+      },
+      "outgoing_boundary": {
+        "connections": 229677,
+        "contacts": 1219234
+      },
+      "incoming_cut_fraction": 0.9741737265918021,
+      "outgoing_cut_fraction": 0.9723077070302937,
+      "inside_contacts_removed_by_fast_sign": 1093,
+      "inside_fast_fraction": 0.9685241180705544,
+      "neurons": 1024,
+      "families": {
+        "other": 889,
+        "EPG": 3,
+        "MBON": 5,
+        "KC": 116,
+        "PEN": 1,
+        "PAM": 9,
+        "PPL1": 1
+      },
+      "sides": {
+        "L": 536,
+        "R": 486,
+        "M": 1,
+        "": 1
+      },
+      "classes": {
+        "cb_intrinsic": 1024
+      },
+      "fast_signs": {
+        "-1": 360,
+        "0": 38,
+        "1": 626
+      },
+      "exceeds_1024_budget": false
+    },
+    "uniform_1024_s203": {
+      "inside_raw": {
+        "connections": 7002,
+        "contacts": 37199
+      },
+      "inside_fast": {
+        "connections": 6438,
+        "contacts": 34704
+      },
+      "incoming_boundary": {
+        "connections": 249562,
+        "contacts": 1345580
+      },
+      "outgoing_boundary": {
+        "connections": 231656,
+        "contacts": 1217075
+      },
+      "incoming_cut_fraction": 0.9730983765301614,
+      "outgoing_cut_fraction": 0.970342205929486,
+      "inside_contacts_removed_by_fast_sign": 2495,
+      "inside_fast_fraction": 0.9329283045243152,
+      "neurons": 1024,
+      "families": {
+        "other": 907,
+        "DPM": 1,
+        "MBON": 2,
+        "PEN": 2,
+        "PAM": 9,
+        "KC": 99,
+        "PEG": 1,
+        "EPG": 3
+      },
+      "sides": {
+        "M": 4,
+        "L": 467,
+        "R": 553
+      },
+      "classes": {
+        "cb_intrinsic": 1024
+      },
+      "fast_signs": {
+        "-1": 385,
+        "0": 40,
+        "1": 599
+      },
+      "exceeds_1024_budget": false
+    },
+    "uniform_1024_s207": {
+      "inside_raw": {
+        "connections": 6505,
+        "contacts": 36972
+      },
+      "inside_fast": {
+        "connections": 6248,
+        "contacts": 34781
+      },
+      "incoming_boundary": {
+        "connections": 246665,
+        "contacts": 1387908
+      },
+      "outgoing_boundary": {
+        "connections": 231699,
+        "contacts": 1259567
+      },
+      "incoming_cut_fraction": 0.9740525517938353,
+      "outgoing_cut_fraction": 0.9714840818517607,
+      "inside_contacts_removed_by_fast_sign": 2191,
+      "inside_fast_fraction": 0.9407389375743807,
+      "neurons": 1024,
+      "families": {
+        "other": 886,
+        "MBON": 3,
+        "EPG": 4,
+        "PEN": 1,
+        "KC": 127,
+        "PAM": 3
+      },
+      "sides": {
+        "L": 522,
+        "R": 500,
+        "M": 2
+      },
+      "classes": {
+        "cb_intrinsic": 1024
+      },
+      "fast_signs": {
+        "-1": 376,
+        "0": 32,
+        "1": 616
+      },
+      "exceeds_1024_budget": false
+    }
+  },
+  "family_inventory": {
+    "KC": {
+      "neurons": 4064,
+      "sides": {
+        "L": 2019,
+        "R": 2045
+      },
+      "source_transmitter_labels": {
+        "acetylcholine": 4064
+      },
+      "fast_signs": {
+        "1": 4064
+      }
+    },
+    "MBON": {
+      "neurons": 97,
+      "sides": {
+        "R": 49,
+        "L": 48
+      },
+      "source_transmitter_labels": {
+        "glutamate": 26,
+        "acetylcholine": 50,
+        "gaba": 21
+      },
+      "fast_signs": {
+        "-1": 47,
+        "1": 50
+      }
+    },
+    "PAM": {
+      "neurons": 316,
+      "sides": {
+        "R": 158,
+        "L": 158
+      },
+      "source_transmitter_labels": {
+        "dopamine": 316
+      },
+      "fast_signs": {
+        "0": 316
+      }
+    },
+    "PPL1": {
+      "neurons": 16,
+      "sides": {
+        "R": 8,
+        "L": 8
+      },
+      "source_transmitter_labels": {
+        "dopamine": 16
+      },
+      "fast_signs": {
+        "0": 16
+      }
+    },
+    "APL": {
+      "neurons": 2,
+      "sides": {
+        "R": 1,
+        "L": 1
+      },
+      "source_transmitter_labels": {
+        "gaba": 2
+      },
+      "fast_signs": {
+        "-1": 2
+      }
+    },
+    "DPM": {
+      "neurons": 2,
+      "sides": {
+        "L": 1,
+        "R": 1
+      },
+      "source_transmitter_labels": {
+        "dopamine": 2
+      },
+      "fast_signs": {
+        "0": 2
+      }
+    },
+    "EPG": {
+      "neurons": 50,
+      "sides": {
+        "R": 25,
+        "L": 25
+      },
+      "source_transmitter_labels": {
+        "acetylcholine": 50
+      },
+      "fast_signs": {
+        "1": 50
+      }
+    },
+    "PEN": {
+      "neurons": 42,
+      "sides": {
+        "L": 21,
+        "R": 21
+      },
+      "source_transmitter_labels": {
+        "acetylcholine": 42
+      },
+      "fast_signs": {
+        "1": 42
+      }
+    },
+    "PEG": {
+      "neurons": 18,
+      "sides": {
+        "R": 9,
+        "L": 9
+      },
+      "source_transmitter_labels": {
+        "acetylcholine": 18
+      },
+      "fast_signs": {
+        "1": 18
+      }
+    }
+  },
+  "family_cross_contacts": {
+    "order": [
+      "KC",
+      "MBON",
+      "PAM",
+      "PPL1",
+      "APL",
+      "DPM",
+      "EPG",
+      "PEN",
+      "PEG",
+      "other"
+    ],
+    "orientation": "row presynaptic, column postsynaptic",
+    "raw": [
+      [
+        1153845,
+        463640,
+        204282,
+        77087,
+        210352,
+        95527,
+        1,
+        0,
+        0,
+        41892
+      ],
+      [
+        11181,
+        26259,
+        6585,
+        4435,
+        2383,
+        370,
+        0,
+        0,
+        0,
+        212197
+      ],
+      [
+        173789,
+        28546,
+        7391,
+        312,
+        4565,
+        2569,
+        7,
+        0,
+        0,
+        4955
+      ],
+      [
+        49256,
+        11070,
+        849,
+        969,
+        3405,
+        1611,
+        0,
+        0,
+        0,
+        24181
+      ],
+      [
+        196200,
+        4466,
+        1059,
+        656,
+        22,
+        1595,
+        0,
+        0,
+        0,
+        5914
+      ],
+      [
+        32795,
+        6561,
+        2970,
+        1484,
+        3521,
+        4,
+        0,
+        0,
+        0,
+        362
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        11772,
+        12526,
+        6495,
+        86798
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24251,
+        17916,
+        459,
+        34939
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1038,
+        2424,
+        543,
+        14272
+      ],
+      [
+        465165,
+        166739,
+        73136,
+        69157,
+        9777,
+        138,
+        167212,
+        51706,
+        12794,
+        119867239
+      ]
+    ],
+    "retained_fast": [
+      [
+        1153845,
+        463640,
+        204282,
+        77087,
+        210352,
+        95527,
+        1,
+        0,
+        0,
+        41892
+      ],
+      [
+        11181,
+        26259,
+        6585,
+        4435,
+        2383,
+        370,
+        0,
+        0,
+        0,
+        212197
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        196200,
+        4466,
+        1059,
+        656,
+        22,
+        1595,
+        0,
+        0,
+        0,
+        5914
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        11772,
+        12526,
+        6495,
+        86798
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24251,
+        17916,
+        459,
+        34939
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1038,
+        2424,
+        543,
+        14272
+      ],
+      [
+        457382,
+        159094,
+        69424,
+        67122,
+        9228,
+        102,
+        160012,
+        33194,
+        12423,
+        116359035
+      ]
+    ]
+  },
+  "candidate_body_ids_sha256": "7a27577038601b05816f1e9f3aad2628bbdb12d78f2148661ebd4a9b941c5a80",
+  "random_selection": {
+    "seeds": [
+      201,
+      203,
+      207
+    ],
+    "generator": "NumPy PCG64",
+    "population": "All cb_intrinsic, sorted by body ID",
+    "rule": "1024 uniformly sampled distinct neurons; neuron count only matched, not degrees, signs, side or parameter count"
+  },
+  "named_selection": {
+    "mushroom_body_prefixes": [
+      "KC",
+      "MBON",
+      "PAM",
+      "PPL1",
+      "APL",
+      "DPM"
+    ],
+    "compass_prefixes": [
+      "EPG",
+      "PEN",
+      "PEG"
+    ],
+    "rule": "Literal case-sensitive type prefixes, optionally side L/R; no connectivity expansion or language scores"
+  },
+  "limitations": [
+    "The acquired source is a runtime derivative of MaleCNS, not a new audit of all publisher synapse data.",
+    "Named inventories omit external partners and do not establish intact circuits or functional preservation.",
+    "Source transmitter labels and fast-sign rules are modeling inputs, not ground-truth physiology.",
+    "Different induced edge counts imply different trainable parameter counts under the current model.",
+    "Candidate sizes differ; this audit is not a matched language experiment."
+  ]
+}

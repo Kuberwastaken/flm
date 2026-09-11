@@ -2,6 +2,14 @@ import { mkdir, copyFile, readdir, readFile, writeFile } from 'node:fs/promises'
 await mkdir('public/licenses', { recursive: true });
 await mkdir('public/data', { recursive: true });
 await mkdir('public/research', { recursive: true });
+await mkdir('public/research/selection-feasibility', { recursive: true });
+for (const name of ['summary.json', 'candidate-body-ids.json', 'figures.json'])
+  await copyFile(`reports/selection-feasibility/${name}`, `public/research/selection-feasibility/${name}`);
+await copyFile('flm/selection_feasibility.py', 'public/research/selection-feasibility/selection_feasibility.py');
+await writeFile('public/research/selection-study.md', (await readFile('docs/SELECTION-STUDY.md', 'utf8'))
+  .replaceAll('../flm/selection_feasibility.py', 'selection-feasibility/selection_feasibility.py')
+  .replaceAll('../reports/selection-feasibility/', 'selection-feasibility/')
+  .replaceAll('../public/research/', ''));
 await copyFile('scripts/choice_replay.py', 'public/research/choice_replay.py');
 let foodNote = await readFile('docs/FOOD-RESPONSE-PLAN.md', 'utf8');
 for (const [source, target] of [
