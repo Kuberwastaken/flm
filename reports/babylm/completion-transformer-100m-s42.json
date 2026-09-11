@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-09-11T17:54:59.931754+00:00",
+  "scope": "Completed 100M transformer seed 42; checkpoint restoration and every selection observation, no test inference.",
+  "completed_run": {
+    "scale": "100m",
+    "seed": 42,
+    "variant": "transformer",
+    "checkpoint": "runs/babylm-100m/transformer-s42/best.pt",
+    "checkpoint_sha256": "a0bd9609db1198ebb3991898de23cd0aaa272f4e4ce97db53f5269e029a4185d",
+    "selection_validation_bpb": 1.8157142544925355,
+    "training_source_commit": "52dce9a89edc1530b38698dfe18df81fd8f2b6cc",
+    "checkpoint_step": 11500,
+    "final_checkpoint_sha256": "90aac31873a08e20c808bf8f392de85c304e6d04b68ac1ab2d34f77bb97d1c00",
+    "validation_record_sha256": {
+      "validation-000500.json": "6df85bbdbc7efa0389cc6af88984903e8319a9be34d9f6bb82fbd29a6bd32ed4",
+      "validation-001000.json": "67fc24b6b3cd606aab6cd9ade1b619ebe3e435b198fb61d4d991e3c2862e592e",
+      "validation-001500.json": "ba5d73c2eaa8081662bee9e180154072b7f388f757f8d29f5fb05630259c6e8f",
+      "validation-002000.json": "9f7610cbf262ba2bfc3c283f1a3ba31488d5ffec026932b38f017b7569d01bdc",
+      "validation-002500.json": "00cab8f9ca52da39f3610aa56d6ee055f2210ff60cf3e8bbdea2a91dce8794e2",
+      "validation-003000.json": "1dbad1264d9bb2c5910635c69bc1f294e165cd87fbc7cb23db857ddf260ed507",
+      "validation-003500.json": "a3c10bd5dcf385e7769088ac6f381bc1069cf76c2142c3c1b57a0e5068c4ffc8",
+      "validation-004000.json": "99c6059bb202ef0a02d6bfb85188e2f54754ebcb135fc4d28e7f97ae064ea0bd",
+      "validation-004500.json": "8d272d1e9ffdde3bee47973b7259b2869e0889a9f8bf0b5d1deab62e84fdd9da",
+      "validation-005000.json": "c595f8250b157d812a2f56562e2f183e67092d97f908d6679f17a411992d5f94",
+      "validation-005500.json": "5a853dee6ea2e77fb0cdc9e22647c42e59e2b405150ca15c0f6559c87cfa4b3b",
+      "validation-006000.json": "b6550565c01bc0ea1c9dda46f9d0f975a3949f93ed34a44c82f3a31aec8ee7a4",
+      "validation-006500.json": "95dea00f55962ecc7b6aff3004c8f8ab37b11c087941678c67405790239c8912",
+      "validation-007000.json": "00f9cced962418d1b24a9e94c3f339d4215a0b5428523f01891ebcba75d5f490",
+      "validation-007500.json": "c52be82741b72e281936f5e8d1ba4b038a97c66ceadfe8ce011e664876228e2b",
+      "validation-008000.json": "5bdce9a6f8d69ce70301e073419d95a233e1c3756fa0a3696d6c65d8c5e31d99",
+      "validation-008500.json": "6f8daf98685cfc9243de7b676e6a3405aeb770ca7042ac5b06fc01fe035802aa",
+      "validation-009000.json": "2901e48b61c227af76e952ab2716463a71a702176c574acd413d4a1d5c943d7e",
+      "validation-009500.json": "709ba9ecea7dd856fde58a9bd6f4ed87505a340094f30837b33bf5bae51fc4c2",
+      "validation-010000.json": "363c46913b1cbfcf981284877d402abd792eeeda056ce1a3f313b05387cb6a91",
+      "validation-010500.json": "00549b393b3571ef3d8141a87f74a66f2b8905d9ef54573d00eb9c4af0a6e7e1",
+      "validation-011000.json": "7640be77f6ec89c711a802b25dd4d9b82032328f026385c20290b0b4e68f2586",
+      "validation-011500.json": "b3f5a02bacc13554db7da0a0655ab612d0cbc7214c7cfded0c8abdf63a1acf4a",
+      "validation-012000.json": "1cfe5b992296e7f0ece6f0a30fc518d6109d9e76afbec36498d600e994d6bed9"
+    },
+    "final_exposure": {
+      "presented_tokens": 18432000,
+      "presented_bytes": 52740662,
+      "scored_bytes": 43947258
+    }
+  },
+  "validation_records_checked": 24,
+  "validation_panel_blocks": 48,
+  "completed_metadata_sha256": "b5d35cac0586027c9711c9bc269b2d9e79717d24c12e10e6d418fae64e4afae9",
+  "validation_cache_manifest_sha256": "ea3bd0f2625e78723baf6300dca2ffdae91deebdcb21ae748ffd0cc4ba2ef859",
+  "verifier_sha256": "ea0266f824abb3c9ed7bc781561ed16d1ace0b5d01fd71ef8a05eb09c510c054",
+  "all_twelve_selection_frozen": false,
+  "test_inference_performed": false
+}
