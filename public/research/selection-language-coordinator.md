@@ -4,8 +4,9 @@ The [coordinator](selection-language/selection_language_study.py) can freeze an 
 selection matrix, fit it serially with resume, and select validation checkpoints
 only after every registered condition completes. **No official matrix, budget,
 protocol, cost result or selected-graph language fit exists yet.** The priority
-BabyLM baseline queue is still running. An official held-out scorer and its
-inference policy also remain to be implemented before registering the experiment.
+BabyLM baseline queue is still running. The [held-out scorer](selection-language-test.md)
+and its inference/comparison policy are implemented and source-bound before any
+official registration; actual execution remains pending.
 
 This is preparation for the reviewer's selection question. It does not establish
 that a circuit-based subset helps language learning. The anatomical candidates
@@ -29,7 +30,9 @@ Node-selection seeds are 201, 203 and 207; graph-rewiring seeds are 101, 103 and
 All eight groups in the released catalog pass this inventory check. Their 512
 possible fits are **not** a chosen 512-fit study. The
 [dated preparation record](selection-language/coordinator-preparation.json)
-lists the groups, dimensions, allocations, source hashes and still-closed gates.
+lists the groups, dimensions, allocations, source hashes and still-closed gates
+at coordinator preparation. The [evaluator readiness record](selection-language/evaluation-verified-preparation.json)
+adds the implemented scoring policy and updated source hashes.
 It executes no model and opens no corpus payload.
 
 Groups are ordered by name, then training seed, then graph label. Every condition
@@ -98,9 +101,9 @@ exact minimum validation BPB. All conditions must have identical final token and
 byte exposure within each training seed. Selected payloads and run records are
 checked again before saving the immutable whole-study selection.
 
-There is no `test` command in this coordinator. The eventual scorer must require
-this complete selection, freeze its inference and comparison policy before any
-official training starts, and report all outcomes. Cross-selector comparisons
+The separate scorer requires this complete selection. Its inference and comparison
+policy is now bound into the study identity before any official training starts,
+and it reports all registered outcomes. Cross-selector comparisons
 address selection under unequal edge allocation. Within-subset rewiring contrasts
 address retained topology at the same allocation. Neither is an intact-animal
 experiment or general evidence for or against biological wiring.
@@ -121,10 +124,11 @@ real catalog preflight performs zero initialization, forward or gradient calls.
 ```powershell
 python -m unittest discover -s tests -p test_selection_language_study.py -v
 python -m scripts.selection_language_study_preflight --output reports/selection-language/another-dated-coordinator-preparation.json
-# Only after actual costs, the final protocol/evaluator, and exited priority jobs:
+# Only after actual costs, the final protocol, and exited priority jobs:
 python -m flm.selection_language_study initialize --request work/selection-language-request.json
 python -m flm.selection_language_study train
 python -m flm.selection_language_study select
+python -m flm.selection_language_test
 ```
 
 The existing baseline, learning-rule, sensory and body experiments keep their

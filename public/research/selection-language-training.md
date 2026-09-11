@@ -78,8 +78,9 @@ This is a low-level fitting component. It does not itself register a complete
 study, choose an affordable matrix, enforce all-condition completion or select
 validation checkpoints. The [complete-group coordinator](selection-language-coordinator.md)
 now implements registration, serial resume and whole-inventory validation selection;
-its synthetic tests pass. Actual groups, budget, protocol and held-out evaluator
-remain pending. There is deliberately no command that launches an unfrozen
+its synthetic tests pass. The [held-out evaluator](selection-language-test.md)
+now binds the scoring and comparison policy before fitting. Actual groups,
+budget, protocol and corpus fits remain pending. There is deliberately no command that launches an unfrozen
 corpus experiment through this module.
 
 ## Verification and next step

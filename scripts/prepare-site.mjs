@@ -78,14 +78,22 @@ await copyFile('flm/selection_language.py', 'public/research/selection-language/
 await copyFile('scripts/selection_language_preflight.py', 'public/research/selection-language/selection_language_preflight.py');
 await copyFile('reports/selection-language/preparation.json', 'public/research/selection-language/preparation.json');
 await copyFile('flm/selection_language_study.py', 'public/research/selection-language/selection_language_study.py');
+await copyFile('flm/selection_language_test.py', 'public/research/selection-language/selection_language_test.py');
 await copyFile('scripts/selection_language_study_preflight.py', 'public/research/selection-language/selection_language_study_preflight.py');
 await copyFile('reports/selection-language/coordinator-preparation.json', 'public/research/selection-language/coordinator-preparation.json');
+await copyFile('reports/selection-language/evaluation-verified-preparation.json', 'public/research/selection-language/evaluation-verified-preparation.json');
+await writeFile('public/research/selection-language-test.md', (await readFile('docs/SELECTION-LANGUAGE-TEST.md', 'utf8'))
+  .replaceAll('../flm/selection_language_test.py', 'selection-language/selection_language_test.py')
+  .replaceAll('../reports/selection-language/', 'selection-language/')
+  .replaceAll('SELECTION-LANGUAGE-COORDINATOR.md', 'selection-language-coordinator.md'));
 await writeFile('public/research/selection-language-coordinator.md', (await readFile('docs/SELECTION-LANGUAGE-COORDINATOR.md', 'utf8'))
+  .replaceAll('SELECTION-LANGUAGE-TEST.md', 'selection-language-test.md')
   .replaceAll('../flm/selection_language_study.py', 'selection-language/selection_language_study.py')
   .replaceAll('../reports/selection-language/', 'selection-language/')
   .replaceAll('SELECTION-LANGUAGE-TRAINING.md', 'selection-language-training.md')
   .replaceAll('SELECTION-TIMING-PILOT.md', 'selection-timing-pilot.md'));
 await writeFile('public/research/selection-language-training.md', (await readFile('docs/SELECTION-LANGUAGE-TRAINING.md', 'utf8'))
+  .replaceAll('SELECTION-LANGUAGE-TEST.md', 'selection-language-test.md')
   .replaceAll('SELECTION-LANGUAGE-COORDINATOR.md', 'selection-language-coordinator.md')
   .replaceAll('../flm/selection_language.py', 'selection-language/selection_language.py')
   .replaceAll('../reports/selection-language/', 'selection-language/')
