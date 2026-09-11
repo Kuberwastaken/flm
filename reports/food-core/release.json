@@ -1,0 +1,140 @@
+{
+  "archive": "public/research/food-core-interface.zip",
+  "bytes": 18830471,
+  "sha256": "43e43f9711c3b9a51aa07cc2fbabd272c3194284af0b0c29312f2bfb88eca142",
+  "files": {
+    "BODY-PROVENANCE.md": {
+      "bytes": 1075,
+      "sha256": "b920a3518c1bb57bf49fdade112b90f352a0ff465e23c887152de1dd94f29401"
+    },
+    "Body-Apache-2.0.txt": {
+      "bytes": 11362,
+      "sha256": "02afa15750a169f0815ff1525dacf28d010f1dfd4cb119fc9e96bfca4f426eb4"
+    },
+    "Body-MIT.txt": {
+      "bytes": 1055,
+      "sha256": "28d0000d8857280206c926237c256ae8fe190e121415f1f17991586b7fb7d9e7"
+    },
+    "CC-BY-4.0.txt": {
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    "DATA-ATTRIBUTION.md": {
+      "bytes": 2773,
+      "sha256": "6d2478a029cd6b7177c0c20f2a7a18ecfbb98a670fc946904d3dc4afa1c56d92"
+    },
+    "LICENSE": {
+      "bytes": 1211,
+      "sha256": "c0accc94c019408cee8e3903fe85e52fa82ba7ce979ead33a71b452d42738c1b"
+    },
+    "README.md": {
+      "bytes": 941,
+      "sha256": "cb0dd22143620a3405d0e11646c433affe19895fbfbd9c4c813f469366f0c183"
+    },
+    "fixtures.npz": {
+      "bytes": 15938673,
+      "sha256": "e091c6c5c4680f4aa0c1e37f3082aacf3b1367540bb0ba969db7be43890adc31"
+    },
+    "food_core_runtime.py": {
+      "bytes": 4871,
+      "sha256": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb"
+    },
+    "graph-card.json": {
+      "bytes": 17712,
+      "sha256": "eff916879b0d69897679c96197f21d764d9fd58eb7e2dec3cff52c410b812aab"
+    },
+    "initial-s42.npz": {
+      "bytes": 658420,
+      "sha256": "7e92392af302569d5687c2e95d96bf8485f6501784756efa888e16d1e869d7a2"
+    },
+    "initial-s43.npz": {
+      "bytes": 658282,
+      "sha256": "1597b1a5e48a96c86e033a477534825b8fab3263e72e8cf921f704b22eb892cc"
+    },
+    "isolated-parity.json": {
+      "bytes": 2086,
+      "sha256": "c637667ba4358c738fbd597f7f1dfd4b78474c6e14107644f5662886e135edf7"
+    },
+    "language-s42.npz": {
+      "bytes": 780016,
+      "sha256": "d57d4c48044fb09428758f593775c1b66d2823a0d0c5b9cb1ce5b19dd7a73923"
+    },
+    "language-s43.npz": {
+      "bytes": 780212,
+      "sha256": "7b7b756af8bf97edef786ecd0d7ad3994b352c59c54feb3714081c0988c7fe80"
+    },
+    "manifest.json": {
+      "bytes": 12459,
+      "sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b"
+    },
+    "sources/experiments/embodiment/food_core_runtime.py": {
+      "bytes": 4871,
+      "sha256": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb"
+    },
+    "sources/experiments/embodiment/verify_food_core.py": {
+      "bytes": 4143,
+      "sha256": "4ee838462b9465e2f65cf9c5e60fad57a80d45fceab751bf05dcdce570730112"
+    },
+    "sources/flm/__init__.py": {
+      "bytes": 84,
+      "sha256": "f65658600bc989d85d6ce8dc345fb921865a1ef54c3d2d450a9230658a235a5a"
+    },
+    "sources/flm/baselines.py": {
+      "bytes": 5218,
+      "sha256": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+    },
+    "sources/flm/corpus_cache.py": {
+      "bytes": 1996,
+      "sha256": "57b9312274bacf59c80970b894d9dc4a667f58fd883c3d16474beb241091a7f5"
+    },
+    "sources/flm/food_core.py": {
+      "bytes": 5063,
+      "sha256": "3feb5cf934405e19049601765bbc340402b44e5636ec3ee23f11447ccd6ddcf4"
+    },
+    "sources/flm/food_core_export.py": {
+      "bytes": 1604,
+      "sha256": "86676b81e101539eeeb3c7c5e28b2ae6523bfa960ba601ee2341c83be8391d61"
+    },
+    "sources/flm/graph.py": {
+      "bytes": 6428,
+      "sha256": "cebbcb150fe450badfd67e302a6ef1bb30dc80ef350832324e01088599e65d99"
+    },
+    "sources/flm/inference.py": {
+      "bytes": 7195,
+      "sha256": "e3e8412ea48715eaff4c1068b362931fcddd2df88277e4570b3c18e40ebd2a7b"
+    },
+    "sources/flm/language_train.py": {
+      "bytes": 13093,
+      "sha256": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31"
+    },
+    "sources/flm/model.py": {
+      "bytes": 6015,
+      "sha256": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055"
+    },
+    "sources/flm/provenance.py": {
+      "bytes": 930,
+      "sha256": "119bfe9e859ce6707fbbb1c5927389eac8deae4e35a3173a2f28af408b5a9a59"
+    },
+    "sources/flm/tokenizer.py": {
+      "bytes": 6666,
+      "sha256": "7d232de79a545b4dd091c2ae4e65e180f5783567f405823f9e15b01600890e8d"
+    },
+    "sources/flm/train.py": {
+      "bytes": 11354,
+      "sha256": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831"
+    },
+    "sources/scripts/prepare_food_core.py": {
+      "bytes": 9614,
+      "sha256": "b6bbafe9e936c26c1c4bcc3bc1ba77fbf8ba51afc1cdc51b6b28b52ba4dac1d9"
+    },
+    "verify_food_core.py": {
+      "bytes": 4143,
+      "sha256": "4ee838462b9465e2f65cf9c5e60fad57a80d45fceab751bf05dcdce570730112"
+    }
+  },
+  "file_count": 32,
+  "preparation_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+  "isolated_parity_sha256": "c637667ba4358c738fbd597f7f1dfd4b78474c6e14107644f5662886e135edf7",
+  "packaging_source_sha256": "401989ccecbcadd71ea3abff2a0534fe5b68348be9f50c30b6a401dfca57f3ab",
+  "scope": "Byte-verified packaging of four interfaces and their completed isolated numerical replay; no additional model training or physics."
+}
