@@ -1,0 +1,152 @@
+{
+  "verified_utc": "2026-09-11T14:07:04.153727+00:00",
+  "base_url": "https://flm.kuber.studio",
+  "artifacts": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 78106,
+      "sha256": "210c8c4f5989521fae0a824a40fc6dd92a48dac2b6a876288143fd833f80c1ad"
+    },
+    {
+      "path": "research/food-approach-reference.md",
+      "status": 200,
+      "bytes": 4574,
+      "sha256": "e6296ab507c7ab5103a82a9210a8f127c79d23e0c5680c88ad42087bda462a95"
+    },
+    {
+      "path": "research/food-approach-results.md",
+      "status": 200,
+      "bytes": 6347,
+      "sha256": "211ce6057512f2afb00435eefc0f69e8f34a8080cc29bae013f41a60ec832e9c"
+    },
+    {
+      "path": "research/food-response-plan.md",
+      "status": 200,
+      "bytes": 6594,
+      "sha256": "ee498380f9354992644c8728b5a5b47e2ea802e89b4004075db8e697a49b1c62"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8897596,
+      "sha256": "25d7e448c9c32846c4b8d51a133147cf6e1181266cfce5ada732060626214de0"
+    },
+    {
+      "path": "research/food-approach-records.zip",
+      "status": 200,
+      "bytes": 3105894,
+      "sha256": "fda3e90e699afd9e394d414b1aefb24e94e04fb89d0f29f6139acb7669ad1338"
+    },
+    {
+      "path": "research/food-approach/identity.json",
+      "status": 200,
+      "bytes": 15344,
+      "sha256": "b4af11df71760f25ebee77c05c66f7eedf0751e6b5ab0e56a2f31b30acbd682c"
+    },
+    {
+      "path": "research/food-approach/summary.json",
+      "status": 200,
+      "bytes": 20877,
+      "sha256": "6ddf5c8658fe0b6e67bf4c56a0e40d4cee2d81f3eb5bdd5e5ca5994108500612"
+    },
+    {
+      "path": "research/food-approach/audit.json",
+      "status": 200,
+      "bytes": 2084,
+      "sha256": "7c16440ee6fd9f847564808971d56fe68b40a4b42b11bb96f0e8131fc054e08d"
+    },
+    {
+      "path": "research/food-approach/release.json",
+      "status": 200,
+      "bytes": 1208,
+      "sha256": "f3f9de66d2ca4613fcc19d2539d9a480fd45c61524f87607497c5cf1c49cf152"
+    },
+    {
+      "path": "research/food-approach/standalone-archive-verification.json",
+      "status": 200,
+      "bytes": 580,
+      "sha256": "90153be7b652418e072795b9ae6b21b136c29ee13bd6147801f619d22ce1148d"
+    },
+    {
+      "path": "research/food-approach/food_approach.py",
+      "status": 200,
+      "bytes": 3434,
+      "sha256": "68c9dee1ce4ac36820582dd6541097e52ada9ec3808331fb120ec42f12f7c1ad"
+    },
+    {
+      "path": "research/food-approach/audit_food_approach.py",
+      "status": 200,
+      "bytes": 10895,
+      "sha256": "a740b95458611977553ee984244ef4e0fc95934232768740438425ac476de21f"
+    },
+    {
+      "path": "research/food-approach/audit_food_sensor_probe.py",
+      "status": 200,
+      "bytes": 6068,
+      "sha256": "73e822864219043ae72793a722ea37bdcd5566da89a742bb2b707d6e80e817ed"
+    },
+    {
+      "path": "research/food-approach/food_approach_report.py",
+      "status": 200,
+      "bytes": 9046,
+      "sha256": "7febc0e212aa8e9b899efca3ccf416c222ad622d59b793bc155263ded29564f3"
+    },
+    {
+      "path": "research/figures/food-approach.png",
+      "status": 200,
+      "bytes": 173055,
+      "sha256": "789e925bad57efeb0639ec15db88e3e7cde35774ed1866ab71dced4ad5eade85"
+    },
+    {
+      "path": "research/figures/food-approach.svg",
+      "status": 200,
+      "bytes": 124684,
+      "sha256": "70250ee7535e2225bba48e92d4b0b79bdc6093b17d2706cfb202bb4784dfa890"
+    },
+    {
+      "path": "research/figures/food-approach.csv",
+      "status": 200,
+      "bytes": 823,
+      "sha256": "107da310acf95e8ef8942171e44a70c147cbda64f4eaa7436646089ff34a22b8"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "food-sensor-interface.md",
+    "food-approach-reference.md",
+    "figures/food-approach.png",
+    "food-approach/summary.json",
+    "figures/food-approach.csv",
+    "food-approach/identity.json",
+    "food-approach/audit.json",
+    "food-approach-records.zip",
+    "food-approach/release.json",
+    "food-response-plan.md",
+    "food-sensor-interface.md",
+    "food-approach-results.md",
+    "choice_replay.py",
+    "choice-replay.json",
+    "learned-choice-records.json",
+    "subset-audit.md"
+  ],
+  "paper_source_files_verified": 391,
+  "standalone_archive_manifest_files": 28,
+  "complete_physical_cases": 7,
+  "observations_replayed": 1407,
+  "figure_visually_reviewed": true,
+  "browser_outcome_rows_reviewed": 7,
+  "browser_console_errors_observed": [],
+  "physics_rerun_by_release_check": false,
+  "new_training": false,
+  "scope": "Publication, physical reference source/archive identity, local browser display and supplied-record replay; no new learned policy or language-transfer result.",
+  "deployment": {
+    "workflow_run_id": 34608024339,
+    "content_commit": "aa343beb0706e8056ec7064068c8cb6c6fe9c547",
+    "npm_test": "passed",
+    "build": "passed",
+    "pages": "passed"
+  },
+  "policy_unit_tests_observed_passed": 5,
+  "audit_fault_tests_observed_passed": 4
+}
