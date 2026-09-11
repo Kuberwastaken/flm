@@ -242,7 +242,7 @@ def main():
         total = aggregate(records)
         if total['tokens'] != manifest['text_tokens'] or total['bytes'] != manifest['utf8_bytes']:
             raise ValueError('Evaluation failed complete-test coverage')
-        result = dict(**selected, identity=identity, checkpoint_step=saved['step'],
+        result = dict(**selected, identity=identity,
             parameters=model.parameter_card()['trainable_parameters'], components=component_summary(records),
             blocks=records, seconds=seconds, timing='Scoring wall time may overlap other work; not an isolated speed comparison',
             evaluator_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip())
