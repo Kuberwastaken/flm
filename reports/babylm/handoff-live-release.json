@@ -1,0 +1,36 @@
+{
+  "verified_utc": "2026-09-11T19:06:14.286013+00:00",
+  "content_commit": "68371bbecb82b4c4e6fceee4153ac3290397262b",
+  "ci_run": 34636805089,
+  "ci_status": "success",
+  "scope": "Exact live HTTP/local bytes for every public artifact changed since the prior release. Every research-source ZIP file checked against current source bytes. No new physics, training or held-out inference.",
+  "http_files": {
+    "research/babylm-handoff.md": {
+      "bytes": 5261,
+      "sha256": "8b116d81d4888b5fdf1935e34122fdf794994ebccbb9b51a152f2ad190b45f4b"
+    },
+    "research/babylm-handoff/continue_babylm_research.py": {
+      "bytes": 12202,
+      "sha256": "a87063bdc857709852adee60b456a6c8eacda7f03df4694e58b98f7652d98e2c"
+    },
+    "research/babylm-handoff/preparation.json": {
+      "bytes": 2172,
+      "sha256": "60b51f22540b4194bff524c55c8b47f03c5e169c7e2db39055bb3a56d8cbcbd5"
+    },
+    "research/babylm-handoff/requirements-operations.txt": {
+      "bytes": 98,
+      "sha256": "4ff7a4c855935b5268b1a682c39e7ec759526df73bd1103b752b00758ddf2950"
+    },
+    "research/babylm-handoff/test_babylm_handoff.py": {
+      "bytes": 11039,
+      "sha256": "c8bc89248083996a31245c6123d74cdb5f6a21db87927ecc69413276627e65c0"
+    },
+    "research/paper-source.zip": {
+      "bytes": 9373453,
+      "sha256": "65e4598ac94188bd830e865e520204de2bcd4591561634baba5f49025e1b6d52"
+    }
+  },
+  "public_relative_links_checked": 6,
+  "source_archive_files": 482,
+  "software_tests": "14 handoff tests passed with artificial process and result fixtures; all 74 JavaScript tests passed in the publishing workflow. No actual BabyLM test, generation or selection timing command was executed by those tests."
+}
