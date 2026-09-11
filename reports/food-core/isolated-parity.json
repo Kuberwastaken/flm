@@ -1,0 +1,62 @@
+{
+  "verified_utc": "2026-09-11T14:24:13.157337+00:00",
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "manifest_sha256": "c1f04ae7d906aa04181128d5b81930a7685c72fbe6a6be8ee52eb8dcf8ca311b",
+  "runtime_sha256": "c79cc0972c72ac4528de274368a6eec1197fd3ddedcc89813f9ba8c856ce42fb",
+  "verifier_sha256": "4ee838462b9465e2f65cf9c5e60fad57a80d45fceab751bf05dcdce570730112",
+  "models": [
+    {
+      "id": "initial-s42",
+      "observations": 466,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 2.384185791015625e-07,
+        "features": 1.1920928955078125e-06,
+        "logits": 3.5762786865234375e-07,
+        "probabilities": 1.1920928955078125e-07
+      },
+      "greedy_action_exact": true
+    },
+    {
+      "id": "language-s42",
+      "observations": 466,
+      "maximum_absolute_error": {
+        "fast": 2.384185791015625e-07,
+        "slow": 2.384185791015625e-07,
+        "features": 7.152557373046875e-07,
+        "logits": 1.6391277313232422e-07,
+        "probabilities": 8.940696716308594e-08
+      },
+      "greedy_action_exact": true
+    },
+    {
+      "id": "initial-s43",
+      "observations": 466,
+      "maximum_absolute_error": {
+        "fast": 1.4901161193847656e-07,
+        "slow": 1.7881393432617188e-07,
+        "features": 1.430511474609375e-06,
+        "logits": 2.980232238769531e-07,
+        "probabilities": 1.1920928955078125e-07
+      },
+      "greedy_action_exact": true
+    },
+    {
+      "id": "language-s43",
+      "observations": 466,
+      "maximum_absolute_error": {
+        "fast": 1.7881393432617188e-07,
+        "slow": 1.7881393432617188e-07,
+        "features": 7.152557373046875e-07,
+        "logits": 2.384185791015625e-07,
+        "probabilities": 8.940696716308594e-08
+      },
+      "greedy_action_exact": true
+    }
+  ],
+  "same_adapters_and_body_order": true,
+  "torch_imported": false,
+  "scope": "Numerical sensory replay of four unadapted interfaces. No new training, closed-loop physics, reward success or language-to-behavior benefit is evaluated."
+}
