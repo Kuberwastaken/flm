@@ -68,9 +68,19 @@ await copyFile('flm/selection_pilot.py', 'public/research/selection-pilot/select
 await copyFile('scripts/selection_pilot_preflight.py', 'public/research/selection-pilot/selection_pilot_preflight.py');
 await writeFile('public/research/selection-timing-pilot.md', (await readFile('docs/SELECTION-TIMING-PILOT.md', 'utf8'))
   .replaceAll('CIRCUIT-SELECTION.md', 'circuit-selection.md')
+  .replaceAll('SELECTION-LANGUAGE-TRAINING.md', 'selection-language-training.md')
   .replaceAll('../flm/selection_pilot.py', 'selection-pilot/selection_pilot.py')
   .replaceAll('../scripts/selection_pilot_preflight.py', 'selection-pilot/selection_pilot_preflight.py')
   .replaceAll('../reports/selection-pilot/', 'selection-pilot/'));
+await mkdir('public/research/selection-language', { recursive: true });
+await copyFile('flm/selection_language.py', 'public/research/selection-language/selection_language.py');
+await copyFile('scripts/selection_language_preflight.py', 'public/research/selection-language/selection_language_preflight.py');
+await copyFile('reports/selection-language/preparation.json', 'public/research/selection-language/preparation.json');
+await writeFile('public/research/selection-language-training.md', (await readFile('docs/SELECTION-LANGUAGE-TRAINING.md', 'utf8'))
+  .replaceAll('../flm/selection_language.py', 'selection-language/selection_language.py')
+  .replaceAll('../reports/selection-language/', 'selection-language/')
+  .replaceAll('LANGUAGE-LEARNING-RUNNER.md', 'language-learning-runner.md')
+  .replaceAll('SELECTION-TIMING-PILOT.md', 'selection-timing-pilot.md'));
 await mkdir('public/research/language-learning', { recursive: true });
 for (const name of ['language_learning_test.py', 'language_learning_study.py', 'language_learning_validation.py', 'language_learning_pilot.py', 'language_learning_inputs.py', 'language_learning_train.py', 'language_eligibility.py', 'embedding_eligibility.py'])
   await copyFile(`flm/${name}`, `public/research/language-learning/${name}`);

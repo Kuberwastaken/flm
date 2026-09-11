@@ -1,0 +1,24 @@
+{
+  "verified_utc": "2026-09-11T12:15:16.656004+00:00",
+  "url": "http://127.0.0.1:5181/?model=babylm&review=inference-release#research",
+  "snapshot_sha256": "c5d6c107eabad005140868bb09acb7c17dde7e54280482f013863535e8e50dc4",
+  "observed_completed_runs": 5,
+  "registered_runs": 12,
+  "seed43": {
+    "flm_updates": 12000,
+    "gru_updates": 12000,
+    "transformer_updates": 0,
+    "table_rows": [
+      "FLM: Awaiting shared update",
+      "GRU: Awaiting shared update",
+      "Transformer: Awaiting shared update"
+    ]
+  },
+  "seed42_restored": {
+    "flm_bpb": "1.9811",
+    "gru_bpb": "1.9086",
+    "transformer_bpb": "1.8826"
+  },
+  "console_errors": [],
+  "scope": "Observed existing browser UI after rebuilding the dated validation snapshot. Seed43 comparison remains unavailable until a shared measured update exists; no layout or generation change."
+}

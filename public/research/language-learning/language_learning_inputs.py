@@ -76,7 +76,14 @@ class TrainingInputs:
     binding: dict
 
 
-def load_inputs(root):
+@dataclass
+class CorpusInputs:
+    documents: list
+    lexicon: Lexicon
+    binding: dict
+
+
+def load_corpus(root):
     root=Path(root)
     source_path=root/'data/sources/babylm-2026.json'
     acquisition_path=root/'data/cards/babylm-2026-acquisition.json'
@@ -119,6 +126,20 @@ def load_inputs(root):
     if lexicon.vocabulary != 4096 or manifest['identity']['sources'] != hashes:
         raise ValueError('Training cache source inventory changed')
     coverage=verify_training_blocks(documents,records,manifest,lexicon,raw,hashes)
+    binding=dict(format='flm-language-corpus-inputs-v1',dataset='BabyLM 2026 English',partition=PARTITION,
+        revision=revision,source_manifest_sha256=sha256(source_path),acquisition_card_sha256=sha256(acquisition_path),
+        licensing=source['licensing'],training_sources=provenance,
+        tokenizer_sha256=lexicon.sha256,tokenizer_card_sha256=sha256(tokenizer_card_path),
+        cache_manifest_sha256=sha256(cache/'manifest.json'),cache_files_sha256=manifest['files'],
+        loader_sha256=sha256(Path(__file__)),coverage=coverage,
+        validation_or_test_payloads_opened=False,trained_weights_loaded=False,
+        limitation='Shared inventories contain metadata about other partitions; only train-10m raw text and token payloads are opened. No official fit matrix, budget or evaluation gate is defined here.')
+    return CorpusInputs(documents,lexicon,binding)
+
+
+def load_inputs(root):
+    """Bind the common verified corpus to the original learning-rule graph."""
+    root=Path(root); corpus=load_corpus(root)
     graph_path=root/'data/graphs/central-1024/graph.npz'; card_path=graph_path.with_name('graph-card.json')
     card=json.loads(card_path.read_text(encoding='utf8'))
     if sha256(graph_path) != GRAPH_SHA256 or card['graph_sha256'] != GRAPH_SHA256:
@@ -126,17 +147,10 @@ def load_inputs(root):
     graph=load_graph(graph_path)
     if len(graph['body_ids']) != 1024 or len(graph['row']) != 76130 or int(graph['pool'].max())+1 != 128:
         raise ValueError('Original graph dimensions changed')
-    binding=dict(format='flm-language-learning-inputs-v1',dataset='BabyLM 2026 English',partition=PARTITION,
-        revision=revision,source_manifest_sha256=sha256(source_path),acquisition_card_sha256=sha256(acquisition_path),
-        licensing=source['licensing'],training_sources=provenance,
-        tokenizer_sha256=lexicon.sha256,tokenizer_card_sha256=sha256(tokenizer_card_path),
-        cache_manifest_sha256=sha256(cache/'manifest.json'),cache_files_sha256=manifest['files'],
+    binding=dict(corpus.binding,format='flm-language-learning-inputs-v1',
         graph_sha256=GRAPH_SHA256,graph_card_sha256=sha256(card_path),graph_arrays_sha256=fingerprint(graph),
-        graph_scope='Original ranked 1024-neuron subset; this preparation varies learning rules, not neuron selection',
-        loader_sha256=sha256(Path(__file__)),coverage=coverage,
-        validation_or_test_payloads_opened=False,trained_weights_loaded=False,
-        limitation='Shared inventories contain metadata about other partitions; only train-10m raw text and token payloads are opened. No official fit matrix, budget or evaluation gate is defined here.')
-    return TrainingInputs(graph,documents,lexicon,binding)
+        graph_scope='Original ranked 1024-neuron subset; this preparation varies learning rules, not neuron selection')
+    return TrainingInputs(graph,corpus.documents,corpus.lexicon,binding)
 
 
 def conditions():

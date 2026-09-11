@@ -1,0 +1,76 @@
+{
+  "verified_utc": "2026-09-11T12:13:56.127523+00:00",
+  "base_url": "http://127.0.0.1:5181",
+  "artifacts": [
+    {
+      "path": "research/selection-language-training.md",
+      "status": 200,
+      "bytes": 6575,
+      "sha256": "fbe0979d74eb9a94069834a15b7ebf77f20a094adc582f8a0ea605cedce435f0"
+    },
+    {
+      "path": "research/selection-timing-pilot.md",
+      "status": 200,
+      "bytes": 6064,
+      "sha256": "cdc331eabb6978be042f704c3db4e4f46f96ca8bfae48a31a60b7340021cdcb9"
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 8338356,
+      "sha256": "c094e0869eef4c7f8c3ecae9884ce53ea6929fbf23767a6f4ab1f94e276f6c79"
+    },
+    {
+      "path": "research/selection-language/selection_language.py",
+      "status": 200,
+      "bytes": 10271,
+      "sha256": "736e213d1e71ef782a99dc9d8e7442eb6a6589226e3953407ad33674b37ab7b4"
+    },
+    {
+      "path": "research/selection-language/selection_language_preflight.py",
+      "status": 200,
+      "bytes": 4773,
+      "sha256": "488aa22f0c2115b86140978b7d909ad4a952b39e2ada1ac9edb4b181ff588e05"
+    },
+    {
+      "path": "research/selection-language/preparation.json",
+      "status": 200,
+      "bytes": 293767,
+      "sha256": "6d944598ad8f2d7c096d036d34a400123f1c6964a27dda12508dbee380efe69e"
+    },
+    {
+      "path": "research/language-learning/language_learning_inputs.py",
+      "status": 200,
+      "bytes": 10113,
+      "sha256": "923a4213c39fa5f4e1d914d3df6833759bc1d083b8486e9a3b57f6cec7d38576"
+    },
+    {
+      "path": "research/babylm-validation.json",
+      "status": 200,
+      "bytes": 223598,
+      "sha256": "c5d6c107eabad005140868bb09acb7c17dde7e54280482f013863535e8e50dc4"
+    }
+  ],
+  "http_bytes_match_build": true,
+  "local_markdown_links_verified": [
+    "selection-language/selection_language.py",
+    "selection-language/preparation.json",
+    "language-learning-runner.md",
+    "selection-timing-pilot.md",
+    "circuit-selection.md",
+    "selection-pilot/selection_pilot.py",
+    "selection-pilot/preflight.json",
+    "selection-pilot/selection_pilot_preflight.py",
+    "selection-language-training.md"
+  ],
+  "paper_source_files_verified": 346,
+  "source_bindings_verified": 18,
+  "graph_definitions": 256,
+  "training_seed_initializations": 512,
+  "within_subset_learned_parameter_matching_verified": true,
+  "same_size_nonedge_parameter_matching_verified": true,
+  "input_tests_observed_passed": 6,
+  "adapter_tests_observed_passed": 5,
+  "official_corpus_fit_started": false,
+  "scope": "Source/archive publication and real initialization/input preparation checks; no selected-graph corpus fit, cost measurement or language performance comparison."
+}

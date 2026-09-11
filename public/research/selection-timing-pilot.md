@@ -95,3 +95,8 @@ Keep selector contrasts separate from within-subset wiring contrasts. Retain
 the anatomical rationale and boundary audit even if a cheaper matrix is chosen.
 The current BabyLM, language topology, core-computation, sensory and physical
 experiments remain unchanged.
+
+The [selection-language adapter](selection-language-training.md) now supplies a
+common resumable fitting path. Its objective agrees with this pilot, but its
+update includes extra inventory and finite-parameter checks. Align or measure
+that exact update path before treating pilot times as official fit-budget estimates.
