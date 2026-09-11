@@ -1,0 +1,2476 @@
+{
+  "format": "flm-compiled-food-body-v1",
+  "exported_utc": "2026-09-11T15:14:11.127818+00:00",
+  "physical_identity_sha256": "03a2725de34c8785a9714fb9a6d55940d926a2d2e91ca8eb71668cf425660f1e",
+  "exporter_sha256": "1817e791215f4d84de2e32c7dbbb37fbc31933da1dc59e3e869d0aa1760d66d4",
+  "geometry_file": "geometry.bin",
+  "geometry_bytes": 2040756,
+  "geometry_sha256": "0bd79fb2f5608c36a149f77631ded404b392b5fafde8d51a871bc5badea61851",
+  "geometries": [
+    {
+      "segment": "c_thorax",
+      "geom_id": 1,
+      "mesh_id": 0,
+      "body_id": 1,
+      "vertices": {
+        "offset": 0,
+        "count": 950,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 11400,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.4743740590907638,
+        1.6379188106861043e-16,
+        -0.015367945737142777
+      ],
+      "local_quaternion_wxyz": [
+        0.6478429206012805,
+        0.2833717526974139,
+        0.2833717526974139,
+        0.6478429206012805
+      ]
+    },
+    {
+      "segment": "c_head",
+      "geom_id": 2,
+      "mesh_id": 1,
+      "body_id": 1,
+      "vertices": {
+        "offset": 35400,
+        "count": 869,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 45828,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.22823167979662895,
+        1.7173999419355453e-16,
+        0.04263870455043129
+      ],
+      "local_quaternion_wxyz": [
+        0.7061988326532659,
+        0.7061988326532659,
+        -0.03582190334369914,
+        0.03582190334369914
+      ]
+    },
+    {
+      "segment": "c_rostrum",
+      "geom_id": 3,
+      "mesh_id": 2,
+      "body_id": 2,
+      "vertices": {
+        "offset": 69804,
+        "count": 817,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 79608,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.1731962761079399,
+        2.8249700006133685e-17,
+        -0.020298663026684104
+      ],
+      "local_quaternion_wxyz": [
+        0.9966676863202045,
+        0.0,
+        -0.08156913046692633,
+        0.0
+      ]
+    },
+    {
+      "segment": "c_haustellum",
+      "geom_id": 4,
+      "mesh_id": 3,
+      "body_id": 3,
+      "vertices": {
+        "offset": 103608,
+        "count": 746,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 112560,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.2070903261711789,
+        -1.0849845855637206e-17,
+        -0.11366569162972384
+      ],
+      "local_quaternion_wxyz": [
+        0.5435085219264607,
+        0.5435085219264607,
+        -0.45232564220184923,
+        0.45232564220184923
+      ]
+    },
+    {
+      "segment": "l_eye",
+      "geom_id": 5,
+      "mesh_id": 9,
+      "body_id": 4,
+      "vertices": {
+        "offset": 136536,
+        "count": 1000,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 148536,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.004319622891453924,
+        0.30755306177262426,
+        -0.017030844305281772
+      ],
+      "local_quaternion_wxyz": [
+        0.8260503248325464,
+        -0.11608443812848386,
+        -0.08067330576540373,
+        0.5455795833838739
+      ]
+    },
+    {
+      "segment": "r_eye",
+      "geom_id": 6,
+      "mesh_id": 10,
+      "body_id": 5,
+      "vertices": {
+        "offset": 172536,
+        "count": 1000,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 184536,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.004319622891453924,
+        -0.30755306177262426,
+        -0.017030844305281772
+      ],
+      "local_quaternion_wxyz": [
+        0.5455795833838739,
+        -0.08067330576540373,
+        -0.11608443812848386,
+        0.8260503248325464
+      ]
+    },
+    {
+      "segment": "l_pedicel",
+      "geom_id": 7,
+      "mesh_id": 11,
+      "body_id": 6,
+      "vertices": {
+        "offset": 208536,
+        "count": 1002,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 220560,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.051380844728670286,
+        0.005053458866594543,
+        -0.025157088825782176
+      ],
+      "local_quaternion_wxyz": [
+        0.06570963829944271,
+        0.7512543503188641,
+        -0.3390575396715717,
+        0.5624403340385555
+      ]
+    },
+    {
+      "segment": "l_funiculus",
+      "geom_id": 8,
+      "mesh_id": 12,
+      "body_id": 7,
+      "vertices": {
+        "offset": 244560,
+        "count": 261,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 247692,
+        "count": 530,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.012425565923007793,
+        -0.014712346676503816,
+        -0.0927772787303213
+      ],
+      "local_quaternion_wxyz": [
+        0.9497614486565003,
+        0.009879992767847387,
+        -0.06395891075963808,
+        -0.30621044091156346
+      ]
+    },
+    {
+      "segment": "l_arista",
+      "geom_id": 9,
+      "mesh_id": 13,
+      "body_id": 8,
+      "vertices": {
+        "offset": 254052,
+        "count": 1001,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 266064,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.016069638933061285,
+        0.0936852083345179,
+        0.01560680201672778
+      ],
+      "local_quaternion_wxyz": [
+        0.7297668998026333,
+        0.6616882500962614,
+        0.0980814342902423,
+        -0.14138233229286834
+      ]
+    },
+    {
+      "segment": "r_pedicel",
+      "geom_id": 10,
+      "mesh_id": 14,
+      "body_id": 9,
+      "vertices": {
+        "offset": 290064,
+        "count": 1002,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 302088,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.051380844728670286,
+        -0.005053458866594543,
+        -0.025157088825782176
+      ],
+      "local_quaternion_wxyz": [
+        -0.06570963829944271,
+        0.7512543503188641,
+        0.3390575396715717,
+        0.5624403340385555
+      ]
+    },
+    {
+      "segment": "r_funiculus",
+      "geom_id": 11,
+      "mesh_id": 15,
+      "body_id": 10,
+      "vertices": {
+        "offset": 326088,
+        "count": 261,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 329220,
+        "count": 530,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.012425565923007793,
+        0.014712346676503816,
+        -0.0927772787303213
+      ],
+      "local_quaternion_wxyz": [
+        0.9497614486565003,
+        -0.009879992767847387,
+        -0.06395891075963808,
+        0.30621044091156346
+      ]
+    },
+    {
+      "segment": "r_arista",
+      "geom_id": 12,
+      "mesh_id": 16,
+      "body_id": 11,
+      "vertices": {
+        "offset": 335580,
+        "count": 1001,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 347592,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.016069638933061285,
+        -0.0936852083345179,
+        0.01560680201672778
+      ],
+      "local_quaternion_wxyz": [
+        0.6616882500962614,
+        0.7297668998026333,
+        0.14138233229286834,
+        -0.0980814342902423
+      ]
+    },
+    {
+      "segment": "c_abdomen12",
+      "geom_id": 13,
+      "mesh_id": 4,
+      "body_id": 12,
+      "vertices": {
+        "offset": 371592,
+        "count": 807,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 381276,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.23908227084619105,
+        -5.487375984989629e-17,
+        0.07064843618067608
+      ],
+      "local_quaternion_wxyz": [
+        0.6943381357514461,
+        0.6943381357514461,
+        -0.133770524560559,
+        0.133770524560559
+      ]
+    },
+    {
+      "segment": "c_abdomen3",
+      "geom_id": 14,
+      "mesh_id": 5,
+      "body_id": 13,
+      "vertices": {
+        "offset": 405276,
+        "count": 876,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 415788,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.07349399588992882,
+        1.1722483323553112e-16,
+        -0.02942389049201437
+      ],
+      "local_quaternion_wxyz": [
+        0.7063758183530618,
+        0.7063758183530618,
+        -0.03214347905941383,
+        0.03214347905941383
+      ]
+    },
+    {
+      "segment": "c_abdomen4",
+      "geom_id": 15,
+      "mesh_id": 6,
+      "body_id": 14,
+      "vertices": {
+        "offset": 439788,
+        "count": 923,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 450864,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.0833305818918256,
+        1.0548696191114867e-16,
+        -0.023314413281177546
+      ],
+      "local_quaternion_wxyz": [
+        0.7063908061577077,
+        0.7063908061577077,
+        -0.03181240286216254,
+        0.03181240286216254
+      ]
+    },
+    {
+      "segment": "c_abdomen5",
+      "geom_id": 16,
+      "mesh_id": 7,
+      "body_id": 15,
+      "vertices": {
+        "offset": 474840,
+        "count": 878,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 485376,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.10035021681886769,
+        3.003332562173732e-19,
+        -0.04553448586254862
+      ],
+      "local_quaternion_wxyz": [
+        0.707077016451254,
+        0.707077016451254,
+        0.006487896916093997,
+        -0.006487896916093997
+      ]
+    },
+    {
+      "segment": "c_abdomen6",
+      "geom_id": 17,
+      "mesh_id": 8,
+      "body_id": 16,
+      "vertices": {
+        "offset": 509352,
+        "count": 885,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 519972,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.06594559017339223,
+        6.178066168359081e-17,
+        -0.04523018578129563
+      ],
+      "local_quaternion_wxyz": [
+        0.7061695955386258,
+        0.7061695955386258,
+        -0.036393712874814195,
+        0.036393712874814195
+      ]
+    },
+    {
+      "segment": "l_wing",
+      "geom_id": 18,
+      "mesh_id": 17,
+      "body_id": 17,
+      "vertices": {
+        "offset": 543948,
+        "count": 899,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 554736,
+        "count": 1999,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.10732100371108817,
+        0.959152731740281,
+        0.11509556873712865
+      ],
+      "local_quaternion_wxyz": [
+        0.5855272178401213,
+        0.5397890942743284,
+        -0.4343765790143,
+        0.4208355955414701
+      ]
+    },
+    {
+      "segment": "r_wing",
+      "geom_id": 19,
+      "mesh_id": 18,
+      "body_id": 18,
+      "vertices": {
+        "offset": 578724,
+        "count": 899,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 589512,
+        "count": 1999,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.10732100371108817,
+        -0.959152731740281,
+        0.11509556873712865
+      ],
+      "local_quaternion_wxyz": [
+        0.5397890942743284,
+        0.5855272178401213,
+        -0.4208355955414701,
+        0.4343765790143
+      ]
+    },
+    {
+      "segment": "l_haltere",
+      "geom_id": 20,
+      "mesh_id": 19,
+      "body_id": 19,
+      "vertices": {
+        "offset": 613500,
+        "count": 372,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 617964,
+        "count": 824,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.02248319654918257,
+        0.20410924204962871,
+        0.009691460560827557
+      ],
+      "local_quaternion_wxyz": [
+        0.7061727422421967,
+        0.7021238332903016,
+        0.06383816238793334,
+        -0.06532128185210163
+      ]
+    },
+    {
+      "segment": "r_haltere",
+      "geom_id": 21,
+      "mesh_id": 20,
+      "body_id": 20,
+      "vertices": {
+        "offset": 627852,
+        "count": 372,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 632316,
+        "count": 824,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.02248319654918257,
+        -0.20410924204962871,
+        0.009691460560827557
+      ],
+      "local_quaternion_wxyz": [
+        0.7021238332903016,
+        0.7061727422421967,
+        0.06532128185210163,
+        -0.06383816238793334
+      ]
+    },
+    {
+      "segment": "lf_coxa",
+      "geom_id": 22,
+      "mesh_id": 21,
+      "body_id": 21,
+      "vertices": {
+        "offset": 642204,
+        "count": 905,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 653064,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.01085458767492539,
+        0.007268863340506961,
+        -0.22940523839894164
+      ],
+      "local_quaternion_wxyz": [
+        0.9638670616410862,
+        -0.04725632585340142,
+        -0.0006037722231066062,
+        -0.2621578963321888
+      ]
+    },
+    {
+      "segment": "lf_trochanterfemur",
+      "geom_id": 23,
+      "mesh_id": 22,
+      "body_id": 22,
+      "vertices": {
+        "offset": 677064,
+        "count": 687,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 685308,
+        "count": 1618,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.00800083826362463,
+        0.020054340202140187,
+        -0.36245978069377416
+      ],
+      "local_quaternion_wxyz": [
+        0.7549910239531109,
+        0.010253095350049223,
+        -0.014038305785646136,
+        0.6555046557856362
+      ]
+    },
+    {
+      "segment": "lf_tibia",
+      "geom_id": 24,
+      "mesh_id": 23,
+      "body_id": 23,
+      "vertices": {
+        "offset": 704724,
+        "count": 828,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 714660,
+        "count": 1709,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.02232491205503231,
+        0.009637393394507575,
+        -0.29907790354997915
+      ],
+      "local_quaternion_wxyz": [
+        0.5420956483670691,
+        -0.006395447284020743,
+        0.027174290183983082,
+        0.8398529420252825
+      ]
+    },
+    {
+      "segment": "lf_tarsus1",
+      "geom_id": 25,
+      "mesh_id": 24,
+      "body_id": 24,
+      "vertices": {
+        "offset": 735168,
+        "count": 854,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 745416,
+        "count": 1790,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.007805027676420351,
+        -0.003493516060296508,
+        -0.13632956439903116
+      ],
+      "local_quaternion_wxyz": [
+        0.8404531824319889,
+        -0.02345157911880706,
+        -0.004987884764325793,
+        0.5413534821005176
+      ]
+    },
+    {
+      "segment": "lf_tarsus2",
+      "geom_id": 26,
+      "mesh_id": 25,
+      "body_id": 25,
+      "vertices": {
+        "offset": 766896,
+        "count": 888,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 777552,
+        "count": 1796,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.009994689757343935,
+        -0.003228302971128356,
+        -0.10319709920278586
+      ],
+      "local_quaternion_wxyz": [
+        0.9255496994584226,
+        -0.0019831240194749873,
+        0.028867789923953373,
+        0.37751883629357263
+      ]
+    },
+    {
+      "segment": "lf_tarsus3",
+      "geom_id": 27,
+      "mesh_id": 26,
+      "body_id": 26,
+      "vertices": {
+        "offset": 799104,
+        "count": 995,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 811044,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.00934717643320778,
+        -0.004413574494526449,
+        -0.07330683489715625
+      ],
+      "local_quaternion_wxyz": [
+        0.9272077833077659,
+        0.02035327184889196,
+        0.033087373355681085,
+        0.3725274441205182
+      ]
+    },
+    {
+      "segment": "lf_tarsus4",
+      "geom_id": 28,
+      "mesh_id": 27,
+      "body_id": 27,
+      "vertices": {
+        "offset": 835044,
+        "count": 988,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 846900,
+        "count": 1999,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.0006929217988820089,
+        -0.005020711281211046,
+        -0.06392354532430522
+      ],
+      "local_quaternion_wxyz": [
+        0.9142533978573999,
+        0.02141389260188431,
+        0.03335455833638504,
+        0.4031992598554964
+      ]
+    },
+    {
+      "segment": "lf_tarsus5",
+      "geom_id": 29,
+      "mesh_id": 28,
+      "body_id": 28,
+      "vertices": {
+        "offset": 870888,
+        "count": 993,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 882804,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.0018915455782265208,
+        -0.006422013480992739,
+        -0.06648551239545822
+      ],
+      "local_quaternion_wxyz": [
+        0.7323199886367864,
+        0.03542906927922003,
+        0.04527936073646245,
+        0.6785292880814533
+      ]
+    },
+    {
+      "segment": "lm_coxa",
+      "geom_id": 30,
+      "mesh_id": 29,
+      "body_id": 29,
+      "vertices": {
+        "offset": 906804,
+        "count": 969,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 918432,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.005325861128031422,
+        0.01355930277977692,
+        -0.09653541559341412
+      ],
+      "local_quaternion_wxyz": [
+        0.7349805090160134,
+        -0.1979857721055039,
+        0.19362611034324428,
+        0.618962207896166
+      ]
+    },
+    {
+      "segment": "lm_trochanterfemur",
+      "geom_id": 31,
+      "mesh_id": 30,
+      "body_id": 30,
+      "vertices": {
+        "offset": 942432,
+        "count": 379,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 946980,
+        "count": 826,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.01746303983716244,
+        0.009440410660169698,
+        -0.4021787560975721
+      ],
+      "local_quaternion_wxyz": [
+        0.6979558710253866,
+        -0.00421571301737966,
+        0.001625540105655602,
+        0.7161265163951933
+      ]
+    },
+    {
+      "segment": "lm_tibia",
+      "geom_id": 32,
+      "mesh_id": 31,
+      "body_id": 31,
+      "vertices": {
+        "offset": 956892,
+        "count": 329,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 960840,
+        "count": 676,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.017169670175565088,
+        0.011642621028362802,
+        -0.3789077852225215
+      ],
+      "local_quaternion_wxyz": [
+        0.9607318275268204,
+        -0.01195163742673908,
+        0.02167328899935765,
+        -0.27637254292665486
+      ]
+    },
+    {
+      "segment": "lm_tarsus1",
+      "geom_id": 33,
+      "mesh_id": 32,
+      "body_id": 32,
+      "vertices": {
+        "offset": 968952,
+        "count": 453,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 974388,
+        "count": 924,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.011953549038014141,
+        0.00871825678419497,
+        -0.17107745037521074
+      ],
+      "local_quaternion_wxyz": [
+        0.7955215248817343,
+        -0.025412213714128162,
+        -0.01671346723118925,
+        0.6051614518928817
+      ]
+    },
+    {
+      "segment": "lm_tarsus2",
+      "geom_id": 34,
+      "mesh_id": 33,
+      "body_id": 33,
+      "vertices": {
+        "offset": 985476,
+        "count": 767,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 994680,
+        "count": 1556,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.009105131146329545,
+        0.009272911925745999,
+        -0.09635317782105382
+      ],
+      "local_quaternion_wxyz": [
+        0.6260557573682867,
+        -0.009123479301772968,
+        0.006356157539519202,
+        0.7796990124739066
+      ]
+    },
+    {
+      "segment": "lm_tarsus3",
+      "geom_id": 35,
+      "mesh_id": 34,
+      "body_id": 34,
+      "vertices": {
+        "offset": 1013352,
+        "count": 924,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1024440,
+        "count": 1856,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.006360352650439754,
+        0.010501215016305252,
+        -0.061968811655465215
+      ],
+      "local_quaternion_wxyz": [
+        0.5790232803936173,
+        0.03767798326071733,
+        0.01737537171035905,
+        0.8142545712475597
+      ]
+    },
+    {
+      "segment": "lm_tarsus4",
+      "geom_id": 36,
+      "mesh_id": 35,
+      "body_id": 35,
+      "vertices": {
+        "offset": 1046712,
+        "count": 981,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1058484,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.007192166579572109,
+        0.009864783094143703,
+        -0.049065755789596384
+      ],
+      "local_quaternion_wxyz": [
+        0.6488442529553267,
+        0.04315734470727397,
+        0.06704344857113055,
+        0.7567322875418714
+      ]
+    },
+    {
+      "segment": "lm_tarsus5",
+      "geom_id": 37,
+      "mesh_id": 36,
+      "body_id": 36,
+      "vertices": {
+        "offset": 1082484,
+        "count": 469,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1088112,
+        "count": 986,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.005673297293511568,
+        0.008307929171132518,
+        -0.061320618424859016
+      ],
+      "local_quaternion_wxyz": [
+        0.7695757972246102,
+        0.03979802525744512,
+        0.04337357465541966,
+        0.6358364117706106
+      ]
+    },
+    {
+      "segment": "lh_coxa",
+      "geom_id": 38,
+      "mesh_id": 37,
+      "body_id": 37,
+      "vertices": {
+        "offset": 1099944,
+        "count": 992,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1111848,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.014011713868353036,
+        0.029434816998758696,
+        -0.1078818630721314
+      ],
+      "local_quaternion_wxyz": [
+        0.743616071009984,
+        -0.11563419742338966,
+        0.12465840779834832,
+        0.6466252026383636
+      ]
+    },
+    {
+      "segment": "lh_trochanterfemur",
+      "geom_id": 39,
+      "mesh_id": 38,
+      "body_id": 38,
+      "vertices": {
+        "offset": 1135848,
+        "count": 983,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1147644,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.020424592093772728,
+        -0.007889864429657919,
+        -0.4225751376106347
+      ],
+      "local_quaternion_wxyz": [
+        0.3933104171478788,
+        -0.0031559757363101276,
+        0.014609650245136318,
+        0.9192842398843948
+      ]
+    },
+    {
+      "segment": "lh_tibia",
+      "geom_id": 40,
+      "mesh_id": 39,
+      "body_id": 39,
+      "vertices": {
+        "offset": 1171644,
+        "count": 363,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1176000,
+        "count": 748,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.011634958976999009,
+        -0.005989137535949537,
+        -0.4032428629357822
+      ],
+      "local_quaternion_wxyz": [
+        0.8456401756399679,
+        0.012322820824236528,
+        0.011690656857314172,
+        0.5334830550006102
+      ]
+    },
+    {
+      "segment": "lh_tarsus1",
+      "geom_id": 41,
+      "mesh_id": 40,
+      "body_id": 40,
+      "vertices": {
+        "offset": 1184976,
+        "count": 371,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1189428,
+        "count": 777,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.014013852735759535,
+        0.013258785689783717,
+        -0.174411310907439
+      ],
+      "local_quaternion_wxyz": [
+        0.9683840115647041,
+        -0.004820049059776742,
+        -0.005116644318182171,
+        0.24936518045595948
+      ]
+    },
+    {
+      "segment": "lh_tarsus2",
+      "geom_id": 42,
+      "mesh_id": 41,
+      "body_id": 41,
+      "vertices": {
+        "offset": 1198752,
+        "count": 982,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1210536,
+        "count": 1972,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.01175047623302802,
+        0.01082881741257681,
+        -0.09858509310477037
+      ],
+      "local_quaternion_wxyz": [
+        0.5345269316530089,
+        0.018956276314072838,
+        -0.005456450650606589,
+        0.8449212070200528
+      ]
+    },
+    {
+      "segment": "lh_tarsus3",
+      "geom_id": 43,
+      "mesh_id": 42,
+      "body_id": 42,
+      "vertices": {
+        "offset": 1234200,
+        "count": 989,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1246068,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.01432634331738053,
+        0.011681988834444526,
+        -0.055710869581794074
+      ],
+      "local_quaternion_wxyz": [
+        0.5397571431109089,
+        0.005828420128805092,
+        -0.002471131803449083,
+        0.8417969764065223
+      ]
+    },
+    {
+      "segment": "lh_tarsus4",
+      "geom_id": 44,
+      "mesh_id": 43,
+      "body_id": 43,
+      "vertices": {
+        "offset": 1270068,
+        "count": 974,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1281756,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.013385330487860867,
+        0.010698312301574833,
+        -0.046881111495397976
+      ],
+      "local_quaternion_wxyz": [
+        0.5903875681401691,
+        0.031227049593708544,
+        0.03699502410410678,
+        0.8056666549825351
+      ]
+    },
+    {
+      "segment": "lh_tarsus5",
+      "geom_id": 45,
+      "mesh_id": 44,
+      "body_id": 44,
+      "vertices": {
+        "offset": 1305732,
+        "count": 979,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1317480,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.012452903978749931,
+        0.008274740491813037,
+        -0.0603398689533137
+      ],
+      "local_quaternion_wxyz": [
+        0.6189749690961169,
+        0.028098345240215327,
+        0.029613090396693128,
+        0.7843491158306876
+      ]
+    },
+    {
+      "segment": "rf_coxa",
+      "geom_id": 46,
+      "mesh_id": 45,
+      "body_id": 45,
+      "vertices": {
+        "offset": 1341480,
+        "count": 905,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1352340,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.01085458767492539,
+        -0.007268863340506961,
+        -0.22940523839894164
+      ],
+      "local_quaternion_wxyz": [
+        0.9638670616410862,
+        0.04725632585340142,
+        -0.0006037722231066062,
+        0.2621578963321888
+      ]
+    },
+    {
+      "segment": "rf_trochanterfemur",
+      "geom_id": 47,
+      "mesh_id": 46,
+      "body_id": 46,
+      "vertices": {
+        "offset": 1376340,
+        "count": 687,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1384584,
+        "count": 1618,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.00800083826362463,
+        -0.020054340202140187,
+        -0.36245978069377416
+      ],
+      "local_quaternion_wxyz": [
+        0.6555046557856362,
+        -0.014038305785646136,
+        0.010253095350049223,
+        0.7549910239531109
+      ]
+    },
+    {
+      "segment": "rf_tibia",
+      "geom_id": 48,
+      "mesh_id": 47,
+      "body_id": 47,
+      "vertices": {
+        "offset": 1404000,
+        "count": 828,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1413936,
+        "count": 1709,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.02232491205503231,
+        -0.009637393394507575,
+        -0.29907790354997915
+      ],
+      "local_quaternion_wxyz": [
+        0.8398529420252825,
+        0.027174290183983082,
+        -0.006395447284020743,
+        0.5420956483670691
+      ]
+    },
+    {
+      "segment": "rf_tarsus1",
+      "geom_id": 49,
+      "mesh_id": 48,
+      "body_id": 48,
+      "vertices": {
+        "offset": 1434444,
+        "count": 854,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1444692,
+        "count": 1790,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.007805027676420351,
+        0.003493516060296508,
+        -0.13632956439903116
+      ],
+      "local_quaternion_wxyz": [
+        0.5413534821005176,
+        -0.004987884764325793,
+        -0.02345157911880706,
+        0.8404531824319889
+      ]
+    },
+    {
+      "segment": "rf_tarsus2",
+      "geom_id": 50,
+      "mesh_id": 49,
+      "body_id": 49,
+      "vertices": {
+        "offset": 1466172,
+        "count": 888,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1476828,
+        "count": 1796,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.009994689757343935,
+        0.003228302971128356,
+        -0.10319709920278586
+      ],
+      "local_quaternion_wxyz": [
+        0.9255496994584226,
+        0.0019831240194749873,
+        0.028867789923953373,
+        -0.37751883629357263
+      ]
+    },
+    {
+      "segment": "rf_tarsus3",
+      "geom_id": 51,
+      "mesh_id": 50,
+      "body_id": 50,
+      "vertices": {
+        "offset": 1498380,
+        "count": 995,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1510320,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.00934717643320778,
+        0.004413574494526449,
+        -0.07330683489715625
+      ],
+      "local_quaternion_wxyz": [
+        0.9272077833077659,
+        -0.02035327184889196,
+        0.033087373355681085,
+        -0.3725274441205182
+      ]
+    },
+    {
+      "segment": "rf_tarsus4",
+      "geom_id": 52,
+      "mesh_id": 51,
+      "body_id": 51,
+      "vertices": {
+        "offset": 1534320,
+        "count": 988,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1546176,
+        "count": 1999,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.0006929217988820089,
+        0.005020711281211046,
+        -0.06392354532430522
+      ],
+      "local_quaternion_wxyz": [
+        0.4031992598554964,
+        0.03335455833638504,
+        0.02141389260188431,
+        0.9142533978573999
+      ]
+    },
+    {
+      "segment": "rf_tarsus5",
+      "geom_id": 53,
+      "mesh_id": 52,
+      "body_id": 52,
+      "vertices": {
+        "offset": 1570164,
+        "count": 993,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1582080,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.0018915455782265208,
+        0.006422013480992739,
+        -0.06648551239545822
+      ],
+      "local_quaternion_wxyz": [
+        0.6785292880814533,
+        0.04527936073646245,
+        0.03542906927922003,
+        0.7323199886367864
+      ]
+    },
+    {
+      "segment": "rm_coxa",
+      "geom_id": 54,
+      "mesh_id": 53,
+      "body_id": 53,
+      "vertices": {
+        "offset": 1606080,
+        "count": 969,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1617708,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.005325861128031422,
+        -0.01355930277977692,
+        -0.09653541559341412
+      ],
+      "local_quaternion_wxyz": [
+        0.618962207896166,
+        0.19362611034324428,
+        -0.1979857721055039,
+        0.7349805090160134
+      ]
+    },
+    {
+      "segment": "rm_trochanterfemur",
+      "geom_id": 55,
+      "mesh_id": 54,
+      "body_id": 54,
+      "vertices": {
+        "offset": 1641708,
+        "count": 379,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1646256,
+        "count": 826,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.01746303983716244,
+        -0.009440410660169698,
+        -0.4021787560975721
+      ],
+      "local_quaternion_wxyz": [
+        0.7161265163951933,
+        0.001625540105655602,
+        -0.00421571301737966,
+        0.6979558710253866
+      ]
+    },
+    {
+      "segment": "rm_tibia",
+      "geom_id": 56,
+      "mesh_id": 55,
+      "body_id": 55,
+      "vertices": {
+        "offset": 1656168,
+        "count": 329,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1660116,
+        "count": 676,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.017169670175565088,
+        -0.011642621028362802,
+        -0.3789077852225215
+      ],
+      "local_quaternion_wxyz": [
+        0.9607318275268204,
+        0.01195163742673908,
+        0.02167328899935765,
+        0.27637254292665486
+      ]
+    },
+    {
+      "segment": "rm_tarsus1",
+      "geom_id": 57,
+      "mesh_id": 56,
+      "body_id": 56,
+      "vertices": {
+        "offset": 1668228,
+        "count": 453,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1673664,
+        "count": 924,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.011953549038014141,
+        -0.00871825678419497,
+        -0.17107745037521074
+      ],
+      "local_quaternion_wxyz": [
+        0.6051614518928817,
+        -0.01671346723118925,
+        -0.025412213714128162,
+        0.7955215248817343
+      ]
+    },
+    {
+      "segment": "rm_tarsus2",
+      "geom_id": 58,
+      "mesh_id": 57,
+      "body_id": 57,
+      "vertices": {
+        "offset": 1684752,
+        "count": 767,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1693956,
+        "count": 1556,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.009105131146329545,
+        -0.009272911925745999,
+        -0.09635317782105382
+      ],
+      "local_quaternion_wxyz": [
+        0.7796990124739069,
+        0.006356157539519208,
+        -0.009123479301772965,
+        0.6260557573682863
+      ]
+    },
+    {
+      "segment": "rm_tarsus3",
+      "geom_id": 59,
+      "mesh_id": 58,
+      "body_id": 58,
+      "vertices": {
+        "offset": 1712628,
+        "count": 924,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1723716,
+        "count": 1856,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.006360352650439754,
+        -0.010501215016305252,
+        -0.061968811655465215
+      ],
+      "local_quaternion_wxyz": [
+        0.8142545712475597,
+        0.01737537171035905,
+        0.03767798326071733,
+        0.5790232803936173
+      ]
+    },
+    {
+      "segment": "rm_tarsus4",
+      "geom_id": 60,
+      "mesh_id": 59,
+      "body_id": 59,
+      "vertices": {
+        "offset": 1745988,
+        "count": 981,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1757760,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.007192166579572109,
+        -0.009864783094143703,
+        -0.049065755789596384
+      ],
+      "local_quaternion_wxyz": [
+        0.7567322875418714,
+        0.06704344857113055,
+        0.04315734470727397,
+        0.6488442529553267
+      ]
+    },
+    {
+      "segment": "rm_tarsus5",
+      "geom_id": 61,
+      "mesh_id": 60,
+      "body_id": 60,
+      "vertices": {
+        "offset": 1781760,
+        "count": 469,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1787388,
+        "count": 986,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.005673297293511568,
+        -0.008307929171132518,
+        -0.061320618424859016
+      ],
+      "local_quaternion_wxyz": [
+        0.6358364117706106,
+        0.04337357465541966,
+        0.03979802525744512,
+        0.7695757972246102
+      ]
+    },
+    {
+      "segment": "rh_coxa",
+      "geom_id": 62,
+      "mesh_id": 61,
+      "body_id": 61,
+      "vertices": {
+        "offset": 1799220,
+        "count": 992,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1811124,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.014011713868353036,
+        -0.029434816998758696,
+        -0.1078818630721314
+      ],
+      "local_quaternion_wxyz": [
+        0.6466252026383636,
+        0.12465840779834832,
+        -0.11563419742338966,
+        0.743616071009984
+      ]
+    },
+    {
+      "segment": "rh_trochanterfemur",
+      "geom_id": 63,
+      "mesh_id": 62,
+      "body_id": 62,
+      "vertices": {
+        "offset": 1835124,
+        "count": 983,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1846920,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.020424592093772728,
+        0.007889864429657919,
+        -0.4225751376106347
+      ],
+      "local_quaternion_wxyz": [
+        0.9192842398843948,
+        0.014609650245136318,
+        -0.0031559757363101276,
+        0.3933104171478788
+      ]
+    },
+    {
+      "segment": "rh_tibia",
+      "geom_id": 64,
+      "mesh_id": 63,
+      "body_id": 63,
+      "vertices": {
+        "offset": 1870920,
+        "count": 363,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1875276,
+        "count": 748,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        0.011634958976999009,
+        0.005989137535949537,
+        -0.4032428629357822
+      ],
+      "local_quaternion_wxyz": [
+        0.5334830550006102,
+        0.011690656857314172,
+        0.012322820824236528,
+        0.8456401756399679
+      ]
+    },
+    {
+      "segment": "rh_tarsus1",
+      "geom_id": 65,
+      "mesh_id": 64,
+      "body_id": 64,
+      "vertices": {
+        "offset": 1884252,
+        "count": 371,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1888704,
+        "count": 777,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.014013852735759535,
+        -0.013258785689783717,
+        -0.174411310907439
+      ],
+      "local_quaternion_wxyz": [
+        0.9683840115647041,
+        0.004820049059776742,
+        -0.005116644318182171,
+        -0.24936518045595948
+      ]
+    },
+    {
+      "segment": "rh_tarsus2",
+      "geom_id": 66,
+      "mesh_id": 65,
+      "body_id": 65,
+      "vertices": {
+        "offset": 1898028,
+        "count": 982,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1909812,
+        "count": 1972,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.01175047623302802,
+        -0.01082881741257681,
+        -0.09858509310477037
+      ],
+      "local_quaternion_wxyz": [
+        0.8449212070200549,
+        -0.005456450650606663,
+        0.01895627631407281,
+        0.5345269316530055
+      ]
+    },
+    {
+      "segment": "rh_tarsus3",
+      "geom_id": 67,
+      "mesh_id": 66,
+      "body_id": 66,
+      "vertices": {
+        "offset": 1933476,
+        "count": 989,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1945344,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.01432634331738053,
+        -0.011681988834444526,
+        -0.055710869581794074
+      ],
+      "local_quaternion_wxyz": [
+        0.8417969764065222,
+        -0.0024711318034490843,
+        0.005828420128805091,
+        0.5397571431109093
+      ]
+    },
+    {
+      "segment": "rh_tarsus4",
+      "geom_id": 68,
+      "mesh_id": 67,
+      "body_id": 67,
+      "vertices": {
+        "offset": 1969344,
+        "count": 974,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 1981032,
+        "count": 1998,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.013385330487860867,
+        -0.010698312301574833,
+        -0.046881111495397976
+      ],
+      "local_quaternion_wxyz": [
+        0.8056666549825351,
+        0.03699502410410678,
+        0.031227049593708544,
+        0.5903875681401691
+      ]
+    },
+    {
+      "segment": "rh_tarsus5",
+      "geom_id": 69,
+      "mesh_id": 68,
+      "body_id": 68,
+      "vertices": {
+        "offset": 2005008,
+        "count": 979,
+        "dtype": "float32",
+        "components": 3
+      },
+      "faces": {
+        "offset": 2016756,
+        "count": 2000,
+        "dtype": "uint32",
+        "components": 3
+      },
+      "local_position_mm": [
+        -0.012452903978749931,
+        -0.008274740491813037,
+        -0.0603398689533137
+      ],
+      "local_quaternion_wxyz": [
+        0.7843491158306872,
+        0.029613090396693142,
+        0.028098345240215313,
+        0.6189749690961173
+      ]
+    }
+  ],
+  "body_lookup": [
+    {
+      "segment": "c_thorax",
+      "declared_body_name": "flm_body/c_thorax",
+      "compiled_body_id": 1,
+      "resolved_body_name": "flm_body/c_thorax"
+    },
+    {
+      "segment": "c_head",
+      "declared_body_name": "flm_body/c_head",
+      "compiled_body_id": -1,
+      "resolved_body_name": null
+    },
+    {
+      "segment": "c_rostrum",
+      "declared_body_name": "flm_body/c_rostrum",
+      "compiled_body_id": 2,
+      "resolved_body_name": "flm_body/c_rostrum"
+    },
+    {
+      "segment": "c_haustellum",
+      "declared_body_name": "flm_body/c_haustellum",
+      "compiled_body_id": 3,
+      "resolved_body_name": "flm_body/c_haustellum"
+    },
+    {
+      "segment": "l_eye",
+      "declared_body_name": "flm_body/l_eye",
+      "compiled_body_id": 4,
+      "resolved_body_name": "flm_body/l_eye"
+    },
+    {
+      "segment": "r_eye",
+      "declared_body_name": "flm_body/r_eye",
+      "compiled_body_id": 5,
+      "resolved_body_name": "flm_body/r_eye"
+    },
+    {
+      "segment": "l_pedicel",
+      "declared_body_name": "flm_body/l_pedicel",
+      "compiled_body_id": 6,
+      "resolved_body_name": "flm_body/l_pedicel"
+    },
+    {
+      "segment": "l_funiculus",
+      "declared_body_name": "flm_body/l_funiculus",
+      "compiled_body_id": 7,
+      "resolved_body_name": "flm_body/l_funiculus"
+    },
+    {
+      "segment": "l_arista",
+      "declared_body_name": "flm_body/l_arista",
+      "compiled_body_id": 8,
+      "resolved_body_name": "flm_body/l_arista"
+    },
+    {
+      "segment": "r_pedicel",
+      "declared_body_name": "flm_body/r_pedicel",
+      "compiled_body_id": 9,
+      "resolved_body_name": "flm_body/r_pedicel"
+    },
+    {
+      "segment": "r_funiculus",
+      "declared_body_name": "flm_body/r_funiculus",
+      "compiled_body_id": 10,
+      "resolved_body_name": "flm_body/r_funiculus"
+    },
+    {
+      "segment": "r_arista",
+      "declared_body_name": "flm_body/r_arista",
+      "compiled_body_id": 11,
+      "resolved_body_name": "flm_body/r_arista"
+    },
+    {
+      "segment": "c_abdomen12",
+      "declared_body_name": "flm_body/c_abdomen12",
+      "compiled_body_id": 12,
+      "resolved_body_name": "flm_body/c_abdomen12"
+    },
+    {
+      "segment": "c_abdomen3",
+      "declared_body_name": "flm_body/c_abdomen3",
+      "compiled_body_id": 13,
+      "resolved_body_name": "flm_body/c_abdomen3"
+    },
+    {
+      "segment": "c_abdomen4",
+      "declared_body_name": "flm_body/c_abdomen4",
+      "compiled_body_id": 14,
+      "resolved_body_name": "flm_body/c_abdomen4"
+    },
+    {
+      "segment": "c_abdomen5",
+      "declared_body_name": "flm_body/c_abdomen5",
+      "compiled_body_id": 15,
+      "resolved_body_name": "flm_body/c_abdomen5"
+    },
+    {
+      "segment": "c_abdomen6",
+      "declared_body_name": "flm_body/c_abdomen6",
+      "compiled_body_id": 16,
+      "resolved_body_name": "flm_body/c_abdomen6"
+    },
+    {
+      "segment": "l_wing",
+      "declared_body_name": "flm_body/l_wing",
+      "compiled_body_id": 17,
+      "resolved_body_name": "flm_body/l_wing"
+    },
+    {
+      "segment": "r_wing",
+      "declared_body_name": "flm_body/r_wing",
+      "compiled_body_id": 18,
+      "resolved_body_name": "flm_body/r_wing"
+    },
+    {
+      "segment": "l_haltere",
+      "declared_body_name": "flm_body/l_haltere",
+      "compiled_body_id": 19,
+      "resolved_body_name": "flm_body/l_haltere"
+    },
+    {
+      "segment": "r_haltere",
+      "declared_body_name": "flm_body/r_haltere",
+      "compiled_body_id": 20,
+      "resolved_body_name": "flm_body/r_haltere"
+    },
+    {
+      "segment": "lf_coxa",
+      "declared_body_name": "flm_body/lf_coxa",
+      "compiled_body_id": 21,
+      "resolved_body_name": "flm_body/lf_coxa"
+    },
+    {
+      "segment": "lf_trochanterfemur",
+      "declared_body_name": "flm_body/lf_trochanterfemur",
+      "compiled_body_id": 22,
+      "resolved_body_name": "flm_body/lf_trochanterfemur"
+    },
+    {
+      "segment": "lf_tibia",
+      "declared_body_name": "flm_body/lf_tibia",
+      "compiled_body_id": 23,
+      "resolved_body_name": "flm_body/lf_tibia"
+    },
+    {
+      "segment": "lf_tarsus1",
+      "declared_body_name": "flm_body/lf_tarsus1",
+      "compiled_body_id": 24,
+      "resolved_body_name": "flm_body/lf_tarsus1"
+    },
+    {
+      "segment": "lf_tarsus2",
+      "declared_body_name": "flm_body/lf_tarsus2",
+      "compiled_body_id": 25,
+      "resolved_body_name": "flm_body/lf_tarsus2"
+    },
+    {
+      "segment": "lf_tarsus3",
+      "declared_body_name": "flm_body/lf_tarsus3",
+      "compiled_body_id": 26,
+      "resolved_body_name": "flm_body/lf_tarsus3"
+    },
+    {
+      "segment": "lf_tarsus4",
+      "declared_body_name": "flm_body/lf_tarsus4",
+      "compiled_body_id": 27,
+      "resolved_body_name": "flm_body/lf_tarsus4"
+    },
+    {
+      "segment": "lf_tarsus5",
+      "declared_body_name": "flm_body/lf_tarsus5",
+      "compiled_body_id": 28,
+      "resolved_body_name": "flm_body/lf_tarsus5"
+    },
+    {
+      "segment": "lm_coxa",
+      "declared_body_name": "flm_body/lm_coxa",
+      "compiled_body_id": 29,
+      "resolved_body_name": "flm_body/lm_coxa"
+    },
+    {
+      "segment": "lm_trochanterfemur",
+      "declared_body_name": "flm_body/lm_trochanterfemur",
+      "compiled_body_id": 30,
+      "resolved_body_name": "flm_body/lm_trochanterfemur"
+    },
+    {
+      "segment": "lm_tibia",
+      "declared_body_name": "flm_body/lm_tibia",
+      "compiled_body_id": 31,
+      "resolved_body_name": "flm_body/lm_tibia"
+    },
+    {
+      "segment": "lm_tarsus1",
+      "declared_body_name": "flm_body/lm_tarsus1",
+      "compiled_body_id": 32,
+      "resolved_body_name": "flm_body/lm_tarsus1"
+    },
+    {
+      "segment": "lm_tarsus2",
+      "declared_body_name": "flm_body/lm_tarsus2",
+      "compiled_body_id": 33,
+      "resolved_body_name": "flm_body/lm_tarsus2"
+    },
+    {
+      "segment": "lm_tarsus3",
+      "declared_body_name": "flm_body/lm_tarsus3",
+      "compiled_body_id": 34,
+      "resolved_body_name": "flm_body/lm_tarsus3"
+    },
+    {
+      "segment": "lm_tarsus4",
+      "declared_body_name": "flm_body/lm_tarsus4",
+      "compiled_body_id": 35,
+      "resolved_body_name": "flm_body/lm_tarsus4"
+    },
+    {
+      "segment": "lm_tarsus5",
+      "declared_body_name": "flm_body/lm_tarsus5",
+      "compiled_body_id": 36,
+      "resolved_body_name": "flm_body/lm_tarsus5"
+    },
+    {
+      "segment": "lh_coxa",
+      "declared_body_name": "flm_body/lh_coxa",
+      "compiled_body_id": 37,
+      "resolved_body_name": "flm_body/lh_coxa"
+    },
+    {
+      "segment": "lh_trochanterfemur",
+      "declared_body_name": "flm_body/lh_trochanterfemur",
+      "compiled_body_id": 38,
+      "resolved_body_name": "flm_body/lh_trochanterfemur"
+    },
+    {
+      "segment": "lh_tibia",
+      "declared_body_name": "flm_body/lh_tibia",
+      "compiled_body_id": 39,
+      "resolved_body_name": "flm_body/lh_tibia"
+    },
+    {
+      "segment": "lh_tarsus1",
+      "declared_body_name": "flm_body/lh_tarsus1",
+      "compiled_body_id": 40,
+      "resolved_body_name": "flm_body/lh_tarsus1"
+    },
+    {
+      "segment": "lh_tarsus2",
+      "declared_body_name": "flm_body/lh_tarsus2",
+      "compiled_body_id": 41,
+      "resolved_body_name": "flm_body/lh_tarsus2"
+    },
+    {
+      "segment": "lh_tarsus3",
+      "declared_body_name": "flm_body/lh_tarsus3",
+      "compiled_body_id": 42,
+      "resolved_body_name": "flm_body/lh_tarsus3"
+    },
+    {
+      "segment": "lh_tarsus4",
+      "declared_body_name": "flm_body/lh_tarsus4",
+      "compiled_body_id": 43,
+      "resolved_body_name": "flm_body/lh_tarsus4"
+    },
+    {
+      "segment": "lh_tarsus5",
+      "declared_body_name": "flm_body/lh_tarsus5",
+      "compiled_body_id": 44,
+      "resolved_body_name": "flm_body/lh_tarsus5"
+    },
+    {
+      "segment": "rf_coxa",
+      "declared_body_name": "flm_body/rf_coxa",
+      "compiled_body_id": 45,
+      "resolved_body_name": "flm_body/rf_coxa"
+    },
+    {
+      "segment": "rf_trochanterfemur",
+      "declared_body_name": "flm_body/rf_trochanterfemur",
+      "compiled_body_id": 46,
+      "resolved_body_name": "flm_body/rf_trochanterfemur"
+    },
+    {
+      "segment": "rf_tibia",
+      "declared_body_name": "flm_body/rf_tibia",
+      "compiled_body_id": 47,
+      "resolved_body_name": "flm_body/rf_tibia"
+    },
+    {
+      "segment": "rf_tarsus1",
+      "declared_body_name": "flm_body/rf_tarsus1",
+      "compiled_body_id": 48,
+      "resolved_body_name": "flm_body/rf_tarsus1"
+    },
+    {
+      "segment": "rf_tarsus2",
+      "declared_body_name": "flm_body/rf_tarsus2",
+      "compiled_body_id": 49,
+      "resolved_body_name": "flm_body/rf_tarsus2"
+    },
+    {
+      "segment": "rf_tarsus3",
+      "declared_body_name": "flm_body/rf_tarsus3",
+      "compiled_body_id": 50,
+      "resolved_body_name": "flm_body/rf_tarsus3"
+    },
+    {
+      "segment": "rf_tarsus4",
+      "declared_body_name": "flm_body/rf_tarsus4",
+      "compiled_body_id": 51,
+      "resolved_body_name": "flm_body/rf_tarsus4"
+    },
+    {
+      "segment": "rf_tarsus5",
+      "declared_body_name": "flm_body/rf_tarsus5",
+      "compiled_body_id": 52,
+      "resolved_body_name": "flm_body/rf_tarsus5"
+    },
+    {
+      "segment": "rm_coxa",
+      "declared_body_name": "flm_body/rm_coxa",
+      "compiled_body_id": 53,
+      "resolved_body_name": "flm_body/rm_coxa"
+    },
+    {
+      "segment": "rm_trochanterfemur",
+      "declared_body_name": "flm_body/rm_trochanterfemur",
+      "compiled_body_id": 54,
+      "resolved_body_name": "flm_body/rm_trochanterfemur"
+    },
+    {
+      "segment": "rm_tibia",
+      "declared_body_name": "flm_body/rm_tibia",
+      "compiled_body_id": 55,
+      "resolved_body_name": "flm_body/rm_tibia"
+    },
+    {
+      "segment": "rm_tarsus1",
+      "declared_body_name": "flm_body/rm_tarsus1",
+      "compiled_body_id": 56,
+      "resolved_body_name": "flm_body/rm_tarsus1"
+    },
+    {
+      "segment": "rm_tarsus2",
+      "declared_body_name": "flm_body/rm_tarsus2",
+      "compiled_body_id": 57,
+      "resolved_body_name": "flm_body/rm_tarsus2"
+    },
+    {
+      "segment": "rm_tarsus3",
+      "declared_body_name": "flm_body/rm_tarsus3",
+      "compiled_body_id": 58,
+      "resolved_body_name": "flm_body/rm_tarsus3"
+    },
+    {
+      "segment": "rm_tarsus4",
+      "declared_body_name": "flm_body/rm_tarsus4",
+      "compiled_body_id": 59,
+      "resolved_body_name": "flm_body/rm_tarsus4"
+    },
+    {
+      "segment": "rm_tarsus5",
+      "declared_body_name": "flm_body/rm_tarsus5",
+      "compiled_body_id": 60,
+      "resolved_body_name": "flm_body/rm_tarsus5"
+    },
+    {
+      "segment": "rh_coxa",
+      "declared_body_name": "flm_body/rh_coxa",
+      "compiled_body_id": 61,
+      "resolved_body_name": "flm_body/rh_coxa"
+    },
+    {
+      "segment": "rh_trochanterfemur",
+      "declared_body_name": "flm_body/rh_trochanterfemur",
+      "compiled_body_id": 62,
+      "resolved_body_name": "flm_body/rh_trochanterfemur"
+    },
+    {
+      "segment": "rh_tibia",
+      "declared_body_name": "flm_body/rh_tibia",
+      "compiled_body_id": 63,
+      "resolved_body_name": "flm_body/rh_tibia"
+    },
+    {
+      "segment": "rh_tarsus1",
+      "declared_body_name": "flm_body/rh_tarsus1",
+      "compiled_body_id": 64,
+      "resolved_body_name": "flm_body/rh_tarsus1"
+    },
+    {
+      "segment": "rh_tarsus2",
+      "declared_body_name": "flm_body/rh_tarsus2",
+      "compiled_body_id": 65,
+      "resolved_body_name": "flm_body/rh_tarsus2"
+    },
+    {
+      "segment": "rh_tarsus3",
+      "declared_body_name": "flm_body/rh_tarsus3",
+      "compiled_body_id": 66,
+      "resolved_body_name": "flm_body/rh_tarsus3"
+    },
+    {
+      "segment": "rh_tarsus4",
+      "declared_body_name": "flm_body/rh_tarsus4",
+      "compiled_body_id": 67,
+      "resolved_body_name": "flm_body/rh_tarsus4"
+    },
+    {
+      "segment": "rh_tarsus5",
+      "declared_body_name": "flm_body/rh_tarsus5",
+      "compiled_body_id": 68,
+      "resolved_body_name": "flm_body/rh_tarsus5"
+    }
+  ],
+  "unresolved_body_segments": [
+    "c_head"
+  ],
+  "unresolved_numpy_alias": "flm_body/rh_tarsus5",
+  "sensor_and_outcome_body_segments": [
+    "c_thorax",
+    "l_funiculus",
+    "r_funiculus",
+    "lf_tarsus5",
+    "lm_tarsus5",
+    "lh_tarsus5",
+    "rf_tarsus5",
+    "rm_tarsus5",
+    "rh_tarsus5"
+  ],
+  "all_sensor_and_outcome_body_ids_resolve": true,
+  "coordinate_units": "mm",
+  "byte_order": "little",
+  "compiled_state_dimensions": {
+    "nq": 73,
+    "nv": 72,
+    "bodies": 69,
+    "geometries": 70
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "flygym": "2.1.0",
+      "mujoco": "3.9.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "numba": "0.67.0"
+    },
+    "numerical_threads": 1,
+    "windows_priority": "BELOW_NORMAL_PRIORITY_CLASS"
+  },
+  "installed_sources": {
+    "flygym.simulation": "c2a6fded0ccedb2124c1ac421e1b52cb2c087bfa40fcb38f8a32722d21c012d2",
+    "flygym.anatomy": "64ac2cb6239d26ff872e34f2b59e6e35c9182b4b05e21e151e7e7d2c129c0e87",
+    "flygym.compose.fly.base_fly": "9f7ec2c3786972467085cf6a92363cc72a95551226151ff1941fd96800ec677f",
+    "flygym_demo.complex_terrain.turning_controller": "385f1b0169c60f0f241a63e0b4f4112aa1c4e65e4b9aec7e5b38cee8cdc6b1b7",
+    "flygym_demo.complex_terrain.preprogrammed": "ad945cee5af607e24f1a17ada0b8becd622c1fabebbb9f4f35e49dc7fd69e97f",
+    "flygym_demo.complex_terrain.common": "306b5a287de6aa26a3de110dbe16f706b9df8c592386b6fdc770d6724d38ffd8"
+  },
+  "physics_steps_run": 0,
+  "training_updates": 0,
+  "scope": "Exact compiled mesh geometry for recorded-state rendering. The unresolved head body row in old API output aliases the final body; use named visual-geometry transforms instead. Sensor and outcome body lookups are valid."
+}
