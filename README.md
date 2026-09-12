@@ -253,7 +253,7 @@ The complete comparisons follow here, including negative and mixed findings. All
 
 **Learning changes the recurrent computation as well as the text interfaces.** In the completed two-seed WikiText controls, full FLM lowers test loss by **0.005797 BPB** against fixed dynamics and **0.006391** against no lateral recurrence. Removing all temporal state costs **0.124511 BPB**. A separate retrained no-slow comparison favors retaining slow state by **0.010999 BPB**.
 
-![Full FLM has lower test loss than fixed dynamics, no lateral recurrence and no temporal state for both training seeds.](public/research/figures/language-core-test.svg)
+![All eight retrained control effects on a shared scale: temporal state has the larger measured benefit, with smaller favorable lateral and dynamics effects.](public/research/figures/language-core-shared-scale.svg)
 
 *Each panel has its own scale. Intervals are conditional on fitted pairs; unequal trainable/connected parameter counts limit attribution. The original two-seed comparisons do not establish general training uncertainty.*
 

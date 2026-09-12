@@ -1,0 +1,12 @@
+{
+  "format": "flm-predictive-computation-figure-v1",
+  "source_sha256": {
+    "public/research/figures/language-core-test.csv": "d90c6a0e3a99c979071460716ce91fd0b7c06d19202e6aac55ca492d2647b96f"
+  },
+  "script_sha256": "4972f431bff58e052ff91af52f92fdd7d0b3e1a405a4dbc79c58b8de3c809b8b",
+  "method": "Replot all eight existing differences and intervals on one common axis; no fitting or resampling.",
+  "files": {
+    "public/research/figures/language-core-shared-scale.png": "7aa9b335e1bb4d4c21e9ed9d9a206303dd6f8f4877696066cfce56807ac41847",
+    "public/research/figures/language-core-shared-scale.svg": "75ac594a5036c1ed75593680332fbeb7c589f2737854a60e0368e3da975d5d9a"
+  }
+}
