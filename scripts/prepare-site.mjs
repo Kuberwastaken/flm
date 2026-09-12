@@ -512,7 +512,7 @@ for (const name of ['study-identity.json', 'runtime-profile.json', 'qualificatio
 }
 
 // Current overview documents retain source-record links within the repository.
-for (const name of ['ARCHITECTURE', 'DATA-STATUS', 'RESEARCH', 'PUBLIC-RELEASE']) {
+for (const name of ['ARCHITECTURE', 'DATA-STATUS', 'RESEARCH', 'PUBLIC-RELEASE', 'COLAB-TRAINING', 'COLAB-NOTEBOOK-AUDIT']) {
   const source = await readFile(`docs/${name}.md`, 'utf8');
   const published = source.replace(/\]\(([^)]+)\)/g, (match, target) => {
     if (/^(https?:|#|\/)/.test(target)) return match;
@@ -526,3 +526,6 @@ await copyFile('reports/public-release-review-v1.json', 'public/research/public-
 await copyFile('reports/public-release-v1.json', 'public/research/public-release-v1.json');
 
 await writeFile('public/research/selection-previews.md', (await readFile('docs/SELECTION-PREVIEWS.md','utf8')).replaceAll('../reports/','https://github.com/Kuberwastaken/flm/blob/main/reports/').replaceAll('../scripts/','https://github.com/Kuberwastaken/flm/blob/main/scripts/').replace(/\]\(([A-Z][A-Z0-9-]+\.md)\)/g, ']('+ 'https://github.com/Kuberwastaken/flm/blob/main/docs/'+'$1)'));
+
+await copyFile('docs/figures/colab-capacity.svg', 'public/research/colab-capacity.svg');
+await writeFile('public/research/colab-training.md', (await readFile('public/research/colab-training.md', 'utf8')).replaceAll('https://github.com/Kuberwastaken/flm/blob/main/docs/figures/colab-capacity.svg', 'https://flm.kuber.studio/research/colab-capacity.svg'));

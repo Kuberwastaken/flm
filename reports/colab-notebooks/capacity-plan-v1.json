@@ -1,0 +1,53 @@
+{
+  "scope": "Calculated capacity, not GPU measurements. Exact formula tested on instantiated small models.",
+  "graph": {
+    "neurons": 166700,
+    "edges": 24469412,
+    "pools": 512,
+    "source_revision": "776d115ee5aa934578a87fd6d260d138084f59c1",
+    "source_edges": 25582938,
+    "source_contacts": 124177617,
+    "retained_contacts": 120260398,
+    "excluded_neurons": 0,
+    "boundary_contacts_cut": 0,
+    "excluded_zero_sign_edges": 1113526,
+    "graph_sha256": "04955a2eec38dceca0873578be7ff759be8da17289394a77a5c767703b4d4927",
+    "source_acquisition_sha256": "2332e86d4fb6bc2d4ead063f3115f134813541772955e37c40e25c6bae7d3371",
+    "scope": "All acquired neurons, not a physiologically complete brain",
+    "pooling": "Balanced contiguous source order; not anatomical circuit pooling",
+    "sign_rule": "Acquired modeled source sign; unknown/modulatory zero-sign outputs omitted",
+    "license": "CC-BY-4.0",
+    "attribution": "MaleCNS / Janelia; acquired via Xenova/fruit-fly-simulation"
+  },
+  "vocabulary": 4101,
+  "pools": 512,
+  "presets": [
+    {
+      "target_millions": 150,
+      "lexical_width": 728,
+      "parameter_groups": {
+        "Token embeddings": 2985528,
+        "Input projection": 121524300,
+        "Edge gains": 24469412,
+        "Readout and dynamics": 1085750
+      },
+      "parameters": 150064990,
+      "adam_fp32_parameter_gradient_moments_bytes": 2401039840,
+      "gpu_fit_verified": false
+    },
+    {
+      "target_millions": 300,
+      "lexical_width": 1600,
+      "parameter_groups": {
+        "Token embeddings": 6561600,
+        "Input projection": 266886700,
+        "Edge gains": 24469412,
+        "Readout and dynamics": 1979550
+      },
+      "parameters": 299897262,
+      "adam_fp32_parameter_gradient_moments_bytes": 4798356192,
+      "gpu_fit_verified": false
+    }
+  ],
+  "dense_coo_weight_gradient_float32_bytes": 111155560000
+}

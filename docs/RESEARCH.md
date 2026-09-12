@@ -1,6 +1,9 @@
 # Research basis
 
+
 **FLM learns language from scratch through a connectome-derived recurrent core. No pretrained or overfitted transformer supplies its predictions.** The separately trained GRU and transformer are controls. The specific contribution is an inspectable language experiment that separates anatomical wiring, learned dynamics, memory and lexical interfaces; it does not claim priority for connectome computation in general.
+
+**Colab engineering update:** [150M/300M full-acquired-graph training notebook](COLAB-TRAINING.md), with [audited SmolLM/Gemma inspirations](COLAB-NOTEBOOK-AUDIT.md). CPU pipeline checks passed; full-size GPU fit and quality remain pending. This is separate from the completed/pending scientific results below.
 
 The useful completed findings include a substantial effect of temporal state on prediction, smaller effects of lateral communication and optimized dynamics, and directly measurable changes in pulse responses after training. Separate sensory and physical studies expose the boundary between learned decisions and engineered motor interfaces. [The visual overview](../README.md) leads through those findings; the [ChatFLM guide](CHATFLM.md) explains how to explore them in the browser.
 

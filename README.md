@@ -70,6 +70,16 @@ The model selector contains [**18 completed primary checkpoints**](public/models
 
 No hosted inference key is required. The [ChatFLM guide](docs/CHATFLM.md) explains system context, stopping rules, history and model selection. [Browser verification](docs/BROWSER-VALIDATION.md) records what was checked; [all completed language results](#language-results) describe the models' current capabilities and limits.
 
+## Train and profile a larger FLM on a T4
+
+**[Open the Colab notebook](https://colab.research.google.com/github/Kuberwastaken/flm/blob/main/notebooks/FLM_T4_Capacity.ipynb)** · [Training guide](docs/COLAB-TRAINING.md) · [SmolLM/Gemma notebook audit](docs/COLAB-NOTEBOOK-AUDIT.md)
+
+A separate capacity notebook now offers **150M/300M target configurations across all 166,700 acquired neurons**, with 24.47M modeled signed edges, a 40-minute trainer budget, educational-text pretraining, human conversation continuation, actual state plots and a randomly initialized transformer control. It addresses a concrete memory obstacle in the earlier sparse backward path and preserves checkpoint/data provenance.
+
+![Calculated parameter allocation for the full-graph capacity configurations; GPU fit is unmeasured.](docs/figures/colab-capacity.svg)
+
+**Status: implemented and checked on CPU; T4 execution and larger-model language quality are pending.** These are engineering configurations, not new live chatbot checkpoints or evidence of anatomical advantage. Both sizes retain the same neurons; extra parameters mostly expand learned lexical interfaces. The current Mac study and its stopping rule remain unchanged.
+
 ## How the project developed
 
 The architecture and its tests grew together. Each stage made a different part of the original idea concrete:

@@ -16,6 +16,10 @@ Four [KC research previews](SELECTION-PREVIEWS.md) are available under the user'
 
 The 12 September [larger-chat feasibility assessment](FLM-CHAT-FEASIBILITY.md) answers the request about laptop/T4 training, anatomical coverage, datasets and SmolLM comparisons. Its sizes and timelines are conditional proposals, not measured GPU results or an automatic next training queue; the active study and its stopping rule remain unchanged.
 
+## Colab engineering follow-up — 13 September
+
+The user's new request authorizes finding and adapting free-tier SmolLM/Gemma training notebooks. The [source audit](COLAB-NOTEBOOK-AUDIT.md) and [implemented FLM notebook](COLAB-TRAINING.md) now provide bounded 150M/300M full-acquired-graph probes, a separate random transformer control, pinned FineWeb-Edu/OASST1 preparation and resumable training. Eight focused CPU tests and short real-data pipeline runs passed. Full-size T4 fit, throughput and language quality remain unmeasured; no Colab GPU session is attached. This is a separate engineering deliverable, not a modification of the ongoing Mac protocol or permission to rescue a failed anatomical hypothesis with subset searches.
+
 ## Current order of work
 
 1. **Resolve the anatomical-prior hypothesis on the Mac.** At the user's request, the [execution amendment](SELECTION-MAC-EXECUTION.md) runs all 128 conditions freshly on the Apple M5 Pro CPU, with a separate native identity and unchanged scientific design and budgets. The original Windows attempt is stopped and retained. Apply the [dated interpretation and stopping rule](ANATOMICAL-PRIOR-DECISION.md) using `scripts/selection_decision_report.py --mac-study` after complete native evaluation. The allocation rule was adopted after Windows training started, before selection-language held-out results; it is not the original preregistration. Retain every declared outcome.
