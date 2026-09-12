@@ -468,3 +468,20 @@ await writeFile('public/research/chatflm.md', (await readFile('docs/CHATFLM.md',
   .replaceAll('../public/models/catalog.json','/models/catalog.json')
   .replaceAll('../tests/catalog.test.js','/research/browser-catalog-test.js'));
 await copyFile('tests/catalog.test.js','public/research/browser-catalog-test.js');
+
+// Publish the prospective allocation rule separately from the frozen study protocol.
+const priorityLinks = {
+  '../reports/selection-language/interpretation-v1.json': 'selection-language-interpretation.json',
+  'SELECTION-LANGUAGE-PROTOCOL.md': 'selection-language-protocol.md',
+  'SELECTION-LANGUAGE-ERRATA.md': 'selection-language-errata.md',
+  'LANGUAGE-CORE-RESULTS.md': 'language-core-findings.md',
+  'LANGUAGE-DYNAMICS-FINDINGS.md': 'language-dynamics-findings.md',
+  'ANATOMICAL-PRIOR-DECISION.md': 'anatomical-prior-decision.md',
+  '../public/research/': ''
+};
+for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md']]) {
+  let text = await readFile(`docs/${source}`, 'utf8');
+  for (const [from, to] of Object.entries(priorityLinks)) text = text.replaceAll(from, to);
+  await writeFile(`public/research/${target}`, text);
+}
+await copyFile('reports/selection-language/interpretation-v1.json', 'public/research/selection-language-interpretation.json');
