@@ -12,6 +12,8 @@ The central question is whether measured neural wiring or its associated computa
 
 The repository became public on 12 September, with anonymous access verified at **20:37 IST**, inside the authorized release window. See [the release record](PUBLIC-RELEASE.md). All 128 Mac training fits are complete; the unchanged validation and held-out procedure continues. Its validation and held-out findings can follow after launch. Do not make release conditional on a positive result, shorten fits or call pending results validated.
 
+The 12 September [larger-chat feasibility assessment](FLM-CHAT-FEASIBILITY.md) answers the request about laptop/T4 training, anatomical coverage, datasets and SmolLM comparisons. Its sizes and timelines are conditional proposals, not measured GPU results or an automatic next training queue; the active study and its stopping rule remain unchanged.
+
 ## Current order of work
 
 1. **Resolve the anatomical-prior hypothesis on the Mac.** At the user's request, the [execution amendment](SELECTION-MAC-EXECUTION.md) runs all 128 conditions freshly on the Apple M5 Pro CPU, with a separate native identity and unchanged scientific design and budgets. The original Windows attempt is stopped and retained. Apply the [dated interpretation and stopping rule](ANATOMICAL-PRIOR-DECISION.md) using `scripts/selection_decision_report.py --mac-study` after complete native evaluation. The allocation rule was adopted after Windows training started, before selection-language held-out results; it is not the original preregistration. Retain every declared outcome.
