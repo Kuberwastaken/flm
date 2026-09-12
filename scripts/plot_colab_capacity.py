@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 root = Path(__file__).resolve().parents[1]
 card = json.loads((root / 'reports/colab-notebooks/capacity-plan-v1.json').read_text())
-plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'svg.fonttype': 'none'})
+plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11, 'svg.fonttype': 'none', 'svg.hashsalt': 'flm-colab-capacity-v1'})
 fig, ax = plt.subplots(figsize=(10.5, 4.8))
 fig.subplots_adjust(left=.14, right=.94, top=.80, bottom=.28)
 colors = ['#94b6d7', '#315d86', '#d69742', '#6f7782']
@@ -27,3 +27,6 @@ ax.legend(loc='upper center', bbox_to_anchor=(.5, -.28), ncol=4, frameon=False, 
 fig.text(.14, .035, '24.47M signed edges in each preset. GPU memory fit, throughput and quality remain unmeasured.', fontsize=9, color='#4a4f55')
 fig.savefig(root / 'docs/figures/colab-capacity.svg', facecolor='white', metadata={'Date': None})
 fig.savefig(root / 'work/colab-capacity.png', facecolor='white', dpi=150)
+
+svg = root / 'docs/figures/colab-capacity.svg'
+svg.write_text('\n'.join(line.rstrip() for line in svg.read_text(encoding='utf8').splitlines()) + '\n', encoding='utf8')
