@@ -112,7 +112,7 @@ from the project to establish their provenance.
 
 ChatFLM also runs the primary FLM, GRU and transformer checkpoints in its
 browser selector. This Python bundle remains a continuation interface for
-command-line comparisons. See the [ChatFLM guide](CHATFLM.md) for the automatic
+command-line comparisons. See the [ChatFLM guide](chatflm.md) for the automatic
 FLM default, conversation history, system context, adaptation and 3D views.
 
 ## Reproduce training and scoring
