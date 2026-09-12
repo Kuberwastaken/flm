@@ -1,15 +1,15 @@
 {
   "format": "flm-public-release-ready-v1",
-  "checked_at_utc": "2026-09-12T14:28:57.286055+00:00",
-  "reviewed_deployed_commit": "6b2968d562fd3379c51623426db169bd6cde7d9c",
-  "github_actions_run": 34699289382,
+  "checked_at_utc": "2026-09-12T14:43:19.521895+00:00",
+  "reviewed_deployed_commit": "1c2f347b41032d3ef38c897430b090c9d4ba4b2f",
+  "github_actions_run": 34700002405,
   "ci_conclusion": "success",
   "live_files": [
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 90440,
-      "sha256": "3c2c2682cd358e40305e5d79e5cc49e866af46b9312f51f5f3b2c4eb60887708",
+      "bytes": 90617,
+      "sha256": "c1eb3f9737f1cb98ec4710507c3192cde2a780a7b4a92665462af21bde5a29ed",
       "matches_build": true
     },
     {
@@ -71,8 +71,8 @@
     {
       "path": "research/paper-source.zip",
       "status": 200,
-      "bytes": 15414749,
-      "sha256": "53f7a5f7a880d2238e294d0be4d51fbf89746fb07217328c598f7757bbcb3216",
+      "bytes": 15415399,
+      "sha256": "97e28ebcb7a11b0dd1c0cfa71867f38b58fc6abf672dc0095d82b1ab46f88150",
       "matches_build": true
     },
     {
@@ -85,15 +85,22 @@
     {
       "path": "research/chatflm.md",
       "status": 200,
-      "bytes": 5967,
-      "sha256": "becaaedf027be00324ce82e4e7ac5eded2b04f538d9ce367e391f20e684a3b4a",
+      "bytes": 7433,
+      "sha256": "519c59c1d7268b3c5290ab5267d666ad64bbdc5908f05c905878f8b42e59f786",
       "matches_build": true
     },
     {
-      "path": "assets/worker-BROaija8.js",
+      "path": "assets/worker-7CJimcCJ.js",
       "status": 200,
-      "bytes": 25137,
-      "sha256": "65ae5d49b3b93dede9982c833f9ec7068e28b7f881986261c33c62e590fa08b5",
+      "bytes": 26044,
+      "sha256": "597eb8319a54d8a436c6b99ec7d3e958cf7f9181e145dbc2853b1950c0e158a2",
+      "matches_build": true
+    },
+    {
+      "path": "assets/index-CcYlamCt.js",
+      "status": 200,
+      "bytes": 618542,
+      "sha256": "8290001e2858b52418a990a3da4c57a659939f3a900a77a80668e9471a0b39a5",
       "matches_build": true
     }
   ],
@@ -121,7 +128,7 @@
     "mobileOverflow": false
   },
   "limitations": "This is deployment and presentation verification, not independent retraining or a selection-study result.",
-  "previous_reviewed_deployed_commit": "33e996f6cd2d67d8c254c814331edfb4927768e7",
+  "previous_reviewed_deployed_commit": "6b2968d562fd3379c51623426db169bd6cde7d9c",
   "per_token_visual_update": {
     "worker_tests_passed": 6,
     "browser_check": {
@@ -133,5 +140,11 @@
       "minimumMessageGapMs": 70.39999997615814
     },
     "scope": "Every generated token sends actual state; observation mode waits 60ms per token. No inference equations, model weights or active Mac training sources changed."
+  },
+  "chat_followup_update": {
+    "review": "reports/chat-followup-review-v1.json",
+    "sha256": "92d6f1fa0872686135436df2fe1238ffeb98f1135d98c0cb6d32b681262761ba",
+    "tests_passed": 16,
+    "scope": "Optional chat-only stopping and disclosed history filtering; no checkpoint or research result changes."
   }
 }
