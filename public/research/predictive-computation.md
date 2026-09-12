@@ -4,7 +4,9 @@ Kuber Mehta · 12 September 2026 · Synthesis of completed records, with no new 
 
 **In the completed WikiText implementation, carrying temporal state helps prediction substantially more than the additional benefit measured for lateral communication or optimized recurrent dynamics.** This is a finding about the implemented computation. Whether the measured connection arrangement contributes a distinctive advantage remains a separate, bounded hypothesis.
 
-![All retrained mechanism contrasts, with their original panel-specific scales and conditional article intervals](figures/language-core-test.svg)
+![All eight retrained mechanism contrasts on one shared BPB scale, with the original conditional article intervals](figures/language-core-shared-scale.svg)
+
+The shared axis makes the difference in effect sizes visible. This is a new rendering of the [existing audited contrast CSV](figures/language-core-test.csv), with every original interval retained; no model was fitted and no interval recomputed. The [rendering script](predictive-computation-figure.py) and [input/output hashes](predictive-computation-figure.json) record its provenance. The original report retains its separate panel scales for inspecting the smaller effects.
 
 ## What each model can still do
 

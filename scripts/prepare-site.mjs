@@ -477,11 +477,19 @@ const priorityLinks = {
   'LANGUAGE-CORE-RESULTS.md': 'language-core-findings.md',
   'LANGUAGE-DYNAMICS-FINDINGS.md': 'language-dynamics-findings.md',
   'ANATOMICAL-PRIOR-DECISION.md': 'anatomical-prior-decision.md',
+  '../scripts/predictive_computation_figure.py': 'predictive-computation-figure.py',
+  '../reports/language-core/shared-scale-figure.json': 'predictive-computation-figure.json',
+  '../scripts/selection_decision_report.py': 'selection-decision-report.py',
+  '../tests/test_selection_decision_report.py': 'selection-decision-report-test.py',
   '../public/research/': ''
 };
-for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md']]) {
+for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md'], ['SELECTION-DECISION-REPORT.md','selection-decision-report.md']]) {
   let text = await readFile(`docs/${source}`, 'utf8');
   for (const [from, to] of Object.entries(priorityLinks)) text = text.replaceAll(from, to);
   await writeFile(`public/research/${target}`, text);
 }
 await copyFile('reports/selection-language/interpretation-v1.json', 'public/research/selection-language-interpretation.json');
+await copyFile('scripts/predictive_computation_figure.py', 'public/research/predictive-computation-figure.py');
+await copyFile('reports/language-core/shared-scale-figure.json', 'public/research/predictive-computation-figure.json');
+await copyFile('scripts/selection_decision_report.py', 'public/research/selection-decision-report.py');
+await copyFile('tests/test_selection_decision_report.py', 'public/research/selection-decision-report-test.py');

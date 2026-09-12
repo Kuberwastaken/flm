@@ -239,6 +239,9 @@ def main():
         files += sorted((ROOT / 'reports/babylm' / folder).glob('*'))
     files += [ROOT / name for name in ('scripts/babylm_paper_data.py', 'reports/babylm/paper-inputs-v1.json', 'reports/babylm/paper-review-v1.json', 'docs/CHATFLM.md', 'scripts/export_browser_catalog.py', 'public/models/catalog.json')]
     files += [ROOT / name for name in ('docs/ANATOMICAL-PRIOR-DECISION.md', 'docs/PREDICTIVE-COMPUTATION.md', 'reports/selection-language/interpretation-v1.json')]
+    files += [ROOT / name for name in ('docs/SELECTION-DECISION-REPORT.md', 'scripts/selection_decision_report.py',
+        'tests/test_selection_decision_report.py', 'scripts/predictive_computation_figure.py',
+        'reports/language-core/shared-scale-figure.json', 'public/research/figures/language-core-shared-scale.png')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')
