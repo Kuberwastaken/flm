@@ -140,6 +140,7 @@ function showPage() {
   requestAnimationFrame(() => {
     brain?.resize(); fly?.resize();
     if (anchor === 'behavior-video') $(anchor).scrollIntoView({ block: 'center' });
+    else window.scrollTo(0, 0);
   });
 }
 window.addEventListener('hashchange', showPage); showPage();

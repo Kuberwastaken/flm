@@ -86,6 +86,7 @@ const path = require('node:path');
     await page.locator('#behavior-video').screenshot({ path: path.join(out, 'video-playing.png') });
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(base + '#chat');
+    await page.waitForFunction(() => scrollY === 0);
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Mobile chat should not overflow horizontally');
     await page.screenshot({ path: path.join(out, 'mobile-chat.png') });
     await fs.writeFile(path.join(out, 'checks.json'), JSON.stringify(results, null, 2) + '\n');
