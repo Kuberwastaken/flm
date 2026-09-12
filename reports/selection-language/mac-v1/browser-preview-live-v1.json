@@ -1,0 +1,157 @@
+{
+  "format": "flm-selection-preview-live-v1",
+  "checked_at_utc": "2026-09-12T18:19:04.639460+00:00",
+  "deployed_commit": "49c05b06b5c6781ad99e1e2b1bf01625f9f8493c",
+  "github_actions_run": 34710434659,
+  "ci_conclusion": "success",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 90811,
+      "sha256": "7ebf48c06d700fa19152770a223580cdff9051a58430d3757a88b724c7dc2d67",
+      "matches_build": true
+    },
+    {
+      "path": "models/catalog.json",
+      "status": 200,
+      "bytes": 9893,
+      "sha256": "0e6d1104c7f7000fecd5d2830152b9be0fe85b5f18655e35bf21b27c2ee52813",
+      "matches_build": true
+    },
+    {
+      "path": "research/selection-previews.md",
+      "status": 200,
+      "bytes": 5445,
+      "sha256": "5057431c760a3c6ee5588881e8bf944dba1da06f89b2ba78a51d945f1057b87b",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s42/model.json",
+      "status": 200,
+      "bytes": 4798,
+      "sha256": "40c736a5651cca24e600ebd6d5d8a5bf9d35cc93f9afabcff88fb7038134afef",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s42/weights.bin",
+      "status": 200,
+      "bytes": 2012640,
+      "sha256": "e88759540d81cf75c9b60bc32e8884010f7c47571842f6b28e54991c3e80a74e",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s42/tokenizer.json",
+      "status": 200,
+      "bytes": 463690,
+      "sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s42/anatomy.json",
+      "status": 200,
+      "bytes": 1411314,
+      "sha256": "10123e073b0fadf1a4d320baf2b5038f3d7f2948605027ed18d2a0f403f737ef",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s43/model.json",
+      "status": 200,
+      "bytes": 4798,
+      "sha256": "be4129251407ceb112103f9252b5ea21d1ac64bfc0a94b5e27e9469a060c3ba8",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s43/weights.bin",
+      "status": 200,
+      "bytes": 2012640,
+      "sha256": "541c15aaaa387c575422ee9f6049bc93568870eb71035b0df64160ecadda9021",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s43/tokenizer.json",
+      "status": 200,
+      "bytes": 463690,
+      "sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-l-s43/anatomy.json",
+      "status": 200,
+      "bytes": 1411314,
+      "sha256": "10123e073b0fadf1a4d320baf2b5038f3d7f2948605027ed18d2a0f403f737ef",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s42/model.json",
+      "status": 200,
+      "bytes": 4800,
+      "sha256": "21cbf76a996a62ea01ee3e42301fd29c0ef0e0a735cc0c807627c3e480505488",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s42/weights.bin",
+      "status": 200,
+      "bytes": 2056652,
+      "sha256": "5910888fdd90c1c7cb0f3b5d82f2e3f3531e1e4fd028761e078f9403f4a61f6c",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s42/tokenizer.json",
+      "status": 200,
+      "bytes": 463690,
+      "sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s42/anatomy.json",
+      "status": 200,
+      "bytes": 1416104,
+      "sha256": "77e4ebbfff0175b12498c63a46f55f056d238a1764c7f72fd7e1cabb7c9e2c87",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s43/model.json",
+      "status": 200,
+      "bytes": 4800,
+      "sha256": "312b377d6d94fcb2709a5d2609bedc0b6ebee9f13f3ece61b87bd266c02a7875",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s43/weights.bin",
+      "status": 200,
+      "bytes": 2056652,
+      "sha256": "77bbc34de28fa318ffca52501e8e5166d9ad99b9915e9361c82bd4453ad558cf",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s43/tokenizer.json",
+      "status": 200,
+      "bytes": 463690,
+      "sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+      "matches_build": true
+    },
+    {
+      "path": "models/flm-kc-r-s43/anatomy.json",
+      "status": 200,
+      "bytes": 1416104,
+      "sha256": "77e4ebbfff0175b12498c63a46f55f056d238a1764c7f72fd7e1cabb7c9e2c87",
+      "matches_build": true
+    }
+  ],
+  "native_reference_review": "reports/selection-language/mac-v1/browser-native-parity-v1.json",
+  "browser_review": "reports/selection-language/mac-v1/browser-preview-review-v1.json",
+  "focused_node_checks_passed": 32,
+  "heldout_status": "Original sequential Mac scorer remains active; preview publication changes no scientific decision.",
+  "live_browser": {
+    "url": "https://flm.kuber.studio/?model=flm-kc-l-s42#chat",
+    "model": "flm-kc-l-s42",
+    "status": "FLM \u00c2\u00b7 preview \u00c2\u00b7 local",
+    "capability": "Research preview: training and validation selection complete; held-out evaluation pending. Trained on BabyLM 10M through a KC-centered graph. This base model has no instruction tuning.",
+    "neurons": 487,
+    "answer": "\n[firsts of the Maltel was born from the M",
+    "activity": "0.298 \u00c2\u00b7 18 observed updates \u00c2\u00b7 scale 0\u00e2\u20ac\u201c1",
+    "errors": []
+  },
+  "automation_prompt_updated_and_verified": true
+}
