@@ -1,0 +1,45 @@
+{
+  "verified_utc": "2026-09-12T06:57:08.495111+00:00",
+  "models": 12,
+  "passages": 288,
+  "generated_tokens": 73728,
+  "termination_and_encoding": {
+    "maximum_tokens": 288,
+    "invalid_utf8": 1
+  },
+  "sample_file_sha256": {
+    "reports/babylm/samples-10m-flm-s42.json": "8a4027d141d75d375150268c36baa84cfea8422e9a5865edd96886b7452082ac",
+    "reports/babylm/samples-10m-gru-s42.json": "c6663d043f1083951bd735d5cb94fdd3e44022f3e767520aa38ad956b64ccc48",
+    "reports/babylm/samples-10m-transformer-s42.json": "a40b9bf1f249699b0c52abc8efc67d0632fdd8e5a78889303b1a8bed90537462",
+    "reports/babylm/samples-10m-flm-s43.json": "d6aeb5e44bf2678d3f3f3dab4320d206d6a632c3a8a049553ea71ee2751cba54",
+    "reports/babylm/samples-10m-gru-s43.json": "9e64598cfa27fbe357c2fb325e405a8ff4bc035a972976b36ae81a0917f754dc",
+    "reports/babylm/samples-10m-transformer-s43.json": "bac2f3458e077590d9d39f7f0077e73a80561b296b759c9d5e6514b38314baa1",
+    "reports/babylm/samples-100m-flm-s42.json": "b767573e1ac875a8b6cf9436a5d7d54c5d8e203f3d4c393d343e4f416f858638",
+    "reports/babylm/samples-100m-gru-s42.json": "3bd56476b1fbf57db5469f6b373b4c4912489470f3ab921123c90c7afcc5b068",
+    "reports/babylm/samples-100m-transformer-s42.json": "065d7db0423a8a22810045791de32cd847a94d05b7568ab54c6f6ca892f11c7b",
+    "reports/babylm/samples-100m-flm-s43.json": "e44505fea1a3a58aae5ca7c0b71edefac132eff894caed45eff6ca138dd3bb0f",
+    "reports/babylm/samples-100m-gru-s43.json": "df78e6d3fba9abed4bb5f5413288331ef78f6a1635b720e75c2cc33d7ed6ad1c",
+    "reports/babylm/samples-100m-transformer-s43.json": "24de4d43ae15d57ef1da11374d1558b27440b6010d2409868339e3a64008c17a"
+  },
+  "summary_sha256": "beedb5661210739f7043d86759457fe19b7ec73eab26b54429c02bbed8404e49",
+  "handoff_complete": {
+    "completed_utc": "2026-09-12T06:23:05.953901+00:00",
+    "results": [
+      {
+        "path": "reports/babylm/summary.json",
+        "sha256": "9adab875cd41413da495adf637d44abce99bb87ed70d960d82e93f4f0c52d005"
+      },
+      {
+        "path": "reports/babylm/samples.json",
+        "sha256": "beedb5661210739f7043d86759457fe19b7ec73eab26b54429c02bbed8404e49"
+      },
+      {
+        "path": "reports/selection-pilot/timing.json",
+        "sha256": "e03fcf1f3d4122ef1f407c4f440ed3c4e52986285969c8a2c87639d844b32e8d"
+      }
+    ]
+  },
+  "scope": "All sample identities, prompt/seed inventories, saved tokens, decoded text/byte hashes, repetition arithmetic and aggregate/per-model equality checked. No new sampling, model scoring or semantic-quality judgment.",
+  "figure_visual_review": "Both actual 1920x1440 pooled and component figures inspected: readable titles, labels, legends, shared axes and caveats, without clipping.",
+  "table_rows": 168
+}

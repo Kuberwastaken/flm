@@ -1,0 +1,4482 @@
+{
+  "dataset": "BabyLM 2026 English",
+  "aggregates": [
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "all",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9519692567750315,
+        1.9434550331804392
+      ],
+      "mean_bpb": 1.9477121449777353,
+      "seed_standard_deviation": 0.006020465240274723
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "all",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.895147266757151,
+        1.8923394646523257
+      ],
+      "mean_bpb": 1.8937433657047382,
+      "seed_standard_deviation": 0.0019854159085517815
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "all",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8656056071683975,
+        1.8833336587539142
+      ],
+      "mean_bpb": 1.8744696329611559,
+      "seed_standard_deviation": 0.012535625493343793
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9068821314095028,
+        1.9002174868958608
+      ],
+      "mean_bpb": 1.9035498091526817,
+      "seed_standard_deviation": 0.004712615329793989
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.845754184079927,
+        1.8465587170758184
+      ],
+      "mean_bpb": 1.8461564505778727,
+      "seed_standard_deviation": 0.0005688907370831726
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8218106292480913,
+        1.830868695816981
+      ],
+      "mean_bpb": 1.8263396625325363,
+      "seed_standard_deviation": 0.006405020295301101
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7332785786733909,
+        1.7115029709990839
+      ],
+      "mean_bpb": 1.7223907748362373,
+      "seed_standard_deviation": 0.015397679850960286
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7403130091277614,
+        1.7410448824338514
+      ],
+      "mean_bpb": 1.7406789457808065,
+      "seed_standard_deviation": 0.0005175125777056038
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7283896359175628,
+        1.7526879040597259
+      ],
+      "mean_bpb": 1.7405387699886443,
+      "seed_standard_deviation": 0.01718147017441256
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9711795690758878,
+        1.966959754086415
+      ],
+      "mean_bpb": 1.9690696615811514,
+      "seed_standard_deviation": 0.0029838597944088353
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8739917800027117,
+        1.8743720911137536
+      ],
+      "mean_bpb": 1.8741819355582328,
+      "seed_standard_deviation": 0.00026892056557829245
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8501284923607002,
+        1.8536417448707743
+      ],
+      "mean_bpb": 1.8518851186157372,
+      "seed_standard_deviation": 0.002484244673894028
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.0657610962070745,
+        2.060870314206555
+      ],
+      "mean_bpb": 2.063315705206815,
+      "seed_standard_deviation": 0.0034583051178724553
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.994433789487252,
+        1.9863635273783509
+      ],
+      "mean_bpb": 1.9903986584328015,
+      "seed_standard_deviation": 0.00570653706315678
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9567327635065865,
+        1.973610509955636
+      ],
+      "mean_bpb": 1.9651716367311112,
+      "seed_standard_deviation": 0.01193436896527007
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.2336021957617724,
+        2.238427682919645
+      ],
+      "mean_bpb": 2.2360149393407087,
+      "seed_standard_deviation": 0.0034121346918602915
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.1538377307316243,
+        2.1452908187955737
+      ],
+      "mean_bpb": 2.1495642747635992,
+      "seed_standard_deviation": 0.006043579388185634
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.0888167925096135,
+        2.1282877250644505
+      ],
+      "mean_bpb": 2.1085522587870322,
+      "seed_standard_deviation": 0.02791016406928212
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7741285686413246,
+        1.7530113883100331
+      ],
+      "mean_bpb": 1.7635699784756789,
+      "seed_standard_deviation": 0.014932101411795408
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.649366542682317,
+        1.6298934836387247
+      ],
+      "mean_bpb": 1.6396300131605208,
+      "seed_standard_deviation": 0.01376953210017015
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6114170685417952,
+        1.6023450686379643
+      ],
+      "mean_bpb": 1.6068810685898798,
+      "seed_standard_deviation": 0.006414872650922533
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9703542742517726,
+        1.963328875114172
+      ],
+      "mean_bpb": 1.9668415746829724,
+      "seed_standard_deviation": 0.004967707370739496
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.905252243492996,
+        1.9019028227139738
+      ],
+      "mean_bpb": 1.9035775331034848,
+      "seed_standard_deviation": 0.0023683981458936672
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.875141289024939,
+        1.8902596790307085
+      ],
+      "mean_bpb": 1.8827004840278239,
+      "seed_standard_deviation": 0.010690316093702485
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9069680206766038,
+        1.9003252822608852
+      ],
+      "mean_bpb": 1.9036466514687445,
+      "seed_standard_deviation": 0.004697125379403011
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.845732886955835,
+        1.8465753218341643
+      ],
+      "mean_bpb": 1.8461541043949996,
+      "seed_standard_deviation": 0.0005956914151747522
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8218149192260111,
+        1.8309188450746228
+      ],
+      "mean_bpb": 1.826366882150317,
+      "seed_standard_deviation": 0.006437447702972784
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7627515110703826,
+        1.7425751259466615
+      ],
+      "mean_bpb": 1.752663318508522,
+      "seed_standard_deviation": 0.014266858740814573
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7753664206011017,
+        1.7735707748515845
+      ],
+      "mean_bpb": 1.7744685977263432,
+      "seed_standard_deviation": 0.0012697132860924006
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.761044586602622,
+        1.7818023931776414
+      ],
+      "mean_bpb": 1.7714234898901318,
+      "seed_standard_deviation": 0.014677985791754888
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.959330026313611,
+        1.9551829968646737
+      ],
+      "mean_bpb": 1.9572565115891423,
+      "seed_standard_deviation": 0.002932392645123955
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.862415885460486,
+        1.862733245930895
+      ],
+      "mean_bpb": 1.8625745656956905,
+      "seed_standard_deviation": 0.0002244077407067412
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.838891718447426,
+        1.8421216181059217
+      ],
+      "mean_bpb": 1.840506668276674,
+      "seed_standard_deviation": 0.002283883951074372
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.0568585512313113,
+        2.051406012752902
+      ],
+      "mean_bpb": 2.0541322819921066,
+      "seed_standard_deviation": 0.0038555269327638876
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9857138375284826,
+        1.9776524847674193
+      ],
+      "mean_bpb": 1.9816831611479508,
+      "seed_standard_deviation": 0.005700237202884789
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9483745266718024,
+        1.9648731577333098
+      ],
+      "mean_bpb": 1.9566238422025561,
+      "seed_standard_deviation": 0.011666293903886887
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.2232479094193556,
+        2.227269669475647
+      ],
+      "mean_bpb": 2.2252587894475013,
+      "seed_standard_deviation": 0.0028438138081089193
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.1338553430612097,
+        2.1266252061576676
+      ],
+      "mean_bpb": 2.130240274609439,
+      "seed_standard_deviation": 0.005112478833401745
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.075477792504412,
+        2.1140597736127154
+      ],
+      "mean_bpb": 2.094768783058564,
+      "seed_standard_deviation": 0.02728158047329249
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7741285686413246,
+        1.7530113883100331
+      ],
+      "mean_bpb": 1.7635699784756789,
+      "seed_standard_deviation": 0.014932101411795408
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.649366542682317,
+        1.6298934836387247
+      ],
+      "mean_bpb": 1.6396300131605208,
+      "seed_standard_deviation": 0.01376953210017015
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6114170685417952,
+        1.6023450686379643
+      ],
+      "mean_bpb": 1.6068810685898798,
+      "seed_standard_deviation": 0.006414872650922533
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "all",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.899260780200454,
+        1.895121174105188
+      ],
+      "mean_bpb": 1.897190977152821,
+      "seed_standard_deviation": 0.002927143541403661
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "all",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8493068553962937,
+        1.8340388716698013
+      ],
+      "mean_bpb": 1.8416728635330475,
+      "seed_standard_deviation": 0.010796094828048634
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "all",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.7743026933504655,
+        1.8277019369479939
+      ],
+      "mean_bpb": 1.8010023151492298,
+      "seed_standard_deviation": 0.037758967258044625
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8893515472854985,
+        1.885372596397049
+      ],
+      "mean_bpb": 1.8873620718412738,
+      "seed_standard_deviation": 0.002813543155230931
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.826630885942766,
+        1.8307128329978437
+      ],
+      "mean_bpb": 1.8286718594703049,
+      "seed_standard_deviation": 0.002886372443089896
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "bnc_spoken",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8078502725569348,
+        1.8117974013845708
+      ],
+      "mean_bpb": 1.8098238369707529,
+      "seed_standard_deviation": 0.0027910415602383494
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6072642115437938,
+        1.5941991937868578
+      ],
+      "mean_bpb": 1.6007317026653258,
+      "seed_standard_deviation": 0.00923836265225212
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6553419856510119,
+        1.597806942335659
+      ],
+      "mean_bpb": 1.6265744639933355,
+      "seed_standard_deviation": 0.04068341928414783
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "childes",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.4647237579637444,
+        1.626755859272552
+      ],
+      "mean_bpb": 1.5457398086181482,
+      "seed_standard_deviation": 0.11457399760536345
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9390295279790029,
+        1.937336876858802
+      ],
+      "mean_bpb": 1.9381832024189025,
+      "seed_standard_deviation": 0.0011968850852770584
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8381667523487197,
+        1.8418681475166476
+      ],
+      "mean_bpb": 1.8400174499326836,
+      "seed_standard_deviation": 0.002617281623092931
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "gutenberg",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8182921141846942,
+        1.8221760376276874
+      ],
+      "mean_bpb": 1.8202340759061908,
+      "seed_standard_deviation": 0.0027463486041499406
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.057932978822081,
+        2.0563205242992115
+      ],
+      "mean_bpb": 2.057126751560646,
+      "seed_standard_deviation": 0.0011401775274757931
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9842922604624662,
+        1.9834533802782672
+      ],
+      "mean_bpb": 1.9838728203703666,
+      "seed_standard_deviation": 0.0005931778668501157
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "open_subtitles",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9569096354349362,
+        1.9656175501158988
+      ],
+      "mean_bpb": 1.9612635927754174,
+      "seed_standard_deviation": 0.006157425520902509
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.2104715097358003,
+        2.215876790168005
+      ],
+      "mean_bpb": 2.213174149951903,
+      "seed_standard_deviation": 0.003822110447826877
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.106419653095172,
+        2.105843930012877
+      ],
+      "mean_bpb": 2.1061317915540245,
+      "seed_standard_deviation": 0.00040709769557635946
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "simple_wiki",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.0510858231467153,
+        2.0790447563047274
+      ],
+      "mean_bpb": 2.0650652897257213,
+      "seed_standard_deviation": 0.019769951230771785
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6500230225862842,
+        1.6446401519876062
+      ],
+      "mean_bpb": 1.6473315872869452,
+      "seed_standard_deviation": 0.0038062643025749297
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.5462975065019395,
+        1.5468045452559473
+      ],
+      "mean_bpb": 1.5465510258789434,
+      "seed_standard_deviation": 0.00035853054128330434
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "component": "switchboard",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.5295106875605498,
+        1.5349481999637578
+      ],
+      "mean_bpb": 1.5322294437621538,
+      "seed_standard_deviation": 0.0038449018930943376
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9273512455066175,
+        1.924249134413889
+      ],
+      "mean_bpb": 1.9258001899602533,
+      "seed_standard_deviation": 0.0021935237896623405
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.866914694903699,
+        1.857440388576697
+      ],
+      "mean_bpb": 1.862177541740198,
+      "seed_standard_deviation": 0.006699346250861704
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "all",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8053097269503648,
+        1.8456421852305296
+      ],
+      "mean_bpb": 1.8254759560904472,
+      "seed_standard_deviation": 0.028519354751828006
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8893461196267498,
+        1.8853489451221592
+      ],
+      "mean_bpb": 1.8873475323744544,
+      "seed_standard_deviation": 0.0028264291977819806
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8265004657589594,
+        1.8306284772728443
+      ],
+      "mean_bpb": 1.828564471515902,
+      "seed_standard_deviation": 0.002918944934284135
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "bnc_spoken",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8077432330449923,
+        1.811753865289772
+      ],
+      "mean_bpb": 1.8097485491673821,
+      "seed_standard_deviation": 0.0028359452571291585
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6295527008692423,
+        1.6163839288310429
+      ],
+      "mean_bpb": 1.6229683148501426,
+      "seed_standard_deviation": 0.009311728008110616
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6815983796377187,
+        1.6255757554043984
+      ],
+      "mean_bpb": 1.6535870675210584,
+      "seed_standard_deviation": 0.03961397749524665
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "childes",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.4821092349489244,
+        1.649845336347268
+      ],
+      "mean_bpb": 1.5659772856480962,
+      "seed_standard_deviation": 0.1186073347485631
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9274726885119633,
+        1.9255335392778885
+      ],
+      "mean_bpb": 1.9265031138949258,
+      "seed_standard_deviation": 0.0013711855731469826
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8266854148854004,
+        1.8303188858213897
+      ],
+      "mean_bpb": 1.828502150353395,
+      "seed_standard_deviation": 0.0025692519380822757
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "gutenberg",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.8070015567940252,
+        1.810625353985939
+      ],
+      "mean_bpb": 1.808813455389982,
+      "seed_standard_deviation": 0.0025624115680469794
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.04801579718789,
+        2.046885160500603
+      ],
+      "mean_bpb": 2.0474504788442465,
+      "seed_standard_deviation": 0.0007994808686387518
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9751883007176487,
+        1.9745133787877873
+      ],
+      "mean_bpb": 1.974850839752718,
+      "seed_standard_deviation": 0.0004772418733765109
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "open_subtitles",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.9481816112391717,
+        1.9566059768399602
+      ],
+      "mean_bpb": 1.952393794039566,
+      "seed_standard_deviation": 0.005956926043512245
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.218241544312389,
+        2.224409106573912
+      ],
+      "mean_bpb": 2.2213253254431504,
+      "seed_standard_deviation": 0.00436112509851326
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.116729793231512,
+        2.1171124020630554
+      ],
+      "mean_bpb": 2.1169210976472836,
+      "seed_standard_deviation": 0.0002705452993262754
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "simple_wiki",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        2.060818631224189,
+        2.087989079109228
+      ],
+      "mean_bpb": 2.0744038551667083,
+      "seed_standard_deviation": 0.01921240794738659
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "flm",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.6500230225862842,
+        1.6446401519876062
+      ],
+      "mean_bpb": 1.6473315872869452,
+      "seed_standard_deviation": 0.0038062643025749297
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "gru",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.5462975065019395,
+        1.5468045452559473
+      ],
+      "mean_bpb": 1.5465510258789434,
+      "seed_standard_deviation": 0.00035853054128330434
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "component": "switchboard",
+      "variant": "transformer",
+      "seeds": [
+        42,
+        43
+      ],
+      "bits_per_byte": [
+        1.5295106875605498,
+        1.5349481999637578
+      ],
+      "mean_bpb": 1.5322294437621538,
+      "seed_standard_deviation": 0.0038449018930943376
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "scale": "10m",
+      "subset": "official",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.05682199001788031,
+      "lower_95": 0.05504650678021734,
+      "upper_95": 0.058491443708892824,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.08636364960663369,
+      "lower_95": 0.08392014344062673,
+      "upper_95": 0.08880388843548118,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.051115568528113546,
+      "lower_95": 0.0492112395276811,
+      "upper_95": 0.053041998087939836,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "official",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.06012137442652497,
+      "lower_95": 0.057356353541419686,
+      "upper_95": 0.06286931022535028,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.06510203075877631,
+      "lower_95": 0.06352503003328284,
+      "upper_95": 0.0666146253919805,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.09521298522683343,
+      "lower_95": 0.09270398326566573,
+      "upper_95": 0.09764992014276418,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.06142605240019834,
+      "lower_95": 0.05964984594609505,
+      "upper_95": 0.06321615112735458,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "10m",
+      "subset": "overlap_filtered",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.07306919608346352,
+      "lower_95": 0.07044515301734909,
+      "upper_95": 0.07562341974997835,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.049953924804160596,
+      "lower_95": 0.04743334520542849,
+      "upper_95": 0.05250865372090803,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.12495808684998858,
+      "lower_95": 0.12345954591193589,
+      "upper_95": 0.12645445784757212,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.06108230243538666,
+      "lower_95": 0.05961911186794231,
+      "upper_95": 0.06255234986589572,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "official",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.06741923715719411,
+      "lower_95": 0.06453249388110208,
+      "upper_95": 0.07026696255387677,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.060436550602918485,
+      "lower_95": 0.058027671584787055,
+      "upper_95": 0.06280608497060061,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "training_seed": 42,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.12204151855625311,
+      "lower_95": 0.12056736087991048,
+      "upper_95": 0.12357665538540917,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "gru",
+      "difference_bpb": 0.06680874583719176,
+      "lower_95": 0.06534138058680951,
+      "upper_95": 0.0682606198512627,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    },
+    {
+      "scale": "100m",
+      "subset": "overlap_filtered",
+      "training_seed": 43,
+      "first": "flm",
+      "second": "transformer",
+      "difference_bpb": 0.07860694918335932,
+      "lower_95": 0.07577737094983455,
+      "upper_95": 0.08137536627281784,
+      "replicates": 10000,
+      "seed": 31415,
+      "unit": "paired blocks, resampled within each source component",
+      "caution": "Conditional on these checkpoints and component block counts; adjacent artificial blocks may share an unknown document."
+    }
+  ],
+  "runs": [
+    {
+      "scale": "10m",
+      "seed": 42,
+      "variant": "flm",
+      "checkpoint": "runs/babylm-10m/flm-s42/best.pt",
+      "checkpoint_sha256": "fe0f21c3ac72289b5fd11e534f98d4979965b4556c102b480d652a53a4952de6",
+      "selection_validation_bpb": 1.9811101259407082,
+      "training_source_commit": "518a55bbeb39d7f9653b68603deff57e370b562e",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "b4586202dc4d63c3d4710deeaeb360c814a2c42d0223a03301f2d0d8e1e37a39",
+      "validation_record_sha256": {
+        "validation-000500.json": "64f33add38a0c882cd002bf57e8ffaa1dde564d7cf146e1e761b08bbb3964864",
+        "validation-001000.json": "2fc305cfa3dede397687f7afcfa045e3cfc7aa76f9c4226389cd92978f0c5610",
+        "validation-001500.json": "717cbdf363320296bb60d587b8754325d5b107240763b70ac2f839a2c0a01c63",
+        "validation-002000.json": "e107e649e75ff05865dc8afcf71d8e29db29a69acb9dc02b03ba41735c1f1604",
+        "validation-002500.json": "366dcf69a54010f2971efa3cd99b3f4bd8b6a715c1deefc92de350af0617a083",
+        "validation-003000.json": "31432898c403301c1c7e28f3d2bbf214af62f28c5e0f42bccc434ffac8289995",
+        "validation-003500.json": "6cfd8a847389e716a4fec89b953104a22288bfc53edd4a6d43378f17cd76ee81",
+        "validation-004000.json": "1c93d4c085ce0c24cd846d399653b9b8bfd5d227e4be5812d10643d719bb79da",
+        "validation-004500.json": "4e53cd190cfe9fae12e3f5befb56ba3b32ec3f10b503b4639d9a3d9f72426c25",
+        "validation-005000.json": "45cd02faa7d9fb470919d25b812287a86aa090dc8e9530e389a7618c5ee97816",
+        "validation-005500.json": "c7686130f66fd2b606c1a5ebc7e58fb404351d263b9a3a626b21784e3d2c881c",
+        "validation-006000.json": "a47c7d2aef66bd3cfebadfc93bdc0ed6767c1de11d3725f9c9c2dfb7472eff89",
+        "validation-006500.json": "ba5d27c904b4dcace10d7b3cedd8579f0a0ccac8e96c95bc8a994c989d02ae80",
+        "validation-007000.json": "2e8b2ec80726961c65af800745281fc4c0725fa0e39beb9bb49a67c93df86bdd",
+        "validation-007500.json": "65fba166f311be1ab2f405e9083c666f5686e46f88fbc778a02752144ef4fa5a",
+        "validation-008000.json": "1df7bfd71f6f91b1526f6f761af722e46353b4f502c6b120e75a120b19ed7151",
+        "validation-008500.json": "6ac7df8dd89750709e8e00fb2f8a70e936a9e585855f7db4ba8fcb0b3731cf75",
+        "validation-009000.json": "beea3b9cacee5ef5671139cf9a01189572199bc54cca776174933ce506d916ec",
+        "validation-009500.json": "668704b3ef14e5278a349e05d548fd3a9c16ccb21ac7e697aeaa4ee9fbf93eb6",
+        "validation-010000.json": "7d7a12669dd0e1bd7132158189c15ac9f58d54af1c6f380701048ff26acd29e3",
+        "validation-010500.json": "58e5618a28d4c902cc9a4e3f4c12dd11769f58239abe4a652d5d718b23e6240f",
+        "validation-011000.json": "8b4771a3ac1627a886157d9567f992b5d44dcfcd973fc34c41da1dc04c756c5f",
+        "validation-011500.json": "fb33cfe1f1bcd01344e272ae2d702964814dc0f27e8ea4ce7f7c15ef74f75aae",
+        "validation-012000.json": "551cab07209c4bde330c4502d50de9197e1293bfa588bc22e37553eb8f936222"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53899201,
+        "scored_bytes": 44912041
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 42,
+        "variant": "flm",
+        "checkpoint": "runs/babylm-10m/flm-s42/best.pt",
+        "checkpoint_sha256": "fe0f21c3ac72289b5fd11e534f98d4979965b4556c102b480d652a53a4952de6",
+        "selection_validation_bpb": 1.9811101259407082,
+        "training_source_commit": "518a55bbeb39d7f9653b68603deff57e370b562e",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "b4586202dc4d63c3d4710deeaeb360c814a2c42d0223a03301f2d0d8e1e37a39",
+        "validation_record_sha256": {
+          "validation-000500.json": "64f33add38a0c882cd002bf57e8ffaa1dde564d7cf146e1e761b08bbb3964864",
+          "validation-001000.json": "2fc305cfa3dede397687f7afcfa045e3cfc7aa76f9c4226389cd92978f0c5610",
+          "validation-001500.json": "717cbdf363320296bb60d587b8754325d5b107240763b70ac2f839a2c0a01c63",
+          "validation-002000.json": "e107e649e75ff05865dc8afcf71d8e29db29a69acb9dc02b03ba41735c1f1604",
+          "validation-002500.json": "366dcf69a54010f2971efa3cd99b3f4bd8b6a715c1deefc92de350af0617a083",
+          "validation-003000.json": "31432898c403301c1c7e28f3d2bbf214af62f28c5e0f42bccc434ffac8289995",
+          "validation-003500.json": "6cfd8a847389e716a4fec89b953104a22288bfc53edd4a6d43378f17cd76ee81",
+          "validation-004000.json": "1c93d4c085ce0c24cd846d399653b9b8bfd5d227e4be5812d10643d719bb79da",
+          "validation-004500.json": "4e53cd190cfe9fae12e3f5befb56ba3b32ec3f10b503b4639d9a3d9f72426c25",
+          "validation-005000.json": "45cd02faa7d9fb470919d25b812287a86aa090dc8e9530e389a7618c5ee97816",
+          "validation-005500.json": "c7686130f66fd2b606c1a5ebc7e58fb404351d263b9a3a626b21784e3d2c881c",
+          "validation-006000.json": "a47c7d2aef66bd3cfebadfc93bdc0ed6767c1de11d3725f9c9c2dfb7472eff89",
+          "validation-006500.json": "ba5d27c904b4dcace10d7b3cedd8579f0a0ccac8e96c95bc8a994c989d02ae80",
+          "validation-007000.json": "2e8b2ec80726961c65af800745281fc4c0725fa0e39beb9bb49a67c93df86bdd",
+          "validation-007500.json": "65fba166f311be1ab2f405e9083c666f5686e46f88fbc778a02752144ef4fa5a",
+          "validation-008000.json": "1df7bfd71f6f91b1526f6f761af722e46353b4f502c6b120e75a120b19ed7151",
+          "validation-008500.json": "6ac7df8dd89750709e8e00fb2f8a70e936a9e585855f7db4ba8fcb0b3731cf75",
+          "validation-009000.json": "beea3b9cacee5ef5671139cf9a01189572199bc54cca776174933ce506d916ec",
+          "validation-009500.json": "668704b3ef14e5278a349e05d548fd3a9c16ccb21ac7e697aeaa4ee9fbf93eb6",
+          "validation-010000.json": "7d7a12669dd0e1bd7132158189c15ac9f58d54af1c6f380701048ff26acd29e3",
+          "validation-010500.json": "58e5618a28d4c902cc9a4e3f4c12dd11769f58239abe4a652d5d718b23e6240f",
+          "validation-011000.json": "8b4771a3ac1627a886157d9567f992b5d44dcfcd973fc34c41da1dc04c756c5f",
+          "validation-011500.json": "fb33cfe1f1bcd01344e272ae2d702964814dc0f27e8ea4ce7f7c15ef74f75aae",
+          "validation-012000.json": "551cab07209c4bde330c4502d50de9197e1293bfa588bc22e37553eb8f936222"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53899201,
+          "scored_bytes": 44912041
+        }
+      },
+      "parameters": 600003,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 69981147.22979164,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.9519692567750315,
+            "token_perplexity": 46.99121551006682
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 55946008.46440369,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.9703542742517726,
+            "token_perplexity": 55.53486229228024
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6462333.011968939,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.9068821314095028,
+            "token_perplexity": 83.57008363963075
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6377092.437041735,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.9069680206766038,
+            "token_perplexity": 83.43973037037318
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17669751.572001766,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7332785786733909,
+            "token_perplexity": 16.166175958930207
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9811796.747864475,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.7627515110703826,
+            "token_perplexity": 16.53201728230587
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 18166703.116493553,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.9711795690758878,
+            "token_perplexity": 105.9116340211534
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16891164.215283476,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.959330026313611,
+            "token_perplexity": 105.25954622540614
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14874613.517317533,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 2.0657610962070745,
+            "token_perplexity": 60.815794246801914
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12711472.311819993,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 2.0568585512313113,
+            "token_perplexity": 61.33639804366429
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11795482.101124156,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.2336021957617724,
+            "token_perplexity": 102.07448964175366
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 9142218.841508318,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.2232479094193556,
+            "token_perplexity": 103.02991526763361
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 1012263.910885692,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.7741285686413246,
+            "token_perplexity": 29.103027136938884
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 1012263.910885692,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.7741285686413246,
+            "token_perplexity": 29.103027136938884
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 4222.840369699901,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "470741c8160ceee2265c696af9dfdd44264328b6"
+    },
+    {
+      "scale": "10m",
+      "seed": 42,
+      "variant": "gru",
+      "checkpoint": "runs/babylm-10m/gru-s42/best.pt",
+      "checkpoint_sha256": "da189f114d7141f9ab143a0211de68e96f9ded9de14fe715e41b8a9efd6239d2",
+      "selection_validation_bpb": 1.9086214616394719,
+      "training_source_commit": "f7f7b192949bca2e98246e8bdb45633c3940a56c",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "427d604626bbce7a373fe88aaeef293fa386e7b2c42a421b7724fdc6e2b9c3fe",
+      "validation_record_sha256": {
+        "validation-000500.json": "aeafa52fac06c1b0983bc8f2513e06b0548d68c76913b2f0a90c9b2e7c3b8222",
+        "validation-001000.json": "d616c45b5bc6d8eee341a722194cae230b338ef66098e937e9c2e3a3bbda4892",
+        "validation-001500.json": "17ddc715711e240468941d021dba8c04df4ecfead614ba3cec726d5441943d8c",
+        "validation-002000.json": "0a51cce09c5415e5cb68417ac1cfcb8f6f7a2c0578039fad86c6907112f9679e",
+        "validation-002500.json": "caf5e25a27c205c9c7848d908f5f4a956b758e456d90590b030d23789a9571d4",
+        "validation-003000.json": "f07f6ab77b71ceaa946d67da1b9fb828c3d474f4afc4574f6e2a1b8e7f629db1",
+        "validation-003500.json": "00db1566347dc730eff4851ddf2e4b79820bed5952200a14a53c467857a663a2",
+        "validation-004000.json": "2e1239f38b7322c6e93330c80d0a313fc28f00a3fa6243386c379193734b6580",
+        "validation-004500.json": "f4efea5ddafddc391fea09e6123d39cf430572fcd6a57a903b3ecf91bc450957",
+        "validation-005000.json": "58e0db8537b27de1f4bff507162f4a0fd7d2cb1cccb12b1338a619e474df26ab",
+        "validation-005500.json": "44bf1cee8d575803b479ad0c22780ac529ba32f0604d73073778a3110f65b9ea",
+        "validation-006000.json": "f3d2a75c3c430b58afa3e91a50559039e39b8c25cf6d53706186123273eb408e",
+        "validation-006500.json": "ca94b38a31ca8f7b516d88c1109d9f1221fd9c1640c15a4c7e8d78a402f62d0a",
+        "validation-007000.json": "0db577ef494a9ee5f36ffc7fd061b3ca1d2982d49fd47c927965886386c52e2f",
+        "validation-007500.json": "8ba9612cead87c30b4832e4d51a1fec131979003bf832cfadf46778bdc5773c0",
+        "validation-008000.json": "21138e7d03552dac42ac3a7c516f9b732eef61c7f14aef07e2b11ec5fabf50fd",
+        "validation-008500.json": "31945618a3f96ee6668cfe85f0b3267a3651c315803b8e5b3ea4744ca4646f3b",
+        "validation-009000.json": "7a2e61e60c8dee047a33a087bd86cdd8570f8bade1d8147e91430eeed98a3912",
+        "validation-009500.json": "6c78d811aef263a61db00df1b6ebab4d545e584b0196370d38d998efd152b196",
+        "validation-010000.json": "899111bd0a29216caf7a7304c9b604b680c193fb272cda1bd21a2a2e377372ad",
+        "validation-010500.json": "8b004adf2eca151da36081964f485df8e06c1d8c76f68bd82b0cfc394f505144",
+        "validation-011000.json": "6fe9003d916c517ad34ce0976c9ce7c8412eb1a5cbeec93206bd0c9ba77d01e9",
+        "validation-011500.json": "16d674a04a9857666076d6b4ca26cf2ababe09989b8a9b8db7e058a11119d664",
+        "validation-012000.json": "ecb1da92c942ae0e84f5deba5326333084f01e94ed6a9f50168fc9c879f85fa0"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53899201,
+        "scored_bytes": 44912041
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 42,
+        "variant": "gru",
+        "checkpoint": "runs/babylm-10m/gru-s42/best.pt",
+        "checkpoint_sha256": "da189f114d7141f9ab143a0211de68e96f9ded9de14fe715e41b8a9efd6239d2",
+        "selection_validation_bpb": 1.9086214616394719,
+        "training_source_commit": "f7f7b192949bca2e98246e8bdb45633c3940a56c",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "427d604626bbce7a373fe88aaeef293fa386e7b2c42a421b7724fdc6e2b9c3fe",
+        "validation_record_sha256": {
+          "validation-000500.json": "aeafa52fac06c1b0983bc8f2513e06b0548d68c76913b2f0a90c9b2e7c3b8222",
+          "validation-001000.json": "d616c45b5bc6d8eee341a722194cae230b338ef66098e937e9c2e3a3bbda4892",
+          "validation-001500.json": "17ddc715711e240468941d021dba8c04df4ecfead614ba3cec726d5441943d8c",
+          "validation-002000.json": "0a51cce09c5415e5cb68417ac1cfcb8f6f7a2c0578039fad86c6907112f9679e",
+          "validation-002500.json": "caf5e25a27c205c9c7848d908f5f4a956b758e456d90590b030d23789a9571d4",
+          "validation-003000.json": "f07f6ab77b71ceaa946d67da1b9fb828c3d474f4afc4574f6e2a1b8e7f629db1",
+          "validation-003500.json": "00db1566347dc730eff4851ddf2e4b79820bed5952200a14a53c467857a663a2",
+          "validation-004000.json": "2e1239f38b7322c6e93330c80d0a313fc28f00a3fa6243386c379193734b6580",
+          "validation-004500.json": "f4efea5ddafddc391fea09e6123d39cf430572fcd6a57a903b3ecf91bc450957",
+          "validation-005000.json": "58e0db8537b27de1f4bff507162f4a0fd7d2cb1cccb12b1338a619e474df26ab",
+          "validation-005500.json": "44bf1cee8d575803b479ad0c22780ac529ba32f0604d73073778a3110f65b9ea",
+          "validation-006000.json": "f3d2a75c3c430b58afa3e91a50559039e39b8c25cf6d53706186123273eb408e",
+          "validation-006500.json": "ca94b38a31ca8f7b516d88c1109d9f1221fd9c1640c15a4c7e8d78a402f62d0a",
+          "validation-007000.json": "0db577ef494a9ee5f36ffc7fd061b3ca1d2982d49fd47c927965886386c52e2f",
+          "validation-007500.json": "8ba9612cead87c30b4832e4d51a1fec131979003bf832cfadf46778bdc5773c0",
+          "validation-008000.json": "21138e7d03552dac42ac3a7c516f9b732eef61c7f14aef07e2b11ec5fabf50fd",
+          "validation-008500.json": "31945618a3f96ee6668cfe85f0b3267a3651c315803b8e5b3ea4744ca4646f3b",
+          "validation-009000.json": "7a2e61e60c8dee047a33a087bd86cdd8570f8bade1d8147e91430eeed98a3912",
+          "validation-009500.json": "6c78d811aef263a61db00df1b6ebab4d545e584b0196370d38d998efd152b196",
+          "validation-010000.json": "899111bd0a29216caf7a7304c9b604b680c193fb272cda1bd21a2a2e377372ad",
+          "validation-010500.json": "8b004adf2eca151da36081964f485df8e06c1d8c76f68bd82b0cfc394f505144",
+          "validation-011000.json": "6fe9003d916c517ad34ce0976c9ce7c8412eb1a5cbeec93206bd0c9ba77d01e9",
+          "validation-011500.json": "16d674a04a9857666076d6b4ca26cf2ababe09989b8a9b8db7e058a11119d664",
+          "validation-012000.json": "ecb1da92c942ae0e84f5deba5326333084f01e94ed6a9f50168fc9c879f85fa0"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53899201,
+          "scored_bytes": 44912041
+        }
+      },
+      "parameters": 595408,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 67943990.12010396,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.895147266757151,
+            "token_perplexity": 42.00917301076573
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 54097509.02880677,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.905252243492996,
+            "token_perplexity": 48.63219792363544
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6255173.300587185,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.845754184079927,
+            "token_perplexity": 72.51646648573643
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6172316.004559454,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.845732886955835,
+            "token_perplexity": 72.38943714359216
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17741463.436504465,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7403130091277614,
+            "token_perplexity": 16.34979749709406
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9882013.637500243,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.7753664206011017,
+            "token_perplexity": 16.86726415417824
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17271005.0591783,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8739917800027117,
+            "token_perplexity": 84.15987344135922
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16055678.285935894,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.862415885460486,
+            "token_perplexity": 83.60544828335001
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14361017.7667554,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.994433789487252,
+            "token_perplexity": 52.77366479296115
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12271794.990389945,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9857138375284826,
+            "token_perplexity": 53.19647466377664
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11374252.071285306,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.1538377307316243,
+            "token_perplexity": 86.53195331587457
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8774627.624627937,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.1338553430612097,
+            "token_perplexity": 85.51177442919875
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 941078.4857933014,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.649366542682317,
+            "token_perplexity": 22.96093954322239
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 941078.4857933014,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.649366542682317,
+            "token_perplexity": 22.96093954322239
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1433.5414033994894,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "470741c8160ceee2265c696af9dfdd44264328b6"
+    },
+    {
+      "scale": "10m",
+      "seed": 42,
+      "variant": "transformer",
+      "checkpoint": "runs/babylm-10m/transformer-s42/best.pt",
+      "checkpoint_sha256": "8b3a932c84fa84f0b1fec78cfe5963359237f560336031cce73cf856b3b1a68d",
+      "selection_validation_bpb": 1.8826301916079489,
+      "training_source_commit": "d71b74bb167a7243485b508f3d5415bf4f1757eb",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "151e27cebb9caa3e5c426408d90e022b213bedd9412e9c2bef13214f8fe0e791",
+      "validation_record_sha256": {
+        "validation-000500.json": "5fdb93df5a5e62e3dd7552a5715c025c7a6cd0171422dd5455849a05adeae620",
+        "validation-001000.json": "7b52d492e2cfd3dcfe20ed7ae1d557ae4a5a3de72abc2ecf23f106b524e2d857",
+        "validation-001500.json": "de75f65500cff561c4d885f249b63b2c1a973969c01726adb4cb0ba644ea7cdb",
+        "validation-002000.json": "c4f634eecfd77cc2dc424667b00258917d6a0c4ceb567704f0b2860613b97ec0",
+        "validation-002500.json": "ac266703745078d5fae728557a49eae60395ebeea2944678cc6b38e894eb7d35",
+        "validation-003000.json": "7d3b20619b6ed0d057efe8c70243a93dd353f1e40e23ff455c77b6a327d4a6ab",
+        "validation-003500.json": "cfdfd861a6df22582a85cf2b74ab31157355fbd45912a0c9439476745089548f",
+        "validation-004000.json": "16fd8e306f12b3fed6c0c1dc6fff0f4e21e8f4351b5f6e690ab6dd7a3f45e5b5",
+        "validation-004500.json": "ca0078c32b68378a3994be6e2d5a07e0a36f53be5880b4ce025bb6b2e0382985",
+        "validation-005000.json": "170035bd026f550a67639d7de348f9aafea78b3c5efba1b665fab79ab6c75c64",
+        "validation-005500.json": "6234dac54acfc94ce6b445839b4aad06de063ced3c1c8476d174d1701e5917a0",
+        "validation-006000.json": "61eb32301dddf25589d03842f0d8015e2e3bead81904d5fa8aace4b886fb9cd4",
+        "validation-006500.json": "3dd829d61f79ce2bca0345be88f07239d71c074e1c8e01f88139ab52ef856cb7",
+        "validation-007000.json": "1fa5610632a32d7e4eefd5f1f1f06a48beff978619f8df1aed8c8fe5dcfbcbb3",
+        "validation-007500.json": "d0459c4de46ea060ae1faf7293f84367f8609400c09481ba5ad37f17f9edd347",
+        "validation-008000.json": "6f208781bd4fc3cb65097a8673130d24a35c159edd4c7127f4085d7c1d649a84",
+        "validation-008500.json": "fbf4b14427f6577d5bf58258c9f2a543f1403674459ff2d920da3855ebfacb95",
+        "validation-009000.json": "f9446584a1dea2814db1e9c291eedb36aa137bdcaf252656236ceba7258d4366",
+        "validation-009500.json": "2bca8b2e4ee8882f6941938cba4290a562b7a9949f5b96e8fac611f447b3d244",
+        "validation-010000.json": "d8eef39288859f046dd8cca03a8bc47b8700db0ce0884160d1c6e00e80fff187",
+        "validation-010500.json": "993c1bb9f039c45c0bbf5daf2429bba2389b0b58495da661010159f19f208321",
+        "validation-011000.json": "bb15957c456ec46b845f287b3dd0fcef9ff9ecfbba325552edbe996d6b544dee",
+        "validation-011500.json": "a0afb0459053a717d103ab434f0f72c197b867eedf949e50e5deb17968eded11",
+        "validation-012000.json": "54e3a64ad89bf8af1579aca37321cb26082afda0bbb95b197afa1f75766a4bdf"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53899201,
+        "scored_bytes": 44912041
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 42,
+        "variant": "transformer",
+        "checkpoint": "runs/babylm-10m/transformer-s42/best.pt",
+        "checkpoint_sha256": "8b3a932c84fa84f0b1fec78cfe5963359237f560336031cce73cf856b3b1a68d",
+        "selection_validation_bpb": 1.8826301916079489,
+        "training_source_commit": "d71b74bb167a7243485b508f3d5415bf4f1757eb",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "151e27cebb9caa3e5c426408d90e022b213bedd9412e9c2bef13214f8fe0e791",
+        "validation_record_sha256": {
+          "validation-000500.json": "5fdb93df5a5e62e3dd7552a5715c025c7a6cd0171422dd5455849a05adeae620",
+          "validation-001000.json": "7b52d492e2cfd3dcfe20ed7ae1d557ae4a5a3de72abc2ecf23f106b524e2d857",
+          "validation-001500.json": "de75f65500cff561c4d885f249b63b2c1a973969c01726adb4cb0ba644ea7cdb",
+          "validation-002000.json": "c4f634eecfd77cc2dc424667b00258917d6a0c4ceb567704f0b2860613b97ec0",
+          "validation-002500.json": "ac266703745078d5fae728557a49eae60395ebeea2944678cc6b38e894eb7d35",
+          "validation-003000.json": "7d3b20619b6ed0d057efe8c70243a93dd353f1e40e23ff455c77b6a327d4a6ab",
+          "validation-003500.json": "cfdfd861a6df22582a85cf2b74ab31157355fbd45912a0c9439476745089548f",
+          "validation-004000.json": "16fd8e306f12b3fed6c0c1dc6fff0f4e21e8f4351b5f6e690ab6dd7a3f45e5b5",
+          "validation-004500.json": "ca0078c32b68378a3994be6e2d5a07e0a36f53be5880b4ce025bb6b2e0382985",
+          "validation-005000.json": "170035bd026f550a67639d7de348f9aafea78b3c5efba1b665fab79ab6c75c64",
+          "validation-005500.json": "6234dac54acfc94ce6b445839b4aad06de063ced3c1c8476d174d1701e5917a0",
+          "validation-006000.json": "61eb32301dddf25589d03842f0d8015e2e3bead81904d5fa8aace4b886fb9cd4",
+          "validation-006500.json": "3dd829d61f79ce2bca0345be88f07239d71c074e1c8e01f88139ab52ef856cb7",
+          "validation-007000.json": "1fa5610632a32d7e4eefd5f1f1f06a48beff978619f8df1aed8c8fe5dcfbcbb3",
+          "validation-007500.json": "d0459c4de46ea060ae1faf7293f84367f8609400c09481ba5ad37f17f9edd347",
+          "validation-008000.json": "6f208781bd4fc3cb65097a8673130d24a35c159edd4c7127f4085d7c1d649a84",
+          "validation-008500.json": "fbf4b14427f6577d5bf58258c9f2a543f1403674459ff2d920da3855ebfacb95",
+          "validation-009000.json": "f9446584a1dea2814db1e9c291eedb36aa137bdcaf252656236ceba7258d4366",
+          "validation-009500.json": "2bca8b2e4ee8882f6941938cba4290a562b7a9949f5b96e8fac611f447b3d244",
+          "validation-010000.json": "d8eef39288859f046dd8cca03a8bc47b8700db0ce0884160d1c6e00e80fff187",
+          "validation-010500.json": "993c1bb9f039c45c0bbf5daf2429bba2389b0b58495da661010159f19f208321",
+          "validation-011000.json": "bb15957c456ec46b845f287b3dd0fcef9ff9ecfbba325552edbe996d6b544dee",
+          "validation-011500.json": "a0afb0459053a717d103ab434f0f72c197b867eedf949e50e5deb17968eded11",
+          "validation-012000.json": "54e3a64ad89bf8af1579aca37321cb26082afda0bbb95b197afa1f75766a4bdf"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53899201,
+          "scored_bytes": 44912041
+        }
+      },
+      "parameters": 607468,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 66884875.47374495,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8656056071683975,
+            "token_perplexity": 39.6313945647464
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 53242542.11470656,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.875141289024939,
+            "token_perplexity": 45.73655449269866
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6174029.730009339,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8218106292480913,
+            "token_perplexity": 68.59660389595675
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6092331.920156638,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8218149192260111,
+            "token_perplexity": 68.4820197160086
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17619911.687629957,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7283896359175628,
+            "token_perplexity": 16.039774704934064
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9802295.694632387,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.761044586602622,
+            "token_perplexity": 16.487169758430674
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17051077.220651064,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8501284923607002,
+            "token_perplexity": 79.54097547262339
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15852879.082785342,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.838891718447426,
+            "token_perplexity": 79.05964195403357
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14089549.690558977,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9567327635065865,
+            "token_perplexity": 48.961891827313494
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12041036.479644034,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9483745266718024,
+            "token_perplexity": 49.36616570617276
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11030881.47716102,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.0888167925096135,
+            "token_perplexity": 75.63037035510953
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8534573.269753564,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.075477792504412,
+            "token_perplexity": 75.71291609105775
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 919425.667734597,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6114170685417952,
+            "token_perplexity": 21.363642642430417
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 919425.667734597,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6114170685417952,
+            "token_perplexity": 21.363642642430417
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1300.931473200355,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "d2fa8a0af6764c9a40c0b5e1b5cac05d4f2a8cb5"
+    },
+    {
+      "scale": "10m",
+      "seed": 43,
+      "variant": "flm",
+      "checkpoint": "runs/babylm-10m/flm-s43/best.pt",
+      "checkpoint_sha256": "4b82db3a4d5e3fa205f9e0e06a2175bbac70320a59bebf5f4eb251cbf4e24e33",
+      "selection_validation_bpb": 1.974309237359898,
+      "training_source_commit": "2855cc224ba86a84db7e501ad15bb12afc036381",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "c289de65da15caebf1d02e386a3afbff880d8c1303fffa24f90e8ecaf714b5b3",
+      "validation_record_sha256": {
+        "validation-000500.json": "030620480045849d8275172d4bc1b9e6384b5bacae60d507da68f604a0bb8e38",
+        "validation-001000.json": "26972372f43a9a4b3d8902a7f16b831bbb44a4bf3afa0ea05bf0244118b84e2a",
+        "validation-001500.json": "971a8d25f4842206a0d60d1af59bcddf652b011765c27451b58e23cac832c141",
+        "validation-002000.json": "17d257a3e58eefa7ad718481a0ac2c65c6331169ad7fd6dd63fa0a79e962ccaa",
+        "validation-002500.json": "fe9ce6fe8e88d2295823c2f4da9a955d917f3d6bf3489f07aa2df7378eb23b9f",
+        "validation-003000.json": "f4d37933ff9d2b033c5a369ee0222b2264988e59931ae88da974938b2addda12",
+        "validation-003500.json": "8304c63fde14bbb68dfb7fef9353ffb2156248b197973b1114c2d31b59f2b4e0",
+        "validation-004000.json": "8f71e6bf08128419d2d29665b164c0c513c88f39d8ebab5041861724f33072ac",
+        "validation-004500.json": "81d959b2d1a11235f244c63bf627c4a51abe3deb718ee9609546360ad83512d9",
+        "validation-005000.json": "0bf5302f972ce265b212eda165b9fcfbcdb330a63cc3a1453591b18c73c34c2a",
+        "validation-005500.json": "7532f6c06f1bf78194d63688941e107ae2d9b44a485a3543317284c0f1977b3b",
+        "validation-006000.json": "8aebcba8c279eee920d3628fc72f06086d57738e03af70cd8c88a6deac335a64",
+        "validation-006500.json": "ce1b36beba738f9a485f7609ef4935c69443ccdcd0ce4a6aba4cf76e89a5b8f9",
+        "validation-007000.json": "819e9e0b1f4392179f4f144e6ccbef04491fba0de27a4da8b1a92fd4f0eaa2c0",
+        "validation-007500.json": "f3213bfba41a00bc8b8164d8969f197b08a953775a7cedc9407ee5215cc52e59",
+        "validation-008000.json": "8232251b8d4e2225a89cfdb079cd3d38ea859ea36d5041684bf5e99883739d79",
+        "validation-008500.json": "8f039f2288f8c806843dc1b86438d7acf05e29b6cdecdc5aadde66bbaea7afe8",
+        "validation-009000.json": "9d41a462619cbdcf45fb91898e4683f2621f2e0f36f6e7a1bc8ac2e456434267",
+        "validation-009500.json": "7da8983972d722b956ea68c03bdbe7a30a3a63e59d032e850681b177d1af38c7",
+        "validation-010000.json": "c34ac3788d3a5a1b4b36320a692f805079da4b6abaaa008c74a62098875e6625",
+        "validation-010500.json": "6a4ea319b66ed1ffa748a2e08754635bf9e72933960a58f12a50b16a22570b89",
+        "validation-011000.json": "00ad739ea6823d9f651f532d80e30b32b745f692e4261232e504d8f634c3546b",
+        "validation-011500.json": "f9da064abfab6a51182fd49486e69e01f158e0e798cfd39b7e4386fe0cc44392",
+        "validation-012000.json": "4dbcc30e87beb92d2898bca9a212ca0ee569e15c9db5f7ed4ad62df8bce25c1e"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53915010,
+        "scored_bytes": 44930336
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 43,
+        "variant": "flm",
+        "checkpoint": "runs/babylm-10m/flm-s43/best.pt",
+        "checkpoint_sha256": "4b82db3a4d5e3fa205f9e0e06a2175bbac70320a59bebf5f4eb251cbf4e24e33",
+        "selection_validation_bpb": 1.974309237359898,
+        "training_source_commit": "2855cc224ba86a84db7e501ad15bb12afc036381",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "c289de65da15caebf1d02e386a3afbff880d8c1303fffa24f90e8ecaf714b5b3",
+        "validation_record_sha256": {
+          "validation-000500.json": "030620480045849d8275172d4bc1b9e6384b5bacae60d507da68f604a0bb8e38",
+          "validation-001000.json": "26972372f43a9a4b3d8902a7f16b831bbb44a4bf3afa0ea05bf0244118b84e2a",
+          "validation-001500.json": "971a8d25f4842206a0d60d1af59bcddf652b011765c27451b58e23cac832c141",
+          "validation-002000.json": "17d257a3e58eefa7ad718481a0ac2c65c6331169ad7fd6dd63fa0a79e962ccaa",
+          "validation-002500.json": "fe9ce6fe8e88d2295823c2f4da9a955d917f3d6bf3489f07aa2df7378eb23b9f",
+          "validation-003000.json": "f4d37933ff9d2b033c5a369ee0222b2264988e59931ae88da974938b2addda12",
+          "validation-003500.json": "8304c63fde14bbb68dfb7fef9353ffb2156248b197973b1114c2d31b59f2b4e0",
+          "validation-004000.json": "8f71e6bf08128419d2d29665b164c0c513c88f39d8ebab5041861724f33072ac",
+          "validation-004500.json": "81d959b2d1a11235f244c63bf627c4a51abe3deb718ee9609546360ad83512d9",
+          "validation-005000.json": "0bf5302f972ce265b212eda165b9fcfbcdb330a63cc3a1453591b18c73c34c2a",
+          "validation-005500.json": "7532f6c06f1bf78194d63688941e107ae2d9b44a485a3543317284c0f1977b3b",
+          "validation-006000.json": "8aebcba8c279eee920d3628fc72f06086d57738e03af70cd8c88a6deac335a64",
+          "validation-006500.json": "ce1b36beba738f9a485f7609ef4935c69443ccdcd0ce4a6aba4cf76e89a5b8f9",
+          "validation-007000.json": "819e9e0b1f4392179f4f144e6ccbef04491fba0de27a4da8b1a92fd4f0eaa2c0",
+          "validation-007500.json": "f3213bfba41a00bc8b8164d8969f197b08a953775a7cedc9407ee5215cc52e59",
+          "validation-008000.json": "8232251b8d4e2225a89cfdb079cd3d38ea859ea36d5041684bf5e99883739d79",
+          "validation-008500.json": "8f039f2288f8c806843dc1b86438d7acf05e29b6cdecdc5aadde66bbaea7afe8",
+          "validation-009000.json": "9d41a462619cbdcf45fb91898e4683f2621f2e0f36f6e7a1bc8ac2e456434267",
+          "validation-009500.json": "7da8983972d722b956ea68c03bdbe7a30a3a63e59d032e850681b177d1af38c7",
+          "validation-010000.json": "c34ac3788d3a5a1b4b36320a692f805079da4b6abaaa008c74a62098875e6625",
+          "validation-010500.json": "6a4ea319b66ed1ffa748a2e08754635bf9e72933960a58f12a50b16a22570b89",
+          "validation-011000.json": "00ad739ea6823d9f651f532d80e30b32b745f692e4261232e504d8f634c3546b",
+          "validation-011500.json": "f9da064abfab6a51182fd49486e69e01f158e0e798cfd39b7e4386fe0cc44392",
+          "validation-012000.json": "4dbcc30e87beb92d2898bca9a212ca0ee569e15c9db5f7ed4ad62df8bce25c1e"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53915010,
+          "scored_bytes": 44930336
+        }
+      },
+      "parameters": 600003,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 69675899.01297037,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.9434550331804392,
+            "token_perplexity": 46.20868081916079
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 55746530.10421526,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.963328875114172,
+            "token_perplexity": 54.74511354970035
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6439746.848123714,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.9002174868958608,
+            "token_perplexity": 82.28736904640503
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6354878.453140162,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.9003252822608852,
+            "token_perplexity": 82.16369762329748
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17447762.11071801,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7115029709990839,
+            "token_perplexity": 15.61073203457751
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9699491.304529255,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.7425751259466615,
+            "token_perplexity": 16.009616927255642
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 18127812.633189578,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.966959754086415,
+            "token_perplexity": 104.85973543318153
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16855413.139922574,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.9551829968646737,
+            "token_perplexity": 104.22724685155562
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14839397.20300667,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 2.060870314206555,
+            "token_perplexity": 60.227196001483556
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12677775.394812284,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 2.051406012752902,
+            "token_perplexity": 60.670726539430326
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11820965.129170913,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.238427682919645,
+            "token_perplexity": 103.09967437082892
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 9158756.723049497,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.227269669475647,
+            "token_perplexity": 103.89740654299534
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 1000215.0887614859,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.7530113883100331,
+            "token_perplexity": 27.958452706489656
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 1000215.0887614859,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.7530113883100331,
+            "token_perplexity": 27.958452706489656
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 4287.674246499955,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "31085da0c94b9c71118f7d942589a0c91eae0648"
+    },
+    {
+      "scale": "10m",
+      "seed": 43,
+      "variant": "gru",
+      "checkpoint": "runs/babylm-10m/gru-s43/best.pt",
+      "checkpoint_sha256": "2e2a8d906634e9490bc44f625eb7a2eba14957eab16d5a00a955c56800567e6d",
+      "selection_validation_bpb": 1.8991734568320775,
+      "training_source_commit": "6188aaf480a001e304b906819a4d8d152a34be72",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "5fa19010970776aa679cf9f5dab33ea904eed7f03f797dd17fe549f3bad4cb5a",
+      "validation_record_sha256": {
+        "validation-000500.json": "1ecf1db8a3bd6627d916a22f1deb6892fd63df6f77754806ebb5793292a0c3d2",
+        "validation-001000.json": "85e4f298b2e5d58d59adf84350a41bd8f2ad2068c60021a7e23afa2aab625cc9",
+        "validation-001500.json": "bd4d3091053aa8deff38e125fdee1cfda8a8420ca685dee29935927c09da9ea9",
+        "validation-002000.json": "611c6cc2331610148ca01361ea3ca1710840c400159753d6c9e142d22e95e799",
+        "validation-002500.json": "9b32c2ca177d43f6f12fd8cca91893337cbf55efe749a26cff2db8b8ff3712d3",
+        "validation-003000.json": "9ae7da758c56e405b3c54e80aa20ed4a2b949a1415a8ec2b851fde146a0e2536",
+        "validation-003500.json": "c3c646105e3b778076128860fc38a373a862338dc6d685d84f6d613207827e52",
+        "validation-004000.json": "cbc0259349c83614ef7a67bf09346dab3cdc76221cefc19e9992e8716d7950c6",
+        "validation-004500.json": "39310ec5bbe526001ce82585e92edc3d693fbab0de5a322e04218ce6ba54c585",
+        "validation-005000.json": "a03d0e6b563e365eb0d9b5eff0a400139b73e2e3878157f48f00057834b498e5",
+        "validation-005500.json": "214c876a8c446323f9a4cf87db116954a0f9e4c3f8b8856c4904a8fdfc8c2886",
+        "validation-006000.json": "bf78292b5487474823ecee5bae249fb2caaa5b3e21b65a7c0352cb2724afdd4b",
+        "validation-006500.json": "082aceddcc4a587e7f10415059497866ba07fdd06bd7f663ec3da967d8028127",
+        "validation-007000.json": "aaddcb01ec930631410bd77fb9b90dbc021f22a3c98f766411a9901bc9be2663",
+        "validation-007500.json": "f2fea9db1db69e573d7786d098f8e02fc66b928954b74bf3f1c7e8c0489c7353",
+        "validation-008000.json": "396b5e5e6a384f50b9d5fd00c88c088e725a5356eb50310fc466cfa5e0e291f7",
+        "validation-008500.json": "11006f56721aaa76eeb06dede593bed7a2199b68d7840512a95d70f0baa17a1a",
+        "validation-009000.json": "e5e4a8c5d0170c09ddff81b9ed0ff965710065afb5fe69e30a0c578446f252d0",
+        "validation-009500.json": "dc020cf0462336d27062a1b8581e3b35058d1aa7ac5254eb5c56b0d6547576c5",
+        "validation-010000.json": "2bbc03118c0bc5dee97faf624c8784be2ef2541349aad441fdc5748a2569f922",
+        "validation-010500.json": "144a6012c27aa06c53e9d8f35bea2236ba2af825b5842468c5e7f931cbfe4bf4",
+        "validation-011000.json": "c069ada0174de08ef26ba85331124a3ff4b9166fd7ddd8f4eea6f4ada4873e87",
+        "validation-011500.json": "1059c4c3cac6cf5a620e35c75580baeff1ab6e4bb7b774742178227ba0f8346d",
+        "validation-012000.json": "f40224eb6070e4dd115714a3dbfc03a8c17fb232c0c773b1df17bdfed63656b8"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53915010,
+        "scored_bytes": 44930336
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 43,
+        "variant": "gru",
+        "checkpoint": "runs/babylm-10m/gru-s43/best.pt",
+        "checkpoint_sha256": "2e2a8d906634e9490bc44f625eb7a2eba14957eab16d5a00a955c56800567e6d",
+        "selection_validation_bpb": 1.8991734568320775,
+        "training_source_commit": "6188aaf480a001e304b906819a4d8d152a34be72",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "5fa19010970776aa679cf9f5dab33ea904eed7f03f797dd17fe549f3bad4cb5a",
+        "validation_record_sha256": {
+          "validation-000500.json": "1ecf1db8a3bd6627d916a22f1deb6892fd63df6f77754806ebb5793292a0c3d2",
+          "validation-001000.json": "85e4f298b2e5d58d59adf84350a41bd8f2ad2068c60021a7e23afa2aab625cc9",
+          "validation-001500.json": "bd4d3091053aa8deff38e125fdee1cfda8a8420ca685dee29935927c09da9ea9",
+          "validation-002000.json": "611c6cc2331610148ca01361ea3ca1710840c400159753d6c9e142d22e95e799",
+          "validation-002500.json": "9b32c2ca177d43f6f12fd8cca91893337cbf55efe749a26cff2db8b8ff3712d3",
+          "validation-003000.json": "9ae7da758c56e405b3c54e80aa20ed4a2b949a1415a8ec2b851fde146a0e2536",
+          "validation-003500.json": "c3c646105e3b778076128860fc38a373a862338dc6d685d84f6d613207827e52",
+          "validation-004000.json": "cbc0259349c83614ef7a67bf09346dab3cdc76221cefc19e9992e8716d7950c6",
+          "validation-004500.json": "39310ec5bbe526001ce82585e92edc3d693fbab0de5a322e04218ce6ba54c585",
+          "validation-005000.json": "a03d0e6b563e365eb0d9b5eff0a400139b73e2e3878157f48f00057834b498e5",
+          "validation-005500.json": "214c876a8c446323f9a4cf87db116954a0f9e4c3f8b8856c4904a8fdfc8c2886",
+          "validation-006000.json": "bf78292b5487474823ecee5bae249fb2caaa5b3e21b65a7c0352cb2724afdd4b",
+          "validation-006500.json": "082aceddcc4a587e7f10415059497866ba07fdd06bd7f663ec3da967d8028127",
+          "validation-007000.json": "aaddcb01ec930631410bd77fb9b90dbc021f22a3c98f766411a9901bc9be2663",
+          "validation-007500.json": "f2fea9db1db69e573d7786d098f8e02fc66b928954b74bf3f1c7e8c0489c7353",
+          "validation-008000.json": "396b5e5e6a384f50b9d5fd00c88c088e725a5356eb50310fc466cfa5e0e291f7",
+          "validation-008500.json": "11006f56721aaa76eeb06dede593bed7a2199b68d7840512a95d70f0baa17a1a",
+          "validation-009000.json": "e5e4a8c5d0170c09ddff81b9ed0ff965710065afb5fe69e30a0c578446f252d0",
+          "validation-009500.json": "dc020cf0462336d27062a1b8581e3b35058d1aa7ac5254eb5c56b0d6547576c5",
+          "validation-010000.json": "2bbc03118c0bc5dee97faf624c8784be2ef2541349aad441fdc5748a2569f922",
+          "validation-010500.json": "144a6012c27aa06c53e9d8f35bea2236ba2af825b5842468c5e7f931cbfe4bf4",
+          "validation-011000.json": "c069ada0174de08ef26ba85331124a3ff4b9166fd7ddd8f4eea6f4ada4873e87",
+          "validation-011500.json": "1059c4c3cac6cf5a620e35c75580baeff1ab6e4bb7b774742178227ba0f8346d",
+          "validation-012000.json": "f40224eb6070e4dd115714a3dbfc03a8c17fb232c0c773b1df17bdfed63656b8"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53915010,
+          "scored_bytes": 44930336
+        }
+      },
+      "parameters": 595408,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 67843326.02828597,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8923394646523257,
+            "token_perplexity": 41.77717089238891
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 54002405.96754374,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.9019028227139738,
+            "token_perplexity": 48.30124185490726
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6257899.82471415,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8465587170758184,
+            "token_perplexity": 72.65199876239285
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6175133.191336077,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8465753218341643,
+            "token_perplexity": 72.53105562888805
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17748924.45267342,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7410448824338514,
+            "token_perplexity": 16.369021154090948
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9872018.745415464,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.7735707748515845,
+            "token_perplexity": 16.819132257260737
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17274510.066613745,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8743720911137536,
+            "token_perplexity": 84.23561633453104
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16058414.214926481,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.862733245930895,
+            "token_perplexity": 83.66852899806405
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14302907.450865647,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9863635273783509,
+            "token_perplexity": 51.93351021310715
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12221975.491447382,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9776524847674193,
+            "token_perplexity": 52.345135589053214
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11329116.484047405,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.1452908187955737,
+            "token_perplexity": 85.01378567017778
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8744896.575046735,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.1266252061576676,
+            "token_perplexity": 84.23249011885004
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 929967.7493716053,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6298934836387247,
+            "token_perplexity": 22.126936272436676
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 929967.7493716053,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6298934836387247,
+            "token_perplexity": 22.126936272436676
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1442.8618050998775,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "104b14f6121837543542d72f4767a7fb7b4a7897"
+    },
+    {
+      "scale": "10m",
+      "seed": 43,
+      "variant": "transformer",
+      "checkpoint": "runs/babylm-10m/transformer-s43/best.pt",
+      "checkpoint_sha256": "a58a43d397482fb86dc17b05c7f370cbaaf9322142c58e07b0bfa8a790ec87df",
+      "selection_validation_bpb": 1.8878021206225761,
+      "training_source_commit": "426c09f74fb3b8ba40dfe322a2ae14b65cfdeb34",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "396c1332b0aea4275b9ac2b7f327136097638c18662ddb0c719f53101218d663",
+      "validation_record_sha256": {
+        "validation-000500.json": "f13c3cf6e6f1cedc9f091245ddd417130cdd0879f069c21340efb17d12c21f1d",
+        "validation-001000.json": "f5cac1e7808e91851486ff0cae2677fd7ee3436d317a3bfd4d3d650ae132c958",
+        "validation-001500.json": "7550ae715d3a6bf02d845fa382004bc0a0a9b8ea4069dcc3632ac462904aefb8",
+        "validation-002000.json": "52ec91ac309ec09c0eaf1c1b8de305f2f9bc478d25f101a1a9a7cb6b1ecc6588",
+        "validation-002500.json": "4f0365b07137028e23ed493142e4099e5290b3f5c8c7a66bd77e66cbe51a29fa",
+        "validation-003000.json": "5d4c2ed23b86e4c31c9b9d0e350b50e7daf156fc831a0e985b4a49559de81a60",
+        "validation-003500.json": "7f4cd145a7f94aa83a81a37499c3cd3f49c017560b0bb32000cf475b21ae66ae",
+        "validation-004000.json": "31dd323de37c190dace0d628faf19ec197567194ad296463d8ed7a11bc538026",
+        "validation-004500.json": "a826e3353276ccfc96373614be959c3e6d253b21bcf3e36a5cdb0c69e5eb8cd5",
+        "validation-005000.json": "542c6286a0df920fcd4299c7f3ff6a240eae2e8c0feb3fa474e52470559342b2",
+        "validation-005500.json": "b77cff8b3a73494af10c8cec2bc383c090de83f1972529c110c422fefde5850b",
+        "validation-006000.json": "641714980ea5c05a448a17c7e157ec9209f5b4b954153c9689ce4d8608b26bb5",
+        "validation-006500.json": "3d98e3b059e73cdf06c145c9b60b35011139688771971435adff1b10b6c48cdf",
+        "validation-007000.json": "933fb99609b3821ea6577fce980a2b5850ad94744cecd1ec79a9ebeb9633687e",
+        "validation-007500.json": "f97175e16ab75de6c1c68ae68e362fddb5b6fa2856e8f43ad305086beb40ca9d",
+        "validation-008000.json": "5c6403e2c9a868c0ed394f8be9230c690005bef04dfb7acdaf11f5c972705d55",
+        "validation-008500.json": "dc1474a4f4fe59f221bb0bb7db1c1fb272290568d4e35d71b1a68839fa0e99b4",
+        "validation-009000.json": "2240d11e028cd50f410d2a773d0d8ab5669f3d9993f33de38f69adf6505dfbf4",
+        "validation-009500.json": "b8d1bcaeb84a7df550aed379fac8ac9dd9b955b85c219845ba7cb2fd3f475836",
+        "validation-010000.json": "4dbf54e9fa78be5ed2a1536139eb45a3ca19c42c6334cb6a181af139c9481679",
+        "validation-010500.json": "45b41df15d47119c6b77ab99118892ee8012edb75da782c1248c4a62e927e07c",
+        "validation-011000.json": "4b9a1daa8fd29a3f1efdb4e3354e7df70e1c7bd770639b5fabd390e391e4920e",
+        "validation-011500.json": "df62c64a70d7eaa08454a97410b0d7417666dd59daacff8e49b84241fb546184",
+        "validation-012000.json": "ee3577c4fcefe6e4e27b288baa3ef4864f406d6cc44d0bc76d50ded09799e298"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 53915010,
+        "scored_bytes": 44930336
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "10m",
+        "seed": 43,
+        "variant": "transformer",
+        "checkpoint": "runs/babylm-10m/transformer-s43/best.pt",
+        "checkpoint_sha256": "a58a43d397482fb86dc17b05c7f370cbaaf9322142c58e07b0bfa8a790ec87df",
+        "selection_validation_bpb": 1.8878021206225761,
+        "training_source_commit": "426c09f74fb3b8ba40dfe322a2ae14b65cfdeb34",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "396c1332b0aea4275b9ac2b7f327136097638c18662ddb0c719f53101218d663",
+        "validation_record_sha256": {
+          "validation-000500.json": "f13c3cf6e6f1cedc9f091245ddd417130cdd0879f069c21340efb17d12c21f1d",
+          "validation-001000.json": "f5cac1e7808e91851486ff0cae2677fd7ee3436d317a3bfd4d3d650ae132c958",
+          "validation-001500.json": "7550ae715d3a6bf02d845fa382004bc0a0a9b8ea4069dcc3632ac462904aefb8",
+          "validation-002000.json": "52ec91ac309ec09c0eaf1c1b8de305f2f9bc478d25f101a1a9a7cb6b1ecc6588",
+          "validation-002500.json": "4f0365b07137028e23ed493142e4099e5290b3f5c8c7a66bd77e66cbe51a29fa",
+          "validation-003000.json": "5d4c2ed23b86e4c31c9b9d0e350b50e7daf156fc831a0e985b4a49559de81a60",
+          "validation-003500.json": "7f4cd145a7f94aa83a81a37499c3cd3f49c017560b0bb32000cf475b21ae66ae",
+          "validation-004000.json": "31dd323de37c190dace0d628faf19ec197567194ad296463d8ed7a11bc538026",
+          "validation-004500.json": "a826e3353276ccfc96373614be959c3e6d253b21bcf3e36a5cdb0c69e5eb8cd5",
+          "validation-005000.json": "542c6286a0df920fcd4299c7f3ff6a240eae2e8c0feb3fa474e52470559342b2",
+          "validation-005500.json": "b77cff8b3a73494af10c8cec2bc383c090de83f1972529c110c422fefde5850b",
+          "validation-006000.json": "641714980ea5c05a448a17c7e157ec9209f5b4b954153c9689ce4d8608b26bb5",
+          "validation-006500.json": "3d98e3b059e73cdf06c145c9b60b35011139688771971435adff1b10b6c48cdf",
+          "validation-007000.json": "933fb99609b3821ea6577fce980a2b5850ad94744cecd1ec79a9ebeb9633687e",
+          "validation-007500.json": "f97175e16ab75de6c1c68ae68e362fddb5b6fa2856e8f43ad305086beb40ca9d",
+          "validation-008000.json": "5c6403e2c9a868c0ed394f8be9230c690005bef04dfb7acdaf11f5c972705d55",
+          "validation-008500.json": "dc1474a4f4fe59f221bb0bb7db1c1fb272290568d4e35d71b1a68839fa0e99b4",
+          "validation-009000.json": "2240d11e028cd50f410d2a773d0d8ab5669f3d9993f33de38f69adf6505dfbf4",
+          "validation-009500.json": "b8d1bcaeb84a7df550aed379fac8ac9dd9b955b85c219845ba7cb2fd3f475836",
+          "validation-010000.json": "4dbf54e9fa78be5ed2a1536139eb45a3ca19c42c6334cb6a181af139c9481679",
+          "validation-010500.json": "45b41df15d47119c6b77ab99118892ee8012edb75da782c1248c4a62e927e07c",
+          "validation-011000.json": "4b9a1daa8fd29a3f1efdb4e3354e7df70e1c7bd770639b5fabd390e391e4920e",
+          "validation-011500.json": "df62c64a70d7eaa08454a97410b0d7417666dd59daacff8e49b84241fb546184",
+          "validation-012000.json": "ee3577c4fcefe6e4e27b288baa3ef4864f406d6cc44d0bc76d50ded09799e298"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 53915010,
+          "scored_bytes": 44930336
+        }
+      },
+      "parameters": 607468,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 67520453.81792088,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8833336587539142,
+            "token_perplexity": 41.04165248646877
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 53671811.90962815,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.8902596790307085,
+            "token_perplexity": 47.168207739999765
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6204727.0875693895,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.830868695816981,
+            "token_perplexity": 70.05396740443555
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6122776.361829012,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8309188450746228,
+            "token_perplexity": 69.94380514874446
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 17867618.18269927,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.7526879040597259,
+            "token_perplexity": 16.677898874539498
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9917837.435919508,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.7818023931776414,
+            "token_perplexity": 17.040913396783026
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17083455.912235066,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8536417448707743,
+            "token_perplexity": 80.20473155193513
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15880723.685173834,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.8421216181059217,
+            "token_perplexity": 79.6688381281624
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14211078.726967808,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.973610509955636,
+            "token_perplexity": 50.63304161249975
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12142998.713165507,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9648731577333098,
+            "token_perplexity": 51.02337464580301
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11239324.448496152,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.1282877250644505,
+            "token_perplexity": 82.07230977578897
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8693226.253587097,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.1140597736127154,
+            "token_perplexity": 82.05455622434636
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 914249.4599531963,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6023450686379643,
+            "token_perplexity": 20.998557525407335
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 914249.4599531963,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6023450686379643,
+            "token_perplexity": 20.998557525407335
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1303.6332022997958,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "e7e56c0f02256fcec0e8ef1b8e9c4d81b876e9e0"
+    },
+    {
+      "scale": "100m",
+      "seed": 42,
+      "variant": "flm",
+      "checkpoint": "runs/babylm-100m/flm-s42/best.pt",
+      "checkpoint_sha256": "6eebf5f1305b8a45ca4864fcc2d130d716faf609842b5114c5a184cd393804c5",
+      "selection_validation_bpb": 1.933901950794822,
+      "training_source_commit": "9fd9ec27bd022cd4818f61ab5a8584491c9ce786",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "42004516cea9a2a32a5fe5291ccb92e86ca89f6fed24ed83e2e3d4b7823631de",
+      "validation_record_sha256": {
+        "validation-000500.json": "98e9b6c816e1467059a03402c87f77ff7d15366858b682a8a7e1d3f5343b9e4a",
+        "validation-001000.json": "47f0ac9d0abb1dcc9e6a0e93fbc0815228fc236b9af75676461e0ac024d87d8c",
+        "validation-001500.json": "6cf51e08ed823bb9d6e37040ecd250f62883c72a1b73347f8a5b6868cd0b389e",
+        "validation-002000.json": "8dfa8a7369aed2b2adaad790f786add37f36975103cdab588124c447e5c4ebff",
+        "validation-002500.json": "f70951574217535d919c7cac779b855f69f25d5eed5efbccbb9df5f3ff3eb2b8",
+        "validation-003000.json": "dc8a1686aa6142251277a22b05dd26b036d2cabf668107c65d5dead5d3b090a5",
+        "validation-003500.json": "537242a7892cde8da8a863760c9af60ca6673af0ab05e9844cc4c6587107e235",
+        "validation-004000.json": "e5c51384b7c063a089670425c5a7f4026f3a28c177f6c8b421905f2c713ceda4",
+        "validation-004500.json": "196a2067b15c9f9fa92c8cebf48131122eab62efcbfcdee3f0d1e98535176c3f",
+        "validation-005000.json": "39423dc5ebdc6460113fef79fba283dc2ce991e3ee929ae0c3b05f20a7dd81ee",
+        "validation-005500.json": "1fb5c4e4f0d561e4a7035c45287306579871f0ec17f3a95d22f76e5c45e4d49a",
+        "validation-006000.json": "51c9a883fcad75c6178d516a5b6db6639923829deec42d0e4c360846b4fa0e91",
+        "validation-006500.json": "a98a2811f5e5470fc55b9cc2a915b86cd743b7f3d4e9cb5abb53e96c199c18b8",
+        "validation-007000.json": "adea79c2fe779ab6c2877a1e5284443f34600a5e526c1895e57e45f77d2a8faf",
+        "validation-007500.json": "ba79985db29144326ae2112ed6c71a45cd3e82293d3366932ab1c85705d08b3a",
+        "validation-008000.json": "e0acf6df7b96d3cdc1437406d580f6e34d93139841a36a02b0608298c3f916ea",
+        "validation-008500.json": "bee2f62b06b4f84a752fd0c902bdf5f484ec885fee8d55dbdbc8c9221e5d5472",
+        "validation-009000.json": "87d519071a5d2ac16a8602868154a166999ffe91bb71f8bd08e5703a05fd5b28",
+        "validation-009500.json": "2972c147179dd52d55501be7eeccdcf741476b49d449a447564ac26cdffc500c",
+        "validation-010000.json": "c2bba80e27bb9d5a7eba4fed20b2b9d539fc27b075a6959da405794babf7d0f7",
+        "validation-010500.json": "2358d41f1c7ae9133b79cad09138accaa0b46f896db59e35da7d742d5ea366b9",
+        "validation-011000.json": "ce68504c6eced65654c405099884d60bb319a54d5397b09b551c12da672bb62f",
+        "validation-011500.json": "5603e2aa3f4ef7d5ed828052d2e32dc3e4fd06b2d0fa1b3da3876031a0f6a9db",
+        "validation-012000.json": "2ab4b6b32e20792a5055b2786724badb80d1a24d45b3403bf04edef1027b8deb"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52740662,
+        "scored_bytes": 43947258
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 42,
+        "variant": "flm",
+        "checkpoint": "runs/babylm-100m/flm-s42/best.pt",
+        "checkpoint_sha256": "6eebf5f1305b8a45ca4864fcc2d130d716faf609842b5114c5a184cd393804c5",
+        "selection_validation_bpb": 1.933901950794822,
+        "training_source_commit": "9fd9ec27bd022cd4818f61ab5a8584491c9ce786",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "42004516cea9a2a32a5fe5291ccb92e86ca89f6fed24ed83e2e3d4b7823631de",
+        "validation_record_sha256": {
+          "validation-000500.json": "98e9b6c816e1467059a03402c87f77ff7d15366858b682a8a7e1d3f5343b9e4a",
+          "validation-001000.json": "47f0ac9d0abb1dcc9e6a0e93fbc0815228fc236b9af75676461e0ac024d87d8c",
+          "validation-001500.json": "6cf51e08ed823bb9d6e37040ecd250f62883c72a1b73347f8a5b6868cd0b389e",
+          "validation-002000.json": "8dfa8a7369aed2b2adaad790f786add37f36975103cdab588124c447e5c4ebff",
+          "validation-002500.json": "f70951574217535d919c7cac779b855f69f25d5eed5efbccbb9df5f3ff3eb2b8",
+          "validation-003000.json": "dc8a1686aa6142251277a22b05dd26b036d2cabf668107c65d5dead5d3b090a5",
+          "validation-003500.json": "537242a7892cde8da8a863760c9af60ca6673af0ab05e9844cc4c6587107e235",
+          "validation-004000.json": "e5c51384b7c063a089670425c5a7f4026f3a28c177f6c8b421905f2c713ceda4",
+          "validation-004500.json": "196a2067b15c9f9fa92c8cebf48131122eab62efcbfcdee3f0d1e98535176c3f",
+          "validation-005000.json": "39423dc5ebdc6460113fef79fba283dc2ce991e3ee929ae0c3b05f20a7dd81ee",
+          "validation-005500.json": "1fb5c4e4f0d561e4a7035c45287306579871f0ec17f3a95d22f76e5c45e4d49a",
+          "validation-006000.json": "51c9a883fcad75c6178d516a5b6db6639923829deec42d0e4c360846b4fa0e91",
+          "validation-006500.json": "a98a2811f5e5470fc55b9cc2a915b86cd743b7f3d4e9cb5abb53e96c199c18b8",
+          "validation-007000.json": "adea79c2fe779ab6c2877a1e5284443f34600a5e526c1895e57e45f77d2a8faf",
+          "validation-007500.json": "ba79985db29144326ae2112ed6c71a45cd3e82293d3366932ab1c85705d08b3a",
+          "validation-008000.json": "e0acf6df7b96d3cdc1437406d580f6e34d93139841a36a02b0608298c3f916ea",
+          "validation-008500.json": "bee2f62b06b4f84a752fd0c902bdf5f484ec885fee8d55dbdbc8c9221e5d5472",
+          "validation-009000.json": "87d519071a5d2ac16a8602868154a166999ffe91bb71f8bd08e5703a05fd5b28",
+          "validation-009500.json": "2972c147179dd52d55501be7eeccdcf741476b49d449a447564ac26cdffc500c",
+          "validation-010000.json": "c2bba80e27bb9d5a7eba4fed20b2b9d539fc27b075a6959da405794babf7d0f7",
+          "validation-010500.json": "2358d41f1c7ae9133b79cad09138accaa0b46f896db59e35da7d742d5ea366b9",
+          "validation-011000.json": "ce68504c6eced65654c405099884d60bb319a54d5397b09b551c12da672bb62f",
+          "validation-011500.json": "5603e2aa3f4ef7d5ed828052d2e32dc3e4fd06b2d0fa1b3da3876031a0f6a9db",
+          "validation-012000.json": "2ab4b6b32e20792a5055b2786724badb80d1a24d45b3403bf04edef1027b8deb"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52740662,
+          "scored_bytes": 43947258
+        }
+      },
+      "parameters": 600003,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 68091466.003194,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.899260780200454,
+            "token_perplexity": 42.351391398144145
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 54724985.503400885,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.9273512455066175,
+            "token_perplexity": 50.873370473591734
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6402922.6946569225,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8893515472854985,
+            "token_perplexity": 80.23813060232212
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6318163.031465522,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8893461196267498,
+            "token_perplexity": 80.09730033459039
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 16385109.51325826,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.6072642115437938,
+            "token_perplexity": 13.204989315290556
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9070387.85129381,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.6295527008692423,
+            "token_perplexity": 13.374128205989905
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17870403.245617766,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.9390295279790029,
+            "token_perplexity": 98.15597291388434
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16616525.682191726,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.9274726885119633,
+            "token_perplexity": 97.58452082761335
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14818246.77632131,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 2.057932978822081,
+            "token_perplexity": 59.876433731449154
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12656823.72010429,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 2.04801579718789,
+            "token_perplexity": 60.26048051621598
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11673330.720039476,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.2104715097358003,
+            "token_perplexity": 97.3001071827307
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 9121632.165045261,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.218241544312389,
+            "token_perplexity": 101.96015842141829
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 941453.0533002756,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6500230225862842,
+            "token_perplexity": 22.989596845299847
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 941453.0533002756,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6500230225862842,
+            "token_perplexity": 22.989596845299847
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 4296.161936099845,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "5068a24d023436520bd4c7eb9f8ca2a185c00154"
+    },
+    {
+      "scale": "100m",
+      "seed": 42,
+      "variant": "gru",
+      "checkpoint": "runs/babylm-100m/gru-s42/best.pt",
+      "checkpoint_sha256": "c9fab91703328a7da9dda6fc26e4161f741265099ffe0e7194432f171ad1a888",
+      "selection_validation_bpb": 1.861248423937446,
+      "training_source_commit": "57e6356cfe76635e48fc07bf7f9ca4f0cdb5f74d",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "508e4ef434fd51cdf32a88e9e540b1b520d5662519ce43b01a90a11d2ed375e0",
+      "validation_record_sha256": {
+        "validation-000500.json": "f7a4f2e4c244e2bc2d53b3c0832df9c05700b6acee2d98f4bc414e787573be81",
+        "validation-001000.json": "957657b8dfddf2e6e5f7ec2eb4f3df275c31a16ed7a0f83176588112f5bb75c9",
+        "validation-001500.json": "c565bcd7c65039a5bce97dc3408250dcc62c0e428a9eb25364c61f857f97f151",
+        "validation-002000.json": "cab17e7f1caa0548360f943f37275a5ad40f1f20df58b2dbf8bbb305ab631dfa",
+        "validation-002500.json": "5dc84aebe0e8fb3bd8d8347655a6e2cb127d8f4126a93b446492f2f8a00d22e0",
+        "validation-003000.json": "f4cbf0546fafd961c36835f56672a022ce320bcb751a6e975cf0a4731b733863",
+        "validation-003500.json": "5baecc8796b608a900d9f76245e132d3b5e606612b271f654d54c871218d748b",
+        "validation-004000.json": "a9f8ed9a8750a7f5c93140c508947910e57764a8b59d7b9fb0f7d73c072c0466",
+        "validation-004500.json": "51e60e2a94f73ef6cd0364ef635d445803dd187559646c189b78e2547d0270d9",
+        "validation-005000.json": "e15e87afcada0ffd24855d5cd69d08c42e7df94c580454d4df9e06f3f6214552",
+        "validation-005500.json": "7f36e6df601fa16b004f857fdfb676e898fbd16deb3ee89540d3127fb74f60af",
+        "validation-006000.json": "19d8aa2368a901776dbe49fc5c552e9e9cf64a3993f0a082f673eec4fa7b2bca",
+        "validation-006500.json": "32870dac02bf65ba46d7fa0416aed2e68cb794de59f240cdeea4a2b7ec2fd384",
+        "validation-007000.json": "12f375c271c18ab8e7602f502027f31ced4e0cc5bf9f951d089ede13e0738ece",
+        "validation-007500.json": "e925bcdb3cd166ba968a950053096941ba6712b0db944ac5b6b5ac511a7d5eb4",
+        "validation-008000.json": "21b24bfeb22140a2f81f45459559b6d1140a5771e44bfe8c169da3d45209d03f",
+        "validation-008500.json": "cc392d2a2bb8d48d0623948f878bd1741b1895903b45280dd03bc81bef71fd76",
+        "validation-009000.json": "7a9f7dc646679119e27a49b3a78cf1563a7bdceb5837465e36d48cb229f24173",
+        "validation-009500.json": "f784f89836cb0bb19fc7194b53aff4eba27cf1fd34d9e5aefd69d047bed73258",
+        "validation-010000.json": "8389adb9135d38b73386ce8bec6c95ecbf21b1115ffc02b5f35fc4a4ee343beb",
+        "validation-010500.json": "92cf8983015660fe668baf8ff8bf1846e54432f8fa02714457d0b9113b424f16",
+        "validation-011000.json": "17897b1bb28eeb40e2848f928bd31e81983d4cecb102e3793b264b7e816c9c73",
+        "validation-011500.json": "40e1aaff87481eb1674ff4890a65ced2ea662acbd90606c744cfb0d419479142",
+        "validation-012000.json": "20225ca2104694ab9b22e82fb0900cd40cac82aa2238fd92c21725f42bf53613"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52740662,
+        "scored_bytes": 43947258
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 42,
+        "variant": "gru",
+        "checkpoint": "runs/babylm-100m/gru-s42/best.pt",
+        "checkpoint_sha256": "c9fab91703328a7da9dda6fc26e4161f741265099ffe0e7194432f171ad1a888",
+        "selection_validation_bpb": 1.861248423937446,
+        "training_source_commit": "57e6356cfe76635e48fc07bf7f9ca4f0cdb5f74d",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "508e4ef434fd51cdf32a88e9e540b1b520d5662519ce43b01a90a11d2ed375e0",
+        "validation_record_sha256": {
+          "validation-000500.json": "f7a4f2e4c244e2bc2d53b3c0832df9c05700b6acee2d98f4bc414e787573be81",
+          "validation-001000.json": "957657b8dfddf2e6e5f7ec2eb4f3df275c31a16ed7a0f83176588112f5bb75c9",
+          "validation-001500.json": "c565bcd7c65039a5bce97dc3408250dcc62c0e428a9eb25364c61f857f97f151",
+          "validation-002000.json": "cab17e7f1caa0548360f943f37275a5ad40f1f20df58b2dbf8bbb305ab631dfa",
+          "validation-002500.json": "5dc84aebe0e8fb3bd8d8347655a6e2cb127d8f4126a93b446492f2f8a00d22e0",
+          "validation-003000.json": "f4cbf0546fafd961c36835f56672a022ce320bcb751a6e975cf0a4731b733863",
+          "validation-003500.json": "5baecc8796b608a900d9f76245e132d3b5e606612b271f654d54c871218d748b",
+          "validation-004000.json": "a9f8ed9a8750a7f5c93140c508947910e57764a8b59d7b9fb0f7d73c072c0466",
+          "validation-004500.json": "51e60e2a94f73ef6cd0364ef635d445803dd187559646c189b78e2547d0270d9",
+          "validation-005000.json": "e15e87afcada0ffd24855d5cd69d08c42e7df94c580454d4df9e06f3f6214552",
+          "validation-005500.json": "7f36e6df601fa16b004f857fdfb676e898fbd16deb3ee89540d3127fb74f60af",
+          "validation-006000.json": "19d8aa2368a901776dbe49fc5c552e9e9cf64a3993f0a082f673eec4fa7b2bca",
+          "validation-006500.json": "32870dac02bf65ba46d7fa0416aed2e68cb794de59f240cdeea4a2b7ec2fd384",
+          "validation-007000.json": "12f375c271c18ab8e7602f502027f31ced4e0cc5bf9f951d089ede13e0738ece",
+          "validation-007500.json": "e925bcdb3cd166ba968a950053096941ba6712b0db944ac5b6b5ac511a7d5eb4",
+          "validation-008000.json": "21b24bfeb22140a2f81f45459559b6d1140a5771e44bfe8c169da3d45209d03f",
+          "validation-008500.json": "cc392d2a2bb8d48d0623948f878bd1741b1895903b45280dd03bc81bef71fd76",
+          "validation-009000.json": "7a9f7dc646679119e27a49b3a78cf1563a7bdceb5837465e36d48cb229f24173",
+          "validation-009500.json": "f784f89836cb0bb19fc7194b53aff4eba27cf1fd34d9e5aefd69d047bed73258",
+          "validation-010000.json": "8389adb9135d38b73386ce8bec6c95ecbf21b1115ffc02b5f35fc4a4ee343beb",
+          "validation-010500.json": "92cf8983015660fe668baf8ff8bf1846e54432f8fa02714457d0b9113b424f16",
+          "validation-011000.json": "17897b1bb28eeb40e2848f928bd31e81983d4cecb102e3793b264b7e816c9c73",
+          "validation-011500.json": "40e1aaff87481eb1674ff4890a65ced2ea662acbd90606c744cfb0d419479142",
+          "validation-012000.json": "20225ca2104694ab9b22e82fb0900cd40cac82aa2238fd92c21725f42bf53613"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52740662,
+          "scored_bytes": 43947258
+        }
+      },
+      "parameters": 595408,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 66300539.760737926,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8493068553962937,
+            "token_perplexity": 38.377632475857
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 53008957.16485541,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.866914694903699,
+            "token_perplexity": 44.97586860247898
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6190365.351100474,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.826630885942766,
+            "token_perplexity": 69.36832620720209
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6108000.857986056,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8265004657589594,
+            "token_perplexity": 69.23050516483856
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 16875234.02934128,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.6553419856510119,
+            "token_perplexity": 14.264694277311754
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9360083.601644266,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.6815983796377187,
+            "token_perplexity": 14.529037918482391
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 16940835.930124596,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8381667523487197,
+            "token_perplexity": 77.32197085973615
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15747649.909976875,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.8266854148854004,
+            "token_perplexity": 76.79916301001938
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14287993.19242523,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9842922604624662,
+            "token_perplexity": 51.72004648003404
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12206746.730431639,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9751883007176487,
+            "token_perplexity": 52.087628387590435
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11123840.8355282,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.106419653095172,
+            "token_perplexity": 78.4383340815121
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8704205.642598437,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.116729793231512,
+            "token_perplexity": 82.51258220707332
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 882270.4222181407,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5462975065019395,
+            "token_perplexity": 18.877362331697093
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 882270.4222181407,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5462975065019395,
+            "token_perplexity": 18.877362331697093
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1511.023340600048,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "9f9048afb1e18322cac0f8ae3e602602e163d978"
+    },
+    {
+      "scale": "100m",
+      "seed": 42,
+      "variant": "transformer",
+      "checkpoint": "runs/babylm-100m/transformer-s42/best.pt",
+      "checkpoint_sha256": "a0bd9609db1198ebb3991898de23cd0aaa272f4e4ce97db53f5269e029a4185d",
+      "selection_validation_bpb": 1.8157142544925355,
+      "training_source_commit": "52dce9a89edc1530b38698dfe18df81fd8f2b6cc",
+      "checkpoint_step": 11500,
+      "final_checkpoint_sha256": "90aac31873a08e20c808bf8f392de85c304e6d04b68ac1ab2d34f77bb97d1c00",
+      "validation_record_sha256": {
+        "validation-000500.json": "6df85bbdbc7efa0389cc6af88984903e8319a9be34d9f6bb82fbd29a6bd32ed4",
+        "validation-001000.json": "67fc24b6b3cd606aab6cd9ade1b619ebe3e435b198fb61d4d991e3c2862e592e",
+        "validation-001500.json": "ba5d73c2eaa8081662bee9e180154072b7f388f757f8d29f5fb05630259c6e8f",
+        "validation-002000.json": "9f7610cbf262ba2bfc3c283f1a3ba31488d5ffec026932b38f017b7569d01bdc",
+        "validation-002500.json": "00cab8f9ca52da39f3610aa56d6ee055f2210ff60cf3e8bbdea2a91dce8794e2",
+        "validation-003000.json": "1dbad1264d9bb2c5910635c69bc1f294e165cd87fbc7cb23db857ddf260ed507",
+        "validation-003500.json": "a3c10bd5dcf385e7769088ac6f381bc1069cf76c2142c3c1b57a0e5068c4ffc8",
+        "validation-004000.json": "99c6059bb202ef0a02d6bfb85188e2f54754ebcb135fc4d28e7f97ae064ea0bd",
+        "validation-004500.json": "8d272d1e9ffdde3bee47973b7259b2869e0889a9f8bf0b5d1deab62e84fdd9da",
+        "validation-005000.json": "c595f8250b157d812a2f56562e2f183e67092d97f908d6679f17a411992d5f94",
+        "validation-005500.json": "5a853dee6ea2e77fb0cdc9e22647c42e59e2b405150ca15c0f6559c87cfa4b3b",
+        "validation-006000.json": "b6550565c01bc0ea1c9dda46f9d0f975a3949f93ed34a44c82f3a31aec8ee7a4",
+        "validation-006500.json": "95dea00f55962ecc7b6aff3004c8f8ab37b11c087941678c67405790239c8912",
+        "validation-007000.json": "00f9cced962418d1b24a9e94c3f339d4215a0b5428523f01891ebcba75d5f490",
+        "validation-007500.json": "c52be82741b72e281936f5e8d1ba4b038a97c66ceadfe8ce011e664876228e2b",
+        "validation-008000.json": "5bdce9a6f8d69ce70301e073419d95a233e1c3756fa0a3696d6c65d8c5e31d99",
+        "validation-008500.json": "6f8daf98685cfc9243de7b676e6a3405aeb770ca7042ac5b06fc01fe035802aa",
+        "validation-009000.json": "2901e48b61c227af76e952ab2716463a71a702176c574acd413d4a1d5c943d7e",
+        "validation-009500.json": "709ba9ecea7dd856fde58a9bd6f4ed87505a340094f30837b33bf5bae51fc4c2",
+        "validation-010000.json": "363c46913b1cbfcf981284877d402abd792eeeda056ce1a3f313b05387cb6a91",
+        "validation-010500.json": "00549b393b3571ef3d8141a87f74a66f2b8905d9ef54573d00eb9c4af0a6e7e1",
+        "validation-011000.json": "7640be77f6ec89c711a802b25dd4d9b82032328f026385c20290b0b4e68f2586",
+        "validation-011500.json": "b3f5a02bacc13554db7da0a0655ab612d0cbc7214c7cfded0c8abdf63a1acf4a",
+        "validation-012000.json": "1cfe5b992296e7f0ece6f0a30fc518d6109d9e76afbec36498d600e994d6bed9"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52740662,
+        "scored_bytes": 43947258
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 42,
+        "variant": "transformer",
+        "checkpoint": "runs/babylm-100m/transformer-s42/best.pt",
+        "checkpoint_sha256": "a0bd9609db1198ebb3991898de23cd0aaa272f4e4ce97db53f5269e029a4185d",
+        "selection_validation_bpb": 1.8157142544925355,
+        "training_source_commit": "52dce9a89edc1530b38698dfe18df81fd8f2b6cc",
+        "checkpoint_step": 11500,
+        "final_checkpoint_sha256": "90aac31873a08e20c808bf8f392de85c304e6d04b68ac1ab2d34f77bb97d1c00",
+        "validation_record_sha256": {
+          "validation-000500.json": "6df85bbdbc7efa0389cc6af88984903e8319a9be34d9f6bb82fbd29a6bd32ed4",
+          "validation-001000.json": "67fc24b6b3cd606aab6cd9ade1b619ebe3e435b198fb61d4d991e3c2862e592e",
+          "validation-001500.json": "ba5d73c2eaa8081662bee9e180154072b7f388f757f8d29f5fb05630259c6e8f",
+          "validation-002000.json": "9f7610cbf262ba2bfc3c283f1a3ba31488d5ffec026932b38f017b7569d01bdc",
+          "validation-002500.json": "00cab8f9ca52da39f3610aa56d6ee055f2210ff60cf3e8bbdea2a91dce8794e2",
+          "validation-003000.json": "1dbad1264d9bb2c5910635c69bc1f294e165cd87fbc7cb23db857ddf260ed507",
+          "validation-003500.json": "a3c10bd5dcf385e7769088ac6f381bc1069cf76c2142c3c1b57a0e5068c4ffc8",
+          "validation-004000.json": "99c6059bb202ef0a02d6bfb85188e2f54754ebcb135fc4d28e7f97ae064ea0bd",
+          "validation-004500.json": "8d272d1e9ffdde3bee47973b7259b2869e0889a9f8bf0b5d1deab62e84fdd9da",
+          "validation-005000.json": "c595f8250b157d812a2f56562e2f183e67092d97f908d6679f17a411992d5f94",
+          "validation-005500.json": "5a853dee6ea2e77fb0cdc9e22647c42e59e2b405150ca15c0f6559c87cfa4b3b",
+          "validation-006000.json": "b6550565c01bc0ea1c9dda46f9d0f975a3949f93ed34a44c82f3a31aec8ee7a4",
+          "validation-006500.json": "95dea00f55962ecc7b6aff3004c8f8ab37b11c087941678c67405790239c8912",
+          "validation-007000.json": "00f9cced962418d1b24a9e94c3f339d4215a0b5428523f01891ebcba75d5f490",
+          "validation-007500.json": "c52be82741b72e281936f5e8d1ba4b038a97c66ceadfe8ce011e664876228e2b",
+          "validation-008000.json": "5bdce9a6f8d69ce70301e073419d95a233e1c3756fa0a3696d6c65d8c5e31d99",
+          "validation-008500.json": "6f8daf98685cfc9243de7b676e6a3405aeb770ca7042ac5b06fc01fe035802aa",
+          "validation-009000.json": "2901e48b61c227af76e952ab2716463a71a702176c574acd413d4a1d5c943d7e",
+          "validation-009500.json": "709ba9ecea7dd856fde58a9bd6f4ed87505a340094f30837b33bf5bae51fc4c2",
+          "validation-010000.json": "363c46913b1cbfcf981284877d402abd792eeeda056ce1a3f313b05387cb6a91",
+          "validation-010500.json": "00549b393b3571ef3d8141a87f74a66f2b8905d9ef54573d00eb9c4af0a6e7e1",
+          "validation-011000.json": "7640be77f6ec89c711a802b25dd4d9b82032328f026385c20290b0b4e68f2586",
+          "validation-011500.json": "b3f5a02bacc13554db7da0a0655ab612d0cbc7214c7cfded0c8abdf63a1acf4a",
+          "validation-012000.json": "1cfe5b992296e7f0ece6f0a30fc518d6109d9e76afbec36498d600e994d6bed9"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52740662,
+          "scored_bytes": 43947258
+        }
+      },
+      "parameters": 607468,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 63611523.37958434,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.7743026933504655,
+            "token_perplexity": 33.10024119888223
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 51259752.920925535,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.8053097269503648,
+            "token_perplexity": 39.66743167311887
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6126718.7439666735,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8078502725569348,
+            "token_perplexity": 66.40965249311128
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6045274.789387574,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8077432330449923,
+            "token_perplexity": 66.28245403903038
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 14931993.762155145,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.4647237579637444,
+            "token_perplexity": 10.503770920311851
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 8249690.600248834,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.4821092349489244,
+            "token_perplexity": 10.576937025338612
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 16757668.116934014,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8182921141846942,
+            "token_perplexity": 73.77108900339474
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15577957.57895222,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.8070015567940252,
+            "token_perplexity": 73.28927162714582
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14090823.26550484,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9569096354349362,
+            "token_perplexity": 48.97911558512652
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12039844.254160691,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9481816112391717,
+            "token_perplexity": 49.347110095342124
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 10831627.118160741,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.0510858231467153,
+            "token_perplexity": 69.94565365237351
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8474293.325313287,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.060818631224189,
+            "token_perplexity": 73.43402619374965
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 872692.372862927,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5295106875605498,
+            "token_perplexity": 18.28477063624005
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 872692.372862927,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5295106875605498,
+            "token_perplexity": 18.28477063624005
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 1380.205358100211,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "3b1f2bdf87533856f426b10f456e14b34ce0722d"
+    },
+    {
+      "scale": "100m",
+      "seed": 43,
+      "variant": "flm",
+      "checkpoint": "runs/babylm-100m/flm-s43/best.pt",
+      "checkpoint_sha256": "16e902668e38e35ee66c5c0cddda862d871aceb7b6c2cb1f96369b7d2b5fbdb9",
+      "selection_validation_bpb": 1.9318626803563625,
+      "training_source_commit": "e8cf5eaa02d35aa5a1b100a11c59fe3225d58a9c",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "5d9a371390c82e4b7b7b2484c8afd19e55e8ad9adc6364bf26d5d4855c8edf86",
+      "validation_record_sha256": {
+        "validation-000500.json": "cb6a35545fd94239e04b7401fbb44fb21762226f4a687574453bd5acbbd710f4",
+        "validation-001000.json": "49f541c3e69b4443a64b443ce2d143cf6bd112c888b12dbd60e24b5e79d0f614",
+        "validation-001500.json": "fba05a71f4cded06b8f3beeb51155dd93963f3c8658444f14a84631f10105fa6",
+        "validation-002000.json": "9d9daa29bcc90e43aab6bfa99b5125747021a95a16172cc05a3ee6cae018427d",
+        "validation-002500.json": "36892be35f3062fd3d3ff5bdde164b267dfe3715dec07e4aedbc2a694d270481",
+        "validation-003000.json": "4fe3f5af90f4f25f169fcae14a8f2b799a6dac213e7afc1d3344d8ae9f99bee4",
+        "validation-003500.json": "89abe87b361577865c21f545995b05e64e7c26502ebb615bbf6a96eeb64a3e78",
+        "validation-004000.json": "479fb0612c8bd5637b0c27912a8046a91869e83c18224fcef41d46ec1e929ca4",
+        "validation-004500.json": "86f830091b53e342b62208e5f6bbaade6a0b41c1b57c211192f32173c85eefec",
+        "validation-005000.json": "c090794c7252b59c31cbf9a5320d8efb7a97f3307923a87299f52d8dfa7401f9",
+        "validation-005500.json": "de8bddded3a658e8fa48d4f6145ae0653e6bb2f77a133d6a1b069f1fe4305a9a",
+        "validation-006000.json": "47c2277b43b9ae414e999e030fc97cac3c4d2dfdecabce2b9ace1a635f34b37f",
+        "validation-006500.json": "c67b53984dce64245aa4cbf9af792cad62850e527bdc2f9379b6785efad54e55",
+        "validation-007000.json": "2771a805525ddf9e0691b8a81edce34458c6388335ea2be8fce6133c3e927bb9",
+        "validation-007500.json": "d90276f1a2a8b1f3ab48c93a8f0c862b8957036ab70f1d174e183dda3fa6fc14",
+        "validation-008000.json": "5772d78b3758fe94f1fad8370bd0570e51741c514598ad3537d5e1d69859d6d0",
+        "validation-008500.json": "870d41720a64767009d4de138762a0b0b6453cecff36188c8e32d725eaa3fe88",
+        "validation-009000.json": "81de5a4254c8a869aafca790d3e2d56de12b1e8b7975bc1856a0c3b568b34f5d",
+        "validation-009500.json": "d950edc9120d86a1a0379e1a98916f5a595e79b0ac8acf614c6924fd7ebd1514",
+        "validation-010000.json": "69c566750712284857cf1b333cb63616f7c3934422b64af2de0a146b6dccc560",
+        "validation-010500.json": "538d5f04b606c42eb4072322188f8f3d623e30dc2e4e306481a8a422c4467352",
+        "validation-011000.json": "95278b0aa07ed433d91cf141c007d12d69e0583cf2af603eab5efc70fd2aa990",
+        "validation-011500.json": "77f16f1bfe8a3119a69d8a77d1379e9d3ea93658677f37b7f2089fe31e706ecd",
+        "validation-012000.json": "c23423b212996be5c80fd31a030548ef4bcfa1f5641b473ff106de4f1645853d"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52746800,
+        "scored_bytes": 43956184
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 43,
+        "variant": "flm",
+        "checkpoint": "runs/babylm-100m/flm-s43/best.pt",
+        "checkpoint_sha256": "16e902668e38e35ee66c5c0cddda862d871aceb7b6c2cb1f96369b7d2b5fbdb9",
+        "selection_validation_bpb": 1.9318626803563625,
+        "training_source_commit": "e8cf5eaa02d35aa5a1b100a11c59fe3225d58a9c",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "5d9a371390c82e4b7b7b2484c8afd19e55e8ad9adc6364bf26d5d4855c8edf86",
+        "validation_record_sha256": {
+          "validation-000500.json": "cb6a35545fd94239e04b7401fbb44fb21762226f4a687574453bd5acbbd710f4",
+          "validation-001000.json": "49f541c3e69b4443a64b443ce2d143cf6bd112c888b12dbd60e24b5e79d0f614",
+          "validation-001500.json": "fba05a71f4cded06b8f3beeb51155dd93963f3c8658444f14a84631f10105fa6",
+          "validation-002000.json": "9d9daa29bcc90e43aab6bfa99b5125747021a95a16172cc05a3ee6cae018427d",
+          "validation-002500.json": "36892be35f3062fd3d3ff5bdde164b267dfe3715dec07e4aedbc2a694d270481",
+          "validation-003000.json": "4fe3f5af90f4f25f169fcae14a8f2b799a6dac213e7afc1d3344d8ae9f99bee4",
+          "validation-003500.json": "89abe87b361577865c21f545995b05e64e7c26502ebb615bbf6a96eeb64a3e78",
+          "validation-004000.json": "479fb0612c8bd5637b0c27912a8046a91869e83c18224fcef41d46ec1e929ca4",
+          "validation-004500.json": "86f830091b53e342b62208e5f6bbaade6a0b41c1b57c211192f32173c85eefec",
+          "validation-005000.json": "c090794c7252b59c31cbf9a5320d8efb7a97f3307923a87299f52d8dfa7401f9",
+          "validation-005500.json": "de8bddded3a658e8fa48d4f6145ae0653e6bb2f77a133d6a1b069f1fe4305a9a",
+          "validation-006000.json": "47c2277b43b9ae414e999e030fc97cac3c4d2dfdecabce2b9ace1a635f34b37f",
+          "validation-006500.json": "c67b53984dce64245aa4cbf9af792cad62850e527bdc2f9379b6785efad54e55",
+          "validation-007000.json": "2771a805525ddf9e0691b8a81edce34458c6388335ea2be8fce6133c3e927bb9",
+          "validation-007500.json": "d90276f1a2a8b1f3ab48c93a8f0c862b8957036ab70f1d174e183dda3fa6fc14",
+          "validation-008000.json": "5772d78b3758fe94f1fad8370bd0570e51741c514598ad3537d5e1d69859d6d0",
+          "validation-008500.json": "870d41720a64767009d4de138762a0b0b6453cecff36188c8e32d725eaa3fe88",
+          "validation-009000.json": "81de5a4254c8a869aafca790d3e2d56de12b1e8b7975bc1856a0c3b568b34f5d",
+          "validation-009500.json": "d950edc9120d86a1a0379e1a98916f5a595e79b0ac8acf614c6924fd7ebd1514",
+          "validation-010000.json": "69c566750712284857cf1b333cb63616f7c3934422b64af2de0a146b6dccc560",
+          "validation-010500.json": "538d5f04b606c42eb4072322188f8f3d623e30dc2e4e306481a8a422c4467352",
+          "validation-011000.json": "95278b0aa07ed433d91cf141c007d12d69e0583cf2af603eab5efc70fd2aa990",
+          "validation-011500.json": "77f16f1bfe8a3119a69d8a77d1379e9d3ea93658677f37b7f2089fe31e706ecd",
+          "validation-012000.json": "c23423b212996be5c80fd31a030548ef4bcfa1f5641b473ff106de4f1645853d"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52746800,
+          "scored_bytes": 43956184
+        }
+      },
+      "parameters": 600003,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 67943054.65776904,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.895121174105188,
+            "token_perplexity": 42.00701111625312
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 54636904.5244017,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.924249134413889,
+            "token_perplexity": 50.55264462407292
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6389438.219001144,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.885372596397049,
+            "token_perplexity": 79.50056215017374
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6304796.078781272,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8853489451221592,
+            "token_perplexity": 79.3579627287739
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 16251919.372394959,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.5941991937868578,
+            "token_perplexity": 12.930873896559982
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 8997088.061819049,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.6163839288310429,
+            "token_perplexity": 13.096760456444079
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 17854803.504801203,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.937336876858802,
+            "token_perplexity": 97.76376395312577
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 16599808.49432097,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.9255335392778885,
+            "token_perplexity": 97.13584027912174
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14806636.218892394,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 2.0563205242992115,
+            "token_perplexity": 59.68475154633693
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12649836.337847708,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 2.046885160500603,
+            "token_perplexity": 60.124281255414864
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11701875.591955615,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.215876790168005,
+            "token_perplexity": 98.39541576778664
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 9146993.800908983,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.224409106573912,
+            "token_perplexity": 103.2796383903039
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 938381.7507237197,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6446401519876062,
+            "token_perplexity": 22.755670218704285
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 938381.7507237197,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.6446401519876062,
+            "token_perplexity": 22.755670218704285
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 4377.123168400343,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "fcabedde85c37fab656b505f7b674216c5e1855d"
+    },
+    {
+      "scale": "100m",
+      "seed": 43,
+      "variant": "gru",
+      "checkpoint": "runs/babylm-100m/gru-s43/best.pt",
+      "checkpoint_sha256": "a4aeefeaf45dbc16dd009cca3695591e945a495cd6711e4761a86ab69fd67b17",
+      "selection_validation_bpb": 1.8563063669516588,
+      "training_source_commit": "f33de49b3b39f888830d0c030ec5eb0de1ae35c4",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "27346846ea112d470e3edb4a5582da434661705735a3cadf912b0708840d9410",
+      "validation_record_sha256": {
+        "validation-000500.json": "6eb1b0576c607d8b09dee14e7e73153e772c5d6ec5122edacf07b36607a01b98",
+        "validation-001000.json": "dc964e55ab9c406984c1713712b52130187763a32986dcd8e1290b948291f928",
+        "validation-001500.json": "ac66be70383dda48420330e8d82dba10dd7281023c38914a5843ca76d4cc97a0",
+        "validation-002000.json": "5b35187d846a821ca4aa40d081fdf042272f7bccb1626437cca87143870f4b29",
+        "validation-002500.json": "406b9f9490fc2781b64b7bb4d37a13719de97eef2e0b1e249865d420612f4888",
+        "validation-003000.json": "8bd9289647471a267d1de11b72ae4c25b0c688648aab42a1587c20e0e8246114",
+        "validation-003500.json": "fe4090c6632487ff13dad1aca3e36e5fdd21a9c91c5663e6beff5d503652d20e",
+        "validation-004000.json": "4eab24c5a85b07b2587c286853e5275f49c77f0b9247523bf4c3f46688041724",
+        "validation-004500.json": "76f5a5026e6f64f86bcff8994193102434aeb50ca0399159375a652528f9b184",
+        "validation-005000.json": "ee68c9f601ff32c372e54be125198f0f709f024d3d747e55c215900c3c558b83",
+        "validation-005500.json": "eb57ee121ef5d62c8a4e07d6ea99b2543a4f8ee0d3cf9be0ecf7c55a160e12e4",
+        "validation-006000.json": "23c3c8972b3eed6befefa54c58fb2db47fa3060347fcc228c4cd0ff23e2c740c",
+        "validation-006500.json": "7abef51577da511cbef92e2dfc51785ea14e9b4b38750c6d6de4e7892a55f0b0",
+        "validation-007000.json": "37f6fde1f7f548aa62a8c55671d4afcb5655a7706364ed03d76b1b308068ee35",
+        "validation-007500.json": "1b303ec6896c4bee5af4743fbe349cc623f18ca2c0c119b83de0649939182a8d",
+        "validation-008000.json": "7328577151700b26fcb1f680f7b3fc1ee2f71a0c24054ec9da3f81b2a7dcd7f4",
+        "validation-008500.json": "90fa351237736ae6aee4759627163fd116933f19f4cb99c9b6a9b62d08085ce1",
+        "validation-009000.json": "54f723d3e6b638aaa65470378d27a87164ec08f75433fd4d366a34992004c78b",
+        "validation-009500.json": "58f7a9597b80493515cf1ca190b1dc87cd39bd1e5bc6003969ae677fe3074bbf",
+        "validation-010000.json": "11942c362c67ab7c0b7f0dba2a4ae088152c9d84a777afee7fcc3f2b8797b26a",
+        "validation-010500.json": "c22b7b18a5e0fb2737b047cbd5358925b0399f0c6c9026a3e07d68b384b00af8",
+        "validation-011000.json": "ea28e4041b3a3b18fa92ae3dc31960ba5a6a019f8375bf68420aaa8690f2ed9a",
+        "validation-011500.json": "289107e6d06f085fa0b24377620917aefdb9e03a4d445ae588ee3029f8649a7c",
+        "validation-012000.json": "fe3f99f1589494e6ef9760fb0fc46a32cf0129ce0c69407759fbdf66eaa30edb"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52746800,
+        "scored_bytes": 43956184
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 43,
+        "variant": "gru",
+        "checkpoint": "runs/babylm-100m/gru-s43/best.pt",
+        "checkpoint_sha256": "a4aeefeaf45dbc16dd009cca3695591e945a495cd6711e4761a86ab69fd67b17",
+        "selection_validation_bpb": 1.8563063669516588,
+        "training_source_commit": "f33de49b3b39f888830d0c030ec5eb0de1ae35c4",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "27346846ea112d470e3edb4a5582da434661705735a3cadf912b0708840d9410",
+        "validation_record_sha256": {
+          "validation-000500.json": "6eb1b0576c607d8b09dee14e7e73153e772c5d6ec5122edacf07b36607a01b98",
+          "validation-001000.json": "dc964e55ab9c406984c1713712b52130187763a32986dcd8e1290b948291f928",
+          "validation-001500.json": "ac66be70383dda48420330e8d82dba10dd7281023c38914a5843ca76d4cc97a0",
+          "validation-002000.json": "5b35187d846a821ca4aa40d081fdf042272f7bccb1626437cca87143870f4b29",
+          "validation-002500.json": "406b9f9490fc2781b64b7bb4d37a13719de97eef2e0b1e249865d420612f4888",
+          "validation-003000.json": "8bd9289647471a267d1de11b72ae4c25b0c688648aab42a1587c20e0e8246114",
+          "validation-003500.json": "fe4090c6632487ff13dad1aca3e36e5fdd21a9c91c5663e6beff5d503652d20e",
+          "validation-004000.json": "4eab24c5a85b07b2587c286853e5275f49c77f0b9247523bf4c3f46688041724",
+          "validation-004500.json": "76f5a5026e6f64f86bcff8994193102434aeb50ca0399159375a652528f9b184",
+          "validation-005000.json": "ee68c9f601ff32c372e54be125198f0f709f024d3d747e55c215900c3c558b83",
+          "validation-005500.json": "eb57ee121ef5d62c8a4e07d6ea99b2543a4f8ee0d3cf9be0ecf7c55a160e12e4",
+          "validation-006000.json": "23c3c8972b3eed6befefa54c58fb2db47fa3060347fcc228c4cd0ff23e2c740c",
+          "validation-006500.json": "7abef51577da511cbef92e2dfc51785ea14e9b4b38750c6d6de4e7892a55f0b0",
+          "validation-007000.json": "37f6fde1f7f548aa62a8c55671d4afcb5655a7706364ed03d76b1b308068ee35",
+          "validation-007500.json": "1b303ec6896c4bee5af4743fbe349cc623f18ca2c0c119b83de0649939182a8d",
+          "validation-008000.json": "7328577151700b26fcb1f680f7b3fc1ee2f71a0c24054ec9da3f81b2a7dcd7f4",
+          "validation-008500.json": "90fa351237736ae6aee4759627163fd116933f19f4cb99c9b6a9b62d08085ce1",
+          "validation-009000.json": "54f723d3e6b638aaa65470378d27a87164ec08f75433fd4d366a34992004c78b",
+          "validation-009500.json": "58f7a9597b80493515cf1ca190b1dc87cd39bd1e5bc6003969ae677fe3074bbf",
+          "validation-010000.json": "11942c362c67ab7c0b7f0dba2a4ae088152c9d84a777afee7fcc3f2b8797b26a",
+          "validation-010500.json": "c22b7b18a5e0fb2737b047cbd5358925b0399f0c6c9026a3e07d68b384b00af8",
+          "validation-011000.json": "ea28e4041b3a3b18fa92ae3dc31960ba5a6a019f8375bf68420aaa8690f2ed9a",
+          "validation-011500.json": "289107e6d06f085fa0b24377620917aefdb9e03a4d445ae588ee3029f8649a7c",
+          "validation-012000.json": "fe3f99f1589494e6ef9760fb0fc46a32cf0129ce0c69407759fbdf66eaa30edb"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52746800,
+          "scored_bytes": 43956184
+        }
+      },
+      "parameters": 595408,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 65753158.69243616,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8340388716698013,
+            "token_perplexity": 37.23916539321878
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 52739944.82078541,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.857440388576697,
+            "token_perplexity": 44.11547311948135
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6204198.875875096,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8307128329978437,
+            "token_perplexity": 70.0286305075506
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6121805.342759679,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.8306284772728443,
+            "token_perplexity": 69.89670357937024
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 16288698.238398343,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.597806942335659,
+            "token_perplexity": 13.005993815439448
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9048251.44673915,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.6255757554043984,
+            "token_perplexity": 13.289750140978907
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 16974948.574242603,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8418681475166476,
+            "token_perplexity": 78.00191522211003
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15778973.65504637,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.8303188858213897,
+            "token_perplexity": 77.46520256338505
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14281952.794747975,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9834533802782672,
+            "token_perplexity": 51.633841750867134
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12202575.68453306,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9745133787877873,
+            "token_perplexity": 52.01732031494575
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 11120800.486031186,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.105843930012877,
+            "token_perplexity": 78.34486778688559
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8705778.968566198,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.1171124020630554,
+            "token_perplexity": 82.57842557733898
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 882559.723140957,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5468045452559473,
+            "token_perplexity": 18.8955570363016
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 882559.723140957,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5468045452559473,
+            "token_perplexity": 18.8955570363016
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 839.0330313999148,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "4455cde6ebb45e52b4da0e11fd9fbd2bd498dfe4"
+    },
+    {
+      "scale": "100m",
+      "seed": 43,
+      "variant": "transformer",
+      "checkpoint": "runs/babylm-100m/transformer-s43/best.pt",
+      "checkpoint_sha256": "679a48d10a0d4dfc627479ee2049faa96dab06238b0307086e3c7b69d608bbe6",
+      "selection_validation_bpb": 1.8462591590768913,
+      "training_source_commit": "096a4fcd64a04de02a99f38127fc60fb866bf3d2",
+      "checkpoint_step": 12000,
+      "final_checkpoint_sha256": "71852408f247ef1252059b4e294d955425d9cfdd809b68496d4db8d2c42c6a91",
+      "validation_record_sha256": {
+        "validation-000500.json": "d317ac4fae6818b7c0c8ebad9188a5e1003309ac87c8d97d829d7607c9d97e35",
+        "validation-001000.json": "592ebd0dc4216e79207b5e5960e9826dd52f5298980dfab5afc58b59d060d359",
+        "validation-001500.json": "b861242bb6681fa1615ba97e9cdf46aa44bdeb32c67f32a709769f5c46d77fa2",
+        "validation-002000.json": "2354486040f36d4f185832b73aac34c698535fdcb26b1255f5a2eec543f1c01d",
+        "validation-002500.json": "b07f82ce7389412cc62151c0e59229bfc299ccb66d52a46e9223da45cebcaba8",
+        "validation-003000.json": "94aa9e7fd04a15f604471451fefdbc5db3f7631e7293291802c1a419f45942d9",
+        "validation-003500.json": "8354ff490c5e0aa0088223a678b09528477a988557fc76a1bc2fce8db34c69a1",
+        "validation-004000.json": "d12f3117d9ef047fef701ddc64e8601e91058301a7247c29d4a81452bbf39339",
+        "validation-004500.json": "baba3676e1e89ce6cf27cbbd5cc3e6be7b9da46d90fc3fb275a584a9b6521eab",
+        "validation-005000.json": "eac21192606b3198791cc7415f51e056e02163ede57360fe87ed442997735db2",
+        "validation-005500.json": "8caff2c3fa9936a0e7cb07926f91ca82f2b140a214ae4874cec31a17c593793f",
+        "validation-006000.json": "ae391f5e2a6db2ab15b7b8b8dea8c28869aed275f7b72a2dda70f3724e9861e8",
+        "validation-006500.json": "e0c1b8fbf3e157a65d04743e5a223ff1b18ef1f44342d6e5da535571dffc9e18",
+        "validation-007000.json": "adefcfaabe2dd26844cdce637daa78d11860869ea2fd4d502c909be74c1f7c39",
+        "validation-007500.json": "6698f25a49559a1fcf322102263190d80152047e68e3555f760843d354d7c484",
+        "validation-008000.json": "0a966366d8427b0ff774a0f7126df187f352e802439332e8adfa5e3e9d470f08",
+        "validation-008500.json": "5b0368b9e112ea6df02c688877d2ea49c90963b6176a0512ea0f3974a2c028cb",
+        "validation-009000.json": "3de9325f141497880ba7c269f100dcf88125803ff438f3acd18fcc5661f2f225",
+        "validation-009500.json": "2126311ca6fa47bf38f08fcb5c36952a8c05d70564780f42ffab216db76b7029",
+        "validation-010000.json": "3b332cb4dce55ef9fad7a81173087c3d486dc803a61542e809bd888dcc95f382",
+        "validation-010500.json": "decd55bb878ca4fc8b3e0c8810d3d3b8e507054659d9fe8ac4e9428f2881c4a0",
+        "validation-011000.json": "291984387d38ba6268c04528b7b78c052581a28c14d4286853ee667ce5d74299",
+        "validation-011500.json": "19903a2597237f31bb209dc1916af646d3ce3bce6021ea63e532b15c5ed4e4dd",
+        "validation-012000.json": "d756ce6e38b336a621ab65f748c68b1d4ae8da1fbe43d794774f9e62fb2e1f83"
+      },
+      "final_exposure": {
+        "presented_tokens": 18432000,
+        "presented_bytes": 52746800,
+        "scored_bytes": 43956184
+      },
+      "identity": {
+        "selection_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
+        "test_manifest_sha256": "f945554bde405a86e74b5d1564e42df3de16b8a9d51d072cc12e983ab4797d85",
+        "evaluator_source_sha256": {
+          "babylm_test.py": "cd388aa423eaa2cd4f9972851b3b6f40ba259a533f9b00eee66b9253d65009ba",
+          "corpus_evaluation.py": "181a5e806acd5ce58d7a1c787ae75c38e911bb31d7dbdfe62b6ae1139d9502ae",
+          "language_train.py": "e6715f98bd2a8208c3857073372339401e82ce01fec9f204efa384498ebe4f31",
+          "model.py": "2ee5f175bd32474e2f23683c9b6df421ea483a4ee45e9c2ade41e975985d3055",
+          "baselines.py": "4d1c13f6ec47cd7397fa64d9c328512519244d9a3e63580919db0182c17c6646"
+        },
+        "threads": 4,
+        "dtype": "float32",
+        "torch_version": "2.8.0+cpu",
+        "scale": "100m",
+        "seed": 43,
+        "variant": "transformer",
+        "checkpoint": "runs/babylm-100m/transformer-s43/best.pt",
+        "checkpoint_sha256": "679a48d10a0d4dfc627479ee2049faa96dab06238b0307086e3c7b69d608bbe6",
+        "selection_validation_bpb": 1.8462591590768913,
+        "training_source_commit": "096a4fcd64a04de02a99f38127fc60fb866bf3d2",
+        "checkpoint_step": 12000,
+        "final_checkpoint_sha256": "71852408f247ef1252059b4e294d955425d9cfdd809b68496d4db8d2c42c6a91",
+        "validation_record_sha256": {
+          "validation-000500.json": "d317ac4fae6818b7c0c8ebad9188a5e1003309ac87c8d97d829d7607c9d97e35",
+          "validation-001000.json": "592ebd0dc4216e79207b5e5960e9826dd52f5298980dfab5afc58b59d060d359",
+          "validation-001500.json": "b861242bb6681fa1615ba97e9cdf46aa44bdeb32c67f32a709769f5c46d77fa2",
+          "validation-002000.json": "2354486040f36d4f185832b73aac34c698535fdcb26b1255f5a2eec543f1c01d",
+          "validation-002500.json": "b07f82ce7389412cc62151c0e59229bfc299ccb66d52a46e9223da45cebcaba8",
+          "validation-003000.json": "94aa9e7fd04a15f604471451fefdbc5db3f7631e7293291802c1a419f45942d9",
+          "validation-003500.json": "8354ff490c5e0aa0088223a678b09528477a988557fc76a1bc2fce8db34c69a1",
+          "validation-004000.json": "d12f3117d9ef047fef701ddc64e8601e91058301a7247c29d4a81452bbf39339",
+          "validation-004500.json": "baba3676e1e89ce6cf27cbbd5cc3e6be7b9da46d90fc3fb275a584a9b6521eab",
+          "validation-005000.json": "eac21192606b3198791cc7415f51e056e02163ede57360fe87ed442997735db2",
+          "validation-005500.json": "8caff2c3fa9936a0e7cb07926f91ca82f2b140a214ae4874cec31a17c593793f",
+          "validation-006000.json": "ae391f5e2a6db2ab15b7b8b8dea8c28869aed275f7b72a2dda70f3724e9861e8",
+          "validation-006500.json": "e0c1b8fbf3e157a65d04743e5a223ff1b18ef1f44342d6e5da535571dffc9e18",
+          "validation-007000.json": "adefcfaabe2dd26844cdce637daa78d11860869ea2fd4d502c909be74c1f7c39",
+          "validation-007500.json": "6698f25a49559a1fcf322102263190d80152047e68e3555f760843d354d7c484",
+          "validation-008000.json": "0a966366d8427b0ff774a0f7126df187f352e802439332e8adfa5e3e9d470f08",
+          "validation-008500.json": "5b0368b9e112ea6df02c688877d2ea49c90963b6176a0512ea0f3974a2c028cb",
+          "validation-009000.json": "3de9325f141497880ba7c269f100dcf88125803ff438f3acd18fcc5661f2f225",
+          "validation-009500.json": "2126311ca6fa47bf38f08fcb5c36952a8c05d70564780f42ffab216db76b7029",
+          "validation-010000.json": "3b332cb4dce55ef9fad7a81173087c3d486dc803a61542e809bd888dcc95f382",
+          "validation-010500.json": "decd55bb878ca4fc8b3e0c8810d3d3b8e507054659d9fe8ac4e9428f2881c4a0",
+          "validation-011000.json": "291984387d38ba6268c04528b7b78c052581a28c14d4286853ee667ce5d74299",
+          "validation-011500.json": "19903a2597237f31bb209dc1916af646d3ce3bce6021ea63e532b15c5ed4e4dd",
+          "validation-012000.json": "d756ce6e38b336a621ab65f748c68b1d4ae8da1fbe43d794774f9e62fb2e1f83"
+        },
+        "final_exposure": {
+          "presented_tokens": 18432000,
+          "presented_bytes": 52746800,
+          "scored_bytes": 43956184
+        }
+      },
+      "parameters": 607468,
+      "components": {
+        "all": {
+          "official": {
+            "blocks": 3187,
+            "nll": 65525969.683073856,
+            "tokens": 18177107,
+            "bytes": 51722871,
+            "bits_per_byte": 1.8277019369479939,
+            "token_perplexity": 36.77662328447343
+          },
+          "overlap_filtered": {
+            "blocks": 2528,
+            "nll": 52404948.01696438,
+            "tokens": 13927273,
+            "bytes": 40963714,
+            "bits_per_byte": 1.8456421852305296,
+            "token_perplexity": 43.06701067504426
+          },
+          "excluded_blocks": 659,
+          "excluded_bytes": 10759157
+        },
+        "bnc_spoken": {
+          "official": {
+            "blocks": 300,
+            "nll": 6140095.376169144,
+            "tokens": 1460188,
+            "bytes": 4889225,
+            "bits_per_byte": 1.8117974013845708,
+            "token_perplexity": 67.0208196401075
+          },
+          "overlap_filtered": {
+            "blocks": 296,
+            "nll": 6058686.746105582,
+            "tokens": 1441436,
+            "bytes": 4824517,
+            "bits_per_byte": 1.811753865289772,
+            "token_perplexity": 66.90206257010396
+          },
+          "excluded_blocks": 4,
+          "excluded_bytes": 64708
+        },
+        "childes": {
+          "official": {
+            "blocks": 899,
+            "nll": 16583815.351623686,
+            "tokens": 6349354,
+            "bytes": 14707424,
+            "bits_per_byte": 1.626755859272552,
+            "token_perplexity": 13.624779792149575
+          },
+          "overlap_filtered": {
+            "blocks": 491,
+            "nll": 9183340.365325687,
+            "tokens": 3497594,
+            "bytes": 8030304,
+            "bits_per_byte": 1.649845336347268,
+            "token_perplexity": 13.813086732131564
+          },
+          "excluded_blocks": 408,
+          "excluded_bytes": 6677120
+        },
+        "gutenberg": {
+          "official": {
+            "blocks": 830,
+            "nll": 16793462.970545005,
+            "tokens": 3896256,
+            "bytes": 13296106,
+            "bits_per_byte": 1.8221760376276874,
+            "token_perplexity": 74.45194576886838
+          },
+          "overlap_filtered": {
+            "blocks": 777,
+            "nll": 15609197.927759951,
+            "tokens": 3627493,
+            "bytes": 12437312,
+            "bits_per_byte": 1.810625353985939,
+            "token_perplexity": 73.9231721844873
+          },
+          "excluded_blocks": 53,
+          "excluded_bytes": 858794
+        },
+        "open_subtitles": {
+          "official": {
+            "blocks": 635,
+            "nll": 14153525.029837085,
+            "tokens": 3621022,
+            "bytes": 10388196,
+            "bits_per_byte": 1.9656175501158988,
+            "token_perplexity": 49.83462559053657
+          },
+          "overlap_filtered": {
+            "blocks": 545,
+            "nll": 12091907.187712912,
+            "tokens": 3088027,
+            "bytes": 8915916,
+            "bits_per_byte": 1.9566059768399602,
+            "token_perplexity": 50.18613612078534
+          },
+          "excluded_blocks": 90,
+          "excluded_bytes": 1472280
+        },
+        "simple_wiki": {
+          "official": {
+            "blocks": 472,
+            "nll": 10979276.10250434,
+            "tokens": 2549987,
+            "bytes": 7618762,
+            "bits_per_byte": 2.0790447563047274,
+            "token_perplexity": 74.11518386666661
+          },
+          "overlap_filtered": {
+            "blocks": 368,
+            "nll": 8586020.937665656,
+            "tokens": 1972423,
+            "bytes": 5932507,
+            "bits_per_byte": 2.087989079109228,
+            "token_perplexity": 77.71375386031627
+          },
+          "excluded_blocks": 104,
+          "excluded_bytes": 1686255
+        },
+        "switchboard": {
+          "official": {
+            "blocks": 51,
+            "nll": 875794.8523945971,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5349481999637578,
+            "token_perplexity": 18.47465466925756
+          },
+          "overlap_filtered": {
+            "blocks": 51,
+            "nll": 875794.8523945971,
+            "tokens": 300300,
+            "bytes": 823158,
+            "bits_per_byte": 1.5349481999637578,
+            "token_perplexity": 18.47465466925756
+          },
+          "excluded_blocks": 0,
+          "excluded_bytes": 0
+        }
+      },
+      "seconds": 779.1131414001866,
+      "timing": "Scoring wall time may overlap other work; not an isolated speed comparison",
+      "evaluator_commit": "4455cde6ebb45e52b4da0e11fd9fbd2bd498dfe4"
+    }
+  ],
+  "caution": "Equal updates sample different fractions of the two training corpora. Two seeds provide limited training uncertainty. Artificial blocks have unknown document dependence. Component perplexity does not establish chatbot ability."
+}
