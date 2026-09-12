@@ -43,8 +43,8 @@ export function createTypingFly(element) {
       if (state === next) return;
       state = next;
       element.dataset.state = state;
-      caption.textContent = state === 'typing' ? 'FLM is writing' :
-        state === 'reading' ? 'Reading your passage' : 'Ready to continue';
+      caption.textContent = state === 'typing' ? 'Writing' :
+        state === 'reading' ? 'Reading your message' : 'Ready';
       updateMotion();
     }
   };

@@ -10,7 +10,8 @@ export class TypingFlyView extends FlyView {
     super(element);
     this.controls.enabled = false;
     this.renderer.domElement.style.pointerEvents = 'none';
-    this.scene.background.set('#faf8f5');
+    this.applyTheme = () => { this.scene.background.set(getComputedStyle(document.documentElement).getPropertyValue('--scene-background').trim() || '#faf8f5'); this.render(); };
+    document.addEventListener('flm-theme', this.applyTheme); this.applyTheme();
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.scene.children.filter(x => x.isLight).forEach(x => this.scene.remove(x));
@@ -83,6 +84,7 @@ export class TypingFlyView extends FlyView {
   }
 
   dispose() {
+    document.removeEventListener('flm-theme', this.applyTheme);
     this.observer.disconnect(); this.controls.dispose();
     const geometries = new Set(), materials = new Set();
     this.scene.traverse(object => {

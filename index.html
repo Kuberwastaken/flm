@@ -21,40 +21,41 @@
   <header class="header">
     <a href="#chat" class="brand" aria-label="ChatFLM home"><img src="/mark.svg" alt="" width="36" height="36"><strong>FLM</strong><span>Fly Language Model</span></a>
     <nav aria-label="Main navigation"><a href="#chat" data-page="chat" aria-current="page">ChatFLM</a><a href="#learn" data-page="learn">Learning</a><a href="#research" data-page="research">Research</a></nav>
-    <span id="model-status" role="status">Loading model…</span>
+    <span id="model-status" role="status">Loading model…</span><button id="theme-toggle" type="button" aria-label="Switch to dark theme">Dark</button>
   </header>
   <div id="notice" role="status" hidden></div>
   <main id="workspace" tabindex="-1">
     <div class="experiment" id="experiment">
       <section class="work-panel" id="chat-page" aria-labelledby="chat-title">
-        <div class="panel-heading"><h1 id="chat-title">ChatFLM</h1><button id="new-chat" data-idle>New</button></div>
-        <p class="intro">Language through a fly’s wiring. Explore a small next-token predictor trained from scratch.</p>
-        <div class="mode-row"><label for="model">Model</label><select id="model" data-idle><option value="wikitext">WikiText-2 · written language</option><option value="babylm">BabyLM 10M · experimental</option><option value="ami">AMI · meeting dialogue</option></select></div>
-        <p class="anatomy-note">Switching models reloads the workspace. Save or export session learning first to keep it.</p>
-        <div class="conversation-tools">
-          <label class="sr-only" for="conversation">Saved conversation</label><select id="conversation" data-idle></select>
-          <button id="rename-chat" data-idle>Rename</button><button id="delete-chat" data-idle>Delete</button>
-          <details class="archive-menu"><summary>Files</summary><div><button id="export-chats" data-idle>Export conversations</button><label class="file-button">Import conversations<input id="import-chats" type="file" accept="application/json,.json" data-idle></label></div></details>
+        <div class="chat-toolbar">
+          <h1 id="chat-title" class="sr-only">ChatFLM</h1>
+          <label class="sr-only" for="model">Model</label><select id="model" data-idle></select>
+          <button id="new-chat" data-idle title="Start a new conversation">New chat</button>
+          <details class="history-menu"><summary>History</summary><div class="conversation-tools">
+            <label for="conversation">Saved conversations</label><select id="conversation" data-idle></select>
+            <div class="inline-actions"><button id="rename-chat" data-idle>Rename</button><button id="delete-chat" data-idle>Delete</button></div>
+            <button id="export-chats" data-idle>Export conversations</button><label class="file-button">Import conversations<input id="import-chats" type="file" accept="application/json,.json" data-idle></label>
+          </div></details>
         </div>
-        <div class="mode-row"><label for="mode">Mode</label><select id="mode" data-idle><option value="dialogue">Dialogue continuation</option><option value="completion">Text continuation</option></select></div>
-        <p class="capability" id="capability">Trained on meeting transcripts. It continues dialogue; it has not been trained to follow instructions or give reliable answers.</p>
         <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="off"></div>
-        <div id="typing-fly" class="typing-fly" data-state="idle" data-motion="off">
-          <div class="typing-fly-scene" aria-hidden="true"><span data-typing-loading>Loading 3D fly…</span></div>
-          <div class="typing-fly-copy"><p data-typing-caption>Ready to continue</p><p class="typing-scope">Illustration · not learned motion.</p></div>
-        </div>
         <form id="composer">
-          <label for="prompt" id="prompt-label">Your turn</label>
+          <label class="sr-only" for="prompt" id="prompt-label">Message</label>
           <textarea id="prompt" rows="3" maxlength="12000" placeholder="What should we make together?" required></textarea>
-          <div class="composer-actions"><span>Ctrl / ⌘ + Enter to send</span><button type="button" id="stop" disabled>Stop</button><button type="submit" class="primary" id="generate" data-idle>Continue</button></div>
+          <div class="composer-actions"><label class="sr-only" for="mode">Conversation mode</label><select id="mode" data-idle><option value="chat">Chat</option><option value="completion">Continue text</option><option value="dialogue">Legacy dialogue</option></select><span>Shift + Enter for a new line</span><button type="button" id="stop" disabled>Stop</button><button type="submit" class="primary" id="generate" data-idle>Send</button></div>
         </form>
-        <details class="settings"><summary>Generation settings</summary><div class="settings-grid">
+        <details class="settings workspace-settings"><summary>Chat settings</summary><div class="settings-body">
+          <p class="capability" id="capability"></p>
+          <p id="model-choice-note" class="anatomy-note"></p>
+          <label for="system-prompt">System prompt</label><textarea id="system-prompt" rows="3" maxlength="2000" placeholder="Optional context for this conversation" data-idle></textarea>
+          <p class="anatomy-note">Included as plain text in Chat mode. These checkpoints have no instruction tuning, so following it is not guaranteed.</p>
+          <details><summary>Inspect the model's input</summary><button id="inspect-context" type="button">Refresh input preview</button><textarea id="context-preview" rows="5" readonly aria-label="Serialized model input"></textarea></details>
+          <div class="settings-grid">
           <label>Temperature<input id="temperature" type="number" min="0.05" max="2" step="0.05" value="0.8" data-idle></label>
           <label>Top-k tokens<input id="top-k" type="number" min="1" max="4096" step="1" value="40" data-idle></label>
           <label>Maximum tokens<input id="limit" type="number" min="1" max="1600" step="1" value="200" data-idle></label>
           <label>Random seed<input id="seed" type="number" min="0" max="4294967295" step="1" value="42" data-idle></label>
           <label class="check"><input id="observe" type="checkbox" checked data-idle>Slow playback for observation</label>
-        </div></details>
+        </div></div></details>
         <div class="run-footer"><output id="generation-stats">Ready after the checkpoint loads.</output><span>Text stays in this browser.</span></div>
       </section>
 
@@ -75,24 +76,40 @@
       </section>
 
       <aside class="anatomy-panel" aria-labelledby="brain-title">
-        <div class="panel-heading"><h2 id="brain-title">Inside the network</h2><div class="view-tools"><button id="brain-home" aria-label="Reset brain view">Reset view</button><button id="brain-left" aria-label="Rotate brain left">←</button><button id="brain-right" aria-label="Rotate brain right">→</button></div></div>
-        <div class="brain-controls"><label for="state-mode">State</label><select id="state-mode"><option value="h">Fast</option><option value="slow">Slow</option></select><label class="check"><input id="context-points" type="checkbox" checked>Anatomical context</label></div>
+        <section class="brain-stage">
+        <div class="panel-heading"><h2 id="brain-title">Inside the brain</h2><div class="view-tools"><button id="brain-home" aria-label="Reset brain view">Reset view</button><button id="brain-left" aria-label="Rotate brain left">←</button><button id="brain-right" aria-label="Rotate brain right">→</button></div></div>
         <div id="brain-view" class="brain-view" role="img" aria-label="Interactive 3D neuron positions. Active model neurons are colored by signed recurrent state. Gray context points are anatomical reference only."><p class="view-loading" id="brain-loading">Loading anatomy…</p></div>
         <div class="brain-caption"><span><i class="swatch negative"></i>Negative <i class="swatch positive"></i>Positive state</span><span>Drag to rotate · scroll to zoom</span></div>
+        <details class="brain-inspector"><summary>Inspect neurons &amp; predictions</summary><div class="inspector-content">
+        <div class="brain-controls"><label for="state-mode">State</label><select id="state-mode"><option value="h">Fast</option><option value="slow">Slow</option></select><label class="check"><input id="context-points" type="checkbox" checked>Anatomical context</label></div>
         <p class="anatomy-note" id="anatomy-note">1,024 modeled neurons from a 166,700-neuron source graph. Gray points show anatomical context, without simulated activity.</p>
         <div class="neuron-controls"><label for="neuron">Inspect neuron</label><select id="neuron"><option>Loading…</option></select><button id="mute-neuron" data-idle>Silence</button></div>
         <output id="neuron-info" class="neuron-info">Select a colored point or use the list.</output>
         <div class="interventions"><label class="check"><input id="recurrence" type="checkbox" checked data-idle>Recurrent connections</label><label class="check"><input id="adapter-enabled" type="checkbox" checked data-idle>Local learning</label><button id="reset-interventions" data-idle>Reset interventions</button></div>
         <p id="intervention-note" class="anatomy-note">Changing a control replays the same input from zero state. Silencing is an engineered intervention, not a biological experiment.</p>
         <div class="prediction-panel"><div><h3>Next token</h3><ol id="probabilities" aria-label="Next token probabilities"><li>Waiting for input.</li></ol></div><div><h3>Mean absolute state</h3><svg id="activity-chart" viewBox="0 0 260 76" role="img" aria-label="Mean absolute recurrent state across observed updates"><path d="M0 75H260 M0 1H260" class="chart-grid"/><path id="activity-path" d=""/></svg><span id="activity-value">0.000</span></div></div>
+        </div></details>
+        </section>
+        <section class="fly-stage" aria-label="3D fly illustration">
+        <div id="typing-fly" class="typing-fly" data-state="idle" data-motion="off">
+          <div class="typing-fly-scene" aria-hidden="true"><span data-typing-loading>Loading 3D fly…</span></div>
+          <div class="typing-fly-copy"><p data-typing-caption>Ready</p><p class="typing-scope">Illustration · not learned motion.</p></div>
+        </div>
+        <details class="body-comparison"><summary>Compare the state-to-pose view</summary>
         <div class="fly-header"><h3>Fly body</h3><label class="check"><input id="body-response" type="checkbox" checked>Map state to pose</label><button id="fly-home" aria-label="Reset fly view">Reset view</button></div>
         <div id="fly-view" class="fly-view" role="img" aria-label="Articulated NeuroMechFly body. Joint offsets illustrate aggregate network state, not a learned motor policy."><p class="view-loading" id="fly-loading">Loading articulated body…</p></div>
         <p class="anatomy-note body-note">A female NeuroMechFly body accompanies the male brain graph. Pose changes illustrate state; language training has not taught this body to move.</p>
+        </details>
+        </section>
       </aside>
     </div>
 
     <article id="research-page" class="research-page" hidden>
-      <h1>FLM research notebook</h1><p class="research-lead">Can measured neural wiring provide a useful prior for learning language from a small human-written corpus?</p>
+      <h1>A language model you can look inside.</h1><p class="research-lead">What changes when a language model learns through the wiring of a fruit-fly brain?</p>
+      <p><strong>FLM is trained from scratch on a connectome-derived recurrent network. No pretrained transformer supplies its answers or animates its neural states.</strong> Learned text embeddings and readout layers connect language to a modeled subset of fly wiring. This is a small foundational architecture experiment, not an intact biological brain or a claim of general-purpose intelligence.</p>
+      <figure class="measured-figure"><img src="/research/figures/language-core-test.png" loading="lazy" alt="Retrained controls quantify the contributions of temporal state, lateral communication and optimized dynamics."><figcaption>What the controlled experiments teach us: temporal state helps prediction substantially more than lateral communication in this setup. Mechanism effects are measured separately from the anatomical-topology question.</figcaption></figure>
+      <p>Watch real recurrent states change with each token. Silence a neuron, remove communication, replay the same input, or adapt the readout and measure a separate probe. Initial-versus-trained core studies and recorded physical replays let us distinguish changes in computation from changes in a body's behavior. The typing fly is an articulated illustration; measured physical behavior lives in the separate studies below.</p>
+      <div class="document-links"><a href="#chat">Try ChatFLM</a><a href="/research/language-core-findings.md">What recurrence contributes</a><a href="/research/language-dynamics-findings.md">How training changes dynamics</a><a href="/research/food-core-physical-results.md">Initial and trained cores in physical situations</a></div>
       <p>FLM turns that question into an inspectable experiment. It learns next-token prediction from scratch on WikiText-2, with recurrent connections selected from a fruit-fly connectome. The original AMI dialogue experiment is also available in the model selector. ChatFLM runs the resulting compact checkpoint in your browser.</p>
       <section aria-labelledby="language-topology-title">
         <h2 id="language-topology-title">Does measured wiring help language?</h2>
@@ -209,7 +226,7 @@
           <figure class="comparison-figure"><svg id="babylm-validation-chart" viewBox="0 0 780 320" role="img" aria-label="BabyLM validation loss against training updates"></svg><figcaption><span class="legend-flm">FLM</span> · <span class="legend-gru">GRU</span> · <span class="legend-transformer">Transformer</span>. Unmeasured runs have no curve.</figcaption></figure>
           <div class="table-scroll"><table><caption>Same corpus, seed, validation source and training update</caption><thead><tr><th>Model</th><th>Parameters</th><th>Bits / byte</th><th>Perplexity</th></tr></thead><tbody id="babylm-comparison-rows"></tbody></table></div>
           <p id="babylm-exposure"></p>
-          <p>All <a href="/research/babylm-results/samples.json">288 unedited continuations</a> are recorded. Every sample reached the 256-token cap; one invalid UTF-8 output remains flagged. FLM has more repetition in aggregate token measures. These models have not demonstrated reliable chatbot ability. Try the <a href="/?model=babylm#chat">experimental BabyLM 10M browser checkpoint</a>; WikiText-2 remains the default.</p>
+          <p>All <a href="/research/babylm-results/samples.json">288 unedited continuations</a> are recorded. Every sample reached the 256-token cap; one invalid UTF-8 output remains flagged. FLM has more repetition in aggregate token measures. These models have not demonstrated reliable chatbot ability. Try the <a href="/?model=babylm#chat">earlier BabyLM 10M browser checkpoint</a>. ChatFLM now defaults to the strongest released FLM on the shared BabyLM validation panel, with every primary checkpoint available in its selector.</p>
           <p>The next <a href="/research/selection-language-protocol.md">registered selection study</a> has started: 128 fits comparing two Kenyon-cell groups with ranked, random and rewired controls. It has no held-out result yet. Its shorter 3,000-update budget tests selection within that study; it is not an equal-budget replacement for this comparison. A <a href="/research/selection-language-errata.md">protocol wording correction</a> records that both studies include boundary targets during training.</p>
           <div class="document-links"><a href="/research/babylm-validation.json">Validation snapshot and source scores</a><a href="/research/babylm-prompts.json">Fixed generation prompts</a><a href="/research/babylm-evaluation.md">Evaluation and reproduction protocol</a></div>
           <details class="method-note"><summary>Split integrity and comparison limits</summary><p>Whole-line overlap checks found some shared passages between training and evaluation. The official split remains the primary benchmark. A second evaluation excludes blocks containing substantial lines found in either training set, using the same exclusion for all models. Fixed 16 KiB blocks preserve original bytes and source order, but their boundaries do not establish separate books, speakers or conversations.</p><p>The results do not establish an anatomical advantage: these twelve fits use the original ranked graph without BabyLM rewiring controls. The completed WikiText topology experiment remains separate.</p></details>
@@ -378,10 +395,10 @@
       <p>A lower held-out loss measures next-token prediction on the evaluated text. It does not establish reasoning, factual knowledge, consciousness, animal behavior or general conversational ability. The interesting claim to test is whether wiring and multiple timescales improve data efficiency under equal training budgets.</p>
       <h2>What changes in the “fly”?</h2><p>Offline training changes the artificial network’s input responses, edge magnitudes, time constants and prediction readout. Those changes can be measured using the same input before and after training. The anatomy provides a location for visualizing the state; it does not make learned text an animal’s experience. Browser learning changes only a separate readout adapter. The body animation is an explicitly designed mapping from state to pose.</p>
       <h2>Research foundations</h2><ul class="sources"><li><a href="https://male-cns.janelia.org/">MaleCNS, Janelia</a> — source connectome and anatomical identities.</li><li><a href="https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/">Google Research: mapping the complete male fruit-fly brain</a> — reconstruction context.</li><li><a href="https://www.nature.com/articles/s41586-024-07763-9">Shiu et al., 2024</a> — a whole-brain computational model of fly behavior.</li><li><a href="https://www.nature.com/articles/s41586-024-07939-3">Lappalainen et al., 2024</a> — connectome-constrained models of neural computation.</li><li><a href="https://arxiv.org/abs/2306.01885">Morra et al., 2023</a> — connectome-inspired reservoir computing.</li><li><a href="https://www.nature.com/articles/s41467-020-17236-y">Bellec et al., 2020</a> — recurrent learning with eligibility traces; the separate cue-learning study explores a rate-network approximation.</li><li><a href="https://arxiv.org/abs/2302.13939">SpikeGPT</a>, <a href="https://arxiv.org/abs/2305.13048">RWKV</a> and <a href="https://arxiv.org/abs/2312.00752">Mamba</a> — prior non-attention and recurrent language-model directions.</li><li><a href="https://www.nature.com/articles/s41592-024-02497-y">NeuroMechFly v2</a> — the embodied simulation platform underlying the separate body geometry.</li></ul>
-      <h2>Read the working papers</h2><p>The main report includes the complete language wiring, slow-state and retrained computation comparisons, subset audit, equations and matched WikiText baselines. The data note documents corpus preparation and reproduction. Separate learning, sensory wiring and pose-feedback notes report the earlier non-language studies. Larger-data training, language-to-control transfer and learned gait remain continuing studies.</p><div class="document-links"><a href="/research/flm.pdf">Research report · PDF</a><a href="/research/data-and-reproduction.pdf">Data &amp; reproduction · PDF</a><a href="/research/wiring-controls.pdf">Wiring controls &amp; context · PDF</a><a href="/research/local-learning.pdf">Learning &amp; physical choice · PDF</a><a href="/research/closed-loop.pdf">Online pose feedback · PDF</a><a href="/research/paper-source.zip" download>LaTeX source &amp; figures</a></div><h2>Reproduce and inspect</h2><p id="release-detail">Loading checkpoint details…</p><div class="document-links"><a href="https://github.com/Kuberwastaken/flm">Repository</a><a id="checkpoint-link" href="/models/flm-wikitext/model.json" download>Checkpoint manifest</a><a href="/data/wikitext2.json" download>WikiText dataset card</a><a href="/data/ami.json" download>AMI dataset card</a><a href="/data/graph-card.json" download>Graph card</a><a href="/licenses/" id="license-link">Attribution</a></div>
+      <h2>Read the working papers</h2><p>The main report includes the complete language wiring, slow-state and retrained computation comparisons, subset audit, equations and matched WikiText baselines. The main report also includes the completed 12-fit BabyLM comparison; the data note documents acquisition, overlap analysis and evaluation recovery. Separate learning, sensory wiring and pose-feedback notes report the earlier non-language studies. Circuit selection, alternative learning rules, language-to-control transfer and learned gait remain continuing studies.</p><div class="document-links"><a href="/research/flm.pdf">Research report · PDF</a><a href="/research/data-and-reproduction.pdf">Data &amp; reproduction · PDF</a><a href="/research/wiring-controls.pdf">Wiring controls &amp; context · PDF</a><a href="/research/local-learning.pdf">Learning &amp; physical choice · PDF</a><a href="/research/closed-loop.pdf">Online pose feedback · PDF</a><a href="/research/paper-source.zip" download>LaTeX source &amp; figures</a></div><h2>Reproduce and inspect</h2><p id="release-detail">Loading checkpoint details…</p><div class="document-links"><a href="https://github.com/Kuberwastaken/flm">Repository</a><a id="checkpoint-link" href="/models/flm-wikitext/model.json" download>Checkpoint manifest</a><a href="/data/wikitext2.json" download>WikiText dataset card</a><a href="/data/ami.json" download>AMI dataset card</a><a href="/data/graph-card.json" download>Graph card</a><a href="/licenses/" id="license-link">Attribution</a></div>
       <h2>Try all three models on your own prompts</h2>
       <p>The 14.3 MB inference bundle contains all six published WikiText checkpoints: FLM, GRU and transformer with both training seeds, plus their tokenizer and Python runtime. Run them locally on a CPU with the same prompt and sampling settings. Every exported tensor and fixed buffer matches its selected checkpoint, and all 24 published continuations reproduce in the tested environment.</p>
-      <p>These are small text continuation models. The bundle runs independently of the private repository; ChatFLM's browser runtime remains FLM-only. The README inside the archive includes installation and generation commands.</p>
+      <p>These are small text continuation models. The bundle runs independently of the private repository; ChatFLM also runs all 18 completed primary FLM, GRU and transformer checkpoints in the browser. The README inside the archive includes installation and generation commands.</p>
       <div class="document-links"><a href="/research/wikitext2-inference.zip" download>Six-model inference bundle · ZIP</a><a href="/research/inference-guide.html">Installation &amp; generation guide</a><a href="/research/inference-release.json" download>Checkpoint hashes &amp; verification</a></div>
       <p class="muted">FLM is an independent research prototype by Kuber Mehta. Original code: MIT. Brain data and AMI transcripts: CC BY 4.0. Body assets retain their upstream licenses.</p>
     </article>

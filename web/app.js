@@ -1,15 +1,21 @@
 import './style.css';
+import './workspace.css';
 import { loadResearch } from './research.js';
 import { BrainView, FlyView } from './views.js';
-import { STORAGE_KEY, ADAPTER_KEY, validateConversations, conversationForModel, contextFor, download } from './storage.js';
-import { MODEL_PACKAGES } from './packages.js';
+import { STORAGE_KEY, ADAPTER_KEY, validateConversations, conversationForModel, contextFor, chatContext, download } from './storage.js';
+import { MODEL_PACKAGES, DEFAULT_MODEL } from './packages.js';
+import { initializeTheme } from './theme.js';
 import { createTypingFly } from './typing-fly.js';
 
 const $ = id => document.getElementById(id);
+initializeTheme();
+for (const [id, item] of Object.entries(MODEL_PACKAGES)) if (!item.hidden) $('model').add(new Option(item.label || id, id));
 const typingFly = createTypingFly($('typing-fly'));
 const requestedModel = new URLSearchParams(location.search).get('model');
-const selectedModel = Object.hasOwn(MODEL_PACKAGES, requestedModel) ? requestedModel : 'wikitext';
+const selectedModel = Object.hasOwn(MODEL_PACKAGES, requestedModel) ? requestedModel : DEFAULT_MODEL;
 const isLexical = MODEL_PACKAGES[selectedModel].lexical;
+const isFly = MODEL_PACKAGES[selectedModel].architecture === 'flm';
+if (MODEL_PACKAGES[selectedModel].hidden) $('model').add(new Option(MODEL_PACKAGES[selectedModel].label,selectedModel));
 const adapterKey = () => `${ADAPTER_KEY}-${config.weights_sha256}`;
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
 let ready = false, busy = false, operation = '', sequence = 0, activeId = 0, researchLoaded = false;
@@ -32,6 +38,8 @@ function setBusy(value) {
   $('stop').disabled = !value || operation !== 'generate';
   $('stop-learning').disabled = !value || operation !== 'learn';
   $('prompt').readOnly = value;
+  $('system-prompt').disabled = !ready || value || current()?.mode !== 'chat';
+  for (const id of ['mute-neuron','recurrence','adapter-enabled','reset-interventions']) if (!isFly) $(id).disabled = id !== 'adapter-enabled' || value || !ready;
   $('learning-text').readOnly = value; $('probe-text').readOnly = value;
 }
 function run(type, data = {}) {
@@ -50,9 +58,9 @@ function choices() {
 function makeMessage(message) {
   const article = document.createElement('article'); article.className = `message ${message.role}`;
   const header = document.createElement('div'); header.className = 'message-header';
-  const title = document.createElement('strong'); title.textContent = message.role === 'user' ? 'You' :
-    `FLM${message.dataset ? ` · ${message.dataset}` : ''}${message.checkpointStep ? ` · checkpoint ${message.checkpointStep.toLocaleString()}` : ' · earlier session'}`;
-  const copy = document.createElement('button'); copy.textContent = 'Copy'; copy.type = 'button'; copy.setAttribute('aria-label', `Copy ${message.role === 'user' ? 'your' : 'FLM'} message`);
+  const title = document.createElement('strong'); title.textContent = message.role === 'user' ? 'You' : MODEL_PACKAGES[selectedModel].name || 'FLM';
+  title.title = `${message.dataset || ''}${message.checkpointStep ? ` · checkpoint ${message.checkpointStep.toLocaleString()}` : ''}`;
+  const copy = document.createElement('button'); copy.textContent = 'Copy'; copy.type = 'button'; copy.setAttribute('aria-label', `Copy ${message.role === 'user' ? 'your' : MODEL_PACKAGES[selectedModel].name} message`);
   copy.onclick = async () => { try { await navigator.clipboard.writeText(message.text); copy.textContent = 'Copied'; setTimeout(() => copy.textContent = 'Copy', 1600); } catch { notice('Clipboard unavailable. Select the message text to copy it.'); } };
   header.append(title, copy); const body = document.createElement('div'); body.className = 'message-text'; body.textContent = message.text;
   article.append(header, body); $('messages').append(article); return article;
@@ -66,9 +74,15 @@ function renderConversation() {
     $('messages').append(message); setBusy(busy); return;
   }
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
-  $('prompt-label').textContent = conversation.mode === 'dialogue' ? 'Your turn' : 'Text to continue';
-  $('capability').textContent = selectedModel === 'babylm'
-    ? 'Experimental BabyLM 10M checkpoint: trained from scratch on conversation, child-directed speech, books and other text. The completed comparison favors the GRU and transformer on pooled test loss. It completes passages with limited coherence and has no instruction-following training.'
+  $('system-prompt').value = conversation.systemPrompt || '';
+  $('system-prompt').disabled = busy || conversation.mode !== 'chat';
+  $('generate').textContent = conversation.mode === 'chat' ? 'Send' : 'Continue';
+  $('prompt').placeholder = conversation.mode === 'chat' ? `Message ${MODEL_PACKAGES[selectedModel].name}…` : 'A passage to continue…';
+  $('prompt-label').textContent = conversation.mode === 'completion' ? 'Text to continue' : 'Your message';
+  $('capability').textContent = conversation.mode === 'chat'
+    ? 'Chat keeps your turns and an optional system prompt as explicit text context. These are base models, without instruction tuning. Inspect the exact input below; responses may drift or repeat.'
+    : selectedModel.startsWith('babylm')
+    ? 'Trained from scratch on BabyLM conversation, child-directed speech, books and other text. The checkpoint and scale are shown in the model selector. This is a base language model without instruction tuning.'
     : isLexical
     ? 'Trained from scratch on WikiText-2. It completes written passages; it is not an instruction-following assistant. Each token contains one or more UTF-8 bytes.'
     : conversation.mode === 'dialogue'
@@ -77,17 +91,18 @@ function renderConversation() {
   if (conversation.messages.length) conversation.messages.forEach(makeMessage);
   else {
     const empty = document.createElement('div'); empty.className = 'empty';
-    const p = document.createElement('p'); p.textContent = isLexical ? 'Start a passage about history, nature or everyday life. Watch the next-token distribution and the recurrent state as it continues.' : 'Start with the kind of language it has seen: people making plans, discussing ideas and taking turns.'; empty.append(p);
-    for (const text of (selectedModel === 'babylm' ? ['Once upon a time, a little bird', 'What should we do this afternoon?', 'The reason the sky looks blue'] : isLexical ? ['The history of science', 'In the summer, the village', 'The small animal moved through'] : ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:'])) {
+    const heading = document.createElement('h2'); heading.textContent = 'A little brain. A new conversation.'; empty.append(heading);
+    const p = document.createElement('p'); p.textContent = isFly ? 'Language learned from scratch through fly-derived wiring. Send a thought and watch the network respond.' : 'A conventional baseline trained from scratch on the same text. Compare its responses with FLM; it has no anatomical neurons.'; empty.append(p);
+    for (const text of (selectedModel.startsWith('babylm') ? ['Once upon a time, a little bird', 'What should we do this afternoon?', 'The reason the sky looks blue'] : isLexical ? ['The history of science', 'In the summer, the village', 'The small animal moved through'] : ['what should we make together?', 'i think the design should be simple because', 'a: shall we start the meeting?\nb:'])) {
       const button = document.createElement('button'); button.textContent = text; button.onclick = () => { $('prompt').value = text; $('prompt').focus(); }; empty.append(button);
     }
     $('messages').append(empty);
   }
 }
-function newConversation(mode = $('mode').value || 'dialogue') {
+function newConversation(mode = $('mode').value || 'chat') {
   if (busy) return;
   if (conversations.length >= 100) { notice('The local archive holds 100 conversations. Export or delete some before starting another.'); return; }
-  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, modelPackage: selectedModel, messages: [] };
+  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, systemPrompt: '', modelPackage: selectedModel, messages: [] };
   conversations.unshift(item); currentId = item.id; $('prompt').value = ''; lastPrompt = ''; store(); renderConversation();
 }
 try {
@@ -97,11 +112,13 @@ try {
 const requestedConversation = new URLSearchParams(location.search).get('conversation');
 const matchingConversation = conversationForModel(conversations, selectedModel, requestedConversation);
 if (matchingConversation) { currentId = matchingConversation.id; renderConversation(); }
-else if (conversations.length < 100) newConversation(isLexical ? 'completion' : 'dialogue');
+else if (conversations.length < 100) newConversation('chat');
 else { currentId = ''; renderConversation(); }
 $('model').value = selectedModel;
 $('mode').querySelector('[value="dialogue"]').disabled = isLexical;
-$('prompt').placeholder = selectedModel === 'babylm' ? 'Once upon a time, a little bird' : isLexical ? 'The history of science' : 'What should we make together?';
+$('model-choice-note').textContent = selectedModel === DEFAULT_MODEL
+  ? 'Automatic default: lowest shared BabyLM validation loss among the released FLM checkpoints. Test loss and attractive samples do not select it. Switching checkpoints reloads the workspace; export unsaved local learning first.'
+  : 'Explicit model selection. Each checkpoint retains its own conversations and local learning. Export unsaved local learning before switching.';
 function switchModel(value, conversationId = null) {
   const url = new URL(location.href); url.searchParams.set('model', value);
   if (conversationId) url.searchParams.set('conversation', conversationId); else url.searchParams.delete('conversation');
@@ -111,6 +128,7 @@ $('model').onchange = () => switchModel($('model').value);
 
 function showPage() {
   const page = ['chat', 'learn', 'research'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'chat';
+  document.body.dataset.page = page;
   if (page === 'research' && !researchLoaded) { researchLoaded = true; loadResearch(); }
   $('experiment').hidden = page === 'research'; $('research-page').hidden = page !== 'research';
   $('chat-page').hidden = page !== 'chat'; $('learn-page').hidden = page !== 'learn';
@@ -140,7 +158,7 @@ $('delete-dialog').addEventListener('close', () => {
   if ($('delete-dialog').returnValue !== 'delete') return;
   conversations = conversations.filter(x => x.id !== currentId);
   const next = conversationForModel(conversations, selectedModel);
-  if (!next) newConversation(isLexical ? 'completion' : 'dialogue');
+  if (!next) newConversation('chat');
   else { currentId = next.id; lastPrompt = ''; store(); renderConversation(); }
 });
 function showExport(filename, text) {
@@ -180,7 +198,10 @@ $('composer').onsubmit = event => {
   if (!conversation || (conversation.modelPackage || 'ami') !== selectedModel) { notice('Select a conversation for this model before continuing.'); return; }
   if (conversation.messages.length >= 198) { notice('This conversation is full. Start a new one to continue.'); return; }
   const message = { role: 'user', text }; conversation.messages.push(message);
-  const prompt = contextFor(conversation);
+  conversation.systemPrompt = $('system-prompt').value;
+  let prompt, dropped = 0;
+  try { if (conversation.mode === 'chat') ({ prompt, dropped } = chatContext(conversation)); else prompt = contextFor(conversation); }
+  catch (error) { conversation.messages.pop(); notice(error.message); return; }
   if (new TextEncoder().encode(prompt).length > 16000) { conversation.messages.pop(); notice('This context exceeds 16,000 UTF-8 bytes. Start a new conversation or shorten your turn.'); return; }
   const temperature = Number($('temperature').value), topK = Number($('top-k').value), limit = Number($('limit').value), seed = Number($('seed').value);
   if (!(temperature >= 0.05 && temperature <= 2 && Number.isInteger(topK) && topK >= 1 && topK <= config.vocabulary && Number.isInteger(limit) && limit >= 1 && limit <= 1600 && Number.isInteger(seed) && seed >= 0 && seed <= 4294967295)) {
@@ -188,14 +209,25 @@ $('composer').onsubmit = event => {
   }
   if (conversation.title === 'New conversation') conversation.title = text.replace(/\s+/g, ' ').slice(0, 55);
   renderConversation(); pendingMessage = { role: 'model', text: '', checkpointStep: config.checkpoint_step,
-    modelHash: config.weights_sha256, dataset: config.dataset || 'AMI', createdAt: new Date().toISOString(), settings: {
+    modelHash: config.weights_sha256, dataset: config.dataset || 'AMI', createdAt: new Date().toISOString(), inputPrompt: prompt, droppedContextMessages: dropped, settings: {
       seed, temperature, topK, limit, limitUnit: 'tokens', adaptation: $('adapter-enabled').checked,
       recurrence: $('recurrence').checked, disabled: [...disabled] } }; conversation.messages.push(pendingMessage);
   pendingElement = makeMessage(pendingMessage); pendingElement.classList.add('pending');
   $('prompt').value = ''; trace = []; lastPrompt = prompt; store();
-  run('generate', { prompt, temperature, topK, limit, seed, observe: $('observe').checked });
+  $('messages').scrollTop = $('messages').scrollHeight;
+  run('generate', { prompt, chat: conversation.mode === 'chat', temperature, topK, limit, seed, observe: $('observe').checked });
+  if (dropped) notice(`Using recent turns: ${dropped} earlier messages remain in history but do not fit in this model input.`);
 };
-$('prompt').onkeydown = event => { if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) { event.preventDefault(); $('composer').requestSubmit(); } };
+$('prompt').onkeydown = event => { if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); $('composer').requestSubmit(); } };
+$('system-prompt').onchange = () => { if (current()) { current().systemPrompt = $('system-prompt').value; store(); } };
+$('inspect-context').onclick = () => {
+  if (!current()) return;
+  try {
+    const preview = { ...current(), systemPrompt: $('system-prompt').value, messages: current().messages.slice() };
+    if ($('prompt').value.trim()) preview.messages.push({ role:'user', text:$('prompt').value.trim() });
+    $('context-preview').value = contextFor(preview);
+  } catch(error) { $('context-preview').value = error.message; }
+};
 for (const id of ['stop', 'stop-learning']) $(id).onclick = () => {
   if (id === 'stop') { generationStopped = true; typingFly.setState('idle'); }
   worker.postMessage({ type: 'stop' }); $(id).disabled = true;
@@ -217,11 +249,12 @@ function byteName(token) {
   return token >= 33 && token <= 126 ? String.fromCharCode(token) : `0x${token.toString(16).padStart(2, '0')}`;
 }
 function updateState(state) {
-  lastState = state; brain?.update(state, $('state-mode').value); fly?.pose(state, $('body-response').checked); neuronInfo();
+  lastState = state; if(isFly) { brain?.update(state, $('state-mode').value); fly?.pose(state, $('body-response').checked); neuronInfo(); }
   $('probabilities').replaceChildren(...state.top.map(item => {
     const li = document.createElement('li'), code = document.createElement('code'), score = document.createElement('span');
     code.textContent = item.label ?? byteName(item.token); code.title = `Token ${item.token}`; score.textContent = `${(100 * item.probability).toFixed(1)}%`; li.append(code, score); return li;
   }));
+  if (!isFly) { $('activity-path').setAttribute('d',''); $('activity-value').textContent = 'No anatomical state in this baseline'; return; }
   trace.push(state.meanActivity); if (trace.length > 80) trace.shift();
   $('activity-path').setAttribute('d', trace.map((v, i) => `${i ? 'L' : 'M'}${i * 260 / Math.max(1, trace.length - 1)} ${75 - v * 74}`).join(' '));
   $('activity-value').textContent = `${state.meanActivity.toFixed(3)} · ${trace.length} observed updates · scale 0–1`;
@@ -263,6 +296,16 @@ $('clear-learning').onclick = () => {
 };
 
 async function loadViews() {
+  if (!isFly) {
+    document.querySelector('.body-comparison').hidden = true;
+    document.querySelector('.brain-caption').hidden = true;
+    for (const id of ['neuron','state-mode','context-points','brain-home','brain-left','brain-right']) $(id).disabled = true;
+    $('brain-loading').textContent = 'Baseline model selected. Its computation has no fly neurons; anatomical activity is not displayed.';
+    $('anatomy-note').textContent = 'Choose an FLM checkpoint to inspect actual connectome-derived recurrent state.';
+    $('neuron-info').textContent = 'No anatomical neuron mapping for this baseline.';
+    $('activity-value').textContent = 'Not applicable to this baseline';
+    return;
+  }
   try {
     brain = new BrainView($('brain-view'), selectNeuron); anatomy = await brain.load(config); $('brain-loading').hidden = true;
     $('neuron').replaceChildren(...anatomy.body_ids.map((id, i) => {
@@ -280,11 +323,11 @@ worker.onmessage = ({ data }) => {
   if (data.id !== activeId) return;
   if (data.type === 'loading') $('model-status').textContent = data.message;
   if (data.type === 'ready') {
-    ready = true; config = data.config; $('model-status').textContent = `FLM · ${config.dataset || 'AMI'} · local`;
+    ready = true; config = data.config; $('model-status').textContent = `${MODEL_PACKAGES[selectedModel].name || 'FLM'} · local`;
     $('top-k').max = config.vocabulary;
     $('checkpoint-link').href = `/${config.package_path}/model.json`;
     $('generation-stats').textContent = `Checkpoint ${config.checkpoint_step.toLocaleString()} · ready`;
-    $('release-detail').textContent = `${config.trained_parameters.toLocaleString()} trained parameters · ${config.neurons.toLocaleString()} neurons · ${config.retained_edges.toLocaleString()} edges · checkpoint ${config.checkpoint_step.toLocaleString()} · ${(config.weights_bytes / 1000000).toFixed(2)} MB browser weights. The full anatomical graph is not the compact model.`;
+    $('release-detail').textContent = `${config.trained_parameters.toLocaleString()} trained parameters · ${isFly ? `${config.neurons.toLocaleString()} neurons · ${config.retained_edges.toLocaleString()} edges · ` : 'conventional comparison architecture · '}checkpoint ${config.checkpoint_step.toLocaleString()} · ${(config.weights_bytes / 1000000).toFixed(2)} MB browser weights.${isFly ? ' The full anatomical graph is not the compact model.' : ''}`;
     loadViews();
   }
   if (data.type === 'priming') $('generation-stats').textContent = `Reading context: ${data.done.toLocaleString()} / ${data.total.toLocaleString()} tokens`;
@@ -293,6 +336,7 @@ worker.onmessage = ({ data }) => {
     if (!generationStopped) typingFly.setState('typing');
     if (pendingMessage) {
       pendingMessage.text = data.text; pendingElement.querySelector('.message-text').textContent = data.text;
+      if (data.rawText !== undefined) { pendingMessage.rawText = data.rawText; pendingMessage.turnStopped = !!data.turnStopped; }
       const view = $('messages'); if (view.scrollHeight - view.scrollTop - view.clientHeight < 140) view.scrollTop = view.scrollHeight;
     }
     $('generation-stats').textContent = `${data.tokens} tokens · ${data.bytes} bytes · ${(data.tokens / Math.max(.001, data.seconds)).toFixed(1)} tokens/s${$('observe').checked ? ' including playback delay' : ''}`; updateState(data);
