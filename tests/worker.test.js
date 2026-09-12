@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import { TextCodec } from '../web/text-codec.js';
 import { MODEL_PACKAGES } from '../web/packages.js';
 
-for (const selection of ['ami', 'wikitext', 'babylm']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
+for (const selection of ['ami', 'wikitext', 'babylm', 'babylm-100m-flm-s43', 'babylm-100m-gru-s43', 'babylm-100m-transformer-s43']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
   const worker = new Worker(new URL('./helpers/worker-harness.mjs', import.meta.url));
   t.after(() => worker.terminate());
   await once(worker, 'message'); let sequence = 0;
@@ -42,7 +42,10 @@ for (const selection of ['ami', 'wikitext', 'babylm']) test(`${selection}: worke
   const c = (await run('generate', settings)).filter(x => x.type === 'generation').at(-1);
   assert.equal(a.text, c.text); assert.deepEqual(a.h, c.h);
   const state = (await run('controls', {recurrence: true, adaptation: true, disabled: [3], prompt: settings.prompt})).find(x => x.type === 'state');
-  assert.equal(state.h[3], 0); assert.equal(state.slow[3], 0);
+  if(MODEL_PACKAGES[selection].architecture==='flm') { assert.equal(state.h[3], 0); assert.equal(state.slow[3], 0); }
+  else { assert.equal(state.h.length,0); assert.equal(state.slow.length,0); }
+  const chat = (await run('generate',{...settings,prompt:'System: Be brief.\nUser: Hello\nAssistant:',chat:true})).filter(x=>x.type==='generation').at(-1);
+  assert.equal(typeof chat.rawText,'string'); assert.equal(typeof chat.turnStopped,'boolean');
   const cancelled = await run('generate', {...settings, prompt: 'The history of science. '.repeat(200)}, message => {
     if (message.type === 'priming') worker.postMessage({type: 'stop'});
   });

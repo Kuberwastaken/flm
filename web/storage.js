@@ -13,11 +13,13 @@ export function validateConversations(value) {
   const ids = new Set();
   for (const item of value) {
     if (typeof item?.id !== 'string' || ids.has(item.id) || typeof item.title !== 'string' || item.title.length > 120 ||
-        !['dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200 ||
+        !['chat', 'dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200 ||
+        (item.systemPrompt !== undefined && (typeof item.systemPrompt !== 'string' || item.systemPrompt.length > 2000)) ||
         (item.modelPackage !== undefined && !Object.hasOwn(MODEL_PACKAGES, item.modelPackage)) ||
-        (MODEL_PACKAGES[item.modelPackage]?.lexical && item.mode !== 'completion'))
+        (MODEL_PACKAGES[item.modelPackage]?.lexical && item.mode === 'dialogue'))
       throw new Error('Invalid conversation file.');
     ids.add(item.id);
+    size += item.systemPrompt?.length || 0;
     for (const message of item.messages) {
       if (!['user', 'model'].includes(message?.role) || typeof message.text !== 'string') throw new Error('Invalid message.');
       size += message.text.length;
@@ -28,8 +30,24 @@ export function validateConversations(value) {
 }
 
 export function contextFor(conversation) {
+  if (conversation.mode === 'chat') return chatContext(conversation).prompt;
   if (conversation.mode === 'completion') return conversation.messages.map(x => x.text).join('');
   return conversation.messages.map(x => `${x.role === 'user' ? 'a' : 'b'}: ${x.text.trim()}`).join('\n') + '\nb:';
+}
+
+export function chatContext(conversation, byteLimit = 16000) {
+  const encode = new TextEncoder(), turns = conversation.messages.slice();
+  const system = conversation.systemPrompt?.trim();
+  const build = () => (system ? `System: ${system}\n\n` : '') +
+    turns.map(x => `${x.role === 'user' ? 'User' : 'Assistant'}: ${x.text.trim()}`).join('\n') + '\nAssistant:';
+  let prompt = build(), dropped = 0;
+  while (encode.encode(prompt).length > byteLimit && turns.length > 1) {
+    turns.shift(); dropped++;
+    while (turns.length > 1 && turns[0].role !== 'user') { turns.shift(); dropped++; }
+    prompt = build();
+  }
+  if (encode.encode(prompt).length > byteLimit) throw new Error('The system prompt and latest message exceed 16,000 UTF-8 bytes. Shorten them to send.');
+  return { prompt, dropped, bytes: encode.encode(prompt).length };
 }
 
 export function download(name, content, type = 'application/json') {

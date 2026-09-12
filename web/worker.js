@@ -1,6 +1,8 @@
 import { FLM, random, sample, softmax } from './model.js';
 import { TextCodec } from './text-codec.js';
 import { MODEL_PACKAGES } from './packages.js';
+import { chatOutput } from './chat-format.js';
+import { BrowserBaseline } from './baseline-model.js';
 
 let model, codec, active = null;
 const encoder = new TextEncoder();
@@ -13,7 +15,7 @@ function snapshot() {
     .filter(x => x.token !== codec.bos).sort((a, b) => b.probability - a.probability).slice(0, 6)
     .map(x => ({...x, label: codec.label(x.token)}));
   return { h: model.h.slice(), slow: model.slow.slice(), top,
-    meanActivity: model.h.reduce((sum, x) => sum + Math.abs(x), 0) / model.n };
+    meanActivity: model.n ? model.h.reduce((sum, x) => sum + Math.abs(x), 0) / model.n : 0 };
 }
 
 async function prime(text) {
@@ -41,14 +43,17 @@ async function generate(message) {
     const piece = codec.bytes(token); bytes += piece.length;
     text += decoder.decode(piece, { stream: true });
     model.step(token); count++;
+    if (message.chat && chatOutput(text).stopped) break;
     if (count % 8 === 0) {
-      send('generation', { text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+      send('generation', { text: message.chat ? chatOutput(text).text : text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
       await pause();
       if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
     }
   }
   text += decoder.decode();
-  send('generation', { text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+  send('generation', { text: message.chat ? chatOutput(text, true).text : text, rawText: text,
+    turnStopped: message.chat && chatOutput(text, true).stopped,
+    bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
 }
 
 async function score(text) {
@@ -94,7 +99,13 @@ async function load(message) {
   const base = `${import.meta.env?.BASE_URL ?? '/'}models/${packageName}/`;
   const configResponse = await fetch(`${base}model.json`);
   if (!configResponse.ok) throw new Error(`Model manifest unavailable (${configResponse.status}).`);
-  const config = await configResponse.json();
+  const manifest = await configResponse.arrayBuffer();
+  const expected = MODEL_PACKAGES[message.model].manifest_sha256;
+  if (expected) {
+    const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', manifest)), x => x.toString(16).padStart(2, '0')).join('');
+    if (hash !== expected) throw new Error('Model manifest checksum mismatch. Reload to fetch a consistent release.');
+  }
+  const config = JSON.parse(new TextDecoder().decode(manifest));
   send('loading', { message: `Downloading ${(config.weights_bytes / 1000000).toFixed(2)} MB checkpoint…` });
   const response = await fetch(`${base}weights.bin`);
   if (!response.ok) throw new Error(`Model download failed (${response.status}).`);
@@ -102,7 +113,7 @@ async function load(message) {
   const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', binary)), x => x.toString(16).padStart(2, '0')).join('');
   if (digest !== config.weights_sha256) throw new Error('Model checksum mismatch. Reload to fetch a consistent release.');
   let tokenizer = null;
-  if (config.format === 'flm-browser-v2') {
+  if (['flm-browser-v2','flm-baseline-browser-v1'].includes(config.format)) {
     const response = await fetch(`${base}tokenizer.json`);
     if (!response.ok) throw new Error('Tokenizer download failed.');
     const payload = await response.arrayBuffer();
@@ -110,7 +121,7 @@ async function load(message) {
     if (hash !== config.browser_tokenizer_sha256) throw new Error('Tokenizer checksum mismatch.');
     tokenizer = JSON.parse(new TextDecoder().decode(payload));
   }
-  const loaded = new FLM(config, binary), loadedCodec = new TextCodec(config, tokenizer);
+  const loaded = config.format === 'flm-baseline-browser-v1' ? new BrowserBaseline(config, binary) : new FLM(config, binary), loadedCodec = new TextCodec(config, tokenizer);
   model = loaded; codec = loadedCodec; config.package_path = `models/${packageName}`; send('ready', { config });
 }
 

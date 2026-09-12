@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 globalThis.self = globalThis;
 globalThis.postMessage = message => parentPort.postMessage(message);
 globalThis.fetch = async path => {
-  if (!/^\/models\/[a-z-]+\/[a-z.-]+$/.test(path)) throw new Error('Unexpected test asset path');
+  if (!/^\/models\/[a-z0-9-]+\/[a-z.-]+$/.test(path)) throw new Error('Unexpected test asset path');
   try { return new Response(await readFile(new URL(`../../public${path}`, import.meta.url))); }
   catch { return new Response('', {status: 404}); }
 };

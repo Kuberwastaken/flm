@@ -4,7 +4,7 @@ import { ByteBPE } from './tokenizer.js';
 export class TextCodec {
   constructor(config, tokenizer = null) {
     this.bpe = tokenizer ? new ByteBPE(tokenizer) : null;
-    if ((config.format === 'flm-browser-v2') !== Boolean(this.bpe)) throw new Error('Missing or unexpected tokenizer.');
+    if (['flm-browser-v2','flm-baseline-browser-v1'].includes(config.format) !== Boolean(this.bpe)) throw new Error('Missing or unexpected tokenizer.');
     if (this.bpe && (tokenizer.tokenizer_sha256 !== config.tokenizer_sha256 || tokenizer.vocabulary !== config.vocabulary))
       throw new Error('Tokenizer does not belong to this model.');
     this.bos = config.bos ?? 256; this.eos = config.eos ?? 257;
