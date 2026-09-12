@@ -46,6 +46,7 @@
 @media (max-width:600px) { .choice-replay-pair { grid-template-columns:1fr; } }
 #validation-chart, #babylm-validation-chart { width:100%; height:auto; font-family:inherit; font-size:13px; fill:var(--text, #292820); }
 .comparison-figure { margin:24px 0; }
+.comparison-figure img { display:block; width:100%; height:auto; }
 .comparison-figure figcaption { font-size:13px; color:var(--muted); }
 .legend-flm { color:#a74c20; }
 .legend-gru { color:#497569; }

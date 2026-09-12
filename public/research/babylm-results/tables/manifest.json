@@ -1,0 +1,18 @@
+{
+  "tables.json": {
+    "bytes": 158812,
+    "sha256": "7117deb2f2254d204787a905192f032c08f1a802889520c47afdce8620aa6184"
+  },
+  "scores.csv": {
+    "bytes": 39554,
+    "sha256": "0295054afe8ffe17297baac19b518bbffc20383e9e4e1500e5a43c9edc5a9109"
+  },
+  "seed_aggregates.csv": {
+    "bytes": 10296,
+    "sha256": "9377e274c2a7131d0dcd4020ef5857090ccaff5ec7c2ec5b8e8ff23084d24680"
+  },
+  "paired_comparisons.csv": {
+    "bytes": 5817,
+    "sha256": "7281679ab8ac9c159944514897abff9953bce59d4b72f8b55ef6dd41adff0460"
+  }
+}

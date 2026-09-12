@@ -1,5 +1,11 @@
 # From the fixed BabyLM queue to selection costs
 
+**Completed 12 September 2026:** the corrected v2 sequence finished all twelve
+held-out evaluations, all 288 fixed continuations and the 64-original timing
+pilot. See [complete findings](babylm-findings.md) and the
+[evidence audit](babylm-results/completed-evidence-verification.json).
+The first attempt and its recovery below remain part of the record.
+
 Kuber Mehta · 12 September 2026. The
 [local supervisor](babylm-handoff/continue_babylm_research.py) is an operational
 handoff for the existing research plan. It waits for a specifically identified

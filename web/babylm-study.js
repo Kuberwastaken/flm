@@ -22,7 +22,7 @@ export async function loadBabyLMStudy() {
     const response = await fetch(`${import.meta.env.BASE_URL}research/babylm-validation.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`BabyLM snapshot unavailable (${response.status}).`);
     const report = await response.json();
-    $('babylm-snapshot').textContent = `${report.runs.filter(run => run.complete).length} of ${report.registered_runs} runs complete. Snapshot: ${new Date(report.snapshot_utc).toLocaleString()}. The table uses validation measurements; final test scores will follow the completed comparison.`;
+    $('babylm-snapshot').textContent = `${report.runs.filter(run => run.complete).length} of ${report.registered_runs} runs complete. Snapshot: ${new Date(report.snapshot_utc).toLocaleString()}. This chart and its table show validation measurements used for checkpoint selection. Completed held-out results are reported above.`;
     const choose = () => report.runs.filter(run => run.scale === $('babylm-scale').value && run.seed === Number($('babylm-seed').value));
     function table() {
       const chosen = choose(), step = $('babylm-step').value ? Number($('babylm-step').value) : null;

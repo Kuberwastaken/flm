@@ -254,6 +254,35 @@ for (const name of ['PHYSICAL-STATE-SEMANTICS', 'FOOD-CORE-PHYSICAL-RESULTS', 'F
   await writeFile(`public/research/${name.toLowerCase()}.md`, note);
 }
 await copyFile('data/prompts/babylm-original.json', 'public/research/babylm-prompts.json');
+await mkdir('public/research/babylm-results', { recursive: true });
+for (const name of ['summary.json', 'samples.json', 'selection.json', 'completed-evidence-verification.json',
+  ...(await readdir('reports/babylm')).filter(name => /^(test-|samples-).*\.json$/.test(name))])
+  await copyFile(`reports/babylm/${name}`, `public/research/babylm-results/${name}`);
+for (const [sourceFolder, targetFolder] of [['tables-v1', 'tables'], ['figures-v1', 'figures']]) {
+  await mkdir(`public/research/babylm-results/${targetFolder}`, { recursive: true });
+  for (const name of await readdir(`reports/babylm/${sourceFolder}`))
+    await copyFile(`reports/babylm/${sourceFolder}/${name}`, `public/research/babylm-results/${targetFolder}/${name}`);
+}
+for (const stem of ['babylm-pooled', 'babylm-components'])
+  for (const extension of ['png', 'svg'])
+    await copyFile(`reports/babylm/figures-v1/${stem}.${extension}`, `public/research/babylm-results/${stem}.${extension}`);
+await copyFile('flm/train.py', 'public/research/babylm-results/train.py');
+for (const name of ['timing.json', 'cost-decision-v1.json'])
+  await copyFile(`reports/selection-pilot/${name}`, `public/research/selection-pilot/${name}`);
+for (const name of ['request-v1.json', 'study-identity.json'])
+  await copyFile(`reports/selection-language/${name}`, `public/research/selection-language/${name}`);
+for (const name of ['BABYLM-FINDINGS', 'BABYLM-PROTOCOL', 'SELECTION-LANGUAGE-PROTOCOL', 'SELECTION-LANGUAGE-ERRATA']) {
+  let note = await readFile(`docs/${name}.md`, 'utf8');
+  note = note.replaceAll('../reports/babylm/tables-v1/', 'babylm-results/tables/')
+    .replaceAll('../reports/babylm/figures-v1/', 'babylm-results/figures/')
+    .replaceAll('../reports/babylm/', 'babylm-results/')
+    .replaceAll('../reports/selection-pilot/', 'selection-pilot/')
+    .replaceAll('../reports/selection-language/', 'selection-language/')
+    .replaceAll('../reports/circuit-selection/', 'circuit-selection/')
+    .replaceAll('../flm/train.py', 'babylm-results/train.py')
+    .replace(/\b([A-Z][A-Z-]+)\.md/g, match => match.toLowerCase());
+  await writeFile(`public/research/${name.toLowerCase()}.md`, note);
+}
 await copyFile('docs/BABYLM-EVALUATION.md', 'public/research/babylm-evaluation.md');
 await mkdir('public/research/babylm-result-tables', { recursive: true });
 for (const [source, target] of [
@@ -421,4 +450,11 @@ await copyFile('LICENSE', 'public/licenses/FLM-MIT.txt');
 files.unshift('FLM-MIT.txt');
 const escape = text => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 await writeFile('public/licenses/index.html', `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FLM — Attribution and licenses</title><style>body{max-width:760px;margin:40px auto;padding:0 24px;background:#faf8f5;color:#292820;font:17px/1.7 Georgia,serif}a{color:#a74c20}h1{font-size:30px}li{margin:12px 0}</style><a href="/">← ChatFLM</a><h1>Attribution and licenses</h1><p>FLM's original code is MIT licensed. MaleCNS brain data and AMI meeting transcripts use CC BY 4.0. The NeuroMechFly body and imported kinematics retain their upstream notices. These sources describe different specimens and components.</p><ul>${files.map(name => `<li><a href="${encodeURIComponent(name)}">${escape(name)}</a></li>`).join('')}</ul><p>The complete model and data provenance is available in the <a href="/#research">research notebook</a>.</p></html>\n`);
+for (const name of ['babylm-result-tables', 'babylm-handoff']) {
+  const path = `public/research/${name}.md`;
+  await writeFile(path, (await readFile(path, 'utf8'))
+    .replaceAll('BABYLM-FINDINGS.md', 'babylm-findings.md')
+    .replaceAll('../reports/babylm/tables-v1/', 'babylm-results/tables/')
+    .replaceAll('../reports/babylm/completed-evidence-verification.json', 'babylm-results/completed-evidence-verification.json'));
+}
 console.log('Prepared dataset cards and component attribution.');

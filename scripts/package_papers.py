@@ -226,6 +226,17 @@ def main():
         'reports/selection-rewiring/release.json', 'reports/selection-rewiring/standalone-audit.json',
         'reports/selection-rewiring/summary.json', 'reports/selection-rewiring/figures.json')]
     files += sorted((ROOT / 'reports/language-core').glob('test-*.json'))
+    files += [ROOT / name for name in (
+        'docs/BABYLM-FINDINGS.md', 'docs/SELECTION-LANGUAGE-PROTOCOL.md',
+        'docs/SELECTION-LANGUAGE-ERRATA.md', 'reports/selection-language/request-v1.json',
+        'reports/selection-language/study-identity.json',
+        'reports/selection-pilot/timing.json', 'reports/selection-pilot/cost-decision-v1.json',
+        'reports/babylm/summary.json', 'reports/babylm/samples.json',
+        'reports/babylm/completed-evidence-verification.json')]
+    files += sorted((ROOT / 'reports/babylm').glob('test-*.json'))
+    files += sorted((ROOT / 'reports/babylm').glob('samples-*.json'))
+    for folder in ('tables-v1', 'figures-v1'):
+        files += sorted((ROOT / 'reports/babylm' / folder).glob('*'))
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

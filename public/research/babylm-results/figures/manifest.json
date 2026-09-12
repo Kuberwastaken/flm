@@ -1,0 +1,22 @@
+{
+  "babylm-components.png": {
+    "bytes": 188160,
+    "sha256": "df3db55735d3f413e8ce52567fba6fa83051ffba91a86b44bf12f2d9fc10096f"
+  },
+  "babylm-components.svg": {
+    "bytes": 165260,
+    "sha256": "d93def5fa5ecb19edfb352390e70be82c1b1ee15e11a4733739595a17d253c9b"
+  },
+  "babylm-pooled.png": {
+    "bytes": 150911,
+    "sha256": "c2a01416f92fb1403c963024a50bbc2380861e153877740d20f130d5ca5372a0"
+  },
+  "babylm-pooled.svg": {
+    "bytes": 122858,
+    "sha256": "11b2ae8fe0a98ea7c67f2ef0d05b3c17d755feee760eefdb44ef358247a5a55e"
+  },
+  "figure-data.json": {
+    "bytes": 187506,
+    "sha256": "36d9671db3235fe4536cb9251d134d96182a48b036500aa8363a1e3d5bf625a9"
+  }
+}

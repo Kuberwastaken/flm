@@ -4,7 +4,11 @@ The [selection comparison](circuit-selection.md) needs an affordable declared
 training matrix. Matching neuron counts does not match edge counts, trainable
 parameters or runtime. The new [pilot runner](selection-pilot/selection_pilot.py) prepares
 that cost measurement using the existing FLM implementation and BabyLM's
-training data. **The official timing pilot has not run.**
+training data. **The full 64-original timing pilot completed on 12 September
+2026.** The [timing record](selection-pilot/timing.json) and
+[cost decision](selection-pilot/cost-decision-v1.json) support the
+registered bilateral visual-KC study: 128 fits at 3,000 updates, estimated
+35.37 update-hours before allowance. This measures cost, not language quality.
 
 ## Readiness evidence
 
@@ -94,7 +98,7 @@ The [preflight implementation](selection-pilot/selection_pilot_preflight.py) kee
 the synthetic readiness check separate from actual corpus timing. It refuses
 to overwrite a dated report. The official runner writes per-case attempt
 records under the ignored runs directory and a completed inventory to
-`reports/selection-pilot/timing.json`. No timing result currently exists there.
+`reports/selection-pilot/timing.json`. The completed record is now preserved there.
 
 After measured costs are available, freeze the selection/rewiring/training-seed
 matrix, common exposure, optimizer schedule, validation selection and test gate.

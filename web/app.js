@@ -68,7 +68,7 @@ function renderConversation() {
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
   $('prompt-label').textContent = conversation.mode === 'dialogue' ? 'Your turn' : 'Text to continue';
   $('capability').textContent = selectedModel === 'babylm'
-    ? 'Experimental BabyLM 10M checkpoint: trained from scratch on conversation, child-directed speech, books and other text. It completes passages; the full baseline comparison is pending. It is not an instruction-following assistant.'
+    ? 'Experimental BabyLM 10M checkpoint: trained from scratch on conversation, child-directed speech, books and other text. The completed comparison favors the GRU and transformer on pooled test loss. It completes passages with limited coherence and has no instruction-following training.'
     : isLexical
     ? 'Trained from scratch on WikiText-2. It completes written passages; it is not an instruction-following assistant. Each token contains one or more UTF-8 bytes.'
     : conversation.mode === 'dialogue'
