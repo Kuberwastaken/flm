@@ -1,0 +1,31 @@
+{
+  "format": "flm-browser-overhaul-publication-v1",
+  "checked_at": "2026-09-12T08:56:28.950041+00:00",
+  "site_commit": "b22902d7fde587de23add431868874d346af953d",
+  "pages_run": 34684447962,
+  "pages_conclusion": "success",
+  "scope": "Publication receipt only: HTML section order and exact public catalog/chat-guide bytes. No additional model or extended interaction tests.",
+  "default_model": "babylm-100m-flm-s43",
+  "primary_checkpoints": 18,
+  "earlier_ami_also_available": true,
+  "completed_local_js_checks": 99,
+  "extended_manual_tests_stopped_at_user_request": true,
+  "readme_sha256": "301f0f9a2fcdf8738254705e1fa4aa8b73852f815f2fc8f0155378d8c7131131",
+  "public_files": {
+    "/": {
+      "http_status": 200,
+      "bytes": 87425,
+      "sha256": "3552974dcf258dc4faa79fe010dfbf281d4a206bdfd884d93680447f620da146"
+    },
+    "/models/catalog.json": {
+      "http_status": 200,
+      "bytes": 7857,
+      "sha256": "300169cc60d869fcaa2917fe0cafefeb98837e18bf77a6617c88ec87692e3243"
+    },
+    "/research/chatflm.md": {
+      "http_status": 200,
+      "bytes": 5472,
+      "sha256": "12a411be162de0835cee6a5f7cea323fb8aa80ea10ffdef9550812f2523e6367"
+    }
+  }
+}
