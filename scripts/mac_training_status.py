@@ -22,7 +22,9 @@ def status(root, supervisor):
     receipt = json.loads((root / supervisor).read_bytes())
     pid = int(receipt['pid'])
     process = command('ps', '-p', str(pid), '-o', 'command=')
-    adapter = 'selection_mac_parallel_v2.py' if receipt.get('workers') == 8 else 'selection_mac_runtime.py'
+    adapter = Path(receipt.get('adapter', 'selection_mac_parallel_v2.py' if receipt.get('workers') == 8 else 'selection_mac_runtime.py')).name
+    if adapter not in ('selection_mac_runtime.py', 'selection_mac_parallel_v2.py', 'selection_mac_parallel_v3.py'):
+        raise ValueError('Unrecognized training supervisor adapter')
     expected = f'{root}/scripts/{adapter} run'
     verified = process['returncode'] == 0 and process['output'].endswith(expected)
     telemetry = command('ps', '-p', str(pid), '-o', 'pid=,etime=,pcpu=,rss=') if verified else None
