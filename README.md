@@ -1,4 +1,4 @@
-# FLM · Fly Language Model
+# FLM Â· Fly Language Model
 
 **Language learning through fly-derived wiring. Built from scratch. Open to inspection.**
 
@@ -8,7 +8,7 @@ FLM takes a measured fruit-fly connectome and turns a declared part of it into a
 
 By **Kuber Mehta**. The project now includes a working browser language model, neuron-level interventions, local output adaptation, standard-corpus comparisons, synthetic memory experiments and an audited bridge from sensory decisions to a physically simulated fly.
 
-**[Open ChatFLM](https://flm.kuber.studio)** · [How it works](#how-flm-predicts-a-token) · [What learning changes](#what-language-training-changes) · [Behavior and replay](#additional-dynamics-and-behavior-studies) · [Results and limits](#detailed-results-and-limits) · [Papers](#papers-and-evidence) · [Run locally](#run-chatflm-locally)
+**[Open ChatFLM](https://flm.kuber.studio)** Â· [How it works](#how-flm-predicts-a-token) Â· [What learning changes](#what-language-training-changes) Â· [Behavior and replay](#additional-dynamics-and-behavior-studies) Â· [Results and limits](#detailed-results-and-limits) Â· [Papers](#papers-and-evidence) Â· [Run locally](#run-chatflm-locally)
 
 [![The measured male fruit-fly anatomy with the compact FLM subset highlighted.](public/brand/flm-social.png)](https://flm.kuber.studio)
 
@@ -37,9 +37,9 @@ The research contribution is the complete, testable combination: **anatomical gr
 The schematic describes computation, not an anatomical language pathway. The implemented update is:
 
 ```text
-drive      = input_projection(embedding[token]) + recurrent_gain · W · fast
-fast_next  = (1 − alpha) · fast + alpha · tanh(drive)
-slow_next  = (1 − beta) · slow + beta · fast_next
+drive      = input_projection(embedding[token]) + recurrent_gain Â· W Â· fast
+fast_next  = (1 âˆ’ alpha) Â· fast + alpha Â· tanh(drive)
+slow_next  = (1 âˆ’ beta) Â· slow + beta Â· fast_next
 features   = normalize(concat(pool(fast_next), pool(slow_next)))
 logits     = tied_lexical_readout(features)
 ```
@@ -59,7 +59,7 @@ The difference is the computation and structural prior; the primary language exp
 
 **ChatFLM runs the actual models locally in the browser.** It offers multi-turn chat with editable system context, free-text continuation, light/dark themes, token probabilities and checkpoint-specific conversations. In the FLM view, the real inference brain sits above a large articulated 3D typing fly. The typing motion follows generation; it is an authored body illustration, not a learned motor policy.
 
-The model selector contains [**18 completed primary checkpoints**](public/models/catalog.json)—FLM, GRU and transformer across WikiText and BabyLM—plus the earlier AMI model. The default is **BabyLM 100M FLM, seed 43**, selected by the lowest fixed-panel BabyLM validation loss among completed FLM checkpoints (**1.93186268 BPB**), not by test scores or attractive samples. Switching to a baseline runs that architecture; its state is not presented as anatomical FLM activity.
+The model selector contains [**18 completed primary checkpoints**](public/models/catalog.json)â€”FLM, GRU and transformer across WikiText and BabyLMâ€”plus the earlier AMI model. The default is **BabyLM 100M FLM, seed 43**, selected by the lowest fixed-panel BabyLM validation loss among completed FLM checkpoints (**1.93186268 BPB**), not by test scores or attractive samples. Switching to a baseline runs that architecture; its state is not presented as anatomical FLM activity.
 
 - **Follow the state.** Send a message or continue a prefix, inspect token probabilities, and see the FLM fast/slow activity at retained anatomical positions.
 - **Ask a causal question.** Silence selected neurons or disable recurrence, replay the same prefix from zero state, and compare predictions before restoring the intervention.
@@ -80,7 +80,7 @@ The architecture and its tests grew together. Each stage made a different part o
 | **BabyLM: a broader standard corpus** | Six spoken/written components, 10M/100M training pools, twelve completed fits, full held-out scoring and 288 fixed continuations. | How does the same compact architecture behave across data sources and a larger training pool? |
 | **Selection: a new anatomical hypothesis** | Operational visual-KC candidates, contact-ranked and matched random selections, with rewiring inside every selected node set. | Does the way we choose the subgraph matter? The 128-fit study is running; results are pending. |
 
-The mechanism, topology and behavior studies answer different questions. A change in memory dynamics can help prediction without proving the measured edge pattern is the reason. A neural action can drive a designed gait without language training having taught walking. Keeping those questions separate is what makes the next experiment informative. [Research consolidation](docs/RESEARCH.md) · [Current plan](docs/PLAN.md).
+The mechanism, topology and behavior studies answer different questions. A change in memory dynamics can help prediction without proving the measured edge pattern is the reason. A neural action can drive a designed gait without language training having taught walking. Keeping those questions separate is what makes the next experiment informative. [Research consolidation](docs/RESEARCH.md) Â· [Current plan](docs/PLAN.md).
 
 ## What language training changes
 
@@ -104,7 +104,7 @@ This creates a practical research workflow: train a defined model, observe the s
 
 [![Recorded NeuroMechFly simulation from the declared live-feedback switching-target case. Animated preview; click to play the full recording.](public/research/closed-loop-preview.gif)](https://flm.kuber.studio/research/closed-loop.mp4)
 
-[Play the recording with video controls](https://flm.kuber.studio/#behavior-video) · [Download MP4](https://flm.kuber.studio/research/closed-loop.mp4)
+[Play the recording with video controls](https://flm.kuber.studio/#behavior-video) Â· [Download MP4](https://flm.kuber.studio/research/closed-loop.mp4)
 
 *Animated preview of the actual MuJoCo output from the predeclared eligibility/live/switch condition. Two simulated seconds play in eight seconds. The waypoint is a virtual coordinate and is not drawn as a physical object in this camera.*
 
@@ -159,9 +159,9 @@ The completed online feedback assay crosses four fixed sensory checkpoints with 
 
 | Scenario | Trained controllers, live pose | Same controllers, frozen pose |
 |---|---:|---:|
-| Positive waypoint | 7.68° | 96.41° |
-| Negative waypoint | 7.26° | 93.91° |
-| Switching waypoint | 16.27° | 100.50° |
+| Positive waypoint | 7.68Â° | 96.41Â° |
+| Negative waypoint | 7.26Â° | 93.91Â° |
+| Switching waypoint | 16.27Â° | 100.50Â° |
 
 Values are time-mean absolute target-bearing error; lower is better. Each trained method gives the same values in a scenario. Across all conditions there are **seven distinct body paths**. This establishes a working sensory-to-body interface, while the fixed-core and scripted matches show that these tasks do not establish a need for learned recurrent dynamics. One model seed and one physics seed do not support population intervals.
 
@@ -199,9 +199,9 @@ The first wiring test used a connectivity-ranked subset with no KC-prefix cells.
 
 The [registered study](docs/SELECTION-LANGUAGE-PROTOCOL.md) is running **128 fits** across `KCg-d-L-t5` and `KCg-d-R-t5`, at **3,000 updates per fit**. Each side includes the candidate, ranked and random controls, three rewires and both training seeds. The [64-graph cost pilot](reports/selection-pilot/timing.json) informed the frozen budget. All fits must finish before validation selection and the all-condition test gate; **results remain pending**.
 
-**Execution update, 12 September:** the complete cohort now runs freshly on an Apple M5 Pro CPU under a [disclosed execution amendment](docs/SELECTION-MAC-EXECUTION.md) and [native identity](reports/selection-language/mac-v1/study-identity.json). The platform probe found different initialization hashes at the same seed numbers, so Windows checkpoints are retained separately and excluded from this cohort. All 128 fits use the same native runtime; graphs, data, budgets, controls and continuation thresholds are unchanged. This is a compute migration, not an anatomical finding or the later independent confirmation study. A [one-to-four-worker throughput probe](docs/MAC-CONCURRENCY-FINDINGS.md) retained serial scheduling: its best aggregate gain was 14.02%, below the declared 15% threshold, with twenty completed native fits preserved.
+**Execution update, 12 September:** the complete cohort now runs freshly on an Apple M5 Pro CPU under a [disclosed execution amendment](docs/SELECTION-MAC-EXECUTION.md) and [native identity](reports/selection-language/mac-v1/study-identity.json). The platform probe found different initialization hashes at the same seed numbers, so Windows checkpoints are retained separately and excluded from this cohort. All 128 fits use the same native runtime; graphs, data, budgets, controls and continuation thresholds are unchanged. This is a compute migration, not an anatomical finding or the later independent confirmation study. A [one-to-four-worker throughput probe](docs/MAC-CONCURRENCY-FINDINGS.md) initially retained serial scheduling. The user subsequently [overrode that operational cutoff](docs/SELECTION-MAC-PARALLELISM-V2.md): eight independent workers now continue the same native cohort, preserving 45 completed fits and all original scientific settings. The target delivery time is not a measured completion guarantee.
 
-These 487/540-neuron operational selections retain 81–85% of seed-KC raw contacts but cut about 89% of whole-subset incoming contacts. They are not intact functional circuits. Matching nodes or annotations does not match edge density or parameter allocation; this 4,608,000-token screen is not an equal-exposure replacement for the 18,432,000-token BabyLM baseline. [Frozen identity](reports/selection-language/study-identity.json) · [Protocol wording correction](docs/SELECTION-LANGUAGE-ERRATA.md) · [Continuing plan](docs/PLAN.md).
+These 487/540-neuron operational selections retain 81â€“85% of seed-KC raw contacts but cut about 89% of whole-subset incoming contacts. They are not intact functional circuits. Matching nodes or annotations does not match edge density or parameter allocation; this 4,608,000-token screen is not an equal-exposure replacement for the 18,432,000-token BabyLM baseline. [Frozen identity](reports/selection-language/study-identity.json) Â· [Protocol wording correction](docs/SELECTION-LANGUAGE-ERRATA.md) Â· [Continuing plan](docs/PLAN.md).
 
 <details>
 <summary>Original subset audit, current candidates and all structural controls</summary>
@@ -220,13 +220,13 @@ The named family inventories retain more internal raw contacts but use different
 
 The [publisher reconciliation](docs/PUBLISHER-ANNOTATIONS.md) verifies every runtime type and superclass against curated body annotations. Transmitter consensus matches all 166,522 bodies with records; 178 missing records stay explicit. Its 5,293-row candidate export adds ALPN-class upstream candidates and richer instance labels, without claiming that a functional subcircuit has been established.
 
-The [pathway audit](docs/SELECTION-PATHWAYS.md) measures the full acquired graph: **314 of 686 ALPNs** have contacts to **3,812 of 4,064 KCs**, totaling 390,928 ALPN→KC contacts. **3,811 KCs** have both ALPN input and MBON output at ≥1 contact per directed pair; **3,726** do at ≥5. Applying the current fast-sign rule would drop all **262,661 PAM/PPL1→KC/MBON contacts**. Missing ALPN input does not establish missing sensory input. These body-pair counts certify neither functional signal transmission nor learning.
+The [pathway audit](docs/SELECTION-PATHWAYS.md) measures the full acquired graph: **314 of 686 ALPNs** have contacts to **3,812 of 4,064 KCs**, totaling 390,928 ALPNâ†’KC contacts. **3,811 KCs** have both ALPN input and MBON output at â‰¥1 contact per directed pair; **3,726** do at â‰¥5. Applying the current fast-sign rule would drop all **262,661 PAM/PPL1â†’KC/MBON contacts**. Missing ALPN input does not establish missing sensory input. These body-pair counts certify neither functional signal transmission nor learning.
 
 ![Kenyon-cell pathway coverage at one-contact and five-contact thresholds in the acquired graph.](public/research/figures/selection-pathways.svg)
 
-The [operational KC-centered rules](docs/CIRCUIT-SELECTION.md) define eight candidates (`KCg-d`/`KCg-m` × L/R × membership thresholds 1/5), each with seven comparison selections: **64 untrained inventories**. At threshold 5, the 487/540-cell `KCg-d` candidates retain about **81–85% of seed-KC incoming/outgoing raw contacts**, yet cut about **89% of whole-subset incoming contacts**; the 1,150/1,202-cell `KCg-m` candidates retain over **96% of seed-KC contacts**. Comparators share a 134,491-cell, six-superclass pool broader than the historical central-only eligibility. Uniform and superclass/side/sign-stratified controls remain much sparser, so these are not topology results. The rules are operational hypotheses, not certified circuits.
+The [operational KC-centered rules](docs/CIRCUIT-SELECTION.md) define eight candidates (`KCg-d`/`KCg-m` Ã— L/R Ã— membership thresholds 1/5), each with seven comparison selections: **64 untrained inventories**. At threshold 5, the 487/540-cell `KCg-d` candidates retain about **81â€“85% of seed-KC incoming/outgoing raw contacts**, yet cut about **89% of whole-subset incoming contacts**; the 1,150/1,202-cell `KCg-m` candidates retain over **96% of seed-KC contacts**. Comparators share a 134,491-cell, six-superclass pool broader than the historical central-only eligibility. Uniform and superclass/side/sign-stratified controls remain much sparser, so these are not topology results. The rules are operational hypotheses, not certified circuits.
 
-The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and [export note](docs/SELECTION-GRAPH-EXPORTS.md) provide all 64 untrained graphs, without trained weights or a tokenizer. Under the declared interface, they span **487–1,385 neurons and 470,945–766,693 allocated parameters**. The exporter exactly reproduces all nine frozen-reference arrays. The earlier [timing preparation](docs/SELECTION-TIMING-PILOT.md) verified two synthetic-token updates per full-size graph through the shared BPTT/AdamW function (batch 1, three tokens, one CPU thread). The [completed corpus cost pilot](reports/selection-pilot/timing.json) now measures all 64 original graphs with three warmup and twelve timed updates each. This is short-run cost evidence, with no selection-language quality scores; rewires were not timed.
+The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and [export note](docs/SELECTION-GRAPH-EXPORTS.md) provide all 64 untrained graphs, without trained weights or a tokenizer. Under the declared interface, they span **487â€“1,385 neurons and 470,945â€“766,693 allocated parameters**. The exporter exactly reproduces all nine frozen-reference arrays. The earlier [timing preparation](docs/SELECTION-TIMING-PILOT.md) verified two synthetic-token updates per full-size graph through the shared BPTT/AdamW function (batch 1, three tokens, one CPU thread). The [completed corpus cost pilot](reports/selection-pilot/timing.json) now measures all 64 original graphs with three warmup and twelve timed updates each. This is short-run cost evidence, with no selection-language quality scores; rewires were not timed.
 
 **All 192 structural controls completed, with zero failures.** The [complete archive](https://flm.kuber.studio/research/selection-rewiring.zip) contains 64 originals and 192 rewires, all untrained. The [results note](docs/SELECTION-REWIRING-RESULTS.md) and [standalone audit](reports/selection-rewiring/standalone-audit.json) document the verified graph constraints. A [language-training adapter](docs/SELECTION-LANGUAGE-TRAINING.md) binds these graphs to fresh models and shared BPTT fit/resume. The [coordinator](docs/SELECTION-LANGUAGE-COORDINATOR.md) requires all eight selections per candidate, each measured plus three rewires at seeds 42/43: **64 fits per chosen group**. The [held-out scorer](docs/SELECTION-LANGUAGE-TEST.md) requires all registered fits and selections before test access, retaining family means and individual selection/topology contrasts. The [frozen study identity](reports/selection-language/study-identity.json) registers `KCg-d-L-t5` and `KCg-d-R-t5` (487/540 neurons): **128 fits at 3,000 updates each**. Training has started. All fits must finish before validation selection and the all-condition test gate. This limited-exposure screen uses 4,608,000 input-token presentations per fit, not the completed BabyLM baseline's 18,432,000; no convergence or equal-budget superiority claim follows.
 
@@ -234,7 +234,7 @@ The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and 
 
 *Each point is one original selection: mean and full range over three graph seeds, not a confidence interval. Panels show original-edge overlap and largest strongly connected components before/after rewiring.*
 
-Original-edge overlap spans **28.96–62.87%** for KC-centered selections, **10.74–14.45%** for contact-ranked, **0.81–4.72%** for uniform and **3.01–11.70%** for stratified. Their degree/sign constraints differ, so overlap is not a calibrated mixing score. These structural diagnostics establish no language benefit or biological function.
+Original-edge overlap spans **28.96â€“62.87%** for KC-centered selections, **10.74â€“14.45%** for contact-ranked, **0.81â€“4.72%** for uniform and **3.01â€“11.70%** for stratified. Their degree/sign constraints differ, so overlap is not a calibrated mixing score. These structural diagnostics establish no language benefit or biological function.
 
 </details>
 
@@ -266,14 +266,14 @@ The complete comparisons follow here, including negative and mixed findings. All
 
 The [separate study](docs/LANGUAGE-CORE-PROTOCOL.md) completed six new fits at 6,000 updates each, with seeds 42/43. All eight selections, including the two full-FLM references, were frozen before new-control test scoring. The [complete report](reports/language-core/summary.json) retains every article and contrast.
 
-| Contrast: first minus second | Seed 42: Δ BPB | Seed 43: Δ BPB |
+| Contrast: first minus second | Seed 42: Î” BPB | Seed 43: Î” BPB |
 |---|---:|---:|
-| Full − fixed dynamics | −0.005663 | −0.005931 |
-| Full − no lateral recurrence | −0.006230 | −0.006551 |
-| Full − no temporal state | −0.125647 | −0.123375 |
-| No lateral − no temporal state (secondary) | −0.119416 | −0.116824 |
+| Full âˆ’ fixed dynamics | âˆ’0.005663 | âˆ’0.005931 |
+| Full âˆ’ no lateral recurrence | âˆ’0.006230 | âˆ’0.006551 |
+| Full âˆ’ no temporal state | âˆ’0.125647 | âˆ’0.123375 |
+| No lateral âˆ’ no temporal state (secondary) | âˆ’0.119416 | âˆ’0.116824 |
 
-Negative favors the first model. All eight 95% paired-article intervals lie below zero, conditional on each fitted pair; shared references and two seeds do not establish general training uncertainty. The secondary mean of **−0.118120 BPB** favors retaining independent temporal units when graph communication is absent. This exploratory study does not cross topology with trainability, so it cannot establish an anatomical advantage.
+Negative favors the first model. All eight 95% paired-article intervals lie below zero, conditional on each fitted pair; shared references and two seeds do not establish general training uncertainty. The secondary mean of **âˆ’0.118120 BPB** favors retaining independent temporal units when graph communication is absent. This exploratory study does not cross topology with trainability, so it cannot establish an anatomical advantage.
 
 [Fixed dynamics](docs/LANGUAGE-CORE-CONTROLS.md) freezes 78,179 recurrent parameters and trains 521,824 lexical-interface parameters through time. It is not a readout-only reservoir or matched in trainable parameter count. No lateral recurrence retains fast/slow memory; no temporal state resets both states per token. Both allocate 600,003 entries marked trainable but disconnect 76,131 edge/gain entries from the objective. These counts are not effective-capacity estimates. The [separate harness](flm/language_core_study.py) passed fixture tests and exact single-thread/bounded four-thread reference checks.
 
@@ -287,25 +287,25 @@ The [pulse diagnostic](docs/LANGUAGE-DYNAMICS-PROTOCOL.md) compares seven recurr
 
 ### Completed wiring test
 
-No anatomical language advantage was demonstrated for this selected subset and setup. All six measured-minus-rewired test effects are positive: mean **+0.001559 BPB**, range **+0.000911 to +0.002809**. The implemented slow-state branch helps against retrained no-slow models: mean **−0.010999 BPB**.
+No anatomical language advantage was demonstrated for this selected subset and setup. All six measured-minus-rewired test effects are positive: mean **+0.001559 BPB**, range **+0.000911 to +0.002809**. The implemented slow-state branch helps against retrained no-slow models: mean **âˆ’0.010999 BPB**.
 
 ![All six rewired comparisons have positive measured-minus-control loss; both retrained no-slow comparisons are negative.](public/research/figures/language-topology-test.png)
 
 *Differences are measured fast/slow FLM minus the control; negative favors measured fast/slow. Lines show 95% paired-article bootstrap intervals, conditional on each fitted pair.*
 
-Three of six topology intervals include zero. The three graphs × two training seeds share two measured references; these are not six independent replications. This exploratory extension follows inspection of the original test scores. This ranked-subset result does not test biological topology in general or estimate a topology-by-slow-state interaction.
+Three of six topology intervals include zero. The three graphs Ã— two training seeds share two measured references; these are not six independent replications. This exploratory extension follows inspection of the original test scores. This ranked-subset result does not test biological topology in general or estimate a topology-by-slow-state interaction.
 
 All ten [checkpoint selections](reports/language-topology/selection.json) were frozen before new control test scoring, after 6,000 updates per run. Every run was scored on all 60 test articles. Inspect the [complete scores](public/research/language-topology-results.json), [records archive](https://flm.kuber.studio/research/language-topology-records.zip) and [release audit](reports/language-topology/records-release.json).
 
 <details>
 <summary>All paired wiring effects, graph matching and parameter limits</summary>
 
-| Control | Training seed 42: Δ BPB | Training seed 43: Δ BPB |
+| Control | Training seed 42: Î” BPB | Training seed 43: Î” BPB |
 |---|---:|---:|
 | Rewired graph 101 | +0.001830 | +0.001523 |
 | Rewired graph 103 | +0.000981 | +0.002809 |
 | Rewired graph 107 | +0.000911 | +0.001298 |
-| Retrained no-slow state | −0.011836 | −0.010163 |
+| Retrained no-slow state | âˆ’0.011836 | âˆ’0.010163 |
 
 ![Signed adjacency matrices of the measured language graph and three independently rewired controls, with identical neuron ordering.](public/research/figures/language-topology-matrices.png)
 

@@ -22,12 +22,27 @@ def status(root, supervisor):
     receipt = json.loads((root / supervisor).read_bytes())
     pid = int(receipt['pid'])
     process = command('ps', '-p', str(pid), '-o', 'command=')
-    expected = f'{root}/scripts/selection_mac_runtime.py run'
+    adapter = 'selection_mac_parallel_v2.py' if receipt.get('workers') == 8 else 'selection_mac_runtime.py'
+    expected = f'{root}/scripts/{adapter} run'
     verified = process['returncode'] == 0 and process['output'].endswith(expected)
     telemetry = command('ps', '-p', str(pid), '-o', 'pid=,etime=,pcpu=,rss=') if verified else None
     cores = command('sysctl', '-n', 'hw.logicalcpu')
     percent = float(telemetry['output'].split()[2]) if telemetry and telemetry['returncode'] == 0 else None
     count = int(cores['output']) if cores['returncode'] == 0 else None
+    children = []
+    if verified:
+        listing = command('ps', '-axo', 'pid=,ppid=,pcpu=,rss=,command=')
+        if listing['returncode'] != 0:
+            raise RuntimeError('Cannot inspect the training process tree')
+        rows = [line.strip().split(None, 4) for line in listing['output'].splitlines()]
+        selected = {pid}
+        while True:
+            expanded = selected | {int(row[0]) for row in rows if len(row) == 5 and int(row[1]) in selected}
+            if expanded == selected: break
+            selected = expanded
+        children = [dict(pid=int(row[0]), parent_pid=int(row[1]), cpu_percent=float(row[2]),
+                         rss_kib=int(row[3]), command=row[4]) for row in rows if len(row) == 5 and int(row[0]) in selected]
+    aggregate = sum(row['cpu_percent'] for row in children) if verified else None
 
     def marker(path):
         return dict(path=str(path.relative_to(study)), modified_unix=path.stat().st_mtime,
@@ -49,8 +64,9 @@ def status(root, supervisor):
                 latest_completions=[marker(p) for p in complete[-8:]],
                 latest_committed_checkpoint=marker(saved[-1]) if saved else None,
                 verified_trainer=verified, process=process, telemetry=telemetry,
-                logical_cpu_count=count, process_cpu_percent=percent,
-                approximate_machine_cpu_percent=round(percent/count, 2) if percent is not None and count else None,
+                logical_cpu_count=count, process_cpu_percent=percent, process_tree=children,
+                aggregate_cpu_percent=aggregate, aggregate_rss_kib=sum(row['rss_kib'] for row in children),
+                approximate_machine_cpu_percent=round(aggregate/count, 2) if aggregate is not None and count else None,
                 power=command('pmset', '-g', 'batt'), thermals=command('pmset', '-g', 'therm'),
                 scope='Best-effort read of file metadata and ps/pmset; not a checkpoint integrity or scientific-result audit.')
 

@@ -1,0 +1,656 @@
+{
+  "format": "flm-mac-parallel-execution-v2",
+  "study_identity_sha256": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676",
+  "workers": 8,
+  "threads_per_fit": 4,
+  "conditions": [
+    {
+      "graph": "KCg-d-L-t5/candidate/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/candidate/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/candidate/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/candidate/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/candidate/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/contact_ranked/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/contact_ranked/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/contact_ranked/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/contact_ranked/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s201/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s201/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s201/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s201/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s203/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s203/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s203/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s203/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s207/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s207/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s207/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/stratified_s207/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s201/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s201/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s201/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s201/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s203/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s203/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s203/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s203/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/measured",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s207/measured/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null101",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s207/null101/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null103",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s207/null103/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null107",
+      "seed": 42,
+      "label": "KCg-d-L-t5/uniform_s207/null107/s42"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/candidate/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/candidate/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/candidate/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/candidate/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/candidate/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/contact_ranked/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/contact_ranked/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/contact_ranked/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/contact_ranked/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/contact_ranked/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s201/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s201/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s201/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s201/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s201/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s203/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s203/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s203/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s203/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s203/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s207/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s207/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s207/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/stratified_s207/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/stratified_s207/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s201/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s201/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s201/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s201/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s201/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s203/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s203/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s203/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s203/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s203/null107/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/measured",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s207/measured/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null101",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s207/null101/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null103",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s207/null103/s43"
+    },
+    {
+      "graph": "KCg-d-L-t5/uniform_s207/null107",
+      "seed": 43,
+      "label": "KCg-d-L-t5/uniform_s207/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/candidate/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/candidate/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/candidate/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/candidate/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/contact_ranked/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/contact_ranked/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/contact_ranked/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/contact_ranked/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s201/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s201/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s201/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s201/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s203/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s203/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s203/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s203/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s207/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s207/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s207/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/stratified_s207/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s201/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s201/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s201/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s201/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s203/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s203/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s203/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s203/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/measured",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s207/measured/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null101",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s207/null101/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null103",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s207/null103/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null107",
+      "seed": 42,
+      "label": "KCg-d-R-t5/uniform_s207/null107/s42"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/candidate/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/candidate/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/candidate/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/candidate/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/candidate/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/contact_ranked/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/contact_ranked/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/contact_ranked/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/contact_ranked/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/contact_ranked/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s201/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s201/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s201/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s201/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s201/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s203/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s203/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s203/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s203/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s203/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s207/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s207/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s207/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/stratified_s207/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/stratified_s207/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s201/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s201/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s201/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s201/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s201/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s203/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s203/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s203/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s203/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s203/null107/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/measured",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s207/measured/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null101",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s207/null101/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null103",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s207/null103/s43"
+    },
+    {
+      "graph": "KCg-d-R-t5/uniform_s207/null107",
+      "seed": 43,
+      "label": "KCg-d-R-t5/uniform_s207/null107/s43"
+    }
+  ],
+  "authorization": "User explicitly requested parallel execution and superseded the earlier scheduling adoption cutoff.",
+  "scope": "Eight workers are an operational choice, not a new qualification result or a guaranteed speedup.",
+  "probe_sha256": "4f12139b18b171f7c92853615995226dc178a325a7ca40fc587f93194764cfb6",
+  "driver_sha256": "4a54abe0b3356bafbaf09c7f2cc8dc33f6b1707b1cdc14a9b5e85bb71c7c6ae1",
+  "document_sha256": "06c60e8fda2ce5cd09c83661513c37f70282aea8418042940ff2216449d3dd7a",
+  "scheduling": "Each original condition submitted once to spawned isolated processes; completion order may vary",
+  "checkpoint_policy": "Audit existing completed fits; resume compatible committed checkpoints; preserve all 3000 updates",
+  "evaluation_policy": "Join all training workers and verify all 128 fits before original serial validation and held-out stages"
+}
