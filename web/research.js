@@ -7,7 +7,7 @@ import { loadFeedbackStudy } from './closed-loop.js';
 import { loadChoiceReplay } from './choice-replay.js';
 import { loadFoodReplay } from './food-replay.js';
 const names = {flm: 'FLM', gru: 'GRU', transformer: 'Transformer'};
-const colors = {flm: '#a74c20', gru: '#497569', transformer: '#666277'};
+const colors = {flm: 'var(--chart-flm)', gru: 'var(--chart-gru)', transformer: 'var(--chart-transformer)'};
 const $ = id => document.getElementById(id);
 const svgElement = (name, attributes, text = '') => {
   const node = document.createElementNS('http://www.w3.org/2000/svg', name);
@@ -44,7 +44,7 @@ export async function loadResearch() {
       chart.append(svgElement('title', {}, 'Validation loss against matched training updates; lower is better.'));
       const x = step => 64 + step / 6000 * 670, y = value => 266 - (value - 1.5) / 2.1 * 230;
       for (const value of [1.5, 2, 2.5, 3, 3.5]) {
-        chart.append(svgElement('path', {d: `M64 ${y(value)}H734`, stroke:'#ddd7cd', fill:'none'}));
+        chart.append(svgElement('path', {d: `M64 ${y(value)}H734`, stroke:'var(--border)', fill:'none'}));
         chart.append(svgElement('text', {x:52, y:y(value)+4, 'text-anchor':'end'}, value.toFixed(1)));
       }
       for (const step of [0, 1500, 3000, 4500, 6000]) chart.append(svgElement('text', {x:x(step), y:288, 'text-anchor':'middle'}, step.toLocaleString()));

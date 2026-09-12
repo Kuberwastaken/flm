@@ -1,0 +1,83 @@
+{
+  "format": "flm-demo-media-v1",
+  "generator_sha256": "ddec4b05b123f25efac595e60ff2d623404b3efe070300f2a1679410fa6cdd38",
+  "ffmpeg": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+  "scope": "Format/resolution derivatives of the existing complete recordings. No simulation, inference, new frames or timing changes; GIF frame rate is reduced.",
+  "outputs": [
+    {
+      "source": "closed-loop.mp4",
+      "source_sha256": "a602579d4d82dcdc6fa6b18be43fce17ed42e267292b3a71d137013287b6f0e7",
+      "file": "closed-loop.webm",
+      "sha256": "0cf6cb78f66e5132f501fc377f176bbf19b5cfb659edf0d02634ddc98ea9c036",
+      "arguments": [
+        "-an",
+        "-c:v",
+        "libvpx-vp9",
+        "-b:v",
+        "0",
+        "-crf",
+        "32",
+        "-deadline",
+        "good",
+        "-cpu-used",
+        "4",
+        "-pix_fmt",
+        "yuv420p"
+      ]
+    },
+    {
+      "source": "learned-choice.mp4",
+      "source_sha256": "faae02b6de03bea2646ace3c34d7acb3c81b5d17e1214494fc1f552b624a2004",
+      "file": "learned-choice.webm",
+      "sha256": "7c6012d1d43d90588d0d6f73f46b46c0d8ac5af8595822e26df0c4a91bda3c9a",
+      "arguments": [
+        "-an",
+        "-c:v",
+        "libvpx-vp9",
+        "-b:v",
+        "0",
+        "-crf",
+        "32",
+        "-deadline",
+        "good",
+        "-cpu-used",
+        "4",
+        "-pix_fmt",
+        "yuv420p"
+      ]
+    },
+    {
+      "source": "physical-calibration.mp4",
+      "source_sha256": "6e09613c729e5bd8add0ed170b9dfffd06d998127f6b67732247d5365b9f9953",
+      "file": "physical-calibration.webm",
+      "sha256": "1f971bf314d60853b455671e783c752f400b58820dd590092670b74678a1ab9f",
+      "arguments": [
+        "-an",
+        "-c:v",
+        "libvpx-vp9",
+        "-b:v",
+        "0",
+        "-crf",
+        "32",
+        "-deadline",
+        "good",
+        "-cpu-used",
+        "4",
+        "-pix_fmt",
+        "yuv420p"
+      ]
+    },
+    {
+      "source": "closed-loop.mp4",
+      "source_sha256": "a602579d4d82dcdc6fa6b18be43fce17ed42e267292b3a71d137013287b6f0e7",
+      "file": "closed-loop-preview.gif",
+      "sha256": "b2e5d376c5148a3b39529b083565140272cb3ce55a47bb687628fc3f4eb47557",
+      "arguments": [
+        "-filter_complex",
+        "fps=12,scale=400:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer:bayer_scale=3",
+        "-loop",
+        "0"
+      ]
+    }
+  ]
+}

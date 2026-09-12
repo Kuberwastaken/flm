@@ -1,5 +1,5 @@
-:root { --text:#292820; --bg:#faf8f5; --scene-background:#f2eee6; --chat-user:#ede9e1; --panel:#faf8f5; --canvas-line:#ded8ce; }
-:root[data-theme="dark"] { color-scheme:dark; --bg:#191919; --surface:#242424; --panel:#1e1e1e; --text:#ece8df; --muted:#b4afa6; --border:#3e3b36; --accent:#e3a475; --focus:#e7b58f; --scene-background:#242321; --chat-user:#33312e; --canvas-line:#47433d; background:var(--bg); color:var(--text); }
+:root { color-scheme:light; --chart-flm:#a74c20; --chart-gru:#497569; --chart-transformer:#666277; --text:#292820; --bg:#faf8f5; --scene-background:#f2eee6; --chat-user:#ede9e1; --panel:#faf8f5; --canvas-line:#ded8ce; }
+:root[data-theme="dark"] { color-scheme:dark; --chart-flm:#e3a475; --chart-gru:#88b7a8; --chart-transformer:#b8a9d1; --bg:#191919; --surface:#242424; --panel:#1e1e1e; --text:#ece8df; --muted:#b4afa6; --border:#3e3b36; --accent:#e3a475; --focus:#e7b58f; --scene-background:#242321; --chat-user:#33312e; --canvas-line:#47433d; background:var(--bg); color:var(--text); }
 body { background:var(--bg,#faf8f5); color:var(--text,#292820); }
 .header { min-height:64px; padding:10px 24px; gap:20px; }
 .header .brand span { display:none; }
@@ -60,8 +60,8 @@ body[data-page="chat"] .footer, body[data-page="learn"] .footer { display:none; 
 .body-comparison>summary { font-size:11px; cursor:pointer; color:var(--muted); }
 .body-comparison[open] { bottom:12px; padding:12px; overflow:auto; border:1px solid var(--border); background:var(--surface); }
 .body-comparison .fly-view { height:230px; }
-:root[data-theme="dark"] button:hover { background:#37342f; }
-:root[data-theme="dark"] .primary { background:#b97647; color:#fff; border-color:#b97647; }
+:root[data-theme="dark"] button:hover, :root[data-theme="dark"] .file-button:hover { background:#37342f; }
+:root[data-theme="dark"] .primary { background:#b97647; color:#191919; border-color:#b97647; }
 :root[data-theme="dark"] .primary:hover { background:#c08050; }
 :root[data-theme="dark"] thead { background:#302e29; }
 :root[data-theme="dark"] .intro { color:var(--muted); }

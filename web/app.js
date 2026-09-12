@@ -127,7 +127,8 @@ function switchModel(value, conversationId = null) {
 $('model').onchange = () => switchModel($('model').value);
 
 function showPage() {
-  const page = ['chat', 'learn', 'research'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'chat';
+  const anchor = location.hash.slice(1);
+  const page = anchor === 'behavior-video' ? 'research' : ['chat', 'learn', 'research'].includes(anchor) ? anchor : 'chat';
   document.body.dataset.page = page;
   if (page === 'research' && !researchLoaded) { researchLoaded = true; loadResearch(); }
   $('experiment').hidden = page === 'research'; $('research-page').hidden = page !== 'research';
@@ -136,7 +137,10 @@ function showPage() {
     if (link.dataset.page === page) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
   });
   document.title = `${page === 'chat' ? 'ChatFLM' : page === 'learn' ? 'Local learning' : 'Research'} — Fly Language Model`;
-  requestAnimationFrame(() => { brain?.resize(); fly?.resize(); });
+  requestAnimationFrame(() => {
+    brain?.resize(); fly?.resize();
+    if (anchor === 'behavior-video') $(anchor).scrollIntoView({ block: 'center' });
+  });
 }
 window.addEventListener('hashchange', showPage); showPage();
 $('new-chat').onclick = () => newConversation();

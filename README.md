@@ -102,9 +102,11 @@ This creates a practical research workflow: train a defined model, observe the s
 
 **A learned sensory decision can drive a simulated fly through an engineered motor interface.** Separate sensory cores learn delayed cue rules, reversal and context. Their decisions control a calibrated turn signal; FlyGym's designed gait and contact controller supplies leg motion. These are experiments in memory, learning and feedback, not language-trained motor behavior.
 
-[![Recorded NeuroMechFly simulation from the declared live-feedback switching-target case. Click to view the actual simulated video.](public/research/closed-loop-poster.png)](https://flm.kuber.studio/research/closed-loop.mp4)
+[![Recorded NeuroMechFly simulation from the declared live-feedback switching-target case. Animated preview; click to play the full recording.](public/research/closed-loop-preview.gif)](https://flm.kuber.studio/research/closed-loop.mp4)
 
-*Actual MuJoCo output from the predeclared eligibility/live/switch condition. Two simulated seconds play in eight seconds. The waypoint is a virtual coordinate and is not drawn as a physical object in this camera.*
+[Play the recording with video controls](https://flm.kuber.studio/#behavior-video) · [Download MP4](https://flm.kuber.studio/research/closed-loop.mp4)
+
+*Animated preview of the actual MuJoCo output from the predeclared eligibility/live/switch condition. Two simulated seconds play in eight seconds. The waypoint is a virtual coordinate and is not drawn as a physical object in this camera.*
 
 | Experiment | What the completed study shows |
 |---|---|

@@ -58,19 +58,19 @@ function draw(svg, sample, bounds, label) {
   const y = value => 312 - (value - bounds.y_min) * scale;
   svg.replaceChildren(svgNode('title', {}, `${label}. Recorded position and heading at ${sample.time.toFixed(4)} simulated seconds. Fly icon is schematic.`));
   for (let tick = Math.ceil(bounds.y_min / 5) * 5; tick <= bounds.y_max; tick += 5) {
-    svg.append(svgNode('path', {d:`M40 ${y(tick)}H320`, fill:'none', stroke:'#e5dfd3'}));
+    svg.append(svgNode('path', {d:`M40 ${y(tick)}H320`, fill:'none', stroke:'var(--border)'}));
     svg.append(svgNode('text', {x:32, y:y(tick)+4, 'text-anchor':'end'}, String(tick)));
   }
   for (let tick = Math.ceil(bounds.x_min / 5) * 5; tick <= bounds.x_max; tick += 5) {
-    svg.append(svgNode('path', {d:`M${x(tick)} 32V312`, fill:'none', stroke:'#e5dfd3'}));
+    svg.append(svgNode('path', {d:`M${x(tick)} 32V312`, fill:'none', stroke:'var(--border)'}));
     svg.append(svgNode('text', {x:x(tick), y:332, 'text-anchor':'middle'}, String(tick)));
   }
   svg.append(svgNode('text', {x:40, y:18}, 'y (mm)'));
   svg.append(svgNode('text', {x:320, y:352, 'text-anchor':'end'}, 'x (mm)'));
   const path = end => sample.path.x_mm.slice(0, end).map((value, i) => `${i ? 'L' : 'M'}${x(value)} ${y(sample.path.y_mm[i])}`).join(' ');
-  svg.append(svgNode('path', {d:path(101), fill:'none', stroke:'#b8b0a3', 'stroke-width':1.5, 'stroke-dasharray':'3 3'}));
-  svg.append(svgNode('path', {d:path(sample.frame+1), fill:'none', stroke:'#a74c20', 'stroke-width':2.5}));
-  svg.append(svgNode('circle', {cx:x(sample.path.x_mm[0]), cy:y(sample.path.y_mm[0]), r:3, fill:'#fffefa', stroke:'#716b60'}));
+  svg.append(svgNode('path', {d:path(101), fill:'none', stroke:'var(--muted)', 'stroke-width':1.5, 'stroke-dasharray':'3 3'}));
+  svg.append(svgNode('path', {d:path(sample.frame+1), fill:'none', stroke:'var(--accent)', 'stroke-width':2.5}));
+  svg.append(svgNode('circle', {cx:x(sample.path.x_mm[0]), cy:y(sample.path.y_mm[0]), r:3, fill:'var(--surface)', stroke:'var(--muted)'}));
   const fly = svgNode('g', {transform:`translate(${x(sample.x)} ${y(sample.y)}) rotate(${-sample.yaw * 180 / Math.PI})`, 'data-recorded-fly':''});
   fly.append(svgNode('path', {d:'M-2 -3L-8 -9L-13 -10 M1 -3L2 -10L-2 -14 M5 -2L10 -7L15 -7 M-2 3L-8 9L-13 10 M1 3L2 10L-2 14 M5 2L10 7L15 7', fill:'none', stroke:'#624b35', 'stroke-width':1.4, 'stroke-linecap':'round'}));
   fly.append(svgNode('ellipse', {cx:-5, cy:0, rx:9, ry:4.5, fill:'#9f723c', stroke:'#624b35'}));

@@ -1,5 +1,5 @@
 const names = { flm: 'FLM', gru: 'GRU', transformer: 'Transformer' };
-const colors = { flm: '#a74c20', gru: '#497569', transformer: '#666277' };
+const colors = { flm: 'var(--chart-flm)', gru: 'var(--chart-gru)', transformer: 'var(--chart-transformer)' };
 const $ = id => document.getElementById(id);
 const number = value => value.toLocaleString();
 let chartObserver;
@@ -53,7 +53,7 @@ export async function loadBabyLMStudy() {
         const x = step => 56 + step / report.registered_updates * (width - 88), y = value => 256 - (value - low) / (high - low) * 220;
         for (let i = 0; i <= 4; i++) {
           const value = low + (high - low) * i / 4;
-          chart.append(svg('path', { d: `M56 ${y(value)}H${width - 32}`, stroke: '#ddd7cd', fill: 'none' }), svg('text', { x: 46, y: y(value) + 4, 'text-anchor': 'end' }, value.toFixed(2)));
+          chart.append(svg('path', { d: `M56 ${y(value)}H${width - 32}`, stroke: 'var(--border)', fill: 'none' }), svg('text', { x: 46, y: y(value) + 4, 'text-anchor': 'end' }, value.toFixed(2)));
         }
         for (const step of [0, 3000, 6000, 9000, 12000]) chart.append(svg('text', { x: x(step), y: 279, 'text-anchor': 'middle' }, number(step)));
         chart.append(svg('text', { x: width / 2, y: 306, 'text-anchor': 'middle' }, 'Training updates'), svg('text', { x: 56, y: 18 }, width < 550 ? 'Validation bits / byte' : 'Validation bits / UTF-8 byte · lower is better'));
