@@ -1,0 +1,220 @@
+{
+  "format": "flm-browser-v2",
+  "name": "FLM \u00b7 BabyLM 10M \u00b7 seed 42",
+  "dataset": "BabyLM 2026 English 10M",
+  "model_id": "babylm-10m-flm-s42",
+  "neurons": 1024,
+  "pools": 128,
+  "features": 96,
+  "embedding": 96,
+  "vocabulary": 4096,
+  "bos": 0,
+  "eos": 1,
+  "arrays": {
+    "embedding": {
+      "offset": 0,
+      "length": 393216,
+      "shape": [
+        4096,
+        96
+      ],
+      "dtype": "float32"
+    },
+    "input_weight": {
+      "offset": 1572864,
+      "length": 98304,
+      "shape": [
+        1024,
+        96
+      ],
+      "dtype": "float32"
+    },
+    "input_bias": {
+      "offset": 1966080,
+      "length": 1024,
+      "shape": [
+        1024
+      ],
+      "dtype": "float32"
+    },
+    "offsets": {
+      "offset": 1970176,
+      "length": 1025,
+      "shape": [
+        1025
+      ],
+      "dtype": "uint32"
+    },
+    "sources": {
+      "offset": 1974276,
+      "length": 76130,
+      "shape": [
+        76130
+      ],
+      "dtype": "uint32"
+    },
+    "weights": {
+      "offset": 2278796,
+      "length": 76130,
+      "shape": [
+        76130
+      ],
+      "dtype": "float32"
+    },
+    "alpha": {
+      "offset": 2583316,
+      "length": 1024,
+      "shape": [
+        1024
+      ],
+      "dtype": "float32"
+    },
+    "beta": {
+      "offset": 2587412,
+      "length": 1024,
+      "shape": [
+        1024
+      ],
+      "dtype": "float32"
+    },
+    "pool": {
+      "offset": 2591508,
+      "length": 1024,
+      "shape": [
+        1024
+      ],
+      "dtype": "uint32"
+    },
+    "pool_sizes": {
+      "offset": 2595604,
+      "length": 128,
+      "shape": [
+        128
+      ],
+      "dtype": "float32"
+    },
+    "norm_weight": {
+      "offset": 2596116,
+      "length": 256,
+      "shape": [
+        256
+      ],
+      "dtype": "float32"
+    },
+    "norm_bias": {
+      "offset": 2597140,
+      "length": 256,
+      "shape": [
+        256
+      ],
+      "dtype": "float32"
+    },
+    "projection_weight": {
+      "offset": 2598164,
+      "length": 24576,
+      "shape": [
+        96,
+        256
+      ],
+      "dtype": "float32"
+    },
+    "projection_bias": {
+      "offset": 2696468,
+      "length": 96,
+      "shape": [
+        96
+      ],
+      "dtype": "float32"
+    },
+    "readout_bias": {
+      "offset": 2696852,
+      "length": 4096,
+      "shape": [
+        4096
+      ],
+      "dtype": "float32"
+    }
+  },
+  "variant": "flm",
+  "checkpoint_step": 12000,
+  "checkpoint_sha256": "fe0f21c3ac72289b5fd11e534f98d4979965b4556c102b480d652a53a4952de6",
+  "weights_sha256": "52a5ad838a56116f1acf373a3717b493741bce648a138cc26c69f942c90a198f",
+  "weights_bytes": 2713236,
+  "anatomy_sha256": "92f2d5eef9ba4f880e2ee077cc27022ad8440d865c89816b3b1110f0a6b6dedb",
+  "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+  "browser_tokenizer_sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+  "source_graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+  "trained_parameters": 600003,
+  "retained_edges": 76130,
+  "source_neurons": 166700,
+  "training": {
+    "seed": 42,
+    "protocol": {
+      "steps": 12000,
+      "batch": 16,
+      "sequence": 96,
+      "warmup": 16,
+      "learning_rate": 0.002,
+      "final_learning_rate": 0.0002,
+      "lr_warmup_updates": 100,
+      "weight_decay": 0.01,
+      "eval_tokens": 49152,
+      "threads": 4,
+      "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+      "train_cache_sha256": "4d205d6d35c87c38749ca3dc858fe96b28e3d7f4b8d7e2eb782e06909c8f15cd",
+      "validation_cache_sha256": "ea3bd0f2625e78723baf6300dca2ffdae91deebdcb21ae748ffd0cc4ba2ef859",
+      "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+      "validation_panel_sha256": "9a0c030150fee1821246dd54f045fc36c437bab3061e3010740d2942900de3ae",
+      "evaluation_unit": "block",
+      "cache_identity": "SHA-256 of verified mmap manifest"
+    },
+    "graph_sha256": "a2f35369a5ed4981b8ef75c92df285f7df576a020582f119a1372bfbedbaebee",
+    "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+    "data": "data\\processed\\babylm-2026-bpe",
+    "tokenizer": "data\\tokenizers\\babylm-2026-4096\\tokenizer.json",
+    "model_version": "flm-lexical-v2",
+    "source_commit": "518a55bbeb39d7f9653b68603deff57e370b562e",
+    "python_torch": "2.8.0+cpu",
+    "parameter_card": {
+      "config": {
+        "neurons": 1024,
+        "pools": 128,
+        "embedding": 96,
+        "variant": "flm",
+        "backend": "auto",
+        "vocabulary": 4096,
+        "tied_readout": true
+      },
+      "trainable_parameters": 600003,
+      "parameter_groups": {
+        "edge_log_gain": 76130,
+        "alpha_logit": 1024,
+        "beta_logit": 1024,
+        "recurrent_logit": 1,
+        "output_bias": 4096,
+        "embedding.weight": 393216,
+        "input.weight": 98304,
+        "input.bias": 1024,
+        "norm.weight": 256,
+        "norm.bias": 256,
+        "readout.weight": 24576,
+        "readout.bias": 96
+      },
+      "edges": 76130,
+      "vocabulary": 4096
+    },
+    "test_set_used_for_training": false,
+    "exposure": {
+      "presented_tokens": 18432000,
+      "presented_bytes": 53899201,
+      "scored_bytes": 44912041
+    }
+  },
+  "norm_epsilon": 1e-05,
+  "description": "Trained from scratch; selected by the frozen validation protocol. Complete benchmark reports are published.",
+  "capability": "Base language model with experimental chat formatting; no instruction tuning.",
+  "license": "MIT original code; CC BY 4.0 anatomy; WikiText source attribution and license notes in the dataset card",
+  "architecture": "flm",
+  "selection_validation_bpb": 1.9811101259407082,
+  "selection_manifest_sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313"
+}
