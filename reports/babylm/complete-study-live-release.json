@@ -1,0 +1,247 @@
+{
+  "verified_utc": "2026-09-12T07:26:20.552231+00:00",
+  "content_commit": "e490ecc6b503c31721f2abd702db828b687dc772",
+  "ci_run": 34680646151,
+  "ci_status": "success",
+  "http_files": {
+    "research/babylm-findings.md": {
+      "bytes": 14041,
+      "sha256": "582b065e07d328e58d9b69b885e642eb94dbfecc9103c12ea68e139dde00ebbd"
+    },
+    "research/babylm-handoff.md": {
+      "bytes": 11267,
+      "sha256": "5d6ee6a7e61fcd29e86f0560ab523b3be226fef76a6e425bd7d45c48eb78aa77"
+    },
+    "research/babylm-protocol.md": {
+      "bytes": 5378,
+      "sha256": "0c01dd5cb9f55c3b3537206110bad954052b64142be14b661c4ce599fe8b7fb9"
+    },
+    "research/babylm-result-tables.md": {
+      "bytes": 6055,
+      "sha256": "01d62e03b0249d5a5a464e2b20bebb7826299da49d0951fbfa328dd5c22f44fb"
+    },
+    "research/babylm-results/babylm-components.png": {
+      "bytes": 188160,
+      "sha256": "df3db55735d3f413e8ce52567fba6fa83051ffba91a86b44bf12f2d9fc10096f"
+    },
+    "research/babylm-results/babylm-components.svg": {
+      "bytes": 165260,
+      "sha256": "d93def5fa5ecb19edfb352390e70be82c1b1ee15e11a4733739595a17d253c9b"
+    },
+    "research/babylm-results/babylm-pooled.png": {
+      "bytes": 150911,
+      "sha256": "c2a01416f92fb1403c963024a50bbc2380861e153877740d20f130d5ca5372a0"
+    },
+    "research/babylm-results/babylm-pooled.svg": {
+      "bytes": 122858,
+      "sha256": "11b2ae8fe0a98ea7c67f2ef0d05b3c17d755feee760eefdb44ef358247a5a55e"
+    },
+    "research/babylm-results/completed-evidence-verification.json": {
+      "bytes": 2722,
+      "sha256": "931710896c5f1fa7e1c692abab854080427eb0362b859cfeec1a7d231f0411d3"
+    },
+    "research/babylm-results/figures/babylm-components.png": {
+      "bytes": 188160,
+      "sha256": "df3db55735d3f413e8ce52567fba6fa83051ffba91a86b44bf12f2d9fc10096f"
+    },
+    "research/babylm-results/figures/babylm-components.svg": {
+      "bytes": 165260,
+      "sha256": "d93def5fa5ecb19edfb352390e70be82c1b1ee15e11a4733739595a17d253c9b"
+    },
+    "research/babylm-results/figures/babylm-pooled.png": {
+      "bytes": 150911,
+      "sha256": "c2a01416f92fb1403c963024a50bbc2380861e153877740d20f130d5ca5372a0"
+    },
+    "research/babylm-results/figures/babylm-pooled.svg": {
+      "bytes": 122858,
+      "sha256": "11b2ae8fe0a98ea7c67f2ef0d05b3c17d755feee760eefdb44ef358247a5a55e"
+    },
+    "research/babylm-results/figures/figure-data.json": {
+      "bytes": 187506,
+      "sha256": "36d9671db3235fe4536cb9251d134d96182a48b036500aa8363a1e3d5bf625a9"
+    },
+    "research/babylm-results/figures/manifest.json": {
+      "bytes": 670,
+      "sha256": "34c1779b1dc1cfe8520def6d3600dad697e4fc0e607bec219106ee7a2d191d47"
+    },
+    "research/babylm-results/samples-100m-flm-s42.json": {
+      "bytes": 124347,
+      "sha256": "b767573e1ac875a8b6cf9436a5d7d54c5d8e203f3d4c393d343e4f416f858638"
+    },
+    "research/babylm-results/samples-100m-flm-s43.json": {
+      "bytes": 121276,
+      "sha256": "e44505fea1a3a58aae5ca7c0b71edefac132eff894caed45eff6ca138dd3bb0f"
+    },
+    "research/babylm-results/samples-100m-gru-s42.json": {
+      "bytes": 123943,
+      "sha256": "3bd56476b1fbf57db5469f6b373b4c4912489470f3ab921123c90c7afcc5b068"
+    },
+    "research/babylm-results/samples-100m-gru-s43.json": {
+      "bytes": 123393,
+      "sha256": "df78e6d3fba9abed4bb5f5413288331ef78f6a1635b720e75c2cc33d7ed6ad1c"
+    },
+    "research/babylm-results/samples-100m-transformer-s42.json": {
+      "bytes": 123265,
+      "sha256": "065d7db0423a8a22810045791de32cd847a94d05b7568ab54c6f6ca892f11c7b"
+    },
+    "research/babylm-results/samples-100m-transformer-s43.json": {
+      "bytes": 123606,
+      "sha256": "24de4d43ae15d57ef1da11374d1558b27440b6010d2409868339e3a64008c17a"
+    },
+    "research/babylm-results/samples-10m-flm-s42.json": {
+      "bytes": 125122,
+      "sha256": "8a4027d141d75d375150268c36baa84cfea8422e9a5865edd96886b7452082ac"
+    },
+    "research/babylm-results/samples-10m-flm-s43.json": {
+      "bytes": 124563,
+      "sha256": "d6aeb5e44bf2678d3f3f3dab4320d206d6a632c3a8a049553ea71ee2751cba54"
+    },
+    "research/babylm-results/samples-10m-gru-s42.json": {
+      "bytes": 124995,
+      "sha256": "c6663d043f1083951bd735d5cb94fdd3e44022f3e767520aa38ad956b64ccc48"
+    },
+    "research/babylm-results/samples-10m-gru-s43.json": {
+      "bytes": 124238,
+      "sha256": "9e64598cfa27fbe357c2fb325e405a8ff4bc035a972976b36ae81a0917f754dc"
+    },
+    "research/babylm-results/samples-10m-transformer-s42.json": {
+      "bytes": 124253,
+      "sha256": "a40b9bf1f249699b0c52abc8efc67d0632fdd8e5a78889303b1a8bed90537462"
+    },
+    "research/babylm-results/samples-10m-transformer-s43.json": {
+      "bytes": 125144,
+      "sha256": "bac2f3458e077590d9d39f7f0077e73a80561b296b759c9d5e6514b38314baa1"
+    },
+    "research/babylm-results/samples.json": {
+      "bytes": 1809785,
+      "sha256": "beedb5661210739f7043d86759457fe19b7ec73eab26b54429c02bbed8404e49"
+    },
+    "research/babylm-results/selection.json": {
+      "bytes": 41160,
+      "sha256": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313"
+    },
+    "research/babylm-results/summary.json": {
+      "bytes": 185604,
+      "sha256": "9adab875cd41413da495adf637d44abce99bb87ed70d960d82e93f4f0c52d005"
+    },
+    "research/babylm-results/tables/manifest.json": {
+      "bytes": 521,
+      "sha256": "0d5e4b3179a38fc4441bb4a2809f591f17510e91c54446ab397fba2e91b77e49"
+    },
+    "research/babylm-results/tables/paired_comparisons.csv": {
+      "bytes": 5817,
+      "sha256": "7281679ab8ac9c159944514897abff9953bce59d4b72f8b55ef6dd41adff0460"
+    },
+    "research/babylm-results/tables/scores.csv": {
+      "bytes": 39554,
+      "sha256": "0295054afe8ffe17297baac19b518bbffc20383e9e4e1500e5a43c9edc5a9109"
+    },
+    "research/babylm-results/tables/seed_aggregates.csv": {
+      "bytes": 10296,
+      "sha256": "9377e274c2a7131d0dcd4020ef5857090ccaff5ec7c2ec5b8e8ff23084d24680"
+    },
+    "research/babylm-results/tables/tables.json": {
+      "bytes": 158812,
+      "sha256": "7117deb2f2254d204787a905192f032c08f1a802889520c47afdce8620aa6184"
+    },
+    "research/babylm-results/test-100m-flm-s42.json": {
+      "bytes": 917019,
+      "sha256": "22aae62d07122e899d2a94885e5d8287e5ca00b0d4a950c2e6b19aa98696bc31"
+    },
+    "research/babylm-results/test-100m-flm-s43.json": {
+      "bytes": 917052,
+      "sha256": "d7848caee28b9b5ef132600fa69ed1c5d3480c5aa62ed7b2246fce3fc162efa8"
+    },
+    "research/babylm-results/test-100m-gru-s42.json": {
+      "bytes": 917208,
+      "sha256": "8c7a084145442024b46fc8654cdc9cee078acaad85e0ad88d0f44eff65e101e0"
+    },
+    "research/babylm-results/test-100m-gru-s43.json": {
+      "bytes": 917235,
+      "sha256": "6d0d6336eb200477f4095e420edf1f495fe8d0222c9b220f9f654d59fc1a8eae"
+    },
+    "research/babylm-results/test-100m-transformer-s42.json": {
+      "bytes": 917285,
+      "sha256": "9cf890739bafe4abd6859d5ef8cbd2884ea1f627a4368f981afb29e8cddde4fe"
+    },
+    "research/babylm-results/test-100m-transformer-s43.json": {
+      "bytes": 917278,
+      "sha256": "077d9ae89fad7c8d11c04322ad3afcf92e2f736aa1fcadbe307a20926fdb7c7e"
+    },
+    "research/babylm-results/test-10m-flm-s42.json": {
+      "bytes": 917021,
+      "sha256": "2a08175e231502029d8adbcfcdfa07e2ee01c94b10b77c0236c748a9d62454eb"
+    },
+    "research/babylm-results/test-10m-flm-s43.json": {
+      "bytes": 917066,
+      "sha256": "de08d226daa32af2a8a4c53b81440d644b5a6e822b4d49ca634ee2a19c6d4f6f"
+    },
+    "research/babylm-results/test-10m-gru-s42.json": {
+      "bytes": 917142,
+      "sha256": "9ac717b6cdfc79b685d825b8ed10c7bfaaa6889764f449ac1e025674d049462d"
+    },
+    "research/babylm-results/test-10m-gru-s43.json": {
+      "bytes": 917118,
+      "sha256": "c3c95d144343c6e294e03c008e481f5b5b7ab19fd5ebb6e4dc3217ef6d79a45f"
+    },
+    "research/babylm-results/test-10m-transformer-s42.json": {
+      "bytes": 917135,
+      "sha256": "9fcc1609142b751a97d475421925e40fce7d756ebe6dbe68d98b0fa8931ae381"
+    },
+    "research/babylm-results/test-10m-transformer-s43.json": {
+      "bytes": 917092,
+      "sha256": "864fab1d862fa92da7dec38237c2e73d0f3b2b25f90dedf42767e49677b18bb8"
+    },
+    "research/babylm-results/train.py": {
+      "bytes": 11354,
+      "sha256": "ec2a8ef1fac18b405fa9722325e8f34b597982d2f0a49c44619df0690476f831"
+    },
+    "research/paper-source.zip": {
+      "bytes": 12325046,
+      "sha256": "6aeebb1a2678c4b0c50ad86f4861e7985f7684d9402644ba4fc29c7078a9b843"
+    },
+    "research/selection-language-errata.md": {
+      "bytes": 1126,
+      "sha256": "3c2abf07f8b152c5545b51862acec132089173cac9836e4518cabc542ead194e"
+    },
+    "research/selection-language-protocol.md": {
+      "bytes": 7533,
+      "sha256": "8685d125916691e2350351b119e4f2e3a7e0bad3846818b4e7c9c2df90ce4136"
+    },
+    "research/selection-language/request-v1.json": {
+      "bytes": 1371,
+      "sha256": "0cf10c279c3e49111121793ce53290151ec50031dd288c8f3d0ef5167171d385"
+    },
+    "research/selection-language/study-identity.json": {
+      "bytes": 1029208,
+      "sha256": "f9fcffed62db3b9da22e58f1df8dd3f9a47182eed5ff8a5c3dbbe773e75768c3"
+    },
+    "research/selection-pilot/cost-decision-v1.json": {
+      "bytes": 4477,
+      "sha256": "4908134ca910ea2ec7fd24cbb2a99eea3d94064094ef510723e14e27e68c1ec3"
+    },
+    "research/selection-pilot/timing.json": {
+      "bytes": 448160,
+      "sha256": "e03fcf1f3d4122ef1f407c4f440ed3c4e52986285969c8a2c87639d844b32e8d"
+    },
+    "research/selection-timing-pilot.md": {
+      "bytes": 7106,
+      "sha256": "dbd30642d6e3b067f425a58f1d6c2d227d1a753fc26ab637deea0b4b42974b66"
+    }
+  },
+  "html_sha256": "8c6082b10df08523026864719bf14af13dcb78fa9cc66ecf9a40023e19b3c08c",
+  "entry_assets": {
+    "/assets/index-T4wZ_zGj.js": "bb2877e89e01059a0d4d035dd631057ff799111e59ed8e2a3d76fb09facbf19a",
+    "/assets/index-BJXz9eyW.css": "ee2c71c6bba5404085c0dbc668d654fd0ae0ffbeca1f08101da6046720035ca0"
+  },
+  "source_archive_files": 549,
+  "relative_links_checked_locally": 76,
+  "software_tests": {
+    "javascript_pass": 74,
+    "javascript_fail": 0
+  },
+  "browser_review": "Local production preview: completed results table, loaded pooled figure, validation-history labeling and ongoing 128-fit study inspected. Normal and 390px phone-width screenshots reviewed; tables scroll within their containers and document width does not exceed viewport. Temporary viewport override reset.",
+  "scope": "Exact live/local bytes for all public files changed since prior release, production HTML and entry assets; all source-archive entries matched current local files. No independent model retraining or held-out inference.",
+  "selection_scope": "The registered 128-fit selection training queue is ongoing. No selection-language validation or held-out result is claimed. Frozen sources and protocol hash reverified unchanged; boundary-mask wording correction is separate.",
+  "live_browser_review": "Published research page opened and completed BabyLM section expanded. Official 10M/100M result rows, all-288 sample link and ongoing 128-fit study scope observed in the rendered DOM."
+}
