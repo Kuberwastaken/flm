@@ -1,0 +1,97 @@
+{
+  "recorded_utc": "2026-09-12T07:04:22.543580+00:00",
+  "groups": [
+    {
+      "group": "KCg-d-L-t1",
+      "neurons": 784,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.4087609583342176,
+      "max_original_mean_update_seconds": 0.8775529333312685,
+      "estimated_update_hours_at_3000": 25.791074722332674,
+      "estimated_update_hours_at_12000": 103.1642988893307
+    },
+    {
+      "group": "KCg-d-L-t5",
+      "neurons": 487,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.2831364833327825,
+      "max_original_mean_update_seconds": 0.35612255000160076,
+      "estimated_update_hours_at_3000": 17.03972366662735,
+      "estimated_update_hours_at_12000": 68.1588946665094
+    },
+    {
+      "group": "KCg-d-R-t1",
+      "neurons": 858,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.4544623583351495,
+      "max_original_mean_update_seconds": 0.6425934750004672,
+      "estimated_update_hours_at_3000": 28.3878841667643,
+      "estimated_update_hours_at_12000": 113.5515366670572
+    },
+    {
+      "group": "KCg-d-R-t5",
+      "neurons": 540,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.31681651666682836,
+      "max_original_mean_update_seconds": 0.3589766416601681,
+      "estimated_update_hours_at_3000": 18.33217549997951,
+      "estimated_update_hours_at_12000": 73.32870199991804
+    },
+    {
+      "group": "KCg-m-L-t1",
+      "neurons": 1385,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.7861077916701712,
+      "max_original_mean_update_seconds": 0.8535533416700977,
+      "estimated_update_hours_at_3000": 43.850456666728455,
+      "estimated_update_hours_at_12000": 175.40182666691382
+    },
+    {
+      "group": "KCg-m-L-t5",
+      "neurons": 1202,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.6754806500054352,
+      "max_original_mean_update_seconds": 1.5624925583324512,
+      "estimated_update_hours_at_3000": 43.373542944415625,
+      "estimated_update_hours_at_12000": 173.4941717776625
+    },
+    {
+      "group": "KCg-m-R-t1",
+      "neurons": 1318,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.7622925500011964,
+      "max_original_mean_update_seconds": 1.5459359583279972,
+      "estimated_update_hours_at_3000": 48.16725661106628,
+      "estimated_update_hours_at_12000": 192.6690264442651
+    },
+    {
+      "group": "KCg-m-R-t5",
+      "neurons": 1150,
+      "originals": 8,
+      "complete_group_fits": 64,
+      "min_original_mean_update_seconds": 0.631202408335715,
+      "max_original_mean_update_seconds": 1.1080989249943134,
+      "estimated_update_hours_at_3000": 40.39276894437434,
+      "estimated_update_hours_at_12000": 161.57107577749736
+    }
+  ],
+  "chosen_groups": [
+    "KCg-d-L-t5",
+    "KCg-d-R-t5"
+  ],
+  "registered_fits": 128,
+  "updates_per_fit": 3000,
+  "estimated_update_hours": 35.37189916660686,
+  "estimated_hours_with_allowance": 53.05784874991029,
+  "training_planning_budget_hours": 72,
+  "selection_language_scores_observed": false,
+  "rationale": "Select both left- and right-seeded KCg-d five-contact operational groups before any selection-language loss. They retain every literal KCg-d seed on its selected side, include annotated partners, and provide two complete within-size comparisons at 487 and 540 neurons. Their visual-KC motivation comes from the prior pathway audit; neither is an intact circuit. Both are the lowest-cost complete group pair in the measured catalog. Three thousand shared updates permit a first controlled selection and topology screen across all 128 fits within a 72-hour training planning allowance, instead of selecting individual favorable controls. The shorter exposure limits claims about convergence and must not be compared as an equal-budget replacement for the 12000-update BabyLM baselines. Further exposure, olfactory-seeded groups and one-contact sensitivity remain later registered studies.",
+  "limitations": "All costs extrapolate 12 timed updates of original graphs at seed 42. Rewires and seed 43 are unmeasured proxies. The allowance does not guarantee a deadline. Validation, checkpoint I/O, held-out evaluation and sustained thermal changes are not directly measured by this pilot."
+}

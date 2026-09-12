@@ -1,0 +1,24 @@
+{
+  "groups": [
+    "KCg-d-L-t5",
+    "KCg-d-R-t5"
+  ],
+  "settings": {
+    "steps": 3000,
+    "batch": 16,
+    "sequence": 96,
+    "warmup": 16,
+    "learning_rate": 0.002,
+    "final_learning_rate": 0.0002,
+    "lr_warmup_updates": 100,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "checkpoint_interval": 500,
+    "seed": 42,
+    "threads": 4,
+    "score_boundaries": true
+  },
+  "rationale": "Select both left- and right-seeded KCg-d five-contact operational groups before any selection-language loss. They retain every literal KCg-d seed on its selected side, include annotated partners, and provide two complete within-size comparisons at 487 and 540 neurons. Their visual-KC motivation comes from the prior pathway audit; neither is an intact circuit. Both are the lowest-cost complete group pair in the measured catalog. Three thousand shared updates permit a first controlled selection and topology screen across all 128 fits within a 72-hour training planning allowance, instead of selecting individual favorable controls. The shorter exposure limits claims about convergence and must not be compared as an equal-budget replacement for the 12000-update BabyLM baselines. Further exposure, olfactory-seeded groups and one-contact sensitivity remain later registered studies.",
+  "cost_allowance_multiplier": 1.5,
+  "wall_time_budget_seconds": 259200
+}
