@@ -245,10 +245,10 @@ def main():
     files += [ROOT / name for name in ('docs/SELECTION-MAC-EXECUTION.md', 'docs/MAC-TRAINING-OPERATIONS.md',
         'scripts/selection_mac_runtime.py', 'scripts/mac_training_probe.py', 'tests/test_selection_mac_runtime.py',
         'scripts/selection_mac_parallel.py', 'tests/test_selection_mac_parallel.py',
-        'docs/SELECTION-MAC-PARALLELISM.md', 'docs/MAC-CONCURRENCY-FINDINGS.md')]
+        'docs/SELECTION-MAC-PARALLELISM.md', 'docs/MAC-CONCURRENCY-FINDINGS.md', 'docs/SELECTION-MAC-PARALLELISM-V2.md', 'scripts/selection_mac_parallel_v2.py', 'scripts/mac_training_status.py')]
     files += [ROOT / 'reports/selection-language/mac-v1' / name for name in (
         'study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json',
-        'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json')]
+        'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json', 'parallel-execution-v2.json', 'parallel-handoff-v2.json')]
     files += [ROOT / name for name in ('scripts/prepare_demo_media.py', 'public/research/demo-media.json', 'scripts/check_browser_presentation.cjs', 'reports/presentation-review-v1.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.

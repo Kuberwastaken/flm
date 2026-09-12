@@ -1,0 +1,11 @@
+# Mac parallel scheduling: explicit user override
+
+Kuber Mehta, 12 September 2026. The user explicitly requested parallel execution of the remaining study and an approximately one-hour delivery target. This supersedes the earlier operational 15% concurrency-adoption cutoff. That cutoff was an execution preference, not a scientific criterion. The earlier probe and decision remain unchanged historical records.
+
+Run eight isolated spawned workers, each retaining four Torch CPU threads, the existing native initialization, unchanged fit settings and all 3,000 updates. Eight workers have not been benchmark-qualified by the earlier one-to-four-worker probe. Record actual sustained throughput; neither low machine utilization nor worker count guarantees linear speedup or a one-hour finish. No scientific budget or evaluation gate is shortened to meet the requested target.
+
+The supervisor holds the existing study writer lease. Each condition is submitted once and owns its original per-run lease. Audit completed native fits without changing their completion hashes; resume compatible committed checkpoints in interrupted fits. Do not reset this native cohort or import Windows checkpoints. The original numerical sources, native adapter, runtime profile, identity and earlier amendments remain byte-identical. No BLAS, precision, thread-count or environment tuning is included in this scheduling change.
+
+The additional `scripts/selection_mac_parallel_v2.py` and this document are hashed into `reports/selection-language/mac-v1/parallel-execution-v2.json`, together with the full 128-condition inventory and the unchanged native identity. Preserve the serial handoff and old logs. Worker failures stop the supervisor before evaluation and retain recoverable checkpoints. After all 128 results are present, reverify the native context and completion inventory, join all training workers, then use the original serial full-inventory validation and held-out routines. Preserve every original contrast and the anatomical continuation rule.
+
+Monitor the worker tree and aggregate completed work. Do not confuse the low-CPU coordinating parent with its training children. Any later execution adjustment needs a separate record; preserve this record and the observed outcome rather than rewriting it.

@@ -479,6 +479,7 @@ const priorityLinks = {
   'ANATOMICAL-PRIOR-DECISION.md': 'anatomical-prior-decision.md',
   'SELECTION-MAC-EXECUTION.md': 'selection-mac-execution.md',
   'SELECTION-MAC-PARALLELISM.md': 'selection-mac-parallelism.md',
+  'SELECTION-MAC-PARALLELISM-V2.md': 'selection-mac-parallelism-v2.md',
   'MAC-CONCURRENCY-FINDINGS.md': 'mac-concurrency-findings.md',
   '../scripts/selection_mac_parallel.py': 'selection-mac-parallel.py',
   '../reports/selection-language/mac-v1/': 'selection-language/mac-v1/',
@@ -489,7 +490,7 @@ const priorityLinks = {
   '../tests/test_selection_decision_report.py': 'selection-decision-report-test.py',
   '../public/research/': ''
 };
-for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md'], ['SELECTION-DECISION-REPORT.md','selection-decision-report.md'], ['SELECTION-MAC-EXECUTION.md','selection-mac-execution.md'], ['SELECTION-MAC-PARALLELISM.md','selection-mac-parallelism.md'], ['MAC-CONCURRENCY-FINDINGS.md','mac-concurrency-findings.md']]) {
+for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md'], ['SELECTION-DECISION-REPORT.md','selection-decision-report.md'], ['SELECTION-MAC-EXECUTION.md','selection-mac-execution.md'], ['SELECTION-MAC-PARALLELISM.md','selection-mac-parallelism.md'], ['SELECTION-MAC-PARALLELISM-V2.md','selection-mac-parallelism-v2.md'], ['MAC-CONCURRENCY-FINDINGS.md','mac-concurrency-findings.md']]) {
   let text = await readFile(`docs/${source}`, 'utf8');
   for (const [from, to] of Object.entries(priorityLinks)) text = text.replaceAll(from, to);
   await writeFile(`public/research/${target}`, text);
@@ -501,7 +502,8 @@ await copyFile('scripts/selection_decision_report.py', 'public/research/selectio
 await copyFile('tests/test_selection_decision_report.py', 'public/research/selection-decision-report-test.py');
 await copyFile('scripts/selection_mac_runtime.py', 'public/research/selection-mac-runtime.py');
 await copyFile('scripts/selection_mac_parallel.py', 'public/research/selection-mac-parallel.py');
+await copyFile('scripts/selection_mac_parallel_v2.py', 'public/research/selection-mac-parallel-v2.py');
 await mkdir('public/research/selection-language/mac-v1', { recursive: true });
-for (const name of ['study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json', 'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json']) {
+for (const name of ['study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json', 'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json', 'parallel-execution-v2.json', 'parallel-handoff-v2.json']) {
   await copyFile(`reports/selection-language/mac-v1/${name}`, `public/research/selection-language/mac-v1/${name}`);
 }
