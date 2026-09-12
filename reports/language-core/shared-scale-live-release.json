@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-12T09:32:39.571335+00:00",
+  "commit": "1b3d11c55affab3844a47a6a40b88cb1f566a5ea",
+  "workflow": "https://github.com/Kuberwastaken/flm/actions/runs/34686035263",
+  "workflow_conclusion": "success",
+  "site": "https://flm.kuber.studio",
+  "verified_public_sha256": {
+    "research/figures/language-core-shared-scale.png": "7aa9b335e1bb4d4c21e9ed9d9a206303dd6f8f4877696066cfce56807ac41847",
+    "research/predictive-computation.md": "652f9ee2e0f146e53ffd1c9465d2f1eed03b42b82ada7f84905ddc3bcd36e5d5",
+    "research/selection-decision-report.md": "c952b977db9c117f8351e6164d40324953a7e1855feab94c9e06802a91d13e30",
+    "research/selection-decision-report.py": "c620b98748ef5e243b3fa9cf25d3e54eecea8c26c384a0bafc3b335d9c57cafc"
+  },
+  "visual_review": "Shared-scale PNG inspected locally; all eight original CSV effects and intervals retained.",
+  "verification": "Five synthetic decision checks passed; live report pending; 26 frozen numerical sources unchanged. No new fitting, resampling or extended test campaign.",
+  "scope": "Publication of reporting infrastructure and a replot of completed evidence, not selection-language results."
+}
