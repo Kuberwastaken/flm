@@ -11,7 +11,7 @@ The [prospective scheduling amendment](SELECTION-MAC-PARALLELISM.md) required at
 | 3 | 19.817 | 1.033 | Match |
 | 4 | 21.882 | 1.140 | Match |
 
-**Decision: retain one worker.** Four workers achieved a 14.03% aggregate gain, below the declared threshold. We did not move the threshold after seeing the result. The prepared parallel scheduler was not adopted. The 20 completed native fits were preserved byte-for-byte, the serial adapter resumed with the same native identity, and the interrupted fit can recover its latest committed checkpoint. Validation and held-out gates remain unchanged.
+**Decision: retain one worker.** Four workers achieved a 14.02% aggregate gain, below the declared threshold. We did not move the threshold after seeing the result. The prepared parallel scheduler was not adopted. The 20 completed native fits were preserved byte-for-byte, the serial adapter resumed with the same native identity, and the interrupted fit can recover its latest committed checkpoint. Validation and held-out gates remain unchanged.
 
 Each worker used the fixed 540-neuron right-seeded candidate, training seed 42, ten warmup updates and forty timed updates on deterministic synthetic token inputs. Timed intervals excluded process startup and warmup; the aggregate denominator spans the first worker start through the last worker finish. The [raw probe](../reports/selection-language/mac-v1/parallel-probe-v1.json) preserves all timings, model/parameter/optimizer hashes and source bindings. The [driver](../scripts/selection_mac_parallel.py) implements the declared choice.
 
