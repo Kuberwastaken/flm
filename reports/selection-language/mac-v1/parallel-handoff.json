@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-09-12T11:25:30.844737+00:00",
+  "previous_pid": 55072,
+  "previous_command": "/Users/kuber.mehta/flm-training/.venv/bin/python -u /Users/kuber.mehta/flm-training/scripts/selection_mac_runtime.py run",
+  "completed_before_handoff": {
+    "KCg-d-L-t5/candidate/null103/s42/complete.json": "7463b355340a45a69769aa75bab588d7b14bf8e19ab712097ea88c58b50bfea0",
+    "KCg-d-L-t5/candidate/measured/s42/complete.json": "b87e0d9e0e99d54f7370406dcd518b770496c3b13c406d63f44925215163c5a5",
+    "KCg-d-L-t5/candidate/null107/s42/complete.json": "31da120a360e5548aaaaef492ccb6b2825cecf86bfe38cd75862b11862711893",
+    "KCg-d-L-t5/candidate/null101/s42/complete.json": "b843088f9fb5c0d5c8815762aba9477b6760e4a26703d5365bb4ea0f6fc007e0",
+    "KCg-d-L-t5/stratified_s203/null103/s42/complete.json": "258fcadd8c8727646be31402628f20b063fff1b36c8010d5eebd0b3fbb15dbd9",
+    "KCg-d-L-t5/stratified_s203/measured/s42/complete.json": "c4531ff6acc728309296ebf4c791ab84f9f5ababcb57c7bb3c90e716ad5a2d73",
+    "KCg-d-L-t5/stratified_s203/null107/s42/complete.json": "4206a4f677670c84336fa31f7c105733ef4060171c136e0228c8bf6087039b79",
+    "KCg-d-L-t5/stratified_s203/null101/s42/complete.json": "e9e2a4966490f514264a2fa8688893ab5f0fca5ed2121dda0ac3b298a923e6eb",
+    "KCg-d-L-t5/stratified_s201/null103/s42/complete.json": "400c33c7a4b29881e379db33885009d014d4e4f29930fdd205ea4463556b7e09",
+    "KCg-d-L-t5/stratified_s201/measured/s42/complete.json": "411075cb2996d27503ddec86b65297c5dd374342087f50baffcfc8c56545e84b",
+    "KCg-d-L-t5/stratified_s201/null107/s42/complete.json": "5d42a2ddc3229ebfeed3a8b576e3796267ccbb9fcdb05bae64fe2ed934c48c7a",
+    "KCg-d-L-t5/stratified_s201/null101/s42/complete.json": "d6ca5a0c0264a4eae18d51ff3a037b01190c966b03bb995614669935bbe01883",
+    "KCg-d-L-t5/stratified_s207/null103/s42/complete.json": "d1a3deb819e13bae05f63ef44447917ec43721d122c2dc72b29d118e78249cd6",
+    "KCg-d-L-t5/stratified_s207/measured/s42/complete.json": "da78c8b274c264bb8e7191dc645dae42dc9473736478b6e86d603d1ac262821b",
+    "KCg-d-L-t5/stratified_s207/null107/s42/complete.json": "aa51783110ccdb3275072de5e63ff73afb41acba3b12006517196364531ccf4d",
+    "KCg-d-L-t5/stratified_s207/null101/s42/complete.json": "01853365a47d9feba41ab3ee2db7df4085b77b3bf1e78810ebd379fb44492010",
+    "KCg-d-L-t5/contact_ranked/null103/s42/complete.json": "bc8f90bf01c2cb5263671885c91ed87986a3d026ba71e755c9f3b8c38dfddffd",
+    "KCg-d-L-t5/contact_ranked/measured/s42/complete.json": "c5db4f55babca2fbaea2147ddc7d0f154b168c6ddcb043a34579d9b594db8a25",
+    "KCg-d-L-t5/contact_ranked/null107/s42/complete.json": "3ee64b19d56c0e1251142e2e3ce564d913ce3c900c7d59dadf448f5c4ff22697",
+    "KCg-d-L-t5/contact_ranked/null101/s42/complete.json": "f8b583f406474c30073f148ae8e63afb8eabc87f9992dfce5f0dc22538f60d7c"
+  },
+  "completed_count": 20,
+  "policy": "Same native cohort; preserve completed fits and resume committed per-fit checkpoints. Pause serial writer for bounded concurrency qualification."
+}
