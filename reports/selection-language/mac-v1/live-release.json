@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-09-12T10:55:05.459516+00:00",
+  "commit": "5babe76f4224a9b84760bda1144721d1b6216d8a",
+  "workflow": "https://github.com/Kuberwastaken/flm/actions/runs/34689563549",
+  "workflow_conclusion": "success",
+  "public_sha256": {
+    "research/selection-mac-execution.md": "a8a7e5f75fcad5df1ab5e8e614734e6df1f0e7484db3eeaf38bdc1d052b78412",
+    "research/selection-mac-runtime.py": "d032e5e4d5fa6be38a35367b9b41bb67fbd25a72bf4aecb23148c154ce79ecce",
+    "research/selection-decision-report.md": "d537340e38a85af871451a79daa97366adad81775e4ea91dea4bcb0c74f8b05a",
+    "research/selection-language/mac-v1/study-identity.json": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676"
+  },
+  "scope": "Published the disclosed native Mac execution and original-study lineage; training remains active and no held-out finding is claimed.",
+  "verification": "128 native initializations and matching constraints verified; two execution-adapter checks and six decision-consumer checks passed; first native 500-update checkpoint verified against its commit marker; first complete 3000-update fit confirmed before the Windows queue was stopped."
+}
