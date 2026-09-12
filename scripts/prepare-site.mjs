@@ -509,3 +509,16 @@ await mkdir('public/research/selection-language/mac-v1', { recursive: true });
 for (const name of ['study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json', 'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json', 'parallel-execution-v2.json', 'parallel-handoff-v2.json', 'parallel-execution-v3.json', 'parallel-handoff-v3.json', 'thread-limit-diagnostic-v1.json', 'thread-wait-diagnostic-v1.json']) {
   await copyFile(`reports/selection-language/mac-v1/${name}`, `public/research/selection-language/mac-v1/${name}`);
 }
+
+// Current overview documents retain source-record links within the repository.
+for (const name of ['ARCHITECTURE', 'DATA-STATUS', 'RESEARCH', 'PUBLIC-RELEASE']) {
+  const source = await readFile(`docs/${name}.md`, 'utf8');
+  const published = source.replace(/\]\(([^)]+)\)/g, (match, target) => {
+    if (/^(https?:|#|\/)/.test(target)) return match;
+    const resolved = new URL(target, 'https://github.com/Kuberwastaken/flm/blob/main/docs/');
+    return `](${resolved.href})`;
+  });
+  await writeFile(`public/research/${name.toLowerCase()}.md`, published);
+}
+
+await copyFile('reports/public-release-review-v1.json', 'public/research/public-release-review-v1.json');

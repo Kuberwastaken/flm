@@ -4,7 +4,7 @@
 \hypersetup{pdftitle={FLM: Wiring Controls, Context and Local Credit},pdfauthor={Kuber Mehta},pdflang={en}}
 \title{\textbf{FLM: Wiring Controls, Context and Local Credit}\\[6pt]\large A sixty-run diagnostic study with mixed topology effects}
 \author{Kuber Mehta\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
-\date{10 September 2026 --- working research note}
+\date{12 September 2026 --- status-updated working note}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -171,9 +171,12 @@ study is separate; these results imply neither animal learning nor learned gait.
 
 The language follow-up uses three 1,024-neuron null graphs \emph{crossed} with
 training seeds 42/43, plus two measured-graph models retrained without slow
-state, under the original WikiText budget. All eight new runs must finish before
-their test selections are frozen. It remains pending and is required to assess
-the language-prior claim. The original main-language test scores were already
+state, under the original WikiText budget. All eight new runs and ten checkpoint selections completed before
+new-control test scoring. The completed report finds no measured-wiring
+advantage in that subset and setup; retaining slow state helps against
+retrained no-slow controls. These results are reported separately in the
+main FLM paper. The active 128-fit selection study is a distinct follow-up,
+with validation and held-out results pending. The original main-language test scores were already
 inspected, so the extension is exploratory.
 
 The repository describes graph, reference-run and environment prerequisites.

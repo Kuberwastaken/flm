@@ -16,7 +16,7 @@ z_t = projection_256_to_96(f_t)
 logits_t = E @ z_t + output_bias
 ```
 
-There is no attention or direct token-to-logit bypass. The shared embedding has 393,216 coefficients; the total model has 600,003 trainable parameters. A small GRU (595,408) and two-layer RoPE transformer (607,468) share this lexical interface and tokenizer. Full settings are registered in [WikiText](WIKITEXT-PROTOCOL.md) and [BabyLM](BABYLM-PROTOCOL.md); each corpus has its own train-only tokenizer.
+There is no attention or direct token-to-logit bypass. The shared embedding has 393,216 coefficients; the total model has 600,003 trainable parameters. A small GRU (595,408) and two-layer RoPE transformer (607,468) share this lexical interface and tokenizer. Full settings are registered in [WikiText](https://github.com/Kuberwastaken/flm/blob/main/docs/WIKITEXT-PROTOCOL.md) and [BabyLM](https://github.com/Kuberwastaken/flm/blob/main/docs/BABYLM-PROTOCOL.md); each corpus has its own train-only tokenizer.
 
 The lexical browser adapter adds a 4,096 by 96 correction plus output bias. It uses `z_t` as its observed feature and changes neither the original tied embedding nor the recurrent core. Float32 corrections are packed as little-endian base64 for checkpoint-specific storage; legacy array adapters remain readable. Scoring sums next-token negative log likelihood and divides by the exact UTF-8 byte lengths of target pieces, excluding boundary IDs. This is canonical-token-sequence codelength per byte, not a published word-token WikiText perplexity.
 
@@ -44,7 +44,7 @@ The anatomical subgraph and balanced type-ordered pooling form the prior. Input 
 
 The lexical models learn through teacher-forced next-token cross-entropy and truncated backpropagation through time. Training windows respect the declared document/block boundaries and warmup masks; the pinned protocols specify sampling and state handling. The shared input/output embedding, projections, edge gains and update rates learn together. The fixed-location graph is an architectural prior, not a biological learning rule.
 
-Completed experiments compare the measured core with retrained rewires, no-slow, fixed-dynamics, no-lateral and no-temporal controls. These are distinct interventions with different effective parameter allocations; they are not an additive decomposition. See [computation results](LANGUAGE-CORE-RESULTS.md), [the focused synthesis](PREDICTIVE-COMPUTATION.md) and [current study status](PLAN.md).
+Completed experiments compare the measured core with retrained rewires, no-slow, fixed-dynamics, no-lateral and no-temporal controls. These are distinct interventions with different effective parameter allocations; they are not an additive decomposition. See [computation results](https://github.com/Kuberwastaken/flm/blob/main/docs/LANGUAGE-CORE-RESULTS.md), [the focused synthesis](https://github.com/Kuberwastaken/flm/blob/main/docs/PREDICTIVE-COMPUTATION.md) and [current study status](https://github.com/Kuberwastaken/flm/blob/main/docs/PLAN.md).
 
 ## Legacy AMI byte model (0.1)
 

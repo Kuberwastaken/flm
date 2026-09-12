@@ -13,7 +13,7 @@ This note records the data transformations, split boundaries, tokenizer, checkpo
 \section{Dataset choice}
 The initial question concerned learning from a small amount of human speech. AMI provides human meeting transcripts, but a meeting-only model is narrow and its custom participant-disjoint split is not a standard language-model benchmark. The expanded study therefore adopts WikiText-2 raw \cite{wikitext,wikitextcard}: diverse human-written articles with official partitions and an established language-modeling lineage. This changes the domain from spoken conversation to written prose; it must not be described as an improvement in speech understanding.
 
-WikiText-2 is small enough for repeated local training, yet broad enough to expose vocabulary, punctuation, long-document structure and several topic domains. It is not a balanced sample of all human language. The continuing program therefore adds BabyLM's standard 10M- and 100M-word corpora \cite{babylm}. Acquisition, tokenization and overlap audits are complete; their language-training results are a separate experiment and are not included in the WikiText scores.
+WikiText-2 is small enough for repeated local training, yet broad enough to expose vocabulary, punctuation, long-document structure and several topic domains. It is not a balanced sample of all human language. The completed larger-data comparison adds BabyLM's standard 10M- and 100M-word corpora \cite{babylm}. Acquisition, tokenization and overlap audits are complete; their language-training results are a separate experiment and are not included in the WikiText scores.
 
 \section{Pinned acquisition and article boundaries}
 The source is Salesforce's WikiText distribution, configuration \code{wikitext-2-raw-v1}. The pinned revision is:
@@ -166,9 +166,9 @@ Command & Purpose\\\midrule
 \end{tabular}
 \end{center}
 
-Raw corpora, complete graph downloads and training intermediates stay in ignored local directories. Compact graph assets, tokenizer metadata, browser packages, reports and meaningful code changes are versioned in sequential commits. GitHub Pages hosts the generated public interface at \url{https://flm.kuber.studio}; the source repository remains private. No API secret or remote language service is needed for browser inference.
+Raw corpora, complete graph downloads and training intermediates stay in ignored local directories. Compact graph assets, tokenizer metadata, browser packages, reports and meaningful code changes are versioned in sequential commits. GitHub Pages hosts the generated public interface at \url{https://flm.kuber.studio}. Repository publication is authorized for 12 September 2026; the site and standalone bundles are available independently of a checkout. No API secret or remote language service is needed for browser inference.
 
-The continuing program includes completed-checkpoint language comparisons, larger-data training, alternative learning rules and learned sensorimotor interfaces. Each stage retains separate provenance and evaluation. Reproducibility is evidence that the specified computation was performed; it is not evidence that the computation reproduces an animal's cognition.
+WikiText and BabyLM comparisons are complete. The active 128-fit native-Mac selection study retains separate provenance; its validation and held-out comparisons remain pending and may follow repository publication. Broader scaling, alternative learning and learned sensorimotor transfer are deferred. Each stage retains separate provenance and evaluation. Reproducibility is evidence that the specified computation was performed; it is not evidence that the computation reproduces an animal's cognition.
 
 \begingroup\raggedright
 \bibliographystyle{plain}

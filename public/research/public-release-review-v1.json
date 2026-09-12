@@ -1,0 +1,96 @@
+{
+  "format": "flm-public-release-review-v1",
+  "reviewed_at_utc": "2026-09-12T13:16:47.015954+00:00",
+  "base_commit": "7a3dcb114af9f73c1e1f0dc38c3a8d0805933b51",
+  "release_target_ist": "2026-09-12 20:30-21:00",
+  "public_visibility_authorized": true,
+  "repository_visibility_at_review": "private",
+  "status": "content_review_complete_deployment_pending",
+  "scientific_status": {
+    "primary_browser_models": 18,
+    "legacy_model": "AMI",
+    "default_flm": "babylm-100m-flm-s43",
+    "selection_fits": 128,
+    "selection_validation": "pending",
+    "selection_heldout": "pending",
+    "scientific_gates_unchanged": true
+  },
+  "history_review": {
+    "scanner": "gitleaks 8.30.1",
+    "scope": "all 547 commits reachable before this release edit",
+    "scanned_bytes_approx": 281808070,
+    "alerts": 2100,
+    "classified_false_positives": {
+      "sha256_json_provenance": 2091,
+      "sha256_code_constants": 4,
+      "ordinary_prose_regex_matches": 5
+    },
+    "unresolved_credential_findings": 0,
+    "private_path_history_matches": 0,
+    "redacted_report_sha256": "3341f53fd8e122f62573fe467159249ccc6487c8448835b20c421f08fc19b23e",
+    "limitation": "Pattern-based detection and targeted review; not proof that no sensitive information exists."
+  },
+  "frozen_source_checks": {
+    "flm\\babylm.py": true,
+    "flm\\babylm_test.py": true,
+    "flm\\baselines.py": true,
+    "flm\\corpus_cache.py": true,
+    "flm\\corpus_evaluation.py": true,
+    "flm\\embedding_eligibility.py": true,
+    "flm\\graph.py": true,
+    "flm\\inference.py": true,
+    "flm\\language_eligibility.py": true,
+    "flm\\language_learning_inputs.py": true,
+    "flm\\language_learning_study.py": true,
+    "flm\\language_learning_test.py": true,
+    "flm\\language_learning_train.py": true,
+    "flm\\language_learning_validation.py": true,
+    "flm\\language_train.py": true,
+    "flm\\local_learning.py": true,
+    "flm\\model.py": true,
+    "flm\\provenance.py": true,
+    "flm\\scan_train.py": true,
+    "flm\\selection_language.py": true,
+    "flm\\selection_language_study.py": true,
+    "flm\\selection_language_test.py": true,
+    "flm\\selection_pilot.py": true,
+    "flm\\tokenizer.py": true,
+    "flm\\train.py": true,
+    "flm\\wiring_controls.py": true,
+    "docs/SELECTION-MAC-EXECUTION.md": true,
+    "reports/selection-language/mac-v1/runtime-profile.json": true,
+    "scripts/selection_mac_runtime.py": true,
+    "reports/selection-language/mac-v1/qualification-probe.json": true
+  },
+  "presentation": {
+    "prior_browser_review": "reports/presentation-review-v1.json",
+    "changes": "Status copy and overview links; no inference or theme code changes.",
+    "pdf_render_review": {
+      "data-and-reproduction": 6,
+      "wiring-controls": 5,
+      "closed-loop": 4
+    },
+    "pdf_review_scope": "All pages in contact sheets plus changed status pages at readable scale; no clipping/overlap or LaTeX undefined-reference warnings observed.",
+    "readme_and_overview_links": "All local targets present except this record during its creation; checked again before commit.",
+    "catalog_test": "19 tests; exit status checked separately"
+  },
+  "current_file_hashes": {
+    "README.md": "37be1e7340aafb6547fd945e128bd3b2db36d91589c584ebc50f8d6d4ba59158",
+    "index.html": "608fec9c022531c970c630aa48995ef2252ea8a153be0334c6308560d8b9cb47",
+    "docs/ARCHITECTURE.md": "5bf77974b2ea86704acb0f47cde132d5494bcad23b2e062ed6ea59e6fc2535b5",
+    "docs/DATA-STATUS.md": "9ae7aecb2b3209ed446ea2f9f2826944ba631bb94e2cb689a69a1ff30dce7dac",
+    "docs/RESEARCH.md": "7ef6c1c60eb7cdff27cc87fd969aa38ad7906b02de75bbbd322dad8bb338fd73",
+    "docs/PUBLIC-RELEASE.md": "c912337d928e50f7c01688b7c961175489bad3b9b08d0b0787f347e87f3a3d9f",
+    "papers/data-and-reproduction.tex": "8dbd29d6b57ca19e60bb63a94495f02b3df6319119636c700d425f112f97a423",
+    "papers/wiring-controls.tex": "c83a7dd50dc51060a407663f958599655a5b84cbb5f900e661269b45ea94a832",
+    "papers/closed-loop.tex": "701a7ce49cd8c80ecea0e2ea5a702a712b914225b404eed2e4a229c2aa0e7b25",
+    "public/research/data-and-reproduction.pdf": "e04266803d9f0a3e6756789ee58bcd2960d06190785b2e4a902931e410e3c09a",
+    "public/research/wiring-controls.pdf": "7c21160fac9bc1916d426dca387b753cf089d2e7e639c0312f56d80a98f0020d",
+    "public/research/closed-loop.pdf": "048488e9cf92a520ba75d321fca17f0d77885cb434f2950e377ddf37cbef746a"
+  },
+  "remaining_release_actions": [
+    "Build and deploy reviewed commit; verify live bytes.",
+    "At target time or next available follow-up, make repository public and verify anonymous access.",
+    "Publish selection findings only after complete validation and held-out gates."
+  ]
+}
