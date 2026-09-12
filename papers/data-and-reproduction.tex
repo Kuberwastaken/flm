@@ -3,11 +3,11 @@
 \hypersetup{pdftitle={FLM Data and Reproduction Note},pdfauthor={Kuber Mehta},pdfsubject={Working dataset and reproduction report},pdflang={en}}
 \title{\textbf{FLM Data and Reproduction Note}\\[6pt]\large From pinned human text and connectome arrays to a verifiable browser model}
 \author{Kuber Mehta\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
-\date{10 September 2026 --- companion to the FLM working report}
+\date{12 September 2026 --- companion to the FLM working report}
 \begin{document}
 \maketitle
 \begin{abstract}
-This note records the data transformations, split boundaries, tokenizer, checkpoint interfaces and verification rules used by FLM. The main language comparison uses WikiText-2 raw with official article partitions and a lossless vocabulary trained exclusively on training text. The earlier AMI dialogue study remains separate. Source hashes and machine-readable cards accompany each stage. No raw audio, private speech, pretrained language parameters or teacher-generated training corpus is used. The document specifies what can be reproduced now and distinguishes completed functional verification from unfinished final benchmarking.
+This note records the data transformations, split boundaries, tokenizer, checkpoint interfaces and verification rules used by FLM. Completed language comparisons use WikiText-2 raw and the BabyLM 2026 10M/100M-word corpora, with vocabularies fitted exclusively on training text. The earlier AMI dialogue study remains separate. Source hashes and machine-readable cards accompany each stage. No raw audio, private speech, pretrained language parameters or teacher-generated training corpus is used. The document distinguishes recorded arithmetic, model inference and independent retraining, and preserves the completed BabyLM evaluation's recovery and generation failures.
 \end{abstract}
 
 \section{Dataset choice}
@@ -82,6 +82,53 @@ Official partitions remain unchanged for the primary benchmark. A secondary anal
 
 Before training, eight validation blocks per component are selected by SHA-256 of stable IDs, for a 48-block panel and up to 1,024 scored target positions per block. Seven panel blocks contain audited overlap; selection uses the official panel, with that fact recorded. The compact study assigns 12,000 updates to each of FLM, GRU and transformer at seeds 42 and 43, with the same batch, sequence length, warmup positions and optimizer as WikiText. Its 18,432,000 presented-token budget is about 0.99 times the 10M text-token count and 0.097 times the 100M count, sampled with replacement. This is a fixed-exposure data-diversity comparison, not equal epochs or complete one-pass coverage.
 
+\subsection{Completed evaluation, continuations and recovery}
+All twelve BabyLM fits completed the declared budget. All 288 fixed-panel
+validation observations reproduce the saved selection: eleven selected
+checkpoints are at 12,000 updates, and the 100M transformer seed-42 checkpoint
+is at 11,500. The selection was frozen before held-out likelihood inference.
+Verification of input identities includes hashing/mapping encoded caches;
+this is distinct from model scoring. It must not be described as a complete
+absence of earlier access to test-derived files.
+
+Every selected model is evaluated on all 3,187 official test blocks, retaining
+per-block likelihood, text tokens, UTF-8 bytes and source identity. The fixed
+overlap sensitivity analysis excludes 659 blocks, leaving 2,528 blocks,
+13,927,273 targets and 40,963,714 bytes. Results pool negative log likelihood
+over exact bytes; they do not average component BPBs. State resets between
+blocks and carries within a block. All three architectures exclude inserted
+boundary targets at evaluation, while training includes them after warmup.
+
+The first scoring attempt finished one model's block calculations but failed
+assembling its output because a checkpoint-step keyword was supplied twice.
+The failed 400-file cache was preserved, the serialization defect corrected
+and regression-tested, and evaluation restarted from the same frozen weights
+in a fresh directory because its source identity changed. The corrected
+supervised sequence completed all twelve scores, all 288 fixed continuations
+and the separate 64-original-graph cost pilot. The
+\href{https://flm.kuber.studio/research/babylm-handoff.md}{recovery record}
+retains both attempts; training was not repeated for this repair.
+
+The complete output inventory contains twelve original prompts times two
+sampling seeds times twelve selected models. Every sample reaches its
+256-token cap; none terminates at EOS. One invalid UTF-8 sample remains
+flagged, alongside its token IDs, generated-byte hash and replacement-decoded
+text. Temperature 0.8, top-$k$ 40 and the explicitly documented display-token
+filter are shared. Repetition summaries include every output. Neither the
+prompt categories nor recognizable speaker markers establish conversation,
+reasoning or factual accuracy.
+
+The \href{https://flm.kuber.studio/research/babylm-findings.md}{published findings}
+link 168 score rows, 84 seed aggregates, all sixteen paired pooled comparisons,
+per-model reports and all continuations. The table exporter checks full
+inventory, saved arithmetic, denominators and source identities without
+restoring weights, reading test-token payloads or repeating the bootstrap.
+Paper figures are exact copies of visually reviewed, hash-bound PNGs. The
+source archive supports rebuilding the papers from the included tables and
+figures; reconstructing inference or fitting requires the separately acquired
+data and model records. The prior failure and these verification boundaries
+remain visible rather than being replaced by a successful end-state alone.
+
 \section{Connectome and body provenance}
 The graph snapshot is pinned to revision \code{776d115ee5aa934578a87fd6d260d138084f59c1} of the public source representation. Acquisition checks 29 required files and reconstructs verified sparse arrays. Counts are 166,700 neurons, 25,582,938 directed neuron-pair edges and 124,177,617 contacts. The complete extraction is distinct from the trained central subset of 1,024 neurons and 76,130 edges.
 
@@ -89,7 +136,7 @@ Selection is based on anatomy before language results. The compact graph retains
 
 The 39 body meshes retain NeuroMechFly-derived geometry and upstream notices \cite{neuromechfly}. Automated forward-kinematics checks match the reference joint coordinates. The mesh specimen is female; the graph is male. ChatFLM's body pose summarizes artificial network state. Reproducing the geometry does not reproduce a learned sensorimotor policy, and the language optimizer contains no embodiment objective.
 
-\section{Training and selection records}
+\section{WikiText training and selection records}
 All three main architectures share the same train-only tokenizer, sequence sampler, optimizer schedule and 6,000-update budget. Seeds 42 and 43 produce separate runs. Sampling uses its own RNG, ensuring matched inputs despite different model parameter counts and initialization draws. Checkpoints preserve model and optimizer parameters, sampler RNG state, PyTorch RNG state, exact exposure counts, source revision and tokenizer/graph/cache hashes.
 
 Resume rejects a changed protocol. Tests verify that restoring a checkpoint yields exactly the same next sampled batch and next optimizer update for FLM, GRU and transformer. Validation state resets between articles and streams within each article using native architecture state. Scoring is invariant to article order and chunking within numerical precision. Boundary tokens are excluded; raw token byte lengths determine the denominator.

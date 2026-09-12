@@ -1,0 +1,12 @@
+{
+  "scope": "Complete-record arithmetic audit and exact reviewed-figure copies; no inference, retraining or bootstrap replication.",
+  "input_sha256": {
+    "reports/babylm/tables-v1/tables.json": "7117deb2f2254d204787a905192f032c08f1a802889520c47afdce8620aa6184"
+  },
+  "generator_sha256": "1f889369208dcc0476c8efbba0d06eff25584ef128a5b153040c6f9427907cf4",
+  "output_sha256": {
+    "papers/babylm-measured.tex": "46bc7040ef1b1a581a8cf858391ba3a05f8d11c2e0d12b28f95bda6f5a20bacd",
+    "papers/figures/babylm-pooled.png": "c2a01416f92fb1403c963024a50bbc2380861e153877740d20f130d5ca5372a0",
+    "papers/figures/babylm-components.png": "df3db55735d3f413e8ce52567fba6fa83051ffba91a86b44bf12f2d9fc10096f"
+  }
+}

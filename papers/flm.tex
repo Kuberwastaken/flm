@@ -4,15 +4,21 @@
 \input{test-measured}
 \input{language-topology-measured}
 \input{language-core-measured}
+\input{babylm-measured}
 \hypersetup{pdftitle={FLM: A Fly-Wired Recurrent Language Model},pdfauthor={Kuber Mehta},pdfsubject={Working methods and controlled language test report},pdflang={en}}
 \title{\textbf{FLM: A Fly-Wired Recurrent Language Model}\\[6pt]\large A controlled test of measured wiring for next-token prediction}
 \author{Kuber Mehta\\\href{https://flm.kuber.studio}{flm.kuber.studio}}
-\date{11 September 2026 --- working research report}
+\date{12 September 2026 --- working research report}
 \begin{document}
 \maketitle
 \begin{abstract}
 Can measured neural wiring improve language prediction under matched training conditions? FLM combines a selected 1,024-neuron fruit-fly graph with learned text input, fast and slow recurrent state, pooling and a lexical readout. We compare the measured graph with three degree- and sign-constrained rewired graphs, each trained from scratch with the same two initialization seeds and 6,000-update budget on WikiText-2. All six rewired fits have slightly lower test loss than their paired measured references: the mean measured-minus-rewired effect is \TopologyMeanDifference\ bits per byte. Three of six conditional article intervals include zero. This study therefore demonstrates no advantage from measured wiring in this subset and setup. Separately, retraining without slow state worsens prediction in both seeds, with mean measured-minus-control effect \SlowStateMeanDifference\ bits per byte. The original matched architecture comparison also favors the GRU and transformer over FLM. Separate retrained controls favor full FLM over fixed dynamics and disabled lateral communication, with a substantially larger loss when temporal state is removed. These mechanism effects do not establish a topology advantage. The contribution is a controlled language experiment and inspectable browser implementation, with explicit subset losses and reproducible score records. The extension is exploratory because original measured test scores were visible before its design; neither these results nor the browser's neural display establish biological language processing.
 \end{abstract}
+
+\textbf{Completed larger-data comparison.} Twelve BabyLM fits at 10M/100M
+word budgets also favor GRU and transformer on pooled test loss. All 288 fixed
+continuations are retained, including repetition and malformed output. This
+adds a standard mixed-language benchmark, not a BabyLM topology result.
 
 \section{Question and scope}
 Can an anatomical wiring constraint be a useful prior for language prediction under a small training budget? FLM makes this question concrete rather than treating a connectome as a pretrained intelligence. Training from scratch means that no learned language weights, pretrained embeddings, pretrained tokenizer or synthetic teacher corpus are imported. It does not mean absence of priors: graph selection, sign assumptions, pooling, nonlinearities and optimization all impose structure.
@@ -163,6 +169,8 @@ The current FLM result trails the conventional baselines. Unedited same-prompt c
 
 The earlier AMI dialogue study remains a separate experiment, documented in the data note. Its different distribution and tokenization protocol prevent a direct quality ranking against WikiText.
 
+\input{babylm-results}
+
 \section{Memory, adaptation and visible behavior}
 FLM stores 2,048 float32 state values, or 8,192 bytes per sequence. The GRU's hidden state is smaller at 800 bytes. The declared transformer's two-layer cache retains up to 95 past positions per layer and stores 164,160 float32 key/value bytes, excluding its scalar position counter. These calculations exclude weights, temporary activations, allocator overhead and adaptation. They are memory accounting, not speed or energy benchmarks.
 
@@ -182,9 +190,25 @@ The retrained computation comparisons above address the distinction between disr
 Separate sensory and physical studies are reported in the \href{https://flm.kuber.studio/research/local-learning.pdf}{learning}, \href{https://flm.kuber.studio/research/wiring-controls.pdf}{sensory wiring} and \href{https://flm.kuber.studio/research/closed-loop.pdf}{pose-feedback} notes. Their controllers do not use language-trained weights. They neither establish a language-specific topology benefit nor demonstrate transfer of learned text to animal behavior.
 
 \section{Limits and next experiments}
-The inference concerns one heavily truncated anatomical subset, simplified signs and rate dynamics, one corpus and a short training schedule. Three null graphs and two initializations do not establish a general advantage or disadvantage of anatomical topology. Article intervals omit variation across fitted models, graph families, subsets and datasets. Replication and alternative selection rules remain necessary.
+The topology inference concerns one heavily truncated anatomical subset, simplified signs and rate dynamics, WikiText and a short training schedule. The separate BabyLM comparison broadens the language data but does not add a graph control. Three null graphs and two initializations do not establish a general advantage or disadvantage of anatomical topology. Article intervals omit variation across fitted models, graph families, subsets and datasets. Replication and alternative selection rules remain necessary.
 
-The registered BabyLM 10M/100M comparison is the next training priority after the completed compact computation study. A fixed 6,700-pair BLiMP panel \cite{blimp} places FLM and transformer near 54\% accuracy, with their ordering changing between seeds and no reliable FLM advantage. Later command-transfer, adaptation and local-learning studies remain separate. Whole-graph capacity and kernel design also require new experiments.
+The next registered study compares selection rules: two operational visual
+Kenyon-cell groups of 487 and 540 neurons, each with a candidate, a ranked
+selection, three uniform and three class/side/sign-matched selections. Each
+node set has measured wiring and three rewires, trained with two seeds:
+128 fits at 3,000 updates. Training has started; no selection-language result
+is reported here. These candidates retain the declared seed populations but
+still cut about 89\% of whole-subset incoming contacts and omit zero-sign
+modulatory outputs. The \href{https://flm.kuber.studio/research/selection-language-protocol.md}{protocol}
+and \href{https://flm.kuber.studio/research/selection-language-errata.md}{wording erratum}
+preserve the scope and source identities. This shorter-exposure study must
+not be compared as an equal-budget replacement for the BabyLM baselines.
+
+A fixed 6,700-pair WikiText-checkpoint BLiMP panel \cite{blimp} places FLM and
+transformer near 54\% accuracy, with their ordering changing between seeds
+and no reliable FLM advantage. Later command-transfer, adaptation and
+local-learning studies remain separate. Whole-graph capacity and kernel design
+also require new experiments.
 
 \begingroup\raggedright
 \bibliographystyle{plain}

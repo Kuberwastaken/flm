@@ -1,0 +1,83 @@
+\section{Completed BabyLM comparison at two data scales}
+The BabyLM 2026 corpora \cite{babylm} broaden the architecture comparison to
+spoken and written text. This is a compact, project-specific experiment, not
+an official Challenge submission. FLM, GRU and transformer each train from
+scratch at 10M and 100M nominal word budgets with seeds 42 and 43: twelve fits.
+The models retain the parameter counts listed above and share a lossless
+4,096-ID vocabulary fitted only on the 10M training partition. Their common
+12,000-update budget presents 18,432,000 input tokens and 15,360,000 supervised
+positions per fit. Windows are sampled with replacement, with identical
+exposure within a scale and seed. This is neither equal runtime nor complete
+coverage of the 189,709,779-token 100M training cache.
+
+All twelve checkpoint identities were frozen before test inference. Selection
+chooses the earliest minimum BPB from 24 observations on a fixed 48-prefix
+validation panel. Eleven selected checkpoints are at update 12,000; the 100M
+transformer at seed 42 is selected at 11,500. The official test contains 3,187
+computational blocks, 18,177,107 text targets and 51,722,871 UTF-8 target bytes.
+State resets between blocks and is carried within each block; the transformer
+retains its native 96-position attention window. Inserted boundary targets are
+excluded at evaluation, but included after warmup in training. The companion
+data note specifies block construction and the fixed overlap analysis.
+
+\begin{table}[ht]\centering
+\begin{tabular}{llrrr}\toprule
+Training pool & Model & Official mean & Seed SD & Filtered mean\\\midrule
+\BabyLMPooledRows
+\bottomrule\end{tabular}
+\caption{Complete BabyLM test BPB, lower is better. Means and sample SDs use
+two training seeds. Filtered scores exclude the same 659 overlap-marked blocks
+for every model and scale, retaining 40,963,714 target bytes. SD is not a
+confidence interval. No BabyLM topology control is included in this table.}
+\end{table}
+
+FLM has higher pooled loss than both baselines at both scales. Official
+FLM-minus-GRU mean effects are $+0.053969$ and $+0.055518$ BPB at 10M and 100M;
+against transformer they are $+0.073243$ and $+0.096189$. The filtered analysis
+retains the ordering. All sixteen declared per-seed pooled 95\% paired-block
+intervals lie above zero. They use 10,000 resamples within source components
+with seed 31415, conditional on the checkpoints and observed block counts.
+Unknown dependence between blocks from the same books, speakers or conversations
+precludes interpreting them as independent-document intervals. Two seeds and
+shared test text do not establish general architecture uncertainty.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=\linewidth]{babylm-pooled.png}
+\caption{All twelve fitted checkpoints, official and filtered test scores.
+Shared axes permit direct loss comparisons. Markers show fitted seeds and
+their descriptive means; no confidence intervals are drawn.}
+\end{figure}
+
+\textbf{A narrow component exception.} CHILDES is the only source where FLM
+has a lower two-seed mean than a baseline: both baselines at 10M and GRU alone
+at 100M, in both analyses. Its transformer contrasts change sign across seeds.
+The five other component means favor both baselines in every scale/subset cell.
+No component-level intervals or multiplicity-adjusted component inference were
+declared. This exception is a follow-up hypothesis, not evidence of general
+child-directed-speech or conversational competence.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=\linewidth]{babylm-components.png}
+\caption{All six component contrasts by scale, analysis and fitted seed.
+Negative favors FLM. The shared zero and symmetric scale retain the CHILDES
+exception and its seed variation without selecting only favorable cells.}
+\end{figure}
+
+\textbf{Generation failures remain part of the result.} All 288 declared
+continuations are retained: twelve original prompts, sampling seeds 17 and 29,
+and all twelve selected models. Temperature is 0.8, top-$k$ is 40 and the cap
+is 256 new tokens. Every continuation reaches that cap; none stops at EOS.
+One 100M GRU seed-42 output contains invalid UTF-8 and remains flagged, with
+its raw token IDs and replacement-decoded text. Sampling excludes BOS and
+tokens containing ASCII control bytes other than newline/tab; likelihood
+scoring uses no such display filter. Averaging all 48 outputs per model/scale,
+repeated token 4-gram fractions are 0.2717/0.2122 for FLM at 10M/100M,
+0.0693/0.0744 for GRU and 0.0638/0.0697 for transformer. These describe token
+degeneration, not semantic quality, factuality or instruction following.
+
+The \href{https://flm.kuber.studio/research/babylm-findings.md}{complete findings}
+link every score, interval and unedited continuation. Tables are derived from
+audited saved likelihood records; their arithmetic checks do not independently
+rerun training, test inference or the bootstrap. The twelve BabyLM fits use
+the original ranked graph. Their negative architecture comparison neither
+isolates the graph contribution nor tests an intact fly circuit.
