@@ -1,0 +1,1313 @@
+{
+  "format": "flm-mac-cpu-probe-v1",
+  "identity_sha256": "f9fcffed62db3b9da22e58f1df8dd3f9a47182eed5ff8a5c3dbbe773e75768c3",
+  "probe_source_sha256": "0fdfa59e9df58b47dd78aedfea57112a84cdca26acb1752d2a400c7a26a2bf12",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "machine": "AMD64",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.2.6",
+  "threads": 4,
+  "torch_build": "PyTorch built with:\n  - C++ Version: 201703\n  - MSVC 193833145\n  - Intel(R) oneAPI Math Kernel Library Version 2025.2-Product Build 20250620 for Intel(R) 64 architecture applications\n  - Intel(R) MKL-DNN v3.7.1 (Git Hash 8d263e693366ef8db40acc569cc7d8edf644556d)\n  - OpenMP 2019\n  - LAPACK is enabled (usually provided by MKL)\n  - CPU capability usage: AVX2\n  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=a1cb3cc05d46d198467bebbb6e8fba50a325d4e7, CXX_COMPILER=C:/actions-runner/_work/pytorch/pytorch/pytorch/.ci/pytorch/windows/tmp_bin/sccache-cl.exe, CXX_FLAGS=/DWIN32 /D_WINDOWS /EHsc /Zc:__cplusplus /bigobj /FS /utf-8 -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE /wd4624 /wd4068 /wd4067 /wd4267 /wd4661 /wd4717 /wd4244 /wd4804 /wd4273, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.8.0, USE_CUDA=0, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=OFF, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, \n",
+  "conditions_checked": 128,
+  "bindings": [
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/measured/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null101/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null103/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null107/s42"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null107/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/measured/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null101/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null103/s43"
+      },
+      "differing_binding_fields": []
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null107/s43"
+      },
+      "differing_binding_fields": []
+    }
+  ],
+  "timings": [
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/measured/s42"
+      },
+      "settings": {
+        "steps": 3000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "checkpoint_interval": 500,
+        "seed": 42,
+        "threads": 4,
+        "score_boundaries": true
+      },
+      "updates": [
+        {
+          "step": 1,
+          "seconds": 0.6478197999822441,
+          "metrics": {
+            "step": 1,
+            "loss": 8.61993408203125,
+            "gradient_norm": 2.9184787273406982,
+            "learning_rate": 2e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 0.7479839999869,
+          "metrics": {
+            "step": 2,
+            "loss": 8.61323070526123,
+            "gradient_norm": 3.2518997192382812,
+            "learning_rate": 4e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 0.543474400008563,
+          "metrics": {
+            "step": 3,
+            "loss": 8.598221778869629,
+            "gradient_norm": 11.274518013000488,
+            "learning_rate": 6e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 0.5939841000072192,
+          "metrics": {
+            "step": 4,
+            "loss": 8.582552909851074,
+            "gradient_norm": 6.659102916717529,
+            "learning_rate": 8e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 5,
+          "seconds": 0.5712832000281196,
+          "metrics": {
+            "step": 5,
+            "loss": 8.571579933166504,
+            "gradient_norm": 7.446803092956543,
+            "learning_rate": 0.0001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 6,
+          "seconds": 0.5823712999990676,
+          "metrics": {
+            "step": 6,
+            "loss": 8.546412467956543,
+            "gradient_norm": 10.38830852508545,
+            "learning_rate": 0.00012,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 7,
+          "seconds": 0.5699265000002924,
+          "metrics": {
+            "step": 7,
+            "loss": 8.527674674987793,
+            "gradient_norm": 2.2838964462280273,
+            "learning_rate": 0.00014000000000000001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 8,
+          "seconds": 0.5763572999858297,
+          "metrics": {
+            "step": 8,
+            "loss": 8.501791000366211,
+            "gradient_norm": 1.7137937545776367,
+            "learning_rate": 0.00016,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 9,
+          "seconds": 0.5859364999923855,
+          "metrics": {
+            "step": 9,
+            "loss": 8.47232437133789,
+            "gradient_norm": 1.6267635822296143,
+            "learning_rate": 0.00017999999999999998,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 10,
+          "seconds": 0.5637294000189286,
+          "metrics": {
+            "step": 10,
+            "loss": 8.440202713012695,
+            "gradient_norm": 1.7476446628570557,
+            "learning_rate": 0.0002,
+            "persistent_trace_bytes": 0
+          }
+        }
+      ],
+      "mean_seconds_after_first_two": 0.5733828375050507
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null101/s42"
+      },
+      "settings": {
+        "steps": 3000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "checkpoint_interval": 500,
+        "seed": 42,
+        "threads": 4,
+        "score_boundaries": true
+      },
+      "updates": [
+        {
+          "step": 1,
+          "seconds": 0.5800777999975253,
+          "metrics": {
+            "step": 1,
+            "loss": 8.601221084594727,
+            "gradient_norm": 14.665225982666016,
+            "learning_rate": 2e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 0.5634571999835316,
+          "metrics": {
+            "step": 2,
+            "loss": 8.591792106628418,
+            "gradient_norm": 6.029561519622803,
+            "learning_rate": 4e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 0.5678045999957249,
+          "metrics": {
+            "step": 3,
+            "loss": 8.571176528930664,
+            "gradient_norm": 24.713987350463867,
+            "learning_rate": 6e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 0.6788375000178348,
+          "metrics": {
+            "step": 4,
+            "loss": 8.561345100402832,
+            "gradient_norm": 12.304961204528809,
+            "learning_rate": 8e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 5,
+          "seconds": 0.5772665000113193,
+          "metrics": {
+            "step": 5,
+            "loss": 8.541888236999512,
+            "gradient_norm": 2.00653076171875,
+            "learning_rate": 0.0001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 6,
+          "seconds": 0.607669299992267,
+          "metrics": {
+            "step": 6,
+            "loss": 8.521169662475586,
+            "gradient_norm": 1.9392733573913574,
+            "learning_rate": 0.00012,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 7,
+          "seconds": 0.7081435000000056,
+          "metrics": {
+            "step": 7,
+            "loss": 8.494818687438965,
+            "gradient_norm": 1.8698418140411377,
+            "learning_rate": 0.00014000000000000001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 8,
+          "seconds": 0.724818899994716,
+          "metrics": {
+            "step": 8,
+            "loss": 8.463835716247559,
+            "gradient_norm": 1.8064258098602295,
+            "learning_rate": 0.00016,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 9,
+          "seconds": 0.6948861999844667,
+          "metrics": {
+            "step": 9,
+            "loss": 8.42962646484375,
+            "gradient_norm": 1.780906081199646,
+            "learning_rate": 0.00017999999999999998,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 10,
+          "seconds": 0.6693561000283808,
+          "metrics": {
+            "step": 10,
+            "loss": 8.409170150756836,
+            "gradient_norm": 2.2793197631835938,
+            "learning_rate": 0.0002,
+            "persistent_trace_bytes": 0
+          }
+        }
+      ],
+      "mean_seconds_after_first_two": 0.6535978250030894
+    }
+  ],
+  "parameter_file_sha256": "bfb1d8d964416d82157a763710a2e21d88ccf7e065bae685390aa8351097d27b",
+  "scope": "All registered initialization bindings; two disposable ten-update synthetic-token CPU probes. No corpus, validation or test payload opened. No official checkpoint or language-quality result."
+}
