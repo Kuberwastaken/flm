@@ -1,6 +1,6 @@
 # Public release: 12 September 2026
 
-The user authorized making **Kuberwastaken/flm** public today, targeting **20:30-21:00 Asia/Kolkata (15:00-15:30 UTC)**. The website is already available at [flm.kuber.studio](https://flm.kuber.studio). Repository visibility is still private during this preparation; a later release record must confirm the actual change.
+The user authorized making **Kuberwastaken/flm** public today, targeting **20:30-21:00 Asia/Kolkata (15:00-15:30 UTC)**. The website is already available at [flm.kuber.studio](https://flm.kuber.studio). **Released:** the repository is public, with anonymous API, repository-page and raw-README access verified at **15:07:33 UTC / 20:37:33 IST** on 12 September. The release HEAD was `8ea2e03885ff6e73e8f47cf25799466f2cbb5cad`; the reviewed deployed client was `1c2f347b41032d3ef38c897430b090c9d4ba4b2f`. See [the machine-readable release record](https://github.com/Kuberwastaken/flm/blob/main/reports/public-release-v1.json).
 
 ## What is available
 
@@ -11,11 +11,11 @@ The user authorized making **Kuberwastaken/flm** public today, targeting **20:30
 
 ## What remains pending
 
-The native Mac selection cohort contains 128 fits at 3,000 updates each, with eight isolated workers. Training must finish before the complete validation panel; all 128 selections must freeze before held-out comparison. Neither partial completions nor training loss establishes an anatomical finding. No checkpoint from this cohort is promoted into the browser catalog before the declared evaluation and release review.
+All **128 native Mac training fits are complete**, at 3,000 updates each. At the 15:06 UTC status check, the healthy supervisor was running the complete validation panel; all 128 checkpoint selections must freeze before held-out comparison. Neither partial completions nor training loss establishes an anatomical finding. No checkpoint from this cohort is promoted into the browser catalog before the declared evaluation and release review.
 
 Public release may precede this validation, as explicitly requested. Keep the unchanged [interpretation and stopping rule](https://github.com/Kuberwastaken/flm/blob/main/docs/ANATOMICAL-PRIOR-DECISION.md), including every official/filtered comparison. The estimated training completion is not an ETA for fully audited findings. Scaling, alternate learning rules, SCAN and food adaptation remain deferred under [the current plan](https://github.com/Kuberwastaken/flm/blob/main/docs/PLAN.md).
 
-## Release procedure for the next scheduled follow-up
+## Authorized release procedure (visibility change completed)
 
 1. Read this record, AGENTS.md and the current plan. Check Mac progress with the existing read-only monitor and current private connection file; do not restart healthy workers merely because CPU usage is below 100%.
 2. Confirm the reviewed release commit is pushed, its GitHub Pages build succeeds, the live release notes/media are present, and the public-release review record has no unresolved publication blocker. Keep private connection files, raw corpora and training intermediates excluded.

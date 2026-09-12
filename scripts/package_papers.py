@@ -252,6 +252,7 @@ def main():
     files += [ROOT / name for name in ('scripts/prepare_demo_media.py', 'public/research/demo-media.json', 'scripts/check_browser_presentation.cjs', 'reports/presentation-review-v1.json')]
     files += [ROOT / 'docs' / name for name in ('ARCHITECTURE.md', 'DATA-STATUS.md', 'RESEARCH.md', 'PUBLIC-RELEASE.md')]
     files.append(ROOT / 'reports/public-release-review-v1.json')
+    files.append(ROOT / 'reports/public-release-v1.json')
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

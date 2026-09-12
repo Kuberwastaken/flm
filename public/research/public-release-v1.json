@@ -1,0 +1,41 @@
+{
+  "format": "flm-public-release-v1",
+  "verified_at_utc": "2026-09-12T15:07:33.956299+00:00",
+  "repository": "https://github.com/Kuberwastaken/flm",
+  "visibility": "public",
+  "release_head": "8ea2e03885ff6e73e8f47cf25799466f2cbb5cad",
+  "reviewed_deployed_commit": "1c2f347b41032d3ef38c897430b090c9d4ba4b2f",
+  "authorization": "User requested public release on 12 September 2026 at approximately 20:30-21:00 Asia/Kolkata; validation may follow launch.",
+  "readiness_record": "reports/public-release-ready-v1.json",
+  "anonymous_checks": [
+    {
+      "url": "https://api.github.com/repos/Kuberwastaken/flm",
+      "status": 200,
+      "bytes": 5439,
+      "sha256": "6907ef872e8f76088b2aaf0c66640be8b643f335b342771dc12d1eafd5515fbe",
+      "authenticated": false
+    },
+    {
+      "url": "https://github.com/Kuberwastaken/flm",
+      "status": 200,
+      "bytes": 506339,
+      "sha256": "7bff873dd1ab58d79537d92eee14e3e0033cfa55f5493a870e657ef36666b907",
+      "authenticated": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Kuberwastaken/flm/main/README.md",
+      "status": 200,
+      "bytes": 59008,
+      "sha256": "e8ca54d67bca4967ff7292a8f59d16d9aea1955972bb6568404621bb014a7449",
+      "authenticated": false
+    }
+  ],
+  "training_status": {
+    "completed_fits": 128,
+    "declared_fits": 128,
+    "stage": "validation_selection",
+    "last_checked_utc": "2026-09-12T15:06:05.662402+00:00",
+    "heldout": "pending"
+  },
+  "limits": "Public visibility and anonymous retrieval verified. No new model-quality or anatomical advantage claim; frozen scientific gates remain unchanged."
+}

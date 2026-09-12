@@ -522,3 +522,4 @@ for (const name of ['ARCHITECTURE', 'DATA-STATUS', 'RESEARCH', 'PUBLIC-RELEASE']
 }
 
 await copyFile('reports/public-release-review-v1.json', 'public/research/public-release-review-v1.json');
+await copyFile('reports/public-release-v1.json', 'public/research/public-release-v1.json');

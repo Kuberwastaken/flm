@@ -388,7 +388,7 @@ npm run build
 node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5181 --strictPort
 ```
 
-GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.kuber.studio`. The repository remains private while the generated website and standalone release archives are public.
+GitHub Actions publishes `dist/` to Pages, with `public/CNAME` pointing to `flm.kuber.studio`. The repository became public on 12 September 2026; anonymous access was verified at 20:37 IST. The website and standalone release archives are also public. See the [release record](docs/PUBLIC-RELEASE.md).
 
 Text inference runs in a CPU worker; optional 3D views require WebGL. Conversations and adaptation stay in the browser. A separate output adapter can be reset, saved and exported; it does not modify the bundled checkpoint and is bound to a checkpoint hash. Save session learning before switching models. Adapter changes cannot alter recurrent activity for a fixed input sequence, though they can change generated tokens and therefore later activity. These browser updates are distinct from training the language core or the sensory networks.
 

@@ -8,9 +8,9 @@ Develop and evaluate FLM as a language model trained from scratch, with reproduc
 
 The central question is whether measured neural wiring or its associated computation supplies a useful prior for prediction. Report positive, null and negative results against appropriate controls. The present model is a small text completion system; its articulated fly view does not establish an intact simulated brain, conversational competence or language-driven motor skill.
 
-## Public release today
+## Public release completed
 
-The user authorized public repository release on 12 September, targeting **20:30-21:00 Asia/Kolkata**. Follow [the release record](PUBLIC-RELEASE.md): publish the reviewed product and completed evidence while the unchanged Mac study continues. Its validation and held-out findings can follow after launch. Do not make release conditional on a positive result, shorten fits or call pending results validated.
+The repository became public on 12 September, with anonymous access verified at **20:37 IST**, inside the authorized release window. See [the release record](PUBLIC-RELEASE.md). All 128 Mac training fits are complete; the unchanged validation and held-out procedure continues. Its validation and held-out findings can follow after launch. Do not make release conditional on a positive result, shorten fits or call pending results validated.
 
 ## Current order of work
 
