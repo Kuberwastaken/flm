@@ -29,7 +29,9 @@ for (const selection of ['ami', 'wikitext', 'babylm', 'babylm-100m-flm-s43', 'ba
   const tokenizer = MODEL_PACKAGES[selection].lexical ? JSON.parse(readFileSync(new URL(`../public/models/${MODEL_PACKAGES[selection].path}/tokenizer.json`, import.meta.url))) : null;
   const codec = new TextCodec(config, tokenizer);
   const settings = {prompt: 'The history of science', limit: 16, seed: 42, temperature: .8, topK: 40};
-  const a = (await run('generate', settings)).filter(x => x.type === 'generation').at(-1);
+  const stream = (await run('generate', settings)).filter(x => x.type === 'generation');
+  const a = stream.at(-1);
+  assert.deepEqual([...new Set(stream.map(x => x.tokens))], Array.from({length: a.tokens}, (_, i) => i + 1), 'Every generated token reaches the visual state stream');
   const b = (await run('generate', settings)).filter(x => x.type === 'generation').at(-1);
   assert.equal(a.text, b.text); assert.deepEqual(a.h, b.h);
   assert.ok(a.tokens > 0 && a.tokens <= 16); assert.ok(a.bytes >= a.tokens);

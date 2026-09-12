@@ -4,6 +4,10 @@ FLM is trained from scratch on top of a connectome-derived recurrent core. **No 
 
 The useful feature is inspectability: compare predictions, replay an input with a neuron silenced, inspect fast versus slow state, and measure a separate local readout update. [Mechanism controls](LANGUAGE-CORE-RESULTS.md), [training-induced dynamics](LANGUAGE-DYNAMICS-FINDINGS.md) and [physical reference experiments](FOOD-CORE-PHYSICAL-RESULTS.md) answer different questions. The visible typing motion is a designed illustration using the existing articulated body geometry.
 
+## Watching generation
+
+The brain receives actual fast/slow state after every generated token. With **Slow playback for observation** enabled, generation pauses for 60 ms between tokens so the changes can be seen; inference and rendering add time. Disabling it keeps per-token updates and removes the deliberate delay, although the browser may combine paints at high speed. Neuron positions stay fixed, gray context cells are not simulated, and no activity is invented between model steps.
+
 ## Models and the automatic default
 
 The selector contains all **18 completed primary neural checkpoints**: FLM, GRU and transformer, each with seeds 42/43, on WikiText-2 and BabyLM 10M/100M. The earlier AMI model is also available. The separately trained GRU and transformer are comparison architectures; selecting them does not create anatomical neuron activity. The topology and computation-control models remain available in their separately documented inference bundles.

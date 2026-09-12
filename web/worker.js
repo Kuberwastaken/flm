@@ -44,11 +44,10 @@ async function generate(message) {
     text += decoder.decode(piece, { stream: true });
     model.step(token); count++;
     if (message.chat && chatOutput(text).stopped) break;
-    if (count % 8 === 0) {
-      send('generation', { text: message.chat ? chatOutput(text).text : text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
-      await pause();
-      if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
-    }
+    // Send the actual recurrent state for every token, with time to paint in observation mode.
+    send('generation', { text: message.chat ? chatOutput(text).text : text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
+    if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
+    else await pause();
   }
   text += decoder.decode();
   send('generation', { text: message.chat ? chatOutput(text, true).text : text, rawText: text,
