@@ -4,6 +4,8 @@
 
 A useful model for a defined conversational scope is a reasonable research target. Broad parity with pretrained SmolLM-135M or SmolLM-360M is not a defensible near-term promise on this compute. Language quality, anatomical coverage and biological fidelity are different objectives; maximizing one does not establish the others.
 
+**Update: [the Colab notebook audit](COLAB-NOTEBOOK-AUDIT.md) revises the engineering target.** 150-300M parameters is a valid T4 profiling target; the original SmolLM token budget below is context, not a minimum requirement for useful capability. Short-run notebook development is now authorized. GPU fit and throughput remain unmeasured.
+
 ## What the comparison actually requires
 
 The current primary FLM has 600,003 trainable parameters, 1,024 scalar neuron states with fast/slow traces, and 76,130 directed edges. The default released BabyLM checkpoint received 18,432,000 training-token presentations. The 100M corpus designation describes its available word pool, not a claim that this checkpoint processed 100 million tokens or completed an epoch. See [architecture](ARCHITECTURE.md) and [BabyLM findings](BABYLM-FINDINGS.md).
