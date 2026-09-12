@@ -1,7 +1,7 @@
 {
   "format": "flm-public-release-review-v1",
-  "reviewed_at_utc": "2026-09-12T13:16:47.015954+00:00",
-  "base_commit": "7a3dcb114af9f73c1e1f0dc38c3a8d0805933b51",
+  "reviewed_at_utc": "2026-09-12T13:20:51.850326+00:00",
+  "base_commit": "36f453c19a99a552534ced86ae2d49a5a2e93888",
   "release_target_ist": "2026-09-12 20:30-21:00",
   "public_visibility_authorized": true,
   "repository_visibility_at_review": "private",
@@ -71,8 +71,25 @@
       "closed-loop": 4
     },
     "pdf_review_scope": "All pages in contact sheets plus changed status pages at readable scale; no clipping/overlap or LaTeX undefined-reference warnings observed.",
-    "readme_and_overview_links": "All local targets present except this record during its creation; checked again before commit.",
-    "catalog_test": "19 tests; exit status checked separately"
+    "readme_and_overview_links": "All local Markdown targets and root-relative built-page links/assets exist.",
+    "catalog_test": "19 passed, 0 failed",
+    "current_browser_smoke": {
+      "themes": [
+        {
+          "theme": "light",
+          "default": "babylm-100m-flm-s43",
+          "releaseLinks": 1,
+          "architectureLinks": 1
+        },
+        {
+          "theme": "dark",
+          "default": "babylm-100m-flm-s43",
+          "releaseLinks": 1,
+          "architectureLinks": 1
+        }
+      ],
+      "mobileOverflow": false
+    }
   },
   "current_file_hashes": {
     "README.md": "37be1e7340aafb6547fd945e128bd3b2db36d91589c584ebc50f8d6d4ba59158",
@@ -82,10 +99,10 @@
     "docs/RESEARCH.md": "7ef6c1c60eb7cdff27cc87fd969aa38ad7906b02de75bbbd322dad8bb338fd73",
     "docs/PUBLIC-RELEASE.md": "c912337d928e50f7c01688b7c961175489bad3b9b08d0b0787f347e87f3a3d9f",
     "papers/data-and-reproduction.tex": "8dbd29d6b57ca19e60bb63a94495f02b3df6319119636c700d425f112f97a423",
-    "papers/wiring-controls.tex": "c83a7dd50dc51060a407663f958599655a5b84cbb5f900e661269b45ea94a832",
+    "papers/wiring-controls.tex": "415328896757a21e9fbcd25e387d16b7f00db3f87b600a8488153500453456d3",
     "papers/closed-loop.tex": "701a7ce49cd8c80ecea0e2ea5a702a712b914225b404eed2e4a229c2aa0e7b25",
     "public/research/data-and-reproduction.pdf": "e04266803d9f0a3e6756789ee58bcd2960d06190785b2e4a902931e410e3c09a",
-    "public/research/wiring-controls.pdf": "7c21160fac9bc1916d426dca387b753cf089d2e7e639c0312f56d80a98f0020d",
+    "public/research/wiring-controls.pdf": "394757839f6b4feed65868cbf36ebcabdcee98fb24a05da2343476a9077db9b8",
     "public/research/closed-loop.pdf": "048488e9cf92a520ba75d321fca17f0d77885cb434f2950e377ddf37cbef746a"
   },
   "remaining_release_actions": [
