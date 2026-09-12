@@ -40,3 +40,17 @@ python -m unittest discover -s tests -p test_selection_decision_report.py -v
 ```
 
 These checks passed in 3.6 seconds on 12 September. The live repository invocation returned pending. This validates reporting behavior; it adds no language, biological or training result.
+
+## Mac execution amendment
+
+The user subsequently requested execution on the MacBook. The [execution amendment](selection-mac-execution.md) retains the original design and allocation thresholds but uses all 128 fresh native Mac fits, with a separate identity and disclosed initialization changes. The original Windows attempt is retained; do not combine its fits with the Mac cohort.
+
+Use the explicit Mac mode for the active study:
+
+```sh
+python scripts/selection_decision_report.py --mac-study
+# Only after the full native cohort and scorer complete:
+python scripts/selection_decision_report.py --mac-study --output reports/selection-language/mac-v1/allocation-result-v1.json
+```
+
+This mode verifies the original identity, the native identity's permitted differences, the amendment document, runtime profile, initialization probe and execution adapter. It then uses the same gate calculation on the separate Mac results. Graphs, seeds, allocations, budgets, data, comparisons and thresholds cannot change through this mode. A sixth synthetic check rejects changed budgets or graph identities in the Mac lineage. Default mode continues to report the historical Windows attempt and must not be used as the active study monitor.

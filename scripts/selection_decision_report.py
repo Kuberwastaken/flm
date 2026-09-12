@@ -162,6 +162,8 @@ def report(root, *, mac=False):
                 require(hashlib.sha256(path(name).read_bytes()).hexdigest() == expected, 'Mac amendment source changed: '+name)
                 bindings[name] = expected
             require(profile['parent_study_identity_sha256'] == bindings[IDENTITY]
+                    and profile['amendment_sha256'] == amendment['document_sha256']
+                    and profile['qualification_probe_sha256'] == amendment['qualification_probe_sha256']
                     and profile['environment']['adapter_sha256'] == amendment['adapter_sha256']
                     and profile['environment']['torch'] == identity['torch'], 'Mac runtime profile linkage changed')
             output['execution_lineage'] = 'Complete fresh Mac cohort under a disclosed runtime/initialization amendment; original allocation thresholds retained.'

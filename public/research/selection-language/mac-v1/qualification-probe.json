@@ -1,0 +1,1825 @@
+{
+  "format": "flm-mac-cpu-probe-v1",
+  "identity_sha256": "f9fcffed62db3b9da22e58f1df8dd3f9a47182eed5ff8a5c3dbbe773e75768c3",
+  "probe_source_sha256": "0fdfa59e9df58b47dd78aedfea57112a84cdca26acb1752d2a400c7a26a2bf12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "python": "3.10.20 (main, Jun 11 2026, 03:55:32) [Clang 22.1.3 ]",
+  "torch": "2.8.0",
+  "numpy": "2.2.6",
+  "threads": 4,
+  "torch_build": "PyTorch built with:\n  - GCC 4.2\n  - C++ Version: 201703\n  - clang 15.0.0\n  - OpenMP 201811\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: NO AVX\n  - Build settings: BLAS_INFO=accelerate, BUILD_TYPE=Release, COMMIT_SHA=a1cb3cc05d46d198467bebbb6e8fba50a325d4e7, CXX_COMPILER=/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_PYTORCH_QNNPACK -DAT_BUILD_ARM_VEC256_WITH_SLEEF -DUSE_XNNPACK -DUSE_PYTORCH_METAL_EXPORT -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DUSE_COREML_DELEGATE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=braced-scalar-init -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wvla-extension -Wsuggest-override -Wnewline-eof -Winconsistent-missing-override -Winconsistent-missing-destructor-override -Wno-pass-failed -Wno-error=old-style-cast -Wconstant-conversion -Qunused-arguments -faligned-new -fno-math-errno -fno-trapping-math -Werror=format -DUSE_MPS -Wno-missing-braces, LAPACK_INFO=accelerate, TORCH_VERSION=2.8.0, USE_CUDA=OFF, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_EIGEN_FOR_BLAS=ON, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=OFF, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, \n",
+  "conditions_checked": 128,
+  "bindings": [
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/candidate/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/contact_ranked/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s201/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s203/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/stratified_s207/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s201/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s203/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-L-t5/uniform_s207/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/candidate/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/candidate/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/contact_ranked/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/contact_ranked/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s201/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s203/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/stratified_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/stratified_s207/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s201/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s203/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-L-t5/uniform_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-L-t5/uniform_s207/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/contact_ranked/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s201/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s203/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/stratified_s207/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s201/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s203/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/measured/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null101/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null103",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null103/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null107",
+        "seed": 42,
+        "label": "KCg-d-R-t5/uniform_s207/null107/s42"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/candidate/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/contact_ranked/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/contact_ranked/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s201/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s203/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/stratified_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/stratified_s207/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s201/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s201/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s203/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s203/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/measured",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/measured/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null101",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null101/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null103",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null103/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/uniform_s207/null107",
+        "seed": 43,
+        "label": "KCg-d-R-t5/uniform_s207/null107/s43"
+      },
+      "differing_binding_fields": [
+        "initial_state_sha256",
+        "initial_parameters_sha256",
+        "initial_nonedge_parameters_sha256"
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/measured",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/measured/s42"
+      },
+      "settings": {
+        "steps": 3000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "checkpoint_interval": 500,
+        "seed": 42,
+        "threads": 4,
+        "score_boundaries": true
+      },
+      "updates": [
+        {
+          "step": 1,
+          "seconds": 0.07244787499075755,
+          "metrics": {
+            "step": 1,
+            "loss": 8.61993408203125,
+            "gradient_norm": 2.9184730052948,
+            "learning_rate": 2e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 0.05167879098735284,
+          "metrics": {
+            "step": 2,
+            "loss": 8.61323070526123,
+            "gradient_norm": 3.251922130584717,
+            "learning_rate": 4e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 0.04279858399240766,
+          "metrics": {
+            "step": 3,
+            "loss": 8.598221778869629,
+            "gradient_norm": 11.274515151977539,
+            "learning_rate": 6e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 0.042280708003090695,
+          "metrics": {
+            "step": 4,
+            "loss": 8.582552909851074,
+            "gradient_norm": 6.658667087554932,
+            "learning_rate": 8e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 5,
+          "seconds": 0.04270170799281914,
+          "metrics": {
+            "step": 5,
+            "loss": 8.57158088684082,
+            "gradient_norm": 7.446813106536865,
+            "learning_rate": 0.0001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 6,
+          "seconds": 0.043877375006559305,
+          "metrics": {
+            "step": 6,
+            "loss": 8.546411514282227,
+            "gradient_norm": 10.388249397277832,
+            "learning_rate": 0.00012,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 7,
+          "seconds": 0.04365649999817833,
+          "metrics": {
+            "step": 7,
+            "loss": 8.527674674987793,
+            "gradient_norm": 2.283877372741699,
+            "learning_rate": 0.00014000000000000001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 8,
+          "seconds": 0.04241279199777637,
+          "metrics": {
+            "step": 8,
+            "loss": 8.501790046691895,
+            "gradient_norm": 1.713789701461792,
+            "learning_rate": 0.00016,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 9,
+          "seconds": 0.042108208013814874,
+          "metrics": {
+            "step": 9,
+            "loss": 8.47232437133789,
+            "gradient_norm": 1.6267609596252441,
+            "learning_rate": 0.00017999999999999998,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 10,
+          "seconds": 0.042048707997309975,
+          "metrics": {
+            "step": 10,
+            "loss": 8.440201759338379,
+            "gradient_norm": 1.747697353363037,
+            "learning_rate": 0.0002,
+            "persistent_trace_bytes": 0
+          }
+        }
+      ],
+      "mean_seconds_after_first_two": 0.04273557287524454
+    },
+    {
+      "condition": {
+        "graph": "KCg-d-R-t5/candidate/null101",
+        "seed": 42,
+        "label": "KCg-d-R-t5/candidate/null101/s42"
+      },
+      "settings": {
+        "steps": 3000,
+        "batch": 16,
+        "sequence": 96,
+        "warmup": 16,
+        "learning_rate": 0.002,
+        "final_learning_rate": 0.0002,
+        "lr_warmup_updates": 100,
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "checkpoint_interval": 500,
+        "seed": 42,
+        "threads": 4,
+        "score_boundaries": true
+      },
+      "updates": [
+        {
+          "step": 1,
+          "seconds": 0.04256991601141635,
+          "metrics": {
+            "step": 1,
+            "loss": 8.601221084594727,
+            "gradient_norm": 14.666308403015137,
+            "learning_rate": 2e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 2,
+          "seconds": 0.04236637501162477,
+          "metrics": {
+            "step": 2,
+            "loss": 8.591791152954102,
+            "gradient_norm": 6.029534816741943,
+            "learning_rate": 4e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 3,
+          "seconds": 0.04225445901101921,
+          "metrics": {
+            "step": 3,
+            "loss": 8.57117748260498,
+            "gradient_norm": 24.71543312072754,
+            "learning_rate": 6e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 4,
+          "seconds": 0.04256137499760371,
+          "metrics": {
+            "step": 4,
+            "loss": 8.561344146728516,
+            "gradient_norm": 12.306925773620605,
+            "learning_rate": 8e-05,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 5,
+          "seconds": 0.042369666989543475,
+          "metrics": {
+            "step": 5,
+            "loss": 8.541888236999512,
+            "gradient_norm": 2.0065324306488037,
+            "learning_rate": 0.0001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 6,
+          "seconds": 0.042089458991540596,
+          "metrics": {
+            "step": 6,
+            "loss": 8.521170616149902,
+            "gradient_norm": 1.9392744302749634,
+            "learning_rate": 0.00012,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 7,
+          "seconds": 0.04201266699237749,
+          "metrics": {
+            "step": 7,
+            "loss": 8.494821548461914,
+            "gradient_norm": 1.8698441982269287,
+            "learning_rate": 0.00014000000000000001,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 8,
+          "seconds": 0.042091124996659346,
+          "metrics": {
+            "step": 8,
+            "loss": 8.463837623596191,
+            "gradient_norm": 1.806422233581543,
+            "learning_rate": 0.00016,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 9,
+          "seconds": 0.04241537500638515,
+          "metrics": {
+            "step": 9,
+            "loss": 8.42962646484375,
+            "gradient_norm": 1.7808105945587158,
+            "learning_rate": 0.00017999999999999998,
+            "persistent_trace_bytes": 0
+          }
+        },
+        {
+          "step": 10,
+          "seconds": 0.042030957993119955,
+          "metrics": {
+            "step": 10,
+            "loss": 8.409171104431152,
+            "gradient_norm": 2.279529333114624,
+            "learning_rate": 0.0002,
+            "persistent_trace_bytes": 0
+          }
+        }
+      ],
+      "mean_seconds_after_first_two": 0.042228135622281116
+    }
+  ],
+  "parameter_file_sha256": "05e1497febcce4855e86c66da78efe98b9293c8f419ef373af04817f1c4b8692",
+  "scope": "All registered initialization bindings; two disposable ten-update synthetic-token CPU probes. No corpus, validation or test payload opened. No official checkpoint or language-quality result."
+}

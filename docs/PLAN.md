@@ -17,6 +17,8 @@ The central question is whether measured neural wiring or its associated computa
 
 Use the [completed BabyLM report](../reports/babylm/summary.json) for held-out evidence. The earlier [validation snapshot](../public/research/babylm-validation.json) and completion audits are dated training records, not live process monitors. Avoid copying changing selection-training step counts into this plan.
 
+For scheduled follow-ups, use [Mac queue operations](MAC-TRAINING-OPERATIONS.md) and the local ignored `work/mac-runtime-connection.json`. The remote combined log and native output directories are authoritative; the Windows mirror contains setup evidence until results are synchronized. Do not restart the superseded Windows queue when its old PIDs are absent.
+
 ## Completed evidence to preserve
 
 | Study or artifact | Result and limit |

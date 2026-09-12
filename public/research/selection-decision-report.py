@@ -4,6 +4,7 @@ This is a reporting consumer, not a replacement for the frozen scorer's integrit
 checks. It never loads checkpoints, raw corpus text, or partial held-out results.
 """
 import argparse
+import copy
 import hashlib
 import json
 import math
@@ -99,8 +100,28 @@ def apply_rule(rule, rows):
     return dict(decision=decision, analyses=analyses, action=rule[decision+'_action'])
 
 
-def report(root):
+def validate_mac_identity(parent, native):
+    """The amendment changes runtime and native initialization, never the design."""
+    expected = copy.deepcopy(parent)
+    require(len(native['conditions']) == len(parent['conditions']) == 128, 'Incomplete Mac matrix')
+    for old, new in zip(expected['conditions'], native['conditions']):
+        for key in ('initial_state_sha256', 'initial_parameters_sha256', 'initial_nonedge_parameters_sha256'):
+            value = new['base_binding'][key]
+            require(isinstance(value, str) and len(value) == 64 and all(c in '0123456789abcdef' for c in value),
+                    'Invalid native initialization hash')
+            old['base_binding'][key] = value
+    expected['torch'] = '2.8.0'
+    expected['execution_amendment'] = native['execution_amendment']
+    require(native == expected, 'Mac study changed more than the declared runtime/initialization amendment')
+
+
+def report(root, *, mac=False):
     root = Path(root).resolve()
+    directory = DIRECTORY+'mac-v1/' if mac else DIRECTORY
+    identity_name = directory+'study-identity.json'
+    selection_name = directory+'study-selection.json'
+    summary_name = directory+'test-summary.json'
+    evaluation_name = 'runs/selection-language-mac-evaluation-v1/identity.json' if mac else EVALUATION
     bindings = {}
 
     def path(name):
@@ -122,10 +143,30 @@ def report(root):
                         'those remain the frozen scorer responsibility. No general biological inference follows.')
     try:
         rule = read(RULE, RULE_SHA256)
-        identity = read(IDENTITY, rule['original_identity_sha256'])
+        parent = read(IDENTITY, rule['original_identity_sha256'])
+        identity = parent
         require(hashlib.sha256(path(DOCUMENT).read_bytes()).hexdigest() == rule['decision_document_sha256'],
                 'Dated decision document changed')
         bindings[DOCUMENT] = rule['decision_document_sha256']
+        if mac:
+            if not path(identity_name).is_file():
+                return dict(output, missing=[identity_name], action='Wait for the complete native initialization record; no scientific decision.')
+            identity = read(identity_name)
+            validate_mac_identity(parent, identity)
+            amendment = identity['execution_amendment']
+            require(amendment['parent_study_identity_sha256'] == bindings[IDENTITY], 'Mac parent lineage changed')
+            profile = read(directory+'runtime-profile.json', amendment['profile_sha256'])
+            read(directory+'qualification-probe.json', amendment['qualification_probe_sha256'])
+            for name, expected in [('docs/SELECTION-MAC-EXECUTION.md', amendment['document_sha256']),
+                                   ('scripts/selection_mac_runtime.py', amendment['adapter_sha256'])]:
+                require(hashlib.sha256(path(name).read_bytes()).hexdigest() == expected, 'Mac amendment source changed: '+name)
+                bindings[name] = expected
+            require(profile['parent_study_identity_sha256'] == bindings[IDENTITY]
+                    and profile['amendment_sha256'] == amendment['document_sha256']
+                    and profile['qualification_probe_sha256'] == amendment['qualification_probe_sha256']
+                    and profile['environment']['adapter_sha256'] == amendment['adapter_sha256']
+                    and profile['environment']['torch'] == identity['torch'], 'Mac runtime profile linkage changed')
+            output['execution_lineage'] = 'Complete fresh Mac cohort under a disclosed runtime/initialization amendment; original allocation thresholds retained.'
         require(rule['groups'] == ['KCg-d-L-t5', 'KCg-d-R-t5'] and rule['training_seeds'] == [42, 43]
                 and rule['rewiring_seeds'] == [101, 103, 107]
                 and rule['analysis_subsets'] == ['official', 'overlap_filtered'], 'Rule inventory changed')
@@ -134,15 +175,15 @@ def report(root):
         require(len(conditions) == rule['all_required']['complete_original_inventory'] == 128
                 and len(set(labels)) == 128, 'Original inventory is not 128 unique conditions')
         # Never open partial evaluation outputs while training/selection is ongoing.
-        missing = [name for name in (SELECTION, SUMMARY) if not path(name).is_file()]
+        missing = [name for name in (selection_name, summary_name) if not path(name).is_file()]
         if missing:
             return dict(output, missing=missing, action='Wait for the unchanged complete train/select/test queue; no scientific decision.')
-        selection = read(SELECTION)
-        summary = read(SUMMARY)
-        evaluation = read(EVALUATION, summary['evaluation_identity_sha256'])
-        require(selection['study_identity_sha256'] == bindings[IDENTITY]
-                and evaluation['study_identity_sha256'] == bindings[IDENTITY]
-                and evaluation['selection_sha256'] == bindings[SELECTION], 'Study/selection hash linkage changed')
+        selection = read(selection_name)
+        summary = read(summary_name)
+        evaluation = read(evaluation_name, summary['evaluation_identity_sha256'])
+        require(selection['study_identity_sha256'] == bindings[identity_name]
+                and evaluation['study_identity_sha256'] == bindings[identity_name]
+                and evaluation['selection_sha256'] == bindings[selection_name], 'Study/selection hash linkage changed')
         require(evaluation['policy'] == identity['evaluation_policy']
                 and evaluation['source_sha256'] == identity['sources']
                 and evaluation['test_metadata'] == identity['test_metadata'], 'Evaluation declaration changed')
@@ -154,9 +195,9 @@ def report(root):
                     'Frozen numerical source changed: '+name)
         for selected, row in zip(selection['conditions'], summary['runs']):
             label = selected['condition']['label']
-            result = read(DIRECTORY+'test/'+label+'/result.json', summary['result_sha256'][label])
+            result = read(directory+'test/'+label+'/result.json', summary['result_sha256'][label])
             require({k: v for k, v in result.items() if k != 'blocks'} == row, 'Summary/result mismatch: '+label)
-            require(row['identity'] == dict(evaluation_identity_sha256=bindings[EVALUATION], selected=selected)
+            require(row['identity'] == dict(evaluation_identity_sha256=bindings[evaluation_name], selected=selected)
                     and row['checkpoint_step'] == selected['checkpoint_step'], 'Selected checkpoint linkage changed')
         by_run = {(r['condition']['graph'], r['condition']['seed']): r for r in summary['runs']}
         # Verify every declared point difference against the completed pooled loss
@@ -212,9 +253,10 @@ def report(root):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
+    parser.add_argument('--mac-study', action='store_true', help='Consume the complete fresh Mac cohort and verify its original-study lineage')
     parser.add_argument('--output', type=Path, help='Optional new report path; refuses to overwrite different bytes')
     args = parser.parse_args()
-    result = report(args.root)
+    result = report(args.root, mac=args.mac_study)
     payload = json.dumps(result, indent=2, allow_nan=False)+'\n'
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

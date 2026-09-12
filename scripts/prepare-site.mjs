@@ -477,13 +477,15 @@ const priorityLinks = {
   'LANGUAGE-CORE-RESULTS.md': 'language-core-findings.md',
   'LANGUAGE-DYNAMICS-FINDINGS.md': 'language-dynamics-findings.md',
   'ANATOMICAL-PRIOR-DECISION.md': 'anatomical-prior-decision.md',
+  'SELECTION-MAC-EXECUTION.md': 'selection-mac-execution.md',
+  '../scripts/selection_mac_runtime.py': 'selection-mac-runtime.py',
   '../scripts/predictive_computation_figure.py': 'predictive-computation-figure.py',
   '../reports/language-core/shared-scale-figure.json': 'predictive-computation-figure.json',
   '../scripts/selection_decision_report.py': 'selection-decision-report.py',
   '../tests/test_selection_decision_report.py': 'selection-decision-report-test.py',
   '../public/research/': ''
 };
-for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md'], ['SELECTION-DECISION-REPORT.md','selection-decision-report.md']]) {
+for (const [source, target] of [['ANATOMICAL-PRIOR-DECISION.md','anatomical-prior-decision.md'], ['PREDICTIVE-COMPUTATION.md','predictive-computation.md'], ['SELECTION-DECISION-REPORT.md','selection-decision-report.md'], ['SELECTION-MAC-EXECUTION.md','selection-mac-execution.md']]) {
   let text = await readFile(`docs/${source}`, 'utf8');
   for (const [from, to] of Object.entries(priorityLinks)) text = text.replaceAll(from, to);
   await writeFile(`public/research/${target}`, text);
@@ -493,3 +495,8 @@ await copyFile('scripts/predictive_computation_figure.py', 'public/research/pred
 await copyFile('reports/language-core/shared-scale-figure.json', 'public/research/predictive-computation-figure.json');
 await copyFile('scripts/selection_decision_report.py', 'public/research/selection-decision-report.py');
 await copyFile('tests/test_selection_decision_report.py', 'public/research/selection-decision-report-test.py');
+await copyFile('scripts/selection_mac_runtime.py', 'public/research/selection-mac-runtime.py');
+await mkdir('public/research/selection-language/mac-v1', { recursive: true });
+for (const name of ['study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json']) {
+  await copyFile(`reports/selection-language/mac-v1/${name}`, `public/research/selection-language/mac-v1/${name}`);
+}
