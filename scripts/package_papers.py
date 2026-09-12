@@ -243,9 +243,12 @@ def main():
         'tests/test_selection_decision_report.py', 'scripts/predictive_computation_figure.py',
         'reports/language-core/shared-scale-figure.json', 'public/research/figures/language-core-shared-scale.png')]
     files += [ROOT / name for name in ('docs/SELECTION-MAC-EXECUTION.md', 'docs/MAC-TRAINING-OPERATIONS.md',
-        'scripts/selection_mac_runtime.py', 'scripts/mac_training_probe.py', 'tests/test_selection_mac_runtime.py')]
+        'scripts/selection_mac_runtime.py', 'scripts/mac_training_probe.py', 'tests/test_selection_mac_runtime.py',
+        'scripts/selection_mac_parallel.py', 'tests/test_selection_mac_parallel.py',
+        'docs/SELECTION-MAC-PARALLELISM.md', 'docs/MAC-CONCURRENCY-FINDINGS.md')]
     files += [ROOT / 'reports/selection-language/mac-v1' / name for name in (
-        'study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json')]
+        'study-identity.json', 'runtime-profile.json', 'qualification-probe.json', 'windows-reference-probe.json', 'handoff.json',
+        'parallel-probe-v1.json', 'parallel-handoff.json', 'parallel-decision-v1.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

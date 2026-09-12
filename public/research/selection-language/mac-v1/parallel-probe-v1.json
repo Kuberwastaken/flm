@@ -1,0 +1,143 @@
+{
+  "format": "flm-mac-parallel-probe-v1",
+  "recorded_at": "2026-09-12T11:26:24.325120+00:00",
+  "study_identity_sha256": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676",
+  "driver_sha256": "78f1782fb38638b0c2d1c391ad27825af761cf72a409b7741fb8932c4fdf3be8",
+  "document_sha256": "8a7616262b43343fec674466c8b5b5dfb5bf775fa578a019088fb19a4cf27ebb",
+  "rounds": [
+    {
+      "workers": 1,
+      "elapsed_seconds": 2.084338957996806,
+      "updates_per_second": 19.190736634526452,
+      "exact_final_state_and_optimizer": true,
+      "results": [
+        {
+          "worker": 0,
+          "started": 103588.622519583,
+          "ended": 103590.706858541,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        }
+      ]
+    },
+    {
+      "workers": 2,
+      "elapsed_seconds": 4.20420904099592,
+      "updates_per_second": 19.02854953688247,
+      "exact_final_state_and_optimizer": true,
+      "results": [
+        {
+          "worker": 0,
+          "started": 103592.990733875,
+          "ended": 103597.194942916,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 1,
+          "started": 103592.9907515,
+          "ended": 103597.177614291,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        }
+      ]
+    },
+    {
+      "workers": 3,
+      "elapsed_seconds": 6.055303749992163,
+      "updates_per_second": 19.817337817306903,
+      "exact_final_state_and_optimizer": true,
+      "results": [
+        {
+          "worker": 0,
+          "started": 103600.453035708,
+          "ended": 103606.508304541,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 1,
+          "started": 103600.453000791,
+          "ended": 103606.4029285,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 2,
+          "started": 103600.453071625,
+          "ended": 103606.495192333,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        }
+      ]
+    },
+    {
+      "workers": 4,
+      "elapsed_seconds": 7.311920541993459,
+      "updates_per_second": 21.882075862435315,
+      "exact_final_state_and_optimizer": true,
+      "results": [
+        {
+          "worker": 0,
+          "started": 103610.689624875,
+          "ended": 103617.998424125,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 1,
+          "started": 103610.689569416,
+          "ended": 103617.897849958,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 2,
+          "started": 103610.6895965,
+          "ended": 103618.001462833,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        },
+        {
+          "worker": 3,
+          "started": 103610.689542291,
+          "ended": 103617.948417875,
+          "timed_updates": 40,
+          "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+          "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+          "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+          "threads": 4
+        }
+      ]
+    }
+  ],
+  "recommended_workers": 1,
+  "scope": "One fixed native 540-neuron model; ten warmup and forty timed synthetic-token updates per worker. No corpus or held-out scoring. Exact final model and optimizer tensor hashes are a bounded check, not a proof of equality for every full trajectory. No official writer overlaps the probe."
+}

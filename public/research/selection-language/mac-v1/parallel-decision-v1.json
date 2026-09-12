@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-09-12T11:27:05.819352+00:00",
+  "decision": "retain_serial",
+  "workers": 1,
+  "threads_per_fit": 4,
+  "probe_sha256": "4f12139b18b171f7c92853615995226dc178a325a7ca40fc587f93194764cfb6",
+  "handoff_sha256": "aa1d146e944da5a489866471c7d9fe650d4ea150d58542b98df9ec9d4409a2a5",
+  "study_identity_sha256": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676",
+  "all_completed_fit_hashes_preserved": true,
+  "completed_fits_preserved": 20,
+  "best_probe_speedup": 1.1402415800478871,
+  "policy": "Concurrency probe did not meet the declared 15 percent improvement requirement; resume unchanged native serial cohort."
+}
