@@ -228,6 +228,9 @@ $('inspect-context').onclick = () => {
     $('context-preview').value = contextFor(preview);
   } catch(error) { $('context-preview').value = error.message; }
 };
+$('inspect-context').closest('details').addEventListener('toggle', event => {
+  if (event.currentTarget.open) $('inspect-context').onclick();
+});
 for (const id of ['stop', 'stop-learning']) $(id).onclick = () => {
   if (id === 'stop') { generationStopped = true; typingFly.setState('idle'); }
   worker.postMessage({ type: 'stop' }); $(id).disabled = true;
