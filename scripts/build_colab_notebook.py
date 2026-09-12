@@ -19,7 +19,7 @@ def build(revision):
 
     md('''
     # FLM on a T4: full-graph capacity and learning probe
-    **Kuber Mehta Â· FLM / ChatFLM**
+    **Kuber Mehta Ã‚Â· FLM / ChatFLM**
 
     Train a fly-derived recurrent language model from random weights. Target **150M or 300M parameters**
     using **all 166,700 acquired neurons**, or run the existing 1,024-neuron graph as a small smoke check.
@@ -35,7 +35,7 @@ def build(revision):
     The model, graph/data pipeline and training loop below are FLM implementations.
     The frozen Mac study and anatomical stopping rule remain separate and unchanged.
 
-    **Colab: Runtime â†’ Change runtime type â†’ T4 GPU. Then run cells in order.**
+    **Colab: Runtime Ã¢â€ â€™ Change runtime type Ã¢â€ â€™ T4 GPU. Then run cells in order.**
     Free-tier allocation is not guaranteed. Drive mounting is optional but recommended for resumable runs.
     No Hub upload, API key, paid runtime or publication is triggered by this notebook.
     ''')
@@ -51,7 +51,7 @@ def build(revision):
     print(f"Device memory: {torch.cuda.get_device_properties(0).total_memory / 2**30:.2f} GiB")
     # Keep Colab's installed CUDA torch. Do not install a CPU wheel over it.
     subprocess.run([sys.executable, '-m', 'pip', 'install', '-q',
-                    'datasets==4.3.0', 'tokenizers==0.22.2', 'transformers==4.56.2',
+                    'datasets==3.5.0', 'tokenizers==0.22.2', 'transformers==4.57.3',
                     'scipy>=1.13', 'requests>=2.31', 'matplotlib>=3.8'], check=True)
     ''')
     code(f'''
