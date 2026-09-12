@@ -11,7 +11,7 @@ The user authorized making **Kuberwastaken/flm** public today, targeting **20:30
 
 ## What remains pending
 
-All **128 native Mac training fits are complete**, at 3,000 updates each. At the 15:06 UTC status check, the healthy supervisor was running the complete validation panel; all 128 checkpoint selections must freeze before held-out comparison. Neither partial completions nor training loss establishes an anatomical finding. No checkpoint from this cohort is promoted into the browser catalog before the declared evaluation and release review.
+All **128 native Mac training fits are complete**, at 3,000 updates each. All 128 checkpoint selections were frozen at 15:18 UTC, before held-out scoring. At the 15:44 UTC check, the healthy supervisor was processing held-out batches. The [verified selection milestone](../reports/selection-language/mac-v1/selection-milestone-v1.json) records the complete inventory; no held-out summary is available yet. Neither partial completions nor training loss establishes an anatomical finding. No checkpoint from this cohort is promoted into the browser catalog before the declared evaluation and release review.
 
 Public release may precede this validation, as explicitly requested. Keep the unchanged [interpretation and stopping rule](ANATOMICAL-PRIOR-DECISION.md), including every official/filtered comparison. The estimated training completion is not an ETA for fully audited findings. Scaling, alternate learning rules, SCAN and food adaptation remain deferred under [the current plan](PLAN.md).
 
@@ -23,7 +23,7 @@ Public release may precede this validation, as explicitly requested. Keep the un
 4. Verify public visibility through GitHub and anonymous repository access; preserve the release commit and actual UTC time in a new release record. Update this status to released, rebuild the published copy/source archive, and notify the user of the public link and remaining validation status.
 5. Keep the existing half-hourly Mac checks quiet while progress is ordinary. Notify on training completion, validation/held-out completion, a material ETA change, failure or needed action. Finish and publish the decision only after the full record passes its prescribed gates.
 
-The existing heartbeat reads current repository instructions. Its older saved prompt contains superseded Windows and broader-queue details; those do not authorize restarting old jobs or launching deferred studies. The local app must remain running for scheduled follow-ups.
+The existing heartbeat reads current repository instructions. Its saved prompt was corrected through the app tool and verified during the held-out-stage check; it now follows the Mac evaluation and completed public release. Deferred studies remain proposals, not an automatic queue. The local app must remain running for scheduled follow-ups.
 
 ## Representation review
 

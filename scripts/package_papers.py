@@ -253,6 +253,7 @@ def main():
     files += [ROOT / 'docs' / name for name in ('ARCHITECTURE.md', 'DATA-STATUS.md', 'RESEARCH.md', 'PUBLIC-RELEASE.md')]
     files.append(ROOT / 'reports/public-release-review-v1.json')
     files.append(ROOT / 'reports/public-release-v1.json')
+    files += [ROOT / 'reports/selection-language/mac-v1' / name for name in ('study-selection.json', 'selection-milestone-v1.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

@@ -1,6 +1,6 @@
 # Operating the active Mac training queue
 
-The active queue now uses eight workers under [the explicit user scheduling override](SELECTION-MAC-PARALLELISM-V2.md). The active experiment is the complete native cohort declared in [SELECTION-MAC-EXECUTION.md](SELECTION-MAC-EXECUTION.md). The Windows attempt is stopped and retained. Do not infer failure from the absence of the old Windows PIDs or restart its command.
+Training completed all 128 fits using eight workers under [the explicit user scheduling override](SELECTION-MAC-PARALLELISM-V2.md). All 128 checkpoint choices froze before held-out scoring; the original sequential scorer is now active. Its lower CPU usage does not imply failed or stalled workers. The active experiment is the complete native cohort declared in [SELECTION-MAC-EXECUTION.md](SELECTION-MAC-EXECUTION.md). The Windows attempt is stopped and retained. Do not infer failure from the absence of the old Windows PIDs or restart its command.
 
 For this workspace, private connection details are in the ignored `work/mac-runtime-connection.json`: tailnet host, SSH user, remote project root, interpreter, log and supervisor receipt. Use those values rather than guessing a username or copying account details into public documentation. Connect through the existing Tailscale authorization; the local known-hosts file contains host keys supplied by the tailnet. No credentials belong in the repository.
 
@@ -40,7 +40,7 @@ Preserve the earlier probe and unused original scheduler. The current eight-work
 
 ## Scheduled monitoring
 
-The existing 30-minute training heartbeat remains active. Its saved legacy prompt already requires reading AGENTS.md and this plan first; those current repository instructions override its old Windows launch details and broader obsolete queue. The app acknowledged another prompt update on 12 September, but the saved automation file still contained the previous text when inspected. Do not claim the new prompt persisted, recreate duplicate schedules, or modify automation configuration by hand.
+The existing 30-minute heartbeat remains active. At the 12 September held-out-stage check, its prompt was updated through the app tool and the saved automation file was verified to contain the new text. It now follows the Mac evaluation, completed public release, unchanged scientific gate and quiet-monitoring policy. Earlier unsuccessful persistence attempts remain historical. Do not recreate duplicate schedules or modify automation configuration by hand.
 
 Use `scripts/mac_training_status.py` through the authenticated remote Python interpreter, passing the current supervisor receipt from the ignored connection record. The helper reads declaration/completion/checkpoint file metadata and ps/pmset telemetry without loading model tensors, training text or partial held-out scores. Keep the previous and latest snapshots in ignored `work/mac-training-monitor-previous.json` and `work/mac-training-monitor-latest.json`. A snapshot is telemetry, not a scientific-completion audit.
 

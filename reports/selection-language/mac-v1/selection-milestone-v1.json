@@ -1,0 +1,15 @@
+{
+  "format": "flm-mac-selection-milestone-v1",
+  "recorded_at_utc": "2026-09-12T15:46:39.057394+00:00",
+  "completed_training_fits": 128,
+  "frozen_checkpoint_selections": 128,
+  "selection_path": "reports/selection-language/mac-v1/study-selection.json",
+  "selection_sha256": "3c2ede4e0e886c303907cebae9d4033170d7aba545909cfa32732222b6a88efe",
+  "selection_modified_utc": "2026-09-12T15:18:25.664147+00:00",
+  "test_payloads_opened_at_selection": false,
+  "stage_at_check": "held_out_evaluation",
+  "heldout_summary_available": false,
+  "selection_transfer": "Exact bytes verified against remote SHA-256; complete checkpoint/evaluation archives not yet synchronized.",
+  "automation_update": "Existing half-hourly heartbeat prompt updated through app tool and verified in saved automation.toml; cadence and active status preserved.",
+  "scope": "Operational milestone and frozen selection inventory, not a completed held-out result or anatomical finding."
+}

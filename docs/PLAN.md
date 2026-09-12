@@ -10,7 +10,7 @@ The central question is whether measured neural wiring or its associated computa
 
 ## Public release completed
 
-The repository became public on 12 September, with anonymous access verified at **20:37 IST**, inside the authorized release window. See [the release record](PUBLIC-RELEASE.md). All 128 Mac training fits are complete; the unchanged validation and held-out procedure continues. Its validation and held-out findings can follow after launch. Do not make release conditional on a positive result, shorten fits or call pending results validated.
+The repository became public on 12 September, with anonymous access verified at **20:37 IST**, inside the authorized release window. See [the release record](PUBLIC-RELEASE.md). All 128 Mac training fits and checkpoint selections are complete; held-out evaluation is running. The [selection milestone](../reports/selection-language/mac-v1/selection-milestone-v1.json) records the verified inventory. Held-out findings will follow after launch. Do not make release conditional on a positive result, shorten fits or call pending results validated.
 
 The 12 September [larger-chat feasibility assessment](FLM-CHAT-FEASIBILITY.md) answers the request about laptop/T4 training, anatomical coverage, datasets and SmolLM comparisons. Its sizes and timelines are conditional proposals, not measured GPU results or an automatic next training queue; the active study and its stopping rule remain unchanged.
 
