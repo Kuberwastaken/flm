@@ -1,0 +1,110 @@
+{
+  "format": "flm-public-release-ready-v1",
+  "checked_at_utc": "2026-09-12T13:24:03.141190+00:00",
+  "reviewed_deployed_commit": "33e996f6cd2d67d8c254c814331edfb4927768e7",
+  "github_actions_run": 34696191842,
+  "ci_conclusion": "success",
+  "live_files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 90440,
+      "sha256": "e261a822536362d0112782251bac873aab5d193c1b99683ecbbbe3b69300bcd7",
+      "matches_build": true
+    },
+    {
+      "path": "research/architecture.md",
+      "status": 200,
+      "bytes": 5994,
+      "sha256": "b403639b5d07b9e863883f2b781cc96a12251431b5bd3a2bee56048bd82c6013",
+      "matches_build": true
+    },
+    {
+      "path": "research/data-status.md",
+      "status": 200,
+      "bytes": 3302,
+      "sha256": "a28b512e8619c8939c094ab3c15a9a0ef0a6ef59d2bd5edb244a7b8e6ed59433",
+      "matches_build": true
+    },
+    {
+      "path": "research/research.md",
+      "status": 200,
+      "bytes": 6689,
+      "sha256": "08ab08e7539ce133747b045557ed4d11adcc5ad85d1902bee726e54654e641bc",
+      "matches_build": true
+    },
+    {
+      "path": "research/public-release.md",
+      "status": 200,
+      "bytes": 4663,
+      "sha256": "f64fb6a1c5d963b5e67c51c6dcf8f35ca3791a2633f0a5bc8290c23aa6fb7d28",
+      "matches_build": true
+    },
+    {
+      "path": "research/public-release-review-v1.json",
+      "status": 200,
+      "bytes": 5141,
+      "sha256": "72cf8f8f9b26b99bbf0c5b487c517ad20e7217a6d3b40e15b78155b9084395b2",
+      "matches_build": true
+    },
+    {
+      "path": "research/data-and-reproduction.pdf",
+      "status": 200,
+      "bytes": 251160,
+      "sha256": "e04266803d9f0a3e6756789ee58bcd2960d06190785b2e4a902931e410e3c09a",
+      "matches_build": true
+    },
+    {
+      "path": "research/wiring-controls.pdf",
+      "status": 200,
+      "bytes": 528076,
+      "sha256": "394757839f6b4feed65868cbf36ebcabdcee98fb24a05da2343476a9077db9b8",
+      "matches_build": true
+    },
+    {
+      "path": "research/closed-loop.pdf",
+      "status": 200,
+      "bytes": 486445,
+      "sha256": "048488e9cf92a520ba75d321fca17f0d77885cb434f2950e377ddf37cbef746a",
+      "matches_build": true
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 15414523,
+      "sha256": "b2f7777d1997d32abebe746c569b75d1dac9721ad94d0132ba50e421045ae4f6",
+      "matches_build": true
+    },
+    {
+      "path": "models/catalog.json",
+      "status": 200,
+      "bytes": 7857,
+      "sha256": "300169cc60d869fcaa2917fe0cafefeb98837e18bf77a6617c88ec87692e3243",
+      "matches_build": true
+    }
+  ],
+  "review_record": "reports/public-release-review-v1.json",
+  "repository_visibility": "private",
+  "visibility_change_authorized": true,
+  "release_window_ist": "2026-09-12 20:30-21:00",
+  "ready_for_visibility_change": true,
+  "remaining": "At the target window or next available follow-up, execute and verify the authorized public visibility change. Validation and held-out remain pending; do not gate publication on their completion.",
+  "browser_smoke": {
+    "themes": [
+      {
+        "theme": "light",
+        "default": "babylm-100m-flm-s43",
+        "releaseLinks": 1,
+        "architectureLinks": 1
+      },
+      {
+        "theme": "dark",
+        "default": "babylm-100m-flm-s43",
+        "releaseLinks": 1,
+        "architectureLinks": 1
+      }
+    ],
+    "mobileOverflow": false
+  },
+  "limitations": "This is deployment and presentation verification, not independent retraining or a selection-study result."
+}
