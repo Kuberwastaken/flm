@@ -1,15 +1,15 @@
 {
   "format": "flm-public-release-ready-v1",
-  "checked_at_utc": "2026-09-12T13:24:03.141190+00:00",
-  "reviewed_deployed_commit": "33e996f6cd2d67d8c254c814331edfb4927768e7",
-  "github_actions_run": 34696191842,
+  "checked_at_utc": "2026-09-12T14:28:57.286055+00:00",
+  "reviewed_deployed_commit": "6b2968d562fd3379c51623426db169bd6cde7d9c",
+  "github_actions_run": 34699289382,
   "ci_conclusion": "success",
   "live_files": [
     {
       "path": "index.html",
       "status": 200,
       "bytes": 90440,
-      "sha256": "e261a822536362d0112782251bac873aab5d193c1b99683ecbbbe3b69300bcd7",
+      "sha256": "3c2c2682cd358e40305e5d79e5cc49e866af46b9312f51f5f3b2c4eb60887708",
       "matches_build": true
     },
     {
@@ -71,8 +71,8 @@
     {
       "path": "research/paper-source.zip",
       "status": 200,
-      "bytes": 15414523,
-      "sha256": "b2f7777d1997d32abebe746c569b75d1dac9721ad94d0132ba50e421045ae4f6",
+      "bytes": 15414749,
+      "sha256": "53f7a5f7a880d2238e294d0be4d51fbf89746fb07217328c598f7757bbcb3216",
       "matches_build": true
     },
     {
@@ -80,6 +80,20 @@
       "status": 200,
       "bytes": 7857,
       "sha256": "300169cc60d869fcaa2917fe0cafefeb98837e18bf77a6617c88ec87692e3243",
+      "matches_build": true
+    },
+    {
+      "path": "research/chatflm.md",
+      "status": 200,
+      "bytes": 5967,
+      "sha256": "becaaedf027be00324ce82e4e7ac5eded2b04f538d9ce367e391f20e684a3b4a",
+      "matches_build": true
+    },
+    {
+      "path": "assets/worker-BROaija8.js",
+      "status": 200,
+      "bytes": 25137,
+      "sha256": "65ae5d49b3b93dede9982c833f9ec7068e28b7f881986261c33c62e590fa08b5",
       "matches_build": true
     }
   ],
@@ -106,5 +120,18 @@
     ],
     "mobileOverflow": false
   },
-  "limitations": "This is deployment and presentation verification, not independent retraining or a selection-study result."
+  "limitations": "This is deployment and presentation verification, not independent retraining or a selection-study result.",
+  "previous_reviewed_deployed_commit": "33e996f6cd2d67d8c254c814331edfb4927768e7",
+  "per_token_visual_update": {
+    "worker_tests_passed": 6,
+    "browser_check": {
+      "tokens": 32,
+      "uniqueVisualUpdates": 32,
+      "seconds": 2.6203999999761582,
+      "outputAndFinalStateMatchBeforeChange": true,
+      "brainImagesDiffer": true,
+      "minimumMessageGapMs": 70.39999997615814
+    },
+    "scope": "Every generated token sends actual state; observation mode waits 60ms per token. No inference equations, model weights or active Mac training sources changed."
+  }
 }
