@@ -1,0 +1,279 @@
+{
+  "scope": "CPU plumbing checks on actual pinned corpora; no capacity or quality evidence",
+  "results": {
+    "flm-fineweb": {
+      "parameters": {
+        "config": {
+          "neurons": 1024,
+          "pools": 128,
+          "embedding": 96,
+          "variant": "flm",
+          "backend": "sparse",
+          "vocabulary": 4101,
+          "tied_readout": true
+        },
+        "trainable_parameters": 600488,
+        "parameter_groups": {
+          "edge_log_gain": 76130,
+          "alpha_logit": 1024,
+          "beta_logit": 1024,
+          "recurrent_logit": 1,
+          "output_bias": 4101,
+          "embedding.weight": 393696,
+          "input.weight": 98304,
+          "input.bias": 1024,
+          "norm.weight": 256,
+          "norm.bias": 256,
+          "readout.weight": 24576,
+          "readout.bias": 96
+        },
+        "edges": 76130,
+        "vocabulary": 4101
+      },
+      "environment": {
+        "platform": "Windows-10-10.0.26200-SP0",
+        "torch": "2.8.0+cpu",
+        "cuda_version": null,
+        "device": "CPU",
+        "gpu_bytes": null,
+        "fp16_dense": false,
+        "fp32_sparse_state": true,
+        "packages": {
+          "numpy": "2.2.6",
+          "scipy": "1.13.1",
+          "tokenizers": "0.22.2",
+          "datasets": "3.5.0",
+          "transformers": "4.57.3"
+        }
+      },
+      "initial_dev": {
+        "nats_per_token": 8.617362976074219,
+        "perplexity": 5526.792875360863,
+        "scored_tokens": 64,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "final_dev": {
+        "nats_per_token": 8.587252140045166,
+        "perplexity": 5362.85703002252,
+        "scored_tokens": 64,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "total_steps": 6,
+      "total_scored_tokens": 192,
+      "elapsed_seconds": 5.0,
+      "gpu_fit_verified": false
+    },
+    "flm-oasst": {
+      "parameters": {
+        "config": {
+          "neurons": 1024,
+          "pools": 128,
+          "embedding": 96,
+          "variant": "flm",
+          "backend": "sparse",
+          "vocabulary": 4101,
+          "tied_readout": true
+        },
+        "trainable_parameters": 600488,
+        "parameter_groups": {
+          "edge_log_gain": 76130,
+          "alpha_logit": 1024,
+          "beta_logit": 1024,
+          "recurrent_logit": 1,
+          "output_bias": 4101,
+          "embedding.weight": 393696,
+          "input.weight": 98304,
+          "input.bias": 1024,
+          "norm.weight": 256,
+          "norm.bias": 256,
+          "readout.weight": 24576,
+          "readout.bias": 96
+        },
+        "edges": 76130,
+        "vocabulary": 4101
+      },
+      "environment": {
+        "platform": "Windows-10-10.0.26200-SP0",
+        "torch": "2.8.0+cpu",
+        "cuda_version": null,
+        "device": "CPU",
+        "gpu_bytes": null,
+        "fp16_dense": false,
+        "fp32_sparse_state": true,
+        "packages": {
+          "numpy": "2.2.6",
+          "scipy": "1.13.1",
+          "tokenizers": "0.22.2",
+          "datasets": "3.5.0",
+          "transformers": "4.57.3"
+        }
+      },
+      "initial_dev": {
+        "nats_per_token": 8.536767398609834,
+        "perplexity": 5098.835190514843,
+        "scored_tokens": 34,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "final_dev": {
+        "nats_per_token": 8.536053713630228,
+        "perplexity": 5095.197526653315,
+        "scored_tokens": 34,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "total_steps": 4,
+      "total_scored_tokens": 78,
+      "elapsed_seconds": 2.187999999994645,
+      "gpu_fit_verified": false
+    },
+    "transformer-fineweb": {
+      "parameters": {
+        "config": {
+          "vocabulary": 4101,
+          "hidden": 96,
+          "intermediate": 256,
+          "layers": 2,
+          "heads": 6,
+          "kv_heads": 2,
+          "architecture": "random_llama_style_control"
+        },
+        "trainable_parameters": 590784,
+        "parameter_groups": {
+          "model.model.embed_tokens.weight": 393696,
+          "model.model.layers.0.self_attn.q_proj.weight": 9216,
+          "model.model.layers.0.self_attn.k_proj.weight": 3072,
+          "model.model.layers.0.self_attn.v_proj.weight": 3072,
+          "model.model.layers.0.self_attn.o_proj.weight": 9216,
+          "model.model.layers.0.mlp.gate_proj.weight": 24576,
+          "model.model.layers.0.mlp.up_proj.weight": 24576,
+          "model.model.layers.0.mlp.down_proj.weight": 24576,
+          "model.model.layers.0.input_layernorm.weight": 96,
+          "model.model.layers.0.post_attention_layernorm.weight": 96,
+          "model.model.layers.1.self_attn.q_proj.weight": 9216,
+          "model.model.layers.1.self_attn.k_proj.weight": 3072,
+          "model.model.layers.1.self_attn.v_proj.weight": 3072,
+          "model.model.layers.1.self_attn.o_proj.weight": 9216,
+          "model.model.layers.1.mlp.gate_proj.weight": 24576,
+          "model.model.layers.1.mlp.up_proj.weight": 24576,
+          "model.model.layers.1.mlp.down_proj.weight": 24576,
+          "model.model.layers.1.input_layernorm.weight": 96,
+          "model.model.layers.1.post_attention_layernorm.weight": 96,
+          "model.model.norm.weight": 96
+        },
+        "source": "Randomly initialized transformer; same data/tokenizer as Colab FLM"
+      },
+      "environment": {
+        "platform": "Windows-10-10.0.26200-SP0",
+        "torch": "2.8.0+cpu",
+        "cuda_version": null,
+        "device": "CPU",
+        "gpu_bytes": null,
+        "fp16_dense": false,
+        "fp32_sparse_state": true,
+        "packages": {
+          "numpy": "2.2.6",
+          "scipy": "1.13.1",
+          "tokenizers": "0.22.2",
+          "datasets": "3.5.0",
+          "transformers": "4.57.3"
+        }
+      },
+      "initial_dev": {
+        "nats_per_token": 8.372541427612305,
+        "perplexity": 4326.61788819826,
+        "scored_tokens": 64,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "final_dev": {
+        "nats_per_token": 8.373671531677246,
+        "perplexity": 4331.5101805402155,
+        "scored_tokens": 64,
+        "examples": 2,
+        "scope": "Fixed small development panel; not a benchmark"
+      },
+      "total_steps": 3,
+      "total_scored_tokens": 96,
+      "elapsed_seconds": 0.3129999999946449,
+      "gpu_fit_verified": false
+    }
+  },
+  "data_cards": {
+    "fineweb": {
+      "source": {
+        "repository": "HuggingFaceFW/fineweb-edu",
+        "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+        "config": "sample-10BT",
+        "license": "ODC-By-1.0; underlying web content rights remain",
+        "provenance": "Classifier-selected web documents; human authorship not guaranteed",
+        "split": "SHA256 document content hash / OASST tree ID: 90% train, 5% dev, 5% test",
+        "dedup": "Whitespace-normalized exact documents; no near-dedup or benchmark decontamination claim",
+        "tokenizer": "Existing BabyLM train-10m native BPE plus seven explicit boundary/role/padding tokens; no new fitting or legacy ID offset"
+      },
+      "kind": "fineweb",
+      "length": 32,
+      "vocabulary": 4101,
+      "pad": 4100,
+      "bos": 4094,
+      "eos": 4095,
+      "documents_or_branches": 76,
+      "counts": {
+        "train": 2442,
+        "validation": 247,
+        "test": 264
+      },
+      "train_scored_tokens": 77076,
+      "repeated_ancestor_messages_possible": false,
+      "files": {
+        "documents.jsonl": "5f2d90fed5e55f71a48177254b09bbe977dbb789d84cf42dc20d1f52fc628b26",
+        "source.json": "bbce3995acb3c89376e4922d82b3803fe9f9db1e85cbf30aabd737eaf897c468",
+        "test.jsonl": "49c6238c2efb714bf9bfde814d48378682334d505ee7662b7c781046b2a09ba5",
+        "tokenizer.json": "43065891adbcd083c16790a079ef418dc8d391a6886ed6a5c36de510f985b864",
+        "train.jsonl": "1fe5d2953f28655b373d3d735bbbbb1ffafc9813ec1345c7a9a2e5bf3c32b553",
+        "validation.jsonl": "bfa9079f6afa174d80e65076d7f2f2b15106dc9c60a9aa5884d811bda38040c1"
+      }
+    },
+    "oasst": {
+      "source": {
+        "repository": "OpenAssistant/oasst1",
+        "revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+        "config": null,
+        "license": "Apache-2.0",
+        "provenance": "Reviewed English, non-synthetic, rank-0 assistant paths",
+        "split": "SHA256 document content hash / OASST tree ID: 90% train, 5% dev, 5% test",
+        "dedup": "Exact serialized conversation branches, not individual messages; no near-dedup or benchmark decontamination claim",
+        "tokenizer": "Existing BabyLM train-10m native BPE plus seven explicit boundary/role/padding tokens; no new fitting or legacy ID offset"
+      },
+      "kind": "oasst",
+      "length": 32,
+      "vocabulary": 4101,
+      "pad": 4100,
+      "bos": 4094,
+      "eos": 4095,
+      "documents_or_branches": 150,
+      "counts": {
+        "train": 2104,
+        "validation": 91,
+        "test": 149
+      },
+      "train_scored_tokens": 62047,
+      "repeated_ancestor_messages_possible": true,
+      "files": {
+        "documents.jsonl": "9060795456c9c6b5d3913443129022e33b4ab635b3f42c4d4a451bec84513c3d",
+        "source.json": "b55d169437650c4a93bd145257c41ad5dd400dcb00946eba5d91d3e5016c5e0d",
+        "test.jsonl": "e3ac10b403710cf4f891405808d11da011d6abdc654520bf6b89ef43a2c41b00",
+        "tokenizer.json": "43065891adbcd083c16790a079ef418dc8d391a6886ed6a5c36de510f985b864",
+        "train.jsonl": "380375d245da76ce322420a0fd08311b7dc284ac424dfc59789893956a63e57b",
+        "validation.jsonl": "3f644cfc9c103f70882ff20b2ef03c5e51463321828d04f57c54834a0a050aa3"
+      }
+    }
+  },
+  "source_sha256": {
+    "colab_capacity.py": "bd6917a6b4b13250610a04f9f17452c8b0d713322ffd0dd5dd63c19682ae61bd",
+    "colab_data.py": "0d20aff4f97de6490fdb5b7f369a63e879a9ce63b02fb449b5edabe6001caaea",
+    "colab_reference.py": "0db482bc42799390ae63bf6f7e398df2ffd072364bd406b6f19215871f9aab95"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "accessed": "2026-09-12",
+  "sources": [
+    {
+      "repository": "HuggingFaceFW/fineweb-edu",
+      "kind": "datasets",
+      "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+      "license": "odc-by"
+    },
+    {
+      "repository": "OpenAssistant/oasst1",
+      "kind": "datasets",
+      "revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+      "license": "apache-2.0"
+    },
+    {
+      "repository": "HuggingFaceTB/SmolLM-135M",
+      "kind": "models",
+      "revision": "1d461723eec654e65efdc40cf49301c89c0c92f4",
+      "license": "apache-2.0"
+    },
+    {
+      "repository": "HuggingFaceTB/SmolLM-360M",
+      "kind": "models",
+      "revision": "59f7ef243ee09a72cbc14cb054393a3e3b771d41",
+      "license": "apache-2.0"
+    },
+    {
+      "repository": "google/gemma-3-270m-it",
+      "kind": "models",
+      "revision": "ac82b4e820549b854eebf28ce6dedaf9fdfa17b3",
+      "license": "gemma"
+    }
+  ]
+}
