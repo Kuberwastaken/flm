@@ -458,3 +458,13 @@ for (const name of ['babylm-result-tables', 'babylm-handoff']) {
     .replaceAll('../reports/babylm/completed-evidence-verification.json', 'babylm-results/completed-evidence-verification.json'));
 }
 console.log('Prepared dataset cards and component attribution.');
+
+await writeFile('public/research/chatflm.md', (await readFile('docs/CHATFLM.md', 'utf8'))
+  .replaceAll('LANGUAGE-CORE-RESULTS.md','language-core-findings.md')
+  .replaceAll('LANGUAGE-DYNAMICS-FINDINGS.md','language-dynamics-findings.md')
+  .replaceAll('FOOD-CORE-PHYSICAL-RESULTS.md','food-core-physical-results.md')
+  .replaceAll('BABYLM-FINDINGS.md','babylm-findings.md')
+  .replaceAll('SELECTION-LANGUAGE-PROTOCOL.md','selection-language-protocol.md')
+  .replaceAll('../public/models/catalog.json','/models/catalog.json')
+  .replaceAll('../tests/catalog.test.js','/research/browser-catalog-test.js'));
+await copyFile('tests/catalog.test.js','public/research/browser-catalog-test.js');

@@ -1,0 +1,20 @@
+{
+  "format": "flm-paper-review-v1",
+  "reviewed_at": "2026-09-12T08:38:01.314836+00:00",
+  "scope": "Completed BabyLM revision, numerical source draft bc45807; compilation and visual review completed before the request to stop extended tests.",
+  "files": {
+    "public/research/flm.pdf": {
+      "sha256": "249d0b27c40e4b01af2a87692cf43b53d432511922b90fa2e7d3f3e4bba0b346",
+      "pages": 12,
+      "rendered_all_pages": true,
+      "review": "Reviewed rendered pages: no clipping, overlapping text or unreadable tables; source compilation had no overflow or unresolved references."
+    },
+    "public/research/data-and-reproduction.pdf": {
+      "sha256": "8c90bb1ca08857be7787319b7b2b21b2c1bf8b3861d359177c873a8996f62ca8",
+      "pages": 6,
+      "rendered_all_pages": true,
+      "review": "Reviewed rendered pages: no clipping, overlapping text or unreadable tables; source compilation had no overflow or unresolved references."
+    }
+  },
+  "paper_inputs_sha256": "96678a55ad963693e67256ddbf83e587f6964c44d9dd2fbd235b1ff1d8009fb4"
+}

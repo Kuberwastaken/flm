@@ -237,6 +237,7 @@ def main():
     files += sorted((ROOT / 'reports/babylm').glob('samples-*.json'))
     for folder in ('tables-v1', 'figures-v1'):
         files += sorted((ROOT / 'reports/babylm' / folder).glob('*'))
+    files += [ROOT / name for name in ('scripts/babylm_paper_data.py', 'reports/babylm/paper-inputs-v1.json', 'reports/babylm/paper-review-v1.json', 'docs/CHATFLM.md', 'scripts/export_browser_catalog.py', 'public/models/catalog.json')]
     # Preserve the project's overview and its actual embedded figures together.
     # The source archive remains a paper snapshot, not a runnable repository.
     readme = (ROOT / 'README.md').read_text(encoding='utf8')

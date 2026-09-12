@@ -2,14 +2,14 @@
 
 `flm.tex` contains the audited language topology and retrained slow-state
 comparisons, subset losses, completed two-seed WikiText baseline comparison,
-isolated CPU measurements and acute mechanism controls.
+isolated CPU measurements, acute mechanism controls and the completed twelve-fit BabyLM comparison.
 `data-and-reproduction.tex` records source transformations, completed BabyLM
-preparation and reproduction boundaries. `local-learning.tex` reports fifteen
+evaluation, overlap analysis, recovery and reproduction boundaries. `local-learning.tex` reports fifteen
 learning-rule runs and forty physical choice replays, including negative results.
 `wiring-controls.tex` adds the complete sixty-run topology/context experiment
 and exact-versus-local gradient diagnostics. `closed-loop.tex` adds 27 physical
 pose-feedback conditions, a scripted reference and an exact repeat. All five
-remain working reports for a continuing research program; larger-data training,
+remain working reports for a continuing research program; circuit-selection language training,
 language-to-control transfer and learned gait policies remain later stages.
 
 ```sh
@@ -38,7 +38,7 @@ build intermediates to ignored `work/papers/`.
 
 Render every PDF page and inspect it before copying reviewed PDFs into
 `public/research/`. Check compiler logs for missing citations and overflow. The
-completed-topology revision has eight methods pages and five data pages. Preserve
+completed-BabyLM revision has twelve methods pages and six data pages. Preserve
 the working-report label while the larger program continues.
 
 The local-learning note has four reviewed pages. Its tables are generated from
@@ -50,7 +50,7 @@ generating scripts and published figure CSVs; raw corpora and checkpoints are
 excluded. Re-running numerical studies requires the repository and environments
 described in the main README.
 
-The source archive also includes the repository README, all seven of its embedded
+The source archive also includes the repository README, its embedded
 figures, available SVG versions, component notices, and the completed WikiText
 test report used by `docs/figures/readme_figures.py`. That chart can be regenerated
 with NumPy and Matplotlib without loading a checkpoint. The README is a project
@@ -104,3 +104,5 @@ ZIP includes the fixed controllers and every body/neural observation; its own
 audit runs from a fresh extraction without repository access. The paper source
 ZIP contains the compact summary and generated tables, without duplicating that
 45.9 MB record archive.
+
+The BabyLM table generator (`python scripts/babylm_paper_data.py`) audits the frozen table payload and copies hash-verified measured figures before a paper build. Its exact inputs are in `reports/babylm/paper-inputs-v1.json`.
