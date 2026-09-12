@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "OMP_THREAD_LIMIT": null,
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "KMP_BLOCKTIME": "0"
+  },
+  "result": {
+    "worker": 0,
+    "started": 108284.751283333,
+    "ended": 108291.71202475,
+    "timed_updates": 40,
+    "final_state_sha256": "450d2852a5d413923741b91bab333e448ae7c4d7737ab6d7d394edff958704a9",
+    "optimizer_tensors_sha256": "b6fa17343974b328433299601fae9eae1500062d072a0cb6696716b42460abf1",
+    "parameter_sha256": "93bbea30ac0e19ddd8cd54e22aa5c3b96fe755ff1b3ab7980342bf3368ed6a3e",
+    "threads": 4
+  },
+  "exact_match": {
+    "final_state_sha256": true,
+    "optimizer_tensors_sha256": true,
+    "parameter_sha256": true
+  },
+  "seconds_per_update": 0.17401853542505705,
+  "scope": "Bounded synthetic diagnostic under active eight-worker contention; waiting policy only, four configured threads retained. Not sustained throughput."
+}

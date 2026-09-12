@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_WAIT_POLICY": null,
+    "KMP_BLOCKTIME": null
+  },
+  "result": {
+    "worker": 0,
+    "started": 108239.422337083,
+    "ended": 108250.633140291,
+    "timed_updates": 40,
+    "final_state_sha256": "e7048e884b7faee11e211e81ad3a60d3a8036f995f5f34f06b62560852e3d531",
+    "optimizer_tensors_sha256": "7224132c9dac8195e262c75870ef0a011396193ab10c413bb7415fc59f990d39",
+    "parameter_sha256": "912deea3e7e853c7ed34dd83ddf0d8b096d70ad7709f8ed77373cf56a2e2061a",
+    "threads": 4
+  },
+  "exact_match": {
+    "final_state_sha256": false,
+    "optimizer_tensors_sha256": false,
+    "parameter_sha256": false
+  },
+  "seconds_per_update": 0.280270080199989,
+  "scope": "Bounded same synthetic 50-update diagnostic under active eight-worker contention; not an official fit or sustained throughput estimate."
+}
