@@ -1,6 +1,6 @@
 # ChatFLM: language through fly-derived wiring
 
-FLM is trained from scratch on top of a connectome-derived recurrent core. **No pretrained or overfitted transformer supplies FLM's answers or its displayed neural activity.** Learned text embeddings drive the selected fly graph; its fast and slow state produces next-token probabilities through a learned readout. The brain is a 1,024-neuron subset, not an intact fly brain. “From scratch” describes the training origin, not general foundation-model capability.
+FLM is trained from scratch on top of a connectome-derived recurrent core. **No pretrained or overfitted transformer supplies FLM's answers or its displayed neural activity.** Learned text embeddings drive the selected fly graph; its fast and slow state produces next-token probabilities through a learned readout. The primary FLM uses a 1,024-neuron subset; KC previews use their own 487- or 540-neuron subsets. None is an intact fly brain. “From scratch” describes the training origin, not general foundation-model capability.
 
 The useful feature is inspectability: compare predictions, replay an input with a neuron silenced, inspect fast versus slow state, and measure a separate local readout update. [Mechanism controls](LANGUAGE-CORE-RESULTS.md), [training-induced dynamics](LANGUAGE-DYNAMICS-FINDINGS.md) and [physical reference experiments](FOOD-CORE-PHYSICAL-RESULTS.md) answer different questions. The visible typing motion is a designed illustration using the existing articulated body geometry.
 
@@ -10,7 +10,7 @@ The brain receives actual fast/slow state after every generated token. With **Sl
 
 ## Models and the automatic default
 
-The selector contains all **18 completed primary neural checkpoints**: FLM, GRU and transformer, each with seeds 42/43, on WikiText-2 and BabyLM 10M/100M. The earlier AMI model is also available. The separately trained GRU and transformer are comparison architectures; selecting them does not create anatomical neuron activity. The topology and computation-control models remain available in their separately documented inference bundles.
+The selector contains all **18 completed primary neural checkpoints**: FLM, GRU and transformer, each with seeds 42/43, on WikiText-2 and BabyLM 10M/100M. The earlier AMI model and [four KC research previews](SELECTION-PREVIEWS.md) are also available. The previews cover both candidate sides and seeds, have completed validation selection, and remain labeled pending full held-out evaluation. They are excluded from the primary automatic-default ranking. The separately trained GRU and transformer are comparison architectures; selecting them does not create anatomical neuron activity. The topology and computation-control models remain available in their separately documented inference bundles.
 
 Opening ChatFLM without a model query selects **BabyLM 100M FLM, seed 43**, the lowest fixed-panel validation BPB among the four completed BabyLM FLM fits (**1.931862680356**). These candidates share validation text and tokenizer. Test loss and attractive continuations are not selection criteria; WikiText losses are not mixed into this ranking. This selects the strongest measured FLM candidate on that panel, not the strongest architecture overall. Explicit model links are respected, including the older `?model=babylm` and `?model=wikitext` releases.
 

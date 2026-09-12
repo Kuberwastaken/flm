@@ -4,14 +4,14 @@ The user authorized making **Kuberwastaken/flm** public today, targeting **20:30
 
 ## What is available
 
-- ChatFLM with 18 completed primary WikiText/BabyLM checkpoints plus legacy AMI; the default remains BabyLM 100M FLM, seed 43, selected by validation loss.
+- ChatFLM with 18 completed primary WikiText/BabyLM checkpoints plus legacy AMI and [four KC research previews](https://github.com/Kuberwastaken/flm/blob/main/docs/SELECTION-PREVIEWS.md); the default remains BabyLM 100M FLM, seed 43, selected by validation loss.
 - Actual recurrent-state visualization, local output adaptation, acute neuron interventions and an articulated typing fly. Typing is authored illustration, not a learned motor policy.
 - Completed language baselines, topology and computation controls, recurrent pulse diagnostics, and separate sensory/physical studies with recorded behavior, failures and provenance.
 - Research notes, working papers, source archives, dataset/model cards and reproducible records. These are research artifacts, not peer-reviewed publications or a claim of reliable chatbot performance.
 
 ## What remains pending
 
-All **128 native Mac training fits are complete**, at 3,000 updates each. All 128 checkpoint selections were frozen at 15:18 UTC, before held-out scoring. At the 15:44 UTC check, the healthy supervisor was processing held-out batches. The [verified selection milestone](https://github.com/Kuberwastaken/flm/blob/main/reports/selection-language/mac-v1/selection-milestone-v1.json) records the complete inventory; no held-out summary is available yet. Neither partial completions nor training loss establishes an anatomical finding. No checkpoint from this cohort is promoted into the browser catalog before the declared evaluation and release review.
+All **128 native Mac training fits are complete**, at 3,000 updates each. All 128 checkpoint selections were frozen at 15:18 UTC, before held-out scoring. At the 15:44 UTC check, the healthy supervisor was processing held-out batches. The [verified selection milestone](https://github.com/Kuberwastaken/flm/blob/main/reports/selection-language/mac-v1/selection-milestone-v1.json) records the complete inventory; no held-out summary is available yet. Neither partial completions nor training loss establishes an anatomical finding. The user subsequently authorized releasing completed models while evaluation continues. All four measured KC candidates are now available as clearly labeled previews after checkpoint and inference checks; the complete primary default is preserved. Preview availability does not establish a held-out finding or change the scientific gate.
 
 Public release may precede this validation, as explicitly requested. Keep the unchanged [interpretation and stopping rule](https://github.com/Kuberwastaken/flm/blob/main/docs/ANATOMICAL-PRIOR-DECISION.md), including every official/filtered comparison. The estimated training completion is not an ETA for fully audited findings. Scaling, alternate learning rules, SCAN and food adaptation remain deferred under [the current plan](https://github.com/Kuberwastaken/flm/blob/main/docs/PLAN.md).
 

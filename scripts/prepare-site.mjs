@@ -466,7 +466,8 @@ await writeFile('public/research/chatflm.md', (await readFile('docs/CHATFLM.md',
   .replaceAll('BABYLM-FINDINGS.md','babylm-findings.md')
   .replaceAll('SELECTION-LANGUAGE-PROTOCOL.md','selection-language-protocol.md')
   .replaceAll('../public/models/catalog.json','/models/catalog.json')
-  .replaceAll('../tests/catalog.test.js','/research/browser-catalog-test.js'));
+  .replaceAll('../tests/catalog.test.js','/research/browser-catalog-test.js')
+  .replaceAll('SELECTION-PREVIEWS.md','/research/selection-previews.md'));
 await copyFile('tests/catalog.test.js','public/research/browser-catalog-test.js');
 
 // Publish the prospective allocation rule separately from the frozen study protocol.
@@ -523,3 +524,5 @@ for (const name of ['ARCHITECTURE', 'DATA-STATUS', 'RESEARCH', 'PUBLIC-RELEASE']
 
 await copyFile('reports/public-release-review-v1.json', 'public/research/public-release-review-v1.json');
 await copyFile('reports/public-release-v1.json', 'public/research/public-release-v1.json');
+
+await writeFile('public/research/selection-previews.md', (await readFile('docs/SELECTION-PREVIEWS.md','utf8')).replaceAll('../reports/','https://github.com/Kuberwastaken/flm/blob/main/reports/').replaceAll('../scripts/','https://github.com/Kuberwastaken/flm/blob/main/scripts/').replace(/\]\(([A-Z][A-Z0-9-]+\.md)\)/g, ']('+ 'https://github.com/Kuberwastaken/flm/blob/main/docs/'+'$1)'));
