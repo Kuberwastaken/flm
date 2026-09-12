@@ -362,3 +362,14 @@ extraction. All 95 archive payload hashes and deterministic archive rebuilding
 pass. Frozen language and physical source/input identities remain unchanged.
 `reports/readme-review.json` records this review. The 50 JavaScript checks and
 production build pass, with the existing 564.28 kB JavaScript chunk warning.
+
+
+## Complete catalog and conversation workspace — 12 September 2026
+
+The release adds all eighteen selected primary language checkpoints (twelve BabyLM and six WikiText) alongside the earlier AMI model. `scripts/export_browser_catalog.py` checks each source checkpoint against its frozen selection hash. The automatic FLM default uses the lowest shared BabyLM validation BPB: 100M, seed 43. GRU and transformer run independent browser implementations and expose no anatomical neuron state.
+
+Before the request to stop extended tests, all **99 JavaScript checks passed**. The eighteen package fixtures compared every logit at prefix lengths 1, 12, 97 and 130, including beyond the transformer's attention window; the largest observed absolute logit difference was **0.000003814697265625**. FLM fast/slow states and package hashes were checked. Worker tests covered deterministic generation, scoring, local adaptation, clearing and cancellation for legacy packages and all three new default-scale architectures. Chat tests covered explicit roles/system context, UTF-8 history trimming and streamed turn stopping. These are correctness checks, not new language benchmarks.
+
+Direct local browser inspection confirmed a 1,440 × 960 layout with equal left/right columns, brain above the large typing fly, and light/dark rendering. A real 48-token FLM reply to original garden text completed with actual neural state and was retained unedited; its weak coherence remains visible in the saved local conversation. The system context persisted into the next-turn form. The narrower initial browser viewport stacked the workspace. The first release's Pages build and deployment succeeded at `9ea0f9e`, run `34684013085`.
+
+Further extended interaction testing was stopped at the user's request. The later copy/order changes and input-inspector auto-population use the normal publication build; no additional manual end-to-end sweep or research fits are claimed here. Existing earlier validation entries above describe their dated releases, not this entire new interface. The registered selection-language training remains separate and running.

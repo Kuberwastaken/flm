@@ -342,7 +342,7 @@ await copyFile('docs/LOCAL-LEARNING-PROTOCOL.md', 'public/research/local-learnin
 await copyFile('docs/WIRING-LEARNING-PROTOCOL.md', 'public/research/wiring-learning-protocol.md');
 await copyFile('docs/LANGUAGE-TOPOLOGY-PROTOCOL.md', 'public/research/language-topology-protocol.md');
 await copyFile('docs/WIRING-RESULTS.md', 'public/research/wiring-results.md');
-await copyFile('docs/INFERENCE-BUNDLE.md', 'public/research/inference-guide.md');
+await writeFile('public/research/inference-guide.md', (await readFile('docs/INFERENCE-BUNDLE.md','utf8')).replaceAll('CHATFLM.md','chatflm.md'));
 await copyFile('docs/CLOSED-LOOP-PROTOCOL.md', 'public/research/closed-loop-protocol.md');
 await copyFile('docs/CLOSED-LOOP-REPRODUCTION.md', 'public/research/closed-loop-reproduction.md');
 await mkdir('public/research/subset-audit', { recursive: true });
