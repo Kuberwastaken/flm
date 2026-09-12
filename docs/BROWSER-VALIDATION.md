@@ -373,3 +373,14 @@ Before the request to stop extended tests, all **99 JavaScript checks passed**. 
 Direct local browser inspection confirmed a 1,440 × 960 layout with equal left/right columns, brain above the large typing fly, and light/dark rendering. A real 48-token FLM reply to original garden text completed with actual neural state and was retained unedited; its weak coherence remains visible in the saved local conversation. The system context persisted into the next-turn form. The narrower initial browser viewport stacked the workspace. The first release's Pages build and deployment succeeded at `9ea0f9e`, run `34684013085`.
 
 Further extended interaction testing was stopped at the user's request. The later copy/order changes and input-inspector auto-population use the normal publication build; no additional manual end-to-end sweep or research fits are claimed here. Existing earlier validation entries above describe their dated releases, not this entire new interface. The registered selection-language training remains separate and running.
+
+
+## Video playback and theme repair - 12 September 2026
+
+The leading physical-trial illustration is now a native video player with controls. All three recordings provide VP9 WebM and the original H.264 MP4; the README uses a 96-frame, eight-second animated GIF preview with links to the player and MP4. These are format derivatives of the existing recordings, not new simulations. `scripts/prepare_demo_media.py` and `public/research/demo-media.json` retain commands, tool version and source/output hashes.
+
+The architecture SVG, all select controls and their option menus, dialogs, placeholders, chart legends and live chart colors now follow theme tokens. Light and dark color schemes are explicit. Fixed-color published research figures retain their original light backgrounds.
+
+Targeted Chrome checks on Windows loaded the built local preview, checked all 24 selects in both themes, and measured at least 12.69:1 text contrast for enabled options and 13.96:1 for architecture labels. Both codecs of all three recordings advanced playback and decoded frames. The README player anchor opens the Research page, and a 390-pixel chat viewport has no horizontal overflow. Screenshots of both open model menus, architecture diagrams and playing video were inspected. This is a bounded presentation check, not a claim about every OS-native menu or browser engine; no training or extended interaction campaign was run.
+
+Re-run `scripts/check_browser_presentation.cjs` with Playwright available to Node. `FLM_PREVIEW_URL` chooses a preview or published origin, and `FLM_BROWSER_CHANNEL` selects the installed browser channel (default Chrome). Screenshots and detailed measurements go to ignored `work/presentation-review/`.

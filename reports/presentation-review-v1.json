@@ -1,0 +1,333 @@
+{
+  "base": "http://127.0.0.1:5181/",
+  "themes": [
+    {
+      "theme": "light",
+      "scheme": "light",
+      "architectureContrast": 13.964104017270817,
+      "options": [
+        {
+          "id": "model",
+          "controlContrast": 13.964104017270817,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "conversation",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "mode",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "state-mode",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "neuron",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "wiring-task",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "wiring-delay",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "wiring-step",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "choice-replay-method",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "choice-replay-step",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "choice-replay-cue",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "feedback-scenario",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "food-replay-origin",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "food-replay-seed",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "food-replay-case",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "food-replay-state",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "babylm-scale",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "babylm-seed",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "babylm-component",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "babylm-step",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "comparison-seed",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "comparison-step",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "sample-checkpoint",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        },
+        {
+          "id": "sample-prompt",
+          "controlContrast": 14.668203819599329,
+          "optionContrast": 14.668203819599329
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "scheme": "dark",
+      "architectureContrast": 14.379111723222007,
+      "options": [
+        {
+          "id": "model",
+          "controlContrast": 13.634434928905703,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "conversation",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "mode",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "state-mode",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "neuron",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "wiring-task",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "wiring-delay",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "wiring-step",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "choice-replay-method",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "choice-replay-step",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "choice-replay-cue",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "feedback-scenario",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "food-replay-origin",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "food-replay-seed",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "food-replay-case",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "food-replay-state",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "babylm-scale",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "babylm-seed",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "babylm-component",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "babylm-step",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "comparison-seed",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "comparison-step",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "sample-checkpoint",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        },
+        {
+          "id": "sample-prompt",
+          "controlContrast": 12.695346587626904,
+          "optionContrast": 12.695346587626904
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "name": "closed-loop",
+      "extension": "webm",
+      "currentTime": 0.213449,
+      "duration": 8,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 10
+    },
+    {
+      "name": "closed-loop",
+      "extension": "mp4",
+      "currentTime": 0.210349,
+      "duration": 8,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 9
+    },
+    {
+      "name": "learned-choice",
+      "extension": "webm",
+      "currentTime": 0.23877,
+      "duration": 4,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 10
+    },
+    {
+      "name": "learned-choice",
+      "extension": "mp4",
+      "currentTime": 0.224828,
+      "duration": 4,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 9
+    },
+    {
+      "name": "physical-calibration",
+      "extension": "webm",
+      "currentTime": 0.241263,
+      "duration": 4,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 10
+    },
+    {
+      "name": "physical-calibration",
+      "extension": "mp4",
+      "currentTime": 0.21758,
+      "duration": 4,
+      "width": 480,
+      "height": 368,
+      "decodedFrames": 10
+    }
+  ],
+  "checked_at": "2026-09-12T11:42:23.023442+00:00",
+  "scope": "Local production preview in Windows Chrome; actual playback, theme contrast, visual review, and mobile overflow. Not a full accessibility audit or cross-browser guarantee.",
+  "gif": {
+    "frames": 96,
+    "distinct_frames": 96,
+    "duration_ms": 8000
+  },
+  "source_sha256": {
+    "index.html": "5fd6aa5451ad1bebfa03220e9903a6a224bc9cb2a2a5e3c8a5ea4b42ffbff77b",
+    "web/app.js": "cd04de22408c6a2ffa5141a19c2f8864173ad33810880eb81c4be4099f888ae8",
+    "web/style.css": "20de5f1130dd74e48b976d6a8fc64e394c44c83e32c3b288260f08debb06ef3d",
+    "web/workspace.css": "049c4f86d00f3279d248eae66f083c3541fa3fd63fdc4d8c64e630a29cce2268",
+    "web/research.js": "7ad51f6f74f643356306313bb9a1bcb4decab0fe9ca8710b8498af1986258fd4",
+    "web/babylm-study.js": "26f583e19a7de4ff3a07dece5ece4cbbc5096d94003da56bd8c67173d58aba30",
+    "web/choice-replay.js": "6dbfd1f0675bce85b6b011b23d35242e07e0ff146d5fd34697a14a1de013d856",
+    "scripts/check_browser_presentation.cjs": "e6ca3bbb764b0067be032936b6bcf627987ea735effa64b69b659889110eb4c7",
+    "public/research/demo-media.json": "9439953cf9c985c4a4863ddfe9cae7ac5ad06203129aa98a92a91cd6b154b725"
+  }
+}
