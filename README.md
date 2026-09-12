@@ -94,6 +94,8 @@ The trained cores respond and settle differently from their shared initializatio
 
 Retrained controls then ask whether those mechanisms matter for prediction. In this setup, retaining learned recurrent dynamics, lateral communication and temporal state lowers held-out loss relative to their corresponding controls. A separate no-slow comparison supports keeping the slow branch. The [complete mechanism results](#retrained-language-mechanisms) quantify these effects and their unequal parameter allocations; they do not attribute every benefit to biological topology.
 
+The [focused synthesis of where prediction capability resides](docs/PREDICTIVE-COMPUTATION.md) connects these controls and dynamics without treating them as an additive decomposition.
+
 This creates a practical research workflow: train a defined model, observe the state, intervene on a mechanism, then retrain an appropriate control when a causal performance claim needs it. The browser exposes acute interventions; the studies distinguish those from the behavior of a model trained without the mechanism.
 
 ## Additional dynamics and behavior studies

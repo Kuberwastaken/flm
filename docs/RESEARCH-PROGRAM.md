@@ -14,7 +14,7 @@ Passing permits one independently declared confirmation of the same selection ru
 
 ## Active synthesis: where prediction capability resides
 
-The completed [computation controls](LANGUAGE-CORE-RESULTS.md) show a substantially larger cost of removing temporal state than of removing lateral communication or freezing recurrent dynamics. Consolidate this finding with the existing [pulse diagnostics](LANGUAGE-DYNAMICS-FINDINGS.md), distinguishing training effects, acute interventions and retrained controls. Explain what remains in the lexical interfaces and per-neuron state when lateral communication is absent. Parameter allocations differ, and these are not interchangeable factorial ablations.
+The completed [computation controls](LANGUAGE-CORE-RESULTS.md) show a substantially larger cost of removing temporal state than of removing lateral communication or freezing recurrent dynamics. The [focused synthesis](PREDICTIVE-COMPUTATION.md) connects this finding with the existing [pulse diagnostics](LANGUAGE-DYNAMICS-FINDINGS.md), distinguishing training effects, acute interventions and retrained controls. Explain what remains in the lexical interfaces and per-neuron state when lateral communication is absent. Parameter allocations differ, and these are not interchangeable factorial ablations.
 
 Preserve the completed [topology records](LANGUAGE-TOPOLOGY-PROTOCOL.md), [subset audit](SUBSET-AUDIT.md), [KC-centered selections](CIRCUIT-SELECTION.md) and [60-run sensory study](WIRING-RESULTS.md). Selecting missing seed cells cannot by itself restore excluded partner drive or modulatory learning. Keep language, browser adaptation, sensory decisions and physical motion distinct.
 
