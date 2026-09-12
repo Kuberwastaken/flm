@@ -110,9 +110,10 @@ A modified or incomplete bundle is rejected before its checkpoint is loaded.
 These hashes detect accidental changes; obtain the archive and release record
 from the project to establish their provenance.
 
-ChatFLM's browser runtime remains FLM-only. This Python bundle is the way to try
-GRU and transformer with your own prompts. It is a continuation interface,
-separate from the browser's conversation storage, adaptation and 3D views.
+ChatFLM also runs the primary FLM, GRU and transformer checkpoints in its
+browser selector. This Python bundle remains a continuation interface for
+command-line comparisons. See the [ChatFLM guide](CHATFLM.md) for the automatic
+FLM default, conversation history, system context, adaptation and 3D views.
 
 ## Reproduce training and scoring
 
