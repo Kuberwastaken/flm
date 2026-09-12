@@ -1,73 +1,26 @@
-# Continuing FLM research program
+# Focused FLM research program
 
-This extends the compact WikiText release. WikiText is a calibration experiment,
-not the endpoint. Preserve its frozen protocol and report before moving on.
+Priority revised 12 September 2026 at the user's request. **The next contribution is a sharper finding, not a larger experiment inventory.** The [current plan](PLAN.md) and [anatomical-prior decision](ANATOMICAL-PRIOR-DECISION.md) govern execution; the broader possibilities below are deferred.
 
-## Current priority: finish the registered comparison, then test selection
+## Active priority: a decision about retained topology
 
-Status checked 11 September 2026. The six BabyLM 10M fits are complete;
-the first 100M fit is running. Keep all twelve registered fits and their common
-held-out gate intact. After that queue finishes and its trainer exits, measure
-selection costs and freeze a complete selection comparison **before further
-dataset or model scaling**. The graph question is now which cells and pathways
-survive, not simply how many neurons fit in memory.
+The property at issue is the measured arrangement of connections after selection and modeling, beyond the degrees, signs and allocation retained by the rewired controls. Task-relevant recurrent mixing and memory are a possible explanation to test, not a recovered biological mechanism. The original subset's topology comparison does not establish an anatomical advantage; useful engineered slow/temporal state is a separate result.
 
-The language topology study completed on 10 September. All eight new fits
-finished before all ten checkpoint selections were frozen and the new controls
-were test scored. The [complete report](../public/research/language-topology-results.json)
-shows lower loss for all six rewired fits: measured minus rewired averages
-+0.001559 bits/byte, with three of six conditional article intervals including
-zero. No measured-wiring advantage is demonstrated in this subset and setup.
-The retrained slow-state comparison separately favors retaining slow state by
-0.010999 bits/byte on average. Six wiring contrasts share two measured references;
-the design does not estimate a topology-by-slow-state interaction.
+All twelve BabyLM fits, held-out evaluations and 288 fixed continuations are complete and published. The current study registers 128 fits for two operational KCg-d groups (487/540 neurons), including all ranked/random selections, all rewires and both training seeds. Training is running. Keep its identity, budget, validation gates and held-out analysis unchanged.
 
-The [declared protocol](LANGUAGE-TOPOLOGY-PROTOCOL.md), source identities and
-checkpoint selections remain frozen. The standalone score archive reproduces
-all arithmetic without training-code imports. The ten-model inference archive
-matches its selected tensors and buffers, all forty source continuations, and
-one fresh-archive CLI replay per condition. These checks establish the published
-record's reproducibility boundaries, not independent retraining.
+A dated interpretation rule was adopted after training began and before selection-language held-out results. For the candidate's own wiring controls it requires an equal-four-cell mean gain of at least 0.005 BPB, consistent directions and existing conditional-interval bounds across both group/seed combinations and both declared analyses, with every individual rewire contrast favoring the candidate. The [full rule](ANATOMICAL-PRIOR-DECISION.md) fixes the exact conjunction, its historical rationale and its limitations. It is an investment criterion, not a new significance test or the original preregistration.
 
-The separate [language computation study](LANGUAGE-CORE-RESULTS.md) is complete.
-All six new fits and eight selections finished before scoring the new controls.
-Mean test BPB is 1.974383 for full FLM, 1.980180 for fixed recurrent dynamics,
-1.980773 without lateral recurrence, and 2.098893 without temporal state.
-These comparisons support the usefulness of the implemented recurrent mechanisms
-in this setup; they do not establish an anatomical-topology advantage. Preserve
-their [protocol](LANGUAGE-CORE-PROTOCOL.md) and
-[identity](../reports/language-core/identity.json). The registered BabyLM queue
-has resumed without changing that completed small-corpus study.
+Passing permits one independently declared confirmation of the same selection rule. A valid completed study that fails the gate ends anatomical subset searches in this program, including small and uncertain gains. All outcomes are published; stopping does not prove equivalence or refute useful biological structure generally. Technical failures retain their original recovery rules and do not constitute scientific negatives.
 
-The [completed 60-run cue/context study](WIRING-RESULTS.md) gives mixed results
-and cannot answer the language claim. Keep its evidence separate from language,
-browser adaptation and physical motor control.
+## Active synthesis: where prediction capability resides
 
-The [subset audit](SUBSET-AUDIT.md) explains the computational selection of
-1,024 neurons and quantifies the large boundary loss: 79.42% of incoming and
-73.96% of outgoing raw contacts. No intact learning circuit is established.
-The literal cell-type audit contains zero of 4,064 eligible Kenyon cells and
-48 MBONs. Interpret the topology result in that restricted setting. The
-[selection experiment](SELECTION-LANGUAGE-COORDINATOR.md) compares operational
-KC-centered candidates, contact-ranked subsets, uniform random subsets and
-subsets matched on superclass, side and fast sign. Within every selected set,
-three degree/sign-constrained rewires separately test retained topology.
+The completed [computation controls](LANGUAGE-CORE-RESULTS.md) show a substantially larger cost of removing temporal state than of removing lateral communication or freezing recurrent dynamics. Consolidate this finding with the existing [pulse diagnostics](LANGUAGE-DYNAMICS-FINDINGS.md), distinguishing training effects, acute interventions and retrained controls. Explain what remains in the lexical interfaces and per-neuron state when lateral communication is absent. Parameter allocations differ, and these are not interchangeable factorial ablations.
 
-All 64 original graphs and 192 rewires are exported and audited; no selection
-language fits or results exist. A chosen candidate group requires all eight
-selections, four wiring versions and two training seeds: 64 fits. Actual costs,
-the chosen complete groups, common exposure and protocol remain to be frozen
-before fitting. Group choice must use anatomy and measured cost, not language
-performance. Node counts match within a group; edges and parameter counts need
-not match across selectors and must remain visible in interpretation.
+Preserve the completed [topology records](LANGUAGE-TOPOLOGY-PROTOCOL.md), [subset audit](SUBSET-AUDIT.md), [KC-centered selections](CIRCUIT-SELECTION.md) and [60-run sensory study](WIRING-RESULTS.md). Selecting missing seed cells cannot by itself restore excluded partner drive or modulatory learning. Keep language, browser adaptation, sensory decisions and physical motion distinct.
 
-The [KC-centered audit](CIRCUIT-SELECTION.md) retains entire declared seed
-populations and reports role-specific boundary loss. Preserving seed contacts
-does not restore missing input-partner drive, modulatory dynamics or a complete
-functional circuit. The negative historical subset result neither refutes
-biological topology in general nor guarantees a better result after selection.
-SCAN, alternative learning rules and the food-response extension retain their
-separate studies and controls; they do not displace the selection question.
+## Deferred research possibilities
+
+The following retain useful prior plans and source discussions. They are not launch instructions. Do not run new corpus, capacity, learning-rule or physical sweeps simply because a queue has finished. Correct material product defects and publish the focused findings while waiting; no additional long test campaigns are requested.
 
 ## 1. Preserve the completed shared language reference
 
@@ -90,8 +43,7 @@ The official BabyLM 2026 Strict-Small and Strict corpora have been acquired at
 immutable revisions with their common development and test partitions. Their
 source-indexed caches, train-fitted shared tokenizer and overlap audit are ready;
 see [data status](DATA-STATUS.md) and the [evaluation declaration](BABYLM-EVALUATION.md).
-The registered training comparison is active; all twelve fits must finish before
-its shared checkpoint selection and test comparison.
+All twelve fits, checkpoint selections and held-out evaluations have completed; the [published findings](BABYLM-FINDINGS.md) retain all scores and output failures.
 The six components
 cover spoken language, child-directed speech, books, subtitles and simple
 encyclopedic text. Audit actual words, UTF-8 bytes, line/document boundaries and
@@ -106,8 +58,7 @@ at fixed model size, then capacity effects at fixed data exposure. Use the offic
 GPT-2-family BabyLM baselines as separately labeled external references when useful;
 their parameter counts, tokenizers and training budgets differ from FLM's.
 
-Proceed to a bounded, reproducibly selected web corpus after the mixed-data and
-selection studies.
+A future web-corpus study would need a specific justified question and a separately bounded decision; completion of the current studies does not automatically launch it.
 FineWeb/FineWeb-Edu provide an auditable route to larger pretraining data. Preserve
 document identities, URL/domain split policies, exact and near-duplicate audits,
 and source-crawl dates. FineWeb-Edu's text is web-derived, but its quality filter

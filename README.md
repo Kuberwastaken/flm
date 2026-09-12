@@ -189,6 +189,8 @@ ChatFLM's interactive body animation is also separate: it illustrates aggregate 
 
 ## Current selection study
 
+**A bounded test of what survives the biological transformation.** The hypothesis is that the measured connection arrangement provides a useful recurrent prior beyond its matched degree/sign constraints. This study is a decision point: [a dated continuation rule](docs/ANATOMICAL-PRIOR-DECISION.md) requires a minimum gain and consistency across the declared groups, seeds and rewires before one confirmation study. A valid result that fails that gate ends further anatomical subset searches in this program. Broader scaling and other prepared experiments are deferred while we develop the strongest existing mechanism finding: where predictive capability resides in the model.
+
 The first wiring test used a connectivity-ranked subset with no KC-prefix cells. The next question is whether a different selection rule helps: **operational KC-centered candidates versus contact ranking and matched random selections**, with rewiring tested separately within every selected node set.
 
 The [registered study](docs/SELECTION-LANGUAGE-PROTOCOL.md) is running **128 fits** across `KCg-d-L-t5` and `KCg-d-R-t5`, at **3,000 updates per fit**. Each side includes the candidate, ranked and random controls, three rewires and both training seeds. The [64-graph cost pilot](reports/selection-pilot/timing.json) informed the frozen budget. All fits must finish before validation selection and the all-condition test gate; **results remain pending**.

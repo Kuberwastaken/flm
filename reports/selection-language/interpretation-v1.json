@@ -1,0 +1,43 @@
+{
+  "format": "flm-anatomical-prior-interpretation-v1",
+  "recorded_at": "2026-09-12T09:04:07.742710+00:00",
+  "author": "Kuber Mehta",
+  "timing": "Adopted after training began, before selection-language validation selection and held-out results; not original preregistration.",
+  "original_identity_sha256": "f9fcffed62db3b9da22e58f1df8dd3f9a47182eed5ff8a5c3dbbe773e75768c3",
+  "decision_document_sha256": "1dca3b2cbceed06fd5e5282151106e42dc1068af03b06b162e4a87603a751c2b",
+  "artifact_presence": {
+    "reports/selection-language/study-selection.json": false,
+    "reports/selection-language/test-summary.json": false
+  },
+  "observation_boundary": "Only training condition names/progress and output presence inspected this turn; no selection-language training metrics, validation scores or held-out scores read for this decision. Historical WikiText, BabyLM, topology and computation results were already known.",
+  "primary_contrast": "candidate-measured-minus-rewires",
+  "groups": [
+    "KCg-d-L-t5",
+    "KCg-d-R-t5"
+  ],
+  "training_seeds": [
+    42,
+    43
+  ],
+  "rewiring_seeds": [
+    101,
+    103,
+    107
+  ],
+  "analysis_subsets": [
+    "official",
+    "overlap_filtered"
+  ],
+  "all_required": {
+    "complete_original_inventory": 128,
+    "equal_four_cell_mean_bpb_at_most": -0.005,
+    "each_four_cell_mean_bpb_strictly_below": 0,
+    "each_four_cell_conditional_95pct_interval_upper_strictly_below": 0,
+    "each_twelve_individual_contrast_bpb_strictly_below": 0
+  },
+  "decision": "pending",
+  "pass_action": "At most one separately declared independent-corpus confirmation with the same selection rule and fresh seeds; no subset sweep.",
+  "fail_action": "After valid complete evaluation, stop anatomical subset searches in this program; publish small, null, negative and uncertain effects without claiming equivalence.",
+  "invalid_action": "Preserve record and follow original recovery rules; no scientific conclusion or continuation pass.",
+  "backlog_status": "Broader scaling, new subsets, SCAN, alternative language learning and physical adaptation are deferred, not an automatic next queue."
+}

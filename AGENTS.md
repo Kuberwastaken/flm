@@ -11,3 +11,5 @@
 - Report actual held-out results, including failures. Do not claim comparative superiority without matched experiments.
 - The repository is private at project creation. Publishing the requested website is authorized; do not change repository visibility without explicit authorization.
 - Target a static GitHub Pages client. No API secrets in the browser. Keep the UI plain, accessible, responsive and useful, following the installed uncodixfy skill.
+
+- Current research priority: follow `docs/ANATOMICAL-PRIOR-DECISION.md` and the revised `docs/PLAN.md`. Finish the frozen 128-fit selection study unchanged, then apply its prospective continuation gate. Do not automatically launch subset, dataset, capacity, SCAN, alternative-learning or food-adaptation sweeps. Develop a focused mechanism finding from existing records; retain all negative and uncertain outcomes. Preserve the user's request to stop extended testing campaigns.
