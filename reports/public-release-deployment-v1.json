@@ -1,0 +1,39 @@
+{
+  "format": "flm-public-release-deployment-v1",
+  "checked_at_utc": "2026-09-12T15:12:35.564685+00:00",
+  "deployed_commit": "7cd4c1643274fac785047ac57e8018f55a55d0b5",
+  "github_actions_run": 34701383950,
+  "ci_conclusion": "success",
+  "release_record": "reports/public-release-v1.json",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 90654,
+      "sha256": "e43933c512cf5581fa2a3cdb6ee49ce80255eb2168c3ac79b4c63570dd5b98b7",
+      "matches_build": true
+    },
+    {
+      "path": "research/public-release.md",
+      "status": 200,
+      "bytes": 4996,
+      "sha256": "626dc6acb6923950797b17ab76474d53a572079e2f950e201b16695296a9a6e3",
+      "matches_build": true
+    },
+    {
+      "path": "research/public-release-v1.json",
+      "status": 200,
+      "bytes": 1662,
+      "sha256": "04910d71679802038c0cd1a8dd2543b2d3149877fdd9262f062059576297a4cb",
+      "matches_build": true
+    },
+    {
+      "path": "research/paper-source.zip",
+      "status": 200,
+      "bytes": 15416627,
+      "sha256": "611fc121a062b9d92382c40b6773ad8d75e36bd85440ba21a62ac2b32d0c50d0",
+      "matches_build": true
+    }
+  ],
+  "scope": "Public release status, downloadable source snapshot and unchanged client scripts. No numerical training changes."
+}
