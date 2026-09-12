@@ -386,3 +386,7 @@ Targeted Chrome checks on Windows loaded the built local preview, checked all 24
 Re-run `scripts/check_browser_presentation.cjs` with Playwright available to Node. `FLM_PREVIEW_URL` chooses a preview or published origin, and `FLM_BROWSER_CHANNEL` selects the installed browser channel (default Chrome). Screenshots and detailed measurements go to ignored `work/presentation-review/`.
 
 A follow-up navigation correction returns to the top when switching primary pages, while the direct video anchor scrolls to the player. The same bounded checks passed again after this change, including returning from Research to the mobile chat at scroll position zero.
+
+## Chat follow-up repetition review (12 September)
+
+The [targeted review](../reports/chat-followup-review-v1.json) reproduces two reported conversation chains and distinguishes valid state reset from degenerate history feedback. Sixteen focused checks pass, including protection disabled and free-text completion equivalence. Browser checks cover older saved loops, preservation of the latest user turn, exact input inspection, opt-out, stopping notices after reload, and raw-output retention. These are UI and execution checks, not improved language benchmarks. See [the chat guide](CHATFLM.md) for the default-on, optional protection and its limits.

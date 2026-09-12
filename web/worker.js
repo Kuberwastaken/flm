@@ -1,7 +1,7 @@
 import { FLM, random, sample, softmax } from './model.js';
 import { TextCodec } from './text-codec.js';
 import { MODEL_PACKAGES } from './packages.js';
-import { chatOutput } from './chat-format.js';
+import { chatOutput, repetitionLoop } from './chat-format.js';
 import { BrowserBaseline } from './baseline-model.js';
 
 let model, codec, active = null;
@@ -35,22 +35,29 @@ async function generate(message) {
   if (!await prime(message.prompt)) return;
   const rng = random(message.seed), decoder = new TextDecoder();
   const limit = Math.max(1, Math.min(1600, Number(message.limit) || 400));
-  const started = performance.now(); let text = '', count = 0, bytes = 0;
+  const started = performance.now(); let text = '', count = 0, bytes = 0, loop = null, ended = false;
   send('state', snapshot());
   while (count < limit && !active.cancelled) {
     const token = sample(model.logits, rng, {...message, allowed: codec.allowed});
-    if (token === codec.eos) break;
+    if (token === codec.eos) { ended = true; break; }
     const piece = codec.bytes(token); bytes += piece.length;
     text += decoder.decode(piece, { stream: true });
     model.step(token); count++;
     if (message.chat && chatOutput(text).stopped) break;
+    if (message.chat && message.loopProtection !== false) {
+      loop = repetitionLoop(text);
+      if (loop) break;
+    }
     // Send the actual recurrent state for every token, with time to paint in observation mode.
     send('generation', { text: message.chat ? chatOutput(text).text : text, bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
     if (message.observe) await new Promise(resolve => setTimeout(resolve, 60));
     else await pause();
   }
   text += decoder.decode();
-  send('generation', { text: message.chat ? chatOutput(text, true).text : text, rawText: text,
+  const visible = message.chat ? chatOutput(text, true).text : text;
+  send('generation', { text: loop ? visible.slice(0, loop.start).trimEnd() : visible, rawText: text,
+    stopReason: active.cancelled ? 'cancelled' : loop ? 'repetition' : message.chat && chatOutput(text, true).stopped ? 'turn' : ended ? 'eos' : 'length',
+    repetitionKind: loop?.kind,
     turnStopped: message.chat && chatOutput(text, true).stopped,
     bytes, tokens: count, seconds: (performance.now() - started) / 1000, ...snapshot() });
 }

@@ -54,6 +54,7 @@
           <label>Top-k tokens<input id="top-k" type="number" min="1" max="4096" step="1" value="40" data-idle></label>
           <label>Maximum tokens<input id="limit" type="number" min="1" max="1600" step="1" value="200" data-idle></label>
           <label>Random seed<input id="seed" type="number" min="0" max="4294967295" step="1" value="42" data-idle></label>
+          <label class="check"><input id="loop-protection" type="checkbox" checked data-idle>Stop repetitive chat output and exclude looped replies from follow-up input</label>
           <label class="check"><input id="observe" type="checkbox" checked data-idle>Slow playback for observation</label>
         </div></div></details>
         <div class="run-footer"><output id="generation-stats">Ready after the checkpoint loads.</output><span>Text stays in this browser.</span></div>

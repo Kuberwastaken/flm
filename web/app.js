@@ -39,6 +39,7 @@ function setBusy(value) {
   $('stop-learning').disabled = !value || operation !== 'learn';
   $('prompt').readOnly = value;
   $('system-prompt').disabled = !ready || value || current()?.mode !== 'chat';
+  $('loop-protection').disabled = !ready || value || current()?.mode !== 'chat';
   for (const id of ['mute-neuron','recurrence','adapter-enabled','reset-interventions']) if (!isFly) $(id).disabled = id !== 'adapter-enabled' || value || !ready;
   $('learning-text').readOnly = value; $('probe-text').readOnly = value;
 }
@@ -63,7 +64,15 @@ function makeMessage(message) {
   const copy = document.createElement('button'); copy.textContent = 'Copy'; copy.type = 'button'; copy.setAttribute('aria-label', `Copy ${message.role === 'user' ? 'your' : MODEL_PACKAGES[selectedModel].name} message`);
   copy.onclick = async () => { try { await navigator.clipboard.writeText(message.text); copy.textContent = 'Copied'; setTimeout(() => copy.textContent = 'Copy', 1600); } catch { notice('Clipboard unavailable. Select the message text to copy it.'); } };
   header.append(title, copy); const body = document.createElement('div'); body.className = 'message-text'; body.textContent = message.text;
-  article.append(header, body); $('messages').append(article); return article;
+  article.append(header, body); updateMessageStatus(article, message); $('messages').append(article); return article;
+}
+function updateMessageStatus(article, message) {
+  article.querySelector('.message-stop-note')?.remove();
+  if (message.stopReason === 'repetition') {
+    const note = document.createElement('p'); note.className = 'message-stop-note anatomy-note';
+    note.textContent = 'Stopped repetitive output. This reply is excluded from follow-up input while repetition protection is on; raw output remains in the export.';
+    article.append(note);
+  }
 }
 function renderConversation() {
   const conversation = current();
@@ -75,6 +84,8 @@ function renderConversation() {
   }
   choices(); $('mode').value = conversation.mode; $('messages').replaceChildren();
   $('system-prompt').value = conversation.systemPrompt || '';
+  $('loop-protection').checked = conversation.loopProtection !== false;
+  $('loop-protection').disabled = busy || conversation.mode !== 'chat';
   $('system-prompt').disabled = busy || conversation.mode !== 'chat';
   $('generate').textContent = conversation.mode === 'chat' ? 'Send' : 'Continue';
   $('prompt').placeholder = conversation.mode === 'chat' ? `Message ${MODEL_PACKAGES[selectedModel].name}…` : 'A passage to continue…';
@@ -102,7 +113,7 @@ function renderConversation() {
 function newConversation(mode = $('mode').value || 'chat') {
   if (busy) return;
   if (conversations.length >= 100) { notice('The local archive holds 100 conversations. Export or delete some before starting another.'); return; }
-  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, systemPrompt: '', modelPackage: selectedModel, messages: [] };
+  const item = { id: crypto.randomUUID(), title: 'New conversation', mode, systemPrompt: '', loopProtection: true, modelPackage: selectedModel, messages: [] };
   conversations.unshift(item); currentId = item.id; $('prompt').value = ''; lastPrompt = ''; store(); renderConversation();
 }
 try {
@@ -204,8 +215,9 @@ $('composer').onsubmit = event => {
   if (conversation.messages.length >= 198) { notice('This conversation is full. Start a new one to continue.'); return; }
   const message = { role: 'user', text }; conversation.messages.push(message);
   conversation.systemPrompt = $('system-prompt').value;
-  let prompt, dropped = 0;
-  try { if (conversation.mode === 'chat') ({ prompt, dropped } = chatContext(conversation)); else prompt = contextFor(conversation); }
+  conversation.loopProtection = $('loop-protection').checked;
+  let prompt, dropped = 0, excludedRepetitiveReplies = 0;
+  try { if (conversation.mode === 'chat') ({ prompt, dropped, excludedRepetitiveReplies } = chatContext(conversation)); else prompt = contextFor(conversation); }
   catch (error) { conversation.messages.pop(); notice(error.message); return; }
   if (new TextEncoder().encode(prompt).length > 16000) { conversation.messages.pop(); notice('This context exceeds 16,000 UTF-8 bytes. Start a new conversation or shorten your turn.'); return; }
   const temperature = Number($('temperature').value), topK = Number($('top-k').value), limit = Number($('limit').value), seed = Number($('seed').value);
@@ -214,21 +226,25 @@ $('composer').onsubmit = event => {
   }
   if (conversation.title === 'New conversation') conversation.title = text.replace(/\s+/g, ' ').slice(0, 55);
   renderConversation(); pendingMessage = { role: 'model', text: '', checkpointStep: config.checkpoint_step,
-    modelHash: config.weights_sha256, dataset: config.dataset || 'AMI', createdAt: new Date().toISOString(), inputPrompt: prompt, droppedContextMessages: dropped, settings: {
-      seed, temperature, topK, limit, limitUnit: 'tokens', adaptation: $('adapter-enabled').checked,
+    modelHash: config.weights_sha256, dataset: config.dataset || 'AMI', createdAt: new Date().toISOString(), inputPrompt: prompt, droppedContextMessages: dropped, excludedRepetitiveReplies, settings: {
+      seed, temperature, topK, limit, limitUnit: 'tokens', loopProtection: conversation.mode === 'chat' && conversation.loopProtection, adaptation: $('adapter-enabled').checked,
       recurrence: $('recurrence').checked, disabled: [...disabled] } }; conversation.messages.push(pendingMessage);
   pendingElement = makeMessage(pendingMessage); pendingElement.classList.add('pending');
   $('prompt').value = ''; trace = []; lastPrompt = prompt; store();
   $('messages').scrollTop = $('messages').scrollHeight;
-  run('generate', { prompt, chat: conversation.mode === 'chat', temperature, topK, limit, seed, observe: $('observe').checked });
-  if (dropped) notice(`Using recent turns: ${dropped} earlier messages remain in history but do not fit in this model input.`);
+  run('generate', { prompt, chat: conversation.mode === 'chat', loopProtection: conversation.loopProtection, temperature, topK, limit, seed, observe: $('observe').checked });
+  const contextNotices = [];
+  if (excludedRepetitiveReplies) contextNotices.push(`${excludedRepetitiveReplies} repetitive earlier ${excludedRepetitiveReplies === 1 ? 'reply is' : 'replies are'} kept in history but excluded from this input. Inspect the model input in Chat settings.`);
+  if (dropped) contextNotices.push(`Using recent turns: ${dropped} earlier messages remain in history but do not fit in this model input.`);
+  if (contextNotices.length) notice(contextNotices.join(' '));
 };
 $('prompt').onkeydown = event => { if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); $('composer').requestSubmit(); } };
+$('loop-protection').onchange = () => { if (current()) { current().loopProtection = $('loop-protection').checked; store(); } };
 $('system-prompt').onchange = () => { if (current()) { current().systemPrompt = $('system-prompt').value; store(); } };
 $('inspect-context').onclick = () => {
   if (!current()) return;
   try {
-    const preview = { ...current(), systemPrompt: $('system-prompt').value, messages: current().messages.slice() };
+    const preview = { ...current(), systemPrompt: $('system-prompt').value, loopProtection: $('loop-protection').checked, messages: current().messages.slice() };
     if ($('prompt').value.trim()) preview.messages.push({ role:'user', text:$('prompt').value.trim() });
     $('context-preview').value = contextFor(preview);
   } catch(error) { $('context-preview').value = error.message; }
@@ -344,7 +360,7 @@ worker.onmessage = ({ data }) => {
     if (!generationStopped) typingFly.setState('typing');
     if (pendingMessage) {
       pendingMessage.text = data.text; pendingElement.querySelector('.message-text').textContent = data.text;
-      if (data.rawText !== undefined) { pendingMessage.rawText = data.rawText; pendingMessage.turnStopped = !!data.turnStopped; }
+      if (data.rawText !== undefined) { pendingMessage.rawText = data.rawText; pendingMessage.turnStopped = !!data.turnStopped; pendingMessage.stopReason = data.stopReason; pendingMessage.repetitionKind = data.repetitionKind; updateMessageStatus(pendingElement, pendingMessage); }
       const view = $('messages'); if (view.scrollHeight - view.scrollTop - view.clientHeight < 140) view.scrollTop = view.scrollHeight;
     }
     $('generation-stats').textContent = `${data.tokens} tokens · ${data.bytes} bytes · ${(data.tokens / Math.max(.001, data.seconds)).toFixed(1)} tokens/s${$('observe').checked ? ' including playback delay' : ''}`; updateState(data);
@@ -370,7 +386,7 @@ worker.onmessage = ({ data }) => {
   if (data.type === 'idle') {
     if (operation === 'generate') {
       pendingElement?.classList.remove('pending');
-      if (pendingMessage && !pendingMessage.text) { const conversation = current(); conversation.messages = conversation.messages.filter(x => x !== pendingMessage); pendingElement?.remove(); }
+      if (pendingMessage && !pendingMessage.text && pendingMessage.stopReason !== 'repetition') { const conversation = current(); conversation.messages = conversation.messages.filter(x => x !== pendingMessage); pendingElement?.remove(); }
       store(); pendingMessage = null; pendingElement = null;
       if (data.cancelled) $('generation-stats').textContent += ' · stopped';
     }

@@ -1,3 +1,4 @@
+import { repetitionLoop } from './chat-format.js';
 import { MODEL_PACKAGES } from './packages.js';
 export const STORAGE_KEY = 'chatflm-conversations-v1';
 export const ADAPTER_KEY = 'chatflm-adapter-v1';
@@ -14,6 +15,7 @@ export function validateConversations(value) {
   for (const item of value) {
     if (typeof item?.id !== 'string' || ids.has(item.id) || typeof item.title !== 'string' || item.title.length > 120 ||
         !['chat', 'dialogue', 'completion'].includes(item.mode) || !Array.isArray(item.messages) || item.messages.length > 200 ||
+        (item.loopProtection !== undefined && typeof item.loopProtection !== 'boolean') ||
         (item.systemPrompt !== undefined && (typeof item.systemPrompt !== 'string' || item.systemPrompt.length > 2000)) ||
         (item.modelPackage !== undefined && !Object.hasOwn(MODEL_PACKAGES, item.modelPackage)) ||
         (MODEL_PACKAGES[item.modelPackage]?.lexical && item.mode === 'dialogue'))
@@ -36,7 +38,14 @@ export function contextFor(conversation) {
 }
 
 export function chatContext(conversation, byteLimit = 16000) {
-  const encode = new TextEncoder(), turns = conversation.messages.slice();
+  const encode = new TextEncoder();
+  let excludedRepetitiveReplies = 0;
+  const turns = conversation.messages.filter(message => {
+    const exclude = conversation.loopProtection !== false && message.role === 'model' &&
+      (message.stopReason === 'repetition' || repetitionLoop(message.text));
+    if (exclude) excludedRepetitiveReplies++;
+    return !exclude;
+  });
   const system = conversation.systemPrompt?.trim();
   const build = () => (system ? `System: ${system}\n\n` : '') +
     turns.map(x => `${x.role === 'user' ? 'User' : 'Assistant'}: ${x.text.trim()}`).join('\n') + '\nAssistant:';
@@ -47,7 +56,7 @@ export function chatContext(conversation, byteLimit = 16000) {
     prompt = build();
   }
   if (encode.encode(prompt).length > byteLimit) throw new Error('The system prompt and latest message exceed 16,000 UTF-8 bytes. Shorten them to send.');
-  return { prompt, dropped, bytes: encode.encode(prompt).length };
+  return { prompt, dropped, excludedRepetitiveReplies, bytes: encode.encode(prompt).length };
 }
 
 export function download(name, content, type = 'application/json') {

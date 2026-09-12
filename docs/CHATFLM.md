@@ -16,6 +16,14 @@ Opening ChatFLM without a model query selects **BabyLM 100M FLM, seed 43**, the 
 
 The [catalog](../public/models/catalog.json) records checkpoint manifest hashes and selection-source hashes. Each package has its own weights, tokenizer and Python parity fixture. The browser verifies manifest, weight and tokenizer hashes before inference. [Catalog tests](../tests/catalog.test.js) compare all 4,096 logits at prefix lengths 1, 12, 97 and 130 for every model, crossing the transformer's 96-position window; FLM's fast/slow state is checked too. These are numerical correctness checks, not a performance benchmark.
 
+## Repetition protection in chat
+
+**Stop repetitive chat output** is on by default and can be switched off in Chat settings. It detects long repeated characters, short repeated patterns, near-uniform letter runs and low-variety digit runs. When triggered, it ends that generation, keeps the prefix before the detected loop, and displays a separate stopping notice. The full sampled output remains in the reply's exported `rawText`, together with `stopReason` and the guard setting. This is a bounded heuristic; intentional repetition can trigger it.
+
+With protection on, replies that stopped for repetition, and older saved replies containing a detected loop, are excluded when constructing follow-up input. User turns and other assistant replies remain eligible under the normal byte limit. The visible conversation is preserved. An input notice, the exact input preview, and each reply's exported `excludedRepetitiveReplies` count disclose the filtering. Switching protection off restores ordinary history inclusion and uncapped-by-repetition sampling. Free-text completion and the published benchmark samples are unchanged.
+
+This prevents a degenerate answer from repeatedly priming the next turn; it does not teach conversational roles or improve the checkpoint's measured language capability. The recurrent state is reset and the declared input replayed for every reply. Displayed neural activity still comes from the actual, possibly stopped, token sequence.
+
 ## Conversations and system context
 
 Chat mode stores user/assistant turns and an optional system prompt. **The checkpoints are base next-token models without instruction tuning.** The interface supplies a real conversation history; it does not add a hidden assistant or guarantee that the model follows roles, facts or requests.

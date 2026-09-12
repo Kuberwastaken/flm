@@ -1,0 +1,76 @@
+{
+  "format": "flm-chat-followup-review-v1",
+  "checked_at_utc": "2026-09-12T14:40:44.631657+00:00",
+  "model": "babylm-100m-flm-s43",
+  "settings": {
+    "seed": 42,
+    "temperature": 0.8,
+    "topK": 40,
+    "token_limit": 200
+  },
+  "finding": "State resets and role assembly were correct. Degenerate assistant output was replayed as history, reinforcing letter/digit loops.",
+  "change": "Optional chat-only repetition stop, with raw-output retention and visible notices; looped model replies excluded from future input while enabled. User turns preserved.",
+  "targeted_reproduction": [
+    {
+      "case": 1,
+      "before_tokens": 200,
+      "after_tokens": 198,
+      "after_stop_reason": "repetition",
+      "input_sha256_before": "8ea8318e2c824a80eb0021638a6c4cc2436b73e645fb8c8dbd4be0d79f2c4b78",
+      "input_sha256_after": "8ea8318e2c824a80eb0021638a6c4cc2436b73e645fb8c8dbd4be0d79f2c4b78"
+    },
+    {
+      "case": 2,
+      "before_tokens": 200,
+      "after_tokens": 155,
+      "after_stop_reason": "repetition",
+      "input_sha256_before": "d277550e2cf1c2e4a24b4b138eb49a43cd3ae766eb5f36ecbdeebb98f461b904",
+      "input_sha256_after": "af680762114ab5c2ecf432e4cd39c1a71afbbb00771700d4091af91dca3254d0"
+    },
+    {
+      "case": 3,
+      "before_tokens": 200,
+      "after_tokens": 200,
+      "after_stop_reason": "length",
+      "input_sha256_before": "c890e2e22ad451f55677e3cffc03174fe47dcd142789eba565d23b1a5e63b28a",
+      "input_sha256_after": "ac02bdf4887a537c9dcd7b817c2618fbb234a506a9a64f27a4b8b60d7541cb9d"
+    },
+    {
+      "case": 4,
+      "before_tokens": 200,
+      "after_tokens": 181,
+      "after_stop_reason": "repetition",
+      "input_sha256_before": "ca13992d52397bf5aeda54c70c2649812abe7ccc13e66b3df236f50bc7d565fb",
+      "input_sha256_after": "ca13992d52397bf5aeda54c70c2649812abe7ccc13e66b3df236f50bc7d565fb"
+    },
+    {
+      "case": 5,
+      "before_tokens": 200,
+      "after_tokens": 155,
+      "after_stop_reason": "repetition",
+      "input_sha256_before": "a35659d496d67c85467dcd9a23e425a0950d439f86368658e0443230a3aeda2f",
+      "input_sha256_after": "3d1ae0f1bd2062df8d0246b1b8cf38fc6abb7b22f0a53c50475270986ef75a85"
+    }
+  ],
+  "tests": {
+    "passed": 16,
+    "failed": 0,
+    "scope": "Chat formatting/storage, guard cases, worker generation/cancellation, raw-mode and completion equivalence"
+  },
+  "browser": {
+    "legacyLoopExcluded": true,
+    "latestUserPreserved": true,
+    "oldHistoryPreserved": true,
+    "optOutRestoresHistory": true,
+    "stopNoticePersistsAfterReload": true,
+    "rawOutputRetained": true,
+    "scope": "Browser interaction checks, not a language-quality benchmark",
+    "rawTextCharacters": 235
+  },
+  "limitations": [
+    "Targeted reproduction of two reported conversation chains, not a language benchmark.",
+    "Responses still drift, contain corpus formatting, and can become repetitive again.",
+    "The guard is a heuristic and may stop intentional repetition; it can be disabled.",
+    "No model weights, training sources, published benchmark scores or benchmark continuations changed."
+  ]
+}

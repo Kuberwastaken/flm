@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { chatContext, validateConversations, contextFor } from '../web/storage.js';
-import { chatOutput } from '../web/chat-format.js';
+import { chatOutput, repetitionLoop } from '../web/chat-format.js';
 
 test('chat encodes explicit roles and optional system context without altering the archive',()=>{
   const conversation={id:'one',title:'Example',mode:'chat',modelPackage:'babylm-100m-flm-s43',systemPrompt:'Be brief.',messages:[{role:'user',text:'Hello'},{role:'model',text:'Hi'},{role:'user',text:'Why?'}]};
@@ -26,4 +26,25 @@ test('streaming chat hides complete and partial next-turn markers while retainin
   assert.deepEqual(chatOutput('Hello\nUse this'),{text:'Hello\nUse this',stopped:false});
   assert.deepEqual(chatOutput('Hello\nUs',true),{text:'Hello\nUs',stopped:false});
   assert.deepEqual(chatOutput(''),{text:'',stopped:false});
+});
+
+test('chat repetition detection catches noisy letter/digit loops but keeps ordinary text', () => {
+  assert.ok(repetitionLoop('B'.repeat(9) + 'A' + 'B'.repeat(14)));
+  assert.ok(repetitionLoop('Here is a reply. ' + 'again '.repeat(8)));
+  assert.ok(repetitionLoop('12'.repeat(11) + '39' + '12'.repeat(12)));
+  for (const text of ['Hello. What would you like to test?', 'The answer is 11111111111.', '01234567890123456789012345678901234567890123456789', 'A:\tYes.\nB:\tI see.']) assert.equal(repetitionLoop(text), null);
+});
+test('follow-up input excludes looped assistant replies, preserving users and the full archive', () => {
+  const conversation = {mode:'chat', systemPrompt:'Be brief.', messages:[
+    {role:'user',text:'What is the meaning of life'},
+    {role:'model',text:'B'.repeat(100)},
+    {role:'user',text:'test'},
+    {role:'model',text:'Partial response',rawText:'Partial response'+'12'.repeat(30),stopReason:'repetition'},
+    {role:'user',text:'so true bro; '+'B'.repeat(20)}]};
+  const saved = structuredClone(conversation), input = chatContext(conversation);
+  assert.equal(input.excludedRepetitiveReplies,2);
+  assert.equal(input.prompt,'System: Be brief.\n\nUser: What is the meaning of life\nUser: test\nUser: so true bro; '+'B'.repeat(20)+'\nAssistant:');
+  assert.deepEqual(conversation,saved);
+  const raw = chatContext({...conversation,loopProtection:false});
+  assert.equal(raw.excludedRepetitiveReplies,0); assert.ok(raw.prompt.includes('Assistant: '+'B'.repeat(100)));
 });

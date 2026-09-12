@@ -54,3 +54,31 @@ for (const selection of ['ami', 'wikitext', 'babylm', 'babylm-100m-flm-s43', 'ba
   assert.equal(cancelled.at(-1).cancelled, true);
   assert.equal(cancelled.some(x => x.type === 'generation'), false);
 });
+
+test('chat loop protection stops degeneracy, preserves raw output, and leaves completion sampling unchanged', async t => {
+  const worker = new Worker(new URL('./helpers/worker-harness.mjs', import.meta.url));
+  t.after(() => worker.terminate()); await once(worker, 'message'); let id = 0;
+  const run = (type, data) => new Promise((resolve, reject) => {
+    const current = ++id, messages = [];
+    const timer = setTimeout(() => { worker.off('message', listener); reject(new Error('Worker timeout')); }, 30000);
+    const listener = message => {
+      if (message.id !== current) return; messages.push(message);
+      if (message.type === 'idle') {
+        clearTimeout(timer); worker.off('message', listener);
+        const error = messages.find(x => x.type === 'error');
+        error ? reject(new Error(error.message)) : resolve(messages);
+      }
+    };
+    worker.on('message', listener); worker.postMessage({type, id:current, ...data});
+  });
+  await run('load', {model:'babylm-100m-flm-s43'});
+  const settings = {prompt:'User: Hello\nAssistant: '+'B'.repeat(100)+'\nUser: test\nAssistant:',limit:64,seed:42,temperature:.8,topK:40};
+  const generate = async data => (await run('generate', {...settings,...data})).filter(x => x.type === 'generation').at(-1);
+  const protectedReply = await generate({chat:true,loopProtection:true});
+  assert.equal(protectedReply.stopReason,'repetition'); assert.ok(protectedReply.tokens < 64);
+  assert.ok(protectedReply.rawText.length > protectedReply.text.length);
+  const raw = await generate({chat:true,loopProtection:false});
+  const completion = await generate({chat:false,loopProtection:true});
+  assert.equal(raw.tokens,64); assert.equal(completion.tokens,64);
+  assert.equal(raw.rawText,completion.rawText); assert.deepEqual(raw.h,completion.h);
+});

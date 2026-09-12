@@ -64,6 +64,7 @@ The model selector contains [**18 completed primary checkpoints**](public/models
 - **Follow the state.** Send a message or continue a prefix, inspect token probabilities, and see the FLM fast/slow activity at retained anatomical positions.
 - **Ask a causal question.** Silence selected neurons or disable recurrence, replay the same prefix from zero state, and compare predictions before restoring the intervention.
 - **Learn from your own text.** Update a separate local output adapter, inspect loss on learning and probe text, then save, export or reset it. The adapter does not rewrite the bundled recurrent checkpoint.
+- **Keep loops out of follow-ups.** Optional chat repetition protection stops degenerate output and excludes affected replies from later input. The interface labels this; exports retain raw output and exact model input. It does not add instruction tuning or change the published benchmark samples.
 - **Keep a conversation going.** Prior turns and editable system context are included in the chat input. This is real base-model generation with conversation formatting, not canned answers or instruction tuning; role labels do not create a learned instruction hierarchy.
 - **Replay experiments.** Scrub actual neural/body records, including wrong choices and controls, in the [Research view](https://flm.kuber.studio/#research).
 
