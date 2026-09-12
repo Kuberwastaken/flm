@@ -2,12 +2,13 @@
 
 The [exporter](../scripts/babylm_result_tables.py) converts the complete saved
 BabyLM likelihood experiment into JSON and CSV tables for figures, papers and
-the browser. **It has passed artificial-fixture tests; it has not exported an
-official BabyLM result.** The twelve-fit evaluation remains pending.
+the browser. **The complete twelve-fit experiment was exported on 12 September
+2026:** 168 score rows, 84 seed aggregates and 16 paired comparisons. See the
+[findings](BABYLM-FINDINGS.md) and [table manifest](../reports/babylm/tables-v1/manifest.json).
 
-The exporter is separate from the [armed handoff](BABYLM-HANDOFF.md). It does not
-alter that running supervisor or launch inference, generation or timing. Run it
-after the declared evaluation has completed:
+The exporter is separate from the [completed handoff](BABYLM-HANDOFF.md). It does
+not launch inference, generation or timing. The following commands document
+the export; choose a new destination for another reproduction:
 
 ```powershell
 python -m unittest discover -s tests -p test_babylm_result_tables.py -v
@@ -95,5 +96,7 @@ missing data, denominators, incomplete-study gating, existing outputs, changed
 inputs and shortened rendering. The [layout review](../reports/babylm/result-figures-preparation.json)
 records two inspected synthetic PNGs and their matching SVGs. Those private
 fixtures visibly say they are not benchmarks and are not published as results.
-**No official plots have been generated.** Review the actual-value layouts again
-after evaluation, before adding the figures to the website, README or papers.
+The actual-value pooled and component PNGs have now also been generated and
+visually reviewed at 1920 × 1440, with readable labels and no clipping. The
+[completed evidence record](../reports/babylm/completed-evidence-verification.json)
+records that review; the fixture review remains separate historical evidence.

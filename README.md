@@ -63,9 +63,40 @@ The [score-record archive](https://flm.kuber.studio/research/language-core-recor
 
 **Completed computation controls:** full FLM lowers test BPB relative to fixed dynamics (**−0.005797**), no lateral recurrence (**−0.006391**) and no temporal state (**−0.124511**), averaging two seeds. All eight declared paired-article intervals lie below zero. These conditional comparisons support the mechanisms under this budget, with unequal trainable/connected parameter counts; they do not establish anatomical advantage. See [findings and limits](docs/LANGUAGE-CORE-RESULTS.md).
 
-**Current evaluation:** All twelve BabyLM fits have finished: FLM, GRU and transformer at both 10M/100M budgets and seeds 42/43. The [final completion audit](reports/babylm/completion-transformer-100m-s43.json) restores selected/final checkpoints and checks all 24 validation records. All twelve [checkpoint selections](reports/babylm/selection.json) were frozen before held-out scoring; complete results remain pending. The [first evaluation stopped at result serialization](docs/BABYLM-HANDOFF.md#evaluation-recovery); the corrected evaluation restarts from the same frozen checkpoints, with the failed cache preserved. The [public snapshot](public/research/babylm-validation.json) is dated validation evidence, not a live process monitor or test result. The [supervisor](docs/BABYLM-HANDOFF.md) is running held-out evaluation, with fixed continuations and selection timing to follow serially once each stage passes. New transfer and behavior experiments remain deferred.
+**BabyLM complete:** All twelve fits, held-out scores and 288 fixed continuations are recorded in the [findings](docs/BABYLM-FINDINGS.md). All [checkpoint selections](reports/babylm/selection.json) were frozen before scoring. The [serialization failure and fresh restart](docs/BABYLM-HANDOFF.md#evaluation-recovery) remain documented. The [64-graph cost pilot](reports/selection-pilot/timing.json) informed a [registered selection study](docs/SELECTION-LANGUAGE-PROTOCOL.md): 128 fits across both five-contact visual-KC groups, at 3,000 updates each. Its serial training/evaluation queue has started; results remain pending. New transfer and behavior experiments remain deferred.
 
 ## Language results
+
+**FLM trails both approximately matched neural baselines on pooled BabyLM and WikiText loss.** Lower test bits per byte (BPB) is better. BabyLM adds six spoken/written components, two training-data sizes and a shared tokenizer fitted on 10M text.
+
+![Completed BabyLM test losses show both seeds and their means for the official and overlap-filtered evaluations.](public/research/babylm-results/babylm-pooled.png)
+
+*Circles and triangles are training seeds 42/43; diamonds are their means. No uncertainty interval is shown.*
+
+| Training pool | Test subset | FLM mean BPB | GRU mean BPB | Transformer mean BPB |
+|---|---|---:|---:|---:|
+| 10M | Official | 1.947712 | 1.893743 | 1.874470 |
+| 10M | Overlap-filtered | 1.966842 | 1.903578 | 1.882700 |
+| 100M | Official | 1.897191 | 1.841673 | 1.801002 |
+| 100M | Overlap-filtered | 1.925800 | 1.862178 | 1.825476 |
+
+Each of twelve fits completed 12,000 updates and **18,432,000 input-token presentations**. This is fixed sampled exposure, **not a full epoch of 100M text or equal runtime**. The official test covers 3,187 blocks and 51,722,871 target bytes; the fixed overlap filter retains 2,528 blocks and 40,963,714 bytes. These are the project's declared compact comparisons, not official BabyLM Challenge leaderboard scores.
+
+CHILDES is the only component where FLM's two-seed mean beats a baseline: both baselines at 10M, GRU alone at 100M, in both analyses. Its transformer contrasts change sign across seeds. All sixteen pooled paired-block intervals favor the baselines, conditional on these checkpoints and component block counts; unknown document dependence and two seeds limit inference. No completed BabyLM topology comparison exists yet.
+
+All [288 unedited continuations](reports/babylm/samples.json) reached the 256-token cap; one invalid UTF-8 continuation is retained. FLM has more repetition in the aggregate token measures. These models have not demonstrated reliable chatbot ability. Read the [complete findings, component scores and limits](docs/BABYLM-FINDINGS.md).
+
+<details>
+<summary>BabyLM component differences and recorded uncertainty</summary>
+
+![BabyLM component differences show the CHILDES exception and substantial variation between fitted seeds.](public/research/babylm-results/babylm-components.png)
+
+The [168 score rows](reports/babylm/tables-v1/scores.csv) retain every seed, component and analysis; [seed means/SDs](reports/babylm/tables-v1/seed_aggregates.csv) and [paired intervals](reports/babylm/tables-v1/paired_comparisons.csv) remain separate. Component differences are descriptive, without component-level confidence intervals. Filtering removes whole blocks with substantial exact normalized-line matches, changes the mixture and does not establish contamination-free evaluation.
+
+</details>
+
+<details>
+<summary>Earlier completed WikiText comparison</summary>
 
 **FLM trails both matched neural baselines on the completed WikiText comparison.** Lower test bits per byte (BPB) is better.
 
@@ -83,6 +114,8 @@ All six runs share the official article partitions, tokenizer and 6,000-update b
 
 The [article scores and paired intervals](public/research/test-results.json) are conditional on these fitted checkpoints. [Fixed-prompt continuations](public/research/samples-index.json), [grammar diagnostics](public/research/grammar-results.json) and [inference costs](public/research/runtime.json) accompany the comparison; attractive samples are not the selection criterion.
 
+</details>
+
 ## How FLM predicts a token
 
 The current lexical model has **1,024 retained neurons, 76,130 directed edges and 600,003 trainable parameters**. A learned 4,096-token byte-BPE vocabulary connects text to a signed recurrent core. Pooling combines the core's fast and slow state, then a tied lexical readout predicts the next token.
@@ -95,7 +128,7 @@ The boundary cuts **79.42% of incoming and 73.96% of outgoing raw contacts**, us
 
 The core is a differentiable rate network. Contact counts and neurotransmitter annotations inform versioned modeling choices, rather than recovering measured synaptic strengths or pretrained knowledge.
 
-**Next graph question: compare selection rules.** The negative result concerns the ranked 1,024-neuron subset, which contains no KCs. The [selection plan](docs/SELECTION-STUDY.md) compares operational KC-centered candidates, contact ranking and size-matched random subsets, including annotation-stratified draws; rewiring within each subset tests topology separately. At 487/540 cells, the [KCg-d candidates](docs/CIRCUIT-SELECTION.md) retain 81–85% of seed-KC incoming/outgoing raw contacts but cut about 89% of whole-subset incoming contacts. These remain untrained operational selections, not intact functional circuits; matching nodes or annotations does not match density or parameter count. After the current fixed BabyLM queue, comparing complete selection groups takes priority over further scaling; no selection-language result exists yet.
+**Next graph question: compare selection rules.** The negative result concerns the ranked 1,024-neuron subset, which contains no KCs. The [selection plan](docs/SELECTION-STUDY.md) compares operational KC-centered candidates, contact ranking and size-matched random subsets, including annotation-stratified draws; rewiring within each subset tests topology separately. At 487/540 cells, the [KCg-d candidates](docs/CIRCUIT-SELECTION.md) retain 81–85% of seed-KC incoming/outgoing raw contacts but cut about 89% of whole-subset incoming contacts. These remain operational selections, not intact functional circuits; matching nodes or annotations does not match density or parameter count. The registered left/right five-contact KCg-d comparison is now running before further scaling; no selection-language result exists yet.
 
 <details>
 <summary>Selection feasibility, cut contacts and pathway coverage</summary>
@@ -112,9 +145,9 @@ The [pathway audit](docs/SELECTION-PATHWAYS.md) measures the full acquired graph
 
 The [operational KC-centered rules](docs/CIRCUIT-SELECTION.md) define eight candidates (`KCg-d`/`KCg-m` × L/R × membership thresholds 1/5), each with seven comparison selections: **64 untrained inventories**. At threshold 5, the 487/540-cell `KCg-d` candidates retain about **81–85% of seed-KC incoming/outgoing raw contacts**, yet cut about **89% of whole-subset incoming contacts**; the 1,150/1,202-cell `KCg-m` candidates retain over **96% of seed-KC contacts**. Comparators share a 134,491-cell, six-superclass pool broader than the historical central-only eligibility. Uniform and superclass/side/sign-stratified controls remain much sparser, so these are not topology results. The rules are operational hypotheses, not certified circuits.
 
-The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and [export note](docs/SELECTION-GRAPH-EXPORTS.md) provide all 64 untrained graphs, without trained weights or a tokenizer. Under the declared interface, they span **487–1,385 neurons and 470,945–766,693 allocated parameters**. The exporter exactly reproduces all nine frozen-reference arrays. [Timing preparation](docs/SELECTION-TIMING-PILOT.md) verifies two synthetic-token updates per full-size graph through the shared BPTT/AdamW update function used by selection-language fitting (batch 1, three tokens, one CPU thread). Separately, 3,351 BabyLM `train-10m` cache blocks were verified; the official 64-condition timing runner has not run. These are compatibility checks, with no selection language fits or throughput results.
+The [graph archive](https://flm.kuber.studio/research/selection-graphs.zip) and [export note](docs/SELECTION-GRAPH-EXPORTS.md) provide all 64 untrained graphs, without trained weights or a tokenizer. Under the declared interface, they span **487–1,385 neurons and 470,945–766,693 allocated parameters**. The exporter exactly reproduces all nine frozen-reference arrays. The earlier [timing preparation](docs/SELECTION-TIMING-PILOT.md) verified two synthetic-token updates per full-size graph through the shared BPTT/AdamW function (batch 1, three tokens, one CPU thread). The [completed corpus cost pilot](reports/selection-pilot/timing.json) now measures all 64 original graphs with three warmup and twelve timed updates each. This is short-run cost evidence, with no selection-language quality scores; rewires were not timed.
 
-**All 192 structural controls completed, with zero failures.** The [complete archive](https://flm.kuber.studio/research/selection-rewiring.zip) contains 64 originals and 192 rewires, all untrained. The [results note](docs/SELECTION-REWIRING-RESULTS.md) and [standalone audit](reports/selection-rewiring/standalone-audit.json) document the verified graph constraints. A [language-training adapter](docs/SELECTION-LANGUAGE-TRAINING.md) binds these graphs to fresh models and shared BPTT fit/resume. The [coordinator](docs/SELECTION-LANGUAGE-COORDINATOR.md) requires all eight selections per candidate, each measured plus three rewires at seeds 42/43: **64 fits per chosen group**. The [held-out scorer](docs/SELECTION-LANGUAGE-TEST.md) requires all registered fits and selections before test access, retaining family means and individual selection/topology contrasts. No group or budget is chosen; the corpus cost pilot, official fits and results remain pending.
+**All 192 structural controls completed, with zero failures.** The [complete archive](https://flm.kuber.studio/research/selection-rewiring.zip) contains 64 originals and 192 rewires, all untrained. The [results note](docs/SELECTION-REWIRING-RESULTS.md) and [standalone audit](reports/selection-rewiring/standalone-audit.json) document the verified graph constraints. A [language-training adapter](docs/SELECTION-LANGUAGE-TRAINING.md) binds these graphs to fresh models and shared BPTT fit/resume. The [coordinator](docs/SELECTION-LANGUAGE-COORDINATOR.md) requires all eight selections per candidate, each measured plus three rewires at seeds 42/43: **64 fits per chosen group**. The [held-out scorer](docs/SELECTION-LANGUAGE-TEST.md) requires all registered fits and selections before test access, retaining family means and individual selection/topology contrasts. The [frozen study identity](reports/selection-language/study-identity.json) registers `KCg-d-L-t5` and `KCg-d-R-t5` (487/540 neurons): **128 fits at 3,000 updates each**. Training has started. All fits must finish before validation selection and the all-condition test gate. This limited-exposure screen uses 4,608,000 input-token presentations per fit, not the completed BabyLM baseline's 18,432,000; no convergence or equal-budget superiority claim follows.
 
 ![Original-edge overlap and largest strongly connected components for 64 original selections and their three rewired controls each.](public/research/figures/selection-rewiring.png)
 
@@ -211,7 +244,7 @@ The separate [ten-model topology inference bundle](https://flm.kuber.studio/rese
 | Corpus | Role and handling |
 |---|---|
 | **WikiText-2 raw** | Completed comparison: 600 training articles, 2.05 million words; official 600/60/60 partitions and a train-only vocabulary. |
-| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. All 12 runs complete as of 12 September 2026; held-out scoring underway; shared 10M-fitted tokenizer and overlap audit. |
+| **BabyLM 2026** | Six spoken/written components at 10M/100M word budgets. Completed [12-fit held-out comparison](docs/BABYLM-FINDINGS.md) and 288 fixed continuations; shared 10M-fitted tokenizer and overlap audit. |
 | **AMI Meeting Corpus** | Earlier dialogue model; manual transcripts with participant-disjoint splits. |
 | **SCAN** | Prepared command-composition benchmark with a [36-condition coordinator and terminal-checkpoint gate](docs/SCAN-STUDY-COORDINATOR.md) and [implemented whole-partition scorer](docs/SCAN-EVALUATION.md). Official timing, protocol, budget, fits and results remain pending. |
 
@@ -247,7 +280,7 @@ A separate 256-neuron, 6,678-edge core learns a delayed cue rule that reverses a
 
 The long-delay cue panel favors measured wiring under BPTT: **100.00% versus 66.67%**. The delay-8 context panel reverses that ordering: **63.02% versus 76.04%**. Supervised eligibility also does not consistently improve on a fixed core or no-history control. These are simple artificial tasks, and three seeds cannot support a universal ranking. The [findings](docs/WIRING-RESULTS.md), [protocol](docs/WIRING-LEARNING-PROTOCOL.md) and [complete records](https://flm.kuber.studio/research/wiring-learning-records.zip) include prediction panels and exact-versus-approximate gradient diagnostics.
 
-Separate [language-rule input preparation](docs/LANGUAGE-LEARNING-INPUTS.md) binds six BabyLM `train-10m` sources: **3,351 blocks, 54,399,840 UTF-8 bytes and 18,591,514 text tokens**, excluding inserted boundaries. BPTT, fixed core, forward eligibility and no-history eligibility share initial tensors within each seed (42/43) on the original 1,024-neuron graph. All eight preparations passed two tiny synthetic updates; fixed-core parameters stayed unchanged. Unlike the completed fixed-dynamics control, this rule also freezes the input projection. The [cost-pilot](docs/LANGUAGE-LEARNING-TIMING.md) and [per-run selection](docs/LANGUAGE-LEARNING-VALIDATION.md) input preflights cover eight full-window declarations and 48 validation prefixes (49,152 text targets), without model scoring or updates. An [eight-condition coordinator](docs/LANGUAGE-LEARNING-STUDY.md) implements immutable pre-fit identity, serial/resumable fitting and whole-inventory selection gates. **No official protocol, cost pilot, identity, fits, selections or test scores exist yet**: BabyLM/cost prerequisites still refuse initialization; the [held-out scorer](docs/LANGUAGE-LEARNING-TEST.md) is implemented but has not run on the official study.
+Separate [language-rule input preparation](docs/LANGUAGE-LEARNING-INPUTS.md) binds six BabyLM `train-10m` sources: **3,351 blocks, 54,399,840 UTF-8 bytes and 18,591,514 text tokens**, excluding inserted boundaries. BPTT, fixed core, forward eligibility and no-history eligibility share initial tensors within each seed (42/43) on the original 1,024-neuron graph. All eight preparations passed two tiny synthetic updates; fixed-core parameters stayed unchanged. Unlike the completed fixed-dynamics control, this rule also freezes the input projection. The [cost-pilot](docs/LANGUAGE-LEARNING-TIMING.md) and [per-run selection](docs/LANGUAGE-LEARNING-VALIDATION.md) input preflights cover eight full-window declarations and 48 validation prefixes (49,152 text targets), without model scoring or updates. An [eight-condition coordinator](docs/LANGUAGE-LEARNING-STUDY.md) implements immutable pre-fit identity, serial/resumable fitting and whole-inventory selection gates. **No official alternative-learning protocol, cost pilot, identity, fits, selections or test scores exist yet**: this study still needs its own cost pilot and registration; the [held-out scorer](docs/LANGUAGE-LEARNING-TEST.md) is implemented but has not run on the official study.
 
 ### A body that responds to current pose
 
@@ -333,7 +366,7 @@ Acquisition verifies pinned revisions, sizes and SHA-256 hashes. Article groupin
 | Anatomical graph reconstruction | `python -m flm.acquire_graph`, then `python -m flm.graph --source data/processed/connectome --output work/reproduced-graph` |
 | Language topology and slow-state controls | [Frozen protocol](docs/LANGUAGE-TOPOLOGY-PROTOCOL.md), [scheduler and recovery](docs/LANGUAGE-TOPOLOGY-OPERATIONS.md) |
 | Retrained language computation controls | [Frozen protocol](docs/LANGUAGE-CORE-PROTOCOL.md), [findings and parameter limits](docs/LANGUAGE-CORE-RESULTS.md) |
-| BabyLM acquisition, audit and 12-run pipeline | [Training protocol](docs/BABYLM-PROTOCOL.md), [complete-study evaluation](docs/BABYLM-EVALUATION.md) |
+| Completed BabyLM comparison and 288 continuations | [Findings](docs/BABYLM-FINDINGS.md), [training protocol](docs/BABYLM-PROTOCOL.md), [evaluation declaration](docs/BABYLM-EVALUATION.md) |
 | Learning-rule and topology diagnostics | [Original learning protocol](docs/LOCAL-LEARNING-PROTOCOL.md), [60-run extension](docs/WIRING-LEARNING-PROTOCOL.md) |
 | Language eligibility implementation, not fitted results | [Complete window-gradient kernel and numerical checks](docs/LANGUAGE-ELIGIBILITY-KERNEL.md) |
 | Recorded feedback audit or fresh MuJoCo simulation | [Standalone instructions](docs/CLOSED-LOOP-REPRODUCTION.md), [physical environment](experiments/embodiment/README.md) |
@@ -366,6 +399,6 @@ Checks cover causal streaming, graph constraints, exact resumed updates, byte ac
 
 </details>
 
-The registered BabyLM comparison has completed training and is being evaluated; larger-data, capacity-scaling and language-to-action research remain open. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
+The registered BabyLM comparison and selection cost pilot are complete, and the controlled selection study is running. Larger-data, capacity-scaling and language-to-action research remain open. Contributions should preserve provenance, retain unsuccessful runs and add meaningful checks for changed behavior. Work is recorded in sequential, descriptive commits.
 
 Original implementation: **MIT**. Imported components retain their licenses. Brain data and AMI transcripts use CC BY 4.0; WikiText publisher metadata lists CC BY-SA 3.0 and GFDL while its prose links another license version, a discrepancy preserved in the dataset card. Raw corpus text is not redistributed. See [component notices](licenses/) and the [public attribution page](https://flm.kuber.studio/licenses/).
