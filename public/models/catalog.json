@@ -3,7 +3,8 @@
   "selection": "Lowest fixed-panel BabyLM validation BPB among completed FLM checkpoints; no test loss or sample quality used.",
   "inputs": {
     "reports/babylm/selection.json": "f84ab0c9d614b4d23e3d87631f305b96e1632056619dd6d8f8337f1d24383313",
-    "reports/wikitext2/selection.json": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62"
+    "reports/wikitext2/selection.json": "2a96830e454fd0515d1d3ca5488b710fe78101dafd83abf6f513989823390c62",
+    "reports/selection-language/mac-v1/study-selection.json": "3c2ede4e0e886c303907cebae9d4033170d7aba545909cfa32732222b6a88efe"
   },
   "models": {
     "babylm-10m-flm-s42": {
@@ -221,6 +222,59 @@
       "seed": 43,
       "validation_bpb": 1.8138328084572959,
       "manifest_sha256": "c107672e148cfaf993943d1cf967ef95d2cd25b75730334f3689da9a8b1280fe"
+    },
+    "flm-kc-l-s42": {
+      "path": "flm-kc-l-s42",
+      "label": "FLM \u00b7 KC left \u00b7 seed 42 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 42,
+      "validation_bpb": 2.1881769330260092,
+      "preview": true,
+      "manifest_sha256": "40c736a5651cca24e600ebd6d5d8a5bf9d35cc93f9afabcff88fb7038134afef"
+    },
+    "flm-kc-l-s43": {
+      "path": "flm-kc-l-s43",
+      "label": "FLM \u00b7 KC left \u00b7 seed 43 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 43,
+      "validation_bpb": 2.1914034821264514,
+      "preview": true,
+      "manifest_sha256": "be4129251407ceb112103f9252b5ea21d1ac64bfc0a94b5e27e9469a060c3ba8"
+    },
+    "flm-kc-r-s42": {
+      "path": "flm-kc-r-s42",
+      "label": "FLM \u00b7 KC right \u00b7 seed 42 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 42,
+      "validation_bpb": 2.1993353229375074,
+      "preview": true,
+      "manifest_sha256": "21cbf76a996a62ea01ee3e42301fd29c0ef0e0a735cc0c807627c3e480505488"
+    },
+    "flm-kc-r-s43": {
+      "path": "flm-kc-r-s43",
+      "label": "FLM \u00b7 KC right \u00b7 seed 43 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 43,
+      "validation_bpb": 2.1924651678547478,
+      "preview": true,
+      "manifest_sha256": "312b377d6d94fcb2709a5d2609bedc0b6ebee9f13f3ece61b87bd266c02a7875"
     }
-  }
+  },
+  "preview_policy": "All four measured KC candidates, both sides and seeds. Validation-selected; held-out study pending. Excluded from primary automatic-default ranking."
 }

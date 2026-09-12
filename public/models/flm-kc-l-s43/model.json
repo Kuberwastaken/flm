@@ -1,0 +1,193 @@
+{
+  "format": "flm-browser-v2",
+  "architecture": "flm",
+  "variant": "flm",
+  "name": "FLM \u00b7 KC left \u00b7 seed 43 \u00b7 Preview",
+  "model_id": "flm-kc-l-s43",
+  "dataset": "BabyLM 2026 English 10M \u00b7 KC selection study",
+  "neurons": 487,
+  "pools": 128,
+  "features": 96,
+  "embedding": 96,
+  "vocabulary": 4096,
+  "bos": 0,
+  "eos": 1,
+  "arrays": {
+    "embedding": {
+      "offset": 0,
+      "length": 393216,
+      "shape": [
+        4096,
+        96
+      ],
+      "dtype": "float32"
+    },
+    "input_weight": {
+      "offset": 1572864,
+      "length": 46752,
+      "shape": [
+        487,
+        96
+      ],
+      "dtype": "float32"
+    },
+    "input_bias": {
+      "offset": 1759872,
+      "length": 487,
+      "shape": [
+        487
+      ],
+      "dtype": "float32"
+    },
+    "offsets": {
+      "offset": 1761820,
+      "length": 488,
+      "shape": [
+        488
+      ],
+      "dtype": "uint32"
+    },
+    "sources": {
+      "offset": 1763772,
+      "length": 15674,
+      "shape": [
+        15674
+      ],
+      "dtype": "uint32"
+    },
+    "weights": {
+      "offset": 1826468,
+      "length": 15674,
+      "shape": [
+        15674
+      ],
+      "dtype": "float32"
+    },
+    "alpha": {
+      "offset": 1889164,
+      "length": 487,
+      "shape": [
+        487
+      ],
+      "dtype": "float32"
+    },
+    "beta": {
+      "offset": 1891112,
+      "length": 487,
+      "shape": [
+        487
+      ],
+      "dtype": "float32"
+    },
+    "pool": {
+      "offset": 1893060,
+      "length": 487,
+      "shape": [
+        487
+      ],
+      "dtype": "uint32"
+    },
+    "pool_sizes": {
+      "offset": 1895008,
+      "length": 128,
+      "shape": [
+        128
+      ],
+      "dtype": "float32"
+    },
+    "norm_weight": {
+      "offset": 1895520,
+      "length": 256,
+      "shape": [
+        256
+      ],
+      "dtype": "float32"
+    },
+    "norm_bias": {
+      "offset": 1896544,
+      "length": 256,
+      "shape": [
+        256
+      ],
+      "dtype": "float32"
+    },
+    "projection_weight": {
+      "offset": 1897568,
+      "length": 24576,
+      "shape": [
+        96,
+        256
+      ],
+      "dtype": "float32"
+    },
+    "projection_bias": {
+      "offset": 1995872,
+      "length": 96,
+      "shape": [
+        96
+      ],
+      "dtype": "float32"
+    },
+    "readout_bias": {
+      "offset": 1996256,
+      "length": 4096,
+      "shape": [
+        4096
+      ],
+      "dtype": "float32"
+    }
+  },
+  "checkpoint_step": 3000,
+  "checkpoint_sha256": "f5dbfab3f0653af22c27079e8162de22f7f0aa886eca61f994baf4b779dbe78a",
+  "weights_sha256": "541c15aaaa387c575422ee9f6049bc93568870eb71035b0df64160ecadda9021",
+  "weights_bytes": 2012640,
+  "anatomy_sha256": "10123e073b0fadf1a4d320baf2b5038f3d7f2948605027ed18d2a0f403f737ef",
+  "source_graph_sha256": "bcbd79db72a94f16e522b40b66a6e0d9d922efb1eed977ea5f5d41a245f38297",
+  "tokenizer_sha256": "46a2ef1bf8dce00e801c5ac188b13ec5c30c7f1ab7e8184031dca3ee057a7242",
+  "browser_tokenizer_sha256": "0dd47153f92eb0ce541b9b93ebcfb6f374472d6ee40c35b10dfc87315e9ce132",
+  "trained_parameters": 486384,
+  "retained_edges": 15674,
+  "source_neurons": 166700,
+  "norm_epsilon": 1e-05,
+  "selection_validation_bpb": 2.1914034821264514,
+  "selection_manifest_sha256": "3c2ede4e0e886c303907cebae9d4033170d7aba545909cfa32732222b6a88efe",
+  "study_identity_sha256": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676",
+  "condition": {
+    "graph": "KCg-d-L-t5/candidate/measured",
+    "seed": 43,
+    "label": "KCg-d-L-t5/candidate/measured/s43"
+  },
+  "training": {
+    "method": "bptt",
+    "settings": {
+      "steps": 3000,
+      "batch": 16,
+      "sequence": 96,
+      "warmup": 16,
+      "learning_rate": 0.002,
+      "final_learning_rate": 0.0002,
+      "lr_warmup_updates": 100,
+      "weight_decay": 0.01,
+      "gradient_clip": 1.0,
+      "checkpoint_interval": 500,
+      "seed": 43,
+      "threads": 4,
+      "score_boundaries": true
+    },
+    "final_exposure": {
+      "presented_tokens": 4608000,
+      "scored_tokens": 3840000,
+      "presented_bytes": 13497988,
+      "scored_bytes": 11247984
+    },
+    "origin": "Fresh native Mac initialization"
+  },
+  "publication_status": "Research preview; complete held-out evaluation pending.",
+  "preview": true,
+  "instruction_tuned": false,
+  "literal_kcg_d_neurons": 99,
+  "publication_guide": "/research/selection-previews.md",
+  "description": "Completed 3,000-update measured KC candidate, selected on validation before held-out scoring. Both sides and seeds are released.",
+  "capability": "Base next-token predictor; not instruction tuned. This is a circuit-selection experiment, not a larger chat model.",
+  "license": "MIT implementation; CC BY 4.0 anatomy; BabyLM components retain their source rights. No raw training corpus redistributed."
+}

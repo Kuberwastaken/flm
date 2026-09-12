@@ -90,7 +90,9 @@ function renderConversation() {
   $('generate').textContent = conversation.mode === 'chat' ? 'Send' : 'Continue';
   $('prompt').placeholder = conversation.mode === 'chat' ? `Message ${MODEL_PACKAGES[selectedModel].name}…` : 'A passage to continue…';
   $('prompt-label').textContent = conversation.mode === 'completion' ? 'Text to continue' : 'Your message';
-  $('capability').textContent = conversation.mode === 'chat'
+  $('capability').textContent = MODEL_PACKAGES[selectedModel].preview
+    ? 'Research preview: training and validation selection complete; held-out evaluation pending. Trained on BabyLM 10M through a KC-centered graph. This base model has no instruction tuning.'
+    : conversation.mode === 'chat'
     ? 'Chat keeps your turns and an optional system prompt as explicit text context. These are base models, without instruction tuning. Inspect the exact input below; responses may drift or repeat.'
     : selectedModel.startsWith('babylm')
     ? 'Trained from scratch on BabyLM conversation, child-directed speech, books and other text. The checkpoint and scale are shown in the model selector. This is a base language model without instruction tuning.'
@@ -129,6 +131,8 @@ $('model').value = selectedModel;
 $('mode').querySelector('[value="dialogue"]').disabled = isLexical;
 $('model-choice-note').textContent = selectedModel === DEFAULT_MODEL
   ? 'Automatic default: lowest shared BabyLM validation loss among the released FLM checkpoints. Test loss and attractive samples do not select it. Switching checkpoints reloads the workspace; export unsaved local learning first.'
+  : MODEL_PACKAGES[selectedModel].preview
+  ? 'KC research preview. Both sides and training seeds are available; full evaluation continues separately. This is not a larger or improved chat model.'
   : 'Explicit model selection. Each checkpoint retains its own conversations and local learning. Export unsaved local learning before switching.';
 function switchModel(value, conversationId = null) {
   const url = new URL(location.href); url.searchParams.set('model', value);
@@ -347,11 +351,11 @@ worker.onmessage = ({ data }) => {
   if (data.id !== activeId) return;
   if (data.type === 'loading') $('model-status').textContent = data.message;
   if (data.type === 'ready') {
-    ready = true; config = data.config; $('model-status').textContent = `${MODEL_PACKAGES[selectedModel].name || 'FLM'} · local`;
+    ready = true; config = data.config; $('model-status').textContent = `${MODEL_PACKAGES[selectedModel].name || 'FLM'}${config.preview ? ' · preview' : ''} · local`;
     $('top-k').max = config.vocabulary;
     $('checkpoint-link').href = `/${config.package_path}/model.json`;
     $('generation-stats').textContent = `Checkpoint ${config.checkpoint_step.toLocaleString()} · ready`;
-    $('release-detail').textContent = `${config.trained_parameters.toLocaleString()} trained parameters · ${isFly ? `${config.neurons.toLocaleString()} neurons · ${config.retained_edges.toLocaleString()} edges · ` : 'conventional comparison architecture · '}checkpoint ${config.checkpoint_step.toLocaleString()} · ${(config.weights_bytes / 1000000).toFixed(2)} MB browser weights.${isFly ? ' The full anatomical graph is not the compact model.' : ''}`;
+    $('release-detail').textContent = `${config.trained_parameters.toLocaleString()} trained parameters · ${isFly ? `${config.neurons.toLocaleString()} neurons · ${config.retained_edges.toLocaleString()} edges · ` : 'conventional comparison architecture · '}checkpoint ${config.checkpoint_step.toLocaleString()} · ${(config.weights_bytes / 1000000).toFixed(2)} MB browser weights.${isFly ? ' The full anatomical graph is not the compact model.' : ''}${config.preview ? ' Research preview; complete held-out evaluation pending.' : ''}`;
     loadViews();
   }
   if (data.type === 'priming') $('generation-stats').textContent = `Reading context: ${data.done.toLocaleString()} / ${data.total.toLocaleString()} tokens`;

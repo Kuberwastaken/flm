@@ -1,0 +1,65 @@
+{
+  "format": "flm-selection-browser-preview-v1",
+  "selection_sha256": "3c2ede4e0e886c303907cebae9d4033170d7aba545909cfa32732222b6a88efe",
+  "study_identity_sha256": "197293ed32935c552dd705b38c96d8ee18f7d4b4f49d67c1220eb21bfc357676",
+  "exporter_sha256": "742c89da70e4c887bf9604dbbc11684a12d37620aae6f9761ed5e4fc5b542382",
+  "anatomy_members_sha256": "39ef90a1e89776b6e9ef017b63de98c6f05550a1ce7e8cd55c37b0fe1cc63f35",
+  "packages": {
+    "flm-kc-l-s42": {
+      "path": "flm-kc-l-s42",
+      "label": "FLM \u00b7 KC left \u00b7 seed 42 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 42,
+      "validation_bpb": 2.1881769330260092,
+      "preview": true,
+      "manifest_sha256": "40c736a5651cca24e600ebd6d5d8a5bf9d35cc93f9afabcff88fb7038134afef"
+    },
+    "flm-kc-l-s43": {
+      "path": "flm-kc-l-s43",
+      "label": "FLM \u00b7 KC left \u00b7 seed 43 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 43,
+      "validation_bpb": 2.1914034821264514,
+      "preview": true,
+      "manifest_sha256": "be4129251407ceb112103f9252b5ea21d1ac64bfc0a94b5e27e9469a060c3ba8"
+    },
+    "flm-kc-r-s42": {
+      "path": "flm-kc-r-s42",
+      "label": "FLM \u00b7 KC right \u00b7 seed 42 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 42,
+      "validation_bpb": 2.1993353229375074,
+      "preview": true,
+      "manifest_sha256": "21cbf76a996a62ea01ee3e42301fd29c0ef0e0a735cc0c807627c3e480505488"
+    },
+    "flm-kc-r-s43": {
+      "path": "flm-kc-r-s43",
+      "label": "FLM \u00b7 KC right \u00b7 seed 43 \u00b7 Preview",
+      "name": "FLM",
+      "lexical": true,
+      "architecture": "flm",
+      "study": "selection-mac-v1",
+      "scale": "10m",
+      "seed": 43,
+      "validation_bpb": 2.1924651678547478,
+      "preview": true,
+      "manifest_sha256": "312b377d6d94fcb2709a5d2609bedc0b6ebee9f13f3ece61b87bd266c02a7875"
+    }
+  },
+  "checkpoint_selection": "All four predeclared measured candidates; each checkpoint chosen by frozen validation protocol.",
+  "unchanged_default": "babylm-100m-flm-s43",
+  "heldout_status": "Complete study pending; partial test scores not opened by exporter.",
+  "scope": "Checkpoint and graph identity checks plus browser export. Inference parity and browser release review recorded separately."
+}

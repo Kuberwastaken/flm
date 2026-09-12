@@ -1,0 +1,47 @@
+{
+  "format": "flm-selection-preview-native-parity-v1",
+  "native_reference_sha256": "adeab7747a9e3f2e732e8c145e771a1d364d9f31f51a5f75221f186a402b836b",
+  "checks": [
+    {
+      "model": "flm-kc-l-s42",
+      "maximum_absolute_error": {
+        "logits": 3.337860107421875e-06,
+        "h": 1.1920928955078125e-07,
+        "slow": 1.1920928955078125e-07
+      },
+      "native_torch": "2.8.0",
+      "local_torch": "2.8.0+cpu"
+    },
+    {
+      "model": "flm-kc-r-s43",
+      "maximum_absolute_error": {
+        "logits": 2.86102294921875e-06,
+        "h": 1.1920928955078125e-07,
+        "slow": 1.7881393432617188e-07
+      },
+      "native_torch": "2.8.0",
+      "local_torch": "2.8.0+cpu"
+    },
+    {
+      "model": "flm-kc-r-s42",
+      "maximum_absolute_error": {
+        "logits": 1.9073486328125e-06,
+        "h": 1.4901161193847656e-07,
+        "slow": 1.4901161193847656e-07
+      },
+      "native_torch": "2.8.0",
+      "local_torch": "2.8.0+cpu"
+    },
+    {
+      "model": "flm-kc-l-s43",
+      "maximum_absolute_error": {
+        "logits": 2.384185791015625e-06,
+        "h": 1.1920928955078125e-07,
+        "slow": 1.1920928955078125e-07
+      },
+      "native_torch": "2.8.0",
+      "local_torch": "2.8.0+cpu"
+    }
+  ],
+  "scope": "Restored frozen checkpoints on Mac versus exported-reference computation on Windows; fixed 130-token diagnostic at four prefixes. No held-out input or fitting."
+}

@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import { TextCodec } from '../web/text-codec.js';
 import { MODEL_PACKAGES } from '../web/packages.js';
 
-for (const selection of ['ami', 'wikitext', 'babylm', 'babylm-100m-flm-s43', 'babylm-100m-gru-s43', 'babylm-100m-transformer-s43']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
+for (const selection of ['ami', 'wikitext', 'babylm', 'babylm-100m-flm-s43', 'babylm-100m-gru-s43', 'babylm-100m-transformer-s43', 'flm-kc-l-s42', 'flm-kc-r-s43']) test(`${selection}: worker generates, scores, learns and cancels with true token/byte accounting`, async t => {
   const worker = new Worker(new URL('./helpers/worker-harness.mjs', import.meta.url));
   t.after(() => worker.terminate());
   await once(worker, 'message'); let sequence = 0;

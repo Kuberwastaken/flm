@@ -9,7 +9,8 @@ import catalog from '../web/model-catalog.json' with {type:'json'};
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const difference = (a,b) => { assert.equal(a.length,b.length); return Math.max(...a.map((v,i)=>Math.abs(v-b[i]))); };
 test('automatic default uses only the shared BabyLM FLM validation panel', () => {
-  assert.equal(Object.keys(catalog.models).length,18);
+  assert.equal(Object.values(catalog.models).filter(x=>!x.preview).length,18);
+  assert.equal(Object.values(catalog.models).filter(x=>x.preview).length,4);
   const eligible=Object.entries(catalog.models).filter(([,v])=>v.study==='babylm' && v.architecture==='flm');
   assert.equal(catalog.default_flm,eligible.sort((a,b)=>a[1].validation_bpb-b[1].validation_bpb)[0][0]);
   for(const [path,hash] of Object.entries(catalog.inputs)) assert.equal(sha(readFileSync(new URL('../'+path,import.meta.url))),hash);

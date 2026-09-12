@@ -1,0 +1,58 @@
+{
+  "format": "flm-selection-preview-browser-review-v1",
+  "base": "http://127.0.0.1:5181/",
+  "browser": "152.0.7977.83",
+  "models": [
+    {
+      "id": "flm-kc-l-s42",
+      "neurons": 487,
+      "theme": "light",
+      "answer": "\n[firsts of the Maltel was born from the Micsterymar is angecent Bete-fy and",
+      "brain_render_changed": true,
+      "typing_fly_canvas": true,
+      "mobile_overflow": false,
+      "before_sha256": "89dcef17c9beed8194c6be48f2ffdf92d4e9aae0e95f40122ec8f6d5a81a21d7",
+      "after_sha256": "a0a1640c202977bddd5d4958ca384dd88348384454ca8285ce19cc2cc1c5c4bd",
+      "page_errors": []
+    },
+    {
+      "id": "flm-kc-l-s43",
+      "neurons": 487,
+      "theme": "dark",
+      "answer": "\n\"Yes, and I think of your best over?\nOh, I got an more.\nBut I never thought you think I was a long",
+      "brain_render_changed": true,
+      "typing_fly_canvas": true,
+      "mobile_overflow": false,
+      "before_sha256": "89dcef17c9beed8194c6be48f2ffdf92d4e9aae0e95f40122ec8f6d5a81a21d7",
+      "after_sha256": "95222ffaa4744b861e6a3f15228df229b0f7e65e6665f4f6f1ffc051d25ef240",
+      "page_errors": []
+    },
+    {
+      "id": "flm-kc-r-s42",
+      "neurons": 540,
+      "theme": "light",
+      "answer": "\n*CHI:\tI know.\nDes:\tpon.\nI'd do it.\n*INV:\the's a little house",
+      "brain_render_changed": true,
+      "typing_fly_canvas": true,
+      "mobile_overflow": false,
+      "before_sha256": "abda62df33367cdcdf6408883a08e9f6e1e912dc3e2697dcfc0b1831b9235e80",
+      "after_sha256": "e38fc02c4d17443d6a98b601ea262aedfe5d460fdccc82a1fd07dba48f29f8d3",
+      "page_errors": []
+    },
+    {
+      "id": "flm-kc-r-s43",
+      "neurons": 540,
+      "theme": "dark",
+      "answer": "\n= = =\nThe Batory the Hilgon.\nKikes is a forianlaa.\n= =",
+      "brain_render_changed": true,
+      "typing_fly_canvas": true,
+      "mobile_overflow": false,
+      "before_sha256": "abda62df33367cdcdf6408883a08e9f6e1e912dc3e2697dcfc0b1831b9235e80",
+      "after_sha256": "40c5ac2a4072f1ea91911b7b8f59810281c16bccd87ce2fdb5c735735dc325e7",
+      "page_errors": []
+    }
+  ],
+  "default_model": "babylm-100m-flm-s43",
+  "checked_at_utc": "2026-09-12T18:09:25.125Z",
+  "scope": "Browser inference, anatomy, preview disclosure, themes and responsive layout. Generated diagnostic outputs are unedited; not a language-quality benchmark."
+}
