@@ -40,6 +40,24 @@ class DecisionTests(unittest.TestCase):
         self.assertEqual(decision.apply_rule(self.rule, contrasts(self.rule, -.005))['decision'], 'pass')
         self.assertEqual(decision.apply_rule(self.rule, contrasts(self.rule, -.004999999))['decision'], 'fail')
 
+    def test_mac_lineage_cannot_change_budget_or_graph(self):
+        parent = json.loads((decision.ROOT/decision.IDENTITY).read_text())
+        native = copy.deepcopy(parent)
+        native['torch'] = '2.8.0'
+        native['execution_amendment'] = {'parent_study_identity_sha256': self.rule['original_identity_sha256']}
+        for row in native['conditions']:
+            for key in ('initial_state_sha256', 'initial_parameters_sha256', 'initial_nonedge_parameters_sha256'):
+                row['base_binding'][key] = '1'*64
+        decision.validate_mac_identity(parent, native)
+        changed = copy.deepcopy(native)
+        changed['conditions'][0]['settings']['steps'] = 2000
+        with self.assertRaises(ValueError):
+            decision.validate_mac_identity(parent, changed)
+        changed = copy.deepcopy(native)
+        changed['conditions'][0]['condition']['graph'] = 'another-graph'
+        with self.assertRaises(ValueError):
+            decision.validate_mac_identity(parent, changed)
+
     def test_filtered_interval_touching_zero_fails(self):
         rows = contrasts(self.rule)
         row = next(r for r in rows if r['name'] == self.rule['primary_contrast'] and r['subset'] == 'overlap_filtered')

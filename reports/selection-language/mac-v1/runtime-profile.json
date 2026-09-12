@@ -1,0 +1,25 @@
+{
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.10.20 (main, Jun 11 2026, 03:55:32) [Clang 22.1.3 ]",
+    "cpu": "Apple M5 Pro",
+    "memory_bytes": 25769803776,
+    "packages": {
+      "torch": "2.8.0",
+      "numpy": "2.2.6",
+      "scipy": "1.13.1",
+      "tokenizers": "0.22.2",
+      "requests": "2.32.5"
+    },
+    "torch": "2.8.0",
+    "numpy": "2.2.6",
+    "torch_build": "PyTorch built with:\n  - GCC 4.2\n  - C++ Version: 201703\n  - clang 15.0.0\n  - OpenMP 201811\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: NO AVX\n  - Build settings: BLAS_INFO=accelerate, BUILD_TYPE=Release, COMMIT_SHA=a1cb3cc05d46d198467bebbb6e8fba50a325d4e7, CXX_COMPILER=/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_PYTORCH_QNNPACK -DAT_BUILD_ARM_VEC256_WITH_SLEEF -DUSE_XNNPACK -DUSE_PYTORCH_METAL_EXPORT -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DUSE_COREML_DELEGATE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=braced-scalar-init -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wvla-extension -Wsuggest-override -Wnewline-eof -Winconsistent-missing-override -Winconsistent-missing-destructor-override -Wno-pass-failed -Wno-error=old-style-cast -Wconstant-conversion -Qunused-arguments -faligned-new -fno-math-errno -fno-trapping-math -Werror=format -DUSE_MPS -Wno-missing-braces, LAPACK_INFO=accelerate, TORCH_VERSION=2.8.0, USE_CUDA=OFF, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_EIGEN_FOR_BLAS=ON, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=OFF, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, \n",
+    "device": "cpu",
+    "threads_per_fit": 4,
+    "adapter_sha256": "d032e5e4d5fa6be38a35367b9b41bb67fbd25a72bf4aecb23148c154ce79ecce"
+  },
+  "parent_study_identity_sha256": "f9fcffed62db3b9da22e58f1df8dd3f9a47182eed5ff8a5c3dbbe773e75768c3",
+  "amendment_sha256": "34f2cfa15eb81761ac36e6bfb11f3b2f5e626f45f90f08b9c1c02ffe6776d171",
+  "qualification_probe_sha256": "32ecdaf5f957afdc89c9de77a2bb8a787ee6302008c284c55571b6b783732ff5"
+}
