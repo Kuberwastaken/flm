@@ -71,7 +71,7 @@
       "trainable_parameters": null,
       "saved_trainer_seconds": 195.2398,
       "saved_gpu": null,
-      "interpretation": "Rank 6; saved output 72 updates / 195.24 seconds; saved dataset/output appears stale versus current 2260-row code, so not a reproducible T4 timing.",
+      "interpretation": "Rank 6; saved output 72 updates / 195.24 seconds; sequence packing changes the number of examples. Saved output does not identify the GPU, so this is not verified T4 timing.",
       "rerun_by_flm": false
     },
     {
